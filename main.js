@@ -3,6 +3,7 @@ import App from './App'
 
 // js
 import { getHeight } from './static/js/common.js'
+import request from './static/js/request.js'
 
 // css
  import "./static/css/font.css"
@@ -10,6 +11,8 @@ import { getHeight } from './static/js/common.js'
 
 Vue.config.productionTip = false
 Vue.prototype.$getHeight=getHeight
+Vue.prototype.$apiPost=request.apiPost
+Vue.prototype.$apiGet=request.apiGet
 
 
 App.mpType = 'app'

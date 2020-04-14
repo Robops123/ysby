@@ -37,8 +37,8 @@
 							</view>
 					</view>
 				</view>
-				<!-- <p v-if="loading" class="hint">加载中...</p>
-				   <p v-if="noMore" class="hint">没有更多了</p> -->
+				<p v-if="loading" class="hint">加载中...</p>
+				   <p v-if="noMore" class="hint">没有更多了</p>
 			</scroll-view>
 		</view>
 	</view>
@@ -54,18 +54,20 @@
 			return{
 				active:1,
 				sh:'',
+				dataList:[],
 				page:1,
 				pageSize:5,
 				total:0,
+				 loading:false,
 			}
 		},
 		computed: {
-		     // noMore () {
-		     //   return this.dealList.length >= this.total
-		     // },
-		     // disabled () {
-		     //   return this.loading || this.noMore
-		     // }
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		     disabled () {
+		       return this.loading || this.noMore
+		     }
 		   },
 		onLoad(){
 			var that=this
@@ -87,20 +89,22 @@
 			},
 			getList(p){
 				var that=this
+				this.loading=true
 				var params={
 				  page:p,
 				  pagesize: this.pageSize
 				}
-				  var url='http://admin.chinaduancai.com/api/wangtosale_list'
-				  uni.request({
-				  	data:params,
-					url:url,
-					success:(res) =>{
-						console.log(res)
-					}
+				  var url='/wangtosale_list'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.total=res.allnum
+					  that.dataList=that.dataList.concat(res.data)
+					  that.loading=false
 				  })
 			},
 			load(){
+				if(this.disabled){
+					return;
+				}
 			  this.page++
 			  this.getList(this.page)
 			},
