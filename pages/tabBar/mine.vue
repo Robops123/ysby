@@ -1,0 +1,217 @@
+<template>
+	<view>
+		<view class="top">
+			<view>
+				<view class="setting" >
+					<text class="iconfont icon-fire" @click="toSetting"></text>
+				</view>
+				<image src="../../static/img/pic/logo.png" mode="" class="headface" @click="toRetail"></image>
+				<text class="s4"  @click="tologin">月亮都知道</text>
+			</view>
+			<view class="options1">
+				<view class="options1-item" @click="to('goods')">
+					<view>12</view>
+					<view>我的收藏</view>
+				</view>
+				<view class="options1-item" @click="to('shop')">
+					<view>12</view>
+					<view>关注店铺</view>
+				</view>
+				<view class="options1-item">
+					<view>12</view>
+					<view>浏览足迹</view>
+				</view>
+			</view>
+			
+			<view class="padding">
+				<view class="card">
+					<view class="s5">
+						<text>我的订单</text>
+						<view class="s3 cg fr" @click="to('myOrder')">查看全部<view type="" class="icon-fire iconfont" style="display: inline-block;"></view></view>
+					</view>
+					<view class="dd">
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>待付款</view>
+						</view>
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>待发货</view>
+						</view>
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>待收货</view>
+						</view>
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>待评价</view>
+						</view>
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>售后/退款</view>
+						</view>
+					</view>
+				</view>
+				
+				
+				<view class="card card2">
+					<view class="s5">
+						<text>我的服务</text>
+					</view>
+					<view class="dd2 ">
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>代理中心</view>
+						</view>
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>推广介绍</view>
+						</view>
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>邀请人</view>
+						</view>
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>邀请注册</view>
+						</view>
+						<view class="item-list" @click="to('addressList')">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>收货地址</view>
+						</view>
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>帮助中心</view>
+						</view>
+						<view class="item-list">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>官方客服</view>
+						</view>
+						<view class="item-list" @click="to2()">
+							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<view>我的店铺</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default{
+		data(){
+			return {
+				
+			}
+		},
+		methods:{
+			to(where){
+				uni.navigateTo({
+					url:`/pages/mine/${where}`
+				})
+			},
+			to2(){
+				uni.navigateTo({
+					url:`/pages/tabBar2/tabMain`
+				})
+			},
+			tologin(){
+				uni.navigateTo({
+					url:`/pages/login/loginMobile`
+				})
+			},
+			toRetail(){
+				uni.navigateTo({
+					url:`/pages/retail/retailCenter`
+				})
+			},
+			toSetting() {
+			    uni.navigateTo({
+			    	url:`/pages/mine/settings`
+			    })    
+			},
+		}
+	}
+</script>
+
+<style>
+	page{
+		background-color: #f7f7f7;
+	}
+	.top{
+		background-image: url(../../static/img/bg/bg.png);
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+	
+	.headface{
+		width: 120upx;
+		height: 120upx;
+		border-radius: 50%;
+		vertical-align: middle;
+		margin: 20upx 30upx 10upx 30upx;
+	}
+	.headface+text{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.options1{
+		
+		text-align: center;
+		display: flex;
+		justify-content: space-around;
+	}
+	.card{
+		padding: 30upx 30upx 50upx 30upx;
+		box-shadow: 0 0 8px #ccc;
+		background-color: #fff;
+		border-radius: 10px;
+	}
+	.card .fr{
+			display: inline-block;
+			vertical-align: middle;
+			margin-top: 5upx;
+		}
+		.card .fr icon{
+			margin-left: 20upx;
+		}
+		
+		.item-list{
+			text-align: center;
+			margin-top: 60upx;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.dd .item-list{
+			width: 20%;
+		}
+		.card.card2{
+			box-shadow: none;
+			margin-top: 25upx;
+		}
+		.dd2 .item-list{
+			width: 25%;
+		}
+		 .item-list view{
+			white-space: nowrap;
+			font-size: 24upx;
+			color: #696969;
+		}
+		.dd .item-list:last-child{
+			margin-right: 0;
+		}
+		/* .dd2 .item-list:nth-of-type(4n){
+			mar
+		} */
+		 .item-list image{
+			width: 80upx;
+			height: 80upx;
+			margin-bottom: 20upx;
+		}
+		
+		.setting{
+			text-align: right;
+			padding: 20upx 20upx 0 0;
+		}
+</style>

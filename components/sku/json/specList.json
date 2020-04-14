@@ -1,0 +1,65 @@
+{
+	"status": 1,
+	"specifications": [{
+			"name": "尺寸",
+			"item": [{
+					"name": "100",
+					"isshow":true
+				},
+				{
+					"name": "200",
+					"isshow":true
+				}
+			]
+		},
+		{
+			"name": "颜色",
+			"item": [{
+					"name": "白色",
+					"isshow":true
+				},
+				{
+					"name": "黑色",
+					"isshow":true
+				},
+				{
+					"name": "绿色",
+					"isshow":true
+				}
+			]
+		},
+		{
+			"name": "码数",
+			"item": [{
+					"name": "X",
+					"isshow":true
+				},
+				{
+					"name": "L",
+					"isshow":true
+				},
+				{
+					"name": "XL",
+					"isshow":true
+				}
+			]
+		},
+		{
+			"name": "款式",
+			"item": [{
+					"name": "豪华",
+					"isshow":true
+				},
+				{
+					"name": "大众",
+					"isshow":true
+				},
+				{
+					"name": "低调",
+					"isshow":true
+				}
+			]
+		}
+	],
+	"msg": "提示"
+}
