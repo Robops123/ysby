@@ -12,9 +12,49 @@
 			
 			
 			
-			<scroll-view scroll-y="true"  v-show="active==2">
-				<view class="">
-					<view class="sp-item3"  v-for="(item,index) in 3" :key='index'>
+			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom' >
+				
+				<view v-if="active==1" style="margin-top: 20upx;">
+					<view class="sp-item3 padding news"  v-for="(item,index) in dataList" :key='index' @click="toDetail">
+						<view class="sp-item3-top " style="margin-top: 0;padding-top: 0;">
+							<view>
+								<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
+							</view>
+							<view class="sp-item3-top-middle">
+								<view class="cr">小象母婴馆</view>
+							</view>
+						</view>
+						<view class="sp-item3-middle">
+							<view class="title">【你为什么总是实现不了自己的目标】</view>
+							<view class="synopsis">
+								<text>
+							    爱神的箭ADSL就多空拉三等奖阿斯利康的接口拉时间段克拉斯就多空拉三等奖阿斯利康的接口拉时间段克拉斯就多空拉三等奖阿斯利康的接口拉时间段克拉斯就多空拉三等奖阿斯利康的接口拉时间段克拉斯</text>
+								<text class="all">全文</text>
+							</view>
+						</view>
+						<view class="media-place">
+							<view class="img-1" v-if="item.length==1">
+								<image src="../../static/img/bg/activity.png" v-for='(itemChild,indexChild) in item.length' :key='indexChild'
+								 mode="" ></image>
+							</view>
+							<view class="img-2" v-if="item.length==2">
+								<image src="../../static/img/bg/activity.png" v-for='(itemChild,indexChild) in item.length' :key='indexChild'
+								 mode=""  ></image>
+							</view>
+							<view class="img-3" v-if="item.length==3">
+								<image src="../../static/img/bg/activity.png" v-for='(itemChild,indexChild) in item.length' :key='indexChild'
+								 mode="" ></image>
+							</view>
+						</view>
+						<view>
+								<video class="img-1" :src="item.videoSrc" v-if="item.videoSrc" controls></video>
+							</view>
+					</view>
+				</view>
+				
+				
+				<view class="" v-if="active==2">
+					<view class="sp-item3"  v-for="(item,index) in dataList" :key='index'>
 						<view class="sp-item3-top">
 							<view>
 								<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
@@ -44,12 +84,9 @@
 						</view>
 					</view>
 				</view>
-			</scroll-view>
-			
-			
-			<scroll-view scroll-y="true" v-show="active==3">
-				<view class="box">
-					<view class="list" v-for="(item,index) in 10" :key='index'>
+				
+				<view class="box" v-if="active==3">
+					<view class="list" v-for="(item,index) in dataList" :key='index'>
 						<image src="../../static/img/bg/activity.png" mode=""></image>
 						<view class="word">
 							<view class="s3 ellipsis">婴儿洗头帽西羽毛防水塞都是</view>
@@ -57,53 +94,19 @@
 						</view>
 					</view>
 				</view>
+				
+				<uni-load-more :status="more"></uni-load-more>
 			</scroll-view>
+			
+			
 		</view>
 		
-		<scroll-view scroll-y="true" v-show="active==1" >
-			<view>
-				<view class="sp-item3 padding news"  v-for="(item,index) in msg" :key='index' @click="toDetail">
-					<view class="sp-item3-top " style="margin-top: 0;padding-top: 0;">
-						<view>
-							<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
-						</view>
-						<view class="sp-item3-top-middle">
-							<view class="cr">小象母婴馆</view>
-						</view>
-					</view>
-					<view class="sp-item3-middle">
-						<view class="title">【你为什么总是实现不了自己的目标】</view>
-						<view class="synopsis">
-							<text>
-						    爱神的箭ADSL就多空拉三等奖阿斯利康的接口拉时间段克拉斯就多空拉三等奖阿斯利康的接口拉时间段克拉斯就多空拉三等奖阿斯利康的接口拉时间段克拉斯就多空拉三等奖阿斯利康的接口拉时间段克拉斯</text>
-							<text class="all">全文</text>
-						</view>
-					</view>
-					<view class="media-place">
-						<view class="img-1" v-if="item.length==1">
-							<image src="../../static/img/bg/activity.png" v-for='(itemChild,indexChild) in item.length' :key='indexChild'
-							 mode="" ></image>
-						</view>
-						<view class="img-2" v-if="item.length==2">
-							<image src="../../static/img/bg/activity.png" v-for='(itemChild,indexChild) in item.length' :key='indexChild'
-							 mode=""  ></image>
-						</view>
-						<view class="img-3" v-if="item.length==3">
-							<image src="../../static/img/bg/activity.png" v-for='(itemChild,indexChild) in item.length' :key='indexChild'
-							 mode="" ></image>
-						</view>
-					</view>
-					<view>
-							<video class="img-1" :src="item.videoSrc" v-if="item.videoSrc" controls></video>
-						</view>
-				</view>
-			</view>
-		</scroll-view>
 	</view>
 </template>
 
 <script>
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default{
 		data(){
 			return{
@@ -118,21 +121,81 @@
 					{length:2,
 					videoSrc:'',
 					}
-				]
+				],
+				sh:'',
+				dataList:[],
+				page:1,
+				pageSize:5,
+				total:0,
+				more:''
 			}
 		},
 		components:{
-			uniRate
+			uniRate,
+			uniLoadMore
 		},
+		computed: {
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		   },
+		   mounted(){
+		   	var that=this
+		   	this.getList(this.page)
+		   	setTimeout(function(){
+		   		that.$getHeight('#sv',(res) =>{
+		   			that.sh=res
+		   		})
+		   	},0)
+		   },
 		methods:{
-			toggle(t){
-				this.active=t
-			},
 			toDetail(){
 				uni.navigateTo({
 					url:'/pages/index/articleDetail'
 				})
-			}
+			},
+			toggle(t){
+				this.active=t
+				this.reset()
+				this.getList(this.page)
+			},
+			reset(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+			},
+			getList(p){
+				var that=this
+				var params={
+				  page:p,
+				  pagesize: this.pageSize
+				}
+				if(this.page==1){
+					this.$loading()
+				}
+				  var url='/wangtosale_list'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.total=res.allnum
+					  that.dataList=that.dataList.concat(res.data)
+					  that.more=''
+					  if(that.page==1){
+					  	uni.hideLoading()
+					  }
+				  })
+			},
+			toBottom(){
+				if(this.noMore){
+					this.more='noMore'
+					return;
+				}
+				var that=this
+				this.more='loading'
+			  // setTimeout(function(){
+				  that.page++
+				  that.getList(that.page)
+			  // },2000)
+			},
 		}
 	}
 </script>

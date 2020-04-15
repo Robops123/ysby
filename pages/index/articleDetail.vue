@@ -8,7 +8,7 @@
 						<view class="luntan-card-top-txt-title">中企商会网</view>
 						<view class="luntan-card-top-txt-time">2020-02-10 12:30</view>
 					</view>
-					<image class="luntan-card-top-btn" src="../../static/img/bg/activity.png" mode=""></image>
+					<view class="enter-button" >进店</view>
 				</view>
 				<view class="luntan-card-title">中期商会与你携手前行</view>
 				<view class="luntan-card-lianjie">#坚守共赢胜利#</view>
@@ -36,46 +36,29 @@
 					</view>
 					
 					<view class="comment">
-						<view class="comment-item">
-							<image class="" src="" mode=""></image>
-							<view class="word">
-								<view class="f1">中企商会网</view>
-								<view class="">向芬兰人的派对方式</view>
-								<view class="f2">
-									<text class="date">2-13 14:52</text>
-									<view class="fr">
-										<view class="luntan-card-bot-card">
-											<image src="../../static/img/bg/activity.png" mode=""></image>
-											<text>5390</text>
-										</view>
-										<view class="luntan-card-bot-card">
-											<image src="../../static/img/bg/activity.png" mode=""></image>
-											<text>5390</text>
-										</view>
-									</view>
-								</view>
-							</view>
-						</view>
-						<view class="comment-item">
-							<image class="" src="" mode=""></image>
-							<view class="word">
-								<view class="f1">中企商会网</view>
-								<view class="">向芬兰人的派对方式</view>
-								<view class="f2">
-									<text class="date">2-13 14:52</text>
-									<view class="fr">
-										<view class="luntan-card-bot-card">
-											<image src="../../static/img/bg/activity.png" mode=""></image>
-											<text>5390</text>
-										</view>
-										<view class="luntan-card-bot-card">
-											<image src="../../static/img/bg/activity.png" mode=""></image>
-											<text>5390</text>
+						<scroll-view scroll-y="true" id="sv" style="max-height: 500px;"  @scrolltolower='toBottom'>
+							<view class="comment-item" v-for='(item,index) in dataList' :key='index'>
+								<image class="" src="../../static/img/bg/activity.png" mode=""></image>
+								<view class="word">
+									<view class="s2 cg">中企商会网</view>
+									<view class="">向芬兰人的派对方式</view>
+									<view class="f2">
+										<text class="date">2-13 14:52</text>
+										<view class="fr">
+											<view class="luntan-card-bot-card">
+												<image src="../../static/img/bg/activity.png" mode=""></image>
+												<text>5390</text>
+											</view>
+											<view class="luntan-card-bot-card">
+												<image src="../../static/img/bg/activity.png" mode=""></image>
+												<text>5390</text>
+											</view>
 										</view>
 									</view>
 								</view>
 							</view>
-						</view>
+							<uni-load-more :status="more"></uni-load-more>
+						</scroll-view>
 					</view>
 					
 				</view>
@@ -101,6 +84,95 @@
 </template>
 
 <script>
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
+	export default{
+		components:{
+			uniLoadMore
+		},
+		data(){
+			return{
+				active:1,
+				tabActive:0,
+				sh:'',
+				dataList:[],
+				page:1,
+				pageSize:20,
+				total:0,
+				more:''
+			}
+		},
+		computed: {
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		   },
+		   mounted(){
+		   	var that=this
+		   	this.getList(this.page)
+		   	setTimeout(function(){
+		   		that.$getHeight('#sv',(res) =>{
+		   			that.sh=res
+		   		})
+		   	},0)
+		   },
+		methods:{
+			toggleTab(t){
+				this.tabActive=t
+			},
+			to(w){
+				uni.navigateTo({
+					url:'./goodsList'
+				})
+			},
+			back(){
+				uni.navigateBack({
+					delta:1
+				})
+			},
+			toggle(t){
+				this.active=t
+				this.reset()
+				this.getList(this.page)
+			},
+			reset(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+			},
+			getList(p){
+				var that=this
+				var params={
+				  page:p,
+				  pagesize: this.pageSize
+				}
+				if(this.page==1){
+					this.$loading()
+				}
+				  var url='/wangtosale_list'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.total=res.allnum
+					  that.dataList=that.dataList.concat(res.data)
+					  that.more=''
+					  if(that.page==1){
+					  	uni.hideLoading()
+					  }
+				  })
+			},
+			toBottom(){
+				if(this.noMore){
+					this.more='noMore'
+					return;
+				}
+				var that=this
+				this.more='loading'
+			  // setTimeout(function(){
+				  that.page++
+				  that.getList(that.page)
+			  // },2000)
+			},
+		}
+	}
 </script>
 
 <style>
@@ -330,5 +402,14 @@
 	}
 	.fr{
 		float: right;
+	}
+	
+	.enter-button{
+		color: #ff8f94;
+		border: 2px solid #ff8f94;
+		padding: 10upx 15upx;
+		border-radius: 52upx;
+		float: right;
+		margin-top: 19upx;
 	}
 </style>

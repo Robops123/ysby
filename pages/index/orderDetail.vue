@@ -4,7 +4,7 @@
 			<view>
 				<view class="process">卖家已发货</view>
 			</view>
-			<image src="../../static/img/bg/activity.png" mode=""></image>
+			<image src="../../static/img/pic/shape2.png" mode=""></image>
 		</view>
 		<view class="about padding margin bgwhite">
 			<view class="icon-fire iconfont"></view>

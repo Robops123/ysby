@@ -1,0 +1,58 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "595535",
+      "name": "arrow up",
+      "font_class": "arrowup",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "602165",
+      "name": "arrow down",
+      "font_class": "arrowdown-copy",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "722171",
+      "name": "arrow-left",
+      "font_class": "previewleft",
+      "unicode": "e75b",
+      "unicode_decimal": 59227
+    },
+    {
+      "icon_id": "1026702",
+      "name": "address",
+      "font_class": "address",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "1487500",
+      "name": "zan",
+      "font_class": "zan",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "10147096",
+      "name": "arrow-right",
+      "font_class": "arrow-right",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "13882853",
+      "name": "laba",
+      "font_class": "tubiao-",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    }
+  ]
+}

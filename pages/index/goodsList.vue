@@ -5,17 +5,17 @@
 			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>最新</text></view>
 			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)">
 				<text style="display: inline-block;vertical-align: middle;margin-right: 20upx;">价格</text>
-				<view style="display: inline-block;vertical-align: middle;">
-					<view class="iconfont icon-fire s2"></view>
-					<view class="iconfont icon-fire s2"></view>
+				<view style="display: inline-block;vertical-align: middle;" class="range">
+				<text class="icon-arrowup iconfont" :class="{active:rangeActive==1}"></text>
+				<text class="icon-arrowdown-copy iconfont" :class="{active:rangeActive==2}" ></text>
 				</view>
 			</view>
 			<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)"><text>热卖</text></view>
 		</view>
 		
-		<scroll-view scroll-y="true" class="content">
+		<scroll-view scroll-y="true" class="content" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 			<view class="box">
-				<view class="list" v-for="(item,index) in 10" :key='index' @click="to('goodsDetail')">
+				<view class="list" v-for="(item,index) in dataList" :key='index' @click="to('goodsDetail')">
 					<image src="../../static/img/bg/activity.png" mode=""></image>
 					<view class="word">
 						<view class="s3 ellipsis">婴儿洗头帽西羽毛防水塞都是</view>
@@ -23,25 +23,104 @@
 					</view>
 				</view>
 			</view>
+			<uni-load-more :status="more"></uni-load-more>
 		</scroll-view>
 	</view>
 </template>
 
 <script>
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default{
+		components:{
+			uniLoadMore
+		},
 		data(){
 			return{
 				active:1,
+				rangeActive:'',
+				sh:'',
+				dataList:[],
+				page:1,
+				pageSize:5,
+				total:0,
+				more:''
 			}
 		},
+		computed: {
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		   },
+		mounted(){
+			var that=this
+			this.getList(this.page)
+			setTimeout(function(){
+				that.$getHeight('#sv',(res) =>{
+					that.sh=res
+				})
+			},0)
+		},
 		methods:{
-			toggle(t){
-				this.active=t
-			},
 			to(w){
 				uni.navigateTo({
 					url:`/pages/index/${w}`
 				})
+			},
+			toggle(t){
+				this.active=t
+				this.reset()
+				this.getList(this.page)
+			},
+			toggleRange(t){
+				console.log(t)
+				this.rangeActive=t
+			},
+			back(){
+				uni.navigateBack({
+					delta:1
+				})
+			},
+			reset(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+				if(this.active!=3){
+					this.rangeActive=''
+				}else{
+					this.rangeActive= this.rangeActive == 1 ? 2:1
+				}
+			},
+			getList(p){
+				var that=this
+				var params={
+				  page:p,
+				  pagesize: this.pageSize
+				}
+				if(this.page==1){
+					this.$loading()
+				}
+				  var url='/wangtosale_list'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.total=res.allnum
+					  that.dataList=that.dataList.concat(res.data)
+					  that.more=''
+					  if(that.page==1){
+					  	uni.hideLoading()
+					  }
+				  })
+			},
+			toBottom(){
+				if(this.noMore){
+					this.more='noMore'
+					return;
+				}
+				var that=this
+				this.more='loading'
+			  // setTimeout(function(){
+				  that.page++
+				  that.getList(that.page)
+			  // },2000)
 			},
 		}
 	}
@@ -59,11 +138,11 @@
 		width: 25%;
 		box-sizing: border-box;
 	}
-	.nav.active text{
+	.nav.active>text{
 		color: #000000;
 		position: relative;
 	}
-	.nav.active text::before{
+	.nav.active>text::before{
 		content: '';
 		position: absolute;
 		bottom: -10upx;
@@ -104,5 +183,19 @@
 	}
 	.list .word{
 		padding: 5upx 20upx  20upx ;
+	}
+	
+	.range{
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 15upx;
+	}
+	.range>.iconfont{
+		font-size: 24upx;
+		display: block;
+		transform: scale(2);
+	}
+	.range>text.active{
+		color: #000000;
 	}
 </style>

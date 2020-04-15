@@ -52,13 +52,13 @@
 			<view class="bottom-border">
 				<text class="label-80 cg">商品分类</text>
 				<view @click="chooseLocation">
-					<text class="icon-fire iconfont cg"></text>
 					<picker class="picker" @change="bindPickerChange" :value="cateCurrent" :range="array">
-					     <view class="uni-input">{{array[cateCurrent]}}</view>
+					     <view class="uni-input " style="display: inline-block;">{{array[cateCurrent]}}</view>
+						 <image src="../../../static/img/pic/more2.png" mode="" class="fr right-arrow"></image>
 					 </picker>
 					<!-- <text class="ellipsis cg" v-if="address==''">点击选择</text>
 					<text class=" ellipsis" v-else>{{address}}</text> -->
-					<text class="icon-fire iconfont cg fr"></text>
+					
 				</view>
 			</view>
 			<view class="bottom-border">
@@ -415,7 +415,7 @@
 			display: inline-block;
 		}
 		.picker{
-			width: 60%;
+			/* width: 60%; */
 		}
 		textarea{
 			display: inline-block;

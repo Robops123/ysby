@@ -13,10 +13,10 @@
 			<view class="bottom-border">
 				<text class="label-80 cg">店铺地址</text>
 				<text @click="chooseLocation">
-					<text class="icon-fire iconfont cg"></text>
+					<image src="../../../static/img/pic/address2.png" mode="" class="pre-img"></image>
 					<text class="ellipsis cg" v-if="address==''">点击选择</text>
 					<text class=" ellipsis" v-else>{{address}}</text>
-					<text class="icon-fire iconfont cg fr"></text>
+					<image src="../../../static/img/pic/more2.png" mode="" class="fr right-arrow"></image>
 				</text>
 			</view>
 			<view class="bottom-border">

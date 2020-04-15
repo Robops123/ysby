@@ -11,6 +11,48 @@
 	uni-icon {
 		vertical-align: middle;
 	}
+	.right-arrow{
+		display: inline-block;
+		/* vertical-align: top; */
+		margin-left: 20upx;
+		width: 20upx !important;
+		height: 30upx !important;
+	}
+	.down-arrow{
+		display: inline-block;
+		/* vertical-align: top; */
+		margin-left: 20upx;
+		width: 30upx !important;
+		height: 20upx !important;
+	}
+	.search-img{
+		width: 40upx !important;
+		height: 40upx !important;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.dots-img{
+		width: 44upx !important;
+		height: 12upx !important;
+		display: inline-block !important;
+		vertical-align: middle !important;
+		
+	}
+	.pre-img{
+		width: 30upx !important;
+		height: 40upx !important;
+		display: inline-block;
+		vertical-align: bottom;
+		margin-right: 15upx;
+	}
+	.pre-img2{
+		width: 50upx !important;
+		height: 40upx !important;
+	}
+	.setting-img{
+		width: 40upx !important;
+		height: 40upx !important;
+	}
 
 
 	/* 字体大小 */

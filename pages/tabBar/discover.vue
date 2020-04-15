@@ -5,9 +5,42 @@
 			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>优质产品</text></view>
 		</view>
 		
-		<scroll-view scroll-y="true" v-show="active==2">
-			<view class="box">
-				<view class="list" v-for="(item,index) in 10" :key='index'>
+		<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom' >
+		<view class="" v-if="active==1">
+			<view class="sp-item3"  v-for="(item,index) in dataList" :key='index'>
+				<view class="sp-item3-top">
+					<view>
+						<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
+					</view>
+					<view class="sp-item3-top-middle">
+						<view>小象母婴馆</view>
+						<view>
+							<uni-rate disabled="true" size="12" value="3.5" style="float: left;margin-top: 24upx;"></uni-rate>
+							<text class="s3 cg">1429人关注 | <text class="s2">500m以内</text></text>
+						</view>
+					</view>
+					<view class="enter-button" @click="toShop">进店</view>
+				</view>
+				<view class="sp-item3-bottom">
+					<view class="">
+						<image src="../../static/img/bg/activity.png" mode=""></image>
+						<view class="price">$282</view>
+					</view>
+					<view class="">
+						<image src="../../static/img/bg/activity.png" mode=""></image>
+						<view class="price">$282</view>
+					</view>
+					<view class="">
+						<image src="../../static/img/bg/activity.png" mode=""></image>
+						<view class="price">$282</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		
+		
+			<view class="box" v-if="active==2">
+				<view class="list" v-for="(item,index) in dataList" :key='index'>
 					<image src="../../static/img/bg/activity.png" mode=""></image>
 					<view class="word">
 						<view class="s3 ellipsis">婴儿洗头帽西羽毛防水塞都是</view>
@@ -15,64 +48,92 @@
 					</view>
 				</view>
 			</view>
-		</scroll-view>
-		
-		<scroll-view scroll-y="true"  v-show="active==1">
-			<view class="">
-				<view class="sp-item3"  v-for="(item,index) in 3" :key='index'>
-					<view class="sp-item3-top">
-						<view>
-							<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
-						</view>
-						<view class="sp-item3-top-middle">
-							<view>小象母婴馆</view>
-							<view>
-								<uni-rate disabled="true" size="12" value="3.5" style="float: left;margin-top: 24upx;"></uni-rate>
-								<text class="s3 cg">1429人关注 | <text class="s2">500m以内</text></text>
-							</view>
-						</view>
-						<view class="enter-button" @click="toShop">进店</view>
-					</view>
-					<view class="sp-item3-bottom">
-						<view class="">
-							<image src="../../static/img/bg/activity.png" mode=""></image>
-							<view class="price">$282</view>
-						</view>
-						<view class="">
-							<image src="../../static/img/bg/activity.png" mode=""></image>
-							<view class="price">$282</view>
-						</view>
-						<view class="">
-							<image src="../../static/img/bg/activity.png" mode=""></image>
-							<view class="price">$282</view>
-						</view>
-					</view>
-				</view>
-			</view>
+			<uni-load-more :status="more"></uni-load-more>
 		</scroll-view>
 	</view>
 </template>
 
 <script>
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default{
 		data(){
 			return{
-				active:1
+				active:1,
+				sh:'',
+				dataList:[],
+				page:1,
+				pageSize:5,
+				total:0,
+				more:''
 			}
 		},
 		components:{
-			uniRate
+			uniRate,
+			uniLoadMore
 		},
+		computed: {
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		   },
+		   mounted(){
+		   	var that=this
+		   	this.getList(this.page)
+		   	setTimeout(function(){
+		   		that.$getHeight('#sv',(res) =>{
+		   			that.sh=res
+		   		})
+		   	},0)
+		   },
 		methods:{
-			toggle(t){
-				this.active=t
-			},
 			toShop(){
 				uni.navigateTo({
 					url:`/pages/bussiness/shopPreview`
 				})
-			}
+			},
+			toggle(t){
+				this.active=t
+				this.reset()
+				this.getList(this.page)
+			},
+			reset(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+			},
+			getList(p){
+				var that=this
+				var params={
+				  page:p,
+				  pagesize: this.pageSize
+				}
+				if(this.page==1){
+					this.$loading()
+				}
+				  var url='/wangtosale_list'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.total=res.allnum
+					  that.dataList=that.dataList.concat(res.data)
+					  that.more=''
+					  if(that.page==1){
+					  	uni.hideLoading()
+					  }
+				  })
+			},
+			toBottom(){
+				if(this.noMore){
+					this.more='noMore'
+					return;
+				}
+				var that=this
+				this.more='loading'
+			  // setTimeout(function(){
+				  that.page++
+				  that.getList(that.page)
+			  // },2000)
+			},
 		}
 	}
 </script>

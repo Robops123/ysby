@@ -4,12 +4,12 @@
 			<uni-status-bar />
 		<!-- #endif -->
 		<view class="top-nav padding">
-			<icon type="search" size="20" class="icon" @click="back"/>
+			<image src="../../static/img/pic/back.png" mode="" class="right-arrow" @click="back"></image>
 			<view class="search-line">
 				<input type="text" value="" placeholder="寻找附近的商家"/>
 			</view>
-			<view>
-				<icon type="info" size="20"/>
+			<view class="comment">
+				<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
 			</view>
 		</view>
 		
@@ -18,12 +18,18 @@
 			<view class="nav-bar">
 				<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>全部</text></view>
 				<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>销量</text></view>
-				<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>价格</text></view>
+				<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)">
+					<text>价格</text>
+					<view class="range s3">
+						<text class="icon-arrowup iconfont" :class="{active:rangeActive==1}"></text>
+						<text class="icon-arrowdown-copy iconfont" :class="{active:rangeActive==2}" ></text>
+					</view>
+					</view>
 				<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)"><text>店铺</text></view>
 			</view>
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 				<view class="padding">
-					<view class="list" v-for="(item,index) in 5" :key='index'>
+					<view class="list" v-for="(item,index) in dataList" :key='index'>
 						<image src="../../static/img/bg/activity.png" mode=""></image>
 							<view class="info">
 								<view class="s2 title">
@@ -32,44 +38,44 @@
 								</view>
 								<view class="bottom-content cr s5"><text class="s1">$</text>79.80</view>
 								<view class="buy">
-									<icon type="" class="icon-fire iconfont cr"></icon>
+									<image src="../../static/img/pic/cart.png" mode=""></image>
 								</view>
 							</view>
 					</view>
 				</view>
-				<p v-if="loading" class="hint">加载中...</p>
-				   <p v-if="noMore" class="hint">没有更多了</p>
+				<uni-load-more :status="more"></uni-load-more>
 			</scroll-view>
 		</view>
+		
 	</view>
 </template>
 
 <script>
 	import uniStatusBar from "@/components/uni-status-bar/uni-status-bar"
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default{
 		components:{
-			uniStatusBar
+			uniStatusBar,
+			uniLoadMore
 		},
 		data(){
 			return{
 				active:1,
+				rangeActive:'',
 				sh:'',
 				dataList:[],
 				page:1,
 				pageSize:5,
 				total:0,
-				 loading:false,
+				more:''
 			}
 		},
 		computed: {
 		     noMore () {
 		       return this.dataList.length >= this.total
 		     },
-		     disabled () {
-		       return this.loading || this.noMore
-		     }
 		   },
-		onLoad(){
+		mounted(){
 			var that=this
 			this.getList(this.page)
 			setTimeout(function(){
@@ -81,36 +87,60 @@
 		methods:{
 			toggle(t){
 				this.active=t
+				this.reset()
+				this.getList(this.page)
+			},
+			toggleRange(t){
+				console.log(t)
+				this.rangeActive=t
 			},
 			back(){
 				uni.navigateBack({
 					delta:1
 				})
 			},
+			reset(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+				if(this.active!=3){
+					this.rangeActive=''
+				}else{
+					this.rangeActive= this.rangeActive == 1 ? 2:1
+				}
+			},
 			getList(p){
 				var that=this
-				this.loading=true
 				var params={
 				  page:p,
 				  pagesize: this.pageSize
+				}
+				if(this.page==1){
+					this.$loading()
 				}
 				  var url='/wangtosale_list'
 				  this.$apiPost(url,params).then((res) =>{
 					  that.total=res.allnum
 					  that.dataList=that.dataList.concat(res.data)
-					  that.loading=false
+					  that.more=''
+					  if(that.page==1){
+					  	uni.hideLoading()
+					  }
 				  })
 			},
-			load(){
-				if(this.disabled){
+			toBottom(){
+				if(this.noMore){
+					this.more='noMore'
 					return;
 				}
-			  this.page++
-			  this.getList(this.page)
+				var that=this
+				this.more='loading'
+			  // setTimeout(function(){
+				  that.page++
+				  that.getList(that.page)
+			  // },2000)
 			},
-			toBottom(){
-				console.log('bottom')
-			}
 		}
 	}
 </script>
@@ -161,11 +191,11 @@
 		width: 25%;
 		box-sizing: border-box;
 	}
-	.nav.active text{
+	.nav.active>text{
 		color: #000000;
 		position: relative;
 	}
-	.nav.active text::before{
+	.nav.active>text::before{
 		content: '';
 		position: absolute;
 		bottom: -10upx;
@@ -175,7 +205,19 @@
 		left: 50%;
 		margin-left: -25upx;
 	}
-	
+	.range{
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 15upx;
+	}
+	.range>.iconfont{
+		font-size: 24upx;
+		display: block;
+		transform: scale(2);
+	}
+	.range>text.active{
+		color: #000000;
+	}
 	
 	
 	
@@ -213,6 +255,28 @@
 	.buy icon{
 		border: 1px solid #ff6d7e;
 		border-radius: 50%;
+		padding: 10upx;
+	}
+	
+	.hint{
+		margin: 20upx 0;
+		font-size: 28upx;
+		text-align: center;
+	}
+	
+	.comment image{
+		width: 45upx;
+		height: 40upx;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.range image{
+		width: 15upx;
+		height: 10upx;
+	}
+	.buy image{
+		width: 60upx;
+		height: 60upx;
 		padding: 10upx;
 	}
 </style>

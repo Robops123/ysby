@@ -7,34 +7,62 @@
 		</view>
 		
 		<view class="distributionOrder" >
-			<view class="distributionOrder-card"  v-for='(item,index) in 3' :key='index'>
-				<image class="distributionOrder-card-img" src="" mode=""></image>
-				<view class="distributionOrder-card-title">
-					<view>中达花无缺</view>
-					<view class="s3 cg">注册时间:2020-03-25</view>
+			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
+				<view class="distributionOrder-card"  v-for='(item,index) in dataList' :key='index'>
+					<image class="distributionOrder-card-img" src="" mode=""></image>
+					<view class="distributionOrder-card-title">
+						<view>中达花无缺</view>
+						<view class="s3 cg">注册时间:2020-03-25</view>
+					</view>
+					<view class="distributionOrder-card-zhuangtai ">推广2人</view>
+					<view style="clear: both;"></view>
+					<!-- <view class="distributionOrder-card-code">订单编号:DFGHH5588644592148956</view>
+					<view class="distributionOrder-card-code distributionOrder-card-codes">下单时间：2020-02-11 12:12</view> -->
+					<view class="distributionOrder-card-bot">
+							<text class="distributionOrder-card-bot-tishi">消费0.00元</text>
+							<text class="fr">
+								<text class="distributionOrder-card-bot-tishi margin-left">0个订单</text>
+							</text>
+					</view>
 				</view>
-				<view class="distributionOrder-card-zhuangtai ">推广2人</view>
-				<view style="clear: both;"></view>
-				<!-- <view class="distributionOrder-card-code">订单编号:DFGHH5588644592148956</view>
-				<view class="distributionOrder-card-code distributionOrder-card-codes">下单时间：2020-02-11 12:12</view> -->
-				<view class="distributionOrder-card-bot">
-						<text class="distributionOrder-card-bot-tishi">消费0.00元</text>
-						<text class="fr">
-							<text class="distributionOrder-card-bot-tishi margin-left">0个订单</text>
-						</text>
-				</view>
-			</view>
+				<uni-load-more :status="more"></uni-load-more>
+			</scroll-view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default {
+		components:{
+			uniLoadMore
+		},
 		data() {
 			return {
-				active:1
+				active:1,
+				tabActive:0,
+				sh:'',
+				dataList:[],
+				page:1,
+				pageSize:20,
+				total:0,
+				more:''
 			}
 		},
+		computed: {
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		   },
+		   mounted(){
+		   	var that=this
+		   	this.getList(this.page)
+		   	setTimeout(function(){
+		   		that.$getHeight('#sv',(res) =>{
+		   			that.sh=res
+		   		})
+		   	},0)
+		   },
 		methods: {
 			distributionOrderdetail(){
 				uni.navigateTo({
@@ -43,6 +71,45 @@
 			},
 			toggle(t){
 				this.active=t
+				this.reset()
+				this.getList(this.page)
+			},
+			reset(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+			},
+			getList(p){
+				var that=this
+				var params={
+				  page:p,
+				  pagesize: this.pageSize
+				}
+				if(this.page==1){
+					this.$loading()
+				}
+				  var url='/wangtosale_list'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.total=res.allnum
+					  that.dataList=that.dataList.concat(res.data)
+					  that.more=''
+					  if(that.page==1){
+					  	uni.hideLoading()
+					  }
+				  })
+			},
+			toBottom(){
+				if(this.noMore){
+					this.more='noMore'
+					return;
+				}
+				var that=this
+				this.more='loading'
+			  // setTimeout(function(){
+				  that.page++
+				  that.getList(that.page)
+			  // },2000)
 			},
 		}
 	}

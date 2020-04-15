@@ -14,31 +14,34 @@
 				<icon type="search" class="fr" size="20"/>
 			</view> -->
 			<view>
-				<icon type="search" size="20" style="float: right;"/>
+				<icon type="search" size="20" style="float: left;"/>
 				<input type="text" value="" placeholder="输入关键字"/>
 			</view>
 		</view>
 		
-		<view class="item" v-for="(item,index) in 3" :key='index'>
-			<view class=" padding" @click="toEdit">
-				<view class="md-line bottom-border">
-					<view>
-						<image src="../../../static/img/pic/logo.png" mode=""></image>
-					</view>
-					<view class="md-line-word">
-						<view class="s1">
-							<text class="limit-text">儿童木马瑶瑶马宝宝大叔大婶阿萨大师</text>
-						</view>
-						<view class=" cr s1">$79.80</view>
-						<view class="s2 cg bottom">
-							<text class="">库存:1000</text>
-							<text class="">销量:80</text>
+		<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
+			<view class="item" v-for="(item,index) in dataList" :key='index'>
+				<view class=" padding" @click="toEdit">
+					<view class="md-line bottom-border">
+						<view>
 							<image src="../../../static/img/pic/logo.png" mode=""></image>
+						</view>
+						<view class="md-line-word">
+							<view class="s1">
+								<text class="limit-text">儿童木马瑶瑶马宝宝大叔大婶阿萨大师</text>
+							</view>
+							<view class=" cr s1">$79.80</view>
+							<view class="s2 cg bottom">
+								<text class="">库存:1000</text>
+								<text class="">销量:80</text>
+								<image src="../../../static/img/pic/dots.png" mode="" class="dots-img"></image>
+							</view>
 						</view>
 					</view>
 				</view>
 			</view>
-		</view>
+			<uni-load-more :status="more"></uni-load-more>
+		</scroll-view>
 		
 		<pop ref='order' :dataList='orderList'></pop>
 	</view>
@@ -46,23 +49,41 @@
 
 <script>
 	import pop from '@/components/promptOptions/pop.vue'
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default{
+		components:{
+			pop,
+			uniLoadMore
+		},
 		data(){
 			return{
 				active:1,
 				orderList:[
 					{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'}
-				]
+				],
+				sh:'',
+				dataList:[],
+				page:1,
+				pageSize:20,
+				total:0,
+				more:''
 			}
 		},
-		components:{
-			pop,
-			
-		},
+		computed: {
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		   },
+		   mounted(){
+		   	var that=this
+		   	this.getList(this.page)
+		   	setTimeout(function(){
+		   		that.$getHeight('#sv',(res) =>{
+		   			that.sh=res
+		   		})
+		   	},0)
+		   },
 		methods:{
-			toggle(t){
-				this.active=t
-			},
 			choosed(m){
 									 uni.$off('popChoosed')
 			},
@@ -77,7 +98,49 @@
 				uni.navigateTo({
 					url:'./editGoods'
 				})
-			}
+			},
+			toggle(t){
+				this.active=t
+				this.reset()
+				this.getList(this.page)
+			},
+			reset(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+			},
+			getList(p){
+				var that=this
+				var params={
+				  page:p,
+				  pagesize: this.pageSize
+				}
+				if(this.page==1){
+					this.$loading()
+				}
+				  var url='/wangtosale_list'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.total=res.allnum
+					  that.dataList=that.dataList.concat(res.data)
+					  that.more=''
+					  if(that.page==1){
+					  	uni.hideLoading()
+					  }
+				  })
+			},
+			toBottom(){
+				if(this.noMore){
+					this.more='noMore'
+					return;
+				}
+				var that=this
+				this.more='loading'
+			  // setTimeout(function(){
+				  that.page++
+				  that.getList(that.page)
+			  // },2000)
+			},
 		}
 	}
 </script>
@@ -157,7 +220,7 @@
 		vertical-align: top;
 	}
 	.md-line-word{
-		width: 560upx;
+		width: 520upx;
 	}
 	.limit-text{
 		display: inline-block;
@@ -167,8 +230,8 @@
 		white-space: nowrap;
 	}
 	.md-line image{
-		height: 90upx;
-		width: 90upx;
+		height: 120upx;
+		width: 120upx;
 		margin-right: 20upx;
 	}
 	.status-line{
@@ -201,6 +264,7 @@
 	.bottom{
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 	.bottom image{
 		width: 30upx;

@@ -4,13 +4,14 @@
 			<uni-status-bar />
 		<!-- #endif -->
 		<view class="nav padding">
+			<text class="iconfont icon-address cr" ></text>
 			<view>无锡</view>
 			<view class="search-line">
 				<icon type="search" size="20" class="icon" @click="search"/>
 				<input type="text" value="" placeholder="寻找附近的商家"/>
 			</view>
-			<view>
-				<icon type="info" size="20"/>
+			<view class="comment">
+				<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
 			</view>
 		</view>
 		
@@ -20,15 +21,15 @@
 			
 			<view class="announcement">
 				<text class="s1 cr title">公告</text>
-				<view class="s2 cg content ellipsis"><icon type="info" size="12"/>中企商会酒店APP将于今年4月全新asdasd上线，敬请期待！</view>
+				<view class="s2 cg content ellipsis"><icon type="" class="iconfont icon-tubiao-" size="12"/>中企商会酒店APP将于今年4月全新asdasd上线，敬请期待！</view>
 			</view>
 			
 			
 			<!-- 类型 -->
 			<view class="list ">
-				<view class="list-item" v-for="(item,index) in 10" :key='index' @click="toCategory">
-					<image src="../../static/img/pic/logo.png" mode=""></image>
-					<view class="item-name cg s3">睡眠用品</view>
+				<view class="list-item" v-for="(item,index) in productList" :key='index' @click="toCategory">
+					<image :src="`${item.imgUrl}`" mode=""></image>
+					<view class="item-name cg s3">{{item.name}}</view>
 				</view>
 			</view>
 			
@@ -37,7 +38,7 @@
 			<view class="card card1">
 				<view>
 					<text>每日特价</text>
-					<view class="fr s3 more">超低价好货<icon class="icon" type="info" size='14'/></view>
+					<view class="fr s3 more">超低价好货<icon class="iconfont icon-arrow-right" type="" size='14'/></view>
 				</view>
 				<view class="sp">
 					<view class="sp-item" v-for="(item,index) in 3" :key='index'>
@@ -53,7 +54,7 @@
 		<image src="../../static/img/bg/activity.png" mode="" class="banner banner3"></image>
 		
 		<view class="hot padding">
-			<view class="hot-title"><icon type="" class="iconfont icon-fire"></icon>热卖商品</view>
+			<view class="hot-title"><image src="../../static/img/pic/index/hot.png" mode=""></image>热卖商品</view>
 			<view class=" sp2">
 				<view class="sp-item2 " v-for="(item,index) in 6" :key='index'>
 					<image src="../../static/img/bg/activity.png" mode=""></image>
@@ -68,7 +69,7 @@
 		<view class="padding">
 			<view class="card card2">
 				<text>附近商家</text>
-				<view class="fr s3 more">聚集知名店铺<icon class="icon" type="info" size='14'/></view>
+				<view class="fr s3 more">聚集知名店铺<icon class="iconfont icon-arrow-right" type="" size='14'/></view>
 			</view>
 			
 			
@@ -118,11 +119,21 @@
 		},
 		data(){
 			return{
-				
+				productList:[
+					{name:'睡眠用品',type:1,imgUrl:'../../static/img/pic/index/icon6.png'},
+					{name:'出行用品',type:2,imgUrl:'../../static/img/pic/index/icon2.png'},
+					{name:'浴室用品',type:3,imgUrl:'../../static/img/pic/index/icon8.png'},
+					{name:'幼教玩具',type:4,imgUrl:'../../static/img/pic/index/icon7.png'},
+					{name:'哺乳用品',type:5,imgUrl:'../../static/img/pic/index/icon1.png'},
+					{name:'护理用品',type:6,imgUrl:'../../static/img/pic/index/icon5.png'},
+					{name:'服饰鞋帽',type:7,imgUrl:'../../static/img/pic/index/icon3.png'},
+					{name:'孕产用品',type:8,imgUrl:'../../static/img/pic/index/icon9.png'},
+					{name:'更多分类',type:9,imgUrl:'../../static/img/pic/index/icon4.png'},
+					{name:'在线客服',type:10,imgUrl:'../../static/img/pic/index/icon10.png'}
+				]
 			}
 		},
 		mounted(){
-			this.getDeviceHeight()
 		},
 		methods:{
 			search(){
@@ -195,7 +206,7 @@
 	}
 	.content icon{
 		margin-right: 5upx;
-		vertical-align: super;
+		color: #ffba2d;
 	}
 	.content{
 		display: inline-block;
@@ -228,11 +239,12 @@
 	.card1{
 		background-color: #fff7f5;
 	}
-	.card .more .icon{
+	.card .more .iconfont{
 		margin-left: 10upx;
 		font-size: 28upx;
 		border-radius: 50%;
-		color: white;
+		color: #ffb6b9;
+		/* background-color: #; */
 		vertical-align: bottom;
 	}
 	
@@ -274,7 +286,9 @@
 		background-color: #aeaeae;
 		margin-left: 30upx;
 	}
-	.hot icon{
+	.hot-title image{
+		width: 30upx;
+		height: 30upx;
 		margin-right: 18upx;
 	}
 	
@@ -373,5 +387,12 @@
 			padding: 5upx 8upx;
 			background-color: #999;
 			opacity: 0.8;
+		}
+		
+		.comment image{
+			width: 45upx;
+			height: 40upx;
+			display: inline-block;
+			vertical-align: middle;
 		}
 </style>

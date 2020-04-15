@@ -3,7 +3,7 @@
 		<view class="top">
 			<view>
 				<view class="setting" >
-					<text class="iconfont icon-fire" @click="toSetting"></text>
+					<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img" @click="toSetting"></image>
 				</view>
 				<image src="../../static/img/pic/logo.png" mode="" class="headface" @click="toRetail"></image>
 				<text class="s4"  @click="tologin">月亮都知道</text>
@@ -27,27 +27,29 @@
 				<view class="card">
 					<view class="s5">
 						<text>我的订单</text>
-						<view class="s3 cg fr" @click="to('myOrder')">查看全部<view type="" class="icon-fire iconfont" style="display: inline-block;"></view></view>
+						<view class="s3 cg fr" @click="to('myOrder')">查看全部
+						<image src="../../static/img/pic/more2.png" mode="" class=" right-arrow"></image>
+						</view>
 					</view>
 					<view class="dd">
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon2.png" mode=""></image>
 							<view>待付款</view>
 						</view>
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon4.png" mode=""></image>
 							<view>待发货</view>
 						</view>
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon6.png" mode=""></image>
 							<view>待收货</view>
 						</view>
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon5.png" mode=""></image>
 							<view>待评价</view>
 						</view>
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon10.png" mode=""></image>
 							<view>售后/退款</view>
 						</view>
 					</view>
@@ -60,35 +62,35 @@
 					</view>
 					<view class="dd2 ">
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon3.png" mode=""></image>
 							<view>代理中心</view>
 						</view>
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon11.png" mode=""></image>
 							<view>推广介绍</view>
 						</view>
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon12.png" mode=""></image>
 							<view>邀请人</view>
 						</view>
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon13.png" mode=""></image>
 							<view>邀请注册</view>
 						</view>
 						<view class="item-list" @click="to('addressList')">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon9.png" mode=""></image>
 							<view>收货地址</view>
 						</view>
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon1.png" mode=""></image>
 							<view>帮助中心</view>
 						</view>
 						<view class="item-list">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon8.png" mode=""></image>
 							<view>官方客服</view>
 						</view>
 						<view class="item-list" @click="to2()">
-							<image src="../../static/img/pic/logo.png" mode=""></image>
+							<image src="../../static/img/pic/mine/icon7.png" mode=""></image>
 							<view>我的店铺</view>
 						</view>
 					</view>
@@ -205,11 +207,14 @@
 			mar
 		} */
 		 .item-list image{
-			width: 80upx;
-			height: 80upx;
+			width: 70upx;
+			height: 60upx;
 			margin-bottom: 20upx;
 		}
-		
+		.dd2 .item-list image{
+			width: 50upx;
+			height: 50upx;
+		}
 		.setting{
 			text-align: right;
 			padding: 20upx 20upx 0 0;

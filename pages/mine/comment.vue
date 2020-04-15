@@ -32,7 +32,7 @@
 							</view>
 						</block>
 						<view class='add-view' v-if="imageList.length < imageLength" @tap="chooseImage">
-							<image src="../../static/img/bg/activity.png" mode=""></image>
+							<image src="../../static/img/pic/other/camera.png" mode=""></image>
 							<view class="s2 cg">添加图片</view>
 						</view>
 					</view>

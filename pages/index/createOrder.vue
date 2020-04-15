@@ -4,7 +4,7 @@
 			<text>收货地址</text>
 			<text class="cg fr">
 				北京市朝阳区10000号
-				<text class="icon-fire iconfont" style="margin-left: 30upx;"></text>
+					<image src="../../static/img/pic/more2.png" mode="" class="right-arrow"></image>
 			</text>
 		</view>
 		<view class="child-overall padding margin" v-for="(item,index) in 1" :key='index'>
@@ -17,7 +17,8 @@
 							童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿
 						</view>
 						<view class="s3 cg options">
-							海蓝色；24(155/60A)<icon type="" class="icon-fire iconfont"></icon>
+							海蓝色；24(155/60A)
+							<!-- <image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image> -->
 						</view>
 					</view>
 					<view class="s3" style="text-align: right;">

@@ -13,3 +13,18 @@ export const getHeight=function(selector,succb){
     			})
 }
 
+
+export const loading=function(msg){
+	uni.showLoading({
+		title:msg,
+	})
+}
+
+export const msg=function(msg,type){
+	uni.showToast({
+	    title: msg,
+		icon:type,
+	    duration: 2000
+	});
+}
+

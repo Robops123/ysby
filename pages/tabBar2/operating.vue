@@ -2,7 +2,7 @@
 	<view>
 		<view class="top">
 			<view class="set" @click="toSetting">
-				<icon type="" class="iconfont icon-fire"></icon>
+				<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img"></image>
 			</view>
 			<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
 			<text class="s4">月亮都知道</text>
@@ -24,23 +24,25 @@
 		
 		<view class="card">
 			<view class="s5">
-				<icon type="" class="icon-fire iconfont"></icon>
+				<image src="../../static/img/pic/other/icon1.png" mode="" style="width: 35upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" class=""></image>
 				<text>订单管理</text>
-				<view class="s3 cg fr" @click="toOrderList">全部<icon type="" class="icon-fire iconfont"></icon></view>
+				<view class="s3 cg fr" @click="toOrderList">全部
+				<image src="../../static/img/pic/more2.png" mode="" class="fr right-arrow"></image>
+				</view>
 			</view>
 			<view class="dd item-3" style="margin-top: 30upx;">
 				<view class="item-list">
-					<image src="../../static/img/pic/logo.png" mode=""></image>
+					<view class="img-box"><image src="../../static/img/pic/shop/icon3.png" mode="" style="width: 90upx;"></image></view>
 					<view>待发货</view>
 					<view class="cg s3"><text class="cr">2</text>单</view>
 				</view>
 				<view class="item-list">
-					<image src="../../static/img/pic/logo.png" mode=""></image>
+					<view class="img-box"><image src="../../static/img/pic/shop/icon2.png" mode=""></image></view>
 					<view>待付款</view>
 					<view class="cg s3"><text class="cr">2</text>笔</view>
 				</view>
 				<view class="item-list">
-					<image src="../../static/img/pic/logo.png" mode=""></image>
+					<view class="img-box"><image src="../../static/img/pic/shop/icon6.png" mode=""></image></view>
 					<view>维权订单</view>
 					<view class="cg s3"><text class="cr">2</text>笔</view>
 				</view>
@@ -50,23 +52,22 @@
 		
 		<view class="card" style="margin-top: 20upx;">
 			<view class="s5">
-				<icon type="" class="icon-fire iconfont"></icon>
+				<image src="../../static/img/pic/other/icon2.png" style="width: 40upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" mode="" class=""></image>
 				<text>商城管理</text>
-				<view class="s3 cg fr">全部<icon type="" class="icon-fire iconfont"></icon></view>
 			</view>
 			<view class="dd item-3" style="margin-top: 30upx;">
 				<view class="item-list" @click="toGoods">
-					<image src="../../static/img/pic/logo.png" mode=""></image>
+					<view class="img-box"><image src="../../static/img/pic/shop/icon5.png" mode="" style="width: 70upx;height: 70upx;"></image></view>
 					<view>商品管理</view>
 					<view class="cg s3"><text class="cr">2</text>个</view>
 				</view>
 				<view class="item-list">
-					<image src="../../static/img/pic/logo.png" mode=""></image>
+					<view class="img-box"><image src="../../static/img/pic/shop/icon4.png" mode="" style="width: 60upx;height: 50upx;"></image></view>
 					<view>会员管理</view>
 					<view class="cg s3"><text class="cr">222</text>个</view>
 				</view>
 				<view class="item-list">
-					<image src="../../static/img/pic/logo.png" mode=""></image>
+					<view class="img-box"><image src="../../static/img/pic/shop/icon1.png" mode="" style="width: 70upx;height: 60upx;"></image></view>
 					<view>财务管理</view>
 				</view>
 			</view>
@@ -170,13 +171,17 @@
 			margin-right: 0;
 		}
 		 .item-list image{
-			width: 80upx;
-			height: 80upx;
+			width: 70upx;
+			height: 70upx;
 			margin-bottom: 20upx;
 		}
 		.top .set{
 			text-align: right;
 			float: right;
-			margin-left: 10upx;
+			margin-right: 20upx;
+		}
+		.img-box{
+			height: 70upx;
+			margin-bottom: 20upx;
 		}
 </style>

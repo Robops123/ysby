@@ -8,50 +8,58 @@
 			<view class="nav nav-left" :class="{active:active==5}" @click="toggle(5)"><text>已完成</text></view>
 		</view>
 		<view class="padding" style="padding-bottom: 66px;">
-			<view class="card" v-for="(item,index) in 3" :key='index' @click="toDetail">
-				<view class="overall">
-						<view>
-							<icon type="" class="icon-fire iconfont"></icon>
-							<text class="overall-title">艺术班自营</text>
-							<icon type="" class="icon-fire iconfont arrow"></icon>
-						</view>
-						<text class="fr cr s2">待发货</text>
-				</view>
-				
-				<view class="child-overall" >
-					<view class="child-overall-item"> 
-						<image src="../../static/img/bg/activity.png" mode=""></image>
-						<view class="info">
-							<view class="s2 title">
-								儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿
-								童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿
+			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
+				<view class="card" v-for="(item,index) in dataList" :key='index' @click="toDetail">
+					<view class="overall">
+							<view>
+								<image src="../../static/img/pic/other/icon2.png" style="width: 40upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" mode="" class=""></image>
+								<text class="overall-title">艺术班自营</text>
+								<image src="../../static/img/pic/more2.png" mode="" class=" right-arrow"></image>
 							</view>
-							<view class="s3 cg options ellipsis">
-								海蓝色；24(155/60A)<icon type="" class="icon-fire iconfont"></icon>
+							<text class="fr cr s2">待发货</text>
+					</view>
+					
+					<view class="child-overall" >
+						<view class="child-overall-item"> 
+							<image src="../../static/img/bg/activity.png" mode=""></image>
+							<view class="info">
+								<view class="s2 title">
+									儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿
+									童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿
+								</view>
+								<view class="s3 cg options ellipsis">
+									海蓝色；24(155/60A)
+									<image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image>
+								</view>
+								<view class="bottom-content">
+									<text class="s3 fr">共1件商品 合计:<text class="s1">$98.</text>80</text>
+								</view>
 							</view>
-							<view class="bottom-content">
-								<text class="s3 fr">共1件商品 合计:<text class="s1">$98.</text>80</text>
+							<view class="mount">
+								<view class="s3 fr"><text class="s1">$98.</text>80</view>
+								<view class="s3 cg">*1</view>
 							</view>
-						</view>
-						<view class="mount">
-							<view class="s3 fr"><text class="s1">$98.</text>80</view>
-							<view class="s3 cg">*1</view>
 						</view>
 					</view>
+					
+					<view class="btn-box">
+						<button type="default" class="btn btn1">加入购物车</button>
+						<button type="default" class="btn btn2">确认收货</button>
+					</view>
 				</view>
-				
-				<view class="btn-box">
-					<button type="default" class="btn btn1">加入购物车</button>
-					<button type="default" class="btn btn2">确认收货</button>
-				</view>
-			</view>
+				<uni-load-more :status="more"></uni-load-more>
+			</scroll-view>
 		</view>
 		
 	</view>
 </template>
 
 <script>
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default{
+		components:{
+			uniLoadMore
+		},
 		data(){
 			return{
 				active:1,
@@ -59,18 +67,77 @@
 					{
 						
 					}
-				]
+				],
+				sh:'',
+				dataList:[],
+				page:1,
+				pageSize:20,
+				total:0,
+				more:''
 			}
 		},
+		computed: {
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		   },
+		   mounted(){
+		   	var that=this
+		   	this.getList(this.page)
+		   	setTimeout(function(){
+		   		that.$getHeight('#sv',(res) =>{
+		   			that.sh=res
+		   		})
+		   	},0)
+		   },
 		methods:{
-			toggle(t){
-				this.active=t
-			},
 			toDetail(){
 				uni.navigateTo({
 					url:'./myOrderDetail'
 				})
-			}
+			},
+			toggle(t){
+				this.active=t
+				this.reset()
+				this.getList(this.page)
+			},
+			reset(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+			},
+			getList(p){
+				var that=this
+				var params={
+				  page:p,
+				  pagesize: this.pageSize
+				}
+				if(this.page==1){
+					this.$loading()
+				}
+				  var url='/wangtosale_list'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.total=res.allnum
+					  that.dataList=that.dataList.concat(res.data)
+					  that.more=''
+					  if(that.page==1){
+					  	uni.hideLoading()
+					  }
+				  })
+			},
+			toBottom(){
+				if(this.noMore){
+					this.more='noMore'
+					return;
+				}
+				var that=this
+				this.more='loading'
+			  // setTimeout(function(){
+				  that.page++
+				  that.getList(that.page)
+			  // },2000)
+			},
 		}
 	}
 </script>
