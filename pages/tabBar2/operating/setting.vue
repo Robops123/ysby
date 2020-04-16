@@ -16,7 +16,7 @@
 					<image src="../../../static/img/pic/address2.png" mode="" class="pre-img"></image>
 					<text class="ellipsis cg" v-if="address==''">点击选择</text>
 					<text class=" ellipsis" v-else>{{address}}</text>
-					<image src="../../../static/img/pic/more2.png" mode="" class="fr right-arrow"></image>
+					<text class="icon-arrow-right iconfont fr"></text>
 				</text>
 			</view>
 			<view class="bottom-border">

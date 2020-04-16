@@ -1,0 +1,130 @@
+
+page{
+	background-color: #f7f7f7;
+}
+.top{
+	padding: 10rpx 0;
+	background-color:#fff;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: space-evenly;
+	-webkit-justify-content: space-evenly;
+	        justify-content: space-evenly;
+}
+.top-search{
+	padding: 10rpx;
+	box-sizing: border-box;
+	background-color: #f4f4f4;
+	border-radius: 50rpx;
+}
+.top-search .iconfont{
+	display: inline;
+	padding-right: 20rpx;
+	/* vertical-align: middle; */
+}
+.top-search input{
+	width: 60%;
+	display: inline-block;
+	 vertical-align: middle;
+}
+.sp-item3-top{
+	background-color:#fff;
+	padding: 20rpx 30rpx 0 0;
+	margin: 20rpx 0;
+}
+.sp-item3-top .headface{
+	width: 90rpx;
+	height: 90rpx;
+	border-radius: 50%;
+	margin: 0 15rpx;
+}
+.sp-item3-top-middle image{
+	width: 25rpx;
+	height: 25rpx;
+	vertical-align: middle;
+	margin-right: 5rpx;
+}
+.sp-item3-top-middle text text{
+	color: #a9a9a9;
+	margin-left: 10rpx;
+}
+.sp-item3-top>view{
+	display: inline-block;
+	vertical-align: middle;
+}
+.sp-item3-top-middle image{
+	width: 25rpx;
+	height: 25rpx;
+	vertical-align: middle;
+	margin-right: 5rpx;
+}
+.sp-item3-top-middle text text{
+	color: #a9a9a9;
+	margin-left: 10rpx;
+}
+.enter-button{
+	color: #ff8f94;
+	border: 2px solid #ff8f94;
+	padding: 10rpx 15rpx;
+	border-radius: 52rpx;
+	float: right;
+	margin-top: 19rpx;
+}
+.banner{
+	width: 100%;
+	height: 320rpx;
+}
+.nav-bar{
+	padding: 25rpx 0;
+	text-align: center;
+}
+.nav{
+	color: #afafaf;
+	display: inline-block;
+	width: 25%;
+	box-sizing: border-box;
+}
+.nav.active text{
+	color: #000000;
+	position: relative;
+}
+.nav.active text::before{
+	content: '';
+	position: absolute;
+	bottom: -10rpx;
+	width: 50rpx;
+	background-color: #ff7379;
+	height: 2px;
+	left: 50%;
+	margin-left: -25rpx;
+}
+.box{
+	margin-top: 20rpx;
+}
+.list:nth-of-type(odd){
+	margin-right: 2%;
+}
+.list{
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 10rpx;
+	overflow: hidden;
+	width: 49%;
+	background-color: #fff;
+	margin-bottom: 20rpx;
+}
+.list image{
+	width: 100%;
+	height: 380rpx;
+}
+.list .word .ellipsis{
+	margin-bottom: 15rpx;
+}
+.list .word{
+	padding: 5rpx 20rpx  20rpx;
+}
+

@@ -4,7 +4,7 @@
 			<text>收货地址</text>
 			<text class="cg fr">
 				北京市朝阳区10000号
-					<image src="../../static/img/pic/more2.png" mode="" class="right-arrow"></image>
+					<text class="icon-arrow-right iconfont"></text>
 			</text>
 		</view>
 		<view class="child-overall padding margin" v-for="(item,index) in 1" :key='index'>

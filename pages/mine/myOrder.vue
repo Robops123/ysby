@@ -14,7 +14,7 @@
 							<view>
 								<image src="../../static/img/pic/other/icon2.png" style="width: 40upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" mode="" class=""></image>
 								<text class="overall-title">艺术班自营</text>
-								<image src="../../static/img/pic/more2.png" mode="" class=" right-arrow"></image>
+								<text class="icon-arrow-right iconfont"></text>
 							</view>
 							<text class="fr cr s2">待发货</text>
 					</view>

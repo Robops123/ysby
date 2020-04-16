@@ -28,7 +28,7 @@
 					<view class="s5">
 						<text>我的订单</text>
 						<view class="s3 cg fr" @click="to('myOrder')">查看全部
-						<image src="../../static/img/pic/more2.png" mode="" class=" right-arrow"></image>
+						<text class="icon-arrow-right iconfont"></text>
 						</view>
 					</view>
 					<view class="dd">

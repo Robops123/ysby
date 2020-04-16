@@ -32,7 +32,7 @@
 								2020/03/30 12:30:40
 							</view>
 						</view>
-						<image src="../../static/img/pic/more2.png" mode="" class="fr right-arrow"></image>
+						<text class="icon-arrow-right iconfont fr"></text>
 					</view>
 					
 					<view class="md-line bottom-border">
@@ -110,13 +110,13 @@
 		     },
 		   },
 		   mounted(){
-		   	var that=this
-		   	this.getList(this.page)
-		   	setTimeout(function(){
-		   		that.$getHeight('#sv',(res) =>{
-		   			that.sh=res
-		   		})
-		   	},0)
+		   	// var that=this
+		   	// this.getList(this.page)
+		   	// setTimeout(function(){
+		   	// 	that.$getHeight('#sv',(res) =>{
+		   	// 		that.sh=res
+		   	// 	})
+		   	// },0)
 		   },
 		methods:{
 			choosed(m){

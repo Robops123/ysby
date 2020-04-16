@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "店铺",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "编辑",
+        "fontSize": "16px"
+      }
+    ]
+  },
+  "usingComponents": {
+    "uni-rate": "/components/uni-rate/uni-rate",
+    "uni-load-more": "/components/uni-load-more/uni-load-more"
+  }
+}

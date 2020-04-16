@@ -1,0 +1,165 @@
+
+.top-nav{
+	z-index: 999;
+	background-color: #fff;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20rpx 40rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+page{
+		background-color: #fff;
+}
+.main{
+		border-top: 20rpx solid #f3f3f3;
+		/* margin-top: 86upx; */
+}
+.recommendAward-set{
+	width: 750rpx;
+	height: 45rpx;
+	margin-top: 71rpx;
+}
+.recommendAward-set-back{
+	width: 21rpx;
+	height: 37rpx;
+	margin: 4rpx 0 0 24rpx;
+	float: left;
+}
+.recommendAward-set-title{
+	width: 120rpx;
+	height: 100%;
+	line-height: 45rpx;
+	font-family: PingFang-SC-Regular;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #000000;
+	float: left;
+	margin-left: 270rpx;
+}
+.recommendAward-set-right{
+	width: 112rpx;
+	height: 100%;
+	line-height: 45rpx;
+	font-family: PingFang-SC-Regular;
+	font-size: 28rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #919191;
+	float: left;
+	margin-left: 150rpx;
+}
+.recommendAward-card{
+	width: 706rpx;
+	height: 90rpx;
+	margin: 0 auto;
+	border-bottom: 2rpx solid #f0f0f0;
+}
+.recommendAward-card-img1{
+	width: 34rpx;
+	height: 34rpx;
+	float: left;
+	margin: 28rpx 12rpx 0 25rpx;
+}
+.recommendAward-card-img2{
+	width: 33rpx;
+	height: 33rpx;
+	float: left;
+	margin: 28rpx 12rpx 0 24rpx;
+}
+.recommendAward-card-img3{
+	width: 31rpx;
+	height: 30rpx;
+	float: left;
+	margin: 30rpx 13rpx 0 26rpx;
+}
+.recommendAward-card-left{
+	height: 100%;
+	line-height: 90rpx;
+	font-family: PingFang-SC-Regular;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #575757;
+	float: left;
+}
+.recommendAward-card-right{
+	height: 100%;
+	line-height: 90rpx;
+	font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #f82a2a;
+	float: right;
+}
+.recommendAward-card-rights{
+	color: #000000;
+}
+.recommendAward-info{
+	width: 706rpx;
+	height: 80rpx;
+	border-bottom: 2rpx solid #f0f0f0;
+	margin: 0 auto;
+}
+.recommendAward-info-txt{
+	height: 100%;
+	line-height: 70rpx;
+	font-family: PingFang-SC-Regular;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 1px;
+	color: #000000;
+	float: left;
+	margin-left: 4rpx;
+}
+.recommendAward-info-img{
+	width: 26rpx;
+	height: 15rpx;
+	float: right;
+	margin: 36rpx 5rpx 0 0;
+}
+.showinfo-card{
+	width: 706rpx;
+	font-family: PingFang-SC-Regular;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 1rpx;
+	color: #575757;
+	margin: 22rpx auto 0;
+}
+.showinfo-cards{
+	margin: 8rpx auto 0;
+}
+.showinfo-cards text{
+	color: #f82a2a;
+}
+.recommendAward-info-btn{
+	width: 80%;
+	margin: 0 auto;
+	height: 90rpx;
+	border-radius: 90rpx;
+	background-color: #ff6d7e;
+	line-height: 90rpx;
+	margin-top: 100rpx;
+	text-align: center;
+	font-family: PingFang-SC-Regular;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #ffffff;
+}
+

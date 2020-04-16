@@ -5,7 +5,7 @@
 			<view class="show-top">
 				<view class="name">萨克打卡塑料袋即可拉伸京东卡上课了接到了打蜡卡时间段吉安市</view>
 				<view class="share" @click="openShare">
-					<view class="icon-fire iconfont cr"></view>
+					<view class="icon-share iconfont cr"></view>
 					<view class="cr s2">分享</view>
 				</view>
 			</view>
@@ -16,13 +16,13 @@
 		<view class="padding s2 border-bottom" @click="chooseCategory">
 			<text class="cg" style="margin-right: 30upx;">选择</text>
 			<text>选择 颜色分类</text>
-			<text class="fr icon-fire iconfont cg"></text>
+			<text class="fr icon-arrow-right iconfont cg"></text>
 		</view>
 		
 		<view class="border-bottom s2">
 			<view class="padding ">
 				<text class="" style="margin-right: 30upx;">商品评价(797)</text>
-				<text class="fr cr">查看全部 <text class="icon-fire iconfont" style="margin-left: 30upx;"></text></text>
+				<text class="fr cr">查看全部 <text class="icon-arrow-right iconfont" style="margin-left: 30upx;"></text></text>
 			</view>
 			<view class="padding">
 				<view class="user">
@@ -128,13 +128,13 @@
 		data () {
 		      return {
 		        options: [{
-		          icon: 'icon-fire',
+		          icon: 'icon-kefu',
 		          text: '客服'
 		        }, {
-		          icon: 'icon-fire',
+		          icon: 'icon-iconfontshop-copy',
 		          text: '店铺'
 		        }, {
-		          icon: 'icon-fire',
+		          icon: 'icon-star',
 		          text: '收藏',
 		          info: 2
 		        }],

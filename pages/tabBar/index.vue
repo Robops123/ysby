@@ -1,27 +1,39 @@
 <template>
 	<view>
-		<!-- #ifdef APP-PLUS || H5 -->
-			<uni-status-bar />
-		<!-- #endif -->
 		<view class="nav padding">
-			<text class="iconfont icon-address cr" ></text>
-			<view>无锡</view>
-			<view class="search-line">
-				<icon type="search" size="20" class="icon" @click="search"/>
-				<input type="text" value="" placeholder="寻找附近的商家"/>
-			</view>
-			<view class="comment">
-				<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
+			<!-- #ifdef APP-PLUS || H5 -->
+				<uni-status-bar />
+			<!-- #endif -->
+			<view class="nav-content">
+				<text class="iconfont icon-address cr" ></text>
+				<view >无锡</view>
+				<view class="search-line">
+					<icon type="search" size="20" class="icon" @click="search"/>
+					<input type="text" value="" placeholder="寻找附近的商家"/>
+				</view>
+				<view class="comment">
+					<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
+				</view>
 			</view>
 		</view>
 		
 		<!-- 列表 -->
 		<view class="padding main">
-			<image src="../../static/img/bg/activity.png" mode="" class="banner"></image>
+			<swiper class="swiper" autoplay="false" duration="500" interval="3000" >
+			    <swiper-item v-for="(item, index) in carouselList" :key="index">
+			    	<image :src="item.thumb" mode="" class="banner"></image>
+			    </swiper-item>
+			   </swiper>
+			
 			
 			<view class="announcement">
 				<text class="s1 cr title">公告</text>
-				<view class="s2 cg content ellipsis"><icon type="" class="iconfont icon-tubiao-" size="12"/>中企商会酒店APP将于今年4月全新asdasd上线，敬请期待！</view>
+				  <swiper class="swiper content s2 cg ellipsis" vertical="true" autoplay="false" duration="500" interval="5000" >
+				    <swiper-item v-for="(item, index) in noticeList" :key="index">
+				     <view ><icon type="" class="iconfont icon-tubiao-1" size="12"/>{{item.title}}</view>
+				    </swiper-item>
+				   </swiper>
+				<!-- <view class="s2 cg content ellipsis">中企商会酒店APP将于今年4月全新asdasd上线，敬请期待！</view> -->
 			</view>
 			
 			
@@ -33,79 +45,86 @@
 				</view>
 			</view>
 			
-			<image src="../../static/img/bg/activity.png" mode="" class="banner banner2"></image>
+			<image :src="bannerList[0].thumb" v-if="bannerList[0]" mode="" class="banner banner2"></image>
 			
 			<view class="card card1">
 				<view>
-					<text>每日特价</text>
-					<view class="fr s3 more">超低价好货<icon class="iconfont icon-arrow-right" type="" size='14'/></view>
+					<text >每日特价</text>
+					<view class="fr s3 more">超低价好货<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
 				</view>
 				<view class="sp">
-					<view class="sp-item" v-for="(item,index) in 3" :key='index'>
-						<image src="../../static/img/bg/activity.png" mode=""></image>
-						<view class="s3 ellipsis">婴儿衣物洗衣液</view>
-						<view class="cr s3">$ 282.00</view>
-						<view class="cg s2 del">$ 320.00</view>
+					<view class="sp-item" v-for="(item,index) in bargainList" :key='index'>
+						<image :src="item.thumb" mode=""></image>
+						<view class="s3 ellipsis">{{item.title}}</view>
+						<view class="cr s3">￥{{item.marketprice}}</view>
+						<view class="cg s2 del">￥{{item.productprice}}</view>
 					</view>
 				</view>
 			</view>
 		</view>
 		
-		<image src="../../static/img/bg/activity.png" mode="" class="banner banner3"></image>
+		<image :src="bannerList[1].thumb" v-if="bannerList[1]" mode="" class="banner banner3"></image>
 		
 		<view class="hot padding">
 			<view class="hot-title"><image src="../../static/img/pic/index/hot.png" mode=""></image>热卖商品</view>
 			<view class=" sp2">
-				<view class="sp-item2 " v-for="(item,index) in 6" :key='index'>
-					<image src="../../static/img/bg/activity.png" mode=""></image>
-					<view class="s3 ellipsis">AARDMAN尿布包 烦那个谁多撒大声地</view>
-					<view class="cr s3">$282</view>
+				<view class="sp-item2 " v-for="(item,index) in hotList" :key='index'>
+					<image :src="item.thumb" mode=""></image>
+					<view class="s3 ellipsis">{{item.title}}</view>
+					<view class="cr s5 word-bottom">
+						<text>￥{{item.marketprice}}</text>
+						<view class="buy fr">
+							<image src="../../static/img/pic/cart.png" mode=""></image>
+						</view>
+					</view>
 				</view>
 			</view>
 		</view>
 		
-		<image src="../../static/img/bg/activity.png" mode="" class="banner banner2"></image>
+		<image :src="bannerList[2].thumb" v-if="bannerList[2]" mode="" class="banner banner2"></image>
 		
 		<view class="padding">
 			<view class="card card2">
 				<text>附近商家</text>
-				<view class="fr s3 more">聚集知名店铺<icon class="iconfont icon-arrow-right" type="" size='14'/></view>
+				<view class="fr s3 more">聚集知名店铺<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
 			</view>
 			
 			
 		</view>
 		<view class="">
-			<view class="sp-item3"  v-for="(item,index) in 3" :key='index'>
+			<view class="sp-item3"  v-for="(item,index) in businessList" :key='index'>
 				<view class="sp-item3-top">
 					<view>
-						<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
+						<image :src="item.logo" mode="" class="headface"></image>
 					</view>
 					<view class="sp-item3-top-middle">
-						<view>小象母婴馆</view>
+						<view>{{item.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" value="3.5" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">1429人关注 | <text class="s2">500m以内</text></text>
+							<text class="s3 cg">1429人关注 | 
+							<!-- <text class="s2">{{item.distance}}</text> -->
+							</text>
 						</view>
 					</view>
 					<view class="enter-button">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
-					<view class="">
+					<view class="" v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
+						<image :src="childItem.thumb" mode=""></image>
+						<view class="price">￥{{childItem.marketprice}}</view>
+					</view>
+					<!-- <view class="">
 						<image src="../../static/img/bg/activity.png" mode=""></image>
 						<view class="price">$282</view>
 					</view>
 					<view class="">
 						<image src="../../static/img/bg/activity.png" mode=""></image>
 						<view class="price">$282</view>
-					</view>
-					<view class="">
-						<image src="../../static/img/bg/activity.png" mode=""></image>
-						<view class="price">$282</view>
-					</view>
+					</view> -->
 				</view>
 			</view>
 		</view>
-		<uni-rate disabled="true" size="12" value="3.5" style="float: left;margin-top: 24upx;"></uni-rate>
+		<!-- <uni-rate disabled="true" size="12" value="3.5" style="float: left;margin-top: 24upx;"></uni-rate> -->
 	</view>
 </template>
 
@@ -130,10 +149,22 @@
 					{name:'孕产用品',type:8,imgUrl:'../../static/img/pic/index/icon9.png'},
 					{name:'更多分类',type:9,imgUrl:'../../static/img/pic/index/icon4.png'},
 					{name:'在线客服',type:10,imgUrl:'../../static/img/pic/index/icon10.png'}
-				]
+				],
+				hotList:[],
+				noticeList:[],
+				carouselList:[],
+				bargainList:[],
+				bannerList:[],
+				businessList:[]
 			}
 		},
 		mounted(){
+			this.getHotList()
+			this.getNotice()
+			this.getCarsouselList()
+			this.getBargain()
+			this.getBanner()
+			this.getNearbyBusiness()
 		},
 		methods:{
 			search(){
@@ -144,6 +175,79 @@
 			toCategory(){
 				uni.navigateTo({
 					url:`/pages/index/goodsCategory`
+				})
+			},
+			// 公告
+			getNotice(p){
+				var that=this
+				  var url='&r=api.home.notice'
+				  this.$apiPost(url).then((res) =>{
+					 that.noticeList=res.data
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
+			},
+			// 热卖商品
+			getHotList(p){
+				var that=this
+				  var url='&r=api.home.goods.hotsale'
+				  this.$apiPost(url).then((res) =>{
+					 that.hotList=res.data.category
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
+			},
+			// 轮播图
+			getCarsouselList(p){
+				var that=this
+				  var url='&r=api.home.banner'
+				  this.$apiPost(url).then((res) =>{
+					 that.carouselList=res.data
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
+			},
+			// 热卖
+			getBargain(){
+				var that=this
+				  var url='&r=api.home.goods.bargain'
+				  this.$apiPost(url).then((res) =>{
+					 that.bargainList=res.data
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
+			},
+			// 广告图
+			getBanner(){
+				var that=this
+				  var url='&r=api.home.adv'
+				  this.$apiPost(url).then((res) =>{
+					 that.bannerList=res.data
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
+			},
+			getNearbyBusiness(){
+				var that=this
+				uni.getLocation({
+					type: 'wgs84',
+					success:(res) =>{
+						var url='&r=api.home.merchant'
+						var params={
+							lng:res.longitude,
+							lat:res.latitude
+						}
+						this.$apiPost(url,params).then((res) =>{
+							console.log(res)
+							that.businessList=res.data
+						}).catch((err) =>{
+							this.$msg(err)
+						})
+					},
+					fail:(reason) =>{
+						console.log(reason)
+						// that.$msg(reason)
+					}
 				})
 			}
 		}
@@ -159,9 +263,13 @@
 		top: 0;
 		width: 100%;
 		box-sizing: border-box;
+		
+		
+	}
+	.nav .nav-content{
 		display: flex;
-		justify-content: space-around;
 		align-items: center;
+		justify-content: space-around;
 	}
 	.search-line{
 		/* height: 120upx; */
@@ -212,6 +320,7 @@
 		display: inline-block;
 		vertical-align: middle;
 		width: 80%;
+		height: 38upx;
 	}
 	
 	.list{
@@ -254,10 +363,14 @@
 		border-radius: 5upx;
 	}
 	.sp-item{
-		margin:8upx 40upx 20upx 0;
+		margin:8upx 2% 20upx 0;
 		display: inline-block;
 		vertical-align: top;
+		width: 31%;
 		/* pad */
+	}
+	.sp-item .ellipsis{
+		width: 200upx;
 	}
 	.sp-item:last-child{
 		margin-right: 0;
@@ -394,5 +507,15 @@
 			height: 40upx;
 			display: inline-block;
 			vertical-align: middle;
+		}
+		
+		.buy image{
+			width: 60upx;
+			height: 60upx;
+			padding: 10upx;
+		}
+		.word-bottom>view{
+			display: inline-block;
+			vertical-align:-webkit-baseline-middle;
 		}
 </style>

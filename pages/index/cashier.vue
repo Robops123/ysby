@@ -14,13 +14,20 @@
 		<view class="payway">
 			<radio-group @change="radioChange">
 			              <view class="padding">
-			              	<image src="../../static/img/bg/activity.png" mode=""></image>
+			              	<image src="../../static/img/pic/other/wxpay.png" mode=""></image>
 			              	<text>微信支付</text>
 			              	<radio value="1"  class="fr" style="transform:scale(0.7)"/>
 			              </view>
-						  <view class="padding">
-						  	<image src="../../static/img/bg/activity.png" mode=""></image>
-						  	<text>微信支付</text>
+						  <!-- #ifndef MP-WEIXIN -->
+							  <view class="padding">
+								<image src="../../static/img/pic/other/alipay.png" mode=""></image>
+								<text>支付宝</text>
+								<radio value="2"  class="fr" style="transform:scale(0.7)"/>
+							  </view>
+						  <!-- #endif -->
+						  <view class="padding" v-if="platform=='ios'">
+						  	<image src="../../static/img/pic/other/applepay.png" mode=""></image>
+						  	<text>苹果支付</text>
 						  	<radio value="2"  class="fr" style="transform:scale(0.7)"/>
 						  </view>
 			            </radio-group>
@@ -36,8 +43,11 @@
 	export default{
 		data(){
 			return {
-				
+				platform:''
 			}
+		},
+		mounted(){
+			this.platform=uni.getSystemInfoSync().platform
 		},
 		methods:{
 			to(w){
@@ -64,8 +74,8 @@
 		background-color: #fff;
 	}
 	.payway image{
-		width: 70upx;
-		height: 70upx;
+		width: 60upx;
+		height: 60upx;
 		margin-right: 30upx;
 	}
 	.payway image,

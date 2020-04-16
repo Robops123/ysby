@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的店铺",
+  "usingComponents": {
+    "financial": "/pages/tabBar2/financial",
+    "operating": "/pages/tabBar2/operating",
+    "vip": "/pages/tabBar2/vip",
+    "order": "/pages/tabBar2/order"
+  }
+}

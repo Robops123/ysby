@@ -3,11 +3,11 @@
 		<view class="option-box">
 			<view class="option-item" >
 				<text>手机号</text>
-				<text class="f1 fr"><text style="padding-right: 20upx;">188****6666</text>></text>
+				<text class="f1 fr"><text style="padding-right: 20upx;">188****6666</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 			<view class="option-item" >
 				<text>密码</text>
-				<text class="f1 fr"><text class="f2 cr"  style="padding-right: 20upx;" @click="toPassword">修改</text>></text>
+				<text class="f1 fr"><text class="f2 cr"  style="padding-right: 20upx;" @click="toPassword">修改</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 		</view>
 	</view>

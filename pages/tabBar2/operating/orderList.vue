@@ -32,7 +32,7 @@
 								2020/03/30 12:30:40
 							</view>
 						</view>
-						<image src="../../../static/img/pic/more2.png" mode="" class="right-arrow fr"></image>
+						<text class="icon-arrow-right iconfont fr"></text>
 					</view>
 					
 					<view class="md-line bottom-border">

@@ -1,2 +1,0 @@
-setCssToHead([".",[1],"content{ }\nwx-video{ width: 100%; height: 300px; }\n",],undefined,{path:"./pages/index/index.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/index/index.wxml') } }));

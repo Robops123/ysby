@@ -5,7 +5,7 @@
 				<text style="display: inline-block;margin-top: 20upx;">头像</text>
 				<view class="f1 fr">
 					<image  src="../../static/img/pic/logo.png" mode=""></image>
-					<text style="margin-left: 20upx;">></text>
+					<text style="margin-left: 20upx;"><text class="icon-arrow-right iconfont"></text></text>
 					</view>
 					<view class="" style="clear: both;">
 						
@@ -13,30 +13,30 @@
 			</view>
 			<view class="option-item" >
 				<text>昵称</text>
-				<text class="f1 fr"><text style="padding-right: 20upx;">中企商会网</text>></text>
+				<text class="f1 fr"><text style="padding-right: 20upx;">中企商会网</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 			<view class="option-item" >
 				<text>性别</text>
-				<text class="f1 fr" @click="openSex"><text class="f2 cr" style="padding-right: 20upx;">设置</text>></text>
+				<text class="f1 fr" @click="openSex"><text class="f2 cr" style="padding-right: 20upx;">设置</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 			<view class="option-item" >
 				<text>出生日期</text>
-				<text class="f1 fr">></text>
+				<text class="f1 fr"><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 		</view>
 		
 		<view class="option-box">
 			<view class="option-item" >
 				<text>常居地</text>
-				<text class="f1 fr"><text style="padding-right: 20upx;">无锡</text>></text>
+				<text class="f1 fr"><text style="padding-right: 20upx;">无锡</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 			<view class="option-item" >
 				<text>邮箱地址</text>
-				<text class="f1 fr" @click="openPicker"><text class="f2 cr"  style="padding-right: 20upx;">修改/添加</text>></text>
+				<text class="f1 fr" @click="openPicker"><text class="f2 cr"  style="padding-right: 20upx;">修改/添加</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 			<view class="option-item" >
 				<text>收货地址</text>
-				<text class="f1 fr" @click="openPicker"><text class="f2 cr" style="padding-right: 20upx;">修改/添加</text>></text>
+				<text class="f1 fr" @click="openPicker"><text class="f2 cr" style="padding-right: 20upx;">修改/添加</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 		</view>
 		

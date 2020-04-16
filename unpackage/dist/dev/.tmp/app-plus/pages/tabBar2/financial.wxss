@@ -1,0 +1,82 @@
+
+.qiun-charts {
+		width: 750rpx;
+		height: 500rpx;
+		background-color: #FFFFFF;
+}
+.charts {
+		width: 750rpx;
+		height: 500rpx;
+		background-color: #FFFFFF;
+}
+.activity{
+	padding: 30rpx 30rpx 30rpx 20rpx;
+	font-size: 30rpx;
+	background: white;
+	margin-top: 20rpx;
+	border-bottom: 20rpx solid #f3f3f3;
+}
+.item-2{
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+}
+.item-2>view{
+	margin: 10rpx 0;
+}
+.nav-bar{
+	text-align: center;
+	padding: 20rpx 0;
+	background-color: #fff;
+}
+.nav{
+	color: #afafaf;
+	display: inline-block;
+	width: 33%;
+	box-sizing: border-box;
+}
+.nav.active text{
+	color: #000000;
+	position: relative;
+}
+.nav.active text::before{
+	content: '';
+	position: absolute;
+	bottom: -10rpx;
+	width: 50rpx;
+	background-color: #ff7379;
+	height: 2px;
+	left: 50%;
+	margin-left: -25rpx;
+}
+.item-5{
+}
+.item-5>view{
+		width: 20%;
+		color: #a9a9a9;
+		padding: 25rpx 0;
+		text-align: center;
+		display: inline-block;
+		vertical-align: top;
+		box-sizing: border-box;
+		background-color: #fff;
+		border: 1px solid #eaeaea;
+}
+.item-5>view.active{
+		color: black;
+		border: none;
+}
+.conclude{
+		padding-left: 100rpx;
+		background-color: #fff;
+}
+.conclude text{
+		
+		display: list-item;
+		color: #156cc9;
+		vertical-align: middle;
+}
+	
+	
+

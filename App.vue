@@ -1,4 +1,5 @@
 <script>
+	
 	export default {
 		onLaunch: function() {
 			// console.log('App Launch')
@@ -9,11 +10,12 @@
 		onHide: function() {
 			// console.log('App Hide')
 		},
-		methods:{
-		}
 	}
 </script>
 
 <style>
+@import "./static/css/iconfont.css";
+	@import './static/css/common.css';
 
+	
 </style>

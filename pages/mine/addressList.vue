@@ -8,13 +8,13 @@
 				</view>
 				<view class="flex-between magin">
 					<text class="address">江苏省无锡市滨湖区爱丽丝德哈卡收到货拉可适当</text>
-					<view class="icon-fire iconfont " @click="toChange('edit')"></view>
+					<view class="icon-Write iconfont " @click="toChange('edit')"></view>
 				</view>
 			</view>
 		</view>
 		
 		<view style="text-align: center;">
-			<button type="default" class="btn" @click="toChange('add')"><view class="icon-fire iconfont button-icon"></view>新建收货地址</button>
+			<button type="default" class="btn" @click="toChange('add')"><view class="icon-fire iconfont button-icon"></view>+新建收货地址</button>
 		</view>
 	</view>
 </template>

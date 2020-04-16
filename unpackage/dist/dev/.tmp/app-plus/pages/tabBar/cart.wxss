@@ -1,0 +1,117 @@
+
+page{
+	background-color: #f3f3f3;
+}
+.card{
+	background-color: #fff;
+	border-radius: 18rpx;
+	margin: 20rpx 0;
+	/* border-top: 20upx solid #; */
+}
+.child-overall,.overall{
+	padding: 20rpx 0 0 15rpx;
+}
+.child-overall:last-child{
+	padding-bottom: 40rpx;
+}
+.child-overall-item,
+.overall{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	justify-items: center;
+}
+.child-overall-item>image{
+	width: 200rpx;
+	height: 200rpx;
+	margin-right: 20rpx;
+	border-radius: 17rpx;
+}
+.child-overall-item .title{
+	width: 360rpx;
+	height: 64rpx;
+	overflow:hidden;/*一定要写 */
+	    text-overflow: ellipsis;/*超出省略号 */
+	    display:-webkit-box;/*一定要写 */
+	    -webkit-line-clamp: 2;/*控制行数 */
+	    -webkit-box-orient: vertical;/*一定要写 */
+}
+.calculator text{
+	display: inline-block;
+	vertical-align: middle;
+}
+.calculator .calc{
+	display: inline-block;
+	vertical-align: middle;
+	width: 40rpx;
+	height: 40rpx;
+	margin: 0 20rpx;
+	font-size: 36rpx;
+	line-height: 40rpx;
+	text-align: center;
+	border-radius: 50%;
+	border: 1px solid #e8e8e8;
+}
+.info{
+	position: relative;
+}
+.bottom-content{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.options{
+	background-color:#f9f9f9;
+	display: inline-block;
+	padding: 5rpx 16rpx;
+	border-radius: 24rpx;
+	margin-top: 15rpx;
+}
+.overall-title{
+	margin: 0 10rpx;
+}
+.bottom{
+	position: fixed;
+	left: 0;
+	bottom: 50px;
+	
+	
+	width: 100%;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	padding:20rpx 40rpx;
+	background-color: #fff;
+	border: 1px solid #f1f1f1;
+}
+.bottom-right button{
+	margin-left: 15rpx;
+}
+.bottom-right button,
+.bottom-right text{
+	display: inline-block;
+	vertical-align: middle;
+}
+.bottom-right{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	text-align: right;
+}
+.arrow{
+	color: #ccc;
+}
+.r-cb{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+

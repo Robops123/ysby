@@ -62,7 +62,7 @@
 						<view class="  s1">手机号：213123123123</view>
 					</view>
 					<view class="fr cg">
-						<image src="../../../static/img/pic/more2.png" mode="" class="right-arrow"></image>
+						<text class="icon-arrow-right iconfont"></text>
 					</view>
 			</view>
 		</view>

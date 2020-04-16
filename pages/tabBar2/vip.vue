@@ -1,7 +1,7 @@
 <template>
 	<view style="border-top: 20upx solid #F3F3F3;">
 		<scroll-view scroll-y="true" id="sv" :style="{height:sh-50+'px'}"  @scrolltolower='toBottom'>
-			<view class="list" v-for="(item,index) in dataList" :key='index'>
+			<view class="list" v-for="(item,index) in 20" :key='index'>
 				<view>
 					<image src="../../static/img/pic/logo.png" mode=""></image>
 				</view>
@@ -38,13 +38,13 @@
 		     },
 		   },
 		   mounted(){
-		   	var that=this
-		   	this.getList(this.page)
-		   	setTimeout(function(){
-		   		that.$getHeight('#sv',(res) =>{
-		   			that.sh=res
-		   		})
-		   	},0)
+		   	// var that=this
+		   	// this.getList(this.page)
+		   	// setTimeout(function(){
+		   	// 	that.$getHeight('#sv',(res) =>{
+		   	// 		that.sh=res
+		   	// 	})
+		   	// },0)
 		   },
 		   methods:{
 			   reset(){

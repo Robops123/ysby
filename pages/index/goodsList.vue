@@ -19,7 +19,12 @@
 					<image src="../../static/img/bg/activity.png" mode=""></image>
 					<view class="word">
 						<view class="s3 ellipsis">婴儿洗头帽西羽毛防水塞都是</view>
-						<view class="s1 cr">$79<text class="s2 cg fr">已售516件</text></view>
+						<view class="s5 cr word-bottom">
+							<view>$79</view>
+							<view class="buy fr">
+								<image src="../../static/img/pic/cart.png" mode=""></image>
+							</view>
+						</view>
 					</view>
 				</view>
 			</view>
@@ -197,5 +202,14 @@
 	}
 	.range>text.active{
 		color: #000000;
+	}
+	.buy image{
+		width: 60upx;
+		height: 60upx;
+		padding: 10upx;
+	}
+	.word-bottom>view{
+		display: inline-block;
+		vertical-align:-webkit-baseline-middle;
 	}
 </style>

@@ -1,0 +1,38 @@
+
+.list{
+	margin-bottom: 20rpx;
+}
+.list>image,
+.list .info
+{
+	display: inline-block;
+	vertical-align: top;
+}
+.list>image{
+	width: 280rpx;
+	height: 280rpx;
+	border-radius: 10px;
+	margin-right: 20rpx;
+}
+.list .title{
+	line-height: 1.5;
+	width: 360rpx;
+	height: 72rpx;
+	overflow:hidden;/*一定要写 */
+	    text-overflow: ellipsis;/*超出省略号 */
+	    display:-webkit-box;/*一定要写 */
+	    -webkit-line-clamp: 2;/*控制行数 */
+	    -webkit-box-orient: vertical;/*一定要写 */
+}
+.list .bottom-content{
+	margin: 80rpx 0 30rpx;
+}
+.buy{
+	text-align: right;
+}
+.buy image{
+	width: 60rpx;
+	height: 60rpx;
+	padding: 10rpx;
+}
+

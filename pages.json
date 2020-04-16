@@ -366,30 +366,30 @@
 	    "backgroundColor": "#ffffff",
 	    "list": [{
 	        "pagePath": "pages/tabBar/index",
-	        "iconPath": "/static/img/icon/home.png",
-	        "selectedIconPath": "/static/img/icon/homed.png",
+	        "iconPath": "/static/img/pic/tab/icon1.png",
+	        "selectedIconPath": "/static/img/pic/tab/icon1_se.png",
 	        "text": "首页"
 	    },
 		{
 	        "pagePath": "pages/tabBar/discover",
-	       "iconPath": "/static/img/icon/home.png",
-	       "selectedIconPath": "/static/img/icon/homed.png",
+	       "iconPath": "/static/img/pic/tab/icon2.png",
+	       "selectedIconPath": "/static/img/pic/tab/icon2_se.png",
 	        "text": "发现"
 	    },
 		{
 		    "pagePath": "pages/tabBar/businessCollege",
-		    "iconPath": "/static/img/icon/home.png",
-		    "selectedIconPath": "/static/img/icon/homed.png",
+		    "iconPath": "/static/img/pic/tab/icon5.png",
+		    "selectedIconPath": "/static/img/pic/tab/icon5_se.png",
 		    "text": "商学院"
 		},{
 	        "pagePath": "pages/tabBar/cart",
-	        "iconPath": "/static/img/icon/home.png",
-	        "selectedIconPath": "/static/img/icon/homed.png",
+	        "iconPath": "/static/img/pic/tab/icon4.png",
+	        "selectedIconPath": "/static/img/pic/tab/icon4_se.png",
 	        "text": "购物车"
 	    },{
 	        "pagePath": "pages/tabBar/mine",
-	       "iconPath": "/static/img/icon/home.png",
-	       "selectedIconPath": "/static/img/icon/homed.png",
+	       "iconPath": "/static/img/pic/tab/icon3.png",
+	       "selectedIconPath": "/static/img/pic/tab/icon3_se.png",
 	        "text": "我的"
 	    }]
 	},

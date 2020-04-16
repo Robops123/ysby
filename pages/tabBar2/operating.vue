@@ -27,7 +27,7 @@
 				<image src="../../static/img/pic/other/icon1.png" mode="" style="width: 35upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" class=""></image>
 				<text>订单管理</text>
 				<view class="s3 cg fr" @click="toOrderList">全部
-				<image src="../../static/img/pic/more2.png" mode="" class="fr right-arrow"></image>
+				<text class="icon-arrow-right iconfont "></text>
 				</view>
 			</view>
 			<view class="dd item-3" style="margin-top: 30upx;">

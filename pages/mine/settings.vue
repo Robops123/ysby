@@ -3,22 +3,22 @@
 		<view class="option-box">
 			<view class="option-item" @click="to('personal')">
 				<text>个人资料</text>
-				<text class="f1 fr">></text>
+				<text class="f1 fr"><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 			<view class="option-item" @click="to('account')">
 				<text>账号与安全</text>
-				<text class="f1 fr">></text>
+				<text class="f1 fr"><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 		</view>
 		
 		<view class="option-box">
 			<view class="option-item">
 				<text>意见反馈</text>
-				<text class="f1 fr"><text style="padding-right: 20upx;">让我们更好</text>></text>
+				<text class="f1 fr"><text style="padding-right: 20upx;">让我们更好</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 			<view class="option-item">
 				<text>关于我们</text>
-				<text class="f1 fr">></text>
+				<text class="f1 fr"><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 		</view>
 		

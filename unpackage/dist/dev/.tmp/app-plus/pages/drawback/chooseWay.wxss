@@ -1,0 +1,52 @@
+
+page{
+	background-color: #f3f3f3;
+}
+.margin{
+	margin: 20rpx 0;
+}
+.bgwhite{
+	background-color: #fff;
+}
+.child-overall-item,
+.overall{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	justify-items: center;
+}
+.child-overall-item>image{
+	width: 150rpx;
+	height: 150rpx;
+	margin-right: 20rpx;
+}
+.child-overall-item .title{
+	margin-top: 10rpx;
+	width: 500rpx;
+	height: 64rpx;
+	overflow:hidden;/*一定要写 */
+	    text-overflow: ellipsis;/*超出省略号 */
+	    display:-webkit-box;/*一定要写 */
+	    -webkit-line-clamp: 2;/*控制行数 */
+	    -webkit-box-orient: vertical;/*一定要写 */
+}
+.choice:not(:last-child){
+	border-bottom: 1px solid #dedede;
+}
+.choice>image{
+	height: 50rpx;
+	width: 50rpx;
+	margin-right: 40rpx;
+}
+.choice .iconfont{
+	margin-top: 20rpx;
+}
+.choice .des{
+	margin-top: 10rpx;
+}
+.choice>image,
+.choice>view{
+	display: inline-block;
+	vertical-align: top;
+}
+

@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "商品",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "编辑",
+        "fontSize": "16px"
+      }
+    ]
+  },
+  "usingComponents": {
+    "uni-load-more": "/components/uni-load-more/uni-load-more"
+  }
+}

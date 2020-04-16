@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "个人资料",
+  "usingComponents": {
+    "lotus-address": "/components/Winglau14-lotusAddress/Winglau14-lotusAddress",
+    "pop": "/components/promptOptions/pop"
+  }
+}

@@ -5,7 +5,7 @@
 		<!-- #endif -->
 		<view class="top-nav">
 			<!-- #ifdef APP-PLUS || H5 -->
-				<view class="icon-fire iconfont" @click="back"></view>
+				<view class="icon-previewleft iconfont" @click="back"></view>
 			<!-- #endif -->
 				<view class="nav-bar">
 					<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>商品专区</text></view>
@@ -17,20 +17,20 @@
 		<view class="content">
 			<scroll-view scroll-y="true" class="left-scroll">
 				<view class="">
-					<view class="left-item s1 " :class="{active:tabActive==index}" @click="toggleTab(index)"      v-for="(item,index) in 20" :key='index'>
-						<text>睡眠用品</text>
+					<view class="left-item s1 " :class="{active:tabActive==index}" @click="toggleTab(index,item)"  v-for="(item,index) in category" :key='index'>
+						<text>{{item.name}}</text>
 					</view>
 				</view>
 			</scroll-view>
-			<scroll-view scroll-y="true" class="right-scroll" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
+			<scroll-view scroll-y="true" class="right-scroll" id="sv" :style="{height:sh+'px'}" >
 				<view class="">
 					<image src="../../static/img/bg/activity.png" mode="" class="banner"></image>
-					<view class="s1 headline">全部浴室用品商家</view>
+					<view class="s1 headline" v-if="category[0]">{{tapped!='' ? '全部'+category[tabActive].name:'全部'+category[0].name}}</view>
 					<!-- 区 -->
 					<view class="right-content">
 						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList')">
-							<image src="../../static/img/bg/activity.png" mode=""></image>
-							<view class="s3 cg">多里精灵</view>
+							<image :src="item.thumb" mode=""></image>
+							<view class="s3 cg">{{item.name}}</view>
 						</view>
 					</view>
 				</view>
@@ -50,6 +50,10 @@
 		},
 		data(){
 			return{
+				url:'&r=api.home.morecate',
+				url2:'&r=api.home.morecate.categoods',
+				tapped:'',
+				category:[],
 				active:1,
 				tabActive:0,
 				sh:'',
@@ -67,7 +71,8 @@
 		   },
 		   mounted(){
 		   	var that=this
-		   	this.getList(this.page)
+		   	this.getCategory()
+			this.getList('','')
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
 		   			that.sh=res
@@ -75,8 +80,11 @@
 		   	},0)
 		   },
 		methods:{
-			toggleTab(t){
+			toggleTab(t,item){
 				this.tabActive=t
+				this.tapped=item.id
+				this.reset()
+				this.getList('',item.id)
 			},
 			to(w){
 				uni.navigateTo({
@@ -90,8 +98,17 @@
 			},
 			toggle(t){
 				this.active=t
+				if(t==1){
+					 this.url='&r=api.home.morecate'
+					 this.url2='&r=api.home.morecate.categoods'
+				}else{
+					 this.url='&r=api.home.morecate.brand'
+					this.url2='&r=api.home.morecate.brandgoods'
+				}
+				this.tapped=false
 				this.reset()
-				this.getList(this.page)
+				this.getCategory()
+				this.getList('','')
 			},
 			reset(){
 				this.page=1
@@ -99,23 +116,33 @@
 				this.dataList=[]
 				this.more=''
 			},
-			getList(p){
+			getCategory(){
 				var that=this
-				var params={
-				  page:p,
-				  pagesize: this.pageSize
-				}
-				if(this.page==1){
-					this.$loading()
-				}
-				  var url='/wangtosale_list'
-				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+				  var params={
+				  	   id:''
+				  }
+				  this.$apiPost(this.url,params).then((res) =>{
+					  that.category=res.data
+				  })
+			},
+			getList(p,id){
+				var that=this
+				// var params={
+				//   page:p,
+				//   pagesize: this.pageSize
+				// }
+				// if(this.page==1){
+				// 	this.$loading()
+				// }
+				  var params={
+				  	   id:id
+				  }
+				  this.$apiPost(this.url2,params).then((res) =>{
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
-					  if(that.page==1){
-					  	uni.hideLoading()
-					  }
+					  // if(that.page==1){
+					  // 	uni.hideLoading()
+					  // }
 				  })
 			},
 			toBottom(){
@@ -127,7 +154,7 @@
 				this.more='loading'
 			  // setTimeout(function(){
 				  that.page++
-				  that.getList(that.page)
+				  that.getList(that.page,id)
 			  // },2000)
 			},
 		}
@@ -144,6 +171,7 @@
 		width: 100%;
 		box-sizing: border-box;
 		padding: 20upx 0 20upx 40upx;
+		padding-top: var(--status-bar-height);
 		display: flex;
 		/* justify-content: space-around; */
 		align-items: center;
@@ -153,8 +181,8 @@
 		position: absolute;
 		left: 70px;
 		right: 70px;
-		top: 0;
-		padding: 20upx 0;
+		top: var(--status-bar-height);
+		padding: 0 0 20upx;
 		text-align: center;
 	}
 	.nav{
@@ -187,6 +215,7 @@
 		right: 0;
 		bottom: 0;
 		display: flex;
+		margin-top: var(--status-bar-height);
 	}
 	.left-scroll{
 		width: 220upx;

@@ -50,32 +50,32 @@
                     name: '工作台',
                     id: 'gzt',
 					index:0,
-					iconPath:'../../static/img/icon/home.png',
-					selecctedIconPath:'../../static/img/icon/homed.png'
+					iconPath:'../../static/img/pic/tab/icon1.png',
+					selecctedIconPath:'../../static/img/pic/tab/icon1_se.png'
                 }, {
                     name: '会员',
                     id: 'hy',
 					index:1,
-					iconPath:'../../static/img/icon/home.png',
-					selecctedIconPath:'../../static/img/icon/homed.png'
+					iconPath:'../../static/img/pic/tab/icon4.png',
+					selecctedIconPath:'../../static/img/pic/tab/icon4_se.png'
                 }, {
                     name: '订单',
                     id: 'dd',
 					index:2,
-					iconPath:'../../static/img/icon/home.png',
-					selecctedIconPath:'../../static/img/icon/homed.png'
+					iconPath:'../../static/img/pic/tab/icon3.png',
+					selecctedIconPath:'../../static/img/pic/tab/icon3_se.png'
                 }, {
                     name: '财务',
                     id: 'cw',
 					index:3,
-					iconPath:'../../static/img/icon/home.png',
-					selecctedIconPath:'../../static/img/icon/homed.png'
+					iconPath:'../../static/img/pic/tab/icon2.png',
+					selecctedIconPath:'../../static/img/pic/tab/icon2_se.png'
                 }, {
                     name: '我的',
                     id: 'wd',
 					index:4,
-					iconPath:'../../static/img/icon/home.png',
-					selecctedIconPath:'../../static/img/icon/homed.png'
+					iconPath:'../../static/img/pic/tab/icon5.png',
+					selecctedIconPath:'../../static/img/pic/tab/icon5_se.png'
                 }],
                 scrollInto: "",
                 showTips: false,
@@ -234,6 +234,8 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
+	/* 	display: flex;
+		justify-content: space-around; */
 		box-sizing: border-box;
 		background-color: rgb(255, 255, 255);
 	}
@@ -279,9 +281,7 @@
     }
 
     .uni-tab-item {
-        /* #ifndef APP-PLUS */
         display: inline-block;
-        /* #endif */
 		width: 20%;
 		text-align: center;
         flex-wrap: nowrap;
@@ -311,7 +311,7 @@
     }
 
     .uni-tab-item-title-active {
-        color: #007AFF;
+        color: #ff6d7e;
     }
 
     .swiper-box {
@@ -402,7 +402,8 @@
     }
 	
 	.swiper-box{
-		height: calc(100% - 100upx);
+		
+		height: calc(100vh - 100upx);
 	}
 	.swiper-box .swiper-item{
 		overflow: auto;

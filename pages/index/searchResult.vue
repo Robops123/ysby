@@ -1,15 +1,14 @@
 <template>
 	<view>
-		<!-- #ifdef APP-PLUS || H5 -->
-			<uni-status-bar />
-		<!-- #endif -->
 		<view class="top-nav padding">
-			<image src="../../static/img/pic/back.png" mode="" class="right-arrow" @click="back"></image>
-			<view class="search-line">
-				<input type="text" value="" placeholder="寻找附近的商家"/>
-			</view>
-			<view class="comment">
-				<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
+			<view class="nav-content">
+				<text class="iconfont icon-previewleft " @click="back"></text>
+				<view class="search-line">
+					<input type="text" value="" placeholder="寻找附近的商家"/>
+				</view>
+				<view class="comment">
+					<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
+				</view>
 			</view>
 		</view>
 		
@@ -154,9 +153,15 @@
 		top: 0;
 		width: 100%;
 		box-sizing: border-box;
+		padding-top: var(--status-bar-height);
+		/* display: flex;
+		justify-content: space-around; */
+		
+	}
+	 .nav-content{
 		display: flex;
-		justify-content: space-around;
 		align-items: center;
+		justify-content: space-around;
 	}
 	.search-line{
 		/* height: 120upx; */
@@ -179,6 +184,7 @@
 	}
 	.main{
 		padding-top: 96upx;
+		margin-top: var(--status-bar-height);
 	}
 	
 	.nav-bar{
