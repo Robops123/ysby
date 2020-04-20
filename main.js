@@ -4,6 +4,7 @@ import App from './App'
 // js
 import { getHeight,loading,msg } from './static/js/common.js'
 import request from './static/js/request.js'
+import siteinfo from './common/siteinfo.js'
 
 // css
 
@@ -15,7 +16,7 @@ Vue.prototype.$msg=msg
 Vue.prototype.$apiPost=request.apiPost
 Vue.prototype.$apiGet=request.apiGet
 
-
+App.siteinfo=siteinfo
 App.mpType = 'app'
 
 const app = new Vue({

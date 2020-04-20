@@ -6,7 +6,7 @@
 		<view class="top-nav">
 			<!-- #ifdef APP-PLUS || H5 -->
 				<view class="icon-fire iconfont" @click="back"></view>
-				<text class="nav-bar">分销佣金</text>
+				<text class="nav-bar">代理佣金</text>
 			<!-- #endif -->
 				<text class="cg fr s2" @click="to('withdrawDetail')">提现明细</text>
 		</view>

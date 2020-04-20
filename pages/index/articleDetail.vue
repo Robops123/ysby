@@ -5,21 +5,23 @@
 				<view class="luntan-card-top">
 					<image class="luntan-card-top-img" src="../../static/img/bg/activity.png" mode=""></image>
 					<view class="luntan-card-top-txt">
-						<view class="luntan-card-top-txt-title">中企商会网</view>
-						<view class="luntan-card-top-txt-time">2020-02-10 12:30</view>
+						<view class="luntan-card-top-txt-title">{{data.merchname}}</view>
+						<view class="luntan-card-top-txt-time">{{data.createtime}}</view>
 					</view>
 					<view class="enter-button" >进店</view>
 				</view>
-				<view class="luntan-card-title">中期商会与你携手前行</view>
+				<view v-html="data.detail">
+					
+				</view>
+				<!-- <view class="luntan-card-title">中期商会与你携手前行</view>
 				<view class="luntan-card-lianjie">#坚守共赢胜利#</view>
 				<view class="luntan-card-introduce">抗击疫情，中企商会在行动！截至2月8日，中企商会持续投入抗击疫情，面对这场突如其来的“疫”战，中企商会与大家共同坚守，终将会取得这场疫情防控狙击战的胜利！加油！</view>
-				<image class="luntan-card-img" src="../../static/img/bg/activity.png" mode=""></image>
+				<image class="luntan-card-img" src="../../static/img/bg/activity.png" mode=""></image> -->
 				<view class="share">
 					<text>分享</text>
-					<image src="../../static/img/bg/activity.png" mode=""></image>
-					<image src="../../static/img/bg/activity.png" mode=""></image>
-					<image src="../../static/img/bg/activity.png" mode=""></image>
-					<image src="../../static/img/bg/activity.png" mode=""></image>
+					<image src="../../static/img/pic/other/weixin.png" mode="" style="width: 55upx;"></image>
+					<image src="../../static/img/pic/other/pyq.png" mode=""></image>
+					<image src="../../static/img/pic/other/QQ.png" mode=""></image>
 				</view>
 			</view>
 			
@@ -30,28 +32,24 @@
 				<view class="luntan-card">
 					<view class="luntan-change">
 						<view class="luntan-change-card">
-							<text class="luntan-change-card-txt luntan-change-card-txts">评论1000</text>
-							<text class="luntan-change-card-xian">赞72</text>
+							<text class="luntan-change-card-txt luntan-change-card-txts">评论{{total}}</text>
+							<text class="luntan-change-card-xian">赞{{like}}</text>
 						</view>
 					</view>
 					
 					<view class="comment">
 						<scroll-view scroll-y="true" id="sv" style="max-height: 500px;"  @scrolltolower='toBottom'>
-							<view class="comment-item" v-for='(item,index) in dataList' :key='index'>
-								<image class="" src="../../static/img/bg/activity.png" mode=""></image>
+							<view class="comment-item" v-for='(item,index) in commentList' :key='index'>
+								<image class="" :src="item.avatar" mode=""></image>
 								<view class="word">
-									<view class="s2 cg">中企商会网</view>
-									<view class="">向芬兰人的派对方式</view>
+									<view class="s2 cg">{{item.nickname}}</view>
+									<view class="">{{item.content}}</view>
 									<view class="f2">
-										<text class="date">2-13 14:52</text>
+										<text class="date">{{item.createtime}}</text>
 										<view class="fr">
 											<view class="luntan-card-bot-card">
-												<image src="../../static/img/bg/activity.png" mode=""></image>
-												<text>5390</text>
-											</view>
-											<view class="luntan-card-bot-card">
-												<image src="../../static/img/bg/activity.png" mode=""></image>
-												<text>5390</text>
+												<text class="iconfont icon-zan"></text>
+												<text>{{item.like}}</text>
 											</view>
 										</view>
 									</view>
@@ -65,16 +63,16 @@
 				
 				<view class="luntan-card-bot">
 					<view class="luntan-card-bot-card">
-						<image src="../../static/img/bg/activity.png" mode=""></image>
-						<text>转发</text>
+						<text class="iconfont icon-share2"></text>
+						<text>转发{{repost}}</text>
 					</view>
 					<view class="luntan-card-bot-card">
-						<image src="../../static/img/bg/activity.png" mode=""></image>
-						<text>评论</text>
+						<text class="iconfont icon-tubiao-"></text>
+						<text>评论{{comment}}</text>
 					</view>
 					<view class="luntan-card-bot-card">
-						<image src="../../static/img/bg/activity.png" mode=""></image>
-						<text>赞</text>
+						<text class="iconfont icon-zan"></text>
+						<text>赞{{like}}</text>
 					</view>
 				</view>
 			</view>
@@ -91,24 +89,36 @@
 		},
 		data(){
 			return{
+				id:'',
 				active:1,
 				tabActive:0,
 				sh:'',
 				dataList:[],
+				commentList:[],
+				data:'',
+				like:'',
+				comment:'',
+				repost:'',
 				page:1,
-				pageSize:20,
+				pageSize:5,
 				total:0,
 				more:''
 			}
 		},
+		onLoad(e){
+			this.id=e.id
+			this.like=e.like
+			this.comment=e.comment
+			this.repost=e.repost
+		},
 		computed: {
 		     noMore () {
-		       return this.dataList.length >= this.total
+		       return this.commentList.length >= this.total
 		     },
 		   },
 		   mounted(){
 		   	var that=this
-		   	this.getList(this.page)
+		   	this.getDetail()
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
 		   			that.sh=res
@@ -119,40 +129,30 @@
 			toggleTab(t){
 				this.tabActive=t
 			},
-			to(w){
-				uni.navigateTo({
-					url:'./goodsList'
-				})
-			},
-			back(){
-				uni.navigateBack({
-					delta:1
-				})
-			},
-			toggle(t){
-				this.active=t
-				this.reset()
-				this.getList(this.page)
-			},
-			reset(){
-				this.page=1
-				this.total=0
-				this.dataList=[]
-				this.more=''
+			getDetail(){
+				var that=this
+				var params={
+				  id:this.id
+				}
+				  var url='&r=api.college.hotarticle.detail&id='+this.id
+				  this.$apiPost(url,params).then((res) =>{
+					  that.data=res.data
+					  that.getList()
+				  })
 			},
 			getList(p){
 				var that=this
-				var params={
-				  page:p,
-				  pagesize: this.pageSize
-				}
+				// var params={
+				//   page:p,
+				//   pagesize: this.pageSize
+				// }
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
-				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
-					  that.dataList=that.dataList.concat(res.data)
+				  var url='&r=api.college.hotarticle.comment&page='+this.page+'&pagesize='+this.pageSize+'&collegeid='+this.id
+				  this.$apiPost(url).then((res) =>{
+					  that.total=res.total
+					  that.commentList=that.dataList.concat(res.data)
 					  that.more=''
 					  if(that.page==1){
 					  	uni.hideLoading()

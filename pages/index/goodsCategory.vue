@@ -25,12 +25,12 @@
 			<scroll-view scroll-y="true" class="right-scroll" id="sv" :style="{height:sh+'px'}" >
 				<view class="">
 					<image src="../../static/img/bg/activity.png" mode="" class="banner"></image>
-					<view class="s1 headline" v-if="category[0]">{{tapped!='' ? '全部'+category[tabActive].name:'全部'+category[0].name}}</view>
+					<view class="s1 headline" v-if="category[0]">{{tapped!='' ? '全部'+category[tabActive].name+'用品':'全部'+category[0].name+'用品'}}</view>
 					<!-- 区 -->
 					<view class="right-content">
 						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList')">
 							<image :src="item.thumb" mode=""></image>
-							<view class="s3 cg">{{item.name}}</view>
+							<view class="s3 cg ellipsis">{{item.title}}</view>
 						</view>
 					</view>
 				</view>
@@ -123,6 +123,7 @@
 				  }
 				  this.$apiPost(this.url,params).then((res) =>{
 					  that.category=res.data
+					  that.tabActive=0
 				  })
 			},
 			getList(p,id){

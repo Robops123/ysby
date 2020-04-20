@@ -10,17 +10,17 @@
 				<text class="icon-arrowdown-copy iconfont" :class="{active:rangeActive==2}" ></text>
 				</view>
 			</view>
-			<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)"><text>热卖</text></view>
+			<view class="nav nav-right" :class="{active:active==4}" @click="toggle(5)"><text>热卖</text></view>
 		</view>
 		
 		<scroll-view scroll-y="true" class="content" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 			<view class="box">
-				<view class="list" v-for="(item,index) in dataList" :key='index' @click="to('goodsDetail')">
-					<image src="../../static/img/bg/activity.png" mode=""></image>
+				<view class="list" v-for="(item,index) in dataList" :key='index' @click="to('goodsDetail',item.id)">
+					<image :src="item.thumb" mode=""></image>
 					<view class="word">
-						<view class="s3 ellipsis">婴儿洗头帽西羽毛防水塞都是</view>
+						<view class="s3 ellipsis">{{item.title}}</view>
 						<view class="s5 cr word-bottom">
-							<view>$79</view>
+							<view>￥{{item.marketprice}}</view>
 							<view class="buy fr">
 								<image src="../../static/img/pic/cart.png" mode=""></image>
 							</view>
@@ -41,6 +41,7 @@
 		},
 		data(){
 			return{
+				url:'',
 				active:1,
 				rangeActive:'',
 				sh:'',
@@ -58,6 +59,7 @@
 		   },
 		mounted(){
 			var that=this
+			this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
 			this.getList(this.page)
 			setTimeout(function(){
 				that.$getHeight('#sv',(res) =>{
@@ -66,9 +68,9 @@
 			},0)
 		},
 		methods:{
-			to(w){
+			to(w,id){
 				uni.navigateTo({
-					url:`/pages/index/${w}`
+					url:`/pages/index/${w}?id=${id}`
 				})
 			},
 			toggle(t){
@@ -77,7 +79,6 @@
 				this.getList(this.page)
 			},
 			toggleRange(t){
-				console.log(t)
 				this.rangeActive=t
 			},
 			back(){
@@ -91,23 +92,33 @@
 				this.dataList=[]
 				this.more=''
 				if(this.active!=3){
+					console.log('no排序')
 					this.rangeActive=''
+					this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
 				}else{
+					console.log('排序')
 					this.rangeActive= this.rangeActive == 1 ? 2:1
+					if(this.rangeActive==1){
+						console.log('上')
+						this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+3
+					}else if(this.rangeActive==2){
+						console.log('下')
+						this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+4
+					}
 				}
 			},
 			getList(p){
 				var that=this
-				var params={
-				  page:p,
-				  pagesize: this.pageSize
-				}
+				// var params={
+				//   page:p,
+				//   pagesize: this.pageSize
+				// }
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
-				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+				  // var url='/wangtosale_list'
+				  this.$apiPost(this.url).then((res) =>{
+					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
 					  if(that.page==1){

@@ -183,26 +183,8 @@
 
 
 
-.textArr{  
-position: absolute;right: 220px;z-index: 11;overflow: hidden;text-align:center;
-.slice-enter-active {
-animation: bounce-in 5s infinite;
+.nav-bar{
+	padding: 5upx 0 20upx;
 }
 
-}
-
-@keyframes bounce-in {
-0% {
-transform:translateY(30px) ;
-}
-20% {
-transform: translateY(0px);
-}
-80% {
-transform: translateY(0px);
-}
-100% {
-transform:translateY(-30px);
-}
-}
 

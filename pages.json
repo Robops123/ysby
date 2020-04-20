@@ -28,7 +28,7 @@
 					// #endif 
 					// #ifdef MP-WEIXIN
 					{
-					    "path": "pages/tabBar/searchResult",
+					    "path": "pages/index/searchResult",
 					    "style": {
 					       "navigationBarTitleText": "搜索结果"
 					   }
@@ -44,7 +44,7 @@
 					// #endif 
 					// #ifdef MP-WEIXIN
 					{
-					    "path": "pages/tabBar/goodsCategory",
+					    "path": "pages/index/goodsCategory",
 					    "style": {
 					       "navigationBarTitleText": "商品分类"
 					   }
@@ -180,7 +180,7 @@
 				{
 				    "path": "pages/retail/retailCenter",
 				    "style": {
-						"navigationBarTitleText": "分销中心"
+						"navigationBarTitleText": "代理中心"
 				    }
 				},
 				// #ifdef APP-PLUS || H5
@@ -195,14 +195,14 @@
 				{
 				    "path": "pages/retail/retailMoney",
 				    "style": {
-						"navigationBarTitleText": "分销佣金"
+						"navigationBarTitleText": "代理佣金"
 				    }
 				},
 				// #endif 
 				{
 				    "path": "pages/retail/retailOrder",
 				    "style": {
-						"navigationBarTitleText": "分销订单"
+						"navigationBarTitleText": "代理订单"
 				    }
 				},
 				{

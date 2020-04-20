@@ -10,30 +10,30 @@
 			<view class="sp-item3"  v-for="(item,index) in dataList" :key='index'>
 				<view class="sp-item3-top">
 					<view>
-						<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
+						<image :src="item.logo" mode="" class="headface"></image>
 					</view>
 					<view class="sp-item3-top-middle">
-						<view>小象母婴馆</view>
+						<view>{{item.merchname}}</view>
 						<view>
-							<uni-rate disabled="true" size="12" value="3.5" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">1429人关注 | <text class="s2">500m以内</text></text>
+							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
+							<text class="s3 cg">1429人关注 | <text class="s2">{{item.distance}}</text></text>
 						</view>
 					</view>
 					<view class="enter-button" @click="toShop">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
-					<view class="">
+					<view class="" v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
+						<image :src="childItem.thumb" mode=""></image>
+						<view class="price">￥{{childItem.marketprice}}</view>
+					</view>
+					<!-- <view class="">
 						<image src="../../static/img/bg/activity.png" mode=""></image>
 						<view class="price">$282</view>
 					</view>
 					<view class="">
 						<image src="../../static/img/bg/activity.png" mode=""></image>
 						<view class="price">$282</view>
-					</view>
-					<view class="">
-						<image src="../../static/img/bg/activity.png" mode=""></image>
-						<view class="price">$282</view>
-					</view>
+					</view> -->
 				</view>
 			</view>
 		</view>
@@ -41,10 +41,10 @@
 		
 			<view class="box" v-if="active==2">
 				<view class="list" v-for="(item,index) in dataList" :key='index'>
-					<image src="../../static/img/bg/activity.png" mode=""></image>
+					<image :src="item.thumb" mode=""></image>
 					<view class="word">
-						<view class="s3 ellipsis">婴儿洗头帽西羽毛防水塞都是</view>
-						<view class="s1 cr">$79<text class="s2 cg fr">已售516件</text></view>
+						<view class="s3 ellipsis">{{item.title}}</view>
+						<view class="s1 cr">￥{{item.marketprice}}<text class="s2 cg fr">已售{{item.sales}}件</text></view>
 					</view>
 				</view>
 			</view>
@@ -65,7 +65,9 @@
 				page:1,
 				pageSize:5,
 				total:0,
-				more:''
+				more:'',
+				lat:'',
+				lng:''
 			}
 		},
 		components:{
@@ -79,7 +81,7 @@
 		   },
 		   mounted(){
 		   	var that=this
-		   	this.getList(this.page)
+		   	this.apart()
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
 		   			that.sh=res
@@ -95,7 +97,7 @@
 			toggle(t){
 				this.active=t
 				this.reset()
-				this.getList(this.page)
+				this.apart()
 			},
 			reset(){
 				this.page=1
@@ -103,19 +105,37 @@
 				this.dataList=[]
 				this.more=''
 			},
-			getList(p){
-				var that=this
-				var params={
-				  page:p,
-				  pagesize: this.pageSize
+			apart(){
+				var that=this,params={
+						page:this.page,
+						pagesize:this.pageSize
+					},url
+				if(this.active==1){
+					 url='&r=api.discovery.merchant'
+					uni.getLocation({
+						type: 'wgs84',
+						success:(res) =>{
+							params.lng=res.longitude
+							params.lat=res.latitude
+							that.getList(params,url)
+						},
+						fail:(reason) =>{
+							that.$msg(reason)
+						}
+					})
+				}else{
+					 url='&r=api.discovery.goods'
+					that.getList(params,url)
 				}
+			},
+			getList(p,url){
+				var that=this
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
-				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+				  this.$apiPost(url,p).then((res) =>{
 					  that.dataList=that.dataList.concat(res.data)
+					  that.total=res.total
 					  that.more=''
 					  if(that.page==1){
 					  	uni.hideLoading()
@@ -131,7 +151,7 @@
 				this.more='loading'
 			  // setTimeout(function(){
 				  that.page++
-				  that.getList(that.page)
+				  that.apart()
 			  // },2000)
 			},
 		}

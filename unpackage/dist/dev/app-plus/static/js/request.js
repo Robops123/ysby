@@ -14,7 +14,7 @@ const baseURL = 'http://192.168.1.157/yishuban2/app/index.php?i=2&c=entry&m=ewei
  			header:{
  				// 'Token': token,
  				'Accept': 'application/json',
- 				"content-type":"application/x-www-form-urlencoded"
+ 				"content-type":"application/json"
  			},
  			data:params,
  			success(res) {
@@ -41,7 +41,7 @@ const baseURL = 'http://192.168.1.157/yishuban2/app/index.php?i=2&c=entry&m=ewei
  			method :"GET",
  			header:{
  				'Accept': 'application/json',
- 				"content-type":"application/x-www-form-urlencoded"
+ 				"content-type":"application/json"
  			},
  			timeout:6000,
  			data:params,

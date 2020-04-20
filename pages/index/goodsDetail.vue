@@ -1,15 +1,20 @@
 <template>
 	<view>
 		<view class="padding top border-bottom">
-			<image src="../../static/img/bg/activity.png" mode="" class="preview"></image>
+			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
+			<swiper class="preview" autoplay="false" duration="500" interval="3000" >
+			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index">
+			    	<image :src="item" mode="" class="banner"></image>
+			    </swiper-item>
+			   </swiper>
 			<view class="show-top">
-				<view class="name">萨克打卡塑料袋即可拉伸京东卡上课了接到了打蜡卡时间段吉安市</view>
+				<view class="name">{{data.title}}</view>
 				<view class="share" @click="openShare">
 					<view class="icon-share iconfont cr"></view>
 					<view class="cr s2">分享</view>
 				</view>
 			</view>
-			<view class="cr s5">$ 58</view>
+			<view class="cr s5">￥{{data.marketprice}}</view>
 			<view class="cg s3">快递:10</view>
 		</view>
 		
@@ -24,24 +29,24 @@
 				<text class="" style="margin-right: 30upx;">商品评价(797)</text>
 				<text class="fr cr">查看全部 <text class="icon-arrow-right iconfont" style="margin-left: 30upx;"></text></text>
 			</view>
-			<view class="padding">
+			<view class="padding" v-for="(item,index) in 3" :key='index'>
 				<view class="user">
-					<image src="../../static/img/bg/activity.png" mode="" class="headface"></image>
-					<text>余量打算的撒多</text>
+					<image :src="item.headimgurl" mode="" class="headface"></image>
+					<text>{{item.nickname}}</text>
 				</view>
 				<view class="comment">
 					<view class="comment-word">
-						啊实打实大师大所大所啊实打实大师大所大所啊实打实大师大所大所啊实打实大师大所大所啊实打实大师大所大所
-						啊实打实大师大所大所啊实打实大师大所大所啊实打实大师大所大所啊实打实大师大所大所
+						{{item.content}}
 					</view>
 					<view class="comment-pic">
-						<image src="../../static/img/bg/activity.png" mode="" v-for="(item,index) in 3" :key='index'></image>
+						<image :src="commentImgItem" mode="" v-for="(commentImgItem,commentImgIndex) in item.picurl" :key='commentImgIndex'></image>
 					</view>
 				</view>
-				<view class="s3 cg">粉色，M</view>
-				<view class="" style="text-align: center;">
-					<button type="default" class="btn">查看全部评价</button>
-				</view>
+				<view class="s3 cg">{{item.skuname}}</view>
+				
+			</view>
+			<view class="" style="text-align: center;">
+				<button type="default" class="btn">查看全部评价</button>
 			</view>
 		</view>
 		
@@ -49,37 +54,40 @@
 			<view class="sp-item3"  v-for="(item,index) in 1" :key='index'>
 				<view class="sp-item3-top">
 					<view>
-						<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
+						<image :src="data.logo" mode="" class="headface"></image>
 					</view>
 					<view class="sp-item3-top-middle">
-						<view>小象母婴馆</view>
+						<view>{{data.merchname}}</view>
 						<view>
-							<uni-rate disabled="true" size="12" value="3.5" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">1429人关注</text>
+							<uni-rate disabled="true" size="12" :value="data.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
+							<text class="s3 cg">{{data.collect}}人关注</text>
 						</view>
 					</view>
 					<view class="enter-button enter-button1" >关注</view>
 					<view class="enter-button enter-button2" >进店</view>
 				</view>
 				<view class="sp-item3-bottom">
-					<view class="">
+					<view class="" v-for="(goodsItem, goodsIndex) in data.goods" :key="goodsIndex">
+						<image :src="goodsItem.thumb" mode=""></image>
+						<view class="price">￥{{goodsItem.marketprice}}</view>
+					</view>
+					<!-- <view class="">
 						<image src="../../static/img/bg/activity.png" mode=""></image>
 						<view class="price">$282</view>
 					</view>
 					<view class="">
 						<image src="../../static/img/bg/activity.png" mode=""></image>
 						<view class="price">$282</view>
-					</view>
-					<view class="">
-						<image src="../../static/img/bg/activity.png" mode=""></image>
-						<view class="price">$282</view>
-					</view>
+					</view> -->
 				</view>
 			</view>
 		</view>
 		
 		<view class="hot">
 			<text>热卖商品</text>
+		</view>
+		<view class="detail" v-html="data.content">
+			
 		</view>
 		
 		
@@ -127,6 +135,8 @@
 		},
 		data () {
 		      return {
+				  id:'',
+				  data:'',
 		        options: [{
 		          icon: 'icon-kefu',
 		          text: '客服'
@@ -151,6 +161,11 @@
 		        ]
 		      }
 		    },
+			onLoad(p){
+				console.log(p)
+				this.id=p.id
+				this.getDetail()
+			},
 		    methods: {
 		      onClick (e) {
 		        uni.showToast({
@@ -176,6 +191,21 @@
 			  },
 			  openShare(){
 				  this.$refs.popup.open()
+			  },
+			  getDetail(){
+				  var that=this
+				  var url='&r=api.goods.detail&id='+this.id
+				  // var params={
+				  //   page:p,
+				  //   pagesize: this.pageSize
+				  // }
+				    // var url='/wangtosale_list'
+				    this.$apiPost(url).then((res) =>{
+						that.data=res.data
+				  	  // that.total=res.total
+				  	  // that.dataList=that.dataList.concat(res.data)
+				  	  // that.more=''
+				    })
 			  }
 		    }
 	}

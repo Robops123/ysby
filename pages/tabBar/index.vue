@@ -100,9 +100,9 @@
 					<view class="sp-item3-top-middle">
 						<view>{{item.merchname}}</view>
 						<view>
-							<uni-rate disabled="true" size="12" value="3.5" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">1429人关注 | 
-							<!-- <text class="s2">{{item.distance}}</text> -->
+							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
+							<text class="s3 cg">{{item.collect}}人关注 |  
+							<text class="s2">距离{{item.distance}}{{item.distance<1 ? '米':'千米'}}</text>
 							</text>
 						</view>
 					</view>
@@ -329,7 +329,8 @@
 	}
 	.list-item{
 		display: inline-block;
-		margin:0 42upx 26upx 0;
+		margin:0 0 26upx 0;
+		width: 20%;
 		text-align: center;
 	}
 	.list-item:nth-of-type(5n){

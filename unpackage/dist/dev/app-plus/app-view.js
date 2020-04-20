@@ -707,7 +707,18 @@ var render = function() {
                               staticClass: _vm._$g("64-" + $35, "sc"),
                               attrs: { _i: "64-" + $35 }
                             },
-                            [_vm._v("1429人关注 | \n\t\t\t\t\t\t")]
+                            [
+                              _vm._v(_vm._$g("64-" + $35, "t0-0") + "人关注 |"),
+                              _c(
+                                "v-uni-text",
+                                {
+                                  staticClass: _vm._$g("65-" + $35, "sc"),
+                                  attrs: { _i: "65-" + $35 }
+                                },
+                                [_vm._v(_vm._$g("65-" + $35, "t0-0"))]
+                              )
+                            ],
+                            1
                           )
                         ],
                         1
@@ -718,8 +729,8 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     {
-                      staticClass: _vm._$g("65-" + $35, "sc"),
-                      attrs: { _i: "65-" + $35 }
+                      staticClass: _vm._$g("66-" + $35, "sc"),
+                      attrs: { _i: "66-" + $35 }
                     },
                     [_vm._v("进店")]
                   )
@@ -729,10 +740,10 @@ var render = function() {
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g("66-" + $35, "sc"),
-                  attrs: { _i: "66-" + $35 }
+                  staticClass: _vm._$g("67-" + $35, "sc"),
+                  attrs: { _i: "67-" + $35 }
                 },
-                _vm._l(_vm._$g(67 + "-" + $35, "f"), function(
+                _vm._l(_vm._$g(68 + "-" + $35, "f"), function(
                   childItem,
                   childIndex,
                   $26,
@@ -740,24 +751,24 @@ var render = function() {
                 ) {
                   return _c(
                     "v-uni-view",
-                    { key: childItem, attrs: { _i: "67-" + $35 + "-" + $36 } },
+                    { key: childItem, attrs: { _i: "68-" + $35 + "-" + $36 } },
                     [
                       _c("v-uni-image", {
                         attrs: {
-                          src: _vm._$g("68-" + $35 + "-" + $36, "a-src"),
+                          src: _vm._$g("69-" + $35 + "-" + $36, "a-src"),
                           mode: "",
-                          _i: "68-" + $35 + "-" + $36
+                          _i: "69-" + $35 + "-" + $36
                         }
                       }),
                       _c(
                         "v-uni-view",
                         {
-                          staticClass: _vm._$g("69-" + $35 + "-" + $36, "sc"),
-                          attrs: { _i: "69-" + $35 + "-" + $36 }
+                          staticClass: _vm._$g("70-" + $35 + "-" + $36, "sc"),
+                          attrs: { _i: "70-" + $35 + "-" + $36 }
                         },
                         [
                           _vm._v(
-                            "￥" + _vm._$g("69-" + $35 + "-" + $36, "t0-0")
+                            "￥" + _vm._$g("70-" + $35 + "-" + $36, "t0-0")
                           )
                         ]
                       )
@@ -2002,7 +2013,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../hbuilderX/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.nav{\n\tz-index: 999;\n\tbackground-color: #fff;\n\tposition: fixed;\n\tleft: 0;\n\ttop: 0;\n\twidth: 100%;\n\tbox-sizing: border-box;\n}\n.nav .nav-content{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n\t-webkit-justify-content: space-around;\n\t        justify-content: space-around;\n}\n.search-line{\n\t/* height: 120upx; */\n\tbackground-color: #f4f4f4;\n\tborder-radius: 120upx;\n\t-webkit-box-flex: 1;\n\t-webkit-flex: 1;\n\t        flex: 1;\n\tmargin: 0 40upx;\n\tpadding: 8upx 15upx;\n}\n.search-line uni-icon{\n\tdisplay: inline-block;\n\t\tvertical-align: middle;\n}\n.search-line uni-input{\n\tdisplay: inline-block;\n\twidth: 70%;\n\theight: 100%;\n\tvertical-align: middle;\n\tmargin-left: 10upx;\n}\n.main{\n\tpadding-top: 96upx;\n}\n.banner{\n\tborder-radius: 10upx;\n\twidth: 100%;\n\theight: 320upx;\n}\n.banner2{\n\theight: 220upx;\n\tmargin-top: 20upx;\n}\n.banner3{\n\tmargin: 10upx 0 20upx;\n\theight: 260upx;\n}\n.title{\n\tmargin-right: 10upx;\n\tpadding-right: 10upx;\n\tborder-right: 1px solid #f4f4f4;\n}\n.content uni-icon{\n\tmargin-right: 5upx;\n\tcolor: #ffba2d;\n}\n.content{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\twidth: 80%;\n\theight: 38upx;\n}\n.list{\n\ttext-align: justify;\n\tmargin-top: 30upx;\n}\n.list-item{\n\tdisplay: inline-block;\n\tmargin:0 42upx 26upx 0;\n\ttext-align: center;\n}\n.list-item:nth-of-type(5n){\n\tmargin-right: 0;\n}\n.list-item uni-image{\n\twidth: 90upx;\n\theight: 90upx;\n\tborder-radius: 50%;\n}\n.card{\n\tpadding: 10upx 8upx;\n\tmargin: 15upx 0;\n}\n.card1{\n\tbackground-color: #fff7f5;\n}\n.card .more .iconfont{\n\tmargin-left: 10upx;\n\tfont-size: 28upx;\n\tborder-radius: 50%;\n\tcolor: #ffb6b9;\n\t/* background-color: #; */\n\tvertical-align: bottom;\n}\n.sp-item uni-image{\n\twidth: 200upx;\n\theight: 200upx;\n\tborder-radius: 5upx;\n}\n.sp-item{\n\tmargin:8upx 2% 20upx 0;\n\tdisplay: inline-block;\n\tvertical-align: top;\n\twidth: 31%;\n\t/* pad */\n}\n.sp-item .ellipsis{\n\twidth: 200upx;\n}\n.sp-item:last-child{\n\tmargin-right: 0;\n}\n.hot{\n\ttext-align: center;\n}\n.hot .hot-title,\n.hot .hot-title::before,\n.hot .hot-title::after{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.hot .hot-title::before{\n\tcontent: '';\n\twidth: 80upx;\n\theight: 1px;\n\tbackground-color: #aeaeae;\n\tmargin-right: 30upx;\n}\n.hot .hot-title::after{\n\tcontent: '';\n\twidth: 80upx;\n\theight: 1px;\n\tbackground-color: #aeaeae;\n\tmargin-left: 30upx;\n}\n.hot-title uni-image{\n\twidth: 30upx;\n\theight: 30upx;\n\tmargin-right: 18upx;\n}\n.sp2{\n\ttext-align: justify;\n\tmargin: 40upx 0 20upx;\n}\n.sp2 .sp-item2{\n\twidth: 47%;\n\tdisplay: inline-block;\n\tmargin-bottom: 15upx;\n}\n.sp2 .sp-item2:nth-of-type(odd){\n\tmargin-right: 5%;\n}\n.sp2 .sp-item2 uni-view{\n\tmargin-bottom: 20upx;\n}\n.sp2 uni-image{\n\tmargin-bottom: 10upx;\n\twidth: 100%;\n\theight: 350upx;\n}\n.card2{\n\tbackground-color: #fdf2f6;\n\tborder-radius: 8upx;\n\tpadding: 10upx 18upx;\n\tmargin-bottom: 0;\n}\n.sp-item3:last-child .sp-item3-bottom{\n\tborder-bottom: 50upx solid #f6f1f3;\n}\n.sp-item3-top{\n\tpadding: 0 30upx;\n\tmargin: 20upx 0;\n}\n.sp-item3-top .headface{\n\twidth: 90upx;\n\theight: 90upx;\n\tborder-radius: 50%;\n\tmargin: 0 15upx;\n}\n/* .sp-item3-top-middle{\n\twidth: 300upx;\n\t} */\n.sp-item3-top-middle uni-image{\n\twidth: 25upx;\n\theight: 25upx;\n\tvertical-align: middle;\n\tmargin-right: 5upx;\n}\n.sp-item3-top-middle uni-text uni-text{\n\tcolor: #a9a9a9;\n\tmargin-left: 10upx;\n}\n.sp-item3-top>uni-view{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.enter-button{\n\tcolor: #ff8f94;\n\tborder: 2px solid #ff8f94;\n\tpadding: 10upx 15upx;\n\tborder-radius: 52upx;\n\tfloat: right;\n\tmargin-top: 19upx;\n}\n.sp-item3-bottom>uni-view{\n\t\tdisplay: inline-block;\n\t\tvertical-align: top;\n\t\twidth: 33%;\n\t\theight: 220upx;\n\t\tposition: relative;\n\t\toverflow: hidden;\n\t\tborder-radius: 20upx;\n}\n.sp-item3-bottom{\n\tpadding: 0 48upx;\n\t/* margin: 0 18upx; */\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\tborder-bottom: 22upx solid #f6f1f3;\n\tpadding-bottom: 22upx;\n}\n.sp-item3-bottom uni-image{\n\twidth: 100%;\n\theight: 100%;\n}\n.sp-item3-bottom .price{\n\t\tposition: absolute;\n\t\tleft: 0;\n\t\tborder-radius:0 20upx 0 20upx;\n\t\tbottom: 0;\n\t\tcolor: white;\n\t\tpadding: 5upx 8upx;\n\t\tbackground-color: #999;\n\t\topacity: 0.8;\n}\n.comment uni-image{\n\t\twidth: 45upx;\n\t\theight: 40upx;\n\t\tdisplay: inline-block;\n\t\tvertical-align: middle;\n}\n.buy uni-image{\n\t\twidth: 60upx;\n\t\theight: 60upx;\n\t\tpadding: 10upx;\n}\n.word-bottom>uni-view{\n\t\tdisplay: inline-block;\n\t\tvertical-align:-webkit-baseline-middle;\n}\n", ""]);
+exports.push([module.i, "\n.nav{\n\tz-index: 999;\n\tbackground-color: #fff;\n\tposition: fixed;\n\tleft: 0;\n\ttop: 0;\n\twidth: 100%;\n\tbox-sizing: border-box;\n}\n.nav .nav-content{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n\t-webkit-justify-content: space-around;\n\t        justify-content: space-around;\n}\n.search-line{\n\t/* height: 120upx; */\n\tbackground-color: #f4f4f4;\n\tborder-radius: 120upx;\n\t-webkit-box-flex: 1;\n\t-webkit-flex: 1;\n\t        flex: 1;\n\tmargin: 0 40upx;\n\tpadding: 8upx 15upx;\n}\n.search-line uni-icon{\n\tdisplay: inline-block;\n\t\tvertical-align: middle;\n}\n.search-line uni-input{\n\tdisplay: inline-block;\n\twidth: 70%;\n\theight: 100%;\n\tvertical-align: middle;\n\tmargin-left: 10upx;\n}\n.main{\n\tpadding-top: 96upx;\n}\n.banner{\n\tborder-radius: 10upx;\n\twidth: 100%;\n\theight: 320upx;\n}\n.banner2{\n\theight: 220upx;\n\tmargin-top: 20upx;\n}\n.banner3{\n\tmargin: 10upx 0 20upx;\n\theight: 260upx;\n}\n.title{\n\tmargin-right: 10upx;\n\tpadding-right: 10upx;\n\tborder-right: 1px solid #f4f4f4;\n}\n.content uni-icon{\n\tmargin-right: 5upx;\n\tcolor: #ffba2d;\n}\n.content{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\twidth: 80%;\n\theight: 38upx;\n}\n.list{\n\ttext-align: justify;\n\tmargin-top: 30upx;\n}\n.list-item{\n\tdisplay: inline-block;\n\tmargin:0 0 26upx 0;\n\twidth: 20%;\n\ttext-align: center;\n}\n.list-item:nth-of-type(5n){\n\tmargin-right: 0;\n}\n.list-item uni-image{\n\twidth: 90upx;\n\theight: 90upx;\n\tborder-radius: 50%;\n}\n.card{\n\tpadding: 10upx 8upx;\n\tmargin: 15upx 0;\n}\n.card1{\n\tbackground-color: #fff7f5;\n}\n.card .more .iconfont{\n\tmargin-left: 10upx;\n\tfont-size: 28upx;\n\tborder-radius: 50%;\n\tcolor: #ffb6b9;\n\t/* background-color: #; */\n\tvertical-align: bottom;\n}\n.sp-item uni-image{\n\twidth: 200upx;\n\theight: 200upx;\n\tborder-radius: 5upx;\n}\n.sp-item{\n\tmargin:8upx 2% 20upx 0;\n\tdisplay: inline-block;\n\tvertical-align: top;\n\twidth: 31%;\n\t/* pad */\n}\n.sp-item .ellipsis{\n\twidth: 200upx;\n}\n.sp-item:last-child{\n\tmargin-right: 0;\n}\n.hot{\n\ttext-align: center;\n}\n.hot .hot-title,\n.hot .hot-title::before,\n.hot .hot-title::after{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.hot .hot-title::before{\n\tcontent: '';\n\twidth: 80upx;\n\theight: 1px;\n\tbackground-color: #aeaeae;\n\tmargin-right: 30upx;\n}\n.hot .hot-title::after{\n\tcontent: '';\n\twidth: 80upx;\n\theight: 1px;\n\tbackground-color: #aeaeae;\n\tmargin-left: 30upx;\n}\n.hot-title uni-image{\n\twidth: 30upx;\n\theight: 30upx;\n\tmargin-right: 18upx;\n}\n.sp2{\n\ttext-align: justify;\n\tmargin: 40upx 0 20upx;\n}\n.sp2 .sp-item2{\n\twidth: 47%;\n\tdisplay: inline-block;\n\tmargin-bottom: 15upx;\n}\n.sp2 .sp-item2:nth-of-type(odd){\n\tmargin-right: 5%;\n}\n.sp2 .sp-item2 uni-view{\n\tmargin-bottom: 20upx;\n}\n.sp2 uni-image{\n\tmargin-bottom: 10upx;\n\twidth: 100%;\n\theight: 350upx;\n}\n.card2{\n\tbackground-color: #fdf2f6;\n\tborder-radius: 8upx;\n\tpadding: 10upx 18upx;\n\tmargin-bottom: 0;\n}\n.sp-item3:last-child .sp-item3-bottom{\n\tborder-bottom: 50upx solid #f6f1f3;\n}\n.sp-item3-top{\n\tpadding: 0 30upx;\n\tmargin: 20upx 0;\n}\n.sp-item3-top .headface{\n\twidth: 90upx;\n\theight: 90upx;\n\tborder-radius: 50%;\n\tmargin: 0 15upx;\n}\n/* .sp-item3-top-middle{\n\twidth: 300upx;\n\t} */\n.sp-item3-top-middle uni-image{\n\twidth: 25upx;\n\theight: 25upx;\n\tvertical-align: middle;\n\tmargin-right: 5upx;\n}\n.sp-item3-top-middle uni-text uni-text{\n\tcolor: #a9a9a9;\n\tmargin-left: 10upx;\n}\n.sp-item3-top>uni-view{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.enter-button{\n\tcolor: #ff8f94;\n\tborder: 2px solid #ff8f94;\n\tpadding: 10upx 15upx;\n\tborder-radius: 52upx;\n\tfloat: right;\n\tmargin-top: 19upx;\n}\n.sp-item3-bottom>uni-view{\n\t\tdisplay: inline-block;\n\t\tvertical-align: top;\n\t\twidth: 33%;\n\t\theight: 220upx;\n\t\tposition: relative;\n\t\toverflow: hidden;\n\t\tborder-radius: 20upx;\n}\n.sp-item3-bottom{\n\tpadding: 0 48upx;\n\t/* margin: 0 18upx; */\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\tborder-bottom: 22upx solid #f6f1f3;\n\tpadding-bottom: 22upx;\n}\n.sp-item3-bottom uni-image{\n\twidth: 100%;\n\theight: 100%;\n}\n.sp-item3-bottom .price{\n\t\tposition: absolute;\n\t\tleft: 0;\n\t\tborder-radius:0 20upx 0 20upx;\n\t\tbottom: 0;\n\t\tcolor: white;\n\t\tpadding: 5upx 8upx;\n\t\tbackground-color: #999;\n\t\topacity: 0.8;\n}\n.comment uni-image{\n\t\twidth: 45upx;\n\t\theight: 40upx;\n\t\tdisplay: inline-block;\n\t\tvertical-align: middle;\n}\n.buy uni-image{\n\t\twidth: 60upx;\n\t\theight: 60upx;\n\t\tpadding: 10upx;\n}\n.word-bottom>uni-view{\n\t\tdisplay: inline-block;\n\t\tvertical-align:-webkit-baseline-middle;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -8675,7 +8686,7 @@ var render = function() {
                             },
                             [
                               _c("v-uni-view", { attrs: { _i: "13-" + $30 } }, [
-                                _vm._v("小象母婴馆")
+                                _vm._v(_vm._$g("13-" + $30, "t0-0"))
                               ]),
                               _c(
                                 "v-uni-view",
@@ -8705,7 +8716,7 @@ var render = function() {
                                           ),
                                           attrs: { _i: "17-" + $30 }
                                         },
-                                        [_vm._v("500m以内")]
+                                        [_vm._v(_vm._$g("17-" + $30, "t0-0"))]
                                       )
                                     ],
                                     1
@@ -8738,74 +8749,49 @@ var render = function() {
                           staticClass: _vm._$g("19-" + $30, "sc"),
                           attrs: { _i: "19-" + $30 }
                         },
-                        [
-                          _c(
+                        _vm._l(_vm._$g(20 + "-" + $30, "f"), function(
+                          childItem,
+                          childIndex,
+                          $21,
+                          $31
+                        ) {
+                          return _c(
                             "v-uni-view",
-                            { attrs: { _i: "20-" + $30 } },
+                            {
+                              key: childItem,
+                              attrs: { _i: "20-" + $30 + "-" + $31 }
+                            },
                             [
                               _c("v-uni-image", {
                                 attrs: {
-                                  src: _vm._$g("21-" + $30, "a-src"),
+                                  src: _vm._$g(
+                                    "21-" + $30 + "-" + $31,
+                                    "a-src"
+                                  ),
                                   mode: "",
-                                  _i: "21-" + $30
+                                  _i: "21-" + $30 + "-" + $31
                                 }
                               }),
                               _c(
                                 "v-uni-view",
                                 {
-                                  staticClass: _vm._$g("22-" + $30, "sc"),
-                                  attrs: { _i: "22-" + $30 }
+                                  staticClass: _vm._$g(
+                                    "22-" + $30 + "-" + $31,
+                                    "sc"
+                                  ),
+                                  attrs: { _i: "22-" + $30 + "-" + $31 }
                                 },
-                                [_vm._v("$282")]
-                              )
-                            ],
-                            1
-                          ),
-                          _c(
-                            "v-uni-view",
-                            { attrs: { _i: "23-" + $30 } },
-                            [
-                              _c("v-uni-image", {
-                                attrs: {
-                                  src: _vm._$g("24-" + $30, "a-src"),
-                                  mode: "",
-                                  _i: "24-" + $30
-                                }
-                              }),
-                              _c(
-                                "v-uni-view",
-                                {
-                                  staticClass: _vm._$g("25-" + $30, "sc"),
-                                  attrs: { _i: "25-" + $30 }
-                                },
-                                [_vm._v("$282")]
-                              )
-                            ],
-                            1
-                          ),
-                          _c(
-                            "v-uni-view",
-                            { attrs: { _i: "26-" + $30 } },
-                            [
-                              _c("v-uni-image", {
-                                attrs: {
-                                  src: _vm._$g("27-" + $30, "a-src"),
-                                  mode: "",
-                                  _i: "27-" + $30
-                                }
-                              }),
-                              _c(
-                                "v-uni-view",
-                                {
-                                  staticClass: _vm._$g("28-" + $30, "sc"),
-                                  attrs: { _i: "28-" + $30 }
-                                },
-                                [_vm._v("$282")]
+                                [
+                                  _vm._v(
+                                    "￥" +
+                                      _vm._$g("22-" + $30 + "-" + $31, "t0-0")
+                                  )
+                                ]
                               )
                             ],
                             1
                           )
-                        ],
+                        }),
                         1
                       )
                     ],
@@ -8815,56 +8801,60 @@ var render = function() {
                 1
               )
             : _vm._e(),
-          _vm._$g(29, "i")
+          _vm._$g(23, "i")
             ? _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
-                _vm._l(_vm._$g(30, "f"), function(item, index, $21, $31) {
+                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+                _vm._l(_vm._$g(24, "f"), function(item, index, $22, $32) {
                   return _c(
                     "v-uni-view",
                     {
                       key: item,
-                      staticClass: _vm._$g("30-" + $31, "sc"),
-                      attrs: { _i: "30-" + $31 }
+                      staticClass: _vm._$g("24-" + $32, "sc"),
+                      attrs: { _i: "24-" + $32 }
                     },
                     [
                       _c("v-uni-image", {
                         attrs: {
-                          src: _vm._$g("31-" + $31, "a-src"),
+                          src: _vm._$g("25-" + $32, "a-src"),
                           mode: "",
-                          _i: "31-" + $31
+                          _i: "25-" + $32
                         }
                       }),
                       _c(
                         "v-uni-view",
                         {
-                          staticClass: _vm._$g("32-" + $31, "sc"),
-                          attrs: { _i: "32-" + $31 }
+                          staticClass: _vm._$g("26-" + $32, "sc"),
+                          attrs: { _i: "26-" + $32 }
                         },
                         [
                           _c(
                             "v-uni-view",
                             {
-                              staticClass: _vm._$g("33-" + $31, "sc"),
-                              attrs: { _i: "33-" + $31 }
+                              staticClass: _vm._$g("27-" + $32, "sc"),
+                              attrs: { _i: "27-" + $32 }
                             },
-                            [_vm._v("婴儿洗头帽西羽毛防水塞都是")]
+                            [_vm._v(_vm._$g("27-" + $32, "t0-0"))]
                           ),
                           _c(
                             "v-uni-view",
                             {
-                              staticClass: _vm._$g("34-" + $31, "sc"),
-                              attrs: { _i: "34-" + $31 }
+                              staticClass: _vm._$g("28-" + $32, "sc"),
+                              attrs: { _i: "28-" + $32 }
                             },
                             [
-                              _vm._v("$79"),
+                              _vm._v("￥" + _vm._$g("28-" + $32, "t0-0")),
                               _c(
                                 "v-uni-text",
                                 {
-                                  staticClass: _vm._$g("35-" + $31, "sc"),
-                                  attrs: { _i: "35-" + $31 }
+                                  staticClass: _vm._$g("29-" + $32, "sc"),
+                                  attrs: { _i: "29-" + $32 }
                                 },
-                                [_vm._v("已售516件")]
+                                [
+                                  _vm._v(
+                                    "已售" + _vm._$g("29-" + $32, "t0-0") + "件"
+                                  )
+                                ]
                               )
                             ],
                             1
@@ -8879,7 +8869,7 @@ var render = function() {
                 1
               )
             : _vm._e(),
-          _c("uni-load-more", { attrs: { _i: 36 } })
+          _c("uni-load-more", { attrs: { _i: 30 } })
         ],
         1
       )
@@ -23529,7 +23519,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
 var ___CSS_LOADER_URL_REPLACEMENT_2___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_2___, { hash: "#iconfont" });
 // Module
-exports.push([module.i, "@font-face {font-family: \"iconfont\";\n  src: \n  url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),\n  url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('woff'),\n  url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format('truetype'), \n  url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format('svg'); /* iOS 4.1- */\n}\n.iconfont {\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.icon-star:before {\n  content: \"\\e6c3\";\n}\n.icon-arrowup:before {\n  content: \"\\e60f\";\n}\n.icon-arrowdown-copy:before {\n  content: \"\\e623\";\n}\n.icon-previewleft:before {\n  content: \"\\e75b\";\n}\n.icon-share:before {\n  content: \"\\e631\";\n}\n.icon-address:before {\n  content: \"\\e61f\";\n}\n.icon-iconfontshop-copy:before {\n  content: \"\\e61c\";\n}\n.icon-arrow-right:before {\n  content: \"\\e622\";\n}\n.icon-share1:before {\n  content: \"\\e61d\";\n}\n.icon-zan:before {\n  content: \"\\e60c\";\n}\n.icon-share2:before {\n  content: \"\\e624\";\n}\n.icon-tubiao-:before {\n  content: \"\\e61b\";\n}\n.icon-arrow-right1:before {\n  content: \"\\e614\";\n}\n.icon-kefu:before {\n  content: \"\\e60a\";\n}\n.icon-Write:before {\n  content: \"\\e6b9\";\n}\n.icon-tubiao-1:before {\n  content: \"\\e60b\";\n}\nbody {\r\n\t\tfont-size: 32upx;\n}\n.padding {\r\n\t\tpadding: 20upx 30upx;\r\n\t\tbox-sizing: border-box;\n}\nuni-icon {\r\n\t\tvertical-align: middle;\n}\n.right-arrow{\r\n\t\tdisplay: inline-block;\r\n\t\t/* vertical-align: top; */\r\n\t\tmargin-left: 20upx;\r\n\t\twidth: 20upx !important;\r\n\t\theight: 30upx !important;\n}\n.down-arrow{\r\n\t\tdisplay: inline-block;\r\n\t\t/* vertical-align: top; */\r\n\t\tmargin-left: 20upx;\r\n\t\twidth: 30upx !important;\r\n\t\theight: 20upx !important;\n}\n.search-img{\r\n\t\twidth: 40upx !important;\r\n\t\theight: 40upx !important;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\n}\n.dots-img{\r\n\t\twidth: 44upx !important;\r\n\t\theight: 12upx !important;\r\n\t\tdisplay: inline-block !important;\r\n\t\tvertical-align: middle !important;\n}\n.pre-img{\r\n\t\twidth: 30upx !important;\r\n\t\theight: 40upx !important;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: bottom;\r\n\t\tmargin-right: 15upx;\n}\n.pre-img2{\r\n\t\twidth: 50upx !important;\r\n\t\theight: 40upx !important;\n}\n.setting-img{\r\n\t\twidth: 40upx !important;\r\n\t\theight: 40upx !important;\n}\n\n/* 字体大小 */\n.s1 {\r\n\t\tfont-size: 28upx;\n}\n.s2 {\r\n\t\tfont-size: 24upx;\n}\n.s3 {\r\n\t\tfont-size: 26upx;\n}\n.s4 {\r\n\t\tfont-size: 40upx;\n}\n.s5 {\r\n\t\tfont-size: 36upx;\n}\n.s6{\r\n\t\tfont-size: 32upx;\n}\n.s7{\r\n\t\tfont-size: 50upx;\n}\n.s8{\r\n\t\tfont-size: 30upx;\n}\n\n/* 字体颜色 */\n.cr {\r\n\t\tcolor: #ff6d7e;\r\n\t\tfont-weight: bold;\n}\n.cg {\r\n\t\tcolor: #808080;\n}\n.cb {\r\n\t\tcolor: #6b6a69;\n}\n.cblue{\r\n\t\tcolor: #2caeff;\n}\n.del {\r\n\t\ttext-decoration: line-through;\n}\n.ellipsis {\r\n\t\ttext-overflow: ellipsis;\r\n\t\toverflow: hidden;\r\n\t\twhite-space: nowrap;\n}\n.fr {\r\n\t\tfloat: right;\n}\n.vertical-middle{\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\n}\n.flex-between{\r\n\t\t-webkit-box-align: center;\r\n\t\t-webkit-align-items: center;\r\n\t\t        align-items: center;\r\n\t\tdisplay: -webkit-box;\r\n\t\tdisplay: -webkit-flex;\r\n\t\tdisplay: flex;\r\n\t\t-webkit-box-pack: justify;\r\n\t\t-webkit-justify-content: space-between;\r\n\t\t        justify-content: space-between;\n}\n\n\n\n\n.r-cb uni-checkbox .wx-checkbox-input {\r\n\t\tborder-radius: 50%;\n}\n.r-cb .wx-checkbox-input.wx-checkbox-input-checked {\r\n\t\tborder: 1px solid #ff4500;\r\n\t\tbackground-color: #ff4500;\r\n\t\tcolor: #fff !important;\n}\n.r-cb .wx-checkbox-input.wx-checkbox-input-checked::before {\r\n\t\tfont-size: 18px;\n}\n.r-cb:not([disabled]) .wx-checkbox-input:hover {\r\n\t\tcolor: white;\r\n\t\tborder-color: #d1d1d1;\n}\n.r-cb wx-checkbox {\r\n\t\tdisplay: -webkit-box;\r\n\t\tdisplay: -webkit-flex;\r\n\t\tdisplay: flex;\n}\n\n\n.textArr{  \nposition: absolute;right: 220px;z-index: 11;overflow: hidden;text-align:center;\n.slice-enter-active {\n-webkit-animation: bounce-in 5s infinite;\n        animation: bounce-in 5s infinite;\n}\n}\n@-webkit-keyframes bounce-in {\n0% {\n-webkit-transform:translateY(30px) ;\n        transform:translateY(30px) ;\n}\n20% {\n-webkit-transform: translateY(0px);\n        transform: translateY(0px);\n}\n80% {\n-webkit-transform: translateY(0px);\n        transform: translateY(0px);\n}\n100% {\n-webkit-transform:translateY(-30px);\n        transform:translateY(-30px);\n}\n}\n@keyframes bounce-in {\n0% {\n-webkit-transform:translateY(30px) ;\n        transform:translateY(30px) ;\n}\n20% {\n-webkit-transform: translateY(0px);\n        transform: translateY(0px);\n}\n80% {\n-webkit-transform: translateY(0px);\n        transform: translateY(0px);\n}\n100% {\n-webkit-transform:translateY(-30px);\n        transform:translateY(-30px);\n}\n}\r\n\r\n\t\r\n", ""]);
+exports.push([module.i, "@font-face {font-family: \"iconfont\";\n  src: \n  url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),\n  url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('woff'),\n  url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format('truetype'), \n  url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format('svg'); /* iOS 4.1- */\n}\n.iconfont {\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.icon-star:before {\n  content: \"\\e6c3\";\n}\n.icon-arrowup:before {\n  content: \"\\e60f\";\n}\n.icon-arrowdown-copy:before {\n  content: \"\\e623\";\n}\n.icon-previewleft:before {\n  content: \"\\e75b\";\n}\n.icon-share:before {\n  content: \"\\e631\";\n}\n.icon-address:before {\n  content: \"\\e61f\";\n}\n.icon-iconfontshop-copy:before {\n  content: \"\\e61c\";\n}\n.icon-arrow-right:before {\n  content: \"\\e622\";\n}\n.icon-share1:before {\n  content: \"\\e61d\";\n}\n.icon-zan:before {\n  content: \"\\e60c\";\n}\n.icon-share2:before {\n  content: \"\\e624\";\n}\n.icon-tubiao-:before {\n  content: \"\\e61b\";\n}\n.icon-arrow-right1:before {\n  content: \"\\e614\";\n}\n.icon-kefu:before {\n  content: \"\\e60a\";\n}\n.icon-Write:before {\n  content: \"\\e6b9\";\n}\n.icon-tubiao-1:before {\n  content: \"\\e60b\";\n}\nbody {\r\n\t\tfont-size: 32upx;\n}\n.padding {\r\n\t\tpadding: 20upx 30upx;\r\n\t\tbox-sizing: border-box;\n}\nuni-icon {\r\n\t\tvertical-align: middle;\n}\n.right-arrow{\r\n\t\tdisplay: inline-block;\r\n\t\t/* vertical-align: top; */\r\n\t\tmargin-left: 20upx;\r\n\t\twidth: 20upx !important;\r\n\t\theight: 30upx !important;\n}\n.down-arrow{\r\n\t\tdisplay: inline-block;\r\n\t\t/* vertical-align: top; */\r\n\t\tmargin-left: 20upx;\r\n\t\twidth: 30upx !important;\r\n\t\theight: 20upx !important;\n}\n.search-img{\r\n\t\twidth: 40upx !important;\r\n\t\theight: 40upx !important;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\n}\n.dots-img{\r\n\t\twidth: 44upx !important;\r\n\t\theight: 12upx !important;\r\n\t\tdisplay: inline-block !important;\r\n\t\tvertical-align: middle !important;\n}\n.pre-img{\r\n\t\twidth: 30upx !important;\r\n\t\theight: 40upx !important;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: bottom;\r\n\t\tmargin-right: 15upx;\n}\n.pre-img2{\r\n\t\twidth: 50upx !important;\r\n\t\theight: 40upx !important;\n}\n.setting-img{\r\n\t\twidth: 40upx !important;\r\n\t\theight: 40upx !important;\n}\n\n/* 字体大小 */\n.s1 {\r\n\t\tfont-size: 28upx;\n}\n.s2 {\r\n\t\tfont-size: 24upx;\n}\n.s3 {\r\n\t\tfont-size: 26upx;\n}\n.s4 {\r\n\t\tfont-size: 40upx;\n}\n.s5 {\r\n\t\tfont-size: 36upx;\n}\n.s6{\r\n\t\tfont-size: 32upx;\n}\n.s7{\r\n\t\tfont-size: 50upx;\n}\n.s8{\r\n\t\tfont-size: 30upx;\n}\n\n/* 字体颜色 */\n.cr {\r\n\t\tcolor: #ff6d7e;\r\n\t\tfont-weight: bold;\n}\n.cg {\r\n\t\tcolor: #808080;\n}\n.cb {\r\n\t\tcolor: #6b6a69;\n}\n.cblue{\r\n\t\tcolor: #2caeff;\n}\n.del {\r\n\t\ttext-decoration: line-through;\n}\n.ellipsis {\r\n\t\ttext-overflow: ellipsis;\r\n\t\toverflow: hidden;\r\n\t\twhite-space: nowrap;\n}\n.fr {\r\n\t\tfloat: right;\n}\n.vertical-middle{\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\n}\n.flex-between{\r\n\t\t-webkit-box-align: center;\r\n\t\t-webkit-align-items: center;\r\n\t\t        align-items: center;\r\n\t\tdisplay: -webkit-box;\r\n\t\tdisplay: -webkit-flex;\r\n\t\tdisplay: flex;\r\n\t\t-webkit-box-pack: justify;\r\n\t\t-webkit-justify-content: space-between;\r\n\t\t        justify-content: space-between;\n}\n\n\n\n\n.r-cb uni-checkbox .wx-checkbox-input {\r\n\t\tborder-radius: 50%;\n}\n.r-cb .wx-checkbox-input.wx-checkbox-input-checked {\r\n\t\tborder: 1px solid #ff4500;\r\n\t\tbackground-color: #ff4500;\r\n\t\tcolor: #fff !important;\n}\n.r-cb .wx-checkbox-input.wx-checkbox-input-checked::before {\r\n\t\tfont-size: 18px;\n}\n.r-cb:not([disabled]) .wx-checkbox-input:hover {\r\n\t\tcolor: white;\r\n\t\tborder-color: #d1d1d1;\n}\n.r-cb wx-checkbox {\r\n\t\tdisplay: -webkit-box;\r\n\t\tdisplay: -webkit-flex;\r\n\t\tdisplay: flex;\n}\n\n\r\n\r\n\t\r\n", ""]);
 // Exports
 module.exports = exports;
 
