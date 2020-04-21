@@ -29,6 +29,8 @@ export default {
 			default: false
 		}
 	},
+	mounted(){
+	},
 	data() {
 		const value = this.defaultValue;
 		return {

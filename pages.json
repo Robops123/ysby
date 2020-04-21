@@ -63,6 +63,12 @@
 					   }
 					},
 					{
+					    "path": "pages/index/goodsComments",
+					    "style": {
+					       "navigationBarTitleText": "用户评价"
+					   }
+					},
+					{
 					    "path": "pages/index/createOrder",
 					    "style": {
 					       "navigationBarTitleText": "创建订单"

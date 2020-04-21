@@ -25,12 +25,19 @@
 			<scroll-view scroll-y="true" class="right-scroll" id="sv" :style="{height:sh+'px'}" >
 				<view class="">
 					<image src="../../static/img/bg/activity.png" mode="" class="banner"></image>
-					<view class="s1 headline" v-if="category[0]">{{tapped!='' ? '全部'+category[tabActive].name+'用品':'全部'+category[0].name+'用品'}}</view>
+					<view class="s1 headline" v-if="active==1">{{tapped!='' ? '全部'+category[tabActive].name+'商家':'全部'+category[0].name+'商家'}}</view>
+					<view class="s1 headline" v-if="active==2">{{tapped!='' ? '全部'+category[tabActive].name+'用品':'全部'+category[0].name+'用品'}}</view>
 					<!-- 区 -->
-					<view class="right-content">
-						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList')">
-							<image :src="item.thumb" mode=""></image>
-							<view class="s3 cg ellipsis">{{item.title}}</view>
+					<view class="right-content" v-if="active==1">
+						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList',tabActive,item.id)">
+							<image :src="item.logo" mode=""></image>
+							<view class="s3 cg ellipsis">{{item.merchname}}</view>
+						</view>
+					</view>
+					<view class="right-content" v-if="active==2">
+						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList',tabActive,item.id)">
+							<image :src="item.advimg" mode=""></image>
+							<view class="s3 cg ellipsis">{{item.name}}</view>
 						</view>
 					</view>
 				</view>
@@ -51,7 +58,7 @@
 		data(){
 			return{
 				url:'&r=api.home.morecate',
-				url2:'&r=api.home.morecate.categoods',
+				url2:'&r=api.home.morecate.catemerch',
 				tapped:'',
 				category:[],
 				active:1,
@@ -72,7 +79,6 @@
 		   mounted(){
 		   	var that=this
 		   	this.getCategory()
-			this.getList('','')
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
 		   			that.sh=res
@@ -86,9 +92,17 @@
 				this.reset()
 				this.getList('',item.id)
 			},
-			to(w){
+			to(w,id1,id2){
+				var cateId,goodsId
+				if(this.active==1){
+					cateId=this.category[id1].id
+					goodsId=id2
+				}else{
+					goodsId=this.category[id1].id
+					cateId=id2
+				}
 				uni.navigateTo({
-					url:'./goodsList'
+					url:'./goodsList?cateId='+cateId+'&goodsId='+goodsId
 				})
 			},
 			back(){
@@ -100,15 +114,14 @@
 				this.active=t
 				if(t==1){
 					 this.url='&r=api.home.morecate'
-					 this.url2='&r=api.home.morecate.categoods'
+					 this.url2='&r=api.home.morecate.catemerch'
 				}else{
 					 this.url='&r=api.home.morecate.brand'
-					this.url2='&r=api.home.morecate.brandgoods'
+					this.url2='&r=api.home.morecate.brandcates'
 				}
 				this.tapped=false
 				this.reset()
 				this.getCategory()
-				this.getList('','')
 			},
 			reset(){
 				this.page=1
@@ -124,6 +137,7 @@
 				  this.$apiPost(this.url,params).then((res) =>{
 					  that.category=res.data
 					  that.tabActive=0
+					  that.getList('',res.data[0].id)
 				  })
 			},
 			getList(p,id){
@@ -135,10 +149,15 @@
 				// if(this.page==1){
 				// 	this.$loading()
 				// }
-				  var params={
-				  	   id:id
+				  // var params={
+				  // 	   id:id
+				  // }
+				  if(this.active==1){
+					  this.url2+='&cateid='+id
+				  }else{
+					  this.url2+='&brandid='+id
 				  }
-				  this.$apiPost(this.url2,params).then((res) =>{
+				  this.$apiPost(this.url2).then((res) =>{
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
 					  // if(that.page==1){
@@ -172,7 +191,9 @@
 		width: 100%;
 		box-sizing: border-box;
 		padding: 20upx 0 20upx 40upx;
-		padding-top: var(--status-bar-height);
+		/* #ifdef APP-PLUS */
+			padding-top: var(--status-bar-height);
+		/* #endif */
 		display: flex;
 		/* justify-content: space-around; */
 		align-items: center;
@@ -182,7 +203,9 @@
 		position: absolute;
 		left: 70px;
 		right: 70px;
-		top: var(--status-bar-height);
+		/* #ifdef APP-PLUS */
+			top: var(--status-bar-height);
+		/* #endif */
 		padding: 0 0 20upx;
 		text-align: center;
 	}
@@ -210,11 +233,11 @@
 	.content{
 		background-color: #f7f7f7;
 		position: absolute;
-		padding-top: 20upx;
-		top: 72upx;
+		padding-top: 92upx;
+		top: 0;
 		left: 0;
 		right: 0;
-		bottom: 0;
+		bottom: -72upx;
 		display: flex;
 		margin-top: var(--status-bar-height);
 	}

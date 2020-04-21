@@ -5,6 +5,7 @@ export const getHeight=function(selector,succb){
     					const query = uni.createSelectorQuery()
     					query.select(selector).boundingClientRect()
     					query.exec(function(res) {
+							console.log(res)
 							h= resu.windowHeight - res[0].top
 							succb(h)
     					})

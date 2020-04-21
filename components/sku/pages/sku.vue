@@ -10,38 +10,39 @@
 							<view class="specification-right">
 								<view class="price-content">
 									<text class="sign">¥</text>
-									<text class="price">{{ selectshop.price || 0 }}</text>
+									<text class="price">{{ marketPrice*selectNum || 0 }}</text>
 								</view>
-								<view class="inventory">库存:{{ selectshop.stock || 0 }}</view>
-								<view class="choose">已选:{{ selectArr.join(' ') }}</view>
+								<view class="inventory">库存:{{ stock || 0 }}</view>
+								<view class="choose">已选:{{ selectArr.join(',') }}</view>
 							</view>
 						</view>
 						<view class="specification-content">
-							<view class="specification-item" v-for="(item, index1) in specifications" :key="index1">
-								<view class="item-title">{{ item.name }}</view>
+							<view class="specification-item" v-for="(item, index1) in categorys" :key="index1">
+								<view class="item-title">{{ item.title }}</view>
 								<view class="item-wrapper">
 									<view
 										class="item-content"
-										@click="skuClick(item_value, index1, $event, index2)"
+										@click="skuClick(item_value, index1, index2)"
 										v-for="(item_value, index2) in item.item"
 										:key="index2"
-										:class="[item_value.ishow ? '' : 'noactived', subIndex[index1] == index2 ? 'actived' : '']"
+										:class="{actived:item_value.choosed==true}"
 									>
-										{{ item_value.name }}
+										{{ item_value.itemtitle }}
 									</view>
 								</view>
 							</view>
 							<view class="specification-item">
 								<view class="item-title">数量</view>
 								<view class="item-wrapper">
-									<stepper size="small" :min="1" :max="selectshop.stock" :defaultValue="selectNum" :display="canCount" @change="changeNum"></stepper>
+									<stepper size="small" :min="1" :max="stock" v-if="stock" :defaultValue="selectNum"  @change="changeNum"></stepper>
 								</view>
 							</view>
 						</view>
 					</scroll-view>
 					<view class="close" @tap="closeSf"><image class="close-item" src="../static/close.png"></image></view>
 				</view>
-				<view class="btn-wrapper"><button class="sure">确定</button></view>
+				<view class="btn-wrapper"><button class="sure" :class="{disabedbtn:stock==0 || stock==null || marketPrice==0}"
+				 @click="confirmChoose" :disabled="stock==0 || stock==null || marketPrice==0">确定</button></view>
 			</view>
 		</view>
 	</view>
@@ -50,63 +51,95 @@
 
 <script>
 	import stepper from '../components/other/stepper.vue';
-	import products from '../json/product.json';
-	import skuList from '../json/skuList.json';
-	import specList from '../json/specList.json';
+	// import products from '../json/product.json';
+	// import skuList from '../json/skuList.json';
+	// import specList from '../json/specList.json';
 	export default{
+		props:['category','total','goodsid'],
 		components:{
 			stepper
 		},
 		data() {
 			return {
-				product: products.product,
-				showSet: false,
+				// product: products.product,
+				// showSet: false,
+				// specifications: specList.specifications, //spu规格列表
+				// difference: skuList.difference, //sku列表
+				// shopItemInfo: {}, //存放要和选中的值进行匹配的数据
+				// subIndex: [], //是否选中 因为不确定是多规格还是但规格，所以这里定义数组来判断
+				// selectshop: {}, //存放最后选中的商品
+				
 				specClass: 'none',
-				specifications: specList.specifications, //spu规格列表
-				difference: skuList.difference, //sku列表
-				shopItemInfo: {}, //存放要和选中的值进行匹配的数据
 				selectArr: [], //存放被选中的值
-				subIndex: [], //是否选中 因为不确定是多规格还是但规格，所以这里定义数组来判断
-				selectshop: {}, //存放最后选中的商品
-				selectNum: 1 //选中数量
+				selectNum: 1 ,//选中数量,
+				// 
+				categorys:'',
+				choosedid:[],
+				marketPrice:'',
+				stock:''
 			};
 		},
-		computed: {
-			canCount() {
-				return this.subIndex.some(item => item === -1);
-			}
-		},
+		// computed: {
+		// 	canCount() {
+		// 		return this.subIndex.some(item => item === -1);
+		// 	}
+		// },
 		mounted() {
-			console.log(products);
-			console.log(skuList);
-			console.log(specList);
-			
-			this.specifications.map(item => {
-				this.selectArr.push('');
-				this.subIndex.push(-1);
-			});
-			this.checkItem(); //计算sku里面规格形成路径
-			this.checkInpath(-1); //传-1是为了不跳过循环
+			this.categorys=this.category
+			this.stock=Number(this.total)
+			// this.specifications.map(item => {
+			// 	this.selectArr.push('');
+			// 	this.subIndex.push(-1);
+			// });
+			// this.checkItem(); //计算sku里面规格形成路径
+			// this.checkInpath(-1); //传-1是为了不跳过循环
 			// this.getData(1);
 		},
 		methods: {
-			skuClick(value, index1, event, index2) {
-				console.log(value,index1,event,index2)
-				if (value.ishow) {
-					if (this.selectArr[index1] != value.name) {
-						this.$set(this.selectArr, index1, value.name);
-						this.$set(this.subIndex, index1, index2);
-					} else {
-						this.$set(this.selectArr, index1, '');
-						this.$set(this.subIndex, index1, -1);
+			skuClick(value, index1, index2) {
+				var that=this
+				this.selectNum=1
+				this.categorys[index1].item.map((item,index) =>{
+					if(index==index2){
+						return item.choosed=!item.choosed
+					}else{
+						return item.choosed=false
 					}
-					this.checkInpath(index1);
-					//如果全部选完
-					if (this.selectArr.every(item => item != '')) {
-						this.selectshop = this.shopItemInfo[this.selectArr];
-						this.selectNum = 1;
-					}
-				}
+				})
+				this.choosedid=[],this.selectArr=[]
+				this.$forceUpdate()
+				this.categorys.forEach((item,index) =>{
+					item.item.forEach((item2,index2) =>{
+						if(item2.choosed){
+							that.choosedid.push(item2.itemid)
+							that.selectArr.push(item2.itemtitle)
+						}
+					})
+				})
+				this.getActualRest()
+				// if (value.ishow) {
+				// 	if (this.selectArr[index1] != value.name) {
+				// 		this.$set(this.selectArr, index1, value.name);
+				// 		this.$set(this.subIndex, index1, index2);
+				// 	} else {
+				// 		this.$set(this.selectArr, index1, '');
+				// 		this.$set(this.subIndex, index1, -1);
+				// 	}
+				// 	this.checkInpath(index1);
+				// 	//如果全部选完
+				// 	if (this.selectArr.every(item => item != '')) {
+				// 		this.selectshop = this.shopItemInfo[this.selectArr];
+				// 		this.selectNum = 1;
+				// 	}
+				// }
+			},
+			getActualRest(){
+				var that=this
+				var url='&r=api.goods.detail.skustock&goodsid='+this.goodsid+'&specitemid='+this.choosedid.join(',')
+				  this.$apiPost(url).then((res) =>{
+					  that.marketPrice=res.data.marketprice
+					  that.stock=Number(res.data.stock)
+				  })
 			},
 			checkInpath(clickIndex) {
 				// console.time('筛选可选路径需要的时间是');
@@ -220,6 +253,18 @@
 			},
 			changeNum(val) {
 				this.selectNum = parseInt(val);
+			},
+			confirmChoose(){
+				var d={
+					selectArr:this.selectArr.join(','),
+					selectNum:this.selectNum,
+					choosedid:this.choosedid
+				}
+				this.$emit('completeSpecChoose',d)
+				this.specClass = 'hide';
+				setTimeout(() => {
+					this.specClass = 'none';
+				}, 250);
 			}
 		}
 	}
@@ -453,7 +498,10 @@
 				}
 			}
 		}
-	
+		.disabedbtn{
+			background-color: #CED0D2 !important;
+		}
+		
 		@keyframes showPopup {
 			0% {
 				opacity: 0;

@@ -7,7 +7,7 @@
 			    	<image :src="item" mode="" class="banner"></image>
 			    </swiper-item>
 			   </swiper>
-			<view class="show-top">
+			<view class="show-top" style="margin-top: 20upx;">
 				<view class="name">{{data.title}}</view>
 				<view class="share" @click="openShare">
 					<view class="icon-share iconfont cr"></view>
@@ -20,16 +20,16 @@
 		
 		<view class="padding s2 border-bottom" @click="chooseCategory">
 			<text class="cg" style="margin-right: 30upx;">选择</text>
-			<text>选择 颜色分类</text>
+			<text>{{choosedSpec!='' ? choosedSpec.selectArr:'选择 颜色分类'}}</text>
 			<text class="fr icon-arrow-right iconfont cg"></text>
 		</view>
 		
 		<view class="border-bottom s2">
 			<view class="padding ">
-				<text class="" style="margin-right: 30upx;">商品评价(797)</text>
-				<text class="fr cr">查看全部 <text class="icon-arrow-right iconfont" style="margin-left: 30upx;"></text></text>
+				<text class="" style="margin-right: 30upx;">商品评价({{data.commentstotal}})</text>
+				<text class="fr cr" @click="toComments">查看全部 <text class="icon-arrow-right iconfont" style="margin-left: 30upx;"></text></text>
 			</view>
-			<view class="padding" v-for="(item,index) in 3" :key='index'>
+			<view class="padding" v-for="(item,index) in data.comments" :key='index'>
 				<view class="user">
 					<image :src="item.headimgurl" mode="" class="headface"></image>
 					<text>{{item.nickname}}</text>
@@ -39,14 +39,14 @@
 						{{item.content}}
 					</view>
 					<view class="comment-pic">
-						<image :src="commentImgItem" mode="" v-for="(commentImgItem,commentImgIndex) in item.picurl" :key='commentImgIndex'></image>
+						<image :src="commentImgItem" mode="" v-for="(commentImgItem,commentImgIndex) in item.picurl" v-if='commentImgIndex<=3' :key='commentImgIndex'></image>
 					</view>
 				</view>
 				<view class="s3 cg">{{item.skuname}}</view>
 				
 			</view>
 			<view class="" style="text-align: center;">
-				<button type="default" class="btn">查看全部评价</button>
+				<button type="default" class="btn" @click="toComments">查看全部评价</button>
 			</view>
 		</view>
 		
@@ -67,7 +67,7 @@
 					<view class="enter-button enter-button2" >进店</view>
 				</view>
 				<view class="sp-item3-bottom">
-					<view class="" v-for="(goodsItem, goodsIndex) in data.goods" :key="goodsIndex">
+					<view v-for="(goodsItem, goodsIndex) in data.goods" :key="goodsIndex">
 						<image :src="goodsItem.thumb" mode=""></image>
 						<view class="price">￥{{goodsItem.marketprice}}</view>
 					</view>
@@ -94,10 +94,12 @@
 		<uni-goods-nav :fill="true"  :options="options" :buttonGroup="buttonGroup" 
 		 @click="onClick" @buttonClick="buttonClick" />
 		 
-		 <sku ref='sku'></sku>
+		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :category='category' :total='total' v-if="receivedCategory" :goodsid='id'></sku>
 		 
-		 <uni-popup ref="popup" type="bottom">
-			 <view class="popup">
+		 
+		 <view  class="popup-box" v-if="popshow">
+			 <view class="wrapper" @click="popshow=false"></view>
+			 <view class="popup animated slideInUp">
 				 <view class="cr s5">分享给好友</view>
 				 <view class="padding">
 					 <view class="share-item">
@@ -114,10 +116,10 @@
 					 </view>
 				 </view>
 				 <view>
-					 <button type="default" class="text-btn">取消</button>
+					 <button type="default" class="text-btn" @click="popshow=false">取消</button>
 				 </view>
 			 </view>
-		 </uni-popup>
+		 </view>
 	</view>
 </template>
 
@@ -125,18 +127,23 @@
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniGoodsNav from '@/components/uni-goods-nav/uni-goods-nav.vue'
 	import sku from '@/components/sku/pages/sku.vue'
-	import uniPopup from "@/components/uni-popup/uni-popup.vue"
+	// import uniPopup from "@/components/uni-popup/uni-popup.vue"
 	export default{
 		components:{
 			uniRate,
 			uniGoodsNav,
 			sku,
-			uniPopup
+			// uniPopup
 		},
 		data () {
 		      return {
+				  popshow:false,
 				  id:'',
 				  data:'',
+				  category:[],
+				  total:'',
+				  receivedCategory:false,
+				  choosedSpec:'',
 		        options: [{
 		          icon: 'icon-kefu',
 		          text: '客服'
@@ -165,6 +172,7 @@
 				console.log(p)
 				this.id=p.id
 				this.getDetail()
+				this.getCategory()
 			},
 		    methods: {
 		      onClick (e) {
@@ -190,7 +198,7 @@
 				  this.$refs.sku.specClass='show'
 			  },
 			  openShare(){
-				  this.$refs.popup.open()
+				  this.popshow=true
 			  },
 			  getDetail(){
 				  var that=this
@@ -206,6 +214,23 @@
 				  	  // that.dataList=that.dataList.concat(res.data)
 				  	  // that.more=''
 				    })
+			  },
+			  getCategory(){
+				  var that=this
+				  var url='&r=api.goods.detail.sku&goodsid='+this.id
+				    this.$apiPost(url).then((res) =>{
+				  		that.category=res.data
+						that.total=res.stock
+						that.receivedCategory=true
+				    })
+			  },
+			  completeSpecChoose(e){
+				  this.choosedSpec=e
+			  },
+			  toComments(){
+				  uni.navigateTo({
+				  	url:'./goodsComments?id='+this.id
+				  })
 			  }
 		    }
 	}
@@ -402,5 +427,53 @@
 	}
 	.text-btn:after{
 		display: none;
+	}
+	.popup-box{
+		position: fixed;
+		display: flex;
+		align-items: flex-end;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 999;
+	}
+	.popup-box .wrapper{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #333;
+		opacity: 0.6;
+	}
+	.popup-box .popup{
+		position: relative;
+		width: 100%;
+		bottom: 0 !important;
+		left: 0;
+		right: 0;
+		height: 360upx;
+		box-sizing: border-box;
+	}
+	.slideInUp {
+	    -webkit-animation-name: slideInUp;
+	    animation-name: slideInUp
+	}
+	@-webkit-keyframes slideInUp {
+	    0% {
+	        -webkit-transform: translate3d(0,100%,0);
+	        transform: translate3d(0,100%,0);
+	        visibility: visible
+	    }
+	
+	    to {
+	        -webkit-transform: translateZ(0);
+	        transform: translateZ(0)
+	    }
+	}
+	.animated {
+	    -webkit-animation-duration: 0.3s;
+	    animation-duration: 0.3s;
+	    -webkit-animation-fill-mode: both;
+	    animation-fill-mode: both
 	}
 </style>

@@ -12,7 +12,7 @@
 			
 			
 			
-			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom' >
+			<view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom' >
 				
 				<view v-if="active==1" style="margin-top: 30upx;">
 					<view class="sp-item3  news"  v-for="(item,index) in dataList" :key='index' @click="toDetail(item)">
@@ -22,11 +22,11 @@
 									<image :src="item.id" mode="" class="headface"></image>
 								</view>
 								<view class="sp-item3-top-middle">
-									<view class="cr">小象母婴馆</view>
+									<view class="cr">{{item.merchname}}</view>
 								</view>
 							</view>
 							<view class="sp-item3-middle">
-								<view class="title">【你为什么总是实现不了自己的目标】</view>
+								<!-- <view class="title" v-html="item.detail"></view> -->
 								<view class="synopsis">
 									<text v-html="item.detail" class="article-detail">
 								    </text>
@@ -47,8 +47,8 @@
 									 mode="" ></image>
 								</view>
 							</view>
-							<view>
-									<video class="img-1" :src="item.video" v-if="item.video" controls></video>
+							<view style="overflow: hidden;">
+									<video class="img-1" :src="item.video" v-if="item.video" controls style="position: relative;"></video>
 								</view>
 						</view>
 							
@@ -114,7 +114,7 @@
 				</view>
 				
 				<uni-load-more :status="more"></uni-load-more>
-			</scroll-view>
+			</view>
 			
 			
 		</view>
@@ -385,6 +385,9 @@
 		.img-3 image{
 			width: 33%;
 			height: 220upx;
+		}
+		video.img-1{
+			width: 100%;
 		}
 		/* .img-1 image,
 		.img-2 image,

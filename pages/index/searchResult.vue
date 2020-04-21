@@ -153,7 +153,9 @@
 		top: 0;
 		width: 100%;
 		box-sizing: border-box;
-		padding-top: var(--status-bar-height);
+		/* #ifdef APP-PLUS */
+			padding-top: var(--status-bar-height);
+		/* #endif */
 		/* display: flex;
 		justify-content: space-around; */
 		
