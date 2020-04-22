@@ -24,7 +24,7 @@
 			</scroll-view>
 			<scroll-view scroll-y="true" class="right-scroll" id="sv" :style="{height:sh+'px'}" >
 				<view class="">
-					<image src="../../static/img/bg/activity.png" mode="" class="banner"></image>
+					<image :src="category[tabActive].advimg" mode="" class="banner"></image>
 					<view class="s1 headline" v-if="active==1">{{tapped!='' ? '全部'+category[tabActive].name+'商家':'全部'+category[0].name+'商家'}}</view>
 					<view class="s1 headline" v-if="active==2">{{tapped!='' ? '全部'+category[tabActive].name+'用品':'全部'+category[0].name+'用品'}}</view>
 					<!-- 区 -->
@@ -41,7 +41,7 @@
 						</view>
 					</view>
 				</view>
-				<uni-load-more :status="more"></uni-load-more>
+				<!-- <uni-load-more :status="more"></uni-load-more> -->
 			</scroll-view>
 		</view>
 	</view>

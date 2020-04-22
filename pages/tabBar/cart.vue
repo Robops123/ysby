@@ -152,7 +152,7 @@
 	.bottom{
 		position: fixed;
 		left: 0;
-		bottom: 50px;
+		bottom: 0;
 		/* #ifdef MP-WEIXIN */
 		bottom: 0;
 		/* #endif */

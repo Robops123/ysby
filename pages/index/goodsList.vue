@@ -92,17 +92,13 @@
 				this.dataList=[]
 				this.more=''
 				if(this.active!=3){
-					console.log('no排序')
 					this.rangeActive=''
 					this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
 				}else{
-					console.log('排序')
 					this.rangeActive= this.rangeActive == 1 ? 2:1
 					if(this.rangeActive==1){
-						console.log('上')
 						this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+3
 					}else if(this.rangeActive==2){
-						console.log('下')
 						this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+4
 					}
 				}

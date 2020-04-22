@@ -1,76 +1,113 @@
 <template>
 	<view>
-		<!-- #ifdef APP-PLUS || H5 -->
-			<uni-status-bar />
-		<!-- #endif -->
-		<view class="top">
-			<!-- #ifdef APP-PLUS || H5 -->
-				<view class="icon-fire iconfont" @click="back"></view>
-			<!-- #endif -->
-			<view class="top-search">
-				<view class="icon-fire iconfont" @click="search"></view>
-				<input type="text" placeholder="寻找附近的商家">
+		<view class="top-nav padding">
+			<view class="nav-content">
+				<text class="iconfont icon-previewleft " @click="back"></text>
+				<view class="search-line">
+					<input type="text" value="" placeholder="寻找附近的商家"/>
+				</view>
+				<text class="iconfont icon-share1 fr" style="font-size: 50upx;"></text>
 			</view>
-				<view class="icon-fire iconfont fr" @click="share"></view>
 		</view>
+		
 		
 		<!--  -->
-		<view class="sp-item3-top">
+		<view class="sp-item3-top main">
 			<view>
-				<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
+				<image :src="basic.logo" mode="" class="headface"></image>
 			</view>
 			<view class="sp-item3-top-middle">
-				<view>小象母婴馆</view>
+				<view>{{basic.merchname}}</view>
 				<view>
-					<uni-rate disabled="true" size="12" value="3.5" style="float: left;margin-top: 24upx;"></uni-rate>
-					<text class="s3 cg">1429人关注</text>
+					<uni-rate disabled="true" size="12" :value="basic.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
+					<text class="s3 cg">{{basic.collect}}人关注</text>
 				</view>
 			</view>
-			<view class="enter-button" @click="toShop">关注</view>
+			<view class="enter-button" >关注</view>
 		</view>
 		
-		<image src="../../static/img/pic/logo.png" mode="" class="banner"></image>
+		<!-- <image src="../../static/img/pic/logo.png" mode="" class="banner"></image> -->
 		
+		<swiper class="banner" autoplay="false" duration="500" interval="3000" >
+		    <swiper-item v-for="(item, index) in carouselList" :key="index">
+		    	<image :src="item.thumb" mode="" class="banner"></image>
+		    </swiper-item>
+		   </swiper>
 		<view class="nav-bar">
 			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>精选</text></view>
 			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>新品</text></view>
 			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>销量</text></view>
-			<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)"><text>价格</text></view>
+			<view class="nav nav-left" :class="{active:active==4}" @click="toggle(4)">
+				<text style="display: inline-block;vertical-align: middle;margin-right: 20upx;">价格</text>
+				<view style="display: inline-block;vertical-align: middle;" class="range">
+				<text class="icon-arrowup iconfont" :class="{active:rangeActive==1}"></text>
+				<text class="icon-arrowdown-copy iconfont" :class="{active:rangeActive==2}" ></text>
+				</view>
+			</view>
 		</view>
 		
-		<scroll-view scroll-y="true" >
+		<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 			<view class="padding" style="background-color:#fff;">
 				<view class="box">
-					<view class="list" v-for="(item,index) in 10" :key='index'>
-						<image src="../../static/img/bg/activity.png" mode=""></image>
+					<view class="list" v-for="(item,index) in dataList" :key='index'>
+						<image :src="item.thumb" mode=""></image>
 						<view class="word">
-							<view class="s3 ellipsis">婴儿洗头帽西羽毛防水塞都是</view>
-							<view class="s1 cr">$79<text class="s2 cg fr">已售516件</text></view>
+							<view class="s3 ellipsis">{{item.title}}</view>
+							<view class="s1 cr">￥{{item.marketprice}}<text class="s2 cg fr">已售{{item.sales}}件</text></view>
 						</view>
 					</view>
 				</view>
 			</view>
+			<uni-load-more :status="more"></uni-load-more>
 		</scroll-view>
 	</view>
 </template>
 
 <script>
 	import uniStatusBar from "@/components/uni-status-bar/uni-status-bar"
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default{
 		components:{
-			uniStatusBar
+			uniStatusBar,
+			uniLoadMore
 		},
 		data(){
 			return{
-				active:1
+				id:'',
+				url:'',
+				active:1,
+				rangeActive:'',
+				sh:'',
+				dataList:[],
+				page:1,
+				pageSize:5,
+				total:0,
+				more:'',
+				basic:'',
+				carouselList:[]
 			}
 		},
-		methods:{
-			back(){
-				uni.navigateBack({
-					delta:1
+		computed: {
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		   },
+		   onLoad(e){
+			   this.id=e.id
+		   },
+		mounted(){
+			var that=this
+			this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
+			this.getBasic()
+			this.getCarousel()
+			this.getList(this.page)
+			setTimeout(function(){
+				that.$getHeight('#sv',(res) =>{
+					that.sh=res
 				})
-			},
+			},0)
+		},
+		methods:{
 			share(){
 				console.log('share')
 			},
@@ -79,6 +116,78 @@
 			},
 			toggle(t){
 				this.active=t
+				this.reset()
+				this.getList(this.page)
+			},
+			toggleRange(t){
+				this.rangeActive=t
+			},
+			back(){
+				uni.navigateBack({
+					delta:1
+				})
+			},
+			reset(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+				if(this.active!=4){
+					this.rangeActive=''
+					this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
+				}else{
+					this.rangeActive= this.rangeActive == 1 ? 2:1
+					if(this.rangeActive==1){
+						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+4
+					}else if(this.rangeActive==2){
+						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+5
+					}
+				}
+			},
+			getList(p){
+				var that=this
+				// var params={
+				//   page:p,
+				//   pagesize: this.pageSize
+				// }
+				if(this.page==1){
+					this.$loading()
+				}
+				  // var url='/wangtosale_list'
+				  this.$apiPost(this.url).then((res) =>{
+					  that.total=res.total
+					  that.dataList=that.dataList.concat(res.data)
+					  that.more=''
+					  if(that.page==1){
+					  	uni.hideLoading()
+					  }
+				  })
+			},
+			getBasic(){
+				var that=this
+				  var url='&r=api.merchant.home&merchid='+this.id
+				  this.$apiPost(url).then((res) =>{
+					  that.basic=res.data
+				  })
+			},
+			getCarousel(){
+				var that=this
+				  var url='&r=api.merchant.home.banner&merchid='+this.id
+				  this.$apiPost(url).then((res) =>{
+					  that.carouselList=res.data
+				  })
+			},
+			toBottom(){
+				if(this.noMore){
+					this.more='noMore'
+					return;
+				}
+				var that=this
+				this.more='loading'
+			  // setTimeout(function(){
+				  that.page++
+				  that.getList(that.page)
+			  // },2000)
 			},
 		}
 	}
@@ -88,28 +197,48 @@
 	page{
 		background-color: #f7f7f7;
 	}
-	.top{
-		padding: 10upx 0;
-		background-color:#fff;
+	.top-nav{
+		z-index: 999;
+		background-color: #fff;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		box-sizing: border-box;
+		/* #ifdef APP-PLUS */
+			padding-top: var(--status-bar-height);
+		/* #endif */
+		/* display: flex;
+		justify-content: space-around; */
+		
+	}
+	 .nav-content{
 		display: flex;
 		align-items: center;
-		justify-content: space-evenly;
+		justify-content: space-around;
 	}
-	.top-search{
-		padding: 10upx ;
-		box-sizing: border-box;
+	.search-line{
+		/* height: 120upx; */
 		background-color: #f4f4f4;
-		border-radius: 50upx;
+		border-radius: 120upx;
+		flex: 1;
+		margin: 0 40upx;
+		padding: 8upx 15upx;
 	}
-	.top-search .iconfont{
-		display: inline;
-		padding-right: 20upx;
-		/* vertical-align: middle; */
-	}
-	.top-search input{
-		width: 60%;
+	.search-line icon{
 		display: inline-block;
-		 vertical-align: middle;
+			vertical-align: middle;
+	}
+	.search-line input{
+		display: inline-block;
+		width: 70%;
+		height: 100%;
+		vertical-align: middle;
+		margin-left: 10upx;
+	}
+	.main{
+		padding-top: 96upx;
+		margin-top: var(--status-bar-height);
 	}
 	
 	
@@ -174,11 +303,11 @@
 		width: 25%;
 		box-sizing: border-box;
 	}
-	.nav.active text{
+	.nav.active>text{
 		color: #000000;
 		position: relative;
 	}
-	.nav.active text::before{
+	.nav.active>text::before{
 		content: '';
 		position: absolute;
 		bottom: -10upx;
@@ -213,5 +342,20 @@
 	}
 	.list .word{
 		padding: 5upx 20upx  20upx ;
+	}
+	
+	
+	.range{
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 15upx;
+	}
+	.range>.iconfont{
+		font-size: 24upx;
+		display: block;
+		transform: scale(2);
+	}
+	.range>text.active{
+		color: #000000;
 	}
 </style>

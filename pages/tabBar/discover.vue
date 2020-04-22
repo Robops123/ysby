@@ -19,7 +19,7 @@
 							<text class="s3 cg">1429人关注 | <text class="s2">{{item.distance}}</text></text>
 						</view>
 					</view>
-					<view class="enter-button" @click="toShop">进店</view>
+					<view class="enter-button" @click="toShop(item.id)">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
 					<view class="" v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
@@ -89,9 +89,9 @@
 		   	},0)
 		   },
 		methods:{
-			toShop(){
+			toShop(id){
 				uni.navigateTo({
-					url:`/pages/bussiness/shopPreview`
+					url:`/pages/bussiness/shopPreview?id=${id}`
 				})
 			},
 			toggle(t){

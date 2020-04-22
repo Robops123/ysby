@@ -87,7 +87,7 @@
 							<view class="enter-button">进店</view>
 						</view>
 						<view class="sp-item3-bottom">
-							<view class=""  v-for="(childItem,childIndex) in goods" :key='childIndex'>
+							<view class=""  v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
 								<image :src="childItem.thumb" mode=""></image>
 								<view class="price">￥{{childItem.marketprice}}</view>
 							</view>
@@ -156,6 +156,18 @@
 		     noMore () {
 		       return this.dataList.length >= this.total 
 		     },
+		   },
+		   onReachBottom(){
+			   if(this.noMore){
+			   					this.more='noMore'
+			   					return;
+			   				}
+			   				var that=this
+			   				this.more='loading'
+			   // setTimeout(function(){
+			   				  that.page++
+			   				  that.apart()
+			   // },2000)
 		   },
 		   mounted(){
 		   	var that=this
