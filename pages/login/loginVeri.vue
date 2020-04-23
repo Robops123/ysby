@@ -1,18 +1,28 @@
 <template>
 	<view class="box">
 		<view class="f1">手机号登录/注册</view>
-		<view class="fn"><text>您输入的号码是</text>+86 18237127467212132</view>
+		<view class="fn"><text>您输入的号码是</text>+86 {{mobile}}</view>
 		
 		<view class="input-line">
-			<input type="text" value="" placeholder="请输入验证码"/>
-			<button type="primary" class="veri">获取验证码</button>
+			<input type="password"  v-model="pwd" placeholder="请输入密码"/>
 		</view>
-		<view class="f2">
+		<view class="notice cg s3 animated" :class="{shake:validateMsg=='密码需为8-16位数字字母组合'}">密码需为8-16位数字字母组合</view>
+		<view class="input-line">
+			<input type="password" v-model="newpwd" placeholder="请再次确认密码"/>
+		</view>
+		<view class="input-line">
+			<input type="text" v-model="invited_code" placeholder="请输入邀请码"/>
+		</view>
+		<view class="input-line">
+			<input type="text" v-model="verifycode" placeholder="请输入验证码"/>
+			<button type="primary" class="veri" @click="getveri">{{enable? '发送验证码':'剩余'+remain+'s'}}</button>
+		</view>
+		<!-- <view class="f2">
 			<text @click="loginpsd()">密码登录</text>
-		</view>
+		</view> -->
 		
 		<view>
-			<button type="primary" class="btn" @click="to">登录</button>
+			<button type="primary" class="btn" @click="submit">注册&登录</button>
 		</view>
 	</view>
 </template>
@@ -21,15 +31,94 @@
 	export default{
 		data(){
 			return{
-				
+				mobile:'',
+				pwd:'',
+				newpwd:'',
+				invited_code:'',
+				verifycode:'',
+				reg:/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/,
+				validateMsg:'',
+				// 倒计时
+				remain:60,
+				timer:null,
+				enable:true
 			}
+		},
+		onLoad(e){
+			this.mobile=e.mobile
 		},
 		methods:{
 			loginpsd(){
 				uni.redirectTo({
 					url:'/pages/login/loginPsd'
 				})
-			}
+			},
+			submit(){
+				var that=this
+				var vali=this.validate()
+				if(vali===false){
+					this.$msg(this.validateMsg)
+					setTimeout(function(){
+						that.validateMsg=''
+					},1000)
+					return false;
+				}
+				this.$loading()
+				var params={
+					mobile:this.mobile,
+					// pwd:this.pwd
+				}
+				// var url='&r=api.member.account.register'
+				var url=`&r=api.member.account.register&mobile=${this.mobile}&pwd=${this.pwd}&verifycode=${this.verifycode}&invited_code=${this.invited_code}`
+				  this.$apiPost(url).then((res) =>{
+					  uni.hideLoading()
+					  setTimeout(function(){
+						that.$msg('注册成功')  
+					  },100)
+					  uni.setStorageSync('userInfo',res.data)
+					  uni.switchTab({
+					  	url:'../tabBar/mine'
+					  })
+				  })
+			},
+			validate(){
+				if(!this.reg.test(this.pwd)){
+					this.validateMsg='密码需为8-16位数字字母组合'
+					return false;
+				}
+				if(this.pwd!=this.newpwd){
+					this.validateMsg='两次输入密码不一致'
+					return false;
+				}
+			},
+			getveri(){
+			if(this.enable){
+			  var that=this
+			  this.enable=false
+			  // this.getcode()
+			  this.timer = setInterval(function(){
+			        // 定时器到底了 兄弟们回家啦
+			        that.settime()
+			      }, 1000)
+				}
+			},
+			  settime(){
+			    if(this.remain == 1){
+			      this.remain=60
+			      clearInterval(this.timer);
+			          this.enable=true
+			    }else{
+			      this.remain--;
+			    }
+			  },
+			  getcode(){
+			    var that=this,param
+			    http.post('/sendsms',param).then(res =>{
+			      that.$success('发送成功')
+			    }).catch((reason) =>{
+			        that.$error(reason)
+			    })
+			  }
 		}
 	}
 </script>
@@ -113,4 +202,5 @@
 	.fn text{
 		color: #7a7a7a;
 	}
+	
 </style>

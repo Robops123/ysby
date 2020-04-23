@@ -10,7 +10,7 @@
 			        </picker>
 			    </view>
 			</view>
-			<input type="text" value="" placeholder="请输入手机号"/>
+			<input type="text" value="" v-model="mobile" placeholder="请输入手机号"/>
 		</view>
 		<view class="f2 s2">登录遇到问题</view>
 		
@@ -53,8 +53,9 @@
 	export default{
 		data(){
 			return{
-				array: ['中国+86', '美国', '巴西', '日本'],
-				index:0
+				array: ['中国+86'],
+				index:0,
+				mobile:''
 			}
 		},
 		methods:{
@@ -63,9 +64,36 @@
 				console.log(e)
 			},
 			next(){
-				uni.navigateTo({
-					url:'/pages/login/loginVeri'
-				})
+				var reg=/^1[3456789]\d{9}$/
+				if(!reg.test(this.mobile)){
+					this.$msg('请输入正确的手机号')
+					return ;
+				}
+				this.testLogin()
+				// uni.navigateTo({
+				// 	url:'/pages/login/loginVeri?mobile='+this.mobile
+				// })
+			},
+			testLogin(){
+				this.$loading()
+				var that=this
+				var url='&r=api.member.account.login&mobile='+this.mobile+'&pwd='
+				var params={
+					
+				}
+				  this.$apiPost(url).then((res) =>{
+				  }).catch((reason) =>{
+					  if(reason.resultMessage=='用户不存在'){
+						 uni.navigateTo({
+						 	url:'/pages/login/loginVeri?mobile='+this.mobile
+						 })
+						}else{
+							uni.navigateTo({
+								url:'/pages/login/loginPsd?mobile='+this.mobile
+							})
+						}
+						uni.hideLoading()
+				  })
 			}
 		}
 	}

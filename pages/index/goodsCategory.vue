@@ -24,7 +24,8 @@
 			</scroll-view>
 			<scroll-view scroll-y="true" class="right-scroll" id="sv" :style="{height:sh+'px'}" >
 				<view class="">
-					<image :src="category[tabActive].advimg" mode="" class="banner"></image>
+					<image v-if="active==1" :src="category[tabActive].advimg" mode="" class="banner"></image>
+					<image v-else :src="category[tabActive].thumb" mode="" class="banner"></image>
 					<view class="s1 headline" v-if="active==1">{{tapped!='' ? '全部'+category[tabActive].name+'商家':'全部'+category[0].name+'商家'}}</view>
 					<view class="s1 headline" v-if="active==2">{{tapped!='' ? '全部'+category[tabActive].name+'用品':'全部'+category[0].name+'用品'}}</view>
 					<!-- 区 -->
@@ -190,8 +191,9 @@
 		top: 0;
 		width: 100%;
 		box-sizing: border-box;
-		padding: 20upx 0 20upx 40upx;
+		padding: 35upx 0 35upx 40upx;
 		/* #ifdef APP-PLUS */
+			padding: 20upx 0 20upx 40upx;
 			padding-top: var(--status-bar-height);
 		/* #endif */
 		display: flex;
@@ -205,8 +207,9 @@
 		right: 70px;
 		/* #ifdef APP-PLUS */
 			top: var(--status-bar-height);
+			padding: 0 0 20upx;
 		/* #endif */
-		padding: 0 0 20upx;
+		
 		text-align: center;
 	}
 	.nav{
@@ -233,7 +236,10 @@
 	.content{
 		background-color: #f7f7f7;
 		position: absolute;
-		padding-top: 92upx;
+		padding-top: 128upx;
+		/* #ifdef MP-WEIXIN */
+		padding-top: 32upx;
+		/* #endif */
 		top: 0;
 		left: 0;
 		right: 0;
@@ -259,7 +265,7 @@
 		border-left: 2px solid #ff6d7e;
 	}
 	.right-scroll{
-		padding: 25upx 30upx;
+		padding: 0 30upx 25upx;
 		flex: 1;
 		background-color: white;
 	}

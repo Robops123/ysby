@@ -1,24 +1,25 @@
 <template>
 	<view>
 		<view class="top">
-			<view>
+			<view v-if="logined">
 				<view class="setting" >
 					<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img" @click="toSetting"></image>
 				</view>
-				<image src="../../static/img/pic/logo.png" mode="" class="headface" @click="toRetail"></image>
-				<text class="s4"  @click="tologin">月亮都知道</text>
+				<image :src="data.avatar" mode="" class="headface" @click="toRetail"></image>
+				<text class="s4"  @click="tologin"  >{{data.nickname}}</text>
 			</view>
+			<view class="s4" style="padding: 50upx 0;text-align: center;" @click="tologin" v-else>请先登录</view>
 			<view class="options1">
 				<view class="options1-item" @click="to('goods')">
-					<view>12</view>
+					<view>{{logined ? data.collectGoods:0}}</view>
 					<view>我的收藏</view>
 				</view>
 				<view class="options1-item" @click="to('shop')">
-					<view>12</view>
+					<view>{{logined ? data.collectMerch:0}}</view>
 					<view>关注店铺</view>
 				</view>
-				<view class="options1-item">
-					<view>12</view>
+				<view class="options1-item" @click="test">
+					<view>{{logined ? data.history:0}}</view>
 					<view>浏览足迹</view>
 				</view>
 			</view>
@@ -104,7 +105,15 @@
 	export default{
 		data(){
 			return {
-				
+				data:'',
+				logined:false
+			}
+		},
+		onShow(){
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.getUserInfo(userInfo)
+				this.logined=true
 			}
 		},
 		methods:{
@@ -133,6 +142,39 @@
 			    	url:`/pages/mine/settings`
 			    })    
 			},
+			test(){
+				uni.navigateTo({
+					url:'../test'
+				})    
+			},
+			getUserInfo(u){
+				var that=this
+				var url='&r=api.member.my&uid='+u.uid+'&token='+u.token
+				  this.$apiPost(url).then((res) =>{
+					that.data=res.data	
+				  })
+			},
+			wxlogin(provider) {
+			    uni.login({
+			        provider: 'qq',
+			        // #ifdef MP-ALIPAY
+			        scopes: 'auth_user', //支付宝小程序需设置授权类型
+			        // #endif
+			        success: (res) => {
+			            console.log('login success:', res);
+			            // 更新保存在 store 中的登录状态
+						uni.getUserInfo({
+						      provider: 'qq',
+						      success: function (infoRes) {
+						        console.log('用户昵称为：' + infoRes.userInfo.nickName);
+						      }
+						    });
+			        },
+			        fail: (err) => {
+			            console.log('login fail:', err);
+			        }
+			    });
+			}
 		}
 	}
 </script>

@@ -10,14 +10,14 @@
 					</view>
 					<view class="enter-button" >进店</view>
 				</view>
-				<view v-html="data.detail">
+				<view v-html="data.detail" id="article">
 					
 				</view>
 				<!-- <view class="luntan-card-title">中期商会与你携手前行</view>
 				<view class="luntan-card-lianjie">#坚守共赢胜利#</view>
 				<view class="luntan-card-introduce">抗击疫情，中企商会在行动！截至2月8日，中企商会持续投入抗击疫情，面对这场突如其来的“疫”战，中企商会与大家共同坚守，终将会取得这场疫情防控狙击战的胜利！加油！</view>
 				<image class="luntan-card-img" src="../../static/img/bg/activity.png" mode=""></image> -->
-				<view class="share">
+				<view class="share" id="share">
 					<text>分享</text>
 					<image src="../../static/img/pic/other/weixin.png" mode="" style="width: 55upx;"></image>
 					<image src="../../static/img/pic/other/pyq.png" mode=""></image>
@@ -66,7 +66,7 @@
 						<text class="iconfont icon-share2"></text>
 						<text>转发{{repost}}</text>
 					</view>
-					<view class="luntan-card-bot-card">
+					<view class="luntan-card-bot-card" @click="openComment">
 						<text class="iconfont icon-tubiao-"></text>
 						<text>评论{{comment}}</text>
 					</view>
@@ -78,14 +78,20 @@
 			</view>
 			
 		</view>
+		
+		<ygc-comment ref="ygcComment" 
+		        :placeholder="'发布评论'" 
+		        @pubComment="pubComment"></ygc-comment>
 	</view>
 </template>
 
 <script>
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
+	import ygcComment from '@/components/ygc-comment/ygc-comment.vue';
 	export default{
 		components:{
-			uniLoadMore
+			uniLoadMore,
+			ygcComment
 		},
 		data(){
 			return{
@@ -93,6 +99,7 @@
 				active:1,
 				tabActive:0,
 				sh:'',
+				sh2:'',
 				dataList:[],
 				commentList:[],
 				data:'',
@@ -111,6 +118,9 @@
 			this.comment=e.comment
 			this.repost=e.repost
 		},
+		onPageScroll(e){
+			console.log(e)
+		},
 		computed: {
 		     noMore () {
 		       return this.commentList.length >= this.total
@@ -121,6 +131,7 @@
 		   	this.getDetail()
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
+					console.log(res)
 		   			that.sh=res
 		   		})
 		   	},0)
@@ -137,6 +148,9 @@
 				  var url='&r=api.college.hotarticle.detail&id='+this.id
 				  this.$apiPost(url,params).then((res) =>{
 					  that.data=res.data
+					  that.$nextTick(function(){
+					  	that.calcArticleHeight()
+					  })
 					  that.getList()
 				  })
 			},
@@ -159,6 +173,17 @@
 					  }
 				  })
 			},
+			calcArticleHeight(){
+				uni.getSystemInfo({
+				  	success: (resu) => {
+				  	const query = uni.createSelectorQuery()
+				  	query.select('#article').boundingClientRect()
+				  	query.exec(function(res) {
+							console.log(res)
+				  		})
+				  	}
+				 })
+			},
 			toBottom(){
 				if(this.noMore){
 					this.more='noMore'
@@ -171,6 +196,14 @@
 				  that.getList(that.page)
 			  // },2000)
 			},
+			pubComment(){
+				this.$refs.ygcComment.maskState=0
+				this.$refs.ygcComment.content=''
+			},
+			openComment(){
+				this.$refs.ygcComment.maskState=1
+			},
+			
 		}
 	}
 </script>

@@ -454,26 +454,5 @@
 		height: 360upx;
 		box-sizing: border-box;
 	}
-	.slideInUp {
-	    -webkit-animation-name: slideInUp;
-	    animation-name: slideInUp
-	}
-	@-webkit-keyframes slideInUp {
-	    0% {
-	        -webkit-transform: translate3d(0,100%,0);
-	        transform: translate3d(0,100%,0);
-	        visibility: visible
-	    }
 	
-	    to {
-	        -webkit-transform: translateZ(0);
-	        transform: translateZ(0)
-	    }
-	}
-	.animated {
-	    -webkit-animation-duration: 0.3s;
-	    animation-duration: 0.3s;
-	    -webkit-animation-fill-mode: both;
-	    animation-fill-mode: both
-	}
 </style>

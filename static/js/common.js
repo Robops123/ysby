@@ -5,7 +5,6 @@ export const getHeight=function(selector,succb){
     					const query = uni.createSelectorQuery()
     					query.select(selector).boundingClientRect()
     					query.exec(function(res) {
-							console.log(res)
 							h= resu.windowHeight - res[0].top
 							succb(h)
     					})
@@ -24,7 +23,7 @@ export const loading=function(msg){
 export const msg=function(msg,type){
 	uni.showToast({
 	    title: msg,
-		icon:type,
+		icon:type || 'none',
 	    duration: 2000
 	});
 }

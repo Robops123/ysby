@@ -2,7 +2,9 @@
 	<view>
 		<view class="top-nav padding">
 			<view class="nav-content">
+				<!-- #ifdef APP-PLUS -->
 				<text class="iconfont icon-previewleft " @click="back"></text>
+				<!-- #endif -->
 				<view class="search-line">
 					<input type="text" value="" placeholder="寻找附近的商家"/>
 				</view>

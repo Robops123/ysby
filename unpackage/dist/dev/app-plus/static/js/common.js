@@ -24,7 +24,7 @@ export const loading=function(msg){
 export const msg=function(msg,type){
 	uni.showToast({
 	    title: msg,
-		icon:type,
+		icon:type || 'none',
 	    duration: 2000
 	});
 }

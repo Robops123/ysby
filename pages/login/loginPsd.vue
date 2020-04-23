@@ -1,12 +1,12 @@
 <template>
 	<view class="box">
 		<view class="f1">手机号登录/注册</view>
-		<view class="fn"><text>您输入的号码是</text>+86 18237127467212132</view>
+		<view class="fn"><text>您输入的号码是</text>+86 {{mobile}}</view>
 		
 		<view class="input-line">
-			<input type="text" value="" placeholder="请输入密码"/>
-			<image :src="show? '../../static/chakanmimaclose2.png':'../../static/chakanmimaclose.png'" 
-			mode="" class="fr" @click="showpsd()"></image>
+			<input type="password" v-model="pwd" placeholder="请输入密码"/>
+			<!-- <image :src="show? '../../static/chakanmimaclose2.png':'../../static/chakanmimaclose.png'" 
+			mode="" class="fr" @click="showpsd()"></image> -->
 		</view>
 		<view class="f2">
 			<text @click="loginveri()">验证码登录</text>
@@ -14,7 +14,7 @@
 		</view>
 		
 		<view>
-			<button type="primary" class="btn" @click="to">登录</button>
+			<button type="primary" class="btn" @click="submit">登录</button>
 		</view>
 	</view>
 </template>
@@ -23,14 +23,29 @@
 	export default{
 		data(){
 			return{
-				show:false
+				show:false,
+				mobile:'',
+				pwd:''
 			}
+		},
+		onLoad(e){
+			this.mobile=e.mobile
 		},
 		methods:{
 			loginveri(){
 				uni.redirectTo({
 					url:'/pages/login/loginVeri'
 				})
+			},
+			submit(){
+				var that=this
+				var url='&r=api.member.account.login&mobile='+this.mobile+'&pwd='+this.pwd
+				  this.$apiPost(url).then((res) =>{
+					   uni.setStorageSync('userInfo',res.data)
+					  uni.switchTab({
+					  	url:'../tabBar/mine'
+					  })
+				  })
 			},
 			showpsd(){
 				this.show=!this.show
