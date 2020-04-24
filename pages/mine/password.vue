@@ -3,20 +3,20 @@
 		<view class="option-box">
 			<view class="option-item" >
 				<text>原密码</text>
-				<input type="text" value="" placeholder="填写原密码"/>
+				<input type="password" v-model="form.oldPass" placeholder="填写原密码"/>
 			</view>
 			<view class="option-item" >
 				<text>新密码</text>
-				<input type="text" value="" placeholder="填写新密码"/>
+				<input type="password" v-model="form.newPass" placeholder="填写新密码"/>
 			</view>
 			<view class="option-item" >
 				<text>确认</text>
-				<input type="text" value="" placeholder="再次填写确认"/>
+				<input type="password" v-model="form.confirmPass" placeholder="再次填写确认"/>
 			</view>
 		</view>
 		
 		<view style="text-align: center;">
-			<button type="default" class="btn">完成</button>
+			<button type="default" class="btn" @click="changePwd">完成</button>
 		</view>
 	</view>
 </template>
@@ -25,11 +25,37 @@
 	export default{
 		data(){
 			return{
-				
+				url:'&r=api.member.setting.changePwd',
+				form:{
+					uid:'',
+					token:'',
+					oldPass:'',
+					newPass:'',
+					confirmPass:''
+				}
 			}
 		},
+		mounted(){
+			var userInfo=uni.getStorageSync('userInfo'),that=this
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.form.uid=userInfo.uid
+				this.form.token=userInfo.token
+			} 
+		},
 		methods:{
-			
+			changePwd(){
+				this.$loading()
+				var that=this
+				  this.$apiPost(this.url,this.form).then((res) =>{
+					  that.$msg('修改成功')
+					  uni.hideLoading()
+					  setTimeout(function(){
+						  uni.navigateBack({
+						  	delta:1
+						  })
+					  },300)
+				  })
+			}
 		}
 	}
 </script>

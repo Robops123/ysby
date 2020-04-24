@@ -29,7 +29,7 @@
 <script>
 	import {lotusAddressJson} from  "./Winglau14-lotusAddress.js";
 	export default {
-		props:['lotusAddressData'],
+		props:['lotusAddressData','secondary'],
 		data() {
 			return {
 				visible: false,
@@ -188,6 +188,9 @@
 					this.cityName = name;
 					this.tChoseIndex = -1;
 					this.townName = '';
+					if(this.secondary){
+						return
+					}
 				}
 				//区
 				if(type === 2){

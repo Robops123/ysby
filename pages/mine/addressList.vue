@@ -1,20 +1,21 @@
 <template>
 	<view style="border-top: 20upx solid #f3f3f3;padding-bottom: 130upx;">
-		<view class="bottom-border" v-for='(item,index) in 20' :key='index'>
+		<view class="bottom-border" v-for='(item,index) in dataList' :key='index' @click='longpress(item.id)'>
 			<view class="padding s2">
 				<view class="s8 magin">
-					<text class="label-80">许愿</text>
-					<text>188382723651</text>
+					<text class="label-80">{{item.contactname}}</text>
+					<text>{{item.usermobile}}</text>
+					<text class="fr cr" v-if="item.isdefault=='1'">默认地址</text>
 				</view>
 				<view class="flex-between magin">
-					<text class="address">江苏省无锡市滨湖区爱丽丝德哈卡收到货拉可适当</text>
-					<view class="icon-Write iconfont " @click="toChange('edit')"></view>
+					<text class="address">{{item.province+item.city+item.district+item.address}}</text>
+					<view class="icon-Write iconfont " @click.stop="toChange('edit',item)"></view>
 				</view>
 			</view>
 		</view>
 		
 		<view style="text-align: center;">
-			<button type="default" class="btn" @click="toChange('add')"><view class="icon-fire iconfont button-icon"></view>+新建收货地址</button>
+			<button type="default" class="btn" @click="toChange('add','')"><view class="icon-fire iconfont button-icon"></view>+新建收货地址</button>
 		</view>
 	</view>
 </template>
@@ -23,14 +24,72 @@
 	export default{
 		data(){
 			return{
-				
+				dataList:'',
+				url:'&r=api.member.address',
+				uid:'',
+				token:''
 			}
 		},
+		mounted(){
+			var userInfo=uni.getStorageSync('userInfo'),that=this
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+				this.getAddressList()
+			}
+			
+			uni.$on('updateAddressList',function(){
+				that.getAddressList()
+			})
+		},
 		methods:{
-			toChange(t){
+			toChange(t,it){
+				console.log(it)
 				uni.navigateTo({
-					url:'./addressChange'
+					url:'./addressChange?type='+t+'&item='+JSON.stringify(it)
 				})
+			},
+			getAddressList(){
+				var that=this
+				var params={
+					uid:this.uid,
+					token:this.token,
+					page:1,
+					pagesize:99,
+				}
+				  this.$apiPost(this.url,params).then((res) =>{
+					that.dataList=res.data	
+				  })
+			},
+			longpress(id){
+				var that=this
+				uni.showActionSheet({
+				    itemList: ['删除'],
+				    success: function (res) {
+						console.log(res)
+						if(res.tapIndex==0){
+							that.deleteAddress(id)
+						}
+				    },
+				    fail: function (res) {
+				        console.log(res.errMsg);
+				    }
+				});
+			},
+			deleteAddress(id){
+				var that=this
+				var params={
+					uid:this.uid,
+					token:this.token,
+					addressid:id
+				}
+				var url='&r=api.member.address.delete'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.$msg('删除成功')
+					  setTimeout(function(){
+						  that.getAddressList()
+					  },0)
+				  })
 			}
 		}
 	}
@@ -46,7 +105,7 @@
 	.label-80{
 		display: inline-block;
 		margin-right: 20upx;
-		width: 120upx;
+		width: 160upx;
 	}
 	.address{
 		display: inline-block;
