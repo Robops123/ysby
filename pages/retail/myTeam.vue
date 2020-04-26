@@ -9,10 +9,10 @@
 		<view class="distributionOrder" >
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 				<view class="distributionOrder-card"  v-for='(item,index) in dataList' :key='index'>
-					<image class="distributionOrder-card-img" src="" mode=""></image>
+					<image class="distributionOrder-card-img" :src="item.avatar" mode=""></image>
 					<view class="distributionOrder-card-title">
-						<view>中达花无缺</view>
-						<view class="s3 cg">注册时间:2020-03-25</view>
+						<view>{{item.nickname}}</view>
+						<view class="s3 cg">注册时间:{{item.createtime}}</view>
 					</view>
 					<view class="distributionOrder-card-zhuangtai ">推广2人</view>
 					<view style="clear: both;"></view>
@@ -44,9 +44,14 @@
 				sh:'',
 				dataList:[],
 				page:1,
-				pageSize:20,
+				pageSize:7,
 				total:0,
-				more:''
+				total1:0,
+				total2:0,
+				total3:0,
+				more:'',
+				uid:'',
+				token:''
 			}
 		},
 		computed: {
@@ -56,7 +61,12 @@
 		   },
 		   mounted(){
 		   	var that=this
-		   	this.getList(this.page)
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+				this.getList(this.page)
+			}
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
 		   			that.sh=res
@@ -71,7 +81,8 @@
 			},
 			toggle(t){
 				this.active=t
-				this.reset()
+				console.log(t)
+				this.reset() 
 				this.getList(this.page)
 			},
 			reset(){
@@ -83,15 +94,27 @@
 			getList(p){
 				var that=this
 				var params={
+					uid:this.uid,
+					token:this.token,
+					level:this.active,
 				  page:p,
 				  pagesize: this.pageSize
 				}
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
+				  var url='&r=api.member.agent.team'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+					  if(that.active==1){
+						  that.total=res.total1
+					  }else if(that.active==2){
+						   that.total=res.total2
+					  }else{
+						   that.total=res.total3
+					  }
+					  that.total1=res.total1
+					  that.total2=res.total2
+					  that.total3=res.total3
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
 					  if(that.page==1){

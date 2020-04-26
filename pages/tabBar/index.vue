@@ -97,7 +97,7 @@
 					<view>
 						<image :src="item.logo" mode="" class="headface"></image>
 					</view>
-					<view class="sp-item3-top-middle">
+					<view class="sp-item3-top-middle ellipsis">
 						<view>{{item.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
@@ -238,15 +238,16 @@
 							lat:res.latitude
 						}
 						this.$apiPost(url,params).then((res) =>{
-							console.log(res)
-							that.businessList=res.data
+							that.businessList=res.data.map((item) =>{
+								item.distance=parseInt(item.distance)
+								return item
+							})
 						}).catch((err) =>{
 							this.$msg(err)
 						})
 					},
 					fail:(reason) =>{
-						console.log(reason)
-						// that.$msg(reason)
+						that.$msg(reason)
 					}
 				})
 			}
@@ -446,9 +447,9 @@
 		border-radius: 50%;
 		margin: 0 15upx;
 	}
-	/* .sp-item3-top-middle{
-		width: 300upx;
-		} */
+	.sp-item3-top-middle{
+		max-width: 400upx;
+		}
 	.sp-item3-top-middle image{
 		width: 25upx;
 		height: 25upx;

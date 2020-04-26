@@ -1,16 +1,16 @@
 <template>
 	<view class="distribution">
 		<view class="userinfo">
-			<image class="userinfo-img" src="../../static/img/bg/activity.png" mode=""></image>
+			<image class="userinfo-img" :src="data.avatar" mode=""></image>
 			<view class="userinfo-txt">
-				<view class="userinfo-txt-title">月亮都知道</view>
-				<view class="userinfo-txt-people">推荐人：中鸿科技</view>
+				<view class="userinfo-txt-title">{{data.nickname}}</view>
+				<view class="userinfo-txt-people">推荐人：{{data.invited_name ? data.invited_name:'暂无'}}</view>
 			</view>
 		</view>
-		<view class="invisity-code">
-			<image class="invisity-code-img" src="../../static/img/bg/activity.png" mode=""></image>
-			<text class="invisity-code-txt">我的邀请码: 2186</text>
-			<image class="invisity-code-img fr invisity-code-img-r" src="../../static/img/bg/activity.png" mode=""></image>
+		<view class="invisity-code" @click="showQrcode">
+			<image class="invisity-code-img" src="../../static/img/pic/proxy/icon7.png" mode=""></image>
+			<text class="invisity-code-txt">我的邀请码: {{data.invited_code}}</text>
+			<image class="invisity-code-img fr invisity-code-img-r" src="../../static/img/pic/proxy/icon4.png" mode=""></image>
 		</view>
 		<view class="tixian">
 			<view class="tixian-success">
@@ -27,34 +27,34 @@
 		</view>
 		<view class="distribution-info">
 			<view class="distribution-info-card" @click="to('retailMoney')">
-				<image class="distribution-info-card-img" src="../../static/img/bg/activity.png" mode=""></image>
+				<image class="distribution-info-card-img" src="../../static/img/pic/proxy/icon3.png" mode=""></image>
 				<view class="distribution-info-card-right">
-					<view class="distribution-info-card-right-top">推荐奖励</view>
+					<view class="distribution-info-card-right-top">代理佣金</view>
 					<view class="distribution-info-card-right-bot">0.00 元</view>
 				</view>
 			</view><view class="distribution-info-card distribution-info-cards" @click="to('retailOrder')">
-				<image class="distribution-info-card-img" src="../../static/img/bg/activity.png" mode=""></image>
+				<image class="distribution-info-card-img" src="../../static/img/pic/proxy/icon2.png" mode=""></image>
 				<view class="distribution-info-card-right">
-					<view class="distribution-info-card-right-top">推荐订单</view>
+					<view class="distribution-info-card-right-top">代理订单</view>
 					<view class="distribution-info-card-right-bot">0 笔</view>
 				</view>
 			</view><view class="distribution-info-card" @click="to('withdrawDetail')">
-				<image class="distribution-info-card-img" src="../../static/img/bg/activity.png" mode=""></image>
+				<image class="distribution-info-card-img" src="../../static/img/pic/proxy/icon5.png" mode=""></image>
 				<view class="distribution-info-card-right">
 					<view class="distribution-info-card-right-top">提现明细</view>
 					<view class="distribution-info-card-right-bot">0 人</view>
 				</view>
-			</view><view class="distribution-info-card distribution-info-cards" @click="myDistribution">
-				<image class="distribution-info-card-img" src="../../static/img/bg/activity.png" mode=""></image>
+			</view><view class="distribution-info-card distribution-info-cards" @click="to('myTeam')">
+				<image class="distribution-info-card-img" src="../../static/img/pic/proxy/icon6.png" mode=""></image>
 				<view class="distribution-info-card-right">
-					<view class="distribution-info-card-right-top">我的推荐</view>
+					<view class="distribution-info-card-right-top">我的团队</view>
 					<view class="distribution-info-card-right-bot">0 人</view>
 				</view>
 			</view>
 		</view>
 		<view style="clear: both;"></view>
-		<view class="tuiguang">
-			<image class="tuiguang-ma-img" src="../../static/img/bg/activity.png" mode=""></image>
+		<view class="tuiguang" @click="showQrcode">
+			<image class="tuiguang-ma-img" src="../../static/img/pic/proxy/icon4.png" mode=""></image>
 			<text class="tuiguang-txt">推广二维码</text>
 			<text class="fr iconfont icon-fire cg"></text>
 		</view>
@@ -65,7 +65,19 @@
 	export default {
 		data() {
 			return {
-				
+				uid:'',
+				token:'',
+				data:'',
+				qrcode:''
+			}
+		},
+		mounted(){
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+				this.getInfo()
+				this.getPromoteQrcode()
 			}
 		},
 		methods: {
@@ -74,6 +86,34 @@
 					url:`./${where}`
 				})
 			},
+			getInfo(){
+				var that=this
+				var url='&r=api.member.agent'
+				var params={
+					uid:this.uid,
+					token:this.token
+				}
+				  this.$apiPost(url,params).then((res) =>{
+					that.data=res.data	
+				  })
+			},
+			getPromoteQrcode(){
+				var that=this
+				var url='&r=api.member.agent.invited_qrcode'
+				var params={
+					uid:this.uid,
+					token:this.token
+				}
+				  this.$apiPost(url,params).then((res) =>{
+					that.qrcode=res.data.qrcode	
+				  })
+			},
+			showQrcode(){
+				uni.previewImage({
+					current:this.qrcode,
+					urls:[this.qrcode]
+				})
+			}
 		}
 	}
 </script>
@@ -87,6 +127,7 @@
 .userinfo{
 	width: 750upx;
 	padding: 30upx 25upx;
+	box-sizing: border-box;
 	background: linear-gradient(to right,#ff9da1,#ff7076);
 }
 .userinfo-img{

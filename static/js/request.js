@@ -6,7 +6,7 @@ const baseURL = 'http://192.168.1.157/yishuban2/app/index.php?i=2&c=entry&m=ewei
   *  @name 请求
   */
  async function apiPost(url,params){
- 	if(!params)console.warn("没有传入参数params");
+ 	// if(!params)console.warn("没有传入参数params");
  	return await new Promise((resolve,reject)=>{
  		uni.request({
  			url:baseURL+url,
@@ -44,7 +44,7 @@ const baseURL = 'http://192.168.1.157/yishuban2/app/index.php?i=2&c=entry&m=ewei
  }
  
  async function apiGet(url,params){
- 	if(!params)console.warn("没有传入参数params");
+ 	// if(!params)console.warn("没有传入参数params");
  	return await new Promise((resolve,reject)=>{
  		uni.request({
  			url:baseURL+url,

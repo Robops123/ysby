@@ -5,7 +5,7 @@
 				<view class="setting" >
 					<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img" @click="toSetting"></image>
 				</view>
-				<image :src="data.avatar" mode="" class="headface" @click="toRetail"></image>
+				<image :src="data.avatar" mode="" class="headface" ></image>
 				<text class="s4"  @click="tologin"  >{{data.nickname}}</text>
 			</view>
 			<view class="s4" style="padding: 50upx 0;text-align: center;" @click="tologin" v-else>请先登录</view>
@@ -62,7 +62,7 @@
 						<text>我的服务</text>
 					</view>
 					<view class="dd2 ">
-						<view class="item-list">
+						<view class="item-list" @click="toRetail">
 							<image src="../../static/img/pic/mine/icon3.png" mode=""></image>
 							<view>代理中心</view>
 						</view>

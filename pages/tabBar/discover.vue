@@ -12,11 +12,11 @@
 					<view>
 						<image :src="item.logo" mode="" class="headface"></image>
 					</view>
-					<view class="sp-item3-top-middle">
+					<view class="sp-item3-top-middle ellipsis">
 						<view>{{item.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">1429人关注 | <text class="s2">{{item.distance}}</text></text>
+							<text class="s3 cg">1429人关注 | <text class="s2">{{parseInt(item.distance)}}{{item.distance<1 ? '米':'千米'}}</text></text>
 						</view>
 					</view>
 					<view class="enter-button" @click="toShop(item.id)">进店</view>
@@ -234,6 +234,9 @@
 		border-radius: 50%;
 		margin: 0 15upx;
 	}
+	.sp-item3-top-middle{
+		max-width: 400upx;
+		}
 	.sp-item3-top-middle image{
 		width: 25upx;
 		height: 25upx;

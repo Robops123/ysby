@@ -1,14 +1,13 @@
 <template>
 	<view style="padding-top: 86upx;">
-		<!-- #ifdef APP-PLUS || H5 -->
-			<uni-status-bar />
-		<!-- #endif -->
-		<view class="top-nav">
-			<!-- #ifdef APP-PLUS || H5 -->
-				<view class="icon-fire iconfont" @click="back"></view>
-				<text class="nav-bar">代理佣金</text>
-			<!-- #endif -->
-				<text class="cg fr s2" @click="to('withdrawDetail')">提现明细</text>
+		<view class="top-nav padding">
+			<view class="nav-content">
+				<!-- #ifdef APP-PLUS -->
+				<text class="iconfont icon-previewleft " @click="back"></text>
+				<text>代理佣金</text>
+				<!-- #endif -->
+				<text class="cg fr s2">提现明细</text>
+			</view>
 		</view>
 		
 		<view class="main">
@@ -74,12 +73,22 @@
 		top: 0;
 		width: 100%;
 		box-sizing: border-box;
-		padding: 20upx 40upx;
+		/* #ifdef APP-PLUS */
+			padding-top: var(--status-bar-height);
+		/* #endif */
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
-	
+	.nav-content{
+		width: 100%;
+		/* #ifdef APP-PLUS */
+		display: flex;
+		/* #endif */
+		text-align: right;
+		align-items: center;
+		justify-content: space-between;
+	}
 	
 	page{
 			background-color: #fff;
