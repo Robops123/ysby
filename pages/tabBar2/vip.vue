@@ -1,15 +1,15 @@
 <template>
 	<view style="border-top: 20upx solid #F3F3F3;">
 		<scroll-view scroll-y="true" id="sv" :style="{height:sh-50+'px'}"  @scrolltolower='toBottom'>
-			<view class="list" v-for="(item,index) in 20" :key='index'>
+			<view class="list" v-for="(item,index) in dataList" :key='index'>
 				<view>
-					<image src="../../static/img/pic/logo.png" mode=""></image>
+					<image :src="item.avatar" mode=""></image>
 				</view>
 				<view>
-					<view class="s1">月亮都知道</view>
-					<view class="s3 cg time">关注时间:2020-03-30 12:13:32</view>
+					<view class="s1">{{item.nickname}}</view>
+					<view class="s3 cg time">关注时间:{{item.createtime}}</view>
 				</view>
-				<view class="btn">移除粉丝</view>
+				<view class="btn" @click="remove(item.fansUid,index)">移除粉丝</view>
 			</view>
 			<uni-load-more :status="more"></uni-load-more>
 		</scroll-view>
@@ -24,6 +24,8 @@
 		},
 		data() {
 			return {
+				uid:'',
+				token:'',
 				sh:'',
 				dataList:[],
 				page:1,
@@ -38,15 +40,23 @@
 		     },
 		   },
 		   mounted(){
-		   	// var that=this
-		   	// this.getList(this.page)
-		   	// setTimeout(function(){
-		   	// 	that.$getHeight('#sv',(res) =>{
-		   	// 		that.sh=res
-		   	// 	})
-		   	// },0)
+			   this.init()
 		   },
 		   methods:{
+			   init(){
+				   var userInfo=uni.getStorageSync('userInfo')
+				      if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				      	this.uid=userInfo.uid
+				      	this.token=userInfo.token
+				      	this.getList()
+				      }
+				   var that=this
+				   setTimeout(function(){
+				   	that.$getHeight('#sv',(res) =>{
+				   		that.sh=res
+				   	})
+				   },0)
+			   },
 			   reset(){
 			   	this.page=1
 			   	this.total=0
@@ -56,15 +66,17 @@
 			   getList(p){
 			   	var that=this
 			   	var params={
+					uid:this.uid,
+					token:this.token,
 			   	  page:p,
 			   	  pagesize: this.pageSize
 			   	}
 			   	if(this.page==1){
 			   		this.$loading()
 			   	}
-			   	  var url='/wangtosale_list'
+			   	  var url='&r=api.myshop.members'
 			   	  this.$apiPost(url,params).then((res) =>{
-			   		  that.total=res.allnum
+			   		  that.total=res.total
 			   		  that.dataList=that.dataList.concat(res.data)
 			   		  that.more=''
 			   		  if(that.page==1){
@@ -84,6 +96,21 @@
 			   	  that.getList(that.page)
 			     // },2000)
 			   },
+			   remove(id,where){
+				   this.$loading()
+				   var that=this
+				   var params={
+				   	uid:this.uid,
+				   	token:this.token,
+				     fansUid: id
+				   }
+				     var url='&r=api.myshop.members.remove'
+				     this.$apiPost(url,params).then((res) =>{
+				   	  uni.hideLoading()
+					  that.$msg('移除成功')
+					  that.dataList.splice(where,1)
+				     })
+			   }
 		   }
 	}
 </script>

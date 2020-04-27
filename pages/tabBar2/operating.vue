@@ -4,20 +4,20 @@
 			<view class="set" @click="toSetting">
 				<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img"></image>
 			</view>
-			<image src="../../static/img/pic/logo.png" mode="" class="headface"></image>
-			<text class="s4">月亮都知道</text>
+			<image :src="data.logo" mode="" class="headface"></image>
+			<text class="s4">{{data.merchname}}</text>
 		</view>
 		<view class="item-3 s1 item-3-t bgw">
 			<view>
-				<view>0</view>
+				<view>{{data.todayOrder}}</view>
 				<view>今日订单</view>
 			</view>
 			<view>
-				<view>0</view>
+				<view>{{data.todayDeal}}</view>
 				<view>今日成交</view>
 			</view>
 			<view>
-				<view>0</view>
+				<view>{{data.newMembers}}</view>
 				<view>新增会员</view>
 			</view>
 		</view>
@@ -34,17 +34,17 @@
 				<view class="item-list">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon3.png" mode="" style="width: 90upx;"></image></view>
 					<view>待发货</view>
-					<view class="cg s3"><text class="cr">2</text>单</view>
+					<view class="cg s3"><text class="cr">{{data.notSend}}</text>单</view>
 				</view>
 				<view class="item-list">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon2.png" mode=""></image></view>
 					<view>待付款</view>
-					<view class="cg s3"><text class="cr">2</text>笔</view>
+					<view class="cg s3"><text class="cr">{{data.notPay}}</text>笔</view>
 				</view>
 				<view class="item-list">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon6.png" mode=""></image></view>
 					<view>维权订单</view>
-					<view class="cg s3"><text class="cr">2</text>笔</view>
+					<view class="cg s3"><text class="cr">{{data.rightsOrder}}</text>笔</view>
 				</view>
 			</view>
 		</view>
@@ -59,12 +59,12 @@
 				<view class="item-list" @click="toGoods">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon5.png" mode="" style="width: 70upx;height: 70upx;"></image></view>
 					<view>商品管理</view>
-					<view class="cg s3"><text class="cr">2</text>个</view>
+					<view class="cg s3"><text class="cr">{{data.goods}}</text>个</view>
 				</view>
 				<view class="item-list">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon4.png" mode="" style="width: 60upx;height: 50upx;"></image></view>
 					<view>会员管理</view>
-					<view class="cg s3"><text class="cr">222</text>个</view>
+					<view class="cg s3"><text class="cr">{{data.members}}</text>个</view>
 				</view>
 				<view class="item-list">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon1.png" mode="" style="width: 70upx;height: 60upx;"></image></view>
@@ -79,13 +79,25 @@
 
 <script>
 	export default{
-		mounted(){
-			console.log('operation mounted')
+		data(){
+			return{
+				uid:'',
+				token:'',
+				data:''
+			}
 		},
-		onShow(){
-			console.log('operation show')
+		mounted(){
+			this.init()
 		},
 		methods:{
+			init(){
+				var userInfo=uni.getStorageSync('userInfo')
+				if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+					this.uid=userInfo.uid
+					this.token=userInfo.token
+					this.getWorkBench()
+				}
+			},
 			toOrderList(){
 				uni.navigateTo({
 					url:'./operating/orderList'
@@ -100,6 +112,19 @@
 				uni.navigateTo({
 					url:'./operating/goods'
 				})
+			},
+			getWorkBench(){
+				this.$loading()
+				var that=this
+				var url='&r=api.myshop.workbench'
+				var params={
+					uid:this.uid,
+					token:this.token
+				}
+				  this.$apiPost(url,params).then((res) =>{
+					  uni.hideLoading()
+					that.data=res.data	
+				  })
 			}
 		}
 	}

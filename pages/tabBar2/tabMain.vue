@@ -12,16 +12,24 @@
         <view class="line-h"></view>
         <swiper :current="tabIndex" class="swiper-box" style="flex: 1;" :duration="300" @change="ontabchange">
             <swiper-item class="swiper-item">
-				<operating ></operating>
+				<operating ref='com0'></operating>
+				<!-- <operating v-if="tabIndex==0"></operating> -->
+				<!-- <operating v-else></operating> -->
             </swiper-item>
 			<swiper-item class="swiper-item">
-				<vip ></vip>
+				<vip ref='com1'></vip>
+				<!-- <vip v-if="tabIndex==1"></vip> -->
+				<!-- <vip v-else></vip> -->
 			</swiper-item>
 			<swiper-item class="swiper-item">
-				<order ></order>
+				<order ref='com2'></order>
+				<!-- <order v-if="tabIndex==2"></order> -->
+				<!-- <order v-else></order> -->
 			</swiper-item>
 			<swiper-item class="swiper-item">
-				<financial ></financial>
+				<financial ref='com3'></financial>
+				<!-- <financial v-if="tabIndex==3"></financial> -->
+				<!-- <financial v-else></financial> -->
 			</swiper-item>
         </swiper>
     </view>
@@ -41,8 +49,6 @@
         },
         data() {
             return {
-				curComponent:operating,
-				comList:[financial,operating,vip,order],
                 newsList: [],
                 cacheTab: [],
                 tabIndex: 0,
@@ -147,6 +153,8 @@
 				    title: that.toggleTitle(index)
 				});
                 this.tabIndex = index;
+				// console.log(this.$refs['com'+index])
+				this.$refs['com'+index].init()
                 this.scrollInto = this.tabBars[index].id;
 
                 // 释放 tabId

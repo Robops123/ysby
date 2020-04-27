@@ -3,11 +3,11 @@
 		<view class="activity">
 			<view class="item-2">
 				<view class="cg s2">今日交易额(元)</view>
-				<view class="s7 cr">12323</view>
+				<view class="s7 cr">{{data.todayTrade}}</view>
 			</view>
 			<view class="item-2">
 				<view class="cg s2">今日订单量(件)</view>
-				<view class="s7">12323</view>
+				<view class="s7">{{data.todayOrder}}</view>
 			</view>
 		</view>
 		
@@ -43,28 +43,47 @@
 		data(){
 			return{
 				active:1,
-				active2:1
+				active2:1,
+				uid:'',
+				token:'',
+				data:''
 			}
 		},
 		mounted(){
-			_self = this;
-			var info=uni.getSystemInfoSync()
-			console.log(info)
-						// uni.upx2px(750) 这是uni-app自带的自适应，以750的尺寸为基准。动态变化
-						this.cWidth=info.windowWidth;
-						this.getServerData();
-		},
-		onLoad(){
-			
-		},
-		onShow(){
+			this.init()
 		},
 		methods:{
+			init(){
+				_self = this;
+				var info=uni.getSystemInfoSync()
+							// uni.upx2px(750) 这是uni-app自带的自适应，以750的尺寸为基准。动态变化
+							this.cWidth=info.windowWidth;
+							var userInfo=uni.getStorageSync('userInfo')
+							if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+								this.uid=userInfo.uid
+								this.token=userInfo.token
+								this.getBasicData()
+							}
+							this.getServerData();
+			},
 			toggle(t){
 				this.active=t
 			},
 			toggle2(t){
 				this.active2=t
+			},
+			getBasicData(){
+				this.$loading()
+				var that=this
+				var url='&r=api.myshop.finance'
+				var params={
+					uid:this.uid,
+					token:this.token
+				}
+				  this.$apiPost(url,params).then((res) =>{
+					  uni.hideLoading()
+					that.data=res.data	
+				  })
 			},
 			getServerData(){
 				let LineA={categories:[],series:[]};
