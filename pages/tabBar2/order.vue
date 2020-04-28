@@ -1,11 +1,11 @@
 <template>
 	<view>
 		<view class="nav-bar">
-			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>全部</text></view>
-			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>待付款</text></view>
-			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>待发货</text></view>
-			<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)"><text>待收货</text></view>
-			<view class="nav nav-left" :class="{active:active==5}" @click="toggle(5)"><text>已完成</text></view>
+			<view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view>
+			<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
+			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
+			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
+			<view class="nav nav-left" :class="{active:active==4}" @click="toggle(4)"><text>已完成</text></view>
 		</view>
 		
 		<view class="padding search">
@@ -22,10 +22,10 @@
 		<scroll-view scroll-y="true" id="sv" :style="{height:sh-50+'px'}"  @scrolltolower='toBottom'>
 			<view class="item" v-for="(item,index) in dataList" :key='index'>
 				<view class=" padding" >
-					<view class="top-line bottom-border">
+					<view class="top-line bottom-border" style="padding-top: 0;">
 						<view class="s1 cg">
 							<view>
-								<text>asdasdasdasdasdd</text>
+								<text>{{item.orderno}}</text>
 								<text class="payway">微信支付</text>
 							</view>
 							<view>
@@ -41,19 +41,22 @@
 						</view>
 						<view class="md-line-word">
 							<view class="s1">
-								<text class="limit-text">儿童木马瑶瑶马宝宝大叔大婶阿萨大师</text>
-								<text class="fr cg s1">$79.80</text>
+								<text class="limit-text">{{item.goodsname}}</text>
+								<text class="fr cg s1">￥{{item.goodsprice}}</text>
 							</view>
 							<view class="s2 cg">
-								<text class="limit-text">规格<text class="s3 ">深蓝色:24(155/60A)</text></text>
-								<text class="fr s1">*1</text>
+								<text class="limit-text">规格:<text class="s3 ">{{item.specifications}}</text></text>
+								<text class="fr s1">*{{item.amount}}</text>
 							</view>
 						</view>
 					</view>
 					<view class="bottom-border">
 						<view class="status-line cg s2">
 							<text>订单状态</text>
-							<text class="fr cr">待发货</text>
+							<text class="fr cr" v-show='item.status==1'>待付款</text>
+							<text class="fr cr" v-show='item.status==2'>待发货</text>
+							<text class="fr cr" v-show='item.status==3'>待收货</text>
+							<text class="fr cr" v-show='item.status==4'>已完成</text>
 						</view>
 						<view class="status-line cg s2">
 							<text>买家昵称</text>
@@ -65,7 +68,7 @@
 						</view>
 					</view>
 					<view class="bottom-border s2 cg" style="text-align: right;padding-right: 30upx;">
-						共<text class="cr">1</text>件商品 实付:<text class="cr">$79.80</text>
+						共<text class="cr">{{item.amount}}</text>件商品 实付:<text class="cr">￥{{item.totalprice}}</text>
 					</view>
 					<view class="bottom-border btn-line">
 						<button type="default" class="btn btn-primary">确认发货</button>
@@ -92,7 +95,9 @@
 		},
 		data(){
 			return{
-				active:1,
+				uid:'',
+				token:'',
+				active:0,
 				orderList:[
 					{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'}
 				],
@@ -110,13 +115,19 @@
 		     },
 		   },
 		   mounted(){
-		   	// var that=this
-		   	// this.getList(this.page)
-		   	// setTimeout(function(){
-		   	// 	that.$getHeight('#sv',(res) =>{
-		   	// 		that.sh=res
-		   	// 	})
-		   	// },0)
+		   	var that=this
+			var userInfo=uni.getStorageSync('userInfo'),that=this
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+				this.getList(this.page)
+			}
+		   
+		   	setTimeout(function(){
+		   		that.$getHeight('#sv',(res) =>{
+		   			that.sh=res
+		   		})
+		   	},0)
 		   },
 		methods:{
 			choosed(m){
@@ -149,14 +160,17 @@
 				var that=this
 				var params={
 				  page:p,
-				  pagesize: this.pageSize
+				  pagesize: this.pageSize,
+				  uid:this.uid,
+				  token:this.token,
+				  status:this.active
 				}
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
+				  var url='&r=api.member.order'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
 					  if(that.page==1){

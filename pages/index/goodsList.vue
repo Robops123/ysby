@@ -41,6 +41,8 @@
 		},
 		data(){
 			return{
+				goodsId:'',
+				merchId:'',
 				url:'',
 				active:1,
 				rangeActive:'',
@@ -57,6 +59,10 @@
 		       return this.dataList.length >= this.total
 		     },
 		   },
+		   onLoad(e){
+			 this.merchId=e.cateId
+			 this.goodsId=e.goodsId
+			 },
 		mounted(){
 			var that=this
 			this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
@@ -70,7 +76,7 @@
 		methods:{
 			to(w,id){
 				uni.navigateTo({
-					url:`/pages/index/${w}?id=${id}`
+					url:`/pages/index/${w}?id=${id}&merchId=${this.merchId}`
 				})
 			},
 			toggle(t){

@@ -173,7 +173,7 @@
 	.child-overall-item .title{
 		margin-top: 10upx;
 		width: 500upx;
-		height: 64upx;
+		/* height: 64upx; */
 		overflow:hidden;//一定要写
 		    text-overflow: ellipsis;//超出省略号
 		    display:-webkit-box;//一定要写

@@ -1,14 +1,14 @@
 <template>
-	<image
-		:mode="node.attr.mode"
-		:lazy-load="node.attr.lazyLoad"
-		:class="node.classStr"
-		:style="newStyleStr || node.styleStr"
-		:data-src="node.attr.src"
-		:src="node.attr.src"
-		@tap="wxParseImgTap"
-		@load="wxParseImgLoad"
-	/>
+	<view>
+		<image
+			:mode="node.attr.mode"
+			:lazy-load="node.attr.lazyLoad"
+			:class="node.classStr"
+			:data-src="node.attr.src"
+			:src="node.attr.src"
+			@tap="wxParseImgTap"
+		/>
+	</view>
 </template>
 
 <script>
@@ -21,7 +21,9 @@ export default {
 		};
 	},
 	inject: ['parseWidth'],
-	mounted() {},
+	mounted() {
+		console.log(this.node)
+	},
 	props: {
 		node: {
 			type: Object,
@@ -92,3 +94,11 @@ export default {
 	}
 };
 </script>
+
+
+<style>
+	image{
+		width: 100%;
+		height: 150px;
+	}
+</style>

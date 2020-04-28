@@ -16,7 +16,7 @@
 <style>
 @import "./static/css/iconfont.css";
 	@import './static/css/common.css';
-	@import url("/components/gaoyia-parse/parse.css");
+	/* @import url("/components/gaoyia-parse/parse.css"); */
 
 	.slideInUp {
 	    -webkit-animation-name: slideInUp;

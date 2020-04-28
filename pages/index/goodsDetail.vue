@@ -139,6 +139,7 @@
 		      return {
 				  popshow:false,
 				  id:'',
+				  merchId:'',
 				  data:'',
 				  category:[],
 				  total:'',
@@ -169,8 +170,8 @@
 		      }
 		    },
 			onLoad(p){
-				console.log(p)
 				this.id=p.id
+				this.merchId=p.merchId
 				this.getDetail()
 				this.getCategory()
 			},
@@ -189,7 +190,7 @@
 					})
 				}else{
 					uni.navigateTo({
-						url:'./createOrder'
+						url:'./createOrder?goodsId='+this.id+'&merchId='+this.merchId+'&choosedSpec='+JSON.stringify(this.choosedSpec)
 					})
 				}
 		        // this.options[2].info++
@@ -219,12 +220,16 @@
 				  var that=this
 				  var url='&r=api.goods.detail.sku&goodsid='+this.id
 				    this.$apiPost(url).then((res) =>{
-				  		that.category=res.data
-						that.total=res.stock
-						that.receivedCategory=true
+						if(res.data!=''){
+							that.category=res.data
+							that.total=res.stock
+							that.receivedCategory=true
+						}
+				  		
 				    })
 			  },
 			  completeSpecChoose(e){
+				  console.log(e)
 				  this.choosedSpec=e
 			  },
 			  toComments(){

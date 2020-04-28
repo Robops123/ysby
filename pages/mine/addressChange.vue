@@ -116,11 +116,23 @@
 			},
 			submit(){
 				var that=this
-				// var reg=/^1[3456789]\d{9}$/
-				// if(!reg.test(this.usermobile)){
-				// 	this.$msg('请输入正确的手机号')
-				// 	return ;
-				// }
+				var reg=/^1[3456789]\d{9}$/
+				if(this.contactname==''){
+					this.$msg('请输入姓名')
+					return ;
+				}
+				if(!reg.test(this.usermobile)){
+					this.$msg('请输入正确的手机号')
+					return ;
+				}
+				if(this.lotusAddressData.provinceName==''){
+					this.$msg('请选择所在地区')
+					return ;
+				}
+				if(this.address==''){
+					this.$msg('请输入详细地址')
+					return ;
+				}
 				var params={
 					uid:this.uid,
 					token:this.token,

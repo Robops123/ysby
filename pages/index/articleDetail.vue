@@ -10,9 +10,11 @@
 					</view>
 					<view class="enter-button" >进店</view>
 				</view>
-				<view v-html="data.detail" id="article">
+				<!-- <view v-html="data.detail" id="article">
 					
-				</view>
+				</view> -->
+				<!-- <rich-text :nodes=""></rich-text> -->
+				 <u-parse :content="data.detail" v-if="data" id="article" class="article"  ref='article'/>
 				<!-- <view class="luntan-card-title">中期商会与你携手前行</view>
 				<view class="luntan-card-lianjie">#坚守共赢胜利#</view>
 				<view class="luntan-card-introduce">抗击疫情，中企商会在行动！截至2月8日，中企商会持续投入抗击疫情，面对这场突如其来的“疫”战，中企商会与大家共同坚守，终将会取得这场疫情防控狙击战的胜利！加油！</view>
@@ -88,10 +90,12 @@
 <script>
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	import ygcComment from '@/components/ygc-comment/ygc-comment.vue';
+	import uParse from '@/components/gaoyia-parse/parse.vue'
 	export default{
 		components:{
 			uniLoadMore,
-			ygcComment
+			ygcComment,
+			uParse
 		},
 		data(){
 			return{
@@ -109,7 +113,11 @@
 				page:1,
 				pageSize:5,
 				total:0,
-				more:''
+				more:'',
+				articleH:'',
+				windowH:'',
+				topH:'',
+				readComplete:false
 			}
 		},
 		onLoad(e){
@@ -117,9 +125,16 @@
 			this.like=e.like
 			this.comment=e.comment
 			this.repost=e.repost
+			
 		},
 		onPageScroll(e){
-			console.log(e)
+			// this.calcArticleHeight()
+			if(!this.readComplete){
+				if(e.scrollTop>=this.articleH-(this.windowH-this.topH)){
+					this.readComplete=true
+					this.$msg('阅读完成')
+				}
+			}
 		},
 		computed: {
 		     noMore () {
@@ -128,30 +143,35 @@
 		   },
 		   mounted(){
 		   	var that=this
+			// uni.$on('updated',function(){
+			// 	that.calcArticleHeight()
+			// })
 		   	this.getDetail()
-		   	setTimeout(function(){
-		   		that.$getHeight('#sv',(res) =>{
-					console.log(res)
-		   			that.sh=res
-		   		})
-		   	},0)
+		   	// setTimeout(function(){
+		   	// 	that.$getHeight('#sv',(res) =>{
+		   	// 		that.sh=res
+		   	// 	})
+		   	// },0)
 		   },
 		methods:{
 			toggleTab(t){
 				this.tabActive=t
 			},
-			getDetail(){
+			async getDetail(){
 				var that=this
+				 await that.getList()
 				var params={
 				  id:this.id
 				}
 				  var url='&r=api.college.hotarticle.detail&id='+this.id
 				  this.$apiPost(url,params).then((res) =>{
 					  that.data=res.data
-					  that.$nextTick(function(){
-					  	that.calcArticleHeight()
-					  })
-					  that.getList()
+					that.$nextTick(function(){
+					 						 that.$loading()
+					 	setTimeout(function(){
+					 							that.calcArticleHeight()
+					 						},100)
+					 })
 				  })
 			},
 			getList(p){
@@ -160,26 +180,47 @@
 				//   page:p,
 				//   pagesize: this.pageSize
 				// }
-				if(this.page==1){
-					this.$loading()
-				}
 				  var url='&r=api.college.hotarticle.comment&page='+this.page+'&pagesize='+this.pageSize+'&collegeid='+this.id
 				  this.$apiPost(url).then((res) =>{
 					  that.total=res.total
 					  that.commentList=that.dataList.concat(res.data)
 					  that.more=''
-					  if(that.page==1){
-					  	uni.hideLoading()
-					  }
+					 // if(that.page==1){
+						//  that.$nextTick(function(){
+						//  						 that.$loading()
+						//  	setTimeout(function(){
+						//  							that.calcArticleHeight()
+						//  						},100)
+						//  })
+					 // }
+				  }).catch((reason) =>{
+					 // if(that.page==1){
+						//  that.$nextTick(function(){
+						//  						  that.$loading()
+						//  	setTimeout(function(){
+						//  		that.calcArticleHeight()
+						//  	},1000)
+						//  })
+					 // }
 				  })
+				  
 			},
 			calcArticleHeight(){
+				var that=this
 				uni.getSystemInfo({
 				  	success: (resu) => {
+						that.windowH=resu.windowHeight
 				  	const query = uni.createSelectorQuery()
-				  	query.select('#article').boundingClientRect()
+				var  qs=query.select('#article').boundingClientRect()
 				  	query.exec(function(res) {
-							console.log(res)
+						console.log(res)
+						that.articleH=res[0].height
+						that.topH=res[0].top
+						if(this.articleH-(this.windowH-this.topH)<=0){
+							that.readComplete=true
+							that.$msg('篇幅小，已阅读完成')
+						}
+						uni.hideLoading()
 				  		})
 				  	}
 				 })
@@ -259,7 +300,7 @@
 	.luntan-card-top{
 		width: 100%;
 		height: 80upx;
-		margin-top: 24upx;
+		padding-top: 24upx;
 	}
 	.luntan-card-top-img{
 		width: 80upx;

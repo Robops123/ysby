@@ -73,8 +73,33 @@
 	export default{
 		data(){
 			return{
+				form:{
+					uid:'',
+					token:'',
+					merchid:'',
+					goodsid:'',
+					addressid:'',
+					remark:'',
+					specifications:'',
+					amount:'',
+					goodsprice:'',
+					totalprice:''
+				}
 				
 			}
+		},
+		onLoad(e){
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.form.uid=userInfo.uid
+				this.form.token=userInfo.token
+			}
+			var choosedSpec=JSON.parse(e.choosedSpec)
+			this.form.merchid=e.merchId
+			this.form.goodsid=e.goodsId
+			this.form.amount=choosedSpec.selectNum
+			this.form.specifications=choosedSpec.choosedid.join(',')
+			this.form.goodsprice=choosedSpec.marketPrice
 		},
 		methods:{
 			to(w){
@@ -112,7 +137,7 @@
 	}
 	.child-overall-item .title{
 		width: 360upx;
-		height: 64upx;
+		/* height: 64upx; */
 		margin-top: 10upx;
 		overflow:hidden;//一定要写
 		    text-overflow: ellipsis;//超出省略号

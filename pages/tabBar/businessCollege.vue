@@ -12,39 +12,40 @@
 			
 			
 			
-			<view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom' >
+			<view scroll-y="true" id="sv"   @scrolltolower='toBottom' >
 				
 				<view v-if="active==1" style="margin-top: 30upx;">
-					<view class="sp-item3  news"  v-for="(item,index) in dataList" :key='index' @click="toDetail(item)">
+					<view class="sp-item3  news"  v-for="(item,index) in dataList" :key='index' >
 						<view class="padding">
-							<view class="sp-item3-top " style="margin-top: 0;padding-top: 0;">
+							<view class="sp-item3-top " style="margin-top: 0;padding-top: 0;" @click="toDetail(item)">
 								<view>
-									<image :src="item.id" mode="" class="headface"></image>
+									<image :src="item.logo" mode="" class="headface"></image>
 								</view>
 								<view class="sp-item3-top-middle">
 									<view class="cr">{{item.merchname}}</view>
 								</view>
 							</view>
-							<view class="sp-item3-middle">
+							<view class="sp-item3-middle" @click="toDetail(item)">
 								<!-- <view class="title" v-html="item.detail"></view> -->
 								<view class="synopsis">
-									<text v-html="item.detail" class="article-detail">
-								    </text>
+									<u-parse :content="item.detail"  class="article-detail" />
+									<!-- <text v-html="item.detail" class="article-detail">
+								    </text> -->
 									<text class="all">全文</text>
 								</view>
 							</view>
 							<view class="media-place">
 								<view class="img-1" v-if="item.thumb.length==1">
-									<image src="../../static/img/bg/activity.png" v-for='(itemChild,indexChild) in item.thumb' :key='indexChild'
-									 mode="" ></image>
+									<image :src="itemChild" v-for='(itemChild,indexChild) in item.thumb' :key='indexChild'
+									 mode=""  @click="showImgPreview(item.thumb,itemChild)"></image>
 								</view>
 								<view class="img-2" v-if="item.thumb.length==2">
-									<image src="../../static/img/bg/activity.png" v-for='(itemChild,indexChild) in item.thumb' :key='indexChild'
-									 mode=""  ></image>
+									<image :src="itemChild" v-for='(itemChild,indexChild) in item.thumb' :key='indexChild'
+									 mode="" @click="showImgPreview(item.thumb,itemChild)" ></image>
 								</view>
 								<view class="img-3" v-if="item.thumb.length>=3">
 									<image :src="itemChild" v-if="indexChild<=2" v-for='(itemChild,indexChild) in item.thumb' :key='indexChild'
-									 mode="" ></image>
+									 mode="" @click="showImgPreview(item.thumb,itemChild)"></image>
 								</view>
 							</view>
 							<view style="overflow: hidden;">
@@ -125,6 +126,7 @@
 <script>
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
+	import uParse from '@/components/gaoyia-parse/parse.vue'
 	export default{
 		data(){
 			return{
@@ -150,7 +152,8 @@
 		},
 		components:{
 			uniRate,
-			uniLoadMore
+			uniLoadMore,
+			uParse
 		},
 		computed: {
 		     noMore () {
@@ -225,7 +228,15 @@
 				}
 				  this.$apiPost(url,p).then((res) =>{
 					  that.total=Number(res.total)
-					  that.dataList=that.dataList.concat(res.data)
+					  if(that.active==1){
+						   that.dataList=that.dataList.concat(res.data.map((item) =>{
+							   item.detail=item.detail.replace(/\<img/gi, '<img class="richImg"')
+							   return item
+						   }))
+					  }else{
+						   that.dataList=that.dataList.concat(res.data)
+					  }
+					 
 					  that.more=''
 					  if(that.page==1){
 					  	uni.hideLoading()
@@ -244,6 +255,12 @@
 				  that.apart()
 			  // },2000)
 			},
+			showImgPreview(list,cur){
+				uni.previewImage({
+					current:cur,
+					urls:list
+				})
+			}
 		}
 	}
 </script>
@@ -314,7 +331,7 @@
 		width: 90upx;
 		height: 90upx;
 		border-radius: 50%;
-		margin: 0 15upx;
+		margin:0 15upx  0 0;
 	}
 	.sp-item3-top-middle image{
 		width: 25upx;
@@ -445,7 +462,7 @@
 			padding: 20upx 0;
 		}
 		
-		.article-detail /deep/ img
+		.article-detail /deep/ .richImg
 		{
 			display: none !important;
 		}

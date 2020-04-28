@@ -1,11 +1,11 @@
 <template>
 	<view>
 		<view class="nav-bar">
-			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>全部</text></view>
-			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>待付款</text></view>
-			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>待发货</text></view>
-			<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)"><text>待收货</text></view>
-			<view class="nav nav-left" :class="{active:active==5}" @click="toggle(5)"><text>已完成</text></view>
+			<view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view>
+			<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
+			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
+			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
+			<view class="nav nav-left" :class="{active:active==4}" @click="toggle(4)"><text>已完成</text></view>
 		</view>
 		<view class="padding" style="padding-bottom: 66px;">
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
@@ -13,10 +13,13 @@
 					<view class="overall">
 							<view>
 								<image src="../../static/img/pic/other/icon2.png" style="width: 40upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" mode="" class=""></image>
-								<text class="overall-title">艺术班自营</text>
+								<text class="overall-title">{{item.merchname}}</text>
 								<text class="icon-arrow-right iconfont"></text>
 							</view>
-							<text class="fr cr s2">待发货</text>
+							<text class="fr cr s2" v-show='item.status==1'>待付款</text>
+							<text class="fr cr s2" v-show='item.status==2'>待发货</text>
+							<text class="fr cr s2" v-show='item.status==3'>待收货</text>
+							<text class="fr cr s2" v-show='item.status==4'>已完成</text>
 					</view>
 					
 					<view class="child-overall" >
@@ -24,27 +27,30 @@
 							<image src="../../static/img/bg/activity.png" mode=""></image>
 							<view class="info">
 								<view class="s2 title">
-									儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿
-									童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿
+									{{item.goodsname}}
 								</view>
 								<view class="s3 cg options ellipsis">
-									海蓝色；24(155/60A)
+									{{item.specifications}}
 									<image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image>
 								</view>
 								<view class="bottom-content">
-									<text class="s3 fr">共1件商品 合计:<text class="s1">$98.</text>80</text>
+									<text class="s3 fr">共{{item.amount}}件商品 合计:<text class="s1">￥{{item.totalprice}}</text></text>
 								</view>
 							</view>
 							<view class="mount">
-								<view class="s3 fr"><text class="s1">$98.</text>80</view>
-								<view class="s3 cg">*1</view>
+								<view class="s3 fr"><text class="s1">￥{{item.goodsprice}}</text></view>
+								<view class="s3 cg">*{{item.amount}}</view>
 							</view>
 						</view>
 					</view>
 					
 					<view class="btn-box">
-						<button type="default" class="btn btn1">加入购物车</button>
-						<button type="default" class="btn btn2">确认收货</button>
+						
+						<button type="default" class="btn btn1" v-show='item.status!=4'>加入购物车</button>
+						<button type="default" class="btn btn1" v-show='item.status==4'>删除订单</button>
+						<button type="default" class="btn btn2" v-show='item.status==1'>去付款</button>
+						<button type="default" class="btn btn2" v-show='item.status==2'>联系卖家</button>
+						<button type="default" class="btn btn2" v-show='item.status==3'>确认收货</button>
 					</view>
 				</view>
 				<uni-load-more :status="more"></uni-load-more>
@@ -62,7 +68,9 @@
 		},
 		data(){
 			return{
-				active:1,
+				uid:'',
+				token:'',
+				active:0,
 				cartList:[
 					{
 						
@@ -71,7 +79,7 @@
 				sh:'',
 				dataList:[],
 				page:1,
-				pageSize:20,
+				pageSize:8,
 				total:0,
 				more:''
 			}
@@ -83,7 +91,12 @@
 		   },
 		   mounted(){
 		   	var that=this
-		   	this.getList(this.page)
+		   	var userInfo=uni.getStorageSync('userInfo'),that=this
+		   	if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+		   		this.uid=userInfo.uid
+		   		this.token=userInfo.token
+		   		this.getList(this.page)
+		   	}
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
 		   			that.sh=res
@@ -111,14 +124,17 @@
 				var that=this
 				var params={
 				  page:p,
-				  pagesize: this.pageSize
+				  pagesize: this.pageSize,
+				  uid:this.uid,
+				  token:this.token,
+				  status:this.active
 				}
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
+				  var url='&r=api.member.order'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
 					  if(that.page==1){
@@ -202,7 +218,7 @@
 	}
 	.child-overall-item .title{
 		width: 360upx;
-		height: 64upx;
+		/* height: 64upx; */
 		overflow:hidden;//一定要写
 		    text-overflow: ellipsis;//超出省略号
 		    display:-webkit-box;//一定要写

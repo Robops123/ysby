@@ -258,7 +258,8 @@
 				var d={
 					selectArr:this.selectArr.join(','),
 					selectNum:this.selectNum,
-					choosedid:this.choosedid
+					choosedid:this.choosedid,
+					marketPrice:this.marketPrice
 				}
 				this.$emit('completeSpecChoose',d)
 				this.specClass = 'hide';
@@ -369,7 +370,7 @@
 							flex-direction: column;
 							justify-content: flex-end;
 							font-weight: 500;
-	
+							text-align: left;
 							.price-content {
 								color: #fe3a3a;
 								margin-bottom: 20rpx;
@@ -409,6 +410,7 @@
 							.item-title {
 								margin-bottom: 20rpx;
 								font-size: 28rpx;
+								text-align: left;
 								color: #999999;
 							}
 	

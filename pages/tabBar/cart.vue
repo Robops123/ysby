@@ -106,7 +106,7 @@
 	}
 	.child-overall-item .title{
 		width: 360upx;
-		height: 64upx;
+		/* height: 64upx; */
 		overflow:hidden;//一定要写
 		    text-overflow: ellipsis;//超出省略号
 		    display:-webkit-box;//一定要写
@@ -153,8 +153,8 @@
 		position: fixed;
 		left: 0;
 		bottom: 0;
-		/* #ifdef MP-WEIXIN */
-		bottom: 0;
+		/* #ifdef H5 */
+		bottom: 50px;
 		/* #endif */
 		
 		width: 100%;
