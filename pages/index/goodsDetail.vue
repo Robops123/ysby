@@ -94,7 +94,8 @@
 		<uni-goods-nav :fill="true"  :options="options" :buttonGroup="buttonGroup" 
 		 @click="onClick" @buttonClick="buttonClick" />
 		 
-		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :category='category' :total='total' v-if="receivedCategory" :goodsid='id'></sku>
+		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='thumb_url[1]'
+		 :category='category' :total='total' v-if="receivedCategory" :goodsid='id'></sku>
 		 
 		 
 		 <view  class="popup-box" v-if="popshow">
@@ -141,6 +142,7 @@
 				  id:'',
 				  merchId:'',
 				  data:'',
+				  thumb_url:'',
 				  category:[],
 				  total:'',
 				  receivedCategory:false,
@@ -173,7 +175,7 @@
 				this.id=p.id
 				this.merchId=p.merchId
 				this.getDetail()
-				this.getCategory()
+				
 			},
 		    methods: {
 		      onClick (e) {
@@ -189,8 +191,13 @@
 						url:'/pages/tabBar/cart',
 					})
 				}else{
+					console.log(this.choosedSpec.choosedid)
+					if(this.choosedSpec.choosedid=='' || this.choosedSpec.choosedid==undefined || this.choosedSpec.choosedid==null){
+						this.chooseCategory()
+						return ;
+					}
 					uni.navigateTo({
-						url:'./createOrder?goodsId='+this.id+'&merchId='+this.merchId+'&choosedSpec='+JSON.stringify(this.choosedSpec)
+						url:'./createOrder?goodsId='+this.id+'&merchId='+this.merchId+'&choosedSpec='+JSON.stringify(this.choosedSpec)+'&goodsName='+this.data.title
 					})
 				}
 		        // this.options[2].info++
@@ -211,6 +218,10 @@
 				    // var url='/wangtosale_list'
 				    this.$apiPost(url).then((res) =>{
 						that.data=res.data
+						that.thumb_url=res.data.thumb_url
+						that.$nextTick(function(){
+							that.getCategory()
+						})
 				  	  // that.total=res.total
 				  	  // that.dataList=that.dataList.concat(res.data)
 				  	  // that.more=''
@@ -223,7 +234,9 @@
 						if(res.data!=''){
 							that.category=res.data
 							that.total=res.stock
-							that.receivedCategory=true
+							that.$nextTick(function(){
+								that.receivedCategory=true
+							})
 						}
 				  		
 				    })

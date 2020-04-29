@@ -1,29 +1,28 @@
 <template>
 	<view style="padding-bottom: 80upx;">
-		<view class="margin padding s2">
+		<view class="margin padding s2" @click="chooseAddress">
 			<text>收货地址</text>
 			<text class="cg fr">
-				北京市朝阳区10000号
+				{{address ? address:'添加收货地址'}}
 					<text class="icon-arrow-right iconfont"></text>
 			</text>
 		</view>
-		<view class="child-overall padding margin" v-for="(item,index) in 1" :key='index'>
+		<view class="child-overall padding margin" >
 			<view class="child-overall-item"> 
-				<image src="../../static/img/bg/activity.png" mode=""></image>
+				<image :src="goodsImg" mode=""></image>
 				<view class="info">
 					<view>
 						<view class="s2 title">
-							儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿
-							童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿
+							{{goodsName}}
 						</view>
 						<view class="s3 cg options">
-							海蓝色；24(155/60A)
+							{{spec}}
 							<!-- <image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image> -->
 						</view>
 					</view>
 					<view class="s3" style="text-align: right;">
-						<view class="">$45.00</view>
-						<view class=" cg">*1</view>
+						<view class="">￥{{form.goodsprice}}</view>
+						<view class=" cg">*{{form.amount}}</view>
 					</view>
 				</view>
 				
@@ -31,39 +30,39 @@
 			<view class="bottom-content">
 				<text style="line-height: 60upx;">购买数量</text>
 				<view class="calculator fr">
-					<view class="calc minus">-</view>
-					<text class="result">1</text>
-					<view class="calc plus">+</view>
+					<view class="calc minus" @click="form.amount--">-</view>
+					<text class="result">{{form.amount}}</text>
+					<view class="calc plus" @click="form.amount++">+</view>
 				</view>
 			</view>
 			<view style="text-align: right;margin: 70upx 0 0;">
-				共1件商品 共计:<text class="cr">$45</text>
+				共{{form.amount}}件商品 共计:<text class="cr">￥{{form.goodsprice*form.amount}}</text>
 			</view>
 		</view>
 		
 		<view class="margin padding msg">
 			<text>买家留言</text>
-			<textarea value="" maxlength="50" placeholder="50字以内(选填)"/>
+			<textarea v-model="form.remark" maxlength="50" placeholder="50字以内(选填)"/>
 		</view>
 		
 		<view class="padding conclude">
 			<view>
 				<text>商品小计</text>
-				<text class='fr'>$45</text>
+				<text class='fr'>￥{{form.goodsprice*form.amount}}</text>
 			</view>
 			<view>
 				<text>运费</text>
-				<text class='fr'>$0.00</text>
+				<text class='fr'>￥0.00</text>
 			</view>
 		</view>
 		
 		
 		<view class="bottom">
 			<view class="bottom-right" style="text-align: right;">
-				<text class="s2 cg">共1件,</text>
+				<text class="s2 cg">共{{form.amount}}件,</text>
 				<text class="cg s1">合计:</text>
-				<text class="cr" style="font-size: 34upx;">$21.45</text>
-				<button type="warn" @click="to('cashier')">立即支付</button>
+				<text class="cr" style="font-size: 34upx;">￥{{form.goodsprice*form.amount}}</text>
+				<button type="warn" @click="createOrder">立即支付</button>
 			</view>
 		</view>
 	</view>
@@ -76,16 +75,19 @@
 				form:{
 					uid:'',
 					token:'',
-					merchid:'',
+					// merchid:'',
 					goodsid:'',
 					addressid:'',
 					remark:'',
 					specifications:'',
 					amount:'',
 					goodsprice:'',
-					totalprice:''
-				}
-				
+					// totalprice:''
+				},
+				address:'',
+				spec:'',
+				goodsImg:'',
+				goodsName:''
 			}
 		},
 		onLoad(e){
@@ -93,19 +95,60 @@
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.form.uid=userInfo.uid
 				this.form.token=userInfo.token
+				this.getAddressList()
 			}
 			var choosedSpec=JSON.parse(e.choosedSpec)
-			this.form.merchid=e.merchId
+			this.spec=choosedSpec.selectArr
+			this.goodsImg=choosedSpec.goodsImg
+			// this.form.merchid=e.merchId 
 			this.form.goodsid=e.goodsId
+			this.goodsName=e.goodsName
 			this.form.amount=choosedSpec.selectNum
 			this.form.specifications=choosedSpec.choosedid.join(',')
 			this.form.goodsprice=choosedSpec.marketPrice
 		},
 		methods:{
-			to(w){
-				uni.navigateTo({
-					url:'./cashier'
+			createOrder(){
+				var that=this
+				var url='&r=api.member.order.create'
+				  this.$apiPost(url,this.form).then((res) =>{
+					  console.log(res)
+					  // that.$msg('删除成功')
+					  // setTimeout(function(){
+						 //  that.getAddressList()
+					  // },0)
+				  })
+				// uni.navigateTo({
+				// 	url:'./cashier'
+				// })
+			},
+			chooseAddress(){
+				var that=this
+				uni.$on('chooseAddress',function(item){
+					that.address=item.province+item.city+item.district+item.address
+					that.form.addressid=item.id
+					uni.$off('chooseAddress')
 				})
+				uni.navigateTo({
+					url:'../mine/addressList?type=choose'
+				})
+			},
+			getAddressList(){
+				var that=this
+				var params={
+					uid:this.form.uid,
+					token:this.form.token,
+					page:1,
+					pagesize:99,
+				}
+				var url='&r=api.member.address'
+				  this.$apiPost(url,params).then((res) =>{
+					res.data.forEach((item) =>{
+						if(item.isdefault=='1'){
+							that.address=item.province+item.city+item.district+item.address
+						}
+					})
+				  })
 			}
 		}
 	}

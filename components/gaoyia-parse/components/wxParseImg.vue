@@ -22,7 +22,6 @@ export default {
 	},
 	inject: ['parseWidth'],
 	mounted() {
-		console.log(this.node)
 	},
 	props: {
 		node: {

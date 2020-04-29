@@ -152,6 +152,8 @@
 				var url='&r=api.member.my&uid='+u.uid+'&token='+u.token
 				  this.$apiPost(url).then((res) =>{
 					that.data=res.data	
+				  }).catch(() =>{
+					  that.logined=false
 				  })
 			},
 			wxlogin(provider) {

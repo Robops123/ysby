@@ -4,7 +4,7 @@
 			<view class="option-item" >
 				<text style="display: inline-block;margin-top: 20upx;">头像</text>
 				<view class="f1 fr">
-					<image  :src="data.avatar" mode=""></image>
+					<image  :src="data.avatar" mode="" @click="changeHeadface"></image>
 					<text style="margin-left: 20upx;"><text class="icon-arrow-right iconfont"></text></text>
 					</view>
 					<view class="" style="clear: both;">
@@ -132,6 +132,51 @@
 			} 
 		 },
 		 methods:{
+			 // 更换头像
+			 changeHeadface(){
+				var  that = this;
+				    uni.chooseImage({
+				     count: 1,
+				     sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+				     success: function (res) {
+						 that.$loading()
+				      const tempFilePaths = res.tempFilePaths[0];
+					  uni.compressImage({
+					    src: tempFilePaths,
+					    quality: 80,
+					    success: res2 => {
+						  const uploadTask = uni.uploadFile({
+						   url : 'http://192.168.1.157/yishuban/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.common.upload.img',
+						   filePath: res2.tempFilePath,
+						   name: 'file',
+						   // formData: {
+						   //  'user': 'test'
+						   // },
+						   success: function (uploadFileRes) {
+							   console.log(uploadFileRes)
+						  						   uni.hideLoading()
+						  						   that.$msg('修改头像成功')
+						  						   that.submitPersonalInfo()
+						   }
+						  });
+					    },
+						error:(reason) =>{
+							console.log(reason)
+						}
+					  })
+				    
+				  
+				      // uploadTask.onProgressUpdate(function (res) {
+				      //  that.percent = res.progress;
+				      // });
+				     },
+				     error : function(e){
+						 console.log(e)
+						 uni.hideLoading()
+						 that.$msg(e)
+				     }
+				    });
+			 },
 			  //打开picker
 			         openPicker() {
 			             this.lotusAddressData.visible = true;

@@ -6,7 +6,7 @@
 				<view class="specification-wrapper">
 					<scroll-view class="specification-wrapper-content" scroll-y="true">
 						<view class="specification-header">
-							<view class="specification-left"><image class="product-img"></image></view>
+							<view class="specification-left"><image class="product-img" :src="goodsImg"></image></view>
 							<view class="specification-right">
 								<view class="price-content">
 									<text class="sign">¥</text>
@@ -76,7 +76,8 @@
 				categorys:'',
 				choosedid:[],
 				marketPrice:'',
-				stock:''
+				stock:'',
+				goodsImg:''
 			};
 		},
 		// computed: {
@@ -139,6 +140,7 @@
 				  this.$apiPost(url).then((res) =>{
 					  that.marketPrice=res.data.marketprice
 					  that.stock=Number(res.data.stock)
+					  that.goodsImg=res.data.thumb
 				  })
 			},
 			checkInpath(clickIndex) {
@@ -259,7 +261,8 @@
 					selectArr:this.selectArr.join(','),
 					selectNum:this.selectNum,
 					choosedid:this.choosedid,
-					marketPrice:this.marketPrice
+					marketPrice:this.marketPrice,
+					goodsImg:this.goodsImg
 				}
 				this.$emit('completeSpecChoose',d)
 				this.specClass = 'hide';

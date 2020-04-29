@@ -1,6 +1,6 @@
 <template>
 	<view style="border-top: 20upx solid #f3f3f3;padding-bottom: 130upx;">
-		<view class="bottom-border" v-for='(item,index) in dataList' :key='index' @click='longpress(item.id)'>
+		<view class="bottom-border" v-for='(item,index) in dataList' :key='index' @click='longpress(item.id,item)'>
 			<view class="padding s2">
 				<view class="s8 magin">
 					<text class="label-80">{{item.contactname}}</text>
@@ -27,7 +27,8 @@
 				dataList:'',
 				url:'&r=api.member.address',
 				uid:'',
-				token:''
+				token:'',
+				mode:''
 			}
 		},
 		mounted(){
@@ -42,9 +43,13 @@
 				that.getAddressList()
 			})
 		},
+		onLoad(e){
+			if(e.type=='choose'){
+				this.mode=1
+			}
+		},
 		methods:{
 			toChange(t,it){
-				console.log(it)
 				uni.navigateTo({
 					url:'./addressChange?type='+t+'&item='+JSON.stringify(it)
 				})
@@ -61,14 +66,24 @@
 					that.dataList=res.data	
 				  })
 			},
-			longpress(id){
-				var that=this
+			longpress(id,item){
+				var that=this,list
+				if(this.mode==1){
+					list=['删除','选为收货地址']
+				}else{
+					list=['删除']
+				}
 				uni.showActionSheet({
-				    itemList: ['删除'],
+				    itemList: list,
 				    success: function (res) {
 						console.log(res)
 						if(res.tapIndex==0){
 							that.deleteAddress(id)
+						}else if(res.tapIndex==1){
+							uni.$emit('chooseAddress',item)
+							uni.navigateBack({
+								delta:1
+							})
 						}
 				    },
 				    fail: function (res) {

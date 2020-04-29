@@ -1,37 +1,40 @@
 <template>
 	<view>
-		<view class="padding" style="padding-bottom: 66px;">
-			<view class="card" v-for="(item,index) in 3" :key='index'>
+		<!-- #ifdef MP-WEIXIN -->
+		<view class=" manage">管理</view>
+		<!-- #endif -->
+		<view class="padding" style="padding-bottom: 46px;">
+			
+			<view class="card" v-for="(item,index) in dataList" :key='index'>
 				<view class="overall">
-					<checkbox-group @change="checkboxChange" class="r-cb">
-					    <checkbox value=""  style="transform:scale(0.7)"/>
+					<checkbox-group @change="parentChange($event,item)" class="r-cb" v-if="operate">
+					    <checkbox value="" :checked="item.checked" style="transform:scale(0.7)"/>
 					</checkbox-group>
 					<view class="">
-						<icon type="" class="icon-fire iconfont"></icon>
-						<text class="overall-title">艺术班自营</text>
-						<icon type="" class="icon-fire iconfont arrow"></icon>
+						<icon type="" class="icon-iconfontshop-copy iconfont"></icon>
+						<text class="overall-title">{{item.merchname}}</text>
+						<icon type="" class="icon-arrow-right iconfont "></icon>
 					</view>
 				</view>
 				
-				<view class="child-overall" v-for="(item,index) in 2" :key='index'>
+				<view class="child-overall" v-for="(ChildItem,ChildIndex) in item.goods" :key='ChildIndex'>
 					<view class="child-overall-item"> 
-						<checkbox-group @change="checkboxChange" class="r-cb">
-						    <checkbox value=""  style="transform:scale(0.7)"/>
+						<checkbox-group @change="childChange($event,ChildItem,index,ChildIndex)" class="r-cb" v-if="operate">
+						    <checkbox  :checked="ChildItem.checked"  style="transform:scale(0.7)"/>
 						</checkbox-group>
-						<image src="../../static/img/bg/activity.png" mode=""></image>
+						<image :src="ChildItem.thumb" mode=""></image>
 						<view class="info">
 							<view class="s2 title">
-								儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿
-								童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿
+								{{ChildItem.title}}
 							</view>
 							<view class="s3 cg options">
-								海蓝色；24(155/60A)<icon type="" class="icon-fire iconfont"></icon>
+								{{ChildItem.specs ? ChildItem.specs:'选择规格'}}<icon type="" class="icon-arrowdown-copy iconfont"></icon>
 							</view>
 							<view class="bottom-content">
-								<text class="cr">$79.80</text>
+								<text class="cr">￥{{ChildItem.marketprice}}</text>
 								<view class="calculator fr">
 									<view class="calc minus">-</view>
-									<text>1</text>
+									<text>{{ChildItem.amount}}</text>
 									<view class="calc plus">+</view>
 								</view>
 							</view>
@@ -41,36 +44,125 @@
 			</view>
 		</view>
 		
-		<view class="bottom">
-			<checkbox-group @change="checkboxChange" class="r-cb">
+		<view class="bottom animated slideInUp" v-if="operate">
+			<checkbox-group @change="AllChange" class="r-cb">
 			    <checkbox value=""  style="transform:scale(0.7)"/>全选
 			</checkbox-group>
 			<view class="bottom-right">
 				<text class="cg s1">合计:</text>
-				<text class="cr" style="font-size: 34upx;">$21.45</text>
-				<button type="warn" >去结算(2)</button>
+				<text class="cr" style="font-size: 34upx;">￥{{totalPrice}}</text>
+				<button type="warn" class="buy-btn">去结算(2)</button>
+				<text class="" style="color: #ff5b62;margin-left: 20upx;" @click="deleteCarts">删除</text>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default{
-		onShow(){
-			console.log('show')
-		},
 		data(){
 			return{
-				cartList:[
-					{
-						
-					}
-				]
+				selectedGoodsId:[],
+				operate:false,
+				uid:'',
+				token:'',
+				page:1,
+				pagesize:10,
+				total:0,
+				more:'',
+				url:'&r=api.member.cart',
+				dataList:[],
+				totalPrice:''
 			}
 		},
+		components:{
+			uniLoadMore
+		},
+		computed: {
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		   },
+		onShow(){
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+				this.getList()
+			}
+		},
+		onReachBottom(){
+			if(this.noMore){
+								this.more='noMore'
+								return;
+							}
+							var that=this
+							this.more='loading'
+			// setTimeout(function(){
+							  that.page++
+							  that.getList(that.page)
+			// },2000)
+		},
+		onNavigationBarButtonTap(){
+			this.toggleOperation()
+		},
+		mounted(){
+			
+		},
 		methods:{
-			checkboxChange(e){
+			// 全选
+			AllChange(e){
 				console.log(e)
+			},
+			// 商店选择
+			parentChange(e,item){
+				var id=e.detail.value[0],that=this
+				if(id==undefined){
+					item.goods.forEach((item) =>{
+						var index=that.selectedGoodsId.indexOf(item.goodsid)
+						that.selectedGoodsId.splice(index,1)
+					})
+				}else{
+					item.goods.forEach((item) =>{
+						var index=that.selectedGoodsId.indexOf(item.goodsid)
+						if(index==-1){
+							that.selectedGoodsId.push(item.goodsid)
+						}
+						
+					})
+				}
+				console.log(this.selectedGoodsId)
+			},
+			// 商品选择
+			childChange(e,t,pi,ci){
+				// var id=e.detail.value[0],index=this.selectedGoodsId.indexOf(item.goodsid)
+				// if(id==undefined){
+				// 		this.selectedGoodsId.splice(index,1)
+				// }else{
+				// 	if(index)
+				// 	this.selectedGoodsId.push(id)
+				// }
+				this.dataList[pi].goods[ci].checked=!this.dataList[pi].goods[ci].checked
+			},
+			toggleOperation(){
+				this.operate=!this.operate
+			},
+			deleteCarts(){
+				
+			},
+			getList(){
+				var that=this
+				var params={
+					uid:this.uid,
+					token:this.token,
+					page:this.page,
+					pagesize:this.pagesize,
+				}
+				  this.$apiPost(this.url,params).then((res) =>{
+					  that.total=res.data.length
+					that.dataList=res.data	
+				  })
 			}
 		}
 	}
@@ -84,7 +176,7 @@
 	.card{
 		background-color: #fff;
 		border-radius: 18upx;
-		margin: 20upx 0;
+		margin: 0 0 20upx;
 		/* border-top: 20upx solid #; */
 	}
 	.child-overall,.overall{
@@ -183,5 +275,19 @@
 	}
 	.r-cb{
 		display: flex;
+		align-items: center;
+	}
+	
+	.manage{
+		text-align: right;
+		padding: 20upx ;
+		box-sizing: border-box;
+		background-color: #fff;
+	}
+	.buy-btn{
+		background-color: #ff5b62;
+		line-height: 1;
+		padding: 20upx ;
+		font-size: 32upx;
 	}
 </style>
