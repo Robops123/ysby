@@ -1,22 +1,28 @@
 <template>
 	<view>
-		<!-- #ifdef MP-WEIXIN -->
-		<view class=" manage" @click="toggleOperation">管理</view>
-		<!-- #endif -->
 		<view class="padding">
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 				<view class="list" v-for="(item,index) in dataList" :key='index' @click="toGoodsDetail(item.goodsid)">
-					<image :src="item.thumb" mode=""></image>
-						<view class="info">
-							<view class="s2 title">
-								{{item.title}}
+					<view class="date">{{item.createdate==today ? '今天':item.createdate}}
+					<view class="fr cg" @click="to('viewHistorys',item.createdate)">
+						<text class="s1">浏览更多</text>
+						<text class="iconfont icon-arrow-right"></text>
+					</view>
+					</view>
+					<view class="list2" v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
+						<image :src="childItem.thumb" mode=""></image>
+							<view class="info">
+								<view class="s2 title">
+									{{childItem.title}}
+								</view>
+								<view class="bottom-content cr s5"><text class="s1">￥</text>{{childItem.marketprice}}</view>
+								<view class="buy" >
+									
+									<!-- <text class="" style="color: #ff5b62;margin-right: 20upx;" v-if="operate" @click="deleteCollect(item.goodsid,index)">删除</text> -->
+									<image src="../../static/img/pic/cart.png" mode="" @click.stop="addCollect(childItem.goodsid)"></image>
+								</view>
 							</view>
-							<view class="bottom-content cr s5"><text class="s1">￥</text>{{item.marketprice}}</view>
-							<view class="buy" >
-								<text class="" style="color: #ff5b62;margin-right: 20upx;" v-if="operate" @click.stop="deleteCollect(item.goodsid,index)">删除</text>
-								<image src="../../static/img/pic/cart.png" mode="" @click.stop="addCollect(item.goodsid)"></image>
-							</view>
-						</view>
+					</view>
 				</view>
 				<uni-load-more :status="more"></uni-load-more>
 			</scroll-view>
@@ -33,6 +39,7 @@
 		data() {
 			return {
 				operate:false,
+				today:'',
 				uid:'',
 				token:'',
 				active:1,
@@ -40,7 +47,7 @@
 				sh:'',
 				dataList:[],
 				page:1,
-				pageSize:10,
+				pageSize:5,
 				total:0,
 				more:''
 			}
@@ -53,11 +60,17 @@
 		   mounted(){
 		   	var that=this
 			var userInfo=uni.getStorageSync('userInfo')
+			var time=new Date()
+			this.today=time.toLocaleDateString().replace(/\//gi,'-')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.uid=userInfo.uid
 				this.token=userInfo.token
 				this.getList()
 			}
+			uni.$on('deleteRecord',function(){
+				that.reset()
+				that.getList()
+			})
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
 		   			that.sh=res
@@ -73,14 +86,14 @@
 					url:'/pages/distributionOrderdetail/distributionOrderdetail'
 				})
 			},
-			to(where){
-				uni.navigateTo({
-					url:`/pages/retail/${where}`
-				})
-			},
 			toGoodsDetail(id){
 				uni.navigateTo({
 					url:`/pages/index/goodsDetail?id=${id}`
+				})
+			},
+			to(where,p){
+				uni.navigateTo({
+					url:`/pages/mine/${where}?date=${p}`
 				})
 			},
 			back(){
@@ -110,7 +123,7 @@
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='&r=api.member.favorite'
+				  var url='&r=api.member.footprint'
 				  this.$apiPost(url,params).then((res) =>{
 					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
@@ -176,7 +189,8 @@
 		display: inline-block;
 		vertical-align: top;
 	}
-	.list>image{
+	.list>image,
+	.list2>image{
 		width: 280upx;
 		height: 280upx;
 		border-radius: 10px;
@@ -212,5 +226,13 @@
 		padding: 20upx ;
 		box-sizing: border-box;
 		background-color: #fff;
+	}
+	
+	.date{
+		font-size: 48upx;
+		font-weight: bold;
+		border-bottom: 1px solid #f4f4f4;
+		padding: 20upx 0;
+		margin-bottom: 20upx;
 	}
 </style>

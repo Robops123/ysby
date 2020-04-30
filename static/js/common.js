@@ -28,3 +28,14 @@ export const msg=function(msg,type){
 	});
 }
 
+export const operateInterceptor=function(logined){
+	if(!logined){
+		this.$msg('请先登录')
+		uni.navigateTo({
+			url:'../login/loginMobile?passitive=true'
+		})
+		return false;
+	}else{
+		return true
+	}
+}

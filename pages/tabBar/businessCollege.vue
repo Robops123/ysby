@@ -73,7 +73,7 @@
 				
 				
 				<view class="" v-if="active==2">
-					<view class="sp-item3"  v-for="(item,index) in dataList" :key='index'>
+					<view class="sp-item3"  v-for="(item,index) in dataList" :key='index' @click="toShop(item.id)">
 						<view class="sp-item3-top">
 							<view>
 								<image :src="item.logo" mode="" class="headface"></image>
@@ -105,7 +105,7 @@
 				</view>
 				
 				<view class="box" v-if="active==3">
-					<view class="list" v-for="(item,index) in dataList" :key='index'>
+					<view class="list" v-for="(item,index) in dataList" :key='index' @click="toGoodsDetail(item.id)">
 						<image :src="item.thumb" mode=""></image>
 						<view class="word">
 							<view class="s3 ellipsis">{{item.title}}</view>
@@ -185,6 +185,16 @@
 			toDetail(item){
 				uni.navigateTo({
 					url:'/pages/index/articleDetail?id='+item.id+'&like='+item.like+'&comment='+item.comment+'&repost='+item.repost
+				})
+			},
+			toShop(id){
+				uni.navigateTo({
+					url:`/pages/bussiness/shopPreview?id=${id}`
+				})
+			},
+			toGoodsDetail(id){
+				uni.navigateTo({
+					url:`/pages/index/goodsDetail?id=${id}`
 				})
 			},
 			toggle(t){

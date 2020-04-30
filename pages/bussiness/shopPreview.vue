@@ -23,7 +23,7 @@
 					<text class="s3 cg">{{basic.collect}}人关注</text>
 				</view>
 			</view>
-			<view class="enter-button" >关注</view>
+			<view class="enter-button" @click="focus(id)">{{basic.isCollect=='0' ? '已关注':'关注'}}</view>
 		</view>
 		
 		<!-- <image src="../../static/img/pic/logo.png" mode="" class="banner"></image> -->
@@ -73,6 +73,9 @@
 		},
 		data(){
 			return{
+				uid:'',
+				token:'',
+				logined:false,
 				id:'',
 				url:'',
 				active:1,
@@ -98,7 +101,22 @@
 		mounted(){
 			var that=this
 			this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.logined=true
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+			}else{
+				this.logined=false
+			}
 			this.getBasic()
+			uni.$on('logined',function(){
+				var userInfo2=uni.getStorageSync('userInfo')
+				that.logined=true
+				that.uid=userInfo2.uid
+				that.token=userInfo2.token
+				that.getBasic()
+			})
 			this.getCarousel()
 			this.getList(this.page)
 			setTimeout(function(){
@@ -165,7 +183,7 @@
 			},
 			getBasic(){
 				var that=this
-				  var url='&r=api.merchant.home&merchid='+this.id
+				  var url='&r=api.merchant.home&merchid='+this.id+'&uid='+this.uid+'&token='+this.token
 				  this.$apiPost(url).then((res) =>{
 					  that.basic=res.data
 				  })
@@ -188,6 +206,28 @@
 				  that.page++
 				  that.getList(that.page)
 			  // },2000)
+			},
+			// 关注
+			focus(id){
+							  var ce=this.$operateInterceptor(this.logined)
+							  if(!ce){
+							  	return ;
+							  }
+							  if(this.basic.isCollect=='0'){
+								  return ;
+							  }
+							  var that=this
+							  var params={
+							    uid:this.uid,
+							    token: this.token,
+							  	merchid:id
+							  }
+							    var url='&r=api.member.collection.add'
+							    this.$apiPost(url,params).then((res) =>{
+							  		// that.options[2].info++
+									that.getBasic()
+							  						that.$msg('已关注')
+							    })
 			},
 		}
 	}
@@ -237,8 +277,10 @@
 		margin-left: 10upx;
 	}
 	.main{
-		padding-top: 96upx;
-		margin-top: var(--status-bar-height);
+		padding-top: 96upx !important;
+		/* #ifdef APP-PLUS */
+		margin-top: var(--status-bar-height) !important;
+		/* #endif */
 	}
 	
 	

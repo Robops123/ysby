@@ -22,7 +22,7 @@
 						<view class="s5 cr word-bottom">
 							<view>￥{{item.marketprice}}</view>
 							<view class="buy fr">
-								<image src="../../static/img/pic/cart.png" mode=""></image>
+								<image src="../../static/img/pic/cart.png" mode="" @click="addCollect(item.goodsid)"></image>
 							</view>
 						</view>
 					</view>
@@ -66,7 +66,12 @@
 		mounted(){
 			var that=this
 			this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
-			this.getList(this.page)
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+				this.getList(this.page)
+			}
 			setTimeout(function(){
 				that.$getHeight('#sv',(res) =>{
 					that.sh=res
@@ -139,6 +144,19 @@
 				  that.page++
 				  that.getList(that.page)
 			  // },2000)
+			},
+			addCollect(id){
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token: this.token,
+					goodsid:id
+				}
+				  var url='&r=api.member.cart.add'
+				  this.$apiPost(url,params).then((res) =>{
+						// that.options[2].info++
+										that.$msg('添加成功')
+				  })
 			},
 		}
 	}

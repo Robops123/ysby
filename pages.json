@@ -195,6 +195,25 @@
 						"navigationBarTitleText": "代理中心"
 				    }
 				},
+				{
+				    "path": "pages/mine/viewHistoryf",
+				    "style": {
+						"navigationBarTitleText": "浏览足迹"
+				    }
+				},
+				{
+				    "path": "pages/mine/viewHistorys",
+				    "style": {
+						"navigationBarTitleText": "浏览足迹",
+						"app-plus":{
+							"titleNView": {
+								"buttons": [{
+									"text":"管理",
+									"fontSize":"16px"}]
+									} 
+						}
+				    }
+				},
 				// #ifdef APP-PLUS || H5
 				{
 				    "path": "pages/retail/retailMoney",

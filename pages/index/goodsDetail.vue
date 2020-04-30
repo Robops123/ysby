@@ -63,7 +63,7 @@
 							<text class="s3 cg">{{data.collect}}人关注</text>
 						</view>
 					</view>
-					<view class="enter-button enter-button1" >关注</view>
+					<view class="enter-button enter-button1" @click="focus(data.merchid)">{{data.isCollect=='0' ? '已关注':'关注'}}</view>
 					<view class="enter-button enter-button2" >进店</view>
 				</view>
 				<view class="sp-item3-bottom">
@@ -136,9 +136,15 @@
 			sku,
 			// uniPopup
 		},
+		onShow(){
+			
+		},
 		data () {
 		      return {
+				  logined:false,
 				  popshow:false,
+				  uid:'',
+				  token:'',
 				  id:'',
 				  merchId:'',
 				  data:'',
@@ -156,7 +162,9 @@
 		        }, {
 		          icon: 'icon-star',
 		          text: '收藏',
-		          info: 2
+				  collected:false,
+				  color:'ff9c00'
+		          // info: 0
 		        }],
 		        buttonGroup: [{
 		          text: '加入购物车',
@@ -172,36 +180,137 @@
 		      }
 		    },
 			onLoad(p){
+				var that=this
 				this.id=p.id
 				this.merchId=p.merchId
+				var userInfo=uni.getStorageSync('userInfo')
+				if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+					this.logined=true
+					this.uid=userInfo.uid
+					this.token=userInfo.token
+				}else{
+					this.logined=false
+				}
 				this.getDetail()
-				
+				uni.$on('logined',function(){
+					var userInfo2=uni.getStorageSync('userInfo')
+					that.logined=true
+					that.uid=userInfo2.uid
+					that.token=userInfo2.token
+					that.getDetail()
+				})
 			},
 		    methods: {
 		      onClick (e) {
-		        uni.showToast({
-		          title: `点击${e.content.text}`,
-		          icon: 'none'
-		        })
+				  console.log(e)
+				  if(e.index==0){
+					  // 客服
+				  }else if(e.index==1){
+					  // 店铺
+				  }else if(e.index==2){
+					  // 收藏
+					  this.collect(e.content.collected)
+				  }
+		        // uni.showToast({
+		        //   title: `点击${e.content.text}`,
+		        //   icon: 'none'
+		        // })
 		      },
 		      buttonClick (e) {
 		        console.log(e)
 				if(e.index==0){
-					uni.switchTab({
-						url:'/pages/tabBar/cart',
-					})
+					this.addCollect()
 				}else{
-					console.log(this.choosedSpec.choosedid)
-					if(this.choosedSpec.choosedid=='' || this.choosedSpec.choosedid==undefined || this.choosedSpec.choosedid==null){
-						this.chooseCategory()
-						return ;
-					}
-					uni.navigateTo({
-						url:'./createOrder?goodsId='+this.id+'&merchId='+this.merchId+'&choosedSpec='+JSON.stringify(this.choosedSpec)+'&goodsName='+this.data.title
-					})
+					this.buy()
 				}
 		        // this.options[2].info++
 		      },
+			  // 添加购物车
+			  addCollect(){
+				  var ce=this.$operateInterceptor(this.logined)
+				  if(!ce){
+				  	return ;
+				  }
+				  var that=this
+				  var params={
+				    uid:this.uid,
+				    token: this.token,
+					goodsid:this.id
+				  }
+				    var url='&r=api.member.cart.add'
+				    this.$apiPost(url,params).then((res) =>{
+				  		// that.options[2].info++
+						that.$msg('添加成功')
+				    })
+			  },
+			  // 购买
+			  buy(){
+				  var ce=this.$operateInterceptor(this.logined)
+				  if(!ce){
+				  	return ;
+				  }
+				  if(this.choosedSpec.choosedid=='' || this.choosedSpec.choosedid==undefined || this.choosedSpec.choosedid==null){
+				  	this.chooseCategory()
+				  	return ;
+				  }
+				  uni.navigateTo({
+				  	url:'./createOrder?goodsId='+this.id+'&merchId='+this.merchId+'&choosedSpec='+JSON.stringify(this.choosedSpec)+'&goodsName='+this.data.title
+				  })
+			  },
+			  // 购物车数量
+			  getCollectNum(){
+				  
+			  },
+			  // 更改收藏状态
+			  collect(colected){
+				  var ce=this.$operateInterceptor(this.logined)
+				  if(!ce){
+				  	return ;
+				  }
+				  var that=this,url
+				  var params={
+				    uid:this.uid,
+				    token: this.token,
+				  					goodsid:this.id
+				  }
+				  if(colected){
+					   url='&r=api.member.favorite.remove'
+				  }else{
+					   url='&r=api.member.favorite.add'
+				  }
+				    this.$apiPost(url,params).then((res) =>{
+				  		// that.options[2].info++
+						if(colected){
+							that.options[2].collected=false
+							that.options[2].icon='icon-star'
+						}else{
+							that.options[2].collected=true
+							that.options[2].icon='icon-shoucang'
+						}
+				    })
+			  },
+			  // 关注
+			  focus(id){
+				  var ce=this.$operateInterceptor(this.logined)
+				  if(!ce){
+				  	return ;
+				  }
+				  if(this.data.isCollect=='0'){
+					  return ;
+				  }
+				  var that=this
+				  var params={
+				    uid:this.uid,
+				    token: this.token,
+				  	merchid:id
+				  }
+				    var url='&r=api.member.collection.add'
+				    this.$apiPost(url,params).then((res) =>{
+				  		// that.options[2].info++
+						that.data.isCollect='0'
+				  						that.$msg('已关注')
+				    })
+			  },
 			  chooseCategory(){
 				  this.$refs.sku.specClass='show'
 			  },
@@ -210,7 +319,7 @@
 			  },
 			  getDetail(){
 				  var that=this
-				  var url='&r=api.goods.detail&id='+this.id
+				  var url='&r=api.goods.detail&id='+this.id+'&uid='+this.uid+'&token='+this.token
 				  // var params={
 				  //   page:p,
 				  //   pagesize: this.pageSize
@@ -219,6 +328,13 @@
 				    this.$apiPost(url).then((res) =>{
 						that.data=res.data
 						that.thumb_url=res.data.thumb_url
+						if(that.data.isFavorite=='1'){
+								that.options[2].collected=false
+								that.options[2].icon='icon-star'
+						}else{
+							that.options[2].collected=true
+							that.options[2].icon='icon-shoucang'
+						}
 						that.$nextTick(function(){
 							that.getCategory()
 						})

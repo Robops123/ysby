@@ -1,16 +1,16 @@
 <template>
 	<view>
 		<!-- #ifdef MP-WEIXIN -->
-		<view class=" manage">管理</view>
+		<view class=" manage" @click="toggleOperation">管理</view>
 		<!-- #endif -->
 		<view class="padding" style="padding-bottom: 46px;">
 			
-			<view class="card" v-for="(item,index) in dataList" :key='index'>
+			<view class="card" v-for="(item,index) in dataList" :key='index' v-if="logined">
 				<view class="overall">
-					<checkbox-group @change="parentChange($event,item)" class="r-cb" v-if="operate">
+					<checkbox-group @change="parentChange($event,item,index)" class="r-cb" v-if="operate">
 					    <checkbox value="" :checked="item.checked" style="transform:scale(0.7)"/>
 					</checkbox-group>
-					<view class="">
+					<view class="" @click="toShop(item.merchid)">
 						<icon type="" class="icon-iconfontshop-copy iconfont"></icon>
 						<text class="overall-title">{{item.merchname}}</text>
 						<icon type="" class="icon-arrow-right iconfont "></icon>
@@ -20,7 +20,7 @@
 				<view class="child-overall" v-for="(ChildItem,ChildIndex) in item.goods" :key='ChildIndex'>
 					<view class="child-overall-item"> 
 						<checkbox-group @change="childChange($event,ChildItem,index,ChildIndex)" class="r-cb" v-if="operate">
-						    <checkbox  :checked="ChildItem.checked"  style="transform:scale(0.7)"/>
+						    <checkbox  :checked="ChildItem.checked==true"  style="transform:scale(0.7)"/>
 						</checkbox-group>
 						<image :src="ChildItem.thumb" mode=""></image>
 						<view class="info">
@@ -33,15 +33,17 @@
 							<view class="bottom-content">
 								<text class="cr">￥{{ChildItem.marketprice}}</text>
 								<view class="calculator fr">
-									<view class="calc minus">-</view>
+									<view class="calc minus" @click="ChildItem.amount--">-</view>
 									<text>{{ChildItem.amount}}</text>
-									<view class="calc plus">+</view>
+									<view class="calc plus" @click="ChildItem.amount++">+</view>
 								</view>
 							</view>
 						</view>
 					</view>
 				</view>
 			</view>
+			
+			<view style="text-align: center;" v-if="!logined">----还没登录哦----</view>
 		</view>
 		
 		<view class="bottom animated slideInUp" v-if="operate">
@@ -51,7 +53,7 @@
 			<view class="bottom-right">
 				<text class="cg s1">合计:</text>
 				<text class="cr" style="font-size: 34upx;">￥{{totalPrice}}</text>
-				<button type="warn" class="buy-btn">去结算(2)</button>
+				<button type="warn" class="buy-btn" @click="getChecked">去结算(2)</button>
 				<text class="" style="color: #ff5b62;margin-left: 20upx;" @click="deleteCarts">删除</text>
 			</view>
 		</view>
@@ -63,12 +65,13 @@
 	export default{
 		data(){
 			return{
+				logined:false,
 				selectedGoodsId:[],
 				operate:false,
 				uid:'',
 				token:'',
 				page:1,
-				pagesize:10,
+				pagesize:50,
 				total:0,
 				more:'',
 				url:'&r=api.member.cart',
@@ -87,9 +90,12 @@
 		onShow(){
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.logined=true
 				this.uid=userInfo.uid
 				this.token=userInfo.token
 				this.getList()
+			}else{
+				this.logined=false
 			}
 		},
 		onReachBottom(){
@@ -111,28 +117,45 @@
 			
 		},
 		methods:{
+			toShop(id){
+				uni.navigateTo({
+					url:`/pages/bussiness/shopPreview?id=${id}`
+				})
+			},
 			// 全选
 			AllChange(e){
 				console.log(e)
 			},
 			// 商店选择
-			parentChange(e,item){
-				var id=e.detail.value[0],that=this
-				if(id==undefined){
-					item.goods.forEach((item) =>{
-						var index=that.selectedGoodsId.indexOf(item.goodsid)
-						that.selectedGoodsId.splice(index,1)
+			parentChange(e,t,i){
+				// var id=e.detail.value[0],that=this
+				// if(id==undefined){
+				// 	item.goods.forEach((item) =>{
+				// 		var index=that.selectedGoodsId.indexOf(item.goodsid)
+				// 		that.selectedGoodsId.splice(index,1)
+				// 	})
+				// }else{
+				// 	item.goods.forEach((item) =>{
+				// 		var index=that.selectedGoodsId.indexOf(item.goodsid)
+				// 		if(index==-1){
+				// 			that.selectedGoodsId.push(item.goodsid)
+				// 		}
+						
+				// 	})
+				// }
+				// console.log(this.selectedGoodsId)
+				if(e.detail.value[0]!=undefined){
+					this.dataList[i].checked=true
+					this.dataList[i].goods.forEach((item) =>{
+						item.checked=true
 					})
 				}else{
-					item.goods.forEach((item) =>{
-						var index=that.selectedGoodsId.indexOf(item.goodsid)
-						if(index==-1){
-							that.selectedGoodsId.push(item.goodsid)
-						}
-						
+					this.dataList[i].checked=false
+					this.dataList[i].goods.forEach((item) =>{
+						item.checked=false
 					})
 				}
-				console.log(this.selectedGoodsId)
+				this.$forceUpdate()
 			},
 			// 商品选择
 			childChange(e,t,pi,ci){
@@ -143,13 +166,49 @@
 				// 	if(index)
 				// 	this.selectedGoodsId.push(id)
 				// }
-				this.dataList[pi].goods[ci].checked=!this.dataList[pi].goods[ci].checked
+				if(e.detail.value[0]!=undefined){
+					this.dataList[pi].goods[ci].checked=true
+				}else{
+					this.dataList[pi].goods[ci].checked=false
+				}
+				var fl=this.dataList[pi].goods.filter((item) =>{return item.checked}).length
+				if(fl==this.dataList[pi].goods.length){
+					this.dataList[pi].checked=true
+				}else{
+					this.dataList[pi].checked=false
+				}
+				this.$forceUpdate()
 			},
 			toggleOperation(){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
 				this.operate=!this.operate
 			},
+			// 删除购物车
 			deleteCarts(){
-				
+				var that=this
+				that.selectedGoodsId=[]
+				this.dataList.forEach((item) =>{
+					item.goods.forEach((item2) =>{
+						if(item2.checked){
+							that.selectedGoodsId.push(item2.goodsid)
+						}
+					})
+				})
+				var params={
+					uid:this.uid,
+					token:this.token,
+					goodsid:this.selectedGoodsId.join(',')
+				}
+				var url='&r=api.member.cart.remove'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.$msg('移除成功')
+					  setTimeout(function(){
+						  that.getList()
+					  },0)
+				  })
 			},
 			getList(){
 				var that=this
@@ -163,6 +222,9 @@
 					  that.total=res.data.length
 					that.dataList=res.data	
 				  })
+			},
+			getChecked(){
+				
 			}
 		}
 	}

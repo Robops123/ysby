@@ -53,7 +53,7 @@
 					<view class="fr s3 more">超低价好货<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
 				</view>
 				<view class="sp">
-					<view class="sp-item" v-for="(item,index) in bargainList" :key='index'>
+					<view class="sp-item" v-for="(item,index) in bargainList" :key='index' @click="toDetail(item.id)">
 						<image :src="item.thumb" mode=""></image>
 						<view class="s3 ellipsis">{{item.title}}</view>
 						<view class="cr s3">￥{{item.marketprice}}</view>
@@ -68,13 +68,13 @@
 		<view class="hot padding">
 			<view class="hot-title"><image src="../../static/img/pic/index/hot.png" mode=""></image>热卖商品</view>
 			<view class=" sp2">
-				<view class="sp-item2 " v-for="(item,index) in hotList" :key='index'>
+				<view class="sp-item2 " v-for="(item,index) in hotList" :key='index' @click="toDetail(item.id)">
 					<image :src="item.thumb" mode=""></image>
 					<view class="s3 ellipsis">{{item.title}}</view>
 					<view class="cr s5 word-bottom">
 						<text>￥{{item.marketprice}}</text>
 						<view class="buy fr">
-							<image src="../../static/img/pic/cart.png" mode=""></image>
+							<image src="../../static/img/pic/cart.png" mode="" @click.stop="addCollect(item.id)"></image>
 						</view>
 					</view>
 				</view>
@@ -138,6 +138,9 @@
 		},
 		data(){
 			return{
+				logined:false,
+				uid:'',
+				token:'',
 				productList:[
 					{name:'睡眠用品',type:1,imgUrl:'../../static/img/pic/index/icon6.png'},
 					{name:'出行用品',type:2,imgUrl:'../../static/img/pic/index/icon2.png'},
@@ -159,6 +162,21 @@
 			}
 		},
 		mounted(){
+			var that=this
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.logined=true
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+			}else{
+				this.logined=false
+			}
+			uni.$on('logined',function(){
+				var userInfo2=uni.getStorageSync('userInfo')
+				that.logined=true
+				that.uid=userInfo2.uid
+				that.token=userInfo2.token
+			})
 			this.getHotList()
 			this.getNotice()
 			this.getCarsouselList()
@@ -175,6 +193,11 @@
 			toCategory(){
 				uni.navigateTo({
 					url:`/pages/index/goodsCategory`
+				})
+			},
+			toDetail(id){
+				uni.navigateTo({
+					url:`/pages/index/goodsDetail?id=${id}`
 				})
 			},
 			// 公告
@@ -250,7 +273,31 @@
 						that.$msg(reason)
 					}
 				})
-			}
+			},
+			addCollect(id){
+				// if(!this.logined){
+				// 	this.$msg('请先登录')
+				// 	uni.navigateTo({
+				// 		url:'../login/loginMobile?passitive=true'
+				// 	})
+				// 	return ;
+				// }
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token: this.token,
+					goodsid:id
+				}
+				  var url='&r=api.member.cart.add'
+				  this.$apiPost(url,params).then((res) =>{
+						// that.options[2].info++
+										that.$msg('添加成功')
+				  })
+			},
 		}
 	}
 </script>

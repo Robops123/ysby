@@ -5,13 +5,13 @@
 			<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
 			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
 			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
-			<view class="nav nav-left" :class="{active:active==4}" @click="toggle(4)"><text>已完成</text></view>
+			<view class="nav nav-left" :class="{active:active==6}" @click="toggle(6)"><text>已完成</text></view>
 		</view>
 		<view class="padding" style="padding-bottom: 66px;">
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 				<view class="card" v-for="(item,index) in dataList" :key='index' @click="toDetail">
 					<view class="overall">
-							<view>
+							<view @click.stop="toShop(item.merchid)">
 								<image src="../../static/img/pic/other/icon2.png" style="width: 40upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" mode="" class=""></image>
 								<text class="overall-title">{{item.merchname}}</text>
 								<text class="icon-arrow-right iconfont"></text>
@@ -19,7 +19,7 @@
 							<text class="fr cr s2" v-show='item.status==1'>待付款</text>
 							<text class="fr cr s2" v-show='item.status==2'>待发货</text>
 							<text class="fr cr s2" v-show='item.status==3'>待收货</text>
-							<text class="fr cr s2" v-show='item.status==4'>已完成</text>
+							<text class="fr cr s2" v-show='item.status==6'>已完成</text>
 					</view>
 					
 					<view class="child-overall" >
@@ -31,7 +31,7 @@
 								</view>
 								<view class="s3 cg options ellipsis">
 									{{item.specifications}}
-									<image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image>
+									<!-- <image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image> -->
 								</view>
 								<view class="bottom-content">
 									<text class="s3 fr">共{{item.amount}}件商品 合计:<text class="s1">￥{{item.totalprice}}</text></text>
@@ -107,6 +107,11 @@
 			toDetail(){
 				uni.navigateTo({
 					url:'./myOrderDetail'
+				})
+			},
+			toShop(id){
+				uni.navigateTo({
+					url:`/pages/bussiness/shopPreview?id=${id}`
 				})
 			},
 			toggle(t){

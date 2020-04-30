@@ -31,6 +31,7 @@
 	export default{
 		data(){
 			return{
+				passitive:'',
 				mobile:'',
 				pwd:'',
 				newpwd:'',
@@ -46,11 +47,12 @@
 		},
 		onLoad(e){
 			this.mobile=e.mobile
+			this.passitive=e.passitive
 		},
 		methods:{
 			loginpsd(){
 				uni.redirectTo({
-					url:'/pages/login/loginPsd'
+					url:'/pages/login/loginPsd?passitive='+this.passitive
 				})
 			},
 			submit(){
@@ -76,9 +78,16 @@
 						that.$msg('注册成功')  
 					  },100)
 					  uni.setStorageSync('userInfo',res.data)
-					  uni.switchTab({
-					  	url:'../tabBar/mine'
-					  })
+					 if(that.passitive){
+					 						    uni.$emit('logined')
+					 							uni.navigateBack({
+					 								delta:2
+					 							})
+					 }else{
+					 						   uni.switchTab({
+					 						   	url:'../tabBar/mine'
+					 						   })
+					 }
 				  })
 			},
 			validate(){

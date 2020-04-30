@@ -20,6 +20,8 @@ const baseURL = 'http://192.168.1.157/yishuban/app/index.php?i=2&c=entry&m=zhong
  			success(res) {
 				if(res.data.resultCode==0){
 					resolve(res.data)
+				}else if(res.data.resultMessage=='暂无数据'){
+					resolve(res.data)
 				}else{
 					uni.hideLoading()
 					uni.showToast({

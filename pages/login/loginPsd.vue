@@ -8,9 +8,10 @@
 			<!-- <image :src="show? '../../static/chakanmimaclose2.png':'../../static/chakanmimaclose.png'" 
 			mode="" class="fr" @click="showpsd()"></image> -->
 		</view>
-		<view class="f2">
-			<text @click="loginveri()">验证码登录</text>
+		<view class="f2" style="overflow: hidden;">
+			<!-- <text @click="loginveri()">验证码登录</text> -->
 			<text class="fr">登录遇到问题</text>
+			<text ></text>
 		</view>
 		
 		<view>
@@ -25,16 +26,18 @@
 			return{
 				show:false,
 				mobile:'',
-				pwd:''
+				pwd:'',
+				passitive:''
 			}
 		},
 		onLoad(e){
 			this.mobile=e.mobile
+			this.passitive=e.passitive
 		},
 		methods:{
 			loginveri(){
 				uni.redirectTo({
-					url:'/pages/login/loginVeri'
+					url:'/pages/login/loginVeri?passitive='+this.passitive
 				})
 			},
 			submit(){
@@ -42,9 +45,16 @@
 				var url='&r=api.member.account.login&mobile='+this.mobile+'&pwd='+this.pwd
 				  this.$apiPost(url).then((res) =>{
 					   uni.setStorageSync('userInfo',res.data)
-					  uni.switchTab({
-					  	url:'../tabBar/mine'
-					  })
+					   if(that.passitive){
+						    uni.$emit('logined')
+							uni.navigateBack({
+								delta:2
+							})
+					   }else{
+						   uni.switchTab({
+						   	url:'../tabBar/mine'
+						   })
+					   }
 				  })
 			},
 			showpsd(){
@@ -117,7 +127,8 @@
 		letter-spacing: 4px;
 		color: white;
 		font-size: 34upx;
-		margin: 20upx 0;
+		margin: 60upx 0 0;
+		
 	}
 	.f1{
 		margin-bottom: 20upx;

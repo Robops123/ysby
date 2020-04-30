@@ -23,7 +23,7 @@
 		</view>
 		
 		<view>
-			<button type="primary" class="btn">退出登录</button>
+			<button type="primary" class="btn" @click="quit">退出登录</button>
 		</view>
 	</view>
 </template>
@@ -35,6 +35,15 @@
 				uni.navigateTo({
 					url:`/pages/mine/${where}`
 				})
+			},
+			quit(){
+				uni.removeStorageSync('userInfo')
+				this.$msg('退出成功')
+				setTimeout(function(){
+					uni.navigateBack({
+						delta:1
+					})
+				},1000)
 			}
 		}
 	}
@@ -74,7 +83,7 @@
 		background: white !important;
 		text-align: center;
 		line-height: 75upx;
-		color: black;
+		color: black !important;
 		letter-spacing: 4px;
 		font-size: 34upx;
 	}

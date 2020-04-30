@@ -1,14 +1,16 @@
 <template>
 	<view>
 		<view class="top">
-			<view v-if="logined">
+			<view >
 				<view class="setting" >
 					<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img" @click="toSetting"></image>
 				</view>
-				<image :src="data.avatar" mode="" class="headface" ></image>
-				<text class="s4"  @click="tologin"  >{{data.nickname}}</text>
+				<view v-if="logined">
+					<image :src="data.avatar" mode="" class="headface" ></image>
+					<text class="s4"  @click="tologin"  >{{data.nickname}}</text>
+				</view>
 			</view>
-			<view class="s4" style="padding: 50upx 0;text-align: center;" @click="tologin" v-else>请先登录</view>
+			<view class="s4" style="padding: 50upx 0;text-align: center;" @click="tologin" v-if='!logined'>请先登录</view>
 			<view class="options1">
 				<view class="options1-item" @click="to('goods')">
 					<view>{{logined ? data.collectGoods:0}}</view>
@@ -18,7 +20,7 @@
 					<view>{{logined ? data.collectMerch:0}}</view>
 					<view>关注店铺</view>
 				</view>
-				<view class="options1-item" @click="test">
+				<view class="options1-item" @click="to('viewHistoryf')">
 					<view>{{logined ? data.history:0}}</view>
 					<view>浏览足迹</view>
 				</view>
@@ -111,28 +113,48 @@
 		},
 		onShow(){
 			var userInfo=uni.getStorageSync('userInfo')
+			console.log(userInfo)
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				console.log('y')
 				this.getUserInfo(userInfo)
 				this.logined=true
+			}else{
+				this.logined=false
 			}
 		},
 		methods:{
 			to(where){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
 				uni.navigateTo({
 					url:`/pages/mine/${where}`
 				})
 			},
 			to2(){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
 				uni.navigateTo({
 					url:`/pages/tabBar2/tabMain`
 				})
 			},
 			tologin(){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
 				uni.navigateTo({
 					url:`/pages/login/loginMobile`
 				})
 			},
 			toRetail(){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
 				uni.navigateTo({
 					url:`/pages/retail/retailCenter`
 				})
@@ -152,8 +174,6 @@
 				var url='&r=api.member.my&uid='+u.uid+'&token='+u.token
 				  this.$apiPost(url).then((res) =>{
 					that.data=res.data	
-				  }).catch(() =>{
-					  that.logined=false
 				  })
 			},
 			wxlogin(provider) {

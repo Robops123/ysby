@@ -4,8 +4,12 @@
 		<view class=" manage" @click="toggleOperation">管理</view>
 		<!-- #endif -->
 		<view class="padding">
+			<view class="date">{{date==today ? '今天':date}}</view>
+			
+			<!-- <view style="text-align: center;" v-if="!dataList">----暂无记录----</view> -->
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 				<view class="list" v-for="(item,index) in dataList" :key='index' @click="toGoodsDetail(item.goodsid)">
+					
 					<image :src="item.thumb" mode=""></image>
 						<view class="info">
 							<view class="s2 title">
@@ -33,6 +37,7 @@
 		data() {
 			return {
 				operate:false,
+				today:'',date:'',
 				uid:'',
 				token:'',
 				active:1,
@@ -50,19 +55,22 @@
 		       return this.dataList.length >= this.total
 		     },
 		   },
-		   mounted(){
-		   	var that=this
-			var userInfo=uni.getStorageSync('userInfo')
-			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
-				this.uid=userInfo.uid
-				this.token=userInfo.token
-				this.getList()
-			}
-		   	setTimeout(function(){
-		   		that.$getHeight('#sv',(res) =>{
-		   			that.sh=res
-		   		})
-		   	},0)
+		   onLoad(p){
+			   this.date=p.date
+			   var that=this
+			   var userInfo=uni.getStorageSync('userInfo')
+			   var time=new Date()
+			   this.today=time.toLocaleDateString().replace(/\//gi,'-')
+			   if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+			   	this.uid=userInfo.uid
+			   	this.token=userInfo.token
+			   	this.getList(this.page)
+			   }
+			   setTimeout(function(){
+			   	that.$getHeight('#sv',(res) =>{
+			   		that.sh=res
+			   	})
+			   },0)
 		   },
 		   onNavigationBarButtonTap(){
 		   	this.toggleOperation()
@@ -73,14 +81,14 @@
 					url:'/pages/distributionOrderdetail/distributionOrderdetail'
 				})
 			},
-			to(where){
-				uni.navigateTo({
-					url:`/pages/retail/${where}`
-				})
-			},
 			toGoodsDetail(id){
 				uni.navigateTo({
 					url:`/pages/index/goodsDetail?id=${id}`
+				})
+			},
+			to(where){
+				uni.navigateTo({
+					url:`/pages/retail/${where}`
 				})
 			},
 			back(){
@@ -105,12 +113,13 @@
 					uid:this.uid,
 					token:this.token,
 				  page:p,
-				  pagesize: this.pageSize
+				  pagesize: this.pageSize,
+				  createdate:this.date
 				}
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='&r=api.member.favorite'
+				  var url='&r=api.member.footprint.detail'
 				  this.$apiPost(url,params).then((res) =>{
 					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
@@ -152,11 +161,12 @@
 				  token: this.token,
 					goodsid:id
 				}
-				  var url='&r=api.member.favorite.remove'
+				  var url='&r=api.member.footprint.remove'
 				  this.$apiPost(url,params).then((res) =>{
 						// that.options[2].info++
 						that.$msg('移除成功')
 						that.dataList.splice(from,1)
+						uni.$emit('deleteRecord')
 				  })
 			},
 			toggleOperation(){
@@ -212,5 +222,13 @@
 		padding: 20upx ;
 		box-sizing: border-box;
 		background-color: #fff;
+	}
+	
+	.date{
+		font-size: 48upx;
+		font-weight: bold;
+		border-bottom: 1px solid #f4f4f4;
+		padding: 20upx 0;
+		margin-bottom: 20upx;
 	}
 </style>

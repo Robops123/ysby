@@ -55,8 +55,12 @@
 			return{
 				array: ['中国+86'],
 				index:0,
-				mobile:''
+				mobile:'',
+				passitive:''
 			}
+		},
+		onLoad(e){
+			this.passitive=e.passitive
 		},
 		methods:{
 			bindPickerChange(e){
@@ -85,11 +89,11 @@
 				  }).catch((reason) =>{
 					  if(reason.resultMessage=='用户不存在'){
 						 uni.navigateTo({
-						 	url:'/pages/login/loginVeri?mobile='+this.mobile
+						 	url:'/pages/login/loginVeri?mobile='+this.mobile+'&passitive='+this.passitive
 						 })
 						}else{
 							uni.navigateTo({
-								url:'/pages/login/loginPsd?mobile='+this.mobile
+								url:'/pages/login/loginPsd?mobile='+this.mobile+'&passitive='+this.passitive
 							})
 						}
 						uni.hideLoading()

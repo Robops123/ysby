@@ -40,7 +40,7 @@
 		
 		
 			<view class="box" v-if="active==2">
-				<view class="list" v-for="(item,index) in dataList" :key='index'>
+				<view class="list" v-for="(item,index) in dataList" :key='index' @click="toDetail(item.id)">
 					<image :src="item.thumb" mode=""></image>
 					<view class="word">
 						<view class="s3 ellipsis">{{item.title}}</view>
@@ -92,6 +92,11 @@
 			toShop(id){
 				uni.navigateTo({
 					url:`/pages/bussiness/shopPreview?id=${id}`
+				})
+			},
+			toDetail(id){
+				uni.navigateTo({
+					url:`/pages/index/goodsDetail?id=${id}`
 				})
 			},
 			toggle(t){
