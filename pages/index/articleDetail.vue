@@ -8,7 +8,7 @@
 						<view class="luntan-card-top-txt-title">{{data.merchname}}</view>
 						<view class="luntan-card-top-txt-time">{{data.createtime}}</view>
 					</view>
-					<view class="enter-button" >进店</view>
+					<view class="enter-button" @click="toShop(data.merchid)">进店</view>
 				</view>
 				<!-- <view v-html="data.detail" id="article">
 					
@@ -19,12 +19,12 @@
 				<view class="luntan-card-lianjie">#坚守共赢胜利#</view>
 				<view class="luntan-card-introduce">抗击疫情，中企商会在行动！截至2月8日，中企商会持续投入抗击疫情，面对这场突如其来的“疫”战，中企商会与大家共同坚守，终将会取得这场疫情防控狙击战的胜利！加油！</view>
 				<image class="luntan-card-img" src="../../static/img/bg/activity.png" mode=""></image> -->
-				<view class="share" id="share">
+				<!-- <view class="share" id="share">
 					<text>分享</text>
 					<image src="../../static/img/pic/other/weixin.png" mode="" style="width: 55upx;"></image>
 					<image src="../../static/img/pic/other/pyq.png" mode=""></image>
 					<image src="../../static/img/pic/other/QQ.png" mode=""></image>
-				</view>
+				</view> -->
 			</view>
 			
 			
@@ -40,7 +40,7 @@
 					</view>
 					
 					<view class="comment">
-						<scroll-view scroll-y="true" id="sv" style="max-height: 500px;"  @scrolltolower='toBottom'>
+						<scroll-view scroll-y="true" id="sv" style="max-height: 250px;"  @scrolltolower='toBottom'>
 							<view class="comment-item" v-for='(item,index) in commentList' :key='index'>
 								<image class="" :src="item.avatar" mode=""></image>
 								<view class="word">
@@ -73,7 +73,7 @@
 						<text>评论{{comment}}</text>
 					</view>
 					<view class="luntan-card-bot-card">
-						<text class="iconfont icon-zan"></text>
+						<text class="iconfont " :class="{'icon-zan':!data.isLike,'icon-shou':data.isLike,'zaned':data.isLike}" @click="toggleZan(data.isLike)"></text>
 						<text>赞{{like}}</text>
 					</view>
 				</view>
@@ -110,14 +110,18 @@
 				like:'',
 				comment:'',
 				repost:'',
+				isLike:false,
 				page:1,
-				pageSize:5,
+				pageSize:10,
 				total:0,
 				more:'',
 				articleH:'',
 				windowH:'',
 				topH:'',
-				readComplete:false
+				readComplete:false,
+				uid:'',
+				token:'',
+				logined:''
 			}
 		},
 		onLoad(e){
@@ -125,7 +129,22 @@
 			this.like=e.like
 			this.comment=e.comment
 			this.repost=e.repost
-			
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.logined=true
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+			}else{
+				this.logined=false
+			}
+			this.getDetail()
+			uni.$on('logined',function(){
+				var userInfo2=uni.getStorageSync('userInfo')
+				that.logined=true
+				that.uid=userInfo2.uid
+				that.token=userInfo2.token
+				that.getDetail()
+			})
 		},
 		onPageScroll(e){
 			// this.calcArticleHeight()
@@ -142,11 +161,11 @@
 		     },
 		   },
 		   mounted(){
-		   	var that=this
+		   	// var that=this
 			// uni.$on('updated',function(){
 			// 	that.calcArticleHeight()
 			// })
-		   	this.getDetail()
+		   	// this.getDetail()
 		   	// setTimeout(function(){
 		   	// 	that.$getHeight('#sv',(res) =>{
 		   	// 		that.sh=res
@@ -237,14 +256,63 @@
 				  that.getList(that.page)
 			  // },2000)
 			},
-			pubComment(){
-				this.$refs.ygcComment.maskState=0
-				this.$refs.ygcComment.content=''
+			pubComment(e){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				var that=this,url
+					url='&r=api.college.hotarticle.commentAdd'
+				var params={
+				  collegeid:this.data.id,
+				  uid:this.uid,
+				  token:this.token,
+				  content:e
+				}
+				  this.$apiPost(url,params).then((res) =>{
+					  that.$msg('发布评论成功')
+					  that.showComment()
+					  this.$refs.ygcComment.maskState=0
+					  this.$refs.ygcComment.content=''
+					  that.$forceUpdate()
+				  })
+			},
+			showComment(){
+				this.page=1
+				this.total=0
+				this.more=''
+				this.commentList=[]
+				this.getList()
 			},
 			openComment(){
 				this.$refs.ygcComment.maskState=1
 			},
-			
+			toShop(id){
+				uni.navigateTo({
+					url:`/pages/bussiness/shopPreview?id=${id}`
+				})
+			},
+			toggleZan(zaned){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				var that=this,url
+				if(!zaned){
+					url='&r=api.college.hotarticle.doLike'
+				}else{
+					url='&r=api.college.hotarticle.doLikeCancel'
+				}
+				var params={
+				  collegeid:this.data.id,
+				  uid:this.uid,
+				  token:this.token
+				}
+				  this.$apiPost(url,params).then((res) =>{
+					  that.data.isLike=!that.data.isLike
+					  that.$forceUpdate()
+				  })
+			}
 		}
 	}
 </script>
@@ -485,5 +553,9 @@
 		border-radius: 52upx;
 		float: right;
 		margin-top: 19upx;
+	}
+	
+	.zaned{
+		color: red;
 	}
 </style>

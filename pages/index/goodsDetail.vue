@@ -64,7 +64,7 @@
 						</view>
 					</view>
 					<view class="enter-button enter-button1" @click="focus(data.merchid)">{{data.isCollect=='0' ? '已关注':'关注'}}</view>
-					<view class="enter-button enter-button2" >进店</view>
+					<view class="enter-button enter-button2" @click="toShop(data.merchid)">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
 					<view v-for="(goodsItem, goodsIndex) in data.goods" :key="goodsIndex">
@@ -365,7 +365,12 @@
 				  uni.navigateTo({
 				  	url:'./goodsComments?id='+this.id
 				  })
-			  }
+			  },
+			  toShop(id){
+			  	uni.navigateTo({
+			  		url:`/pages/bussiness/shopPreview?id=${id}`
+			  	})
+			  },
 		    }
 	}
 </script>

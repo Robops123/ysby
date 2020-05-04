@@ -2,20 +2,20 @@
 	<view>
 		<view class="padding">
 			<view class="top">
-				<image src="../../static/img/bg/activity.png" mode=""></image>
+				<image :src="data.thumb" mode=""></image>
 				<view class="s3 ">
-					<view class="ellipsis title">待敌啊实打实亟待解决阿斯顿就按时间段解决阿斯顿就按解决阿斯顿就按</view>
-					<view class="cg" style="margin-top: 15upx;">颜色分类:蓝色&S</view>
+					<view class="ellipsis title">{{data.goodsname}}</view>
+					<view class="cg" style="margin-top: 15upx;">分类:{{data.specifications}}</view>
 				</view>
 			</view>
 			
 			<view class="rate">
 				<text>商品评价</text>
-				<uni-rate class="stars" disabled="true"
-				active-color="#ff5b62" margin="10" size="18" value="3.5" ></uni-rate>
+				<uni-rate class="stars" 
+				active-color="#ff5b62" margin="10" size="18" @change='starChange' :value="form.star" ></uni-rate>
 			</view>
 			<view>
-				<textarea class="comment" value="" placeholder="留下你的评价,可以帮助更多小伙伴啊" />
+				<textarea class="comment" v-model="form.content" placeholder="留下你的评价,可以帮助更多小伙伴啊" />
 			</view>
 			
 			<view class="uploads">
@@ -39,14 +39,14 @@
 					</view>
 					
 					<radio-group @change="radioChange"  class="radio-group">
-						 <radio value="1" :checked="current === 1" style="transform:scale(0.6)"/>
+						 <radio value="0" :checked="current === 0" style="transform:scale(0.6)"/>
 							<text>公开</text>	
-					             <radio value="0" :checked="current === 0" style="transform:scale(0.6)"/>
+					             <radio value="1" :checked="current === 1" style="transform:scale(0.6)"/>
 					          <text>匿名</text>
 					        </radio-group>
 							
 							<view style="text-align: center;">
-								<button type="default" class="btn">保存</button>
+								<button type="default" class="btn" @click="submit">提交</button>
 							</view>
 		</view>
 	</view>
@@ -70,6 +70,16 @@
 		},
 		data(){
 			return {
+				data:'',
+				form:{
+					uid:'',
+					token:'',
+					orderid:'',
+					content:'',
+					isanonymous:'0',
+					star:'',
+					pic:[]
+				},
 				current:0,
 				imageList: [], //保存图片路径集合
 				imageLength: 5, //限制图片张数
@@ -77,7 +87,21 @@
 				sizeTypeIndex: 2, //图片尺寸限制
 			}
 		},
+		onLoad(p){
+			var that=this
+			var userInfo=uni.getStorageSync('userInfo'),that=this
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.form.uid=userInfo.uid
+				this.form.token=userInfo.token
+			}
+			var info=JSON.parse(p.item)
+			this.data=info
+			this.form.orderid=info.orderno
+		},
 		methods:{
+			starChange(e){
+				this.form.star=e.value
+			},
 			//选择图片
 			chooseImage: async function() {
 					uni.chooseImage({
@@ -109,7 +133,38 @@
 				},
 				radioChange(e){
 					console.log(e)
-					this.current=e.detail.value
+					this.form.isanonymous=e.detail.value
+				},
+				submit(){
+					var  that=this,l=this.imageList.length;
+					this.$loading()
+					if(l==0){
+						that.submitForm()
+					}else{
+						this.imageList.forEach((item,index) =>{
+							that.$upload(item,'',(cb) =>{
+								that.form.pic.push(cb)
+							var	t=this.form.pic.length
+								if(l==t){
+									that.submitForm()
+								}
+							})
+						})
+					}
+					
+				},
+				submitForm(){
+					var that=this
+					var url='&r=api.member.order.commentAdd'
+					  this.$apiPost(url,this.form).then((res) =>{
+							that.$msg('评价成功')
+							uni.hideLoading()
+							setTimeout(function(){
+								uni.navigateBack({
+									delta:1
+								})
+							},500)
+					  })
 				}
 		}
 	}

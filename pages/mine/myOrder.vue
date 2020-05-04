@@ -9,7 +9,7 @@
 		</view>
 		<view class="padding" style="padding-bottom: 66px;">
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
-				<view class="card" v-for="(item,index) in dataList" :key='index' @click="toDetail">
+				<view class="card" v-for="(item,index) in dataList" :key='index' >
 					<view class="overall">
 							<view @click.stop="toShop(item.merchid)">
 								<image src="../../static/img/pic/other/icon2.png" style="width: 40upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" mode="" class=""></image>
@@ -84,24 +84,28 @@
 				more:''
 			}
 		},
+		onLoad(p){
+			var that=this
+			var userInfo=uni.getStorageSync('userInfo'),that=this
+			if(p){
+				this.active=p.active
+			}
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+			}
+			this.getList(this.page)
+			setTimeout(function(){
+				that.$getHeight('#sv',(res) =>{
+					that.sh=res
+				})
+			},0)
+			
+		},
 		computed: {
 		     noMore () {
 		       return this.dataList.length >= this.total
 		     },
-		   },
-		   mounted(){
-		   	var that=this
-		   	var userInfo=uni.getStorageSync('userInfo'),that=this
-		   	if(userInfo!='' & userInfo!=null & userInfo!=undefined){
-		   		this.uid=userInfo.uid
-		   		this.token=userInfo.token
-		   		this.getList(this.page)
-		   	}
-		   	setTimeout(function(){
-		   		that.$getHeight('#sv',(res) =>{
-		   			that.sh=res
-		   		})
-		   	},0)
 		   },
 		methods:{
 			toDetail(){

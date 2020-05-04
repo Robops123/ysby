@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 
 // js
-import { getHeight,loading,msg,operateInterceptor } from './static/js/common.js'
+import { getHeight,loading,msg,operateInterceptor,upload } from './static/js/common.js'
 import request from './static/js/request.js'
 import siteinfo from './common/siteinfo.js'
 
@@ -13,6 +13,7 @@ Vue.config.productionTip = false
 Vue.prototype.$getHeight=getHeight
 Vue.prototype.$loading=loading
 Vue.prototype.$msg=msg
+Vue.prototype.$upload=upload
 Vue.prototype.$operateInterceptor=operateInterceptor
 Vue.prototype.$apiPost=request.apiPost
 Vue.prototype.$apiGet=request.apiGet

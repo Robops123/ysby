@@ -106,7 +106,7 @@
 							</text>
 						</view>
 					</view>
-					<view class="enter-button">进店</view>
+					<view class="enter-button" @click="toShop(item.merchid)">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
 					<view class="" v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
@@ -297,6 +297,11 @@
 						// that.options[2].info++
 										that.$msg('添加成功')
 				  })
+			},
+			toShop(id){
+				uni.navigateTo({
+					url:`/pages/bussiness/shopPreview?id=${id}`
+				})
 			},
 		}
 	}

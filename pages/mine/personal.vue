@@ -135,47 +135,48 @@
 			 // 更换头像
 			 changeHeadface(){
 				var  that = this;
-				    uni.chooseImage({
-				     count: 1,
-				     sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-				     success: function (res) {
-						 that.$loading()
-				      const tempFilePaths = res.tempFilePaths[0];
-					  uni.compressImage({
-					    src: tempFilePaths,
-					    quality: 80,
-					    success: res2 => {
-						  const uploadTask = uni.uploadFile({
-						   url : 'http://192.168.1.157/yishuban/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.common.upload.img',
-						   filePath: res2.tempFilePath,
-						   name: 'file',
-						   // formData: {
-						   //  'user': 'test'
-						   // },
-						   success: function (uploadFileRes) {
-							   console.log(uploadFileRes)
-						  						   uni.hideLoading()
-						  						   that.$msg('修改头像成功')
-						  						   that.submitPersonalInfo()
-						   }
-						  });
-					    },
-						error:(reason) =>{
-							console.log(reason)
-						}
-					  })
-				    
+				uni.chooseImage({
+				    success: (chooseImageRes) => {
+						uni.showLoading()
+				        const tempFilePaths = chooseImageRes.tempFilePaths[0];
+				        that.$upload(tempFilePaths,'',(res) =>{
+				        	that.data.avatar=res
+							uni.hideLoading()
+				        	that.submitPersonalInfo()
+				        	})
+				    }
+				});
+				
+				  //   uni.chooseImage({
+				  //    count: 1,
+				  //    sizeType: ['compressed'], //可以指定是原图还是压缩图，默认二者都有
+				  //    success: function (res) {
+						//  that.$loading()
+						//  console.log(res)
+				  //     const tempFilePaths = res.tempFilePaths[0];
+					 //  const uploadTask = uni.uploadFile({
+					 //   url : '',
+					 //   filePath: tempFilePaths,
+					 //   name: 'file',
+					 //   // formData: {
+					 //   //  'user': 'test'
+					 //   // },
+					 //   success: function (uploadFileRes) {
+					 //  							   console.log(uploadFileRes)
+					  						  
+					 //   }
+					 //  });
 				  
-				      // uploadTask.onProgressUpdate(function (res) {
-				      //  that.percent = res.progress;
-				      // });
-				     },
-				     error : function(e){
-						 console.log(e)
-						 uni.hideLoading()
-						 that.$msg(e)
-				     }
-				    });
+				  //     // uploadTask.onProgressUpdate(function (res) {
+				  //     //  that.percent = res.progress;
+				  //     // });
+				  //    },
+				  //    error : function(e){
+						//  console.log(e)
+						//  uni.hideLoading()
+						//  that.$msg(e)
+				  //    }
+				  //   });
 			 },
 			  //打开picker
 			         openPicker() {

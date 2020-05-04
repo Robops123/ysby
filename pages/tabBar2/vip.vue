@@ -44,6 +44,7 @@
 		   },
 		   methods:{
 			   init(){
+				   this.reset()
 				   var userInfo=uni.getStorageSync('userInfo')
 				      if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				      	this.uid=userInfo.uid

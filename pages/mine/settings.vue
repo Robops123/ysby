@@ -23,15 +23,32 @@
 		</view>
 		
 		<view>
-			<button type="primary" class="btn" @click="quit">退出登录</button>
+			<button type="primary" class="btn" @click="quit" v-if="logined">退出登录</button>
 		</view>
 	</view>
 </template>
 
 <script>
 	export default{
+		data(){
+			return{
+				logined:false
+			}
+		},
+		mounted(){
+			var userInfo=uni.getStorageSync('userInfo'),that=this
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.logined=true
+			} else{
+				this.logined=false
+			}
+		},
 		methods:{
 			to(where){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
 				uni.navigateTo({
 					url:`/pages/mine/${where}`
 				})

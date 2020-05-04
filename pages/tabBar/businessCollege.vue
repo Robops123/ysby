@@ -73,7 +73,7 @@
 				
 				
 				<view class="" v-if="active==2">
-					<view class="sp-item3"  v-for="(item,index) in dataList" :key='index' @click="toShop(item.id)">
+					<view class="sp-item3"  v-for="(item,index) in dataList" :key='index' >
 						<view class="sp-item3-top">
 							<view>
 								<image :src="item.logo" mode="" class="headface"></image>
@@ -85,7 +85,7 @@
 									<text class="s3 cg">{{item.collect}}人关注</text>
 								</view>
 							</view>
-							<view class="enter-button">进店</view>
+							<view class="enter-button" @click="toShop(item.id)">进店</view>
 						</view>
 						<view class="sp-item3-bottom">
 							<view class=""  v-for="(childItem,childIndex) in item.goods" :key='childIndex'>

@@ -30,24 +30,24 @@
 				<view class="card">
 					<view class="s5">
 						<text>我的订单</text>
-						<view class="s3 cg fr" @click="to('myOrder')">查看全部
+						<view class="s3 cg fr" @click="toMyOrder(0)">查看全部
 						<text class="icon-arrow-right iconfont"></text>
 						</view>
 					</view>
 					<view class="dd">
-						<view class="item-list">
+						<view class="item-list" @click="toMyOrder(1)">
 							<image src="../../static/img/pic/mine/icon2.png" mode=""></image>
 							<view>待付款</view>
 						</view>
-						<view class="item-list">
+						<view class="item-list" @click="toMyOrder(2)">
 							<image src="../../static/img/pic/mine/icon4.png" mode=""></image>
 							<view>待发货</view>
 						</view>
-						<view class="item-list">
+						<view class="item-list" @click="toMyOrder(3)">
 							<image src="../../static/img/pic/mine/icon6.png" mode=""></image>
 							<view>待收货</view>
 						</view>
-						<view class="item-list">
+						<view class="item-list" @click="toMyOrderDetail()">
 							<image src="../../static/img/pic/mine/icon5.png" mode=""></image>
 							<view>待评价</view>
 						</view>
@@ -113,9 +113,7 @@
 		},
 		onShow(){
 			var userInfo=uni.getStorageSync('userInfo')
-			console.log(userInfo)
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
-				console.log('y')
 				this.getUserInfo(userInfo)
 				this.logined=true
 			}else{
@@ -139,6 +137,24 @@
 				}
 				uni.navigateTo({
 					url:`/pages/tabBar2/tabMain`
+				})
+			},
+			toMyOrder(active){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				uni.navigateTo({
+					url:`/pages/mine/myOrder?active=${active}`
+				})
+			},
+			toMyOrderDetail(){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				uni.navigateTo({
+					url:`/pages/mine/myOrderDetail?active=5`
 				})
 			},
 			tologin(){
