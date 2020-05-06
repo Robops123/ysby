@@ -103,14 +103,14 @@
 			 <view class="popup animated slideInUp">
 				 <view class="cr s5">分享给好友</view>
 				 <view class="padding">
-					 <view class="share-item">
-						 <image src="../../static/img/bg/activity.png" mode=""></image>
-						 <view class="">朋友圈</view>
+					 <view class="share-item" v-for="(item,index) in providerList" :key='index'>
+						 <image src="../../static/img/bg/activity.png" mode="" @tap="share(item)"></image>
+						 <view class="">{{item.name}}</view>
 					 </view>
-					 <view class="share-item">
+					 <!-- <view class="share-item">
 					 						 <image src="../../static/img/bg/activity.png" mode=""></image>
 					 						 <view class="">微信</view>
-					 </view>
+					 </view> -->
 					 <view class="share-item">
 					 						 <image src="../../static/img/bg/activity.png" mode=""></image>
 					 						 <view class="">生成海报</view>
@@ -176,7 +176,11 @@
 		          backgroundColor: '#ffa200',
 		          color: '#fff'
 		        }
-		        ]
+		        ],
+				// 分享
+				providerList:[],
+				shareType:5,
+				shareText:'嘎哈'
 		      }
 		    },
 			onLoad(p){
@@ -192,6 +196,7 @@
 					this.logined=false
 				}
 				this.getDetail()
+				this.getProvider()
 				uni.$on('logined',function(){
 					var userInfo2=uni.getStorageSync('userInfo')
 					that.logined=true
@@ -370,6 +375,138 @@
 			  	uni.navigateTo({
 			  		url:`/pages/bussiness/shopPreview?id=${id}`
 			  	})
+			  },
+			  
+			  // 分享
+			  getProvider(){
+				  uni.getProvider({
+				  	service: 'share',
+				  	success: (e) => {
+				  		console.log('success', e);
+				  		let data = []
+				  		for (let i = 0; i < e.provider.length; i++) {
+				  			switch (e.provider[i]) {
+				  				case 'weixin':
+				  					data.push({
+				  						name: '微信',
+				  						id: 'weixin',
+				  						sort:0
+				  					})
+				  					data.push({
+				  						name: '朋友圈',
+				  						id: 'weixin',
+				  						type:'WXSenceTimeline',
+				  						sort:1
+				  					})
+				  					break;
+				  				// case 'sinaweibo':
+				  				// 	data.push({
+				  				// 		name: '分享到新浪微博',
+				  				// 		id: 'sinaweibo',
+				  				// 		sort:2
+				  				// 	})
+				  				// 	break;
+				  				// case 'qq':
+				  				// 	data.push({
+				  				// 		name: '分享到QQ',
+				  				// 		id: 'qq',
+				  				// 		sort:3
+				  				// 	})
+				  				// 	break;
+				  				default:
+				  					break;
+				  			}
+				  		}
+				  		this.providerList = data.sort((x,y) => {
+				  			return x.sort - y.sort
+				  		});
+				  	},
+				  	fail: (e) => {
+				  		console.log('获取分享通道失败', e);
+				  		uni.showModal({
+				  			content:'获取分享通道失败',
+				  			showCancel:false
+				  		})
+				  	}
+				  });
+			  },
+			  async share(e) {
+			  	console.log('分享通道:'+ e.id +'； 分享类型:' + this.shareType);
+			  	
+			  	// if(!this.shareText && (this.shareType === 1 || this.shareType === 0)){
+			  	// 	uni.showModal({
+			  	// 		content:'分享内容不能为空',
+			  	// 		showCancel:false
+			  	// 	})
+			  	// 	return;
+			  	// }
+			  	
+			  	// if(!this.image && (this.shareType === 2 || this.shareType === 0)){
+			  	// 	uni.showModal({
+			  	// 		content:'分享图片不能为空',
+			  	// 		showCancel:false
+			  	// 	})
+			  	// 	return;
+			  	// }
+			  	
+			  	let shareOPtions = {
+			  		provider: e.id,
+			  		scene: e.type && e.type === 'WXSenceTimeline' ? 'WXSenceTimeline' : 'WXSceneSession', //WXSceneSession”分享到聊天界面，“WXSenceTimeline”分享到朋友圈，“WXSceneFavorite”分享到微信收藏     
+			  		type: this.shareType,
+			  		success: (e) => {
+			  			console.log('success', e);
+			  			uni.showModal({
+			  				content: '已分享',
+			  				showCancel:false
+			  			})
+			  		},
+			  		fail: (e) => {
+			  			console.log('fail', e)
+			  			uni.showModal({
+			  				content: e.errMsg,
+			  				showCancel:false
+			  			})
+			  		},
+			  		complete:function(){
+			  			console.log('分享操作结束!')
+			  		}
+			  	}
+			  	
+			  	switch (this.shareType){
+			  		case 0:
+			  			shareOPtions.summary = '好玩';
+			  			shareOPtions.imageUrl = this.data.thumb_url[0];
+			  			shareOPtions.title = this.data.title;
+			  			shareOPtions.href = 'https://uniapp.dcloud.io';
+			  			break;
+			  		case 1:
+			  			shareOPtions.summary = this.shareText;
+			  			break;
+			  		case 2:
+			  			shareOPtions.imageUrl = this.image;
+			  			break;
+			  		case 5:
+			  			shareOPtions.imageUrl = this.image ? this.image : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
+			  			shareOPtions.title = this.data.title+'买啊';
+			  			shareOPtions.miniProgram = {
+			  				id:'gh_33446d7f7a26',
+			  				path:'/pages/tabBar/component/component',
+			  				webUrl:'https://uniapp.dcloud.io',
+			  				type:0
+			  			};
+			  			break;
+			  		default:
+			  			break;
+			  	}
+			  	
+			  	if(shareOPtions.type === 0 && plus.os.name === 'iOS'){//如果是图文分享，且是ios平台，则压缩图片 
+			  		shareOPtions.imageUrl = await this.compress();
+			  	}
+			  	if(shareOPtions.type === 1 && shareOPtions.provider === 'qq'){//如果是分享文字到qq，则必须加上href和title
+			  		shareOPtions.href = 'https://uniapp.dcloud.io';
+			  		shareOPtions.title = '欢迎体验uniapp';
+			  	}
+			  	uni.share(shareOPtions);
 			  },
 		    }
 	}

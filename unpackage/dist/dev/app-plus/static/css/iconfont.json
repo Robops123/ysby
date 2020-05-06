@@ -34,6 +34,13 @@
       "unicode_decimal": 59227
     },
     {
+      "icon_id": "845794",
+      "name": "赞",
+      "font_class": "shou",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
       "icon_id": "924735",
       "name": "share",
       "font_class": "share",
@@ -116,6 +123,13 @@
       "font_class": "tubiao-1",
       "unicode": "e60b",
       "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "14046413",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "e607",
+      "unicode_decimal": 58887
     }
   ]
 }

@@ -42,6 +42,10 @@
 			} else{
 				this.logined=false
 			}
+			uni.$on('logined',function(){
+				var userInfo2=uni.getStorageSync('userInfo')
+				that.logined=true
+			})
 		},
 		methods:{
 			to(where){

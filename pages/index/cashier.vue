@@ -13,23 +13,24 @@
 		
 		<view class="payway">
 			<radio-group @change="radioChange">
-			              <view class="padding">
-			              	<image src="../../static/img/pic/other/wxpay.png" mode=""></image>
-			              	<text>微信支付</text>
-			              	<radio value="1"  class="fr" style="transform:scale(0.7)"/>
-			              </view>
-						  <!-- #ifndef MP-WEIXIN -->
-							  <view class="padding">
-								<image src="../../static/img/pic/other/alipay.png" mode=""></image>
-								<text>支付宝</text>
-								<radio value="2"  class="fr" style="transform:scale(0.7)"/>
-							  </view>
-						  <!-- #endif -->
-						  <view class="padding" v-if="platform=='ios'">
-						  	<image src="../../static/img/pic/other/applepay.png" mode=""></image>
-						  	<text>苹果支付</text>
-						  	<radio value="2"  class="fr" style="transform:scale(0.7)"/>
-						  </view>
+				<!-- #ifdef MP-WEIXIN || MP-QQ -->
+				<view class="padding">
+					<image src="../../static/img/pic/other/wxpay.png" mode=""></image>
+					<text>微信支付</text>
+					<radio value="1"  class="fr" style="transform:scale(0.7)"/>
+				</view>
+				<!-- #endif -->
+				<!-- #ifdef APP-PLUS -->
+				<template v-if="providerList.length > 0">
+				<view class="padding" v-for="(item,index) in providerList" :key="index" @click="requestPayment(item,index)"  :loading="item.loading">
+					<image src="../../static/img/pic/other/alipay.png" mode=""></image>
+					<text>支付宝</text>
+					<radio value="2"  class="fr" style="transform:scale(0.7)"/>
+				</view>
+				</template>
+				<!-- #endif -->
+			              
+						 
 			            </radio-group>
 		</view>
 		
@@ -43,17 +44,63 @@
 	export default{
 		data(){
 			return {
-				platform:''
+				platform:'',
+				loading: false,
+				price: 1,
+				providerList: []
 			}
 		},
 		mounted(){
 			this.platform=uni.getSystemInfoSync().platform
+			this.getProviders()
 		},
 		methods:{
 			to(w){
 				uni.navigateTo({
 					url:'./payResult'
 				})
+			},
+			getProviders(){
+				// #ifdef APP-PLUS
+				uni.getProvider({
+				    service: "payment",
+				    success: (e) => {
+				        console.log("payment success:" + JSON.stringify(e));
+				        let providerList = [];
+				        e.provider.map((value) => {
+				            switch (value) {
+				                case 'alipay':
+				                    providerList.push({
+				                        name: '支付宝',
+				                        id: value,
+				                        loading: false
+				                    });
+				                    break;
+				                case 'wxpay':
+				                    providerList.push({
+				                        name: '微信',
+				                        id: value,
+				                        loading: false
+				                    });
+				                    break;
+									case 'appleiap':
+									    providerList.push({
+									        name: '苹果支付',
+									        id: value,
+									        loading: false
+									    });
+									    break;
+				                default:
+				                    break;
+				            }
+				        })
+				        this.providerList = providerList;
+				    },
+				    fail: (e) => {
+				        console.log("获取支付通道失败：", e);
+				    }
+				});
+				// #endif
 			}
 		}
 	}

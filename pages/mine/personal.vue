@@ -94,7 +94,7 @@
 				 promptVisible:false,promptVisible2:false,
 				 uid:'',
 				 token:'',
-				 data:'',
+				 data:{},
 				 // 性别
 				 sexList:[
 					{name:'男'}, 
@@ -137,6 +137,10 @@
 				var  that = this;
 				uni.chooseImage({
 				    success: (chooseImageRes) => {
+						if(chooseImageRes.tempFiles[0].size > 2097152){
+							that.$msg('图片过大，请重新选择图片')
+							return ;
+						}
 						uni.showLoading()
 				        const tempFilePaths = chooseImageRes.tempFilePaths[0];
 				        that.$upload(tempFilePaths,'',(res) =>{

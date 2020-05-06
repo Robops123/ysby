@@ -41,8 +41,8 @@
 					</scroll-view>
 					<view class="close" @tap="closeSf"><image class="close-item" src="../static/close.png"></image></view>
 				</view>
-				<view class="btn-wrapper"><button class="sure" :class="{disabedbtn:stock==0 || stock==null || marketPrice==0}"
-				 @click="confirmChoose" :disabled="stock==0 || stock==null || marketPrice==0">确定</button></view>
+				<view class="btn-wrapper"><button class="sure" :class="{disabedbtn:stock==0 || stock==NaN || stock==null || marketPrice==0}"
+				 @click="confirmChoose" :disabled="stock==0 || stock==null || stock==NaN || marketPrice==0">确定</button></view>
 			</view>
 		</view>
 	</view>
@@ -88,6 +88,7 @@
 		mounted() {
 			this.categorys=this.category
 			this.stock=Number(this.total)
+			this.$forceUpdate()
 			// this.specifications.map(item => {
 			// 	this.selectArr.push('');
 			// 	this.subIndex.push(-1);
@@ -108,7 +109,6 @@
 					}
 				})
 				this.choosedid=[],this.selectArr=[]
-				this.$forceUpdate()
 				this.categorys.forEach((item,index) =>{
 					item.item.forEach((item2,index2) =>{
 						if(item2.choosed){
@@ -139,8 +139,9 @@
 				var url='&r=api.goods.detail.skustock&goodsid='+this.goodsid+'&specitemid='+this.choosedid.join(',')
 				  this.$apiPost(url).then((res) =>{
 					  that.marketPrice=res.data.marketprice
-					  that.stock=Number(res.data.stock)
+					  that.stock=Number(res.data.stock) || 0
 					  that.goodsImg=res.data.thumb
+					  that.$forceUpdate()
 				  })
 			},
 			checkInpath(clickIndex) {
