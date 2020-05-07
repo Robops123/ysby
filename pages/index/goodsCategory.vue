@@ -22,10 +22,10 @@
 					</view>
 				</view>
 			</scroll-view>
-			<scroll-view scroll-y="true" class="right-scroll" id="sv" :style="{height:sh+'px'}" >
-				<view class="">
-					<image v-if="active==1" :src="category[tabActive].advimg" mode="" class="banner"></image>
-					<image v-else :src="category[tabActive].thumb" mode="" class="banner"></image>
+			<scroll-view scroll-y="true" class="right-scroll"  >
+				<view class="" v-if="categoryReady">
+					<image  :src="category[tabActive].advimg" mode="" class="banner" ></image>
+					<!-- <image v-else :src="category[tabActive].thumb" mode="" class="banner"></image> -->
 					<view class="s1 headline" v-if="active==1">{{tapped!='' ? '全部'+category[tabActive].name+'商家':'全部'+category[0].name+'商家'}}</view>
 					<view class="s1 headline" v-if="active==2">{{tapped!='' ? '全部'+category[tabActive].name+'用品':'全部'+category[0].name+'用品'}}</view>
 					<!-- 区 -->
@@ -37,7 +37,7 @@
 					</view>
 					<view class="right-content" v-if="active==2">
 						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList',tabActive,item.id)">
-							<image :src="item.advimg" mode=""></image>
+							<image :src="item.logo" mode=""></image>
 							<view class="s3 cg ellipsis">{{item.name}}</view>
 						</view>
 					</view>
@@ -58,6 +58,7 @@
 		},
 		data(){
 			return{
+				categoryReady:false,
 				url:'&r=api.home.morecate',
 				url2:'&r=api.home.morecate.catemerch',
 				tapped:'',
@@ -80,11 +81,11 @@
 		   mounted(){
 		   	var that=this
 		   	this.getCategory()
-		   	setTimeout(function(){
-		   		that.$getHeight('#sv',(res) =>{
-		   			that.sh=res
-		   		})
-		   	},0)
+		   	// setTimeout(function(){
+		   	// 	that.$getHeight('#sv',(res) =>{
+		   	// 		that.sh=res
+		   	// 	})
+		   	// },0)
 		   },
 		methods:{
 			toggleTab(t,item){
@@ -138,6 +139,7 @@
 				  this.$apiPost(this.url,params).then((res) =>{
 					  that.category=res.data
 					  that.tabActive=0
+					  that.categoryReady=true
 					  that.getList('',res.data[0].id)
 				  })
 			},

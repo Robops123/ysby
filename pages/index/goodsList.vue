@@ -10,7 +10,7 @@
 				<text class="icon-arrowdown-copy iconfont" :class="{active:rangeActive==2}" ></text>
 				</view>
 			</view>
-			<view class="nav nav-right" :class="{active:active==4}" @click="toggle(5)"><text>热卖</text></view>
+			<view class="nav nav-right" :class="{active:active==5}" @click="toggle(5)"><text>热卖</text></view>
 		</view>
 		
 		<scroll-view scroll-y="true" class="content" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
@@ -22,7 +22,7 @@
 						<view class="s5 cr word-bottom">
 							<view>￥{{item.marketprice}}</view>
 							<view class="buy fr">
-								<image src="../../static/img/pic/cart.png" mode="" @click="addCollect(item.goodsid)"></image>
+								<image src="../../static/img/pic/cart.png" mode="" @click.stop="addCollect(item.id)"></image>
 							</view>
 						</view>
 					</view>
@@ -41,6 +41,8 @@
 		},
 		data(){
 			return{
+				uid:'',
+				token:'',
 				goodsId:'',
 				merchId:'',
 				url:'',
@@ -51,7 +53,8 @@
 				page:1,
 				pageSize:5,
 				total:0,
-				more:''
+				more:'',
+				logined:false
 			}
 		},
 		computed: {
@@ -62,22 +65,29 @@
 		   onLoad(e){
 			 this.merchId=e.cateId
 			 this.goodsId=e.goodsId
+			 var that=this
+			 this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
+			 var userInfo=uni.getStorageSync('userInfo')
+			 if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+			 	this.logined=true
+			 	this.uid=userInfo.uid
+			 	this.token=userInfo.token
+			 }else{
+			 	this.logined=false
+			 }
+			 this.getList(this.page)
+			 uni.$on('logined',function(){
+			 	var userInfo2=uni.getStorageSync('userInfo')
+			 	that.logined=true
+			 	that.uid=userInfo2.uid
+			 	that.token=userInfo2.token
+			 })
+			 setTimeout(function(){
+			 	that.$getHeight('#sv',(res) =>{
+			 		that.sh=res
+			 	})
+			 },0)
 			 },
-		mounted(){
-			var that=this
-			this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
-			var userInfo=uni.getStorageSync('userInfo')
-			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
-				this.uid=userInfo.uid
-				this.token=userInfo.token
-				this.getList(this.page)
-			}
-			setTimeout(function(){
-				that.$getHeight('#sv',(res) =>{
-					that.sh=res
-				})
-			},0)
-		},
 		methods:{
 			to(w,id){
 				uni.navigateTo({
@@ -146,12 +156,17 @@
 			  // },2000)
 			},
 			addCollect(id){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
 				var that=this
 				var params={
 				  uid:this.uid,
 				  token: this.token,
 					goodsid:id
 				}
+				console.log(params)
 				  var url='&r=api.member.cart.add'
 				  this.$apiPost(url,params).then((res) =>{
 						// that.options[2].info++

@@ -125,6 +125,9 @@
 							that.getList(params,url)
 						},
 						fail:(reason) =>{
+							params.lng=''
+							params.lat=''
+							that.getList(params,url)
 							that.$msg(reason)
 						}
 					})

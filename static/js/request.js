@@ -14,7 +14,7 @@ const baseURL = 'http://192.168.1.157/yishuban2/web/merchant.php?i=2c=site&a=ent
  			header:{
  				// 'Token': token,
  				'Accept': 'application/json',
- 				"content-type":"application/json"
+ 				"content-type":"application/x-www-form-urlencoded"
  			},
  			data:params,
  			success(res) {

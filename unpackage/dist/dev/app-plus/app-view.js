@@ -2897,130 +2897,138 @@ var render = function() {
             "v-uni-scroll-view",
             {
               staticClass: _vm._$g(14, "sc"),
-              style: _vm._$g(14, "s"),
-              attrs: { "scroll-y": "true", id: "sv", _i: 14 }
+              attrs: { "scroll-y": "true", _i: 14 }
             },
             [
-              _c(
-                "v-uni-view",
-                { attrs: { _i: 15 } },
-                [
-                  _vm._$g(16, "i")
-                    ? _c("v-uni-image", {
+              _vm._$g(15, "i")
+                ? _c(
+                    "v-uni-view",
+                    { attrs: { _i: 15 } },
+                    [
+                      _c("v-uni-image", {
                         staticClass: _vm._$g(16, "sc"),
                         attrs: { src: _vm._$g(16, "a-src"), mode: "", _i: 16 }
-                      })
-                    : _c("v-uni-image", {
-                        staticClass: _vm._$g(17, "sc"),
-                        attrs: { src: _vm._$g(17, "a-src"), mode: "", _i: 17 }
                       }),
-                  _vm._$g(18, "i")
-                    ? _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
-                        [_vm._v(_vm._$g(18, "t0-0"))]
-                      )
-                    : _vm._e(),
-                  _vm._$g(19, "i")
-                    ? _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
-                        [_vm._v(_vm._$g(19, "t0-0"))]
-                      )
-                    : _vm._e(),
-                  _vm._$g(20, "i")
-                    ? _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
-                        _vm._l(_vm._$g(21, "f"), function(
-                          item,
-                          index,
-                          $21,
-                          $31
-                        ) {
-                          return _c(
+                      _vm._$g(17, "i")
+                        ? _c(
                             "v-uni-view",
                             {
-                              key: item,
-                              staticClass: _vm._$g("21-" + $31, "sc"),
-                              attrs: { _i: "21-" + $31 },
-                              on: {
-                                click: function($event) {
-                                  return _vm.$handleViewEvent($event)
-                                }
-                              }
+                              staticClass: _vm._$g(17, "sc"),
+                              attrs: { _i: 17 }
                             },
-                            [
-                              _c("v-uni-image", {
-                                attrs: {
-                                  src: _vm._$g("22-" + $31, "a-src"),
-                                  mode: "",
-                                  _i: "22-" + $31
-                                }
-                              }),
-                              _c(
-                                "v-uni-view",
-                                {
-                                  staticClass: _vm._$g("23-" + $31, "sc"),
-                                  attrs: { _i: "23-" + $31 }
-                                },
-                                [_vm._v(_vm._$g("23-" + $31, "t0-0"))]
-                              )
-                            ],
-                            1
+                            [_vm._v(_vm._$g(17, "t0-0"))]
                           )
-                        }),
-                        1
-                      )
-                    : _vm._e(),
-                  _vm._$g(24, "i")
-                    ? _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
-                        _vm._l(_vm._$g(25, "f"), function(
-                          item,
-                          index,
-                          $22,
-                          $32
-                        ) {
-                          return _c(
+                        : _vm._e(),
+                      _vm._$g(18, "i")
+                        ? _c(
                             "v-uni-view",
                             {
-                              key: item,
-                              staticClass: _vm._$g("25-" + $32, "sc"),
-                              attrs: { _i: "25-" + $32 },
-                              on: {
-                                click: function($event) {
-                                  return _vm.$handleViewEvent($event)
-                                }
-                              }
+                              staticClass: _vm._$g(18, "sc"),
+                              attrs: { _i: 18 }
                             },
-                            [
-                              _c("v-uni-image", {
-                                attrs: {
-                                  src: _vm._$g("26-" + $32, "a-src"),
-                                  mode: "",
-                                  _i: "26-" + $32
-                                }
-                              }),
-                              _c(
+                            [_vm._v(_vm._$g(18, "t0-0"))]
+                          )
+                        : _vm._e(),
+                      _vm._$g(19, "i")
+                        ? _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(19, "sc"),
+                              attrs: { _i: 19 }
+                            },
+                            _vm._l(_vm._$g(20, "f"), function(
+                              item,
+                              index,
+                              $21,
+                              $31
+                            ) {
+                              return _c(
                                 "v-uni-view",
                                 {
-                                  staticClass: _vm._$g("27-" + $32, "sc"),
-                                  attrs: { _i: "27-" + $32 }
+                                  key: item,
+                                  staticClass: _vm._$g("20-" + $31, "sc"),
+                                  attrs: { _i: "20-" + $31 },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
                                 },
-                                [_vm._v(_vm._$g("27-" + $32, "t0-0"))]
+                                [
+                                  _c("v-uni-image", {
+                                    attrs: {
+                                      src: _vm._$g("21-" + $31, "a-src"),
+                                      mode: "",
+                                      _i: "21-" + $31
+                                    }
+                                  }),
+                                  _c(
+                                    "v-uni-view",
+                                    {
+                                      staticClass: _vm._$g("22-" + $31, "sc"),
+                                      attrs: { _i: "22-" + $31 }
+                                    },
+                                    [_vm._v(_vm._$g("22-" + $31, "t0-0"))]
+                                  )
+                                ],
+                                1
                               )
-                            ],
+                            }),
                             1
                           )
-                        }),
-                        1
-                      )
-                    : _vm._e()
-                ],
-                1
-              )
+                        : _vm._e(),
+                      _vm._$g(23, "i")
+                        ? _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(23, "sc"),
+                              attrs: { _i: 23 }
+                            },
+                            _vm._l(_vm._$g(24, "f"), function(
+                              item,
+                              index,
+                              $22,
+                              $32
+                            ) {
+                              return _c(
+                                "v-uni-view",
+                                {
+                                  key: item,
+                                  staticClass: _vm._$g("24-" + $32, "sc"),
+                                  attrs: { _i: "24-" + $32 },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("v-uni-image", {
+                                    attrs: {
+                                      src: _vm._$g("25-" + $32, "a-src"),
+                                      mode: "",
+                                      _i: "25-" + $32
+                                    }
+                                  }),
+                                  _c(
+                                    "v-uni-view",
+                                    {
+                                      staticClass: _vm._$g("26-" + $32, "sc"),
+                                      attrs: { _i: "26-" + $32 }
+                                    },
+                                    [_vm._v(_vm._$g("26-" + $32, "t0-0"))]
+                                  )
+                                ],
+                                1
+                              )
+                            }),
+                            1
+                          )
+                        : _vm._e()
+                    ],
+                    1
+                  )
+                : _vm._e()
             ],
             1
           )
@@ -3395,7 +3403,9 @@ var render = function() {
                                 },
                                 on: {
                                   click: function($event) {
-                                    return _vm.$handleViewEvent($event)
+                                    return _vm.$handleViewEvent($event, {
+                                      stop: true
+                                    })
                                   }
                                 }
                               })
@@ -6318,7 +6328,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../hbuilderX/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "/*  弹出层 */\n.popup {\n  position: fixed;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 999;\n  overflow: hidden;\n}\n.popup.show {\n  display: block;\n}\n.popup.show .mask {\n  -webkit-animation: showPopup 0.2s linear both;\n          animation: showPopup 0.2s linear both;\n}\n.popup.show .layer {\n  -webkit-animation: showLayer 0.2s linear both;\n          animation: showLayer 0.2s linear both;\n}\n.popup.hide .mask {\n  -webkit-animation: hidePopup 0.2s linear both;\n          animation: hidePopup 0.2s linear both;\n}\n.popup.hide .layer {\n  -webkit-animation: hideLayer 0.2s linear both;\n          animation: hideLayer 0.2s linear both;\n}\n.popup.none {\n  display: none;\n}\n.popup .mask {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 1;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.popup .layer {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  width: 100%;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n          flex-direction: column;\n  position: fixed;\n  z-index: 99;\n  bottom: 0;\n  border-radius: 10upx 10upx 0 0;\n  background-color: #fff;\n}\n.popup .layer .specification-wrapper {\n  width: 100%;\n  padding: 30rpx 25rpx;\n  box-sizing: border-box;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content {\n  width: 100%;\n  max-height: 900rpx;\n  min-height: 600rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content::-webkit-scrollbar {\n  /*隐藏滚轮*/\n  display: none;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n  margin-bottom: 40rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-left {\n  width: 180rpx;\n  height: 180rpx;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 180rpx;\n          flex: 0 0 180rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-left .product-img {\n  width: 180rpx;\n  height: 180rpx;\n  background-color: #999999;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  padding: 0 35rpx 0 28rpx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n          justify-content: flex-end;\n  font-weight: 500;\n  text-align: left;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right .price-content {\n  color: #fe3a3a;\n  margin-bottom: 20rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right .price-content .sign {\n  font-size: 28rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right .price-content .price {\n  font-size: 48rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right .inventory {\n  font-size: 24rpx;\n  color: #999999;\n  margin-bottom: 14rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right .choose {\n  font-size: 28rpx;\n  color: #333333;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content {\n  font-weight: 500;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item {\n  margin-bottom: 40rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item:last-child {\n  margin-bottom: 0;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item .item-title {\n  margin-bottom: 20rpx;\n  font-size: 28rpx;\n  text-align: left;\n  color: #999999;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item .item-wrapper {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-flow: wrap;\n          flex-flow: wrap;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item .item-wrapper .item-content {\n  border-radius: 58rpx;\n  display: inline-block;\n  padding: 15rpx 35rpx;\n  background-color: #ffffff;\n  color: #333333;\n  font-size: 28rpx;\n  margin-right: 20rpx;\n  border: 2rpx solid #f4f4f4;\n  box-sizing: border-box;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item .item-wrapper .item-content.actived {\n  border-color: #fe3a3a;\n  color: #fe3a3a;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item .item-wrapper .item-content.noactived {\n  background-color: #f4f4f4;\n  border-color: #f4f4f4;\n}\n.popup .layer .specification-wrapper .close {\n  position: absolute;\n  top: 30rpx;\n  right: 25rpx;\n  width: 50rpx;\n  height: 50rpx;\n  text-align: center;\n  line-height: 50rpx;\n}\n.popup .layer .specification-wrapper .close .close-item {\n  width: 50rpx;\n  height: 50rpx;\n}\n.popup .layer .btn-wrapper {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  width: 100%;\n  height: 120rpx;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 120rpx;\n          flex: 0 0 120rpx;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  padding: 0 26rpx;\n  box-sizing: border-box;\n}\n.popup .layer .btn-wrapper .layer-btn {\n  width: 335rpx;\n  height: 76rpx;\n  border-radius: 38rpx;\n  color: #fff;\n  line-height: 76rpx;\n  text-align: center;\n  font-weight: 500;\n  font-size: 28rpx;\n}\n.popup .layer .btn-wrapper .layer-btn.add-cart {\n  background: #ffbe46;\n}\n.popup .layer .btn-wrapper .layer-btn.buy {\n  background: #fe3a3a;\n}\n.popup .layer .btn-wrapper .sure {\n  width: 698rpx;\n  height: 76rpx;\n  border-radius: 38rpx;\n  color: #fff;\n  line-height: 76rpx;\n  text-align: center;\n  font-weight: 500;\n  font-size: 28rpx;\n  background: #fe3a3a;\n}\n.popup .disabedbtn {\n  background-color: #CED0D2 !important;\n}\n@-webkit-keyframes showPopup {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes showPopup {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@-webkit-keyframes hidePopup {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes hidePopup {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@-webkit-keyframes showLayer {\n0% {\n    -webkit-transform: translateY(120%);\n            transform: translateY(120%);\n}\n100% {\n    -webkit-transform: translateY(0%);\n            transform: translateY(0%);\n}\n}\n@keyframes showLayer {\n0% {\n    -webkit-transform: translateY(120%);\n            transform: translateY(120%);\n}\n100% {\n    -webkit-transform: translateY(0%);\n            transform: translateY(0%);\n}\n}\n@-webkit-keyframes hideLayer {\n0% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n}\n100% {\n    -webkit-transform: translateY(120%);\n            transform: translateY(120%);\n}\n}\n@keyframes hideLayer {\n0% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n}\n100% {\n    -webkit-transform: translateY(120%);\n            transform: translateY(120%);\n}\n}\n", ""]);
+exports.push([module.i, "/*  弹出层 */\n.popup {\n  position: fixed;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 99999;\n  overflow: hidden;\n}\n.popup.show {\n  display: block;\n  z-index: 999999;\n}\n.popup.show .mask {\n  -webkit-animation: showPopup 0.2s linear both;\n          animation: showPopup 0.2s linear both;\n}\n.popup.show .layer {\n  -webkit-animation: showLayer 0.2s linear both;\n          animation: showLayer 0.2s linear both;\n}\n.popup.hide .mask {\n  -webkit-animation: hidePopup 0.2s linear both;\n          animation: hidePopup 0.2s linear both;\n}\n.popup.hide .layer {\n  -webkit-animation: hideLayer 0.2s linear both;\n          animation: hideLayer 0.2s linear both;\n}\n.popup.none {\n  display: none;\n}\n.popup .mask {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 1;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.popup .layer {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  width: 100%;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n          flex-direction: column;\n  position: fixed;\n  z-index: 99;\n  bottom: 0;\n  border-radius: 10upx 10upx 0 0;\n  background-color: #fff;\n}\n.popup .layer .specification-wrapper {\n  width: 100%;\n  padding: 30rpx 25rpx;\n  box-sizing: border-box;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content {\n  width: 100%;\n  max-height: 900rpx;\n  min-height: 600rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content::-webkit-scrollbar {\n  /*隐藏滚轮*/\n  display: none;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n  margin-bottom: 40rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-left {\n  width: 180rpx;\n  height: 180rpx;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 180rpx;\n          flex: 0 0 180rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-left .product-img {\n  width: 180rpx;\n  height: 180rpx;\n  background-color: #999999;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  padding: 0 35rpx 0 28rpx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n          justify-content: flex-end;\n  font-weight: 500;\n  text-align: left;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right .price-content {\n  color: #fe3a3a;\n  margin-bottom: 20rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right .price-content .sign {\n  font-size: 28rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right .price-content .price {\n  font-size: 48rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right .inventory {\n  font-size: 24rpx;\n  color: #999999;\n  margin-bottom: 14rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-header .specification-right .choose {\n  font-size: 28rpx;\n  color: #333333;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content {\n  font-weight: 500;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item {\n  margin-bottom: 40rpx;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item:last-child {\n  margin-bottom: 0;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item .item-title {\n  margin-bottom: 20rpx;\n  font-size: 28rpx;\n  text-align: left;\n  color: #999999;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item .item-wrapper {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-flow: wrap;\n          flex-flow: wrap;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item .item-wrapper .item-content {\n  border-radius: 58rpx;\n  display: inline-block;\n  padding: 15rpx 35rpx;\n  background-color: #ffffff;\n  color: #333333;\n  font-size: 28rpx;\n  margin-right: 20rpx;\n  border: 2rpx solid #f4f4f4;\n  box-sizing: border-box;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item .item-wrapper .item-content.actived {\n  border-color: #fe3a3a;\n  color: #fe3a3a;\n}\n.popup .layer .specification-wrapper .specification-wrapper-content .specification-content .specification-item .item-wrapper .item-content.noactived {\n  background-color: #f4f4f4;\n  border-color: #f4f4f4;\n}\n.popup .layer .specification-wrapper .close {\n  position: absolute;\n  top: 30rpx;\n  right: 25rpx;\n  width: 50rpx;\n  height: 50rpx;\n  text-align: center;\n  line-height: 50rpx;\n}\n.popup .layer .specification-wrapper .close .close-item {\n  width: 50rpx;\n  height: 50rpx;\n}\n.popup .layer .btn-wrapper {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  width: 100%;\n  height: 120rpx;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 120rpx;\n          flex: 0 0 120rpx;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  padding: 0 26rpx;\n  box-sizing: border-box;\n}\n.popup .layer .btn-wrapper .layer-btn {\n  width: 335rpx;\n  height: 76rpx;\n  border-radius: 38rpx;\n  color: #fff;\n  line-height: 76rpx;\n  text-align: center;\n  font-weight: 500;\n  font-size: 28rpx;\n}\n.popup .layer .btn-wrapper .layer-btn.add-cart {\n  background: #ffbe46;\n}\n.popup .layer .btn-wrapper .layer-btn.buy {\n  background: #fe3a3a;\n}\n.popup .layer .btn-wrapper .sure {\n  width: 698rpx;\n  height: 76rpx;\n  border-radius: 38rpx;\n  color: #fff;\n  line-height: 76rpx;\n  text-align: center;\n  font-weight: 500;\n  font-size: 28rpx;\n  background: #fe3a3a;\n}\n.popup .disabedbtn {\n  background-color: #CED0D2 !important;\n}\n@-webkit-keyframes showPopup {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes showPopup {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@-webkit-keyframes hidePopup {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes hidePopup {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@-webkit-keyframes showLayer {\n0% {\n    -webkit-transform: translateY(120%);\n            transform: translateY(120%);\n}\n100% {\n    -webkit-transform: translateY(0%);\n            transform: translateY(0%);\n}\n}\n@keyframes showLayer {\n0% {\n    -webkit-transform: translateY(120%);\n            transform: translateY(120%);\n}\n100% {\n    -webkit-transform: translateY(0%);\n            transform: translateY(0%);\n}\n}\n@-webkit-keyframes hideLayer {\n0% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n}\n100% {\n    -webkit-transform: translateY(120%);\n            transform: translateY(120%);\n}\n}\n@keyframes hideLayer {\n0% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n}\n100% {\n    -webkit-transform: translateY(120%);\n            transform: translateY(120%);\n}\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -6847,6 +6857,7 @@ var render = function() {
                     "v-uni-view",
                     {
                       staticClass: _vm._$g(18, "sc"),
+                      class: _vm._$g(18, "c"),
                       attrs: { _i: 18 },
                       on: {
                         click: function($event) {
@@ -6865,6 +6876,7 @@ var render = function() {
                     "v-uni-view",
                     {
                       staticClass: _vm._$g(20, "sc"),
+                      class: _vm._$g(20, "c"),
                       attrs: { _i: 20 },
                       on: {
                         click: function($event) {
@@ -7091,7 +7103,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../hbuilderX/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\nbody{\n\tbackground: #f3f3f3;\n}\n.margin{\n\tmargin: 20upx 0;\n\tbackground-color: #fff;\n}\n.child-overall,.overall{\n\tpadding: 20upx 15upx;\n}\n.child-overall:last-child{\n\tpadding-bottom: 40upx;\n}\n.child-overall-item,\n.overall{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\tjustify-items: center;\n}\n.child-overall-item>uni-image{\n\twidth: 150upx;\n\theight: 150upx;\n\tmargin-right: 20upx;\n}\n.child-overall-item .title{\n\twidth: 360upx;\n\t/* height: 64upx; */\n\tmargin-top: 10upx;\n\toverflow:hidden;/*一定要写 */\n\t    text-overflow: ellipsis;/*超出省略号 */\n\t    display:-webkit-box;/*一定要写 */\n\t    -webkit-line-clamp: 2;/*控制行数 */\n\t    -webkit-box-orient: vertical;/*一定要写 */\n}\n.bottom-content{\n\tmargin: 20upx 0;\n}\n.options{\n\tmargin: 25upx 0 0;\n}\n.calculator uni-text{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.calculator .calc,\n.calculator .result{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\twidth: 60upx;\n\theight: 60upx;\n\tfont-size: 36upx;\n\tline-height: 60upx;\n\ttext-align: center;\n\tborder: 1px solid #e8e8e8;\n}\n.calculator .result{\n\twidth: 80upx;\n\ttext-align: center;\n\tborder: 1px solid #e8e8e8;\n}\n.info{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-flex: 1;\n\t-webkit-flex: 1;\n\t        flex: 1;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n}\n.msg>uni-text,\n.msg>uni-textarea{\n\tdisplay: inline-block;\n\tvertical-align: top;\n}\n.msg>uni-text{\n\tmargin-right: 30upx;\n}\n.msg>uni-textarea{\n\twidth: 60%;\n\tmax-height: 160upx;\n}\n.conclude{\n\tbackground-color: #fff;\n}\n.conclude>uni-view{\n\tmargin: 20upx 0;\n}\n.bottom{\n\tposition: fixed;\n\tleft: 0;\n\tbottom: 0;\n\t\n\twidth: 100%;\n\tbox-sizing: border-box;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\tpadding:0 0 0 40upx;\n\tbackground-color: #fff;\n\tborder: 1px solid #f1f1f1;\n}\n.bottom-right uni-button{\n\tmargin-left: 15upx;\n\theight: 100%;\n\theight: 80upx;\n\tborder-radius: 0;\n\tfont-size: 30upx;\n}\n.bottom-right uni-button,\n.bottom-right uni-text{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.bottom-right{\n\t-webkit-box-flex: 1;\n\t-webkit-flex: 1;\n\t        flex: 1;\n\ttext-align: right;\n}\n", ""]);
+exports.push([module.i, "\nbody{\n\tbackground: #f3f3f3;\n}\n.margin{\n\tmargin: 20upx 0;\n\tbackground-color: #fff;\n}\n.child-overall,.overall{\n\tpadding: 20upx 15upx;\n}\n.child-overall:last-child{\n\tpadding-bottom: 40upx;\n}\n.child-overall-item,\n.overall{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\tjustify-items: center;\n}\n.child-overall-item>uni-image{\n\twidth: 150upx;\n\theight: 150upx;\n\tmargin-right: 20upx;\n}\n.child-overall-item .title{\n\twidth: 360upx;\n\t/* height: 64upx; */\n\tmargin-top: 10upx;\n\toverflow:hidden;/*一定要写 */\n\t    text-overflow: ellipsis;/*超出省略号 */\n\t    display:-webkit-box;/*一定要写 */\n\t    -webkit-line-clamp: 2;/*控制行数 */\n\t    -webkit-box-orient: vertical;/*一定要写 */\n}\n.bottom-content{\n\tmargin: 20upx 0;\n}\n.options{\n\tmargin: 25upx 0 0;\n}\n.calculator uni-text{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.calculator .calc,\n.calculator .result{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\twidth: 60upx;\n\theight: 60upx;\n\tfont-size: 36upx;\n\tline-height: 60upx;\n\ttext-align: center;\n\tborder: 1px solid #e8e8e8;\n}\n.calculator .result{\n\twidth: 80upx;\n\ttext-align: center;\n\tborder: 1px solid #e8e8e8;\n}\n.info{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-flex: 1;\n\t-webkit-flex: 1;\n\t        flex: 1;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n}\n.msg>uni-text,\n.msg>uni-textarea{\n\tdisplay: inline-block;\n\tvertical-align: top;\n}\n.msg>uni-text{\n\tmargin-right: 30upx;\n}\n.msg>uni-textarea{\n\twidth: 60%;\n\tmax-height: 160upx;\n}\n.conclude{\n\tbackground-color: #fff;\n}\n.conclude>uni-view{\n\tmargin: 20upx 0;\n}\n.bottom{\n\tposition: fixed;\n\tleft: 0;\n\tbottom: 0;\n\t\n\twidth: 100%;\n\tbox-sizing: border-box;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\tpadding:0 0 0 40upx;\n\tbackground-color: #fff;\n\tborder: 1px solid #f1f1f1;\n}\n.bottom-right uni-button{\n\tmargin-left: 15upx;\n\theight: 100%;\n\theight: 80upx;\n\tborder-radius: 0;\n\tfont-size: 30upx;\n}\n.bottom-right uni-button,\n.bottom-right uni-text{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.bottom-right{\n\t-webkit-box-flex: 1;\n\t-webkit-flex: 1;\n\t        flex: 1;\n\ttext-align: right;\n}\n.disabled{\n\tborder-color: #f4f4f4;\n\tbackground-color: #f4f4f4;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -7235,31 +7247,47 @@ var render = function() {
                       {
                         key: item,
                         staticClass: _vm._$g("11-" + $30, "sc"),
-                        attrs: {
-                          loading: _vm._$g("11-" + $30, "a-loading"),
-                          _i: "11-" + $30
-                        },
-                        on: {
-                          click: function($event) {
-                            return _vm.$handleViewEvent($event)
-                          }
-                        }
+                        attrs: { _i: "11-" + $30 }
                       },
                       [
-                        _c("v-uni-image", {
-                          attrs: {
-                            src: _vm._$g("12-" + $30, "a-src"),
-                            mode: "",
-                            _i: "12-" + $30
-                          }
-                        }),
-                        _c("v-uni-text", { attrs: { _i: "13-" + $30 } }, [
-                          _vm._v("支付宝")
+                        _vm._$g("12-" + $30, "i")
+                          ? _c("v-uni-image", {
+                              attrs: {
+                                src: _vm._$g("12-" + $30, "a-src"),
+                                mode: "",
+                                _i: "12-" + $30
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._$g("13-" + $30, "i")
+                          ? _c("v-uni-image", {
+                              attrs: {
+                                src: _vm._$g("13-" + $30, "a-src"),
+                                mode: "",
+                                _i: "13-" + $30
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._$g("14-" + $30, "i")
+                          ? _c("v-uni-image", {
+                              attrs: {
+                                src: _vm._$g("14-" + $30, "a-src"),
+                                mode: "",
+                                _i: "14-" + $30
+                              }
+                            })
+                          : _vm._e(),
+                        _c("v-uni-text", { attrs: { _i: "15-" + $30 } }, [
+                          _vm._v(_vm._$g("15-" + $30, "t0-0"))
                         ]),
                         _c("v-uni-radio", {
-                          staticClass: _vm._$g("14-" + $30, "sc"),
+                          staticClass: _vm._$g("16-" + $30, "sc"),
                           staticStyle: { transform: "scale(0.7)" },
-                          attrs: { value: "2", _i: "14-" + $30 }
+                          attrs: {
+                            value: _vm._$g("16-" + $30, "a-value"),
+                            checked: _vm._$g("16-" + $30, "a-checked"),
+                            _i: "16-" + $30
+                          }
                         })
                       ],
                       1
@@ -7274,13 +7302,17 @@ var render = function() {
       ),
       _c(
         "v-uni-view",
-        { staticStyle: { "text-align": "center" }, attrs: { _i: 15 } },
+        { staticStyle: { "text-align": "center" }, attrs: { _i: 17 } },
         [
           _c(
             "v-uni-button",
             {
-              staticClass: _vm._$g(16, "sc"),
-              attrs: { type: "default", _i: 16 },
+              staticClass: _vm._$g(18, "sc"),
+              attrs: {
+                type: "default",
+                loading: _vm._$g(18, "a-loading"),
+                _i: 18
+              },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)

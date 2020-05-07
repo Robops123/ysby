@@ -1,13 +1,13 @@
 <template>
 	<view>
 		<!-- #ifdef MP-WEIXIN -->
-		<view class=" manage" @click="toggleOperation">管理</view>
+		<view class=" manage" @click="toggleOperation">{{operate ? '完成':'管理'}}</view>
 		<!-- #endif -->
 		<view class="padding" style="padding-bottom: 46px;">
 			
 			<view class="card" v-for="(item,index) in dataList" :key='index' v-if="logined">
 				<view class="overall">
-					<checkbox-group @change="parentChange($event,item,index)" class="r-cb" v-if="operate">
+					<checkbox-group @change="parentChange($event,item,index)" class="r-cb" v-show="operate">
 					    <checkbox value="" :checked="item.checked" style="transform:scale(0.7)"/>
 					</checkbox-group>
 					<view class="" @click="toShop(item.merchid)">
@@ -19,7 +19,7 @@
 				
 				<view class="child-overall" v-for="(ChildItem,ChildIndex) in item.goods" :key='ChildIndex'>
 					<view class="child-overall-item"> 
-						<checkbox-group @change="childChange($event,ChildItem,index,ChildIndex)" class="r-cb" v-if="operate">
+						<checkbox-group @change="childChange($event,ChildItem,index,ChildIndex)" class="r-cb" v-show="operate">
 						    <checkbox  :checked="ChildItem.checked==true"  style="transform:scale(0.7)"/>
 						</checkbox-group>
 						<image :src="ChildItem.thumb" mode=""></image>
@@ -27,15 +27,15 @@
 							<view class="s2 title">
 								{{ChildItem.title}}
 							</view>
-							<view class="s3 cg options">
+							<view class="s3 cg options" @click="getCategory(ChildItem,index,ChildIndex)">
 								{{ChildItem.specs ? ChildItem.specs:'选择规格'}}<icon type="" class="icon-arrowdown-copy iconfont"></icon>
 							</view>
 							<view class="bottom-content">
 								<text class="cr">￥{{ChildItem.marketprice}}</text>
 								<view class="calculator fr">
-									<view class="calc minus" @click="ChildItem.amount--">-</view>
+									<view class="calc minus" :class="{disabled:ChildItem.disabled1}" @click="minus(index,ChildIndex)">-</view>
 									<text>{{ChildItem.amount}}</text>
-									<view class="calc plus" @click="ChildItem.amount++">+</view>
+									<view class="calc plus" :class="{disabled:ChildItem.disabled2}" @click="plus(index,ChildIndex)">+</view>
 								</view>
 							</view>
 						</view>
@@ -46,22 +46,27 @@
 			<view style="text-align: center;" v-if="!logined">----还没登录哦----</view>
 		</view>
 		
-		<view class="bottom animated slideInUp" v-if="operate">
+		<view class="bottom animated slideInUp" v-show="operate">
 			<checkbox-group @change="AllChange" class="r-cb">
-			    <checkbox value=""  style="transform:scale(0.7)"/>全选
+			    <checkbox style="transform:scale(0.7)" :checked="chooseAll"/>全选
 			</checkbox-group>
 			<view class="bottom-right">
 				<text class="cg s1">合计:</text>
-				<text class="cr" style="font-size: 34upx;">￥{{totalPrice}}</text>
-				<button type="warn" class="buy-btn" @click="getChecked">去结算(2)</button>
+				<text class="cr" style="font-size: 34upx;">￥{{result.totalPrice}}</text>
+				<button type="warn" class="buy-btn" @click="getChecked">去结算({{result.totalAmount}})</button>
 				<text class="" style="color: #ff5b62;margin-left: 20upx;" @click="deleteCarts">删除</text>
 			</view>
 		</view>
+		
+		
+		<sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='defaultImg' @closeSku='closeSku'
+		:category='category' :total='totalStock' v-if="receivedCategory" :goodsid='choosedId'></sku>
 	</view>
 </template>
 
 <script>
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
+	import sku from '@/components/sku/pages/sku.vue'
 	export default{
 		data(){
 			return{
@@ -76,16 +81,47 @@
 				more:'',
 				url:'&r=api.member.cart',
 				dataList:[],
-				totalPrice:''
+				chooseAll:false,
+				// 规格列表
+				category:[],
+				choosedPi:'',
+				choosedCi:'',
+				choosedId:'',
+				defaultImg:'',
+				totalStock:0,
+				receivedCategory:false,
+				choosedSpec:{}
+				// totalPrice:''
 			}
 		},
 		components:{
-			uniLoadMore
+			uniLoadMore,
+			sku
 		},
+		// watch:{
+		// 	dataList:{
+		// 		handler: function (val, oldVal) {
+		// 			console.log(val)
+		// 		},
+		// 		deep:true
+		// 	}
+		// },
 		computed: {
 		     noMore () {
 		       return this.dataList.length >= this.total
 		     },
+			 result(){
+				 var result={totalPrice:0,totalAmount:0}
+				 this.dataList.forEach((item) =>{
+				 	item.goods.forEach((item2) =>{
+				 		if(item2.checked){
+				 			result.totalPrice+=item2.amount * item2.marketprice
+							result.totalAmount++
+				 		}
+				 	})
+				 })
+				 return result
+			 },
 		   },
 		onShow(){
 			var userInfo=uni.getStorageSync('userInfo')
@@ -124,7 +160,25 @@
 			},
 			// 全选
 			AllChange(e){
-				console.log(e)
+				if(e.detail.value[0]!=undefined){
+					this.chooseAll=true
+					this.dataList.forEach((item) =>{
+						item.checked=true
+						item.goods.forEach((item2) =>{
+							item2.checked=true
+						})
+					})
+				}else{
+					this.chooseAll=false
+					this.dataList.forEach((item) =>{
+						item.checked=false
+						item.goods.forEach((item2) =>{
+							item2.checked=false
+						})
+					})
+				}
+				this.dataList.splice(0,0)
+				this.$forceUpdate()
 			},
 			// 商店选择
 			parentChange(e,t,i){
@@ -150,11 +204,13 @@
 						item.checked=true
 					})
 				}else{
+					this.chooseAll=false
 					this.dataList[i].checked=false
 					this.dataList[i].goods.forEach((item) =>{
 						item.checked=false
 					})
 				}
+				this.dataList.splice(0,0)
 				this.$forceUpdate()
 			},
 			// 商品选择
@@ -169,6 +225,7 @@
 				if(e.detail.value[0]!=undefined){
 					this.dataList[pi].goods[ci].checked=true
 				}else{
+					this.chooseAll=false
 					this.dataList[pi].goods[ci].checked=false
 				}
 				var fl=this.dataList[pi].goods.filter((item) =>{return item.checked}).length
@@ -177,6 +234,7 @@
 				}else{
 					this.dataList[pi].checked=false
 				}
+				this.dataList.splice(0,0)
 				this.$forceUpdate()
 			},
 			toggleOperation(){
@@ -185,6 +243,68 @@
 					return ;
 				}
 				this.operate=!this.operate
+			},
+			// 改规格
+			getCategory(item,pi,ci){
+					  var that=this
+				that.choosedPi=pi
+				that.choosedCi=ci
+							  var url='&r=api.goods.detail.sku&goodsid='+item.goodsid
+							    this.$apiPost(url).then((res) =>{
+									if(res.data!=''){
+										that.category=res.data
+										that.totalStock=res.stock
+										that.choosedId=item.goodsid
+										that.defaultImg=item.thumb
+										that.receivedCategory=true
+										that.$nextTick(function(){
+											setTimeout(function(){
+												that.$refs.sku.specClass='show'
+												uni.$on('closeSku',function(){
+													that.receivedCategory=false
+												})
+											},0)
+										})
+									}else{
+										that.$msg('此商品无其他规格可选')
+									}
+							  		
+							    })
+			},
+			closeSku(){
+				// console.log('s')
+				// this.receivedCategory=false
+			},
+			completeSpecChoose(e){
+							  // this.choosedSpec=e
+							  this.receivedCategory=false
+				this.dataList[this.choosedPi].goods[this.choosedCi].specs=e.selectArr
+				this.dataList[this.choosedPi].goods[this.choosedCi].marketprice=e.marketPrice
+				this.dataList[this.choosedPi].goods[this.choosedCi].amount=e.selectNum
+				this.dataList[this.choosedPi].goods[this.choosedCi].stock=e.stock
+				this.$forceUpdate()
+			},
+			minus(pi,ci){
+				var item=this.dataList[pi].goods[ci]
+				if(item.amount<=1){
+					this.dataList[pi].goods[ci].disabled1=true
+				}else{
+					this.dataList[pi].goods[ci].amount--
+					this.dataList[pi].goods[ci].disabled2=false
+					this.dataList[pi].goods[ci].disabled1=false
+				}
+				this.$forceUpdate()
+			},
+			plus(pi,ci){
+				var item=this.dataList[pi].goods[ci]
+				if(item.amount>=item.stock){
+					this.dataList[pi].goods[ci].disabled2=true
+				}else{
+					this.dataList[pi].goods[ci].amount++
+					this.dataList[pi].goods[ci].disabled1=false
+					this.dataList[pi].goods[ci].disabled2=false
+				}
+				this.$forceUpdate()
 			},
 			// 删除购物车
 			deleteCarts(){
@@ -197,6 +317,9 @@
 						}
 					})
 				})
+				if(this.selectedGoodsId==''){
+					return ;
+				}
 				var params={
 					uid:this.uid,
 					token:this.token,
@@ -351,5 +474,9 @@
 		line-height: 1;
 		padding: 20upx ;
 		font-size: 32upx;
+	}
+	.disabled{
+		border-color: #f4f4f4;
+		background-color: #f4f4f4;
 	}
 </style>

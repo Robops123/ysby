@@ -100,7 +100,7 @@
 		   },
 		mounted(){
 			var that=this
-			this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
+			this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active+'&merchid='+this.id
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.logined=true
@@ -152,13 +152,13 @@
 				this.more=''
 				if(this.active!=4){
 					this.rangeActive=''
-					this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
+					this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active+'&merchid='+this.id
 				}else{
 					this.rangeActive= this.rangeActive == 1 ? 2:1
 					if(this.rangeActive==1){
-						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+4
+						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+4+'&merchid='+this.id
 					}else if(this.rangeActive==2){
-						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+5
+						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+5+'&merchid='+this.id
 					}
 				}
 			},

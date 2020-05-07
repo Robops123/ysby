@@ -17,25 +17,25 @@
 				<view class="padding">
 					<image src="../../static/img/pic/other/wxpay.png" mode=""></image>
 					<text>微信支付</text>
-					<radio value="1"  class="fr" style="transform:scale(0.7)"/>
+					<radio value="wxpay" :checked="type=='wxpay'" class="fr" style="transform:scale(0.7)"/>
 				</view>
 				<!-- #endif -->
 				<!-- #ifdef APP-PLUS -->
 				<template v-if="providerList.length > 0">
-				<view class="padding" v-for="(item,index) in providerList" :key="index" @click="requestPayment(item,index)"  :loading="item.loading">
-					<image src="../../static/img/pic/other/alipay.png" mode=""></image>
-					<text>支付宝</text>
-					<radio value="2"  class="fr" style="transform:scale(0.7)"/>
+				<view class="padding" v-for="(item,index) in providerList" :key="index"   >
+					<image src="../../static/img/pic/other/alipay.png" mode="" v-if='item.id=="alipay"'></image>
+					<image src="../../static/img/pic/other/wxpay.png" mode="" v-if='item.id=="wxpay"'></image>
+					<image src="../../static/img/pic/other/applepay.png" mode="" v-if='item.id=="appleiap"'></image>
+					<text>{{item.name}}</text>
+					<radio :value="item.id" :checked="type=='item.id'" class="fr" style="transform:scale(0.7)"/>
 				</view>
 				</template>
 				<!-- #endif -->
-			              
-						 
-			            </radio-group>
+			</radio-group>
 		</view>
 		
 		<view style="text-align: center;">
-			<button type="default" class="btn" @click="to('payResult')">支付</button>
+			<button type="default" class="btn" @click="to('payResult')" :loading="loading">支付</button>
 		</view>
 	</view>
 </template>
@@ -44,6 +44,7 @@
 	export default{
 		data(){
 			return {
+				type:'',
 				platform:'',
 				loading: false,
 				price: 1,
@@ -56,9 +57,18 @@
 		},
 		methods:{
 			to(w){
-				uni.navigateTo({
-					url:'./payResult'
-				})
+				if(this.type=='wxpay'){
+					this.weixinPay()
+				}else{
+					this.requestPayment(this.type)
+				}
+				// uni.navigateTo({
+				// 	url:'./payResult'
+				// })
+			},
+			radioChange(e){
+				console.log(e.detail.value)
+				this.type=e.detail.value
 			},
 			getProviders(){
 				// #ifdef APP-PLUS
@@ -95,13 +105,137 @@
 				            }
 				        })
 				        this.providerList = providerList;
+						this.type=this.providerList[0].id || 'wxpay'
+						this.$forceUpdate()
 				    },
 				    fail: (e) => {
 				        console.log("获取支付通道失败：", e);
 				    }
 				});
 				// #endif
-			}
+			},
+			weixinPay() {
+			    console.log("发起支付");
+			    this.loading = true;
+			    uni.login({
+			        success: (e) => {
+			            console.log("login success", e);
+			            uni.request({
+			                url: `https://unidemo.dcloud.net.cn/payment/wx/mp?code=${e.code}&amount=${this.price}`,
+			                success: (res) => {
+			                    console.log("pay request success", res);
+			                    if (res.statusCode !== 200) {
+			                        uni.showModal({
+			                            content: "支付失败，请重试！",
+			                            showCancel: false
+			                        });
+			                        return;
+			                    }
+			                    if (res.data.ret === 0) {
+			                        console.log("得到接口prepay_id", res.data.payment);
+			                        let paymentData = res.data.payment;
+			                        uni.requestPayment({
+			                            timeStamp: paymentData.timeStamp,
+			                            nonceStr: paymentData.nonceStr,
+			                            package: paymentData.package,
+			                            signType: 'MD5',
+			                            paySign: paymentData.paySign,
+			                            success: (res) => {
+			                                uni.showToast({
+			                                    title: "感谢您的赞助!"
+			                                })
+			                            },
+			                            fail: (res) => {
+			                                uni.showModal({
+			                                    content: "支付失败,原因为: " + res
+			                                        .errMsg,
+			                                    showCancel: false
+			                                })
+			                            },
+			                            complete: () => {
+			                                this.loading = false;
+			                            }
+			                        })
+			                    } else {
+			                        uni.showModal({
+			                            content: res.data.desc,
+			                            showCancel: false
+			                        })
+			                    }
+			                },
+			                fail: (e) => {
+			                    console.log("fail", e);
+			                    this.loading = false;
+			                    uni.showModal({
+			                        content: "支付失败,原因为: " + e.errMsg,
+			                        showCancel: false
+			                    })
+			                }
+			            })
+			        },
+			        fail: (e) => {
+			            console.log("fail", e);
+			            this.loading = false;
+			            uni.showModal({
+			                content: "支付失败,原因为: " + e.errMsg,
+			                showCancel: false
+			            })
+			        }
+			    })
+			},
+			async requestPayment(e) {
+			    this.loading = true;
+			    let orderInfo = await this.getOrderInfo(e);
+				console.log(orderInfo)
+			    console.log("得到订单信息", orderInfo);
+			    if (orderInfo.statusCode !== 200) {
+			        console.log("获得订单信息失败", orderInfo);
+			        uni.showModal({
+			            content: "获得订单信息失败",
+			            showCancel: false
+			        })
+			        return;
+			    }
+			    uni.requestPayment({
+			        provider: e,
+			        orderInfo: orderInfo.data,
+			        success: (e) => {
+			            console.log("success", e);
+			            uni.showToast({
+			                title: "感谢您的赞助!"
+			            })
+			        },
+			        fail: (e) => {
+			            console.log("fail", e);
+			            uni.showModal({
+			                content: "支付失败,原因为: " + e.errMsg,
+			                showCancel: false
+			            })
+			        },
+			        complete: () => {
+			            this.loading = false;
+			        }
+			    })
+			},
+			getOrderInfo(e) {
+			    let appid = "";
+			    // #ifdef APP-PLUS
+			    appid = plus.runtime.appid;
+				console.log(appid)
+			    // #endif
+			    let url = 'https://demo.dcloud.net.cn/payment/?payid=' + e + '&appid=' + appid + '&total=' + this.price;
+			    return new Promise((res) => {
+			        uni.request({
+			            url: url,
+			            success: (result) => {
+			                res(result);
+			            },
+			            fail: (e) => {
+			                res(e);
+			            }
+			        })
+			    })
+			},
 		}
 	}
 </script>

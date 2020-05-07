@@ -1,5 +1,5 @@
 <template>
-	<view class="productDetail">
+	<view class="productDetail" v-if="specClass=='show'">
 		<view class="popup" catchtouchmove="true" :class="specClass" @touchmove.stop.prevent="moveHandle">
 			<view class="mask" @tap="closeSf"></view>
 			<view class="layer attr-content">
@@ -252,6 +252,7 @@
 				this.specClass = 'hide';
 				setTimeout(() => {
 					this.specClass = 'none';
+					uni.$emit('closeSku')
 				}, 250);
 			},
 			changeNum(val) {
@@ -263,7 +264,8 @@
 					selectNum:this.selectNum,
 					choosedid:this.choosedid,
 					marketPrice:this.marketPrice,
-					goodsImg:this.goodsImg
+					goodsImg:this.goodsImg,
+					stock:this.stock
 				}
 				this.$emit('completeSpecChoose',d)
 				this.specClass = 'hide';
@@ -283,12 +285,12 @@
 		top: 0;
 		right: 0;
 		bottom: 0;
-		z-index: 999;
+		z-index: 99999;
 		overflow: hidden;
 	
 		&.show {
 			display: block;
-	
+			z-index: 999999;
 			.mask {
 				animation: showPopup 0.2s linear both;
 			}

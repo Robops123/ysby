@@ -255,23 +255,27 @@
 				uni.getLocation({
 					type: 'wgs84',
 					success:(res) =>{
-						var url='&r=api.home.merchant'
-						var params={
-							lng:res.longitude,
-							lat:res.latitude
-						}
-						this.$apiPost(url,params).then((res) =>{
-							that.businessList=res.data.map((item) =>{
-								item.distance=parseInt(item.distance)
-								return item
-							})
-						}).catch((err) =>{
-							this.$msg(err)
-						})
+						that.getNearBy(res)
 					},
 					fail:(reason) =>{
+						that.getNearBy({})
 						that.$msg(reason)
 					}
+				})
+			},
+			getNearBy(res){
+				var url='&r=api.home.merchant'
+				var params={
+					lng:res.longitude,
+					lat:res.latitude
+				},that=this
+				this.$apiPost(url,params).then((res) =>{
+					that.businessList=res.data.map((item) =>{
+						item.distance=parseInt(item.distance)
+						return item
+					})
+				}).catch((err) =>{
+					this.$msg(err)
 				})
 			},
 			addCollect(id){

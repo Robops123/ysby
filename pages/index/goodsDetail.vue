@@ -24,7 +24,7 @@
 			<text class="fr icon-arrow-right iconfont cg"></text>
 		</view>
 		
-		<view class="border-bottom s2">
+		<view class="border-bottom s2" v-if='data.commentstotal'>
 			<view class="padding ">
 				<text class="" style="margin-right: 30upx;">商品评价({{data.commentstotal}})</text>
 				<text class="fr cr" @click="toComments">查看全部 <text class="icon-arrow-right iconfont" style="margin-left: 30upx;"></text></text>
@@ -67,7 +67,7 @@
 					<view class="enter-button enter-button2" @click="toShop(data.merchid)">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
-					<view v-for="(goodsItem, goodsIndex) in data.goods" :key="goodsIndex">
+					<view v-for="(goodsItem, goodsIndex) in data.goods" :key="goodsIndex" @click="toGoodsDetail(goodsItem.goodsid,data.merchid)">
 						<image :src="goodsItem.thumb" mode=""></image>
 						<view class="price">￥{{goodsItem.marketprice}}</view>
 					</view>
@@ -186,7 +186,7 @@
 			onLoad(p){
 				var that=this
 				this.id=p.id
-				this.merchId=p.merchId
+				// this.merchId=p.merchId
 				var userInfo=uni.getStorageSync('userInfo')
 				if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 					this.logined=true
@@ -206,12 +206,18 @@
 				})
 			},
 		    methods: {
+				toGoodsDetail(goodsid,merchid){
+					uni.navigateTo({
+						url:'goodsDetail?id='+goodsid+'&merchId='+merchid
+					})
+				},
 		      onClick (e) {
 				  console.log(e)
 				  if(e.index==0){
 					  // 客服
 				  }else if(e.index==1){
 					  // 店铺
+					  this.toShop(this.data.merchid)
 				  }else if(e.index==2){
 					  // 收藏
 					  this.collect(e.content.collected)
@@ -259,7 +265,7 @@
 				  	return ;
 				  }
 				  uni.navigateTo({
-				  	url:'./createOrder?goodsId='+this.id+'&merchId='+this.merchId+'&choosedSpec='+JSON.stringify(this.choosedSpec)+'&goodsName='+this.data.title
+				  	url:'./createOrder?goodsId='+this.id+'&merchId='+this.data.merchid+'&choosedSpec='+JSON.stringify(this.choosedSpec)+'&goodsName='+this.data.title
 				  })
 			  },
 			  // 购物车数量
@@ -363,7 +369,6 @@
 				    })
 			  },
 			  completeSpecChoose(e){
-				  console.log(e)
 				  this.choosedSpec=e
 			  },
 			  toComments(){

@@ -12,7 +12,7 @@
 				<view class="card" v-for="(item,index) in dataList" :key='index' >
 					<view class="overall">
 							<view @click.stop="toShop(item.merchid)">
-								<image src="../../static/img/pic/other/icon2.png" style="width: 40upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" mode="" class=""></image>
+								<image :src="item.goodsPic" style="width: 40upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" mode="" class=""></image>
 								<text class="overall-title">{{item.merchname}}</text>
 								<text class="icon-arrow-right iconfont"></text>
 							</view>
@@ -46,7 +46,7 @@
 					
 					<view class="btn-box">
 						
-						<button type="default" class="btn btn1" v-show='item.status!=4'>加入购物车</button>
+						<button type="default" class="btn btn1" v-show='item.status!=4' @click.stop="addCollect(item.goodsid)">加入购物车</button>
 						<button type="default" class="btn btn1" v-show='item.status==4'>删除订单</button>
 						<button type="default" class="btn btn2" v-show='item.status==1'>去付款</button>
 						<button type="default" class="btn btn2" v-show='item.status==2'>联系卖家</button>
@@ -162,6 +162,19 @@
 				  that.page++
 				  that.getList(that.page)
 			  // },2000)
+			},
+			addCollect(id){
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token: this.token,
+					goodsid:id
+				}
+				  var url='&r=api.member.cart.add'
+				  this.$apiPost(url,params).then((res) =>{
+						// that.options[2].info++
+										that.$msg('添加成功')
+				  })
 			},
 		}
 	}

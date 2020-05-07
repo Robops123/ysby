@@ -88,7 +88,7 @@
 							<view class="enter-button" @click="toShop(item.id)">进店</view>
 						</view>
 						<view class="sp-item3-bottom">
-							<view class=""  v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
+							<view class=""  v-for="(childItem,childIndex) in item.goods" :key='childIndex' @click="toGoodsDetail(childItem.goodsid)">
 								<image :src="childItem.thumb" mode=""></image>
 								<view class="price">￥{{childItem.marketprice}}</view>
 							</view>

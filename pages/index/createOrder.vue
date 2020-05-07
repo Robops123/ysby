@@ -30,9 +30,9 @@
 			<view class="bottom-content">
 				<text style="line-height: 60upx;">购买数量</text>
 				<view class="calculator fr">
-					<view class="calc minus" @click="form.amount--">-</view>
+					<view class="calc minus" :class="{disabled:disabled1}" @click="minus">-</view>
 					<text class="result">{{form.amount}}</text>
-					<view class="calc plus" @click="form.amount++">+</view>
+					<view class="calc plus" :class="{disabled:disabled2}" @click="plus">+</view>
 				</view>
 			</view>
 			<view style="text-align: right;margin: 70upx 0 0;">
@@ -87,10 +87,20 @@
 				address:'',
 				spec:'',
 				goodsImg:'',
-				goodsName:''
+				goodsName:'',
+				total:'',
+			}
+		},
+		computed:{
+			disabled1(){
+				return this.form.amount<=1
+			},
+			disabled2(){
+				return this.form.amount>=this.total
 			}
 		},
 		onLoad(e){
+			console.log(e)
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.form.uid=userInfo.uid
@@ -103,16 +113,32 @@
 			// this.form.merchid=e.merchId 
 			this.form.goodsid=e.goodsId
 			this.goodsName=e.goodsName
+			this.total=choosedSpec.stock
 			this.form.amount=choosedSpec.selectNum
-			this.form.specifications=choosedSpec.choosedid.join(',')
+			this.form.specifications=choosedSpec.selectArr
 			this.form.goodsprice=choosedSpec.marketPrice
 		},
 		methods:{
+			minus(){
+				if(!this.disabled1){
+					--this.form.amount
+				}
+			},
+			plus(){
+				if(!this.disabled2){
+					++this.form.amount
+				}
+			},
 			createOrder(){
+				this.$loading()
 				var that=this
 				var url='&r=api.member.order.create'
 				  this.$apiPost(url,this.form).then((res) =>{
 					  console.log(res)
+					  uni.navigateTo({
+					  	url:'./cashier?orderId='+res.ordero
+					  })
+					  uni.hideLoading()
 					  // that.$msg('删除成功')
 					  // setTimeout(function(){
 						 //  that.getAddressList()
@@ -267,5 +293,9 @@
 	.bottom-right{
 		flex: 1;
 		text-align: right;
+	}
+	.disabled{
+		border-color: #f4f4f4;
+		background-color: #f4f4f4;
 	}
 </style>
