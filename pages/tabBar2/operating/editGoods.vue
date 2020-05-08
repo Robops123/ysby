@@ -3,15 +3,15 @@
 		<view class="activity" style="margin-top: 20upx;">
 			<view class="bottom-border">
 				<text style="vertical-align: top;" class="label-80">商品名称</text>
-				<textarea value="" placeholder="请输入商品名称" class="txt"/>
+				<textarea v-model="data.title" placeholder="请输入商品名称" class="txt"/>
 			</view>
 			<view class="bottom-border">
 				<text style="vertical-align: top;" class="label-80">副标题</text>
-				<input value="" placeholder="请输入商品副标题" />
+				<input v-model="data.subtitle" placeholder="请输入商品副标题" />
 			</view>
 			<view class="bottom-border">
 				<text style="vertical-align: top;" class="label-80">单位</text>
-				<input value="" placeholder="请输入商品单位" />
+				<input v-model="data.unit" placeholder="请输入商品单位" />
 			</view>
 		</view>
 		
@@ -65,9 +65,9 @@
 				<text class="label-80 cg">热卖设置</text>
 				<radio-group @change="radioChange"  class="radio-group">
 						<text>是</text>	
-				              <radio value="1" :checked="current === 1" style="transform:scale(0.7)"/>
+				              <radio value="1" :checked="data.ishot=='1'" style="transform:scale(0.7)"/>
 				          <text>否</text>
-				                <radio value="0" :checked="current === 0" style="transform:scale(0.7)"/>
+				                <radio value="0" :checked="data.ishot=='2'" style="transform:scale(0.7)"/>
 				            </text>
 				        </radio-group>
 			</view>
@@ -76,15 +76,15 @@
 		<view class="activity s2">
 			<view class="bottom-border">
 				<text class="label-80 cg">价格</text>
-				<text>79.80</text>
+				<text>{{data.marketprice}}</text>
 			</view>
 			<view class="bottom-border">
 				<text class="label-80 cg">库存</text>
-				<text>1000</text>
+				<text>{{data.total}}</text>
 			</view>
 			<view class="bottom-border">
 				<text class="label-80 cg">商品重量</text>
-				<text>500g</text>
+				<text>{{data.weight}}</text>
 			</view>
 		</view>
 		
@@ -121,6 +121,10 @@
 	export default{
 		data(){
 			return{
+				data:{},
+				goodsid:'',
+				uid:'',
+				token:'',
 				current:1,
 				cateCurrent:0,
 				 array: ['中国', '美国', '巴西', '日本'],
@@ -133,6 +137,16 @@
 				lng:'',
 				address:''
 			}
+		},
+		onLoad(p){
+			var that=this
+			this.goodsid=p.goodsid
+			var userInfo=uni.getStorageSync('userInfo'),that=this
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+			} 
+			this.getDetail()
 		},
 		methods:{
 			//选择图片
@@ -184,6 +198,21 @@
 				},
 				bindPickerChange(e){
 					console.log(e)
+				},
+				getDetail(){
+					this.$loading()
+					var that=this
+					var params={
+						uid:this.uid,
+						token:this.token,
+						goodsid:this.goodsid
+					}
+					var url='&r=api.myshop.goods.edit'
+					  this.$apiPost(url,params).then((res) =>{
+							that.data=res.data
+							// that.imageList=res.data
+							uni.hideLoading()
+					  })
 				}
 		}
 	}
@@ -420,5 +449,8 @@
 		textarea{
 			display: inline-block;
 			vertical-align: top;
+		}
+		.txt{
+			height: 100upx;
 		}
 </style>

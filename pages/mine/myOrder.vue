@@ -48,6 +48,7 @@
 						
 						<button type="default" class="btn btn1" v-show='item.status!=4' @click.stop="addCollect(item.goodsid)">加入购物车</button>
 						<button type="default" class="btn btn1" v-show='item.status==4'>删除订单</button>
+						<button type="default" class="btn btn1" v-show='item.status==1' @click="cancelOrder(item.orderno,index)">取消订单</button>
 						<button type="default" class="btn btn2" v-show='item.status==1'>去付款</button>
 						<button type="default" class="btn btn2" v-show='item.status==2'>联系卖家</button>
 						<button type="default" class="btn btn2" v-show='item.status==3'>确认收货</button>
@@ -176,6 +177,19 @@
 										that.$msg('添加成功')
 				  })
 			},
+			cancelOrder(order,from){
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token: this.token,
+					orderno:order
+				}
+				  var url='&r=api.member.order.cancel'
+				  this.$apiPost(url,params).then((res) =>{
+						// that.options[2].info++
+						that.dataList.splice(from,1)
+				  })
+			}
 		}
 	}
 </script>

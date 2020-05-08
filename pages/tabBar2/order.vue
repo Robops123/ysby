@@ -11,8 +11,9 @@
 		<view class="padding search">
 			<view class="select">
 				<image src="../../static/img/pic/search.png" mode="" class="search-img"></image>
-				<text class="order" @click="open">asdasd123123123123asdad</text>
-				<image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image>
+				<!-- <text class="order" @click="open">asdasd123123123123asdad</text> -->
+				<input type="text" class="order" value="" placeholder="订单号" />
+				<!-- <image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image> -->
 			</view>
 			<view>
 				<input type="text" value="" placeholder="输入关键字"/>
@@ -231,7 +232,9 @@
 	.search{
 		background-color: #f7f7f8;
 	}
-	.select text{
+	.select .order{
+		display: inline-block;
+		vertical-align: middle;
 		width: 70%;
 	}
 	.select icon,

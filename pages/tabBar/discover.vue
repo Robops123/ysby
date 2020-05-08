@@ -22,7 +22,7 @@
 					<view class="enter-button" @click="toShop(item.id)">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
-					<view class="" v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
+					<view class="" v-for="(childItem,childIndex) in item.goods" :key='childIndex' @click="toDetail(childItem.goodsid)">
 						<image :src="childItem.thumb" mode=""></image>
 						<view class="price">￥{{childItem.marketprice}}</view>
 					</view>
@@ -99,6 +99,7 @@
 					url:`/pages/index/goodsDetail?id=${id}`
 				})
 			},
+			
 			toggle(t){
 				this.active=t
 				this.reset()

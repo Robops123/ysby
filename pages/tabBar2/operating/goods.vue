@@ -1,10 +1,10 @@
 <template>
 	<view>
 		<view class="nav-bar">
-			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>出售中</text></view>
-			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>已售罄</text></view>
-			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>仓库中</text></view>
-			<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)"><text>回收站</text></view>
+			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>出售中</text></view>
+			<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)"><text>已售罄</text></view>
+			<view class="nav nav-left" :class="{active:active==5}" @click="toggle(5)"><text>仓库中</text></view>
+			<view class="nav nav-right" :class="{active:active==6}" @click="toggle(6)"><text>回收站</text></view>
 		</view>
 		
 		<view class="padding search">
@@ -15,26 +15,26 @@
 			</view> -->
 			<view>
 				<icon type="search" size="20" style="float: left;"/>
-				<input type="text" value="" placeholder="输入关键字"/>
+				<input type="text" v-model="keywords" placeholder="输入关键字" @confirm='search'/>
 			</view>
 		</view>
 		
 		<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 			<view class="item" v-for="(item,index) in dataList" :key='index'>
-				<view class=" padding" @click="toEdit">
+				<view class=" padding" >
 					<view class="md-line bottom-border">
 						<view>
-							<image src="../../../static/img/pic/logo.png" mode=""></image>
+							<image :src="item.thumb" mode=""></image>
 						</view>
 						<view class="md-line-word">
 							<view class="s1">
-								<text class="limit-text">儿童木马瑶瑶马宝宝大叔大婶阿萨大师</text>
+								<text class="limit-text">{{item.title}}</text>
 							</view>
-							<view class=" cr s1">$79.80</view>
+							<view class=" cr s1">￥{{item.marketprice}}</view>
 							<view class="s2 cg bottom">
-								<text class="">库存:1000</text>
-								<text class="">销量:80</text>
-								<image src="../../../static/img/pic/dots.png" mode="" class="dots-img"></image>
+								<text class="">库存:{{item.total}}</text>
+								<text class="">销量:{{item.salesreal}}</text>
+								<image src="../../../static/img/pic/dots.png" mode="" class="dots-img" @click="toEdit(item.id)"></image>
 							</view>
 						</view>
 					</view>
@@ -57,14 +57,17 @@
 		},
 		data(){
 			return{
-				active:1,
+				uid:'',
+				token:'',
+				keywords:'',
+				active:3,
 				orderList:[
 					{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'}
 				],
 				sh:'',
 				dataList:[],
 				page:1,
-				pageSize:20,
+				pageSize:10,
 				total:0,
 				more:''
 			}
@@ -74,14 +77,19 @@
 		       return this.dataList.length >= this.total
 		     },
 		   },
-		   mounted(){
-		   	var that=this
-		   	this.getList(this.page)
-		   	setTimeout(function(){
-		   		that.$getHeight('#sv',(res) =>{
-		   			that.sh=res
-		   		})
-		   	},0)
+		   onLoad(p){
+			   var that=this
+			   var userInfo=uni.getStorageSync('userInfo'),that=this
+			   if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+			   	this.uid=userInfo.uid
+			   	this.token=userInfo.token
+			   } 
+			   this.getList(this.page)
+			   setTimeout(function(){
+			   	that.$getHeight('#sv',(res) =>{
+			   		that.sh=res
+			   	})
+			   },0)
 		   },
 		methods:{
 			choosed(m){
@@ -94,9 +102,9 @@
 									 })
 									 this.$refs.order.show=true
 			},
-			toEdit(){
+			toEdit(id){
 				uni.navigateTo({
-					url:'./editGoods'
+					url:'./editGoods?goodsid='+id
 				})
 			},
 			toggle(t){
@@ -106,22 +114,34 @@
 			},
 			reset(){
 				this.page=1
+				this.keywords=''
 				this.total=0
 				this.dataList=[]
 				this.more=''
+			},
+			search(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+				this.getList(this.page)
 			},
 			getList(p){
 				var that=this
 				var params={
 				  page:p,
-				  pagesize: this.pageSize
+				  pagesize: this.pageSize,
+				  uid:this.uid,
+				  token:this.token,
+				  keywords:this.keywords,
+				  goodsstatus:this.active
 				}
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
+				  var url='&r=api.myshop.goods'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
 					  if(that.page==1){

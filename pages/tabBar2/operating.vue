@@ -5,7 +5,7 @@
 				<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img"></image>
 			</view>
 			<image :src="data.logo" mode="" class="headface"></image>
-			<text class="s4">{{data.merchname}}</text>
+			<text class="s4 merchname">{{data.merchname}}</text>
 		</view>
 		<view class="item-3 s1 item-3-t bgw">
 			<view>
@@ -26,17 +26,17 @@
 			<view class="s5">
 				<image src="../../static/img/pic/other/icon1.png" mode="" style="width: 35upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" class=""></image>
 				<text>订单管理</text>
-				<view class="s3 cg fr" @click="toOrderList">全部
+				<view class="s3 cg fr" @click="toOrderList(0)">全部
 				<text class="icon-arrow-right iconfont "></text>
 				</view>
 			</view>
 			<view class="dd item-3" style="margin-top: 30upx;">
-				<view class="item-list">
+				<view class="item-list" @click="toOrderList(2)">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon3.png" mode="" style="width: 90upx;"></image></view>
 					<view>待发货</view>
 					<view class="cg s3"><text class="cr">{{data.notSend}}</text>单</view>
 				</view>
-				<view class="item-list">
+				<view class="item-list" @click="toOrderList(1)">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon2.png" mode=""></image></view>
 					<view>待付款</view>
 					<view class="cg s3"><text class="cr">{{data.notPay}}</text>笔</view>
@@ -98,9 +98,9 @@
 					this.getWorkBench()
 				}
 			},
-			toOrderList(){
+			toOrderList(type){
 				uni.navigateTo({
-					url:'./operating/orderList'
+					url:'./operating/orderList?active='+type
 				})
 			},
 			toSetting(){
@@ -124,6 +124,7 @@
 				  this.$apiPost(url,params).then((res) =>{
 					  uni.hideLoading()
 					that.data=res.data	
+					that.$forceUpdate()
 				  })
 			}
 		}
@@ -208,5 +209,12 @@
 		.img-box{
 			height: 70upx;
 			margin-bottom: 20upx;
+		}
+		.merchname{
+			display: inline-block;
+			max-width: 450upx;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 </style>

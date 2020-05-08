@@ -2,22 +2,22 @@
 	<view>
 		<view class="activity" style="margin-top: 20upx;">
 			<text style="line-height: 90upx;">店铺logo</text>
-			<image src="../../../static/img/pic/logo.png" mode="" class="headface fr"></image>
+			<image :src="data.logo" mode="" class="headface fr" @click="changeHeadface"></image>
 		</view>
 		
 		<view class="activity s2">
 			<view class="bottom-border">
 				<text class="label-80 cg">店铺名称</text>
-				<text>月亮都知道</text>
+				<input type="text" v-model="data.merchname" class="merchname"/>
 			</view>
 			<view class="bottom-border">
 				<text class="label-80 cg">店铺地址</text>
-				<text @click="chooseLocation">
+				<view @click="chooseLocation">
 					<image src="../../../static/img/pic/address2.png" mode="" class="pre-img"></image>
-					<text class="ellipsis cg" v-if="address==''">点击选择</text>
-					<text class=" ellipsis" v-else>{{address}}</text>
+					<text class="ellipsis cg" v-if="data.address==''">点击选择</text>
+					<text class=" ellipsis" v-else>{{data.address}}</text>
 					<text class="icon-arrow-right iconfont fr"></text>
-				</text>
+				</view>
 			</view>
 			<view class="bottom-border">
 				<text class="label-80 cg">店铺轮播图</text>
@@ -26,10 +26,10 @@
 						<view class='upload-image-view'>
 							<!-- 标题已经省略 -->
 							<!-- <view class='title'>上传xxxx图片</view> -->
-							<block v-for="(image,index) in imageList" :key="index">
+							<block v-for="(image,index) in imageList" :key="index" v-if="data.banner">
 								<view class='image-view'>
 									<image :src="image" :data-src="image" @tap="previewImage"></image>
-									<view class='del-btn' :data-index="index" @tap='deleteImage'>
+									<view class='del-btn' v-show="imageList.length>=1" :data-index="index" @tap='deleteImage'>
 										<view class='baicha'></view>
 									</view>
 								</view>
@@ -49,11 +49,11 @@
 		
 		<view class="activity flex-between">
 			<text class="cg ">关闭店铺</text>
-			<switch class="fr " style="transform:scale(0.7)" checked @change="switch1Change" />
+			<switch class="fr" style="transform:scale(0.7)" value='6' :checked="data.merch_status=='6'" @change="switch1Change" />
 		</view>
 		
 		<view style="text-align: center;">
-			<button type="default" class="btn">保存设置</button>
+			<button type="default" class="btn" @click="submit">保存设置</button>
 		</view>
 	</view>
 </template>
@@ -72,6 +72,9 @@
 	export default{
 		data(){
 			return{
+				uid:'',
+				token:'',
+				pic:[],
 				imageList: [], //保存图片路径集合
 				imageLength: 5, //限制图片张数
 				sourceTypeIndex: 2, //添加方式限制
@@ -79,10 +82,63 @@
 				// 地址
 				lat:'',
 				lng:'',
-				address:''
+				address:'',
+				data:{},
+				loaded:false,
 			}
 		},
+		onLoad(){
+			var userInfo=uni.getStorageSync('userInfo'),that=this
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+			} 
+			this.getDetail()
+		},
+		// watch:{
+		// 	'data'{
+		// 		deep:true,
+				
+		// 	}
+		// },
 		methods:{
+			getDetail(){
+				this.$loading()
+				var that=this
+				var params={
+					uid:this.uid,
+					token:this.token
+				}
+				var url='&r=api.myshop.my'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.pic=[]
+						that.data=res.data
+						that.imageList=res.data.banner.split(',')
+						that.loaded=true
+						that.lng=res.data.lng
+						that.lat=res.data.lat
+						uni.hideLoading()
+				  })
+			},
+			// logo更换
+			changeHeadface(){
+							var  that = this;
+							uni.chooseImage({
+							    success: (chooseImageRes) => {
+									if(chooseImageRes.tempFiles[0].size > 2097152){
+										that.$msg('图片过大，请重新选择图片')
+										return ;
+									}
+									uni.showLoading()
+							        const tempFilePaths = chooseImageRes.tempFilePaths[0];
+							        that.$upload(tempFilePaths,'',(res) =>{
+							        	that.data.logo=res
+										uni.hideLoading()
+							        	// that.submitPersonalInfo()
+							        	})
+							    }
+							});
+			},
 			//选择图片
 			chooseImage: async function() {
 					uni.chooseImage({
@@ -92,7 +148,7 @@
 						// #endif
 						count: this.imageLength - this.imageList.length,
 						success: (res) => {
-							this.imageList = this.imageList.concat(res.tempFilePaths);
+							this.imageList=this.imageList.concat(res.tempFilePaths);
 						}
 					})
 				},
@@ -106,25 +162,81 @@
 				},
 				//删除图片
 				deleteImage: function(e) {
-					var index = e.target.dataset.index;
+					if(this.imageList.length<=1){
+						return ;
+					}
+					var index = e.currentTarget.dataset.index;
 					var that = this;
 					var images = that.imageList;
-					images.splice(index, 1);
+					images.splice(parseInt(index), 1);
 					that.imageList = images;
 				},
 				chooseLocation(){
 					var that=this
 					uni.chooseLocation({
 						success:(res) =>{
-							// console.log(res)
 							that.lat=res.latitude
 							that.lng=res.longitude
-							that.address=res.name
+							that.data.address=res.name
 						}
 					})
 				},
 				switch1Change(e){
-					console.log(e.detail.value)
+					var v=e.detail.value
+					if(v==true){
+						this.data.merch_status='6'
+					}else{
+						this.data.merch_status='2'
+					}
+				},
+				submit(){
+					var  that=this,l=this.imageList.length;
+					this.$loading()
+					if(l==0){
+						this.$msg('至少需上传一张图片')
+						return ;
+					}else{
+						this.imageList.forEach((item,index) =>{
+							if(item.indexOf('blob')>-1){
+								that.$upload(item,'',(cb) =>{
+									that.pic.push(cb)
+								var	t=this.pic.length
+									if(l==t){
+										that.submitForm()
+									}
+								})
+							}else{
+								that.pic.push(item)
+								var	t=this.pic.length
+									if(l==t){
+										that.submitForm()
+									}
+							}
+						})
+					}
+					
+				},
+				submitForm(){
+					var that=this
+					var params={
+						uid:this.uid,
+						token:this.token,
+						logo:this.data.logo,
+						banner:this.pic.join(','),
+						merchname:this.data.merchname,
+						address:this.data.address,
+						lng:this.lng,
+						lat:this.lat,
+						merch_status:this.data.merch_status
+					}
+					var url='&r=api.myshop.my.change'
+					  this.$apiPost(url,params).then((res) =>{
+							that.$msg('修改成功')
+							uni.hideLoading()
+							setTimeout(function(){
+								that.getDetail()
+							},500)
+					  })
 				}
 		}
 	}
@@ -349,5 +461,10 @@
 		.bottom-border>view{
 			display: inline-block;
 			vertical-align: middle;
+		}
+		.merchname{
+			display: inline-block;
+			vertical-align: middle;
+			width: 450upx;
 		}
 </style>

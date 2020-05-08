@@ -106,10 +106,10 @@
 							</text>
 						</view>
 					</view>
-					<view class="enter-button" @click="toShop(item.merchid)">进店</view>
+					<view class="enter-button" @click="toShop(item.id)">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
-					<view class="" v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
+					<view class="" v-for="(childItem,childIndex) in item.goods" :key='childIndex' @click="toGoodsDetail(childItem.goodsid,item.id)">
 						<image :src="childItem.thumb" mode=""></image>
 						<view class="price">￥{{childItem.marketprice}}</view>
 					</view>
@@ -305,6 +305,11 @@
 			toShop(id){
 				uni.navigateTo({
 					url:`/pages/bussiness/shopPreview?id=${id}`
+				})
+			},
+			toGoodsDetail(goodsid,merchid){
+				uni.navigateTo({
+					url:'/pages/index/goodsDetail?id='+goodsid+'&merchId='+merchid
 				})
 			},
 		}

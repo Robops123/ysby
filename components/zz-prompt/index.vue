@@ -3,8 +3,8 @@
     <view class="prompt">
       <view class="prompt-top">
         <text class="prompt-title">{{title}}</text>
-        <input v-if="!isMutipleLine" class="prompt-input" :style="inputStyle" type="text" :placeholder="placeholder" v-model="value">
-        <textarea v-else class="prompt-input" :style="inputStyle" type="text" :placeholder="placeholder" v-model="value"></textarea>
+        <input v-if="!isMutipleLine & useDefault" class="prompt-input" :style="inputStyle" type="text" :placeholder="placeholder" v-model="value">
+        <textarea v-if='isMutipleLine & useDefault' class="prompt-input" :style="inputStyle" type="text" :placeholder="placeholder" v-model="value"></textarea>
       </view>
       <slot></slot>
       <view class="prompt-buttons">
@@ -47,7 +47,11 @@
       isMutipleLine: {
         type: Boolean,
         default: false,
-      }
+      },
+	  useDefault:{
+		  type:Boolean,
+		  default:true
+	  }
     },
     data() {
       return {

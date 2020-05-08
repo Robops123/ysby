@@ -2,27 +2,39 @@
 	<view class="main-bg-color">
 		<view class="top">
 			<view>
-				<view class="process">等待卖家发货</view>
-				<view class="intro">订单金额(含运费):￥12.03</view>
+				<view class="process" v-if="data.status=='1'">等待买家支付</view>
+				<view class="process" v-if="data.status=='2'">等待卖家发货</view>
+				<view class="process" v-if="data.status=='3'">等待买家收货</view>
+				<view class="process" v-if="data.status=='4'">订单已取消</view>
+				<view class="process" v-if="data.status=='5'">买家已收货，待评论</view>
+				<view class="process" v-if="data.status=='6'">订单已完成</view>
+				<view class="intro">订单金额(含运费):￥{{data.totalprice}}</view>
 			</view>
 			<image src="../../../static/img/pic/shape1.png" mode=""></image>
 		</view>
 		<view class="activity">
 				<view class="lh1">
 					<text class="c2">订单编号: </text>
-					<text class="fr"> EE2312321E21312E</text>
+					<text class="fr">{{data.orderno}}</text>
 				</view>
 				<view class="lh1">
 					<text class="c2">订单状态: </text>
-					<text class="fr payway">待发货</text>
+					<text class="fr payway" v-if="data.status=='1'">待支付</text>
+					<text class="fr payway" v-if="data.status=='2'">待发货</text>
+					<text class="fr payway" v-if="data.status=='3'">待收货</text>
+					<text class="fr payway" v-if="data.status=='4'">已取消</text>
+					<text class="fr payway" v-if="data.status=='5'">待评论</text>
+					<text class="fr payway" v-if="data.status=='6'">已完成</text>
 				</view>
 				<view class="lh1">
 					<text class="c2">支付方式: </text>
-					<text class="fr">微信支付</text>
+					<text class="fr">{{data.paytype}}</text>
 				</view>
 				<view class="lh1">
 					<text class="c2">配送状态: </text>
-					<text class="fr">快递</text>
+					<text class="fr " v-if="data.delivery=='1'">快递</text>
+					<text class="fr " v-if="data.delivery=='2'">自提</text>
+					<text class="fr " v-if="data.delivery=='3'">其他</text>
 				</view>
 		</view>
 		
@@ -30,20 +42,20 @@
 			<view class="margin1" >
 				<image src="../../../static/img/pic/address.png" mode="" class="pre-img"></image>
 				<text class="">收件信息</text>
-				<view class="fr cr">修改
+				<view class="fr cr" @click="openchange">修改
 				<image src="../../../static/img/pic/more.png" mode="" class="right-arrow"></image></view>
 			</view>
 				<view class="margin1" >
 					<text class="c2">收件人：</text>
-					<text class="fr">许愿</text>
+					<text class="fr">{{data.contact}}</text>
 				</view>
 				<view class="margin1">
 					<text class="c2">联系电话：</text>
-					<text class="fr">1877777777</text>
+					<text class="fr">{{data.addrmobile}}</text>
 				</view>
 				<view class="margin1" @click="toPromoteFee">
 					<text class="c2">收货地址：</text>
-					<text class="fr">江苏省无锡市滨湖区太湖大道100号</text>
+					<text class="fr">{{data.address}}</text>
 				</view>
 		</view>
 		
@@ -55,15 +67,15 @@
 			</view>
 			<view class="content">
 				<view class="img">
-					<image src="../../../static/img/pic/logo.png" mode="" ></image>
+					<image :src="data.avatar" mode="" ></image>
 				</view>
 					<view class="s1">
-						<view class="">休息休息</view>
-						<view class="  s1">手机号：213123123123</view>
+						<view class="">{{data.nickname}}</view>
+						<view class="  s1">手机号：{{data.usermobile}}</view>
 					</view>
-					<view class="fr cg">
+					<!-- <view class="fr cg">
 						<text class="icon-arrow-right iconfont"></text>
-					</view>
+					</view> -->
 			</view>
 		</view>
 		
@@ -77,15 +89,15 @@
 			
 			<view class="content">
 				<view class="img">
-					<image src="../../../static/img/pic/logo.png" mode=""></image>
+					<image :src="data.goodsPic" mode=""></image>
 				</view>
 					<view class="s1 ellipsis">
-						<view class="limit-text">儿童木马瑶瑶马宝宝大叔大婶阿萨大师</view>
+						<view class="limit-text">{{data.goodsname}}</view>
 						<view class="s2 cg">
-							<text class="limit-text">规格<text class="s3 ">深蓝色:24(155/60A)</text></text>
+							<text class="limit-text">规格<text class="s3 ">{{data.specifications}}</text></text>
 						</view>
 						<view class="s2 cg">
-							<text class="limit-text">单价/数量:<text class="s3 ">79.80*1</text></text>
+							<text class="limit-text">单价/数量:<text class="s3 ">{{data.goodsprice}}*{{data.amount}}</text></text>
 						</view>
 					</view>
 			</view>
@@ -95,15 +107,15 @@
 		<view class="activity">
 			<view class=" bottom-border" >
 				<text class="cg">商品小计</text>
-				<text class="fr">&79.80</text>
+				<text class="fr">￥{{data.totalprice}}</text>
 			</view>
 			<view class=" bottom-border" >
 				<text class="cg">运费</text>
-				<text class="fr">&79.80</text>
+				<text class="fr">￥{{data.freight}}</text>
 			</view>
 			<view class=" bottom-border" >
 				<text class="cg">实付费(含运费)</text>
-				<text class="fr">&79.80</text>
+				<text class="fr">￥{{data.totalpricereal}}</text>
 			</view>
 		</view>
 		
@@ -111,11 +123,11 @@
 		<view class="activity">
 			<view class=" " >
 				<text class="cg">下单时间：</text>
-				<text class="">2020-03-30 12:45:30</text>
+				<text class="">{{data.createtime}}</text>
 			</view>
 			<view class=" " >
 				<text class="cg">支付时间：</text>
-				<text class="">2020-03-30 12:45:30</text>
+				<text class="">{{data.paytime ? data.paytime:'未支付'}}</text>
 			</view>
 		</view>
 		
@@ -146,12 +158,55 @@
 			</view>
 		</view> -->
 		
-		
+		<!-- 修改信息 -->
+		<prompt :visible.sync="promptVisible"  :title='"修改备注"' :useDefault="false" class="change-table"
+		  @confirm="clickPromptConfirm" mainColor="#ff6d7e">
+		  <!-- 这里放入slot内容-->
+		  <view class="line">
+			  <text>收件人</text>
+			  <input type="text" v-model="form.contact" />
+		  </view>
+		  <view class="line">
+		  			  <text>联系电话</text>
+		  			  <input type="text" v-model="form.mobile" />
+		  </view>
+		  <view class="line">
+		  			  <text>收件地址</text>
+		  			  <input type="text" v-model="form.address" />
+		  </view>
+		</prompt>
 	</view>
 </template>
 
 <script>
+	import Prompt from '@/components/zz-prompt/index.vue'
 	export default{
+		components:{
+			Prompt
+		},
+		data(){
+			return{
+				promptVisible:false,
+				data:{},
+				orderno:'',
+				uid:'',
+				token:'',
+				form:{
+					contact:'',
+					mobile:'',
+					address:''
+				}
+			}
+		},
+		onLoad(p){
+			var userInfo=uni.getStorageSync('userInfo'),that=this
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+			}
+			this.orderno=p.orderno
+			this.getDetail()
+		},
 		methods:{
 			toFee(){
 				uni.navigateTo({
@@ -162,6 +217,49 @@
 				uni.navigateTo({
 					url:'/pages/myActivity/promoteFeeDetail'
 				})
+			},
+			openchange(){
+				this.form={
+					contact:this.data.contact,
+					mobile:this.data.addrmobile,
+					address:this.data.address
+				}
+				this.promptVisible=true
+			},
+			clickPromptConfirm(){
+				this.$loading()
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token:this.token,
+				  orderno:this.orderno,
+				  contact:this.form.contact,
+				  mobile:this.form.mobile,
+				  address:this.form.address
+				}
+				  var url='&r=api.myshop.orders.changeAddr'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.$msg('修改成功')
+					  uni.hideLoading()
+					  setTimeout(function(){
+						  that.promptVisible=false
+						  that.getDetail()
+					  },500)
+				  })
+			},
+			getDetail(){
+				this.$loading()
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token:this.token,
+				  orderno:this.orderno,
+				}
+				  var url='&r=api.myshop.orders.detail'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.data=res.data
+					  uni.hideLoading()
+				  })
 			}
 		}
 	}
@@ -294,5 +392,22 @@
 				line-height: initial;
 				background-color: #ff6d7e !important;
 				color: #fff !important;
+				}
+				
+				.change-table .line{
+					margin: 20upx 0;
+				}
+				.change-table .line text,
+				.change-table .line input{
+					display: inline-block;
+					vertical-align: middle;
+				}
+				.change-table .line text{
+					width: 30%;
+					margin-right: 5%;
+				}
+				.change-table .line input{
+					width: 60%;
+					border-bottom: 1px solid #c9c9c9;
 				}
 </style>

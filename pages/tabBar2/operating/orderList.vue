@@ -1,21 +1,22 @@
 <template>
 	<view>
 		<view class="nav-bar">
-			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>全部</text></view>
-			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>待付款</text></view>
-			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>待发货</text></view>
-			<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)"><text>待收货</text></view>
-			<view class="nav nav-left" :class="{active:active==5}" @click="toggle(5)"><text>已完成</text></view>
+			<view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view>
+			<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
+			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
+			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
+			<view class="nav nav-left" :class="{active:active==6}" @click="toggle(6)"><text>已完成</text></view>
 		</view>
 		
 		<view class="padding search">
 			<view class="select">
-				<icon type="search" size="20"/>
-				<text class="order" @click="open">asdasd123123123123asdad</text>
-				<image src="../../../static/img/pic/more3.png" mode="" class="down-arrow"></image>
+				<image src="../../../static/img/pic/search.png" mode="" class="search-img" ></image>
+				<!-- <text class="order" @click="open">asdasd123123123123asdad</text> -->
+				<input type="text" class="order" v-model="orderno" placeholder="订单号" @confirm='search'/>
+				<!-- <image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image> -->
 			</view>
 			<view>
-				<input type="text" value="" placeholder="输入关键字"/>
+				<input type="text" v-model="keywords" placeholder="输入关键字" @confirm='search'/>
 			</view>
 		</view>
 		
@@ -25,7 +26,7 @@
 					<view class="top-line bottom-border">
 						<view class="s1 cg">
 							<view>
-								<text>asdasdasdasdasdd</text>
+								<text>{{item.orderno}}</text>
 								<text class="payway">微信支付</text>
 							</view>
 							<view>
@@ -37,23 +38,28 @@
 					
 					<view class="md-line bottom-border">
 						<view>
-							<image src="../../../static/img/pic/logo.png" mode=""></image>
+							<image :src="item.goodsPic" mode=""></image>
 						</view>
 						<view class="md-line-word">
 							<view class="s1">
-								<text class="limit-text">儿童木马瑶瑶马宝宝大叔大婶阿萨大师</text>
-								<text class="fr cg s1">$79.80</text>
+								<text class="limit-text">{{item.goodsname}}</text>
+								<text class="fr cg s1">￥{{item.goodsprice}}</text>
 							</view>
 							<view class="s2 cg">
-								<text class="limit-text">规格<text class="s3 ">深蓝色:24(155/60A)</text></text>
-								<text class="fr s1">*1</text>
+								<text class="limit-text">规格:<text class="s3 ">{{item.specifications}}</text></text>
+								<text class="fr s1">*{{item.amount}}</text>
 							</view>
 						</view>
 					</view>
 					<view class="bottom-border">
 						<view class="status-line cg s2">
 							<text>订单状态</text>
-							<text class="fr cr">待发货</text>
+							<text class="fr cr" v-if="item.status=='1'">待支付</text>
+							<text class="fr cr" v-if="item.status=='2'">待发货</text>
+							<text class="fr cr" v-if="item.status=='3'">待收货</text>
+							<text class="fr cr" v-if="item.status=='4'">已取消</text>
+							<text class="fr cr" v-if="item.status=='5'">待评论</text>
+							<text class="fr cr" v-if="item.status=='6'">已完成</text>
 						</view>
 						<view class="status-line cg s2">
 							<text>买家昵称</text>
@@ -61,17 +67,19 @@
 						</view>
 						<view class="status-line cg s2">
 							<text>配送方式</text>
-							<text class="fr cblue">快递</text>
+							<text class="fr cblue" v-if="item.delivery=='1'">快递</text>
+							<text class="fr cblue" v-if="item.delivery=='2'">自提</text>
+							<text class="fr cblue" v-if="item.delivery=='3'">其他</text>
 						</view>
 					</view>
 					<view class="bottom-border s2 cg" style="text-align: right;padding-right: 30upx;">
-						共<text class="cr">1</text>件商品 实付:<text class="cr">$79.80</text>
+						共<text class="cr">1</text>件商品 实付:<text class="cr">￥{{item.totalprice}}</text>
 					</view>
 					<view class="bottom-border btn-line">
 						<button type="default" class="btn btn-primary">确认发货</button>
 						<button type="default" class="btn btn-primary">取消发货</button>
 						<button type="default" class="btn ">备注</button>
-						<button type="default" class="btn " @click="toDetail">查看详情</button>
+						<button type="default" class="btn " @click="toDetail(item.orderno)">查看详情</button>
 					</view>
 				</view>
 			</view>
@@ -92,16 +100,20 @@
 		},
 		data(){
 			return{
-				active:1,
+				uid:'',
+				token:'',
+				active:0,
 				orderList:[
 					{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'}
 				],
 				sh:'',
 				dataList:[],
 				page:1,
-				pageSize:20,
+				pageSize:5,
 				total:0,
-				more:''
+				more:'',
+				orderno:'',
+				keywords:''
 			}
 		},
 		computed: {
@@ -109,14 +121,23 @@
 		       return this.dataList.length >= this.total
 		     },
 		   },
-		   mounted(){
-		   	var that=this
-		   	this.getList(this.page)
-		   	setTimeout(function(){
-		   		that.$getHeight('#sv',(res) =>{
-		   			that.sh=res
-		   		})
-		   	},0)
+		   onLoad(p){
+			   var that=this
+			  var userInfo=uni.getStorageSync('userInfo'),that=this
+			  if(p){
+			  	this.active=p.active
+			  }
+			  if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+			  	this.uid=userInfo.uid
+			  	this.token=userInfo.token
+			  }
+			  this.getList(this.page,this.orderno,this.keywords)
+			   setTimeout(function(){
+			   	that.$getHeight('#sv',(res) =>{
+			   		that.sh=res
+			   	})
+			   },0)
+			   
 		   },
 		methods:{
 			choosed(m){
@@ -129,35 +150,42 @@
 									 })
 									 this.$refs.order.show=true
 			},
-			toDetail(){
+			toDetail(no){
 				
 				uni.navigateTo({
-					url:'./orderDetail'
+					url:'./orderDetail?orderno='+no
 				})
 			},
 			toggle(t){
 				this.active=t
 				this.reset()
-				this.getList(this.page)
+				this.getList(this.page,this.orderno,this.keywords)
 			},
 			reset(){
 				this.page=1
 				this.total=0
+				this.orderno=''
+				this.keywords=''
 				this.dataList=[]
 				this.more=''
 			},
-			getList(p){
+			getList(p,no,k){
 				var that=this
 				var params={
+					status:this.active,
 				  page:p,
-				  pagesize: this.pageSize
+				  pagesize: this.pageSize,
+				  uid:this.uid,
+				  token:this.token,
+				  orderno:no,
+				  keywords:k
 				}
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
+				  var url='&r=api.myshop.orders'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
 					  if(that.page==1){
@@ -174,9 +202,16 @@
 				this.more='loading'
 			  // setTimeout(function(){
 				  that.page++
-				  that.getList(that.page)
+				  that.getList(that.page,this.orderno,this.keywords)
 			  // },2000)
 			},
+			search(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+				this.getList(this.page,this.orderno,this.keywords)
+			}
 		}
 	}
 </script>
@@ -217,7 +252,9 @@
 	.search{
 		background-color: #f7f7f8;
 	}
-	.select text{
+	.select .order{
+		display: inline-block;
+		vertical-align: middle;
 		width: 70%;
 	}
 	.select icon,
