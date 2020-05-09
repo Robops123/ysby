@@ -20,16 +20,16 @@
 			<view class="conclude">
 				<text class="s2 cg">累计订单:1356件</text>
 			</view>
-			<view class="qiun-charts">
+			<view class="qiun-charts" >
 				<canvas canvas-id="canvasLineA" id="canvasLineA" class="charts" @touchstart="touchLineA"></canvas>
 			</view>
 			
 			<view class="item-5">
 				<view class="cg" :class="{active:active2==1}" @click="toggle2(1)">近一月</view>
 				<view class="cg" :class="{active:active2==2}" @click="toggle2(2)">近二月</view>
-				<view class="cg" :class="{active:active2==3}" @click="toggle2(3)">近四月</view>
-				<view class="cg" :class="{active:active2==4}" @click="toggle2(4)">近六月</view>
-				<view class="cg" :class="{active:active2==5}" @click="toggle2(5)">近一年</view>
+				<view class="cg" :class="{active:active2==4}" @click="toggle2(4)">近四月</view>
+				<view class="cg" :class="{active:active2==6}" @click="toggle2(6)">近六月</view>
+				<view class="cg" :class="{active:active2==12}" @click="toggle2(12)">近一年</view>
 			</view>
 		</view>
 	</view>
@@ -46,7 +46,8 @@
 				active2:1,
 				uid:'',
 				token:'',
-				data:''
+				data:'',
+				des:'累计订单量'
 			}
 		},
 		mounted(){
@@ -64,13 +65,23 @@
 								this.token=userInfo.token
 								this.getBasicData()
 							}
-							this.getServerData();
+							this.getChartsData();
 			},
 			toggle(t){
 				this.active=t
+				this.active2=1
+				if(t==1){
+					this.des='累计订单量'
+				}else if(t==2){
+					this.des='产品出售量'
+				}else if(t==3){
+					this.des='店铺资金'
+				}
+				this.getChartsData()
 			},
 			toggle2(t){
 				this.active2=t
+				this.getChartsData()
 			},
 			getBasicData(){
 				this.$loading()
@@ -85,26 +96,46 @@
 					that.data=res.data	
 				  })
 			},
-			getServerData(){
+			getChartsData(){
+				this.$loading()
+				var that=this
+				var url='&r=api.myshop.finance.totalOrder'
+				var params={
+					uid:this.uid,
+					token:this.token,
+					period:this.active2,
+					type:this.active
+				}
+				  this.$apiPost(url,params).then((res) =>{
+					  uni.hideLoading()
+					  that.getServerData(res.data)
+				  })
+			},
+			getServerData(data){
 				let LineA={categories:[],series:[]};
-									LineA.categories=['2010','2012','2014','2016','2018','2020'];
+									LineA.categories=data.day;
 									LineA.series=[{
-										name:"南京",
-										data:[12,15,10,18,6,13],
-										color:'#409eff'
-									},{
-										name:"苏州",
-										data:[15,6,13,18,8,14],
-										color:'#e6a23c'
-									},{
-										name:"无锡",
-										data:[13,12,13,16,9,10],
+										name:this.des,
+										data:data.nums,
 										color:'#f56c6c'
-									}];
-									_self.showLineA("canvasLineA",LineA);
+									}]
+									// LineA.series=[{
+									// 	name:"南京",
+									// 	data:[12,15,10,18,6,13],
+									// 	color:'#409eff'
+									// },{
+									// 	name:"苏州",
+									// 	data:[15,6,13,18,8,14],
+									// 	color:'#e6a23c'
+									// },{
+									// 	name:"无锡",
+									// 	data:[13,12,13,16,9,10],
+									// 	color:'#f56c6c'
+									// }];
+									_self.showLineA("canvasLineA",LineA,data.minnum,data.maxnum);
 						},
 						// 展示图标的函数 接收参数，一个块的id,一个数据
-						showLineA(canvasId,chartData){
+						showLineA(canvasId,chartData,min,max){
 							canvaLineA=new uCharts({
 												$this:_self,
 												canvasId: canvasId,
@@ -122,18 +153,19 @@
 													type:'grid',
 													gridColor:'#CCCCCC',
 													gridType:'dash',
-													dashLength:8
+													dashLength:8,
+													labelCount:4,
 												},
 												yAxis: {
 													gridType:'dash',
 													gridColor:'#CCCCCC',
 													dashLength:8,
-													splitNumber:5,
-													min:10,
-													max:180,
-													format:(val)=>{return val.toFixed(0)+'元'}
+													// splitNumber:(max-min)/6,
+													// min:min,
+													max:max,
+													// format:(val)=>{return val}
 												},
-												width: _self.cWidth,
+												width: this.cWidth-10,
 												height: 200,
 												extra: {
 													line:{

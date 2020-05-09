@@ -52,8 +52,8 @@
 			<view class="bottom-border">
 				<text class="label-80 cg">商品分类</text>
 				<view @click="chooseLocation">
-					<picker class="picker" @change="bindPickerChange" :value="cateCurrent" :range="array">
-					     <view class="uni-input " style="display: inline-block;">{{array[cateCurrent]}}</view>
+					<picker class="picker" @change="bindPickerChange" :value="cateCurrent" :range="array" :range-key="'name'">
+					     <view class="uni-input " style="display: inline-block;">{{displayCate}}</view>
 						 <text class="icon-arrow-right iconfont fr"></text>
 					 </picker>
 					<!-- <text class="ellipsis cg" v-if="address==''">点击选择</text>
@@ -67,7 +67,7 @@
 						<text>是</text>	
 				              <radio value="1" :checked="data.ishot=='1'" style="transform:scale(0.7)"/>
 				          <text>否</text>
-				                <radio value="0" :checked="data.ishot=='2'" style="transform:scale(0.7)"/>
+				                <radio value="2" :checked="data.ishot=='2'" style="transform:scale(0.7)"/>
 				            </text>
 				        </radio-group>
 			</view>
@@ -76,33 +76,33 @@
 		<view class="activity s2">
 			<view class="bottom-border">
 				<text class="label-80 cg">价格</text>
-				<text>{{data.marketprice}}</text>
+				<input type="text" v-model="data.marketprice" style="vertical-align: middle;"/>
 			</view>
 			<view class="bottom-border">
 				<text class="label-80 cg">库存</text>
-				<text>{{data.total}}</text>
+				<input type="text" v-model="data.total" style="vertical-align: middle;"/>
 			</view>
 			<view class="bottom-border">
 				<text class="label-80 cg">商品重量</text>
-				<text>{{data.weight}}</text>
+				<input type="text" v-model="data.weight" style="vertical-align: middle;"/>
 			</view>
 		</view>
 		
 		
 		<view class="activity flex-between">
 			<text class="cg ">商品上架</text>
-			<switch class="fr " style="transform:scale(0.7)" checked @change="switch1Change" />
+			<switch class="fr " style="transform:scale(0.7)" :checked='data.goodsstatus=="3"' @change="switch1Change" />
 		</view>
 		
 		<view class="activity flex-between">
 				<text class="label-80 cg">商品排序</text>
-				<text>2</text>
+				<input type="text" v-model="data.displayorder" style="text-align: right;"/>
 		</view>
 		
 		<view style="margin: 10upx 0;text-align: center;" class="s2 cg">更多设置请至PC端后台</view>
 		
 		<view style="text-align: center;">
-			<button type="default" class="btn">保存</button>
+			<button type="default" class="btn" @click="submit">保存</button>
 		</view>
 	</view>
 </template>
@@ -121,6 +121,7 @@
 	export default{
 		data(){
 			return{
+				displayCate:'',
 				data:{},
 				goodsid:'',
 				uid:'',
@@ -135,7 +136,8 @@
 				// 地址
 				lat:'',
 				lng:'',
-				address:''
+				address:'',
+				pic:[]
 			}
 		},
 		onLoad(p){
@@ -190,14 +192,21 @@
 					})
 				},
 				switch1Change(e){
-					console.log(e.detail.value)
+					var v=e.detail.value
+					if(v){
+						this.data.goodsstatus='3'
+					}else{
+						this.data.goodsstatus='5'
+					}
 				},
 				radioChange(e){
-						console.log(e)
-						this.current=e.detail.value
+						var v=e.detail.value
+						this.data.ishot=v
 				},
 				bindPickerChange(e){
-					console.log(e)
+					var v=e.detail.value
+					this.displayCate=this.array[v].name
+					this.data.cates=this.array[v].id
 				},
 				getDetail(){
 					this.$loading()
@@ -210,8 +219,66 @@
 					var url='&r=api.myshop.goods.edit'
 					  this.$apiPost(url,params).then((res) =>{
 							that.data=res.data
+							that.pic=[]
+							that.array=res.data.category
+							that.imageList=res.data.thumb.split(',')
+							that.displayCate=that.array.filter((item) =>{return item.id==res.data.cates})[0].name
 							// that.imageList=res.data
 							uni.hideLoading()
+					  })
+				},
+				submit(){
+					var  that=this,l=this.imageList.length;
+					this.$loading()
+					if(l==0){
+						this.$msg('至少需上传一张图片')
+						return ;
+					}else{
+						this.imageList.forEach((item,index) =>{
+							if(item.indexOf('blob')>-1){
+								that.$upload(item,'',(cb) =>{
+									that.pic.push(cb)
+								var	t=that.pic.length
+									if(l==t){
+										that.submitForm()
+									}
+								})
+							}else{
+								that.pic.push(item)
+								var	t=this.pic.length
+									if(l==t){
+										that.submitForm()
+									}
+							}
+						})
+					}
+					
+				},
+				submitForm(){
+					var that=this
+					var params={
+						uid:this.uid,
+						token:this.token,
+						goodsid:this.goodsid,
+						title:this.data.title,
+						subtitle:this.data.subtitle,
+						unit:this.data.unit,
+						thumb:this.pic.join(','),
+						marketprice:this.data.marketprice,
+						total:this.data.total,
+						weight:this.data.weight,
+						goodsstatus:this.data.goodsstatus,
+						ishot:this.data.ishot,
+						displayorder:this.data.displayorder,
+						cates:this.data.cates
+					}
+					var url='&r=api.myshop.goods.doEdit'
+					  this.$apiPost(url,params).then((res) =>{
+							that.$msg('修改成功')
+							uni.hideLoading()
+							setTimeout(function(){
+								that.getDetail()
+							},500)
 					  })
 				}
 		}
