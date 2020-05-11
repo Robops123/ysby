@@ -6,7 +6,7 @@
 				<text class="iconfont icon-previewleft " @click="back"></text>
 				<!-- #endif -->
 				<view class="search-line">
-					<input type="text" value="" placeholder="寻找附近的商家"/>
+					<input type="text" v-model="keyword" placeholder="寻找附近的商家" @confim='getList'/>
 				</view>
 				<view class="comment">
 					<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
@@ -31,17 +31,28 @@
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 				<view class="padding">
 					<view class="list" v-for="(item,index) in dataList" :key='index'>
-						<image src="../../static/img/bg/activity.png" mode=""></image>
-							<view class="info">
-								<view class="s2 title">
-									儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿
-									童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿
+						<view v-if="item.isgoods" @click="toDetail(item.id)">
+							<image :src="item.thumb" mode=""></image>
+								<view class="info">
+									<view class="s2 title">
+										{{item.title}}
+									</view>
+									<view class="bottom-content cr s5"><text class="s1">￥</text>{{item.price}}</view>
+									<view class="buy">
+										<image src="../../static/img/pic/cart.png" mode="" @click.stop="addCollect(item.id)"></image>
+									</view>
 								</view>
-								<view class="bottom-content cr s5"><text class="s1">$</text>79.80</view>
-								<view class="buy">
-									<image src="../../static/img/pic/cart.png" mode=""></image>
+						</view>
+						<view v-else>
+							<image :src="item.thumb" mode="" class="headface"></image>
+							<view class="md">
+								<view class="s3 merchname">{{item.title}}</view>
+								<view class="tw">
+									<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
+									<text class="s3 cg">{{item.collect}}人关注 </text>
 								</view>
 							</view>
+						</view>
 					</view>
 				</view>
 				<uni-load-more :status="more"></uni-load-more>
@@ -61,14 +72,20 @@
 		},
 		data(){
 			return{
+				logined:false,
+				uid:'',
+				token:'',
+				keyword:'',
 				active:1,
 				rangeActive:'',
 				sh:'',
 				dataList:[],
 				page:1,
-				pageSize:5,
+				pageSize:10,
 				total:0,
-				more:''
+				more:'',
+				lat:'',
+				lng:''
 			}
 		},
 		computed: {
@@ -76,23 +93,37 @@
 		       return this.dataList.length >= this.total
 		     },
 		   },
-		mounted(){
-			var that=this
-			this.getList(this.page)
-			setTimeout(function(){
-				that.$getHeight('#sv',(res) =>{
-					that.sh=res
-				})
-			},0)
-		},
+		   onLoad(p){
+			   var that=this
+			   var userInfo=uni.getStorageSync('userInfo')
+			   if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+			   	this.logined=true
+			   	this.uid=userInfo.uid
+			   	this.token=userInfo.token
+			   }else{
+			   	this.logined=false
+			   }
+			   uni.$on('logined',function(){
+			   	var userInfo2=uni.getStorageSync('userInfo')
+			   	that.logined=true
+			   	that.uid=userInfo2.uid
+			   	that.token=userInfo2.token
+			   })
+			   this.keyword=p.keywords
+			   this.getList()
+			   setTimeout(function(){
+			   	that.$getHeight('#sv',(res) =>{
+			   		that.sh=res
+			   	})
+			   },0)
+		   },
 		methods:{
 			toggle(t){
 				this.active=t
 				this.reset()
-				this.getList(this.page)
+				this.getList()
 			},
 			toggleRange(t){
-				console.log(t)
 				this.rangeActive=t
 			},
 			back(){
@@ -100,9 +131,33 @@
 					delta:1
 				})
 			},
+			// 商品详情
+			toDetail(id){
+				uni.navigateTo({
+					url:`/pages/index/goodsDetail?id=${id}`
+				})
+			},
+			addCollect(id){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token: this.token,
+					goodsid:id
+				}
+				  var url='&r=api.member.cart.add'
+				  this.$apiPost(url,params).then((res) =>{
+						// that.options[2].info++
+										that.$msg('添加成功')
+				  })
+			},
 			reset(){
 				this.page=1
 				this.total=0
+				this.keyword=''
 				this.dataList=[]
 				this.more=''
 				if(this.active!=3){
@@ -111,18 +166,21 @@
 					this.rangeActive= this.rangeActive == 1 ? 2:1
 				}
 			},
-			getList(p){
+			getList(){
 				var that=this
 				var params={
-				  page:p,
-				  pagesize: this.pageSize
+				  page:this.page,
+				  pagesize: this.pageSize,
+				  lng:this.lng,
+				  lat:this.lat,
+				  keywords:this.keyword
 				}
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
+				  var url='&r=api.home.search'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
 					  if(that.page==1){
@@ -139,9 +197,25 @@
 				this.more='loading'
 			  // setTimeout(function(){
 				  that.page++
-				  that.getList(that.page)
+				  that.getList()
 			  // },2000)
 			},
+			getPosition(){
+				var that=this
+				uni.getLocation({
+					type: 'wgs84',
+					success:(res) =>{
+						that.lng=res.longitude
+						that.lat=res.latitude
+						that.getList()
+					},
+					fail:(reason) =>{
+						that.lng=''
+						that.lat=''
+						that.getList()
+					}
+				})
+			}
 		}
 	}
 </script>
@@ -288,5 +362,36 @@
 		width: 60upx;
 		height: 60upx;
 		padding: 10upx;
+	}
+	
+	
+	
+	.headface{
+		width: 120upx;
+		height: 120upx;
+		border-radius: 50%;
+		margin-right: 25upx;
+	}
+	.loading{
+		width: 40upx;
+		height: 20upx;
+		margin-top: 50upx;
+	}
+	
+	.manage{
+		text-align: right;
+		padding: 20upx ;
+		box-sizing: border-box;
+		background-color: #fff;
+	}
+	.merchname{
+		line-height: 1.5;
+		width: 360upx;
+		/* height: 72upx; */
+		overflow:hidden;//一定要写
+		    text-overflow: ellipsis;//超出省略号
+		    display:-webkit-box;//一定要写
+		    -webkit-line-clamp: 2;//控制行数
+		    -webkit-box-orient: vertical;//一定要写
 	}
 </style>

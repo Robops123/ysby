@@ -116,6 +116,9 @@
 	.fr {
 		float: right;
 	}
+	.fl{
+		float: left;
+	}
 	.vertical-middle{
 		display: inline-block;
 		vertical-align: middle;
@@ -187,4 +190,8 @@
 	padding: 5upx 0 20upx;
 }
 
+input,
+textarea{
+	font-size: 30upx;
+}
 

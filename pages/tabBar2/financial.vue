@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="width: 100%;">
 		<view class="activity">
 			<view class="item-2">
 				<view class="cg s2">今日交易额(元)</view>
@@ -11,14 +11,16 @@
 			</view>
 		</view>
 		
-		<view>
+		<view style="width: 100%;">
 			<view class="nav-bar">
 				<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>累计订单</text></view>
 				<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>产品出售量</text></view>
 				<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>店铺资金</text></view>
 			</view>
 			<view class="conclude">
-				<text class="s2 cg">累计订单:1356件</text>
+				<text class="s2 cg" v-if='active==1'>累计订单:{{sum}}单</text>
+				<text class="s2 cg" v-if='active==2'>产品出售量:{{sum}}件</text>
+				<text class="s2 cg" v-if='active==3'>店铺资金:{{sum}}元</text>
 			</view>
 			<view class="qiun-charts" >
 				<canvas canvas-id="canvasLineA" id="canvasLineA" class="charts" @touchstart="touchLineA"></canvas>
@@ -47,11 +49,12 @@
 				uid:'',
 				token:'',
 				data:'',
+				sum:'',
 				des:'累计订单量'
 			}
 		},
 		mounted(){
-			this.init()
+			// this.init()
 		},
 		methods:{
 			init(){
@@ -108,6 +111,7 @@
 				}
 				  this.$apiPost(url,params).then((res) =>{
 					  uni.hideLoading()
+					  that.sum=res.data.sum
 					  that.getServerData(res.data)
 				  })
 			},
@@ -177,7 +181,6 @@
 						// 点击图表显示的内容
 						touchLineA(e) {
 							// 使用声明的变量canvaLineA
-							console.log(canvaLineA)
 							canvaLineA.showToolTip(e, {
 								format: function (item, category) {
 									return category + ' ' + item.name + ':' + item.data 
@@ -219,15 +222,22 @@
 	
 	
 	.nav-bar{
-		text-align: center;
+		width: 100%;
+		box-sizing: border-box;
 		padding: 20upx 0;
 		background-color: #fff;
 	}
 	.nav{
+		white-space: nowrap;
 		color: #afafaf;
 		display: inline-block;
-		width: 33%;
+		width: 33% !important;
+		text-align: center;
 		box-sizing: border-box;
+	}
+	.nav text{
+		/* display: inline-block;
+		width: 33%; */
 	}
 	.nav.active text{
 		color: #000000;

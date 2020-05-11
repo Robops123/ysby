@@ -378,7 +378,7 @@
 		padding: 0 30upx;
 		/* margin: 0 18upx; */
 		display: flex;
-		justify-content: space-between;
+		/* justify-content: space-between; */
 		padding-bottom: 22upx;
 	}
 	.sp-item3-bottom image{

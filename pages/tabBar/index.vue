@@ -8,8 +8,8 @@
 				<text class="iconfont icon-address cr" ></text>
 				<view >无锡</view>
 				<view class="search-line">
-					<icon type="search" size="20" class="icon" @click="search"/>
-					<input type="text" value="" placeholder="寻找附近的商家"/>
+					<icon type="search" size="20" class="icon" />
+					<input type="text" v-model="keywords" @confirm='search' placeholder="寻找附近的商家"/>
 				</view>
 				<view class="comment">
 					<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
@@ -141,6 +141,7 @@
 				logined:false,
 				uid:'',
 				token:'',
+				keywords:'',
 				productList:[
 					{name:'睡眠用品',type:1,imgUrl:'../../static/img/pic/index/icon6.png'},
 					{name:'出行用品',type:2,imgUrl:'../../static/img/pic/index/icon2.png'},
@@ -187,7 +188,7 @@
 		methods:{
 			search(){
 				uni.navigateTo({
-					url:`/pages/index/searchResult`
+					url:`/pages/index/searchResult?keyword=${this.keywords}`
 				})
 			},
 			toCategory(){

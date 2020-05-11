@@ -34,9 +34,9 @@
 			</radio-group>
 		</view>
 		
-		<view style="text-align: center;">
+		<!-- <view style="text-align: center;">
 			<button type="default" class="btn" @click="to('payResult')" :loading="loading">支付</button>
-		</view>
+		</view> -->
 	</view>
 </template>
 
@@ -57,18 +57,18 @@
 		},
 		methods:{
 			to(w){
-				if(this.type=='wxpay'){
-					this.weixinPay()
-				}else{
-					this.requestPayment(this.type)
-				}
+				
 				// uni.navigateTo({
 				// 	url:'./payResult'
 				// })
 			},
 			radioChange(e){
-				console.log(e.detail.value)
 				this.type=e.detail.value
+				// if(this.type=='wxpay'){
+				// 	this.weixinPay()
+				// }else{
+					this.requestPayment(this.type)
+				// }
 			},
 			getProviders(){
 				// #ifdef APP-PLUS
@@ -221,7 +221,6 @@
 			    let appid = "";
 			    // #ifdef APP-PLUS
 			    appid = plus.runtime.appid;
-				console.log(appid)
 			    // #endif
 			    let url = 'https://demo.dcloud.net.cn/payment/?payid=' + e + '&appid=' + appid + '&total=' + this.price;
 			    return new Promise((res) => {

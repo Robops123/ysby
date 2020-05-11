@@ -4,7 +4,7 @@
 			<view class="nav-content">
 				<text class="iconfont icon-previewleft " @click="back"></text>
 				<view class="search-line">
-					<input type="text" value="" placeholder="寻找附近的商家"/>
+					<input type="text" v-model="keywords" placeholder="寻找附近的商家" @confirm='search'/>
 				</view>
 				<text class="iconfont icon-share1 fr" style="font-size: 50upx;"></text>
 			</view>
@@ -75,6 +75,7 @@
 			return{
 				uid:'',
 				token:'',
+				keywords:'',
 				logined:false,
 				id:'',
 				url:'',
@@ -100,7 +101,7 @@
 		   },
 		mounted(){
 			var that=this
-			this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active+'&merchid='+this.id
+			this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active+'&merchid='+this.id+'&keywords='+this.keywords
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.logined=true
@@ -130,7 +131,8 @@
 				console.log('share')
 			},
 			search(){
-				console.log('search')
+				this.reset()
+				this.getList()
 			},
 			toggle(t){
 				this.active=t
@@ -152,13 +154,13 @@
 				this.more=''
 				if(this.active!=4){
 					this.rangeActive=''
-					this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active+'&merchid='+this.id
+					this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active+'&merchid='+this.id+'&keywords='+this.keywords
 				}else{
 					this.rangeActive= this.rangeActive == 1 ? 2:1
 					if(this.rangeActive==1){
-						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+4+'&merchid='+this.id
+						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+4+'&merchid='+this.id+'&keywords='+this.keywords
 					}else if(this.rangeActive==2){
-						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+5+'&merchid='+this.id
+						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+5+'&merchid='+this.id+'&keywords='+this.keywords
 					}
 				}
 			},
