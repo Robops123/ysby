@@ -1,28 +1,26 @@
 <template>
-	<view style="padding-top: 86upx;">
-		<view class="top-nav padding">
+	<view >
+		<!-- <view class="top-nav padding">
 			<view class="nav-content">
-				<!-- #ifdef APP-PLUS -->
 				<text class="iconfont icon-previewleft " @click="back"></text>
 				<text>代理佣金</text>
-				<!-- #endif -->
-				<text class="cg fr s2">提现明细</text>
+				<text class="cg fr s2" >提现明细</text>
 			</view>
-		</view>
+		</view> -->
 		
 		<view class="main">
 			<view class="recommendAward-card">
-				<image class="recommendAward-card-img1" src="../../static/img/bg/activity.png" mode=""></image>
+				<image class="recommendAward-card-img1" src="../../static/img/pic/proxy/icon7.png" mode=""></image>
 				<view class="recommendAward-card-left">可提现金额</view>
 				<view class="recommendAward-card-right">23.20元</view>
 			</view>
 			<view class="recommendAward-card">
-				<image class="recommendAward-card-img2" src="../../static/img/bg/activity.png" mode=""></image>
+				<image class="recommendAward-card-img2" src="../../static/img/pic/proxy/icon8.png" mode=""></image>
 				<view class="recommendAward-card-left">已申请金额</view>
 				<view class="recommendAward-card-right recommendAward-card-rights">0.00元</view>
 			</view>
 			<view class="recommendAward-card">
-				<image class="recommendAward-card-img3" src="../../static/img/bg/activity.png" mode=""></image>
+				<image class="recommendAward-card-img3" src="../../static/img/pic/proxy/icon1.png" mode=""></image>
 				<view class="recommendAward-card-left">成功提现金额</view>
 				<view class="recommendAward-card-right recommendAward-card-rights">0.00元</view>
 			</view>

@@ -1,0 +1,2 @@
+.bottom-border{padding:15rpx 0;margin:15rpx 0;border-bottom:1px solid #f7f7f7}.label-80{width:150rpx;margin-right:20rpx;display:inline-block;vertical-align:middle}.bottom-border>view{display:inline-block;vertical-align:middle}.bottom-border textarea,
+	.bottom-border input{width:500rpx;display:inline-block}.setting{margin-top:50%}.setting .s2{margin-top:20rpx}.btn{margin-top:50rpx;width:80%;height:75rpx;background:#ff6d7e!important;border-radius:0;text-align:center;line-height:75rpx;border-radius:75rpx;letter-spacing:4px;color:#fff;font-size:34rpx}

@@ -76,7 +76,7 @@
 							<image src="../../static/img/pic/mine/icon12.png" mode=""></image>
 							<view>邀请人</view>
 						</view>
-						<view class="item-list">
+						<view class="item-list" @click="showAdv">
 							<image src="../../static/img/pic/mine/icon13.png" mode=""></image>
 							<view>邀请注册</view>
 						</view>
@@ -84,7 +84,7 @@
 							<image src="../../static/img/pic/mine/icon9.png" mode=""></image>
 							<view>收货地址</view>
 						</view>
-						<view class="item-list">
+						<view class="item-list" @click="to('help')">
 							<image src="../../static/img/pic/mine/icon1.png" mode=""></image>
 							<view>帮助中心</view>
 						</view>
@@ -100,15 +100,30 @@
 				</view>
 			</view>
 		</view>
+		
+		
+		<s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
+		  <!-- 内容 -->
+		  <image src="../../static/img/bg/adv.png" mode=""></image>
+		  <view style="margin-top: 20upx;">
+			  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
+		  </view>
+		</s-popup>
 	</view>
 </template>
 
 <script>
+	import sPopup from '@/components/s-popup/index';
 	export default{
+		 components: {
+		    sPopup
+		  },
 		data(){
 			return {
 				data:'',
-				logined:false
+				logined:false,
+				  visible: false,
+				  advImg:'',
 			}
 		},
 		onShow(){
@@ -212,6 +227,33 @@
 			            console.log('login fail:', err);
 			        }
 			    });
+			},
+			showAdv(){
+				this.visible=true
+			},
+			saveImg(url){
+				var that=this
+				that.$loading()
+				uni.downloadFile({
+						url: 'https://img-cdn-qiniu.dcloud.net.cn/uploads/avatar/000/78/15/45_avatar_max.jpg',
+						success: (res) =>{
+							if (res.statusCode === 200){
+								uni.saveImageToPhotosAlbum({
+									filePath: res.tempFilePath,
+									success: function() {
+										that.$msg('保存成功，请到相册中查看')
+										that.visible=false
+									},
+									fail: function() {
+										that.$msg('保存失败')
+									},
+									complete:() =>{
+										uni.hideLoading()
+									}
+								});
+							}
+						}
+					})
 			}
 		}
 	}
@@ -298,5 +340,24 @@
 		.setting{
 			text-align: right;
 			padding: 20upx 20upx 0 0;
+		}
+		.advPopup image{
+			width: 100%;
+			margin:  0 auto;
+		}
+		
+		.adv-btn{
+			width: 94%;
+			margin: 0 auto;
+			background-color: #fba1b0;
+			color: #fff;
+			border-radius: 6px;
+			line-height: 1;
+			border: none;
+			outline: none;
+			padding: 20upx 0;
+			text-align: center;
+			margin-bottom: 20upx;
+			font-size: 12px;
 		}
 </style>

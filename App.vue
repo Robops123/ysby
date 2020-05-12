@@ -56,6 +56,38 @@
 	    -webkit-animation-name: shake;
 	    animation-name: shake
 	}
+	@-webkit-keyframes fadeInDown {
+	    0% {
+	        opacity: 0;
+	        -webkit-transform: translate3d(0,-100%,0);
+	        transform: translate3d(0,-100%,0)
+	    }
+	
+	    to {
+	        opacity: 1;
+	        -webkit-transform: translateZ(0);
+	        transform: translateZ(0)
+	    }
+	}
+	
+	@keyframes fadeInDown {
+	    0% {
+	        opacity: 0;
+	        -webkit-transform: translate3d(0,-100%,0);
+	        transform: translate3d(0,-100%,0)
+	    }
+	
+	    to {
+	        opacity: 1;
+	        -webkit-transform: translateZ(0);
+	        transform: translateZ(0)
+	    }
+	}
+	
+	.animate__fadeInDown {
+	    -webkit-animation-name: fadeInDown;
+	    animation-name: fadeInDown
+	}
 	.animated {
 	    -webkit-animation-duration: 0.3s;
 	    animation-duration: 0.3s;

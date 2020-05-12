@@ -6,7 +6,7 @@
 			<!-- #endif -->
 			<view class="nav-content">
 				<text class="iconfont icon-address cr" ></text>
-				<view >无锡</view>
+				<view class="cityName ellipsis">无锡无锡无锡无锡</view>
 				<view class="search-line">
 					<icon type="search" size="20" class="icon" />
 					<input type="text" v-model="keywords" @confirm='search' placeholder="寻找附近的商家"/>
@@ -581,5 +581,9 @@
 		.word-bottom>view{
 			display: inline-block;
 			vertical-align:-webkit-baseline-middle;
+		}
+		.cityName{
+			max-width: 120upx;
+			overflow: hidden;
 		}
 </style>

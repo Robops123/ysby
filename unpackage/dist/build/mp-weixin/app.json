@@ -1,0 +1,104 @@
+{
+  "pages": [
+    "pages/tabBar/index",
+    "pages/index/searchResult",
+    "pages/index/goodsCategory",
+    "pages/index/goodsList",
+    "pages/test",
+    "pages/index/goodsDetail",
+    "pages/index/goodsComments",
+    "pages/index/createOrder",
+    "pages/index/cashier",
+    "pages/index/payResult",
+    "pages/index/orderDetail",
+    "pages/drawback/chooseWay",
+    "pages/drawback/goodsBack",
+    "pages/drawback/moneyBack",
+    "pages/drawback/afterSale",
+    "pages/tabBar/discover",
+    "pages/bussiness/shopPreview",
+    "pages/tabBar/businessCollege",
+    "pages/index/articleDetail",
+    "pages/tabBar/cart",
+    "pages/tabBar/mine",
+    "pages/retail/retailCenter",
+    "pages/mine/help",
+    "pages/mine/viewHistoryf",
+    "pages/mine/viewHistorys",
+    "pages/retail/retailMoney",
+    "pages/retail/retailOrder",
+    "pages/retail/withdrawDetail",
+    "pages/retail/myTeam",
+    "pages/login/loginMobile",
+    "pages/login/loginPsd",
+    "pages/login/loginVeri",
+    "pages/mine/goods",
+    "pages/mine/shop",
+    "pages/mine/myOrder",
+    "pages/mine/addressList",
+    "pages/mine/addressChange",
+    "pages/mine/myOrderDetail",
+    "pages/mine/comment",
+    "pages/mine/settings",
+    "pages/mine/personal",
+    "pages/mine/account",
+    "pages/mine/password",
+    "pages/tabBar2/tabMain",
+    "pages/tabBar2/operating/orderList",
+    "pages/tabBar2/operating/orderDetail",
+    "pages/tabBar2/operating/setting",
+    "pages/tabBar2/operating/goods",
+    "pages/tabBar2/operating/editGoods"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#ff6a70",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/index",
+        "iconPath": "/static/img/pic/tab/icon1.png",
+        "selectedIconPath": "/static/img/pic/tab/icon1_se.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabBar/discover",
+        "iconPath": "/static/img/pic/tab/icon2.png",
+        "selectedIconPath": "/static/img/pic/tab/icon2_se.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/tabBar/businessCollege",
+        "iconPath": "/static/img/pic/tab/icon5.png",
+        "selectedIconPath": "/static/img/pic/tab/icon5_se.png",
+        "text": "商学院"
+      },
+      {
+        "pagePath": "pages/tabBar/cart",
+        "iconPath": "/static/img/pic/tab/icon4.png",
+        "selectedIconPath": "/static/img/pic/tab/icon4_se.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/tabBar/mine",
+        "iconPath": "/static/img/pic/tab/icon3.png",
+        "selectedIconPath": "/static/img/pic/tab/icon3_se.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "哈哈哈"
+    }
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

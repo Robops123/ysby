@@ -81,6 +81,12 @@
 					   }
 					},
 					{
+					    "path": "pages/index/createCartOrder",
+					    "style": {
+					       "navigationBarTitleText": "创建订单"
+					   }
+					},
+					{
 					    "path": "pages/index/cashier",
 					    "style": {
 					       "navigationBarTitleText": "收银台"
@@ -196,6 +202,12 @@
 				    }
 				},
 				{
+				    "path": "pages/mine/help",
+				    "style": {
+						"navigationBarTitleText": "帮助中心"
+				    }
+				},
+				{
 				    "path": "pages/mine/viewHistoryf",
 				    "style": {
 						"navigationBarTitleText": "浏览足迹"
@@ -218,7 +230,7 @@
 				{
 				    "path": "pages/retail/retailMoney",
 				    "style": {
-						"navigationStyle": "custom"
+						"navigationBarTitleText": "代理佣金"
 				    }
 				},
 				// #endif 

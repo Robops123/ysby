@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "搜索结果",
+  "usingComponents": {
+    "uni-rate": "/components/uni-rate/uni-rate",
+    "uni-load-more": "/components/uni-load-more/uni-load-more",
+    "uni-status-bar": "/components/uni-status-bar/uni-status-bar"
+  }
+}

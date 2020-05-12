@@ -6,7 +6,7 @@
 				<text class="iconfont icon-previewleft " @click="back"></text>
 				<!-- #endif -->
 				<view class="search-line">
-					<input type="text" v-model="keyword" placeholder="寻找附近的商家" @confim='getList'/>
+					<input type="text" v-model="keyword" placeholder="寻找附近的商家" @confirm='search'/>
 				</view>
 				<view class="comment">
 					<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
@@ -17,9 +17,9 @@
 		
 		<view class="main">
 			<view class="nav-bar">
-				<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>全部</text></view>
-				<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>销量</text></view>
-				<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)">
+				<view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view>
+				<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>销量</text></view>
+				<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)">
 					<text>价格</text>
 					<view class="range s3">
 						<text class="icon-arrowup iconfont" :class="{active:rangeActive==1}"></text>
@@ -31,27 +31,28 @@
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 				<view class="padding">
 					<view class="list" v-for="(item,index) in dataList" :key='index'>
-						<view v-if="item.isgoods" @click="toDetail(item.id)">
+						<view v-if="item.isgoods==1" @click="toDetail(item.id)">
 							<image :src="item.thumb" mode=""></image>
 								<view class="info">
 									<view class="s2 title">
 										{{item.title}}
 									</view>
-									<view class="bottom-content cr s5"><text class="s1">￥</text>{{item.price}}</view>
+									<view class="bottom-content cr s5"><text class="s1">￥</text>{{item.marketprice}}</view>
 									<view class="buy">
 										<image src="../../static/img/pic/cart.png" mode="" @click.stop="addCollect(item.id)"></image>
 									</view>
 								</view>
 						</view>
-						<view v-else>
-							<image :src="item.thumb" mode="" class="headface"></image>
+						<view v-else class="merch">
+							<image :src="item.logo" mode="" class="headface"></image>
 							<view class="md">
-								<view class="s3 merchname">{{item.title}}</view>
+								<view class="s3 merchname">{{item.merchname}}</view>
 								<view class="tw">
 									<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
 									<text class="s3 cg">{{item.collect}}人关注 </text>
 								</view>
 							</view>
+							<view class="enter-button" @click="toShop(item.id)">进店</view>
 						</view>
 					</view>
 				</view>
@@ -76,7 +77,7 @@
 				uid:'',
 				token:'',
 				keyword:'',
-				active:1,
+				active:0,
 				rangeActive:'',
 				sh:'',
 				dataList:[],
@@ -109,8 +110,8 @@
 			   	that.uid=userInfo2.uid
 			   	that.token=userInfo2.token
 			   })
-			   this.keyword=p.keywords
-			   this.getList()
+			   this.keyword=p.keyword
+			   this.getPosition()
 			   setTimeout(function(){
 			   	that.$getHeight('#sv',(res) =>{
 			   		that.sh=res
@@ -137,6 +138,11 @@
 					url:`/pages/index/goodsDetail?id=${id}`
 				})
 			},
+			toShop(id){
+				uni.navigateTo({
+					url:`/pages/bussiness/shopPreview?id=${id}`
+				})
+			},
 			addCollect(id){
 				var ce=this.$operateInterceptor(this.logined)
 				if(!ce){
@@ -157,10 +163,9 @@
 			reset(){
 				this.page=1
 				this.total=0
-				this.keyword=''
 				this.dataList=[]
 				this.more=''
-				if(this.active!=3){
+				if(this.active!=2){
 					this.rangeActive=''
 				}else{
 					this.rangeActive= this.rangeActive == 1 ? 2:1
@@ -173,15 +178,21 @@
 				  pagesize: this.pageSize,
 				  lng:this.lng,
 				  lat:this.lat,
-				  keywords:this.keyword
+				  keywords:this.keyword,
+				  type:this.active
+				}
+				if(this.rangeActive==1){
+					params.type=3
+				}else if(this.rangeActive==2){
+					params.type=2
 				}
 				if(this.page==1){
 					this.$loading()
 				}
 				  var url='&r=api.home.search'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.total
-					  that.dataList=that.dataList.concat(res.data)
+					  that.total=res.data.total
+					  that.dataList=that.dataList.concat(res.data.data)
 					  that.more=''
 					  if(that.page==1){
 					  	uni.hideLoading()
@@ -202,19 +213,31 @@
 			},
 			getPosition(){
 				var that=this
+				this.$loading()
 				uni.getLocation({
 					type: 'wgs84',
 					success:(res) =>{
+						console.log(res)
 						that.lng=res.longitude
 						that.lat=res.latitude
 						that.getList()
 					},
 					fail:(reason) =>{
+						console.log(reason)
+						that.reset()
 						that.lng=''
 						that.lat=''
 						that.getList()
+					},
+					complete:() =>{
+						uni.hideLoading()
 					}
 				})
+			},
+			search(){
+				this.active=0
+				this.reset()
+				this.getList()
 			}
 		}
 	}
@@ -306,15 +329,17 @@
 	
 	
 	.list{
-		margin-bottom: 20upx;
+		margin-bottom: 28upx;
 	}
-	.list>image,
-	.list .info
+	.list image,
+	.list .info,
+	.merch>image,
+	.merch>view
 	{
 		display: inline-block;
 		vertical-align: top;
 	}
-	.list>image{
+	.list image{
 		width: 280upx;
 		height: 280upx;
 		border-radius: 10px;
@@ -366,10 +391,10 @@
 	
 	
 	
-	.headface{
-		width: 120upx;
-		height: 120upx;
-		border-radius: 50%;
+	.list .headface{
+		width: 120upx ;
+		height: 120upx ;
+		border-radius: 50% ;
 		margin-right: 25upx;
 	}
 	.loading{
@@ -393,5 +418,13 @@
 		    display:-webkit-box;//一定要写
 		    -webkit-line-clamp: 2;//控制行数
 		    -webkit-box-orient: vertical;//一定要写
+	}
+	.enter-button{
+		color: #ff8f94;
+		border: 2px solid #ff8f94;
+		padding: 10upx 15upx;
+		border-radius: 52upx;
+		float: right;
+		margin-top: 19upx;
 	}
 </style>

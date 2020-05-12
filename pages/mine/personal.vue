@@ -38,7 +38,7 @@
 			<view class="option-item" @click="openPicker">
 				<text>常居地</text>
 				<text class="f1 fr"><text style="padding-right: 20upx;">
-				{{this.data.province}} {{this.data.city}} 
+				{{data.province}} {{data.city}} 
 				</text>
 				<text class="icon-arrow-right iconfont"></text>
 				</text>

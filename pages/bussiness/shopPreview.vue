@@ -2,7 +2,9 @@
 	<view>
 		<view class="top-nav padding">
 			<view class="nav-content">
+				<!-- #ifdef APP-PLUS -->
 				<text class="iconfont icon-previewleft " @click="back"></text>
+				<!-- #endif -->
 				<view class="search-line">
 					<input type="text" v-model="keywords" placeholder="寻找附近的商家" @confirm='search'/>
 				</view>
@@ -49,7 +51,7 @@
 		<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 			<view class="padding" style="background-color:#fff;">
 				<view class="box">
-					<view class="list" v-for="(item,index) in dataList" :key='index'>
+					<view class="list" v-for="(item,index) in dataList" :key='index' @click="toGoodsDetail(item.id)">
 						<image :src="item.thumb" mode=""></image>
 						<view class="word">
 							<view class="s3 ellipsis">{{item.title}}</view>
@@ -127,6 +129,11 @@
 			},0)
 		},
 		methods:{
+			toGoodsDetail(goodsid){
+				uni.navigateTo({
+					url:'goodsDetail?id='+goodsid
+				})
+			},
 			share(){
 				console.log('share')
 			},

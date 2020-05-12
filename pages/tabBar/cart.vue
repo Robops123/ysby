@@ -347,7 +347,18 @@
 				  })
 			},
 			getChecked(){
-				
+				var that=this
+				var selectedGoods=[]
+				this.dataList.forEach((item) =>{
+					item.goods.forEach((item2) =>{
+						if(item2.checked){
+							selectedGoods.push(item2)
+						}
+					})
+				})
+				uni.navigateTo({
+					url:'../index/createCartOrder?selectedGoods='+JSON.stringify(selectedGoods)
+				})
 			}
 		}
 	}

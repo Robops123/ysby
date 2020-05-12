@@ -152,6 +152,7 @@
 				this.more='loading'
 			  // setTimeout(function(){
 				  that.page++
+				  this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
 				  that.getList(that.page)
 			  // },2000)
 			},

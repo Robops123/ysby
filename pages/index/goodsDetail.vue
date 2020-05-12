@@ -103,16 +103,25 @@
 			 <view class="popup animated slideInUp">
 				 <view class="cr s5">分享给好友</view>
 				 <view class="padding">
-					 <view class="share-item" v-for="(item,index) in providerList" :key='index'>
-						 <image src="../../static/img/bg/activity.png" mode="" @tap="share(item)"></image>
-						 <view class="">{{item.name}}</view>
+					 <!-- #ifdef APP-PLUS -->
+					 <view class="share-item" v-for="(item,index) in providerList" :key='index' @tap="share(item)">
+					 						 <image src="../../static/img/pic/other/weixin.png" mode="" v-if="item.name=='微信'"></image>
+											 <image src="../../static/img/pic/other/pyq.png" mode="" v-if="item.name=='朋友圈'"></image>
+					 						 <view class="">{{item.name}}</view>
 					 </view>
+					 <!-- #endif -->
+					 <!-- #ifdef MP-WEIXIN -->
+						<button class="share-item share-btn" open-type="share">
+											<image src="../../static/img/pic/other/weixin.png" mode="" ></image>
+												 <view class="">微信</view>
+						</button>
+					 <!-- #endif -->
 					 <!-- <view class="share-item">
 					 						 <image src="../../static/img/bg/activity.png" mode=""></image>
 					 						 <view class="">微信</view>
 					 </view> -->
 					 <view class="share-item">
-					 						 <image src="../../static/img/bg/activity.png" mode=""></image>
+					 						 <image src="../../static/img/pic/other/post.png" mode=""></image>
 					 						 <view class="">生成海报</view>
 					 </view>
 				 </view>
@@ -141,6 +150,8 @@
 		},
 		data () {
 		      return {
+				  image:'',
+				  path:'',
 				  logined:false,
 				  popshow:false,
 				  uid:'',
@@ -204,6 +215,13 @@
 					that.token=userInfo2.token
 					that.getDetail()
 				})
+			},
+			onShareAppMessage() {
+				return {
+					title: "小美女小帅哥快来买啊",
+					path: '/pages/index/goodsDetail?id='+this.id,
+					imageUrl:this.image ? this.image : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
+				}
 			},
 		    methods: {
 				toGoodsDetail(goodsid,merchid){
@@ -689,6 +707,7 @@
 	}
 	.share-item{
 		display: inline-block;
+		vertical-align: middle;
 		width: 33%;
 		padding-bottom: 30upx;
 		border-bottom: 1px solid #efefef;
@@ -735,5 +754,15 @@
 		height: 360upx;
 		box-sizing: border-box;
 	}
-	
+	.share-btn{
+		outline: none;
+		background-color: initial;
+		color: initial;
+		line-height: initial;
+		vertical-align: middle;
+		font-size: 14px;
+	}
+	.share-btn::after{
+		display: none;
+	}
 </style>
