@@ -1,20 +1,20 @@
 <template>
 	<view>
 		<view class="distributionOrder" >
-			<view class="distributionOrder-title">累计金额:+23.20元</view>
+			<view class="distributionOrder-title">累计金额:+{{totalCommission}}元</view>
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
-				<view class="distributionOrder-card"  v-for='(item,index) in dataList' :key='index' @click="to('myTeam')">
-					<image class="distributionOrder-card-img" src="" mode=""></image>
-					<view class="distributionOrder-card-title">中达花无缺</view>
+				<view class="distributionOrder-card"  v-for='(item,index) in dataList' :key='index' >
+					<image class="distributionOrder-card-img" :src="item.avatar" mode=""></image>
+					<view class="distributionOrder-card-title">{{item.nickname}}</view>
 					<view class="distributionOrder-card-zhuangtai cr">已完成</view>
 					<view style="clear: both;"></view>
-					<view class="distributionOrder-card-code">订单编号:DFGHH5588644592148956</view>
-					<view class="distributionOrder-card-code distributionOrder-card-codes">下单时间：2020-02-11 12:12</view>
+					<view class="distributionOrder-card-code">订单编号:{{item.orderno}}</view>
+					<view class="distributionOrder-card-code distributionOrder-card-codes">下单时间：{{item.createtime}}</view>
 					<view class="distributionOrder-card-bot">
 							<text class="distributionOrder-card-bot-tishi">订单金额:</text>
-							<text class="distributionOrder-card-bot-price">12.20</text>
+							<text class="distributionOrder-card-bot-price">{{item.orderprice}}</text>
 							<text class="distributionOrder-card-bot-tishi margin-left">获得佣金:+</text>
-							<text class="distributionOrder-card-bot-price">12.20</text>
+							<text class="distributionOrder-card-bot-price">{{item.commission}}</text>
 					</view>
 				</view>
 				<uni-load-more :status="more"></uni-load-more>
@@ -31,10 +31,13 @@
 		},
 		data() {
 			return {
+				uid:'',
+				token:'',
 				active:1,
 				tabActive:0,
 				sh:'',
 				dataList:[],
+				totalCommission:'',
 				page:1,
 				pageSize:20,
 				total:0,
@@ -47,13 +50,18 @@
 		     },
 		   },
 		   mounted(){
-		   	var that=this
-		   	this.getList(this.page)
-		   	setTimeout(function(){
-		   		that.$getHeight('#sv',(res) =>{
-		   			that.sh=res
-		   		})
-		   	},0)
+			   var that=this
+			   var userInfo=uni.getStorageSync('userInfo')
+			   if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+			   	this.uid=userInfo.uid
+			   	this.token=userInfo.token
+			   	this.getList(this.page)
+			   }
+			   setTimeout(function(){
+			   	that.$getHeight('#sv',(res) =>{
+			   		that.sh=res
+			   	})
+			   },0)
 		   },
 		methods: {
 			distributionOrderdetail(){
@@ -89,15 +97,18 @@
 				var that=this
 				var params={
 				  page:p,
-				  pagesize: this.pageSize
+				  pagesize: this.pageSize,
+				  uid:this.uid,
+				  token:this.token
 				}
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
+				  var url='&r=api.member.agent.order'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
+					  that.totalCommission=res.totalCommission
 					  that.more=''
 					  if(that.page==1){
 					  	uni.hideLoading()

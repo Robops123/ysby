@@ -8,6 +8,7 @@
     "pages/index/goodsDetail",
     "pages/index/goodsComments",
     "pages/index/createOrder",
+    "pages/index/createCartOrder",
     "pages/index/cashier",
     "pages/index/payResult",
     "pages/index/orderDetail",

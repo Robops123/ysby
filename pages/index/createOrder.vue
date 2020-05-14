@@ -96,7 +96,7 @@
 				return this.form.amount<=1
 			},
 			disabled2(){
-				return this.form.amount>=this.total
+				return (this.form.amount>=this.total) || (this.form.amount>49)
 			}
 		},
 		onLoad(e){
@@ -113,10 +113,10 @@
 			// this.form.merchid=e.merchId 
 			this.form.goodsid=e.goodsId
 			this.goodsName=e.goodsName
-			this.total=choosedSpec.stock
-			this.form.amount=choosedSpec.selectNum
-			this.form.specifications=choosedSpec.selectArr
-			this.form.goodsprice=choosedSpec.marketPrice
+			this.total=choosedSpec.stock || e.total
+			this.form.amount=choosedSpec.selectNum || 1
+			this.form.specifications=choosedSpec.selectArr || ''
+			this.form.goodsprice=choosedSpec.marketPrice || e.marketprice
 		},
 		methods:{
 			minus(){

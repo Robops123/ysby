@@ -1,21 +1,25 @@
 <template>
 	<view style="background: white;">
-		<view class="tip">预计佣金:+50元</view>
+		<view class="tip">预计佣金:+{{totalCommission || 0}}元</view>
 		<view  class="nav-bar">
-			<view :class="{active:active==1}" @click="toggleNav(1)">所有</view>
-			<view :class="{active:active==2}" @click="toggleNav(2)">待审核</view>
-			<view :class="{active:active==3}" @click="toggleNav(3)">已打款</view>
-			<view :class="{active:active==4}" @click="toggleNav(4)">无效</view>
+			<view :class="{active:active==0}" @click="toggleNav(0)">所有</view>
+			<view :class="{active:active==1}" @click="toggleNav(1)">待审核</view>
+			<view :class="{active:active==3}" @click="toggleNav(3)">未打款</view>
+			<view :class="{active:active==4}" @click="toggleNav(4)">已打款</view>
+			<view :class="{active:active==2}" @click="toggleNav(2)">无效</view>
 		</view>
 		<scroll-view scroll-y id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 			<view class="list-item s2" v-for='(item,index) in dataList' :key='index'>
 				<view>
-					<text>提现到银行卡</text>
-					<text class="fr">+10.00</text>
+					<text>{{item.paytype==1 ? '提现到微信钱包':'提现到银行卡'}}</text>
+					<text class="fr">+{{item.commission}}</text>
 				</view>
 				<view>
-					<text class="sm-gray">2019-10-25 09:44</text>
-					<text class="fr">已打款</text>
+					<text class="sm-gray">{{item.createtime}}</text>
+					<text class="fr" v-show='item.status=="1"'>待审核</text>
+					<text class="fr" v-show='item.status=="2"'>审核驳回</text>
+					<text class="fr" v-show='item.status=="3"'>未打款</text>
+					<text class="fr" v-show='item.status=="4"'>已打款</text>
 				</view>
 			</view>
 			
@@ -46,6 +50,9 @@
 		},
 		data() {
 			return {
+				uid:'',
+				totalCommission:'',
+				token:'',
 				active:1,
 				tabActive:0,
 				sh:'',
@@ -62,8 +69,13 @@
 		     },
 		   },
 		   mounted(){
-		   	var that=this
-		   	this.getList(this.page)
+			    	var that=this
+			   var userInfo=uni.getStorageSync('userInfo')
+			   if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+			   	this.uid=userInfo.uid
+			   	this.token=userInfo.token
+				this.getList(this.page)
+			   }
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
 		   			that.sh=res
@@ -86,14 +98,18 @@
 				var that=this
 				var params={
 				  page:p,
-				  pagesize: this.pageSize
+				  pagesize: this.pageSize,
+				  uid:this.uid,
+				  token:this.token,
+				  status:this.active
 				}
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='/wangtosale_list'
+				  var url='&r=api.member.commission.detail'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.allnum
+					  that.total=res.total
+					  that.totalCommission=res.totalCommission
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
 					  if(that.page==1){

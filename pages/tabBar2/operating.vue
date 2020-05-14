@@ -104,6 +104,10 @@
 				})
 			},
 			toSetting(){
+				var that=this
+				uni.$on('updateOperating',function(){
+					that.getWorkBench()
+				})
 				uni.navigateTo({
 					url:'./operating/setting'
 				})

@@ -31,18 +31,18 @@
 									</view>
 								</view>
 							</view>
-							<view class="specification-item">
+							<view class="specification-item" v-if="stock && (choosedid!='')">
 								<view class="item-title">数量</view>
 								<view class="item-wrapper">
-									<stepper size="small" :min="1" :max="stock" v-if="stock" :defaultValue="selectNum"  @change="changeNum"></stepper>
+									<stepper size="small" :min="1" :max="stock"  :defaultValue="selectNum"  @change="changeNum"></stepper>
 								</view>
 							</view>
 						</view>
 					</scroll-view>
 					<view class="close" @tap="closeSf"><image class="close-item" src="../static/close.png"></image></view>
 				</view>
-				<view class="btn-wrapper"><button class="sure" :class="{disabedbtn:stock==0 || stock==NaN || stock==null || marketPrice==0}"
-				 @click="confirmChoose" :disabled="stock==0 || stock==null || stock==NaN || marketPrice==0">确定</button></view>
+				<view class="btn-wrapper"><button class="sure" :class="{disabedbtn:stock==0 || stock==NaN || stock==null || marketPrice==0 || choosedid==''}"
+				 @click="confirmChoose" :disabled="stock==0 || stock==null || stock==NaN || marketPrice==0 || choosedid==''">确定</button></view>
 			</view>
 		</view>
 	</view>
@@ -100,6 +100,7 @@
 		methods: {
 			skuClick(value, index1, index2) {
 				var that=this
+				
 				this.selectNum=1
 				this.categorys[index1].item.map((item,index) =>{
 					if(index==index2){

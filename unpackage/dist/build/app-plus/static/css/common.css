@@ -1,0 +1,197 @@
+	page {
+		font-size: 32upx;
+	}
+
+	.padding {
+		padding: 20upx 30upx;
+		box-sizing: border-box;
+	}
+
+	uni-icon {
+		vertical-align: middle;
+	}
+	.right-arrow{
+		display: inline-block;
+		/* vertical-align: top; */
+		margin-left: 20upx;
+		width: 20upx !important;
+		height: 30upx !important;
+	}
+	.down-arrow{
+		display: inline-block;
+		/* vertical-align: top; */
+		margin-left: 20upx;
+		width: 30upx !important;
+		height: 20upx !important;
+	}
+	.search-img{
+		width: 40upx !important;
+		height: 40upx !important;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.dots-img{
+		width: 44upx !important;
+		height: 12upx !important;
+		display: inline-block !important;
+		vertical-align: middle !important;
+		
+	}
+	.pre-img{
+		width: 30upx !important;
+		height: 40upx !important;
+		display: inline-block;
+		vertical-align: bottom;
+		margin-right: 15upx;
+	}
+	.pre-img2{
+		width: 50upx !important;
+		height: 40upx !important;
+	}
+	.setting-img{
+		width: 40upx !important;
+		height: 40upx !important;
+	}
+
+
+	/* 字体大小 */
+	.s1 {
+		font-size: 28upx;
+	}
+
+	.s2 {
+		font-size: 24upx;
+	}
+
+	.s3 {
+		font-size: 26upx;
+	}
+
+	.s4 {
+		font-size: 40upx;
+	}
+
+	.s5 {
+		font-size: 36upx;
+	}
+	.s6{
+		font-size: 32upx;
+	}
+	.s7{
+		font-size: 50upx;
+	}
+	.s8{
+		font-size: 30upx;
+	}
+
+
+	/* 字体颜色 */
+	.cr {
+		color: #ff6d7e;
+		font-weight: bold;
+	}
+
+	.cg {
+		color: #808080;
+	}
+
+	.cb {
+		color: #6b6a69;
+	}
+	.cblue{
+		color: #2caeff;
+	}
+
+	.del {
+		text-decoration: line-through;
+	}
+
+
+	.ellipsis {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.fr {
+		float: right;
+	}
+	.fl{
+		float: left;
+	}
+	.vertical-middle{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.flex-between{
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	
+	
+	/* #ifdef H5 */
+	.r-cb .uni-checkbox-input {
+		border-radius: 50%;
+	}
+
+	.r-cb .uni-checkbox-input.uni-checkbox-input-checked {
+		border: 1px solid #ff4500;
+		background-color: #ff4500;
+		color: #fff !important;
+	}
+
+	.r-cb .uni-checkbox-input.uni-checkbox-input-checked::before {
+		font-size: 18px;
+	}
+
+	.r-cb:not([disabled]) .uni-checkbox-input:hover {
+		color: white;
+		border-color: #d1d1d1;
+	}
+
+	.r-cb uni-checkbox {
+		display: flex;
+	}
+
+	/* #endif */
+
+
+	/* #ifdef APP-PLUS || MP-WEIXIN */
+	.r-cb uni-checkbox .wx-checkbox-input {
+		border-radius: 50%;
+	}
+
+	.r-cb .wx-checkbox-input.wx-checkbox-input-checked {
+		border: 1px solid #ff4500;
+		background-color: #ff4500;
+		color: #fff !important;
+	}
+
+	.r-cb .wx-checkbox-input.wx-checkbox-input-checked::before {
+		font-size: 18px;
+	}
+
+	.r-cb:not([disabled]) .wx-checkbox-input:hover {
+		color: white;
+		border-color: #d1d1d1;
+	}
+
+	.r-cb wx-checkbox {
+		display: flex;
+	}
+
+	/* #endif */
+
+
+
+.nav-bar{
+	padding: 5upx 0 20upx;
+}
+
+input,
+textarea{
+	font-size: 30upx;
+}
+

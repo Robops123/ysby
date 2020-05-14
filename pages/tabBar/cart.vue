@@ -356,6 +356,10 @@
 						}
 					})
 				})
+				if(selectedGoods.length==0){
+					this.$msg('请选择要购买的商品')
+					return ;
+				}
 				uni.navigateTo({
 					url:'../index/createCartOrder?selectedGoods='+JSON.stringify(selectedGoods)
 				})

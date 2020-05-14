@@ -233,6 +233,7 @@
 					  this.$apiPost(url,params).then((res) =>{
 							that.$msg('修改成功')
 							uni.hideLoading()
+							uni.$emit('updateOperating')
 							setTimeout(function(){
 								that.getDetail()
 							},500)

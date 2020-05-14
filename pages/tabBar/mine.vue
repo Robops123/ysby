@@ -7,7 +7,7 @@
 				</view>
 				<view v-if="logined">
 					<image :src="data.avatar" mode="" class="headface" ></image>
-					<text class="s4"  @click="tologin"  >{{data.nickname}}</text>
+					<text class="s4"   >{{data.nickname}}</text>
 				</view>
 			</view>
 			<view class="s4" style="padding: 50upx 0;text-align: center;" @click="tologin" v-if='!logined'>请先登录</view>
@@ -72,7 +72,7 @@
 							<image src="../../static/img/pic/mine/icon11.png" mode=""></image>
 							<view>推广介绍</view>
 						</view>
-						<view class="item-list">
+						<view class="item-list" @click="showInvite">
 							<image src="../../static/img/pic/mine/icon12.png" mode=""></image>
 							<view>邀请人</view>
 						</view>
@@ -102,12 +102,27 @@
 		</view>
 		
 		
+		<!-- 邀请注册 -->
 		<s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
 		  <!-- 内容 -->
 		  <image src="../../static/img/bg/adv.png" mode=""></image>
 		  <view style="margin-top: 20upx;">
 			  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
 		  </view>
+		</s-popup>
+		
+		<!-- 邀请人 -->
+		<s-popup custom-class="demo-popup" position="center" v-model="visible2" customClass='advPopup'>
+		  <!-- 内容 -->
+			<view class="invite-container">
+				<view class="invite-title">请输入邀请码</view>
+				<view>
+					<input type="text" v-model="invite_code" placeholder="请输入邀请码"/>
+				</view>
+				<view style="margin-top: 20upx;">
+							  <button class="adv-btn adv-btn2" @click="saveImg(advImg)">提交</button>
+				</view>
+			</view>
 		</s-popup>
 	</view>
 </template>
@@ -123,7 +138,9 @@
 				data:'',
 				logined:false,
 				  visible: false,
+				  visible2:false,
 				  advImg:'',
+				  invite_code:''
 			}
 		},
 		onShow(){
@@ -230,6 +247,9 @@
 			},
 			showAdv(){
 				this.visible=true
+			},
+			showInvite(){
+				this.visible2=true
 			},
 			saveImg(url){
 				var that=this
@@ -359,5 +379,20 @@
 			text-align: center;
 			margin-bottom: 20upx;
 			font-size: 12px;
+		}
+		
+		.invite-container{
+			padding: 30upx;
+		}
+		.invite-title{
+			font-size: 18px;
+			margin-bottom: 30upx;
+		}
+		.invite-container input{
+			padding: 10upx 0;
+			border-bottom: 1px solid #e9e9e9;
+		}
+		.adv-btn2{
+			margin-top: 50upx;
 		}
 </style>

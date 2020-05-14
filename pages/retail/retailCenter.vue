@@ -14,12 +14,12 @@
 		</view>
 		<view class="tixian">
 			<view class="tixian-success">
-				<view class="tixian-success-num">0.00</view>
+				<view class="tixian-success-num">{{data.doneCommission}}</view>
 				<view class="tixian-success-txt">成功提现金额(元)</view>
 			</view>
 			<view class="tixian-ke">
 				<view class="tixian-ke-left">
-					<view class="tixian-success-num">0.00</view>
+					<view class="tixian-success-num">{{data.canCommission}}</view>
 					<view class="tixian-success-txt">可提现金额(元)</view>
 				</view>
 				<view class="tixian-ke-right">推荐提现</view>
@@ -30,25 +30,25 @@
 				<image class="distribution-info-card-img" src="../../static/img/pic/proxy/icon3.png" mode=""></image>
 				<view class="distribution-info-card-right">
 					<view class="distribution-info-card-right-top">代理佣金</view>
-					<view class="distribution-info-card-right-bot">0.00 元</view>
+					<view class="distribution-info-card-right-bot">{{data.commission}} 元</view>
 				</view>
 			</view><view class="distribution-info-card distribution-info-cards" @click="to('retailOrder')">
 				<image class="distribution-info-card-img" src="../../static/img/pic/proxy/icon2.png" mode=""></image>
 				<view class="distribution-info-card-right">
 					<view class="distribution-info-card-right-top">代理订单</view>
-					<view class="distribution-info-card-right-bot">0 笔</view>
+					<view class="distribution-info-card-right-bot">{{data.xxx || 0}} 笔</view>
 				</view>
 			</view><view class="distribution-info-card" @click="to('withdrawDetail')">
 				<image class="distribution-info-card-img" src="../../static/img/pic/proxy/icon5.png" mode=""></image>
 				<view class="distribution-info-card-right">
 					<view class="distribution-info-card-right-top">提现明细</view>
-					<view class="distribution-info-card-right-bot">0 人</view>
+					<view class="distribution-info-card-right-bot">{{data.withdrawalAmount}} 笔</view>
 				</view>
 			</view><view class="distribution-info-card distribution-info-cards" @click="to('myTeam')">
 				<image class="distribution-info-card-img" src="../../static/img/pic/proxy/icon6.png" mode=""></image>
 				<view class="distribution-info-card-right">
 					<view class="distribution-info-card-right-top">我的团队</view>
-					<view class="distribution-info-card-right-bot">0 人</view>
+					<view class="distribution-info-card-right-bot">{{data.teamAmount}} 人</view>
 				</view>
 			</view>
 		</view>

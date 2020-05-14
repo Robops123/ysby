@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="padding-bottom: 50px;">
 		<view class="padding top border-bottom">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
 			<swiper class="preview" autoplay="false" duration="500" interval="3000" >
@@ -20,7 +20,8 @@
 		
 		<view class="padding s2 border-bottom" @click="chooseCategory">
 			<text class="cg" style="margin-right: 30upx;">选择</text>
-			<text>{{choosedSpec!='' ? choosedSpec.selectArr:'选择 颜色分类'}}</text>
+			<text v-show="needCategory">{{choosedSpec!='' ? choosedSpec.selectArr:'选择 颜色分类'}}</text>
+			<text v-show="!needCategory">暂无规格可选</text>
 			<text class="fr icon-arrow-right iconfont cg"></text>
 		</view>
 		
@@ -92,7 +93,7 @@
 		
 		
 		<uni-goods-nav :fill="true"  :options="options" :buttonGroup="buttonGroup" 
-		 @click="onClick" @buttonClick="buttonClick" />
+		 @click="onClick" @buttonClick="buttonClick" class="goods-nav animated slideInUp" v-show="!hideNav"/>
 		 
 		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='thumb_url[1]'
 		 :category='category' :total='total' v-if="receivedCategory" :goodsid='id'></sku>
@@ -151,6 +152,7 @@
 		data () {
 		      return {
 				  image:'',
+				  hideNav:true,
 				  path:'',
 				  logined:false,
 				  popshow:false,
@@ -163,6 +165,7 @@
 				  category:[],
 				  total:'',
 				  receivedCategory:false,
+				  needCategory:false,
 				  choosedSpec:'',
 		        options: [{
 		          icon: 'icon-kefu',
@@ -223,6 +226,13 @@
 					imageUrl:this.image ? this.image : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
 				}
 			},
+			onPageScroll(e){
+				if(e.scrollTop==0){
+					this.hideNav=true
+				}else{
+					this.hideNav=false
+				}
+			},
 		    methods: {
 				toGoodsDetail(goodsid,merchid){
 					uni.navigateTo({
@@ -230,7 +240,6 @@
 					})
 				},
 		      onClick (e) {
-				  console.log(e)
 				  if(e.index==0){
 					  // 客服
 				  }else if(e.index==1){
@@ -278,12 +287,17 @@
 				  if(!ce){
 				  	return ;
 				  }
-				  if(this.choosedSpec.choosedid=='' || this.choosedSpec.choosedid==undefined || this.choosedSpec.choosedid==null){
+				  if((this.choosedSpec.choosedid=='' || this.choosedSpec.choosedid==undefined || this.choosedSpec.choosedid==null) & this.needCategory){
 				  	this.chooseCategory()
 				  	return ;
 				  }
+				  if(this.total==null || this.total==0){
+					  this.$msg('该商品已卖完')
+					  return ;
+				  }
 				  uni.navigateTo({
-				  	url:'./createOrder?goodsId='+this.id+'&merchId='+this.data.merchid+'&choosedSpec='+JSON.stringify(this.choosedSpec)+'&goodsName='+this.data.title
+				  	url:'./createOrder?goodsId='+this.id+'&merchId='+this.data.merchid
+					+'&choosedSpec='+JSON.stringify(this.choosedSpec)+'&goodsName='+this.data.title+'&total='+this.total+'&marketprice='+this.data.marketprice
 				  })
 			  },
 			  // 购物车数量
@@ -341,7 +355,9 @@
 				    })
 			  },
 			  chooseCategory(){
-				  this.$refs.sku.specClass='show'
+				  if(this.needCategory){
+					  this.$refs.sku.specClass='show'
+				  }
 			  },
 			  openShare(){
 				  this.popshow=true
@@ -376,14 +392,16 @@
 				  var that=this
 				  var url='&r=api.goods.detail.sku&goodsid='+this.id
 				    this.$apiPost(url).then((res) =>{
-						if(res.data!=''){
 							that.category=res.data
 							that.total=res.stock
+							if(res.resultMessage=='暂无数据'){
+								that.needCategory=false
+							}else{
+								that.needCategory=true
+							}
 							that.$nextTick(function(){
 								that.receivedCategory=true
 							})
-						}
-				  		
 				    })
 			  },
 			  completeSpecChoose(e){
@@ -764,5 +782,14 @@
 	}
 	.share-btn::after{
 		display: none;
+	}
+	.goods-nav{
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		z-index: 3;
+	}
+	.bottom-nav{
+		position: relative;
 	}
 </style>

@@ -202,16 +202,19 @@
 		/* justify-content: space-around; */
 		align-items: center;
 	}
+	.top-nav .iconfont{
+		font-size: 27px;
+	}
 	
 	.nav-bar{
 		position: absolute;
 		left: 70px;
 		right: 70px;
+		font-size: 16px;
 		/* #ifdef APP-PLUS */
 			top: var(--status-bar-height);
-			padding: 0 0 20upx;
+			padding: 10upx 0 20upx;
 		/* #endif */
-		
 		text-align: center;
 	}
 	.nav{
@@ -238,14 +241,14 @@
 	.content{
 		background-color: #f7f7f7;
 		position: absolute;
-		padding-top: 128upx;
+		padding-top: 80upx;
 		/* #ifdef MP-WEIXIN */
 		padding-top: 32upx;
 		/* #endif */
 		top: 0;
 		left: 0;
 		right: 0;
-		bottom: -72upx;
+		bottom: 0;
 		display: flex;
 		margin-top: var(--status-bar-height);
 	}
@@ -274,6 +277,7 @@
 	.right-scroll .banner{
 		width: 100%;
 		height: 240upx;
+		margin-top: 20upx;
 	}
 	.right-scroll .headline{
 		margin: 25upx 0;

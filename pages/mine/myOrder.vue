@@ -24,7 +24,7 @@
 					
 					<view class="child-overall" >
 						<view class="child-overall-item"> 
-							<image src="../../static/img/bg/activity.png" mode=""></image>
+							<image :src="item.goodsPic" mode=""></image>
 							<view class="info">
 								<view class="s2 title">
 									{{item.goodsname}}
@@ -252,8 +252,8 @@
 		margin-right: 20upx;
 		border-radius: 17upx;
 	}
-	.child-overall-item .title{
-		width: 360upx;
+	.child-overall-item .info{
+		width: 320upx;
 		/* height: 64upx; */
 		overflow:hidden;//一定要写
 		    text-overflow: ellipsis;//超出省略号
@@ -288,6 +288,7 @@
 		margin-top: 15upx;
 	}
 	.mount{
+		flex: 1;
 		margin-left: 15upx;
 		text-align: right;
 		padding-top: 20upx;
@@ -324,6 +325,7 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
+		white-space: nowrap;
 	}
 	
 	.overall-title{

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="option-box">
+		<view class="option-box" v-if="logined">
 			<view class="option-item" @click="to('personal')">
 				<text>个人资料</text>
 				<text class="f1 fr"><text class="icon-arrow-right iconfont"></text></text>

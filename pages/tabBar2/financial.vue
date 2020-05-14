@@ -12,7 +12,7 @@
 		</view>
 		
 		<view style="width: 100%;">
-			<view class="nav-bar">
+			<view class="nav-bar finicial-tab">
 				<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>累计订单</text></view>
 				<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>产品出售量</text></view>
 				<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>店铺资金</text></view>
@@ -227,11 +227,13 @@
 		padding: 20upx 0;
 		background-color: #fff;
 	}
+	.finicial-tab .nav{
+		display: inline-block !important;
+		width: 33% !important;
+	}
 	.nav{
 		white-space: nowrap;
 		color: #afafaf;
-		display: inline-block;
-		width: 33% !important;
 		text-align: center;
 		box-sizing: border-box;
 	}

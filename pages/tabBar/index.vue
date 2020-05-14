@@ -30,7 +30,7 @@
 				<text class="s1 cr title">公告</text>
 				  <swiper class="swiper content s2 cg ellipsis" vertical="true" autoplay="false" duration="500" interval="5000" >
 				    <swiper-item v-for="(item, index) in noticeList" :key="index">
-				     <view ><icon type="" class="iconfont icon-tubiao-1" size="12"/>{{item.title}}</view>
+				     <view ><icon type="" class="iconfont icon-tubiao-1" size="12" style="vertical-align: middle;"/>{{item.title}}</view>
 				    </swiper-item>
 				   </swiper>
 				<!-- <view class="s2 cg content ellipsis">中企商会酒店APP将于今年4月全新asdasd上线，敬请期待！</view> -->

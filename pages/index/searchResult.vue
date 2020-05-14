@@ -259,6 +259,9 @@
 		justify-content: space-around; */
 		
 	}
+	.top-nav .iconfont{
+		font-size: 27px;
+	}
 	 .nav-content{
 		display: flex;
 		align-items: center;
@@ -284,8 +287,10 @@
 		margin-left: 10upx;
 	}
 	.main{
-		padding-top: 96upx;
+		padding-top: 80upx;
+		/* #ifdef APP-PLUS */
 		margin-top: var(--status-bar-height);
+		/* #endif */
 	}
 	
 	.nav-bar{

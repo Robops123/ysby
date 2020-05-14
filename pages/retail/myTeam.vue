@@ -1,9 +1,9 @@
 <template>
 	<view>
 		<view class="nav-bar">
-			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>一级(4)</text></view>
-			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>二级(4)</text></view>
-			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>三级(4)</text></view>
+			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>一级({{total1 || 0}})</text></view>
+			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>二级({{total2 || 0}})</text></view>
+			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>三级({{total3 || 0}})</text></view>
 		</view>
 		
 		<view class="distributionOrder" >
@@ -14,14 +14,14 @@
 						<view>{{item.nickname}}</view>
 						<view class="s3 cg">注册时间:{{item.createtime}}</view>
 					</view>
-					<view class="distributionOrder-card-zhuangtai ">推广2人</view>
+					<view class="distributionOrder-card-zhuangtai ">推广{{item.promotetotal}}人</view>
 					<view style="clear: both;"></view>
 					<!-- <view class="distributionOrder-card-code">订单编号:DFGHH5588644592148956</view>
 					<view class="distributionOrder-card-code distributionOrder-card-codes">下单时间：2020-02-11 12:12</view> -->
 					<view class="distributionOrder-card-bot">
-							<text class="distributionOrder-card-bot-tishi">消费0.00元</text>
+							<text class="distributionOrder-card-bot-tishi">消费{{item.consumetotal}}元</text>
 							<text class="fr">
-								<text class="distributionOrder-card-bot-tishi margin-left">0个订单</text>
+								<text class="distributionOrder-card-bot-tishi margin-left">{{item.ordertotal}}个订单</text>
 							</text>
 					</view>
 				</view>
