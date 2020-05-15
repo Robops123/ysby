@@ -202,6 +202,12 @@
 				    }
 				},
 				{
+				    "path": "pages/mine/promotion",
+				    "style": {
+						"navigationBarTitleText": "推广介绍"
+				    }
+				},
+				{
 				    "path": "pages/mine/help",
 				    "style": {
 						"navigationBarTitleText": "帮助中心"

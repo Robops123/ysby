@@ -6,7 +6,9 @@
 			<view class="uni-list-cell">
 			    <view class="uni-list-cell-db">
 			        <picker @change="bindPickerChange" :value="index" :range="array">
-			            <view class="uni-input">{{array[index]}}∨</view>
+			            <view class="uni-input">{{array[index]}}
+						<text class="iconfont icon-arrowdown-copy"></text>
+						</view>
 			        </picker>
 			    </view>
 			</view>

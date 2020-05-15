@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C.\Users\Administrator\.gradle\caches\transforms-2\files-2.1\38f447d0eae4fbe375a7e171b2be4580:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38f447d0eae4fbe375a7e171b2be4580/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38f447d0eae4fbe375a7e171b2be4580/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38f447d0eae4fbe375a7e171b2be4580/jars/libs/AMap_Location_V4.2.0_20180809.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38f447d0eae4fbe375a7e171b2be4580/jars/libs/AMap_Search_V7.1.0_20191030.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38f447d0eae4fbe375a7e171b2be4580/jars/libs/Android_Map3D_SDK_V7.1.0_20191030.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

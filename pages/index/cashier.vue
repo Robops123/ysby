@@ -3,11 +3,11 @@
 		<view class=" margin">
 			<view class="border-bottom padding">
 				<text>订单编号</text>
-				<text class="fr">DSADAS232131231232331</text>
+				<text class="fr">{{orderno}}</text>
 			</view>
 			<view class="padding">
 				<text>订单金额</text>
-				<text class="fr cr">$45.00</text>
+				<text class="fr cr">￥{{money}}</text>
 			</view>
 		</view>
 		
@@ -31,6 +31,12 @@
 				</view>
 				</template>
 				<!-- #endif -->
+				<!-- 余额？ -->
+				<view class="padding">
+					<image src="" mode=""></image>
+					<text>余额支付</text>
+					<radio value='rest' class="fr" style="transform:scale(0.7)"/>
+				</view>
 			</radio-group>
 		</view>
 		
@@ -44,15 +50,28 @@
 	export default{
 		data(){
 			return {
+				uid:'',
+				token:'',
 				type:'',
 				platform:'',
+				contact:'',
+				money:'',
+				orderno:'',
 				loading: false,
-				price: 1,
+				price: 0.01,
 				providerList: []
 			}
 		},
-		mounted(){
+		onLoad(p){
 			this.platform=uni.getSystemInfoSync().platform
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+			}
+			this.contact=p.contact
+			this.orderno=p.orderId
+			this.money=p.money
 			this.getProviders()
 		},
 		methods:{
@@ -64,10 +83,15 @@
 			},
 			radioChange(e){
 				this.type=e.detail.value
+				if(this.type=='rest'){
+					this.restPay()
+				}else{
+					this.requestPayment(this.type)
+				}
 				// if(this.type=='wxpay'){
 				// 	this.weixinPay()
 				// }else{
-					this.requestPayment(this.type)
+					// 
 				// }
 			},
 			getProviders(){
@@ -235,6 +259,25 @@
 			        })
 			    })
 			},
+			restPay(){
+				this.$loading()
+				var that=this
+				var params={
+					uid:this.uid,
+					token:this.token,
+					orderno:this.orderno
+				}
+				var url='&r=api.member.order.pay'
+				  this.$apiPost(url,params).then((res) =>{
+					uni.hideLoading()
+					that.$msg('支付成功')
+					setTimeout(function(){
+						uni.redirectTo({
+							url:'./payResult?contact='+that.contact+'&money='+that.money+'&orderno='+that.orderno
+						})
+					},1000)
+				  })
+			}
 		}
 	}
 </script>

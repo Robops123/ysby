@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C.\Users\Administrator\.gradle\caches\transforms-2\files-2.1\98f24436426fbb881abdd0f26d183886:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/98f24436426fbb881abdd0f26d183886/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/98f24436426fbb881abdd0f26d183886/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/98f24436426fbb881abdd0f26d183886/jars/libs/liteavsdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

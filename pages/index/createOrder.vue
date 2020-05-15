@@ -52,7 +52,7 @@
 			</view>
 			<view>
 				<text>运费</text>
-				<text class='fr'>￥0.00</text>
+				<text class='fr'>￥{{freight || 0}}</text>
 			</view>
 		</view>
 		
@@ -61,7 +61,7 @@
 			<view class="bottom-right" style="text-align: right;">
 				<text class="s2 cg">共{{form.amount}}件,</text>
 				<text class="cg s1">合计:</text>
-				<text class="cr" style="font-size: 34upx;">￥{{form.goodsprice*form.amount}}</text>
+				<text class="cr" style="font-size: 34upx;">￥{{totalMoney}}</text>
 				<button type="warn" @click="createOrder">立即支付</button>
 			</view>
 		</view>
@@ -84,11 +84,13 @@
 					goodsprice:'',
 					// totalprice:''
 				},
+				freight:'',
 				address:'',
 				spec:'',
 				goodsImg:'',
 				goodsName:'',
 				total:'',
+				contact:{}
 			}
 		},
 		computed:{
@@ -97,10 +99,12 @@
 			},
 			disabled2(){
 				return (this.form.amount>=this.total) || (this.form.amount>49)
+			},
+			totalMoney(){
+				return this.form.goodsprice*this.form.amount+(this.freight || 0);
 			}
 		},
 		onLoad(e){
-			console.log(e)
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.form.uid=userInfo.uid
@@ -134,9 +138,8 @@
 				var that=this
 				var url='&r=api.member.order.create'
 				  this.$apiPost(url,this.form).then((res) =>{
-					  console.log(res)
 					  uni.navigateTo({
-					  	url:'./cashier?orderId='+res.ordero
+					  	url:'./cashier?orderId='+res.data.orderno+'&contact='+JSON.stringify(that.contact)+'&money='+this.totalMoney
 					  })
 					  uni.hideLoading()
 					  // that.$msg('删除成功')
@@ -151,6 +154,7 @@
 			chooseAddress(){
 				var that=this
 				uni.$on('chooseAddress',function(item){
+					that.contact=item
 					that.address=item.province+item.city+item.district+item.address
 					that.form.addressid=item.id
 					uni.$off('chooseAddress')
@@ -171,6 +175,8 @@
 				  this.$apiPost(url,params).then((res) =>{
 					res.data.forEach((item) =>{
 						if(item.isdefault=='1'){
+							that.form.addressid=item.id
+							that.contact=item
 							that.address=item.province+item.city+item.district+item.address
 						}
 					})

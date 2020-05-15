@@ -1,22 +1,21 @@
 <template>
 	<view>
-		<view class="child-overall-item padding bgwhite margin">
-			<image src="../../static/img/bg/activity.png" mode=""></image>
+		<view class="child-overall-item padding bgwhite margin" v-for="(item,index) in goods" :key='index'>
+			<image :src="item.goodspic" mode=""></image>
 			<view class="info">
 				<view>
 					<view class="s2 title">
-						儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿
-						童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿
+						{{item.goodsname}}
 					</view>
 					<view class="s3 cg options">
-						海蓝色；24(155/60A)<icon type="" class="icon-fire iconfont"></icon>
+						{{item.specifications}}<icon type="" class="icon-fire iconfont"></icon>
 					</view>
 				</view>
 			</view>
 		</view>
 		
 		<view class="padding bgwhite choice" @click="to('moneyBack')">
-			<image src="../../static/img/bg/activity.png" mode=""></image>
+			<image src="../../static/img/pic/other/tk.png" mode=""></image>
 			<view class="s2">
 				<view>我要退款(无需退货)</view>
 				<view class="cg des">没收到货,或与卖家协商同意不用退货只退款</view>
@@ -24,7 +23,7 @@
 			<view class="iconfont icon-fire fr"></view>
 		</view>
 		<view class="padding bgwhite choice" @click="to('goodsBack')">
-			<image src="../../static/img/bg/activity.png" mode=""></image>
+			<image src="../../static/img/pic/other/th.png" mode=""></image>
 			<view class="s2">
 				<view>我要退货退款</view>
 				<view class="cg des">已收到货,需要退还收到的货物</view>
@@ -40,8 +39,13 @@
 		},
 		data(){
 			return {
-				
+				orderno:'',
+				goods:[]
 			}
+		},
+		onLoad(p){
+			this.orderno=p.orderno
+			this.goods=JSON.parse(p.goods)
 		},
 		methods:{
 			to(w){

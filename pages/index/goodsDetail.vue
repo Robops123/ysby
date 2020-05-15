@@ -64,7 +64,7 @@
 							<text class="s3 cg">{{data.collect}}人关注</text>
 						</view>
 					</view>
-					<view class="enter-button enter-button1" @click="focus(data.merchid)">{{data.isCollect=='0' ? '已关注':'关注'}}</view>
+					<view class="enter-button enter-button1" @click="focus(data.merchid)">{{data.isCollect=='1' ? '已关注':'关注'}}</view>
 					<view class="enter-button enter-button2" @click="toShop(data.merchid)">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
@@ -125,6 +125,7 @@
 					 						 <image src="../../static/img/pic/other/post.png" mode=""></image>
 					 						 <view class="">生成海报</view>
 					 </view>
+					 
 				 </view>
 				 <view>
 					 <button type="default" class="text-btn" @click="popshow=false">取消</button>
@@ -193,7 +194,7 @@
 		        ],
 				// 分享
 				providerList:[],
-				shareType:5,
+				shareType:0,
 				shareText:'嘎哈'
 		      }
 		    },
@@ -338,7 +339,7 @@
 				  if(!ce){
 				  	return ;
 				  }
-				  if(this.data.isCollect=='0'){
+				  if(this.data.isCollect=='1'){
 					  return ;
 				  }
 				  var that=this
@@ -350,7 +351,7 @@
 				    var url='&r=api.member.collection.add'
 				    this.$apiPost(url,params).then((res) =>{
 				  		// that.options[2].info++
-						that.data.isCollect='0'
+						that.data.isCollect='1'
 				  						that.$msg('已关注')
 				    })
 			  },
@@ -374,11 +375,11 @@
 						that.data=res.data
 						that.thumb_url=res.data.thumb_url
 						if(that.data.isFavorite=='1'){
-								that.options[2].collected=false
-								that.options[2].icon='icon-star'
+								that.options[2].collected=true
+								that.options[2].icon='icon-shoucang'
 						}else{
-							that.options[2].collected=true
-							that.options[2].icon='icon-shoucang'
+							that.options[2].collected=false
+							that.options[2].icon='icon-star'
 						}
 						that.$nextTick(function(){
 							that.getCategory()
@@ -472,6 +473,7 @@
 				  });
 			  },
 			  async share(e) {
+				  console.log(e)
 			  	console.log('分享通道:'+ e.id +'； 分享类型:' + this.shareType);
 			  	
 			  	// if(!this.shareText && (this.shareType === 1 || this.shareType === 0)){
@@ -492,6 +494,9 @@
 			  	
 			  	let shareOPtions = {
 			  		provider: e.id,
+					extra: {
+						scene: "WXSceneSession"
+					},
 			  		scene: e.type && e.type === 'WXSenceTimeline' ? 'WXSenceTimeline' : 'WXSceneSession', //WXSceneSession”分享到聊天界面，“WXSenceTimeline”分享到朋友圈，“WXSceneFavorite”分享到微信收藏     
 			  		type: this.shareType,
 			  		success: (e) => {
@@ -516,7 +521,7 @@
 			  	switch (this.shareType){
 			  		case 0:
 			  			shareOPtions.summary = '好玩';
-			  			shareOPtions.imageUrl = this.data.thumb_url[0];
+			  			shareOPtions.imageUrl = 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png';
 			  			shareOPtions.title = this.data.title;
 			  			shareOPtions.href = 'https://uniapp.dcloud.io';
 			  			break;

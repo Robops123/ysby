@@ -25,7 +25,7 @@
 					<text class="s3 cg">{{basic.collect}}人关注</text>
 				</view>
 			</view>
-			<view class="enter-button" @click="focus(id)">{{basic.isCollect=='0' ? '已关注':'关注'}}</view>
+			<view class="enter-button" @click="focus(id)">{{basic.isCollect=='1' ? '已关注':'关注'}}</view>
 		</view>
 		
 		<!-- <image src="../../static/img/pic/logo.png" mode="" class="banner"></image> -->
@@ -222,7 +222,7 @@
 							  if(!ce){
 							  	return ;
 							  }
-							  if(this.basic.isCollect=='0'){
+							  if(this.basic.isCollect=='1'){
 								  return ;
 							  }
 							  var that=this

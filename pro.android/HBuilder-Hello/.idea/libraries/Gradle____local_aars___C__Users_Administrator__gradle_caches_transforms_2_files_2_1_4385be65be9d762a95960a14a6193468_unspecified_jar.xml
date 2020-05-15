@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C.\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4385be65be9d762a95960a14a6193468:unspecified@jar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4385be65be9d762a95960a14a6193468/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4385be65be9d762a95960a14a6193468/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4385be65be9d762a95960a14a6193468/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4385be65be9d762a95960a14a6193468/jars/libs/danmaku-flame-0.6.2.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4385be65be9d762a95960a14a6193468/jars/libs/ijkplayer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

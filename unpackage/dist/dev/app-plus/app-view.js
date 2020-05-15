@@ -290,7 +290,7 @@ var render = function() {
               _c(
                 "v-uni-view",
                 { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
-                [_vm._v("无锡无锡无锡无锡")]
+                [_vm._v("无锡")]
               ),
               _c(
                 "v-uni-view",
@@ -404,6 +404,7 @@ var render = function() {
                         [
                           _c("v-uni-icon", {
                             staticClass: _vm._$g("20-" + $31, "sc"),
+                            staticStyle: { "vertical-align": "middle" },
                             attrs: { type: "", size: "12", _i: "20-" + $31 }
                           }),
                           _vm._v(_vm._$g("19-" + $31, "t1-0"))
@@ -4903,7 +4904,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-uni-view",
-    { attrs: { _i: 0 } },
+    { staticStyle: { "padding-bottom": "50px" }, attrs: { _i: 0 } },
     [
       _c(
         "v-uni-view",
@@ -5368,6 +5369,15 @@ var render = function() {
         domProps: { innerHTML: _vm._s(_vm._$g(51, "v-html")) }
       }),
       _c("uni-goods-nav", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm._$g(52, "v-show"),
+            expression: "_$g(52,'v-show')"
+          }
+        ],
+        staticClass: _vm._$g(52, "sc"),
         attrs: { _i: 52 },
         on: {
           click: function($event) {
@@ -6591,7 +6601,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../hbuilderX/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.preview{\n\twidth: 100%;\n\theight: 550upx;\n}\n.top>uni-view{\n\tmargin-bottom: 20upx;\n}\n.show-top>uni-view{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.share{\n\ttext-align: center;\n}\n.show-top .name{\n\twidth: 580upx;\n\tline-height: 48upx;\n\tmargin-right: 50upx;\n}\n.border-bottom{\n\tborder-bottom: 20upx solid #f3f3f3;\n}\n.user>uni-image,\n.user>uni-text{\n\tvertical-align: middle;\n\tdisplay: inline-block;\n}\n.user .headface{\n\twidth: 70upx;\n\tmargin-right: 20upx;\n\theight: 70upx;\n\tborder-radius: 50%;\n}\n.comment-word{\n\tline-height: 1.5;\n\theight: 72upx;\n\toverflow:hidden;/*一定要写 */\n\t    text-overflow: ellipsis;/*超出省略号 */\n\t    display:-webkit-box;/*一定要写 */\n\t    -webkit-line-clamp: 2;/*控制行数 */\n\t    -webkit-box-orient: vertical;/*一定要写 */\n\t\tmargin: 25upx 0 15upx;\n}\n.comment-pic uni-image{\n\twidth: 31%;\n\theight: 200upx;\n\tborder-radius: 10upx;\n\tmargin-right: 2% ;\n}\n.btn{\n\tborder: 1px solid #b8b8b8;\n\tpadding: 0 25upx;\n\ttext-align: center;\n\tborder-radius: 50upx;\n\tdisplay: inline-block;\n\tfont-size: 30upx;\n\tbackground-color: #fff;\n\tmargin: 30upx 0;\n}\n.sp-item3{\n\tborder-radius: 20upx;\n\tbackground-color: #fff;\n}\n.sp-item3-top{\n\tpadding: 20upx 30upx 0 0;\n\tmargin: 20upx 0;\n}\n.sp-item3-top .headface{\n\twidth: 90upx;\n\theight: 90upx;\n\tborder-radius: 50%;\n\tmargin: 0 15upx;\n}\n.sp-item3-top-middle uni-image{\n\twidth: 25upx;\n\theight: 25upx;\n\tvertical-align: middle;\n\tmargin-right: 5upx;\n}\n.sp-item3-top-middle uni-text uni-text{\n\tcolor: #a9a9a9;\n\tmargin-left: 10upx;\n}\n.sp-item3-top>uni-view{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.enter-button{\n\tcolor: #ff8f94;\n\tborder: 2px solid #ff8f94;\n\tpadding: 10upx 15upx;\n\tborder-radius: 52upx;\n\tfloat: right;\n\tmargin-top: 19upx;\n}\n.sp-item3-bottom>uni-view{\n\t\tdisplay: inline-block;\n\t\tvertical-align: top;\n\t\twidth: 33%;\n\t\theight: 220upx;\n\t\tposition: relative;\n\t\toverflow: hidden;\n\t\tborder-radius: 20upx;\n}\n.sp-item3-bottom{\n\tpadding: 0 30upx;\n\t/* margin: 0 18upx; */\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\tpadding-bottom: 22upx;\n}\n.sp-item3-bottom uni-image{\n\twidth: 100%;\n\theight: 100%;\n}\n.sp-item3-bottom .price{\n\t\tposition: absolute;\n\t\tleft: 0;\n\t\tborder-radius:0 20upx 0 20upx;\n\t\tbottom: 0;\n\t\tcolor: white;\n\t\tpadding: 5upx 8upx;\n\t\tbackground-color: #999;\n\t\topacity: 0.8;\n}\n.enter-button1{\n\tmargin-left: 30upx;\n\tbackground-color: #ff8f94;\n\tcolor: #fff;\n}\n.hot{\n\ttext-align: center;\n\tpadding: 20upx 0;\n\tbackground-color: #f3f3f3;\n}\n.hot uni-text,\n.hot uni-text::before,\n.hot uni-text::after{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.hot uni-text::before{\n\tcontent: '';\n\twidth: 80upx;\n\theight: 1px;\n\tbackground-color: #aeaeae;\n\tmargin-right: 30upx;\n}\n.hot uni-text::after{\n\tcontent: '';\n\twidth: 80upx;\n\theight: 1px;\n\tbackground-color: #aeaeae;\n\tmargin-left: 30upx;\n}\n.popup{\n\ttext-align: center;\n\tbackground-color: #fff;\n\tz-index: 99;\n\tpadding-top: 30upx;\n}\n.share-item{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\twidth: 33%;\n\tpadding-bottom: 30upx;\n\tborder-bottom: 1px solid #efefef;\n}\n.share-item uni-image{\n\twidth: 80upx;\n\theight: 80upx;\n}\n.text-btn{\n\tborder: none !important;\n\toutline: none;\n\tbackground-color: #fff !important;\n\tcolor: #666 !important;\n\tline-height: 70upx;\n\tpadding: 0 0 20upx;\n\ttext-align: center;\n}\n.text-btn:after{\n\tdisplay: none;\n}\n.popup-box{\n\tposition: fixed;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align: end;\n\t-webkit-align-items: flex-end;\n\t        align-items: flex-end;\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\tbottom: 0;\n\tz-index: 999;\n}\n.popup-box .wrapper{\n\tposition: absolute;\n\twidth: 100%;\n\theight: 100%;\n\tbackground-color: #333;\n\topacity: 0.6;\n}\n.popup-box .popup{\n\tposition: relative;\n\twidth: 100%;\n\tbottom: 0 !important;\n\tleft: 0;\n\tright: 0;\n\theight: 360upx;\n\tbox-sizing: border-box;\n}\n.share-btn{\n\toutline: none;\n\tbackground-color: initial;\n\tcolor: initial;\n\tline-height: initial;\n\tvertical-align: middle;\n\tfont-size: 14px;\n}\n.share-btn::after{\n\tdisplay: none;\n}\n", ""]);
+exports.push([module.i, "\n.preview{\n\twidth: 100%;\n\theight: 550upx;\n}\n.top>uni-view{\n\tmargin-bottom: 20upx;\n}\n.show-top>uni-view{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.share{\n\ttext-align: center;\n}\n.show-top .name{\n\twidth: 580upx;\n\tline-height: 48upx;\n\tmargin-right: 50upx;\n}\n.border-bottom{\n\tborder-bottom: 20upx solid #f3f3f3;\n}\n.user>uni-image,\n.user>uni-text{\n\tvertical-align: middle;\n\tdisplay: inline-block;\n}\n.user .headface{\n\twidth: 70upx;\n\tmargin-right: 20upx;\n\theight: 70upx;\n\tborder-radius: 50%;\n}\n.comment-word{\n\tline-height: 1.5;\n\theight: 72upx;\n\toverflow:hidden;/*一定要写 */\n\t    text-overflow: ellipsis;/*超出省略号 */\n\t    display:-webkit-box;/*一定要写 */\n\t    -webkit-line-clamp: 2;/*控制行数 */\n\t    -webkit-box-orient: vertical;/*一定要写 */\n\t\tmargin: 25upx 0 15upx;\n}\n.comment-pic uni-image{\n\twidth: 31%;\n\theight: 200upx;\n\tborder-radius: 10upx;\n\tmargin-right: 2% ;\n}\n.btn{\n\tborder: 1px solid #b8b8b8;\n\tpadding: 0 25upx;\n\ttext-align: center;\n\tborder-radius: 50upx;\n\tdisplay: inline-block;\n\tfont-size: 30upx;\n\tbackground-color: #fff;\n\tmargin: 30upx 0;\n}\n.sp-item3{\n\tborder-radius: 20upx;\n\tbackground-color: #fff;\n}\n.sp-item3-top{\n\tpadding: 20upx 30upx 0 0;\n\tmargin: 20upx 0;\n}\n.sp-item3-top .headface{\n\twidth: 90upx;\n\theight: 90upx;\n\tborder-radius: 50%;\n\tmargin: 0 15upx;\n}\n.sp-item3-top-middle uni-image{\n\twidth: 25upx;\n\theight: 25upx;\n\tvertical-align: middle;\n\tmargin-right: 5upx;\n}\n.sp-item3-top-middle uni-text uni-text{\n\tcolor: #a9a9a9;\n\tmargin-left: 10upx;\n}\n.sp-item3-top>uni-view{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.enter-button{\n\tcolor: #ff8f94;\n\tborder: 2px solid #ff8f94;\n\tpadding: 10upx 15upx;\n\tborder-radius: 52upx;\n\tfloat: right;\n\tmargin-top: 19upx;\n}\n.sp-item3-bottom>uni-view{\n\t\tdisplay: inline-block;\n\t\tvertical-align: top;\n\t\twidth: 33%;\n\t\theight: 220upx;\n\t\tposition: relative;\n\t\toverflow: hidden;\n\t\tborder-radius: 20upx;\n}\n.sp-item3-bottom{\n\tpadding: 0 30upx;\n\t/* margin: 0 18upx; */\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\tpadding-bottom: 22upx;\n}\n.sp-item3-bottom uni-image{\n\twidth: 100%;\n\theight: 100%;\n}\n.sp-item3-bottom .price{\n\t\tposition: absolute;\n\t\tleft: 0;\n\t\tborder-radius:0 20upx 0 20upx;\n\t\tbottom: 0;\n\t\tcolor: white;\n\t\tpadding: 5upx 8upx;\n\t\tbackground-color: #999;\n\t\topacity: 0.8;\n}\n.enter-button1{\n\tmargin-left: 30upx;\n\tbackground-color: #ff8f94;\n\tcolor: #fff;\n}\n.hot{\n\ttext-align: center;\n\tpadding: 20upx 0;\n\tbackground-color: #f3f3f3;\n}\n.hot uni-text,\n.hot uni-text::before,\n.hot uni-text::after{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.hot uni-text::before{\n\tcontent: '';\n\twidth: 80upx;\n\theight: 1px;\n\tbackground-color: #aeaeae;\n\tmargin-right: 30upx;\n}\n.hot uni-text::after{\n\tcontent: '';\n\twidth: 80upx;\n\theight: 1px;\n\tbackground-color: #aeaeae;\n\tmargin-left: 30upx;\n}\n.popup{\n\ttext-align: center;\n\tbackground-color: #fff;\n\tz-index: 99;\n\tpadding-top: 30upx;\n}\n.share-item{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\twidth: 33%;\n\tpadding-bottom: 30upx;\n\tborder-bottom: 1px solid #efefef;\n}\n.share-item uni-image{\n\twidth: 80upx;\n\theight: 80upx;\n}\n.text-btn{\n\tborder: none !important;\n\toutline: none;\n\tbackground-color: #fff !important;\n\tcolor: #666 !important;\n\tline-height: 70upx;\n\tpadding: 0 0 20upx;\n\ttext-align: center;\n}\n.text-btn:after{\n\tdisplay: none;\n}\n.popup-box{\n\tposition: fixed;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align: end;\n\t-webkit-align-items: flex-end;\n\t        align-items: flex-end;\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\tbottom: 0;\n\tz-index: 999;\n}\n.popup-box .wrapper{\n\tposition: absolute;\n\twidth: 100%;\n\theight: 100%;\n\tbackground-color: #333;\n\topacity: 0.6;\n}\n.popup-box .popup{\n\tposition: relative;\n\twidth: 100%;\n\tbottom: 0 !important;\n\tleft: 0;\n\tright: 0;\n\theight: 360upx;\n\tbox-sizing: border-box;\n}\n.share-btn{\n\toutline: none;\n\tbackground-color: initial;\n\tcolor: initial;\n\tline-height: initial;\n\tvertical-align: middle;\n\tfont-size: 14px;\n}\n.share-btn::after{\n\tdisplay: none;\n}\n.goods-nav{\n\tposition: fixed;\n\tbottom: 0;\n\twidth: 100%;\n\tz-index: 3;\n}\n.bottom-nav{\n\tposition: relative;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -7165,7 +7175,7 @@ var render = function() {
               _c(
                 "v-uni-text",
                 { staticClass: _vm._$g(32, "sc"), attrs: { _i: 32 } },
-                [_vm._v("￥0.00")]
+                [_vm._v("￥" + _vm._$g(32, "t0-0"))]
               )
             ],
             1
@@ -7828,7 +7838,7 @@ var render = function() {
               _c(
                 "v-uni-text",
                 { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
-                [_vm._v("DSADAS232131231232331")]
+                [_vm._v(_vm._$g(4, "t0-0"))]
               )
             ],
             1
@@ -7841,7 +7851,7 @@ var render = function() {
               _c(
                 "v-uni-text",
                 { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
-                [_vm._v("$45.00")]
+                [_vm._v("￥" + _vm._$g(7, "t0-0"))]
               )
             ],
             1
@@ -7917,7 +7927,21 @@ var render = function() {
                       1
                     )
                   })
-                : _vm._e()
+                : _vm._e(),
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                [
+                  _c("v-uni-image", { attrs: { src: "", mode: "", _i: 18 } }),
+                  _c("v-uni-text", { attrs: { _i: 19 } }, [_vm._v("余额支付")]),
+                  _c("v-uni-radio", {
+                    staticClass: _vm._$g(20, "sc"),
+                    staticStyle: { transform: "scale(0.7)" },
+                    attrs: { value: "rest", _i: 20 }
+                  })
+                ],
+                1
+              )
             ],
             2
           )
@@ -8142,12 +8166,12 @@ var render = function() {
             { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
             [
               _c("v-uni-view", { attrs: { _i: 9 } }, [
-                _vm._v("羞涩地说  12321312312312")
+                _vm._v(_vm._$g(9, "t0-0") + "  " + _vm._$g(9, "t0-1"))
               ]),
               _c(
                 "v-uni-view",
                 { staticStyle: { "margin-top": "10upx" }, attrs: { _i: 10 } },
-                [_vm._v("北京市还定去超大号速度100")]
+                [_vm._v(_vm._$g(10, "t0-0"))]
               )
             ],
             1
@@ -8167,7 +8191,7 @@ var render = function() {
           _c(
             "v-uni-text",
             { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
-            [_vm._v("$45.00")]
+            [_vm._v("￥" + _vm._$g(13, "t0-0"))]
           )
         ],
         1
@@ -8196,7 +8220,12 @@ var render = function() {
             "v-uni-button",
             {
               staticClass: _vm._$g(16, "sc"),
-              attrs: { type: "default", _i: 16 }
+              attrs: { type: "default", _i: 16 },
+              on: {
+                click: function($event) {
+                  return _vm.$handleViewEvent($event)
+                }
+              }
             },
             [_vm._v("返回首页")]
           )
@@ -8392,98 +8421,90 @@ var render = function() {
             "v-uni-view",
             { attrs: { _i: 2 } },
             [
-              _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
-                [_vm._v("卖家已发货")]
-              )
+              _vm._$g(3, "i")
+                ? _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
+                    [_vm._v("订单未支付")]
+                  )
+                : _vm._e(),
+              _vm._$g(4, "i")
+                ? _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
+                    [_vm._v("等待卖家发货")]
+                  )
+                : _vm._e(),
+              _vm._$g(5, "i")
+                ? _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+                    [_vm._v("卖家已发货")]
+                  )
+                : _vm._e(),
+              _vm._$g(6, "i")
+                ? _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+                    [_vm._v("订单已取消")]
+                  )
+                : _vm._e(),
+              _vm._$g(7, "i")
+                ? _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
+                    [_vm._v("买家已收货，待评论")]
+                  )
+                : _vm._e(),
+              _vm._$g(8, "i")
+                ? _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
+                    [_vm._v("订单已完成")]
+                  )
+                : _vm._e(),
+              _vm._$g(9, "i")
+                ? _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
+                    [_vm._v("等待商家退款")]
+                  )
+                : _vm._e(),
+              _vm._$g(10, "i")
+                ? _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+                    [_vm._v("退款成功")]
+                  )
+                : _vm._e()
             ],
             1
           ),
           _c("v-uni-image", {
-            attrs: { src: _vm._$g(4, "a-src"), mode: "", _i: 4 }
+            attrs: { src: _vm._$g(11, "a-src"), mode: "", _i: 11 }
           })
         ],
         1
       ),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+        { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
         [
-          _c("v-uni-view", { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } }),
-          _c(
-            "v-uni-view",
-            { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
-            [
-              _c("v-uni-view", { attrs: { _i: 8 } }, [
-                _vm._v("羞涩地说  12321312312312")
-              ]),
-              _c(
-                "v-uni-view",
-                { staticStyle: { "margin-top": "10upx" }, attrs: { _i: 9 } },
-                [_vm._v("北京市还定去超大号速度100")]
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
-        [
-          _c("v-uni-image", {
-            attrs: { src: _vm._$g(11, "a-src"), mode: "", _i: 11 }
+          _c("v-uni-view", {
+            staticClass: _vm._$g(13, "sc"),
+            attrs: { _i: 13 }
           }),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+            { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
             [
+              _c("v-uni-view", { attrs: { _i: 15 } }, [
+                _vm._v(_vm._$g(15, "t0-0") + "  " + _vm._$g(15, "t0-1"))
+              ]),
               _c(
                 "v-uni-view",
-                { attrs: { _i: 13 } },
-                [
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
-                    [
-                      _vm._v(
-                        "\n\t\t\t\t\t儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿\n\t\t\t\t\t童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿\n\t\t\t\t"
-                      )
-                    ]
-                  ),
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
-                    [
-                      _vm._v("\n\t\t\t\t\t海蓝色；24(155/60A)"),
-                      _c("v-uni-icon", {
-                        staticClass: _vm._$g(16, "sc"),
-                        attrs: { type: "", _i: 16 }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _c(
-                "v-uni-view",
-                {
-                  staticClass: _vm._$g(17, "sc"),
-                  staticStyle: { "text-align": "right" },
-                  attrs: { _i: 17 }
-                },
-                [
-                  _c("v-uni-view", { attrs: { _i: 18 } }, [_vm._v("$45.00")]),
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
-                    [_vm._v("*1")]
-                  )
-                ],
-                1
+                { staticStyle: { "margin-top": "10upx" }, attrs: { _i: 16 } },
+                [_vm._v(_vm._$g(16, "t0-0"))]
               )
             ],
             1
@@ -8491,60 +8512,129 @@ var render = function() {
         ],
         1
       ),
+      _vm._l(_vm._$g(17, "f"), function(item, index, $20, $30) {
+        return _c(
+          "v-uni-view",
+          {
+            key: item,
+            staticClass: _vm._$g("17-" + $30, "sc"),
+            attrs: { _i: "17-" + $30 }
+          },
+          [
+            _c("v-uni-image", {
+              attrs: {
+                src: _vm._$g("18-" + $30, "a-src"),
+                mode: "",
+                _i: "18-" + $30
+              }
+            }),
+            _c(
+              "v-uni-view",
+              {
+                staticClass: _vm._$g("19-" + $30, "sc"),
+                attrs: { _i: "19-" + $30 }
+              },
+              [
+                _c(
+                  "v-uni-view",
+                  { attrs: { _i: "20-" + $30 } },
+                  [
+                    _c(
+                      "v-uni-view",
+                      {
+                        staticClass: _vm._$g("21-" + $30, "sc"),
+                        attrs: { _i: "21-" + $30 }
+                      },
+                      [_vm._v(_vm._$g("21-" + $30, "t0-0"))]
+                    ),
+                    _c(
+                      "v-uni-view",
+                      {
+                        staticClass: _vm._$g("22-" + $30, "sc"),
+                        attrs: { _i: "22-" + $30 }
+                      },
+                      [
+                        _vm._v(_vm._$g("22-" + $30, "t0-0")),
+                        _c("v-uni-icon", {
+                          staticClass: _vm._$g("23-" + $30, "sc"),
+                          attrs: { type: "", _i: "23-" + $30 }
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _c(
+                  "v-uni-view",
+                  {
+                    staticClass: _vm._$g("24-" + $30, "sc"),
+                    staticStyle: { "text-align": "right" },
+                    attrs: { _i: "24-" + $30 }
+                  },
+                  [
+                    _c("v-uni-view", { attrs: { _i: "25-" + $30 } }, [
+                      _vm._v("￥" + _vm._$g("25-" + $30, "t0-0"))
+                    ]),
+                    _c(
+                      "v-uni-view",
+                      {
+                        staticClass: _vm._$g("26-" + $30, "sc"),
+                        attrs: { _i: "26-" + $30 }
+                      },
+                      [_vm._v("*" + _vm._$g("26-" + $30, "t0-0"))]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      }),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
+        { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
         [
           _c(
             "v-uni-view",
-            {
-              attrs: { _i: 21 },
-              on: {
-                click: function($event) {
-                  return _vm.$handleViewEvent($event)
-                }
-              }
-            },
+            { attrs: { _i: 28 } },
             [
-              _c("v-uni-text", { attrs: { _i: 22 } }, [_vm._v("报名费小计")]),
+              _c("v-uni-text", { attrs: { _i: 29 } }, [_vm._v("商品小计")]),
               _c(
                 "v-uni-text",
-                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
-                [_vm._v("1600元")]
+                { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
+                [_vm._v(_vm._$g(30, "t0-0") + "元")]
               )
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
+            { staticClass: _vm._$g(31, "sc"), attrs: { _i: 31 } },
             [
-              _c("v-uni-text", { attrs: { _i: 25 } }, [_vm._v("推广积分")]),
+              _c("v-uni-text", { attrs: { _i: 32 } }, [_vm._v("运费")]),
               _c(
                 "v-uni-text",
-                { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
-                [_vm._v("1600元")]
+                { staticClass: _vm._$g(33, "sc"), attrs: { _i: 33 } },
+                [_vm._v(_vm._$g(33, "t0-0") + "元")]
               )
             ],
             1
           ),
           _c(
             "v-uni-view",
-            {
-              staticClass: _vm._$g(27, "sc"),
-              attrs: { _i: 27 },
-              on: {
-                click: function($event) {
-                  return _vm.$handleViewEvent($event)
-                }
-              }
-            },
+            { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
             [
-              _c("v-uni-text", { attrs: { _i: 28 } }, [_vm._v("报名费小计")]),
+              _c("v-uni-text", { attrs: { _i: 35 } }, [
+                _vm._v("实付费(含运费)")
+              ]),
               _c(
                 "v-uni-text",
-                { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
-                [_vm._v("1600元")]
+                { staticClass: _vm._$g(36, "sc"), attrs: { _i: 36 } },
+                [_vm._v(_vm._$g(36, "t0-0") + "元")]
               )
             ],
             1
@@ -8554,49 +8644,49 @@ var render = function() {
       ),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
+        { staticClass: _vm._$g(37, "sc"), attrs: { _i: 37 } },
         [
           _c(
             "v-uni-view",
-            { attrs: { _i: 31 } },
+            { attrs: { _i: 38 } },
             [
               _c(
                 "v-uni-text",
-                { staticClass: _vm._$g(32, "sc"), attrs: { _i: 32 } },
-                [_vm._v("提交时间: ")]
+                { staticClass: _vm._$g(39, "sc"), attrs: { _i: 39 } },
+                [_vm._v("订单编号: ")]
               ),
-              _c("v-uni-text", { attrs: { _i: 33 } }, [
-                _vm._v(" 2020-02-12 10:07:23")
+              _c("v-uni-text", { attrs: { _i: 40 } }, [
+                _vm._v(_vm._$g(40, "t0-0"))
               ])
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { attrs: { _i: 34 } },
+            { attrs: { _i: 41 } },
             [
               _c(
                 "v-uni-text",
-                { staticClass: _vm._$g(35, "sc"), attrs: { _i: 35 } },
-                [_vm._v("开始时间: ")]
+                { staticClass: _vm._$g(42, "sc"), attrs: { _i: 42 } },
+                [_vm._v("创建时间: ")]
               ),
-              _c("v-uni-text", { attrs: { _i: 36 } }, [
-                _vm._v(" 2020-02-12 10:07:23")
+              _c("v-uni-text", { attrs: { _i: 43 } }, [
+                _vm._v(_vm._$g(43, "t0-0"))
               ])
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { attrs: { _i: 37 } },
+            { attrs: { _i: 44 } },
             [
               _c(
                 "v-uni-text",
-                { staticClass: _vm._$g(38, "sc"), attrs: { _i: 38 } },
-                [_vm._v("截至时间: ")]
+                { staticClass: _vm._$g(45, "sc"), attrs: { _i: 45 } },
+                [_vm._v("支付时间: ")]
               ),
-              _c("v-uni-text", { attrs: { _i: 39 } }, [
-                _vm._v(" 2020-02-12 10:07:23")
+              _c("v-uni-text", { attrs: { _i: 46 } }, [
+                _vm._v(_vm._$g(46, "t0-0"))
               ])
             ],
             1
@@ -8606,13 +8696,13 @@ var render = function() {
       ),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(40, "sc"), attrs: { _i: 40 } },
+        { staticClass: _vm._$g(47, "sc"), attrs: { _i: 47 } },
         [
           _c(
             "v-uni-button",
             {
-              staticClass: _vm._$g(41, "sc"),
-              attrs: { type: "default", _i: 41 },
+              staticClass: _vm._$g(48, "sc"),
+              attrs: { type: "default", _i: 48 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -8620,20 +8710,12 @@ var render = function() {
               }
             },
             [_vm._v("申请退款")]
-          ),
-          _c(
-            "v-uni-button",
-            {
-              staticClass: _vm._$g(42, "sc"),
-              attrs: { type: "default", _i: 42 }
-            },
-            [_vm._v("确认收货")]
           )
         ],
         1
       )
     ],
-    1
+    2
   )
 }
 var recyclableRender = false
@@ -8813,51 +8895,66 @@ var render = function() {
     "v-uni-view",
     { attrs: { _i: 0 } },
     [
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
-        [
-          _c("v-uni-image", {
-            attrs: { src: _vm._$g(2, "a-src"), mode: "", _i: 2 }
-          }),
-          _c(
-            "v-uni-view",
-            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
-            [
-              _c(
-                "v-uni-view",
-                { attrs: { _i: 4 } },
-                [
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
-                    [
-                      _vm._v(
-                        "\n\t\t\t\t\t儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿\n\t\t\t\t\t童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿\n\t\t\t\t"
-                      )
-                    ]
-                  ),
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
-                    [
-                      _vm._v("\n\t\t\t\t\t海蓝色；24(155/60A)"),
-                      _c("v-uni-icon", {
-                        staticClass: _vm._$g(7, "sc"),
-                        attrs: { type: "", _i: 7 }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
+      _vm._l(_vm._$g(1, "f"), function(item, index, $20, $30) {
+        return _c(
+          "v-uni-view",
+          {
+            key: item,
+            staticClass: _vm._$g("1-" + $30, "sc"),
+            attrs: { _i: "1-" + $30 }
+          },
+          [
+            _c("v-uni-image", {
+              attrs: {
+                src: _vm._$g("2-" + $30, "a-src"),
+                mode: "",
+                _i: "2-" + $30
+              }
+            }),
+            _c(
+              "v-uni-view",
+              {
+                staticClass: _vm._$g("3-" + $30, "sc"),
+                attrs: { _i: "3-" + $30 }
+              },
+              [
+                _c(
+                  "v-uni-view",
+                  { attrs: { _i: "4-" + $30 } },
+                  [
+                    _c(
+                      "v-uni-view",
+                      {
+                        staticClass: _vm._$g("5-" + $30, "sc"),
+                        attrs: { _i: "5-" + $30 }
+                      },
+                      [_vm._v(_vm._$g("5-" + $30, "t0-0"))]
+                    ),
+                    _c(
+                      "v-uni-view",
+                      {
+                        staticClass: _vm._$g("6-" + $30, "sc"),
+                        attrs: { _i: "6-" + $30 }
+                      },
+                      [
+                        _vm._v(_vm._$g("6-" + $30, "t0-0")),
+                        _c("v-uni-icon", {
+                          staticClass: _vm._$g("7-" + $30, "sc"),
+                          attrs: { type: "", _i: "7-" + $30 }
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      }),
       _c(
         "v-uni-view",
         {
@@ -8931,7 +9028,7 @@ var render = function() {
         1
       )
     ],
-    1
+    2
   )
 }
 var recyclableRender = false
@@ -9488,7 +9585,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../hbuilderX/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\nbody{\n\tbackground-color: #f3f3f3;\n}\n.margin{\n\tmargin: 20upx 0;\n}\n.bgwhite{\n\tbackground-color: #fff;\n}\n.child-overall-item,\n.overall{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\tjustify-items: center;\n}\n.child-overall-item>uni-image{\n\twidth: 150upx;\n\theight: 150upx;\n\tmargin-right: 20upx;\n}\n.child-overall-item .title{\n\tmargin-top: 10upx;\n\twidth: 500upx;\n\t/* height: 64upx; */\n\toverflow:hidden;/*一定要写 */\n\t    text-overflow: ellipsis;/*超出省略号 */\n\t    display:-webkit-box;/*一定要写 */\n\t    -webkit-line-clamp: 2;/*控制行数 */\n\t    -webkit-box-orient: vertical;/*一定要写 */\n}\n.choice{\n\tpadding: 20upx 0;\n}\n.choice:not(:last-child){\n\tborder-bottom: 1px solid #dedede;\n}\n.picker,.choice uni-input{\n\tdisplay: inline-block;\n\tvertical-align: bottom;\n}\n.choice .iconfont{\n\tmargin-left: 20upx;\n}\n.pannel>uni-view{\n\tmargin: 15upx 0;\n}\n/* 第一套图片上传样式（内部图标相机） */\n.upload-image-view {\n\twidth: 100%;\n\tmargin: 20upx 0 20upx 0;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-flex-wrap: wrap;\n\t        flex-wrap: wrap;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n}\n.upload-image-view .title {\n\twidth: 100%;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 24upx;\n\tcolor: #4a4a4a;\n\tmargin-bottom: 15upx;\n\tline-height: 100%;\n}\n.upload-image-view .info {\n\twidth: 100%;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 24upx;\n\tcolor: #ff4259;\n\theight: 24upx;\n\tmargin-top: 15upx;\n\tline-height: 24upx;\n}\n.upload-image-view .image-view {\n\theight: 220upx;\n\twidth: 220upx;\n\tposition: relative;\n\tmargin: 15upx 45upx 15upx 0upx;\n\tborder-radius: 8upx;\n}\n.upload-image-view .image-view uni-image {\n\theight: 100%;\n\twidth: 100%;\n\tborder-radius: 8upx;\n}\n.upload-image-view .image-view .del-btn {\n\tbackground-color: #f67371;\n\tborder-radius: 50%;\n\twidth: 25upx;\n\theight: 25upx;\n\tposition: absolute;\n\ttop: -12upx;\n\tright: -12upx;\n\tz-index: 2;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: center;\n\t-webkit-justify-content: center;\n\t        justify-content: center;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n}\n.upload-image-view .image-view .del-btn .baicha {\n\tdisplay: inline-block;\n\twidth: 20upx;\n\theight: 5upx;\n\tbackground: #fff;\n\tline-height: 0;\n\tfont-size: 0;\n\tvertical-align: middle;\n\t-webkit-transform: rotate(45deg);\n}\n.upload-image-view .image-view .del-btn .baicha:after {\n\tcontent: '/';\n\tdisplay: block;\n\twidth: 20upx;\n\theight: 5upx;\n\tbackground: #fff;\n\t-webkit-transform: rotate(-90deg);\n}\n.upload-image-view .add-view {\n\tposition: relative;\n\twidth: 220upx;\n\theight: 220upx;\n\tpadding: 45upx 0;\n\tbox-sizing: border-box;\n\tmargin: 15upx 15upx 15upx 0upx;\n\ttext-align: center;\n\t/* display: flex;\n\talign-items: center;\n\tjustify-content: center; */\n\t/* background: #f7f7f7; */\n\tborder: 3upx dashed #979797;\n\tborder-radius: 8upx;\n}\n.add-view uni-image{\n\t width: 70upx;\n\t height: 70upx;\n}\n.add-view>uni-view{\n\t width: 110upx;\n\t margin: 0 auto;\n}\n.btn{\n \twidth: 100%;\n \theight: 80upx;\n \tline-height: 80upx;\n \ttext-align: center;\n \tfont-size: 30upx;\n \tdisplay: inline-block;\n\tmargin-top: 90upx;\n\tcolor: #fff !important;\n \tborder-radius: 0;\n \tbackground-color: #ff6d7e !important;\n}\n", ""]);
+exports.push([module.i, "\nbody{\n\tbackground-color: #f3f3f3;\n}\n.margin{\n\tmargin: 20upx 0;\n}\n.bgwhite{\n\tbackground-color: #fff;\n}\n.child-overall-item,\n.overall{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\tjustify-items: center;\n}\n.child-overall-item>uni-image{\n\twidth: 150upx;\n\theight: 150upx;\n\tmargin-right: 20upx;\n}\n.child-overall-item .title{\n\tmargin-top: 10upx;\n\twidth: 500upx;\n\t/* height: 64upx; */\n\toverflow:hidden;/*一定要写 */\n\t    text-overflow: ellipsis;/*超出省略号 */\n\t    display:-webkit-box;/*一定要写 */\n\t    -webkit-line-clamp: 2;/*控制行数 */\n\t    -webkit-box-orient: vertical;/*一定要写 */\n}\n.choice{\n\tpadding: 20upx 0;\n}\n.choice:not(:last-child){\n\tborder-bottom: 1px solid #dedede;\n}\n.picker,.choice uni-input{\n\tdisplay: inline-block;\n\tvertical-align: bottom;\n}\n.choice .iconfont{\n\tmargin-left: 20upx;\n}\n.pannel>uni-view{\n\tmargin: 15upx 0;\n}\n/* 第一套图片上传样式（内部图标相机） */\n.upload-image-view {\n\twidth: 100%;\n\tmargin: 20upx 0 20upx 0;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-flex-wrap: wrap;\n\t        flex-wrap: wrap;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n}\n.upload-image-view .title {\n\twidth: 100%;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 24upx;\n\tcolor: #4a4a4a;\n\tmargin-bottom: 15upx;\n\tline-height: 100%;\n}\n.upload-image-view .info {\n\twidth: 100%;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 24upx;\n\tcolor: #ff4259;\n\theight: 24upx;\n\tmargin-top: 15upx;\n\tline-height: 24upx;\n}\n.upload-image-view .image-view {\n\theight: 220upx;\n\twidth: 220upx;\n\tposition: relative;\n\tmargin: 15upx 45upx 15upx 0upx;\n\tborder-radius: 8upx;\n}\n.upload-image-view .image-view uni-image {\n\theight: 100%;\n\twidth: 100%;\n\tborder-radius: 8upx;\n}\n.upload-image-view .image-view .del-btn {\n\tbackground-color: #f67371;\n\tborder-radius: 50%;\n\twidth: 25upx;\n\theight: 25upx;\n\tposition: absolute;\n\ttop: -12upx;\n\tright: -12upx;\n\tz-index: 2;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: center;\n\t-webkit-justify-content: center;\n\t        justify-content: center;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n}\n.upload-image-view .image-view .del-btn .baicha {\n\tdisplay: inline-block;\n\twidth: 20upx;\n\theight: 5upx;\n\tbackground: #fff;\n\tline-height: 0;\n\tfont-size: 0;\n\tvertical-align: middle;\n\t-webkit-transform: rotate(45deg);\n}\n.upload-image-view .image-view .del-btn .baicha:after {\n\tcontent: '/';\n\tdisplay: block;\n\twidth: 20upx;\n\theight: 5upx;\n\tbackground: #fff;\n\t-webkit-transform: rotate(-90deg);\n}\n.upload-image-view .add-view {\n\tposition: relative;\n\twidth: 220upx;\n\theight: 220upx;\n\tpadding: 45upx 0;\n\tbox-sizing: border-box;\n\tmargin: 15upx 15upx 15upx 0upx;\n\ttext-align: center;\n\t/* display: flex;\n\talign-items: center;\n\tjustify-content: center; */\n\t/* background: #f7f7f7; */\n\tborder: 3upx dashed #979797;\n\tborder-radius: 8upx;\n}\n.add-view uni-image{\n\t width: 70upx;\n\t height: 70upx;\n}\n.add-view>uni-view{\n\t width: 128upx;\n\t margin: 0 auto;\n}\n.btn{\n \twidth: 100%;\n \theight: 80upx;\n \tline-height: 80upx;\n \ttext-align: center;\n \tfont-size: 30upx;\n \tdisplay: inline-block;\n\tmargin-top: 90upx;\n\tcolor: #fff !important;\n \tborder-radius: 0;\n \tbackground-color: #ff6d7e !important;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -9974,7 +10071,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../hbuilderX/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\nbody{\n\tbackground-color: #f3f3f3;\n}\n.margin{\n\tmargin: 20upx 0;\n}\n.bgwhite{\n\tbackground-color: #fff;\n}\n.child-overall-item,\n.overall{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\tjustify-items: center;\n}\n.child-overall-item>uni-image{\n\twidth: 150upx;\n\theight: 150upx;\n\tmargin-right: 20upx;\n}\n.child-overall-item .title{\n\tmargin-top: 10upx;\n\twidth: 500upx;\n\t/* height: 64upx; */\n\toverflow:hidden;/*一定要写 */\n\t    text-overflow: ellipsis;/*超出省略号 */\n\t    display:-webkit-box;/*一定要写 */\n\t    -webkit-line-clamp: 2;/*控制行数 */\n\t    -webkit-box-orient: vertical;/*一定要写 */\n}\n.choice{\n\tpadding: 20upx 0;\n}\n.choice:not(:last-child){\n\tborder-bottom: 1px solid #dedede;\n}\n.picker,.choice uni-input{\n\tdisplay: inline-block;\n\tvertical-align: bottom;\n}\n.choice .iconfont{\n\tmargin-left: 20upx;\n}\n.pannel>uni-view{\n\tmargin: 15upx 0;\n}\n/* 第一套图片上传样式（内部图标相机） */\n.upload-image-view {\n\twidth: 100%;\n\tmargin: 20upx 0 20upx 0;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-flex-wrap: wrap;\n\t        flex-wrap: wrap;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n}\n.upload-image-view .title {\n\twidth: 100%;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 24upx;\n\tcolor: #4a4a4a;\n\tmargin-bottom: 15upx;\n\tline-height: 100%;\n}\n.upload-image-view .info {\n\twidth: 100%;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 24upx;\n\tcolor: #ff4259;\n\theight: 24upx;\n\tmargin-top: 15upx;\n\tline-height: 24upx;\n}\n.upload-image-view .image-view {\n\theight: 220upx;\n\twidth: 220upx;\n\tposition: relative;\n\tmargin: 15upx 45upx 15upx 0upx;\n\tborder-radius: 8upx;\n}\n.upload-image-view .image-view uni-image {\n\theight: 100%;\n\twidth: 100%;\n\tborder-radius: 8upx;\n}\n.upload-image-view .image-view .del-btn {\n\tbackground-color: #f67371;\n\tborder-radius: 50%;\n\twidth: 25upx;\n\theight: 25upx;\n\tposition: absolute;\n\ttop: -12upx;\n\tright: -12upx;\n\tz-index: 2;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: center;\n\t-webkit-justify-content: center;\n\t        justify-content: center;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n}\n.upload-image-view .image-view .del-btn .baicha {\n\tdisplay: inline-block;\n\twidth: 20upx;\n\theight: 5upx;\n\tbackground: #fff;\n\tline-height: 0;\n\tfont-size: 0;\n\tvertical-align: middle;\n\t-webkit-transform: rotate(45deg);\n}\n.upload-image-view .image-view .del-btn .baicha:after {\n\tcontent: '/';\n\tdisplay: block;\n\twidth: 20upx;\n\theight: 5upx;\n\tbackground: #fff;\n\t-webkit-transform: rotate(-90deg);\n}\n.upload-image-view .add-view {\n\tposition: relative;\n\twidth: 220upx;\n\theight: 220upx;\n\tpadding: 45upx 0;\n\tbox-sizing: border-box;\n\tmargin: 15upx 15upx 15upx 0upx;\n\ttext-align: center;\n\t/* display: flex;\n\talign-items: center;\n\tjustify-content: center; */\n\t/* background: #f7f7f7; */\n\tborder: 3upx dashed #979797;\n\tborder-radius: 8upx;\n}\n.add-view uni-image{\n\t width: 70upx;\n\t height: 70upx;\n}\n.add-view>uni-view{\n\t width: 110upx;\n\t margin: 0 auto;\n}\n.btn{\n \twidth: 100%;\n \theight: 80upx;\n \tline-height: 80upx;\n \ttext-align: center;\n \tfont-size: 30upx;\n \tdisplay: inline-block;\n\tmargin-top: 90upx;\n\tcolor: #fff !important;\n \tborder-radius: 0;\n \tbackground-color: #ff6d7e !important;\n}\n", ""]);
+exports.push([module.i, "\nbody{\n\tbackground-color: #f3f3f3;\n}\n.margin{\n\tmargin: 20upx 0;\n}\n.bgwhite{\n\tbackground-color: #fff;\n}\n.child-overall-item,\n.overall{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\tjustify-items: center;\n}\n.child-overall-item>uni-image{\n\twidth: 150upx;\n\theight: 150upx;\n\tmargin-right: 20upx;\n}\n.child-overall-item .title{\n\tmargin-top: 10upx;\n\twidth: 500upx;\n\t/* height: 64upx; */\n\toverflow:hidden;/*一定要写 */\n\t    text-overflow: ellipsis;/*超出省略号 */\n\t    display:-webkit-box;/*一定要写 */\n\t    -webkit-line-clamp: 2;/*控制行数 */\n\t    -webkit-box-orient: vertical;/*一定要写 */\n}\n.choice{\n\tpadding: 20upx 0;\n}\n.choice:not(:last-child){\n\tborder-bottom: 1px solid #dedede;\n}\n.picker,.choice uni-input{\n\tdisplay: inline-block;\n\tvertical-align: bottom;\n}\n.choice .iconfont{\n\tmargin-left: 20upx;\n}\n.pannel>uni-view{\n\tmargin: 15upx 0;\n}\n/* 第一套图片上传样式（内部图标相机） */\n.upload-image-view {\n\twidth: 100%;\n\tmargin: 20upx 0 20upx 0;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-flex-wrap: wrap;\n\t        flex-wrap: wrap;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n}\n.upload-image-view .title {\n\twidth: 100%;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 24upx;\n\tcolor: #4a4a4a;\n\tmargin-bottom: 15upx;\n\tline-height: 100%;\n}\n.upload-image-view .info {\n\twidth: 100%;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 24upx;\n\tcolor: #ff4259;\n\theight: 24upx;\n\tmargin-top: 15upx;\n\tline-height: 24upx;\n}\n.upload-image-view .image-view {\n\theight: 220upx;\n\twidth: 220upx;\n\tposition: relative;\n\tmargin: 15upx 45upx 15upx 0upx;\n\tborder-radius: 8upx;\n}\n.upload-image-view .image-view uni-image {\n\theight: 100%;\n\twidth: 100%;\n\tborder-radius: 8upx;\n}\n.upload-image-view .image-view .del-btn {\n\tbackground-color: #f67371;\n\tborder-radius: 50%;\n\twidth: 25upx;\n\theight: 25upx;\n\tposition: absolute;\n\ttop: -12upx;\n\tright: -12upx;\n\tz-index: 2;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: center;\n\t-webkit-justify-content: center;\n\t        justify-content: center;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n}\n.upload-image-view .image-view .del-btn .baicha {\n\tdisplay: inline-block;\n\twidth: 20upx;\n\theight: 5upx;\n\tbackground: #fff;\n\tline-height: 0;\n\tfont-size: 0;\n\tvertical-align: middle;\n\t-webkit-transform: rotate(45deg);\n}\n.upload-image-view .image-view .del-btn .baicha:after {\n\tcontent: '/';\n\tdisplay: block;\n\twidth: 20upx;\n\theight: 5upx;\n\tbackground: #fff;\n\t-webkit-transform: rotate(-90deg);\n}\n.upload-image-view .add-view {\n\tposition: relative;\n\twidth: 220upx;\n\theight: 220upx;\n\tpadding: 45upx 0;\n\tbox-sizing: border-box;\n\tmargin: 15upx 15upx 15upx 0upx;\n\ttext-align: center;\n\t/* display: flex;\n\talign-items: center;\n\tjustify-content: center; */\n\t/* background: #f7f7f7; */\n\tborder: 3upx dashed #979797;\n\tborder-radius: 8upx;\n}\n.add-view uni-image{\n\t width: 70upx;\n\t height: 70upx;\n}\n.add-view>uni-view{\n\t width: 128upx;\n\t margin: 0 auto;\n}\n.btn{\n \twidth: 100%;\n \theight: 80upx;\n \tline-height: 80upx;\n \ttext-align: center;\n \tfont-size: 30upx;\n \tdisplay: inline-block;\n\tmargin-top: 90upx;\n\tcolor: #fff !important;\n \tborder-radius: 0;\n \tbackground-color: #ff6d7e !important;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -14036,7 +14133,15 @@ var render = function() {
                       ),
                       _c(
                         "v-uni-view",
-                        { staticClass: _vm._$g(51, "sc"), attrs: { _i: 51 } },
+                        {
+                          staticClass: _vm._$g(51, "sc"),
+                          attrs: { _i: 51 },
+                          on: {
+                            click: function($event) {
+                              return _vm.$handleViewEvent($event)
+                            }
+                          }
+                        },
                         [
                           _c("v-uni-image", {
                             attrs: {
@@ -14210,6 +14315,73 @@ var render = function() {
                   }
                 },
                 [_vm._v("保存图片")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _c(
+        "s-popup",
+        {
+          attrs: { _i: 73 },
+          model: {
+            value: _vm._$g(73, "v-model"),
+            callback: function() {},
+            expression: "visible2"
+          }
+        },
+        [
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(74, "sc"), attrs: { _i: 74 } },
+            [
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(75, "sc"), attrs: { _i: 75 } },
+                [_vm._v("请输入邀请码")]
+              ),
+              _c(
+                "v-uni-view",
+                { attrs: { _i: 76 } },
+                [
+                  _c("v-uni-input", {
+                    attrs: {
+                      type: "text",
+                      placeholder: "请输入邀请码",
+                      _i: 77
+                    },
+                    model: {
+                      value: _vm._$g(77, "v-model"),
+                      callback: function($$v) {
+                        _vm.$handleVModelEvent(77, $$v)
+                      },
+                      expression: "invite_code"
+                    }
+                  })
+                ],
+                1
+              ),
+              _c(
+                "v-uni-view",
+                { staticStyle: { "margin-top": "20upx" }, attrs: { _i: 78 } },
+                [
+                  _c(
+                    "v-uni-button",
+                    {
+                      staticClass: _vm._$g(79, "sc"),
+                      attrs: { _i: 79 },
+                      on: {
+                        click: function($event) {
+                          return _vm.$handleViewEvent($event)
+                        }
+                      }
+                    },
+                    [_vm._v("提交")]
+                  )
+                ],
+                1
               )
             ],
             1
@@ -14483,7 +14655,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../hbuilderX/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n@-webkit-keyframes s-popup-fade-enter {\n0% {\n    opacity: 0;\n}\nto {\n    opacity: 1;\n}\n}\n@keyframes s-popup-fade-enter {\n0% {\n    opacity: 0;\n}\nto {\n    opacity: 1;\n}\n}\n@-webkit-keyframes s-popup-fade-leave {\n0% {\n    opacity: 1;\n}\nto {\n    opacity: 0;\n}\n}\n@keyframes s-popup-fade-leave {\n0% {\n    opacity: 1;\n}\nto {\n    opacity: 0;\n}\n}\n@-webkit-keyframes s-popup-center-enter {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\nto {\n    opacity: 1;\n}\n}\n@keyframes s-popup-center-enter {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\nto {\n    opacity: 1;\n}\n}\n@-webkit-keyframes s-popup-center-leave {\n0% {\n    opacity: 1;\n}\nto {\n    opacity: 0;\n    -webkit-transform: scale(0.9);\n            transform: scale(0.9);\n}\n}\n@keyframes s-popup-center-leave {\n0% {\n    opacity: 1;\n}\nto {\n    opacity: 0;\n    -webkit-transform: scale(0.9);\n            transform: scale(0.9);\n}\n}\n@-webkit-keyframes s-popup-top-enter {\n0% {\n    -webkit-transform: translate3d(0, -100%, 0);\n            transform: translate3d(0, -100%, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@keyframes s-popup-top-enter {\n0% {\n    -webkit-transform: translate3d(0, -100%, 0);\n            transform: translate3d(0, -100%, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-top-leave {\nto {\n    -webkit-transform: translate3d(0, -100%, 0);\n            transform: translate3d(0, -100%, 0);\n}\n}\n@keyframes s-popup-top-leave {\nto {\n    -webkit-transform: translate3d(0, -100%, 0);\n            transform: translate3d(0, -100%, 0);\n}\n}\n@-webkit-keyframes s-popup-left-enter {\n0% {\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@keyframes s-popup-left-enter {\n0% {\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-left-leave {\nto {\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n}\n}\n@keyframes s-popup-left-leave {\nto {\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-right-enter {\n0% {\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@keyframes s-popup-right-enter {\n0% {\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-right-leave {\nto {\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n}\n}\n@keyframes s-popup-right-leave {\nto {\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-bottom-enter {\n0% {\n    -webkit-transform: translate3d(0, 100%, 0);\n            transform: translate3d(0, 100%, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@keyframes s-popup-bottom-enter {\n0% {\n    -webkit-transform: translate3d(0, 100%, 0);\n            transform: translate3d(0, 100%, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-bottom-leave {\nto {\n    -webkit-transform: translate3d(0, 100%, 0);\n            transform: translate3d(0, 100%, 0);\n}\n}\n@keyframes s-popup-bottom-leave {\nto {\n    -webkit-transform: translate3d(0, 100%, 0);\n            transform: translate3d(0, 100%, 0);\n}\n}\n.s-popup {\n  display: none;\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: var(--window-top);\n  bottom: var(--window-bottom);\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  pointer-events: none;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n}\n.s-popup-visible {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n}\n.s-popup-mask {\n    position: absolute;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 1;\n    pointer-events: auto;\n}\n.s-popup-wrapper {\n    position: absolute;\n    max-width: 100%;\n    max-height: 100%;\n    z-index: 2;\n    pointer-events: auto;\n    background-color: white;\n    overflow: auto;\n}\n.s-popup-mask, .s-popup-wrapper {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    -webkit-animation-duration: inherit;\n            animation-duration: inherit;\n}\n.s-popup-effect-enter .s-popup-mask,\n  .s-popup-effect-enter .s-popup-wrapper {\n    -webkit-animation-name: s-popup-fade-enter;\n            animation-name: s-popup-fade-enter;\n}\n.s-popup-effect-leave .s-popup-mask,\n  .s-popup-effect-leave .s-popup-wrapper {\n    -webkit-animation-name: s-popup-fade-leave;\n            animation-name: s-popup-fade-leave;\n}\n.s-popup-position-center {\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.s-popup-position-center .s-popup-wrapper {\n    position: relative;\n    width: 80%;\n    margin: 0 auto;\n    border-radius: 10px;\n}\n.s-popup-position-center.s-popup-effect-enter .s-popup-wrapper {\n    -webkit-animation-name: s-popup-center-enter;\n            animation-name: s-popup-center-enter;\n}\n.s-popup-position-center.s-popup-effect-leave .s-popup-wrapper {\n    -webkit-animation-name: s-popup-center-leave;\n            animation-name: s-popup-center-leave;\n}\n.s-popup-position-top .s-popup-wrapper {\n  left: 0;\n  right: 0;\n  top: 0;\n}\n.s-popup-position-top.s-popup-effect-enter .s-popup-wrapper {\n  -webkit-animation-name: s-popup-top-enter;\n          animation-name: s-popup-top-enter;\n}\n.s-popup-position-top.s-popup-effect-leave .s-popup-wrapper {\n  -webkit-animation-name: s-popup-top-leave;\n          animation-name: s-popup-top-leave;\n}\n.s-popup-position-bottom .s-popup-wrapper {\n  left: 0;\n  right: 0;\n  bottom: 0;\n}\n.s-popup-position-bottom.s-popup-effect-enter .s-popup-wrapper {\n  -webkit-animation-name: s-popup-bottom-enter;\n          animation-name: s-popup-bottom-enter;\n}\n.s-popup-position-bottom.s-popup-effect-leave .s-popup-wrapper {\n  -webkit-animation-name: s-popup-bottom-leave;\n          animation-name: s-popup-bottom-leave;\n}\n.s-popup-position-left .s-popup-wrapper {\n  left: 0;\n  top: 0;\n  bottom: 0;\n}\n.s-popup-position-left.s-popup-effect-enter .s-popup-wrapper {\n  -webkit-animation-name: s-popup-left-enter;\n          animation-name: s-popup-left-enter;\n}\n.s-popup-position-left.s-popup-effect-leave .s-popup-wrapper {\n  -webkit-animation-name: s-popup-left-leave;\n          animation-name: s-popup-left-leave;\n}\n.s-popup-position-right .s-popup-wrapper {\n  right: 0;\n  top: 0;\n  bottom: 0;\n}\n.s-popup-position-right.s-popup-effect-enter .s-popup-wrapper {\n  -webkit-animation-name: s-popup-right-enter;\n          animation-name: s-popup-right-enter;\n}\n.s-popup-position-right.s-popup-effect-leave .s-popup-wrapper {\n  -webkit-animation-name: s-popup-right-leave;\n          animation-name: s-popup-right-leave;\n}\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n@-webkit-keyframes s-popup-fade-enter {\n0% {\n    opacity: 0;\n}\nto {\n    opacity: 1;\n}\n}\n@keyframes s-popup-fade-enter {\n0% {\n    opacity: 0;\n}\nto {\n    opacity: 1;\n}\n}\n@-webkit-keyframes s-popup-fade-leave {\n0% {\n    opacity: 1;\n}\nto {\n    opacity: 0;\n}\n}\n@keyframes s-popup-fade-leave {\n0% {\n    opacity: 1;\n}\nto {\n    opacity: 0;\n}\n}\n@-webkit-keyframes s-popup-center-enter {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\nto {\n    opacity: 1;\n}\n}\n@keyframes s-popup-center-enter {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\nto {\n    opacity: 1;\n}\n}\n@-webkit-keyframes s-popup-center-leave {\n0% {\n    opacity: 1;\n}\nto {\n    opacity: 0;\n    -webkit-transform: scale(0.9);\n            transform: scale(0.9);\n}\n}\n@keyframes s-popup-center-leave {\n0% {\n    opacity: 1;\n}\nto {\n    opacity: 0;\n    -webkit-transform: scale(0.9);\n            transform: scale(0.9);\n}\n}\n@-webkit-keyframes s-popup-top-enter {\n0% {\n    -webkit-transform: translate3d(0, -100%, 0);\n            transform: translate3d(0, -100%, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@keyframes s-popup-top-enter {\n0% {\n    -webkit-transform: translate3d(0, -100%, 0);\n            transform: translate3d(0, -100%, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-top-leave {\nto {\n    -webkit-transform: translate3d(0, -100%, 0);\n            transform: translate3d(0, -100%, 0);\n}\n}\n@keyframes s-popup-top-leave {\nto {\n    -webkit-transform: translate3d(0, -100%, 0);\n            transform: translate3d(0, -100%, 0);\n}\n}\n@-webkit-keyframes s-popup-left-enter {\n0% {\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@keyframes s-popup-left-enter {\n0% {\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-left-leave {\nto {\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n}\n}\n@keyframes s-popup-left-leave {\nto {\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-right-enter {\n0% {\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@keyframes s-popup-right-enter {\n0% {\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-right-leave {\nto {\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n}\n}\n@keyframes s-popup-right-leave {\nto {\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-bottom-enter {\n0% {\n    -webkit-transform: translate3d(0, 100%, 0);\n            transform: translate3d(0, 100%, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@keyframes s-popup-bottom-enter {\n0% {\n    -webkit-transform: translate3d(0, 100%, 0);\n            transform: translate3d(0, 100%, 0);\n}\nto {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes s-popup-bottom-leave {\nto {\n    -webkit-transform: translate3d(0, 100%, 0);\n            transform: translate3d(0, 100%, 0);\n}\n}\n@keyframes s-popup-bottom-leave {\nto {\n    -webkit-transform: translate3d(0, 100%, 0);\n            transform: translate3d(0, 100%, 0);\n}\n}\n.s-popup {\n  display: none;\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: var(--window-top);\n  bottom: var(--window-bottom);\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  pointer-events: none;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n}\n.s-popup-visible {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n}\n.s-popup-mask {\n    position: absolute;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 1;\n    pointer-events: auto;\n}\n.s-popup-wrapper {\n    position: absolute;\n    max-width: 100%;\n    max-height: 100%;\n    z-index: 2;\n    pointer-events: auto;\n    background-color: white;\n    overflow: auto;\n}\n.s-popup-mask, .s-popup-wrapper {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    -webkit-animation-duration: inherit;\n            animation-duration: inherit;\n}\n.s-popup-effect-enter .s-popup-mask,\n  .s-popup-effect-enter .s-popup-wrapper {\n    -webkit-animation-name: s-popup-fade-enter;\n            animation-name: s-popup-fade-enter;\n}\n.s-popup-effect-leave .s-popup-mask,\n  .s-popup-effect-leave .s-popup-wrapper {\n    -webkit-animation-name: s-popup-fade-leave;\n            animation-name: s-popup-fade-leave;\n}\n.s-popup-position-center {\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.s-popup-position-center .s-popup-wrapper {\n    position: relative;\n    width: 90%;\n    margin: 0 auto;\n    border-radius: 10px;\n}\n.s-popup-position-center.s-popup-effect-enter .s-popup-wrapper {\n    -webkit-animation-name: s-popup-center-enter;\n            animation-name: s-popup-center-enter;\n}\n.s-popup-position-center.s-popup-effect-leave .s-popup-wrapper {\n    -webkit-animation-name: s-popup-center-leave;\n            animation-name: s-popup-center-leave;\n}\n.s-popup-position-top .s-popup-wrapper {\n  left: 0;\n  right: 0;\n  top: 0;\n}\n.s-popup-position-top.s-popup-effect-enter .s-popup-wrapper {\n  -webkit-animation-name: s-popup-top-enter;\n          animation-name: s-popup-top-enter;\n}\n.s-popup-position-top.s-popup-effect-leave .s-popup-wrapper {\n  -webkit-animation-name: s-popup-top-leave;\n          animation-name: s-popup-top-leave;\n}\n.s-popup-position-bottom .s-popup-wrapper {\n  left: 0;\n  right: 0;\n  bottom: 0;\n}\n.s-popup-position-bottom.s-popup-effect-enter .s-popup-wrapper {\n  -webkit-animation-name: s-popup-bottom-enter;\n          animation-name: s-popup-bottom-enter;\n}\n.s-popup-position-bottom.s-popup-effect-leave .s-popup-wrapper {\n  -webkit-animation-name: s-popup-bottom-leave;\n          animation-name: s-popup-bottom-leave;\n}\n.s-popup-position-left .s-popup-wrapper {\n  left: 0;\n  top: 0;\n  bottom: 0;\n}\n.s-popup-position-left.s-popup-effect-enter .s-popup-wrapper {\n  -webkit-animation-name: s-popup-left-enter;\n          animation-name: s-popup-left-enter;\n}\n.s-popup-position-left.s-popup-effect-leave .s-popup-wrapper {\n  -webkit-animation-name: s-popup-left-leave;\n          animation-name: s-popup-left-leave;\n}\n.s-popup-position-right .s-popup-wrapper {\n  right: 0;\n  top: 0;\n  bottom: 0;\n}\n.s-popup-position-right.s-popup-effect-enter .s-popup-wrapper {\n  -webkit-animation-name: s-popup-right-enter;\n          animation-name: s-popup-right-enter;\n}\n.s-popup-position-right.s-popup-effect-leave .s-popup-wrapper {\n  -webkit-animation-name: s-popup-right-leave;\n          animation-name: s-popup-right-leave;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -14538,7 +14710,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../../static/img/bg/
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, "\nbody{\n\tbackground-color: #f7f7f7;\n}\n.top{\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n\tbackground-size: 100%;\n\tbackground-repeat: no-repeat;\n}\n.headface{\n\twidth: 120upx;\n\theight: 120upx;\n\tborder-radius: 50%;\n\tvertical-align: middle;\n\tmargin: 20upx 30upx 10upx 30upx;\n}\n.headface+uni-text{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.options1{\n\t\n\ttext-align: center;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-justify-content: space-around;\n\t        justify-content: space-around;\n}\n.card{\n\tpadding: 30upx 30upx 50upx 30upx;\n\tbox-shadow: 0 0 8px #ccc;\n\tbackground-color: #fff;\n\tborder-radius: 10px;\n}\n.card .fr{\n\t\tdisplay: inline-block;\n\t\tvertical-align: middle;\n\t\tmargin-top: 5upx;\n}\n.card .fr uni-icon{\n\t\tmargin-left: 20upx;\n}\n.item-list{\n\t\ttext-align: center;\n\t\tmargin-top: 60upx;\n\t\tdisplay: inline-block;\n\t\tvertical-align: top;\n}\n.dd .item-list{\n\t\twidth: 20%;\n}\n.card.card2{\n\t\tbox-shadow: none;\n\t\tmargin-top: 25upx;\n}\n.dd2 .item-list{\n\t\twidth: 25%;\n}\n.item-list uni-view{\n\t\twhite-space: nowrap;\n\t\tfont-size: 24upx;\n\t\tcolor: #696969;\n}\n.dd .item-list:last-child{\n\t\tmargin-right: 0;\n}\n/* .dd2 .item-list:nth-of-type(4n){\n\t\tmar\n\t} */\n.item-list uni-image{\n\t\twidth: 70upx;\n\t\theight: 60upx;\n\t\tmargin-bottom: 20upx;\n}\n.dd2 .item-list uni-image{\n\t\twidth: 50upx;\n\t\theight: 50upx;\n}\n.setting{\n\t\ttext-align: right;\n\t\tpadding: 20upx 20upx 0 0;\n}\n.advPopup uni-image{\n\t\twidth: 100%;\n\t\tmargin:  0 auto;\n}\n.adv-btn{\n\t\twidth: 94%;\n\t\tmargin: 0 auto;\n\t\tbackground-color: #fba1b0;\n\t\tcolor: #fff;\n\t\tborder-radius: 6px;\n\t\tline-height: 1;\n\t\tborder: none;\n\t\toutline: none;\n\t\tpadding: 20upx 0;\n\t\ttext-align: center;\n\t\tmargin-bottom: 20upx;\n\t\tfont-size: 12px;\n}\n", ""]);
+exports.push([module.i, "\nbody{\n\tbackground-color: #f7f7f7;\n}\n.top{\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n\tbackground-size: 100%;\n\tbackground-repeat: no-repeat;\n}\n.headface{\n\twidth: 120upx;\n\theight: 120upx;\n\tborder-radius: 50%;\n\tvertical-align: middle;\n\tmargin: 20upx 30upx 10upx 30upx;\n}\n.headface+uni-text{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.options1{\n\t\n\ttext-align: center;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-justify-content: space-around;\n\t        justify-content: space-around;\n}\n.card{\n\tpadding: 30upx 30upx 50upx 30upx;\n\tbox-shadow: 0 0 8px #ccc;\n\tbackground-color: #fff;\n\tborder-radius: 10px;\n}\n.card .fr{\n\t\tdisplay: inline-block;\n\t\tvertical-align: middle;\n\t\tmargin-top: 5upx;\n}\n.card .fr uni-icon{\n\t\tmargin-left: 20upx;\n}\n.item-list{\n\t\ttext-align: center;\n\t\tmargin-top: 60upx;\n\t\tdisplay: inline-block;\n\t\tvertical-align: top;\n}\n.dd .item-list{\n\t\twidth: 20%;\n}\n.card.card2{\n\t\tbox-shadow: none;\n\t\tmargin-top: 25upx;\n}\n.dd2 .item-list{\n\t\twidth: 25%;\n}\n.item-list uni-view{\n\t\twhite-space: nowrap;\n\t\tfont-size: 24upx;\n\t\tcolor: #696969;\n}\n.dd .item-list:last-child{\n\t\tmargin-right: 0;\n}\n/* .dd2 .item-list:nth-of-type(4n){\n\t\tmar\n\t} */\n.item-list uni-image{\n\t\twidth: 70upx;\n\t\theight: 60upx;\n\t\tmargin-bottom: 20upx;\n}\n.dd2 .item-list uni-image{\n\t\twidth: 50upx;\n\t\theight: 50upx;\n}\n.setting{\n\t\ttext-align: right;\n\t\tpadding: 20upx 20upx 0 0;\n}\n.advPopup uni-image{\n\t\twidth: 100%;\n\t\theight: 320px;\n\t\tmargin:  0 auto;\n}\n.adv-btn{\n\t\twidth: 94%;\n\t\tmargin: 0 auto;\n\t\tbackground-color: #fba1b0;\n\t\tcolor: #fff;\n\t\tborder-radius: 6px;\n\t\tline-height: 1;\n\t\tborder: none;\n\t\toutline: none;\n\t\tpadding: 20upx 0;\n\t\ttext-align: center;\n\t\tmargin-bottom: 20upx;\n\t\tfont-size: 12px;\n}\n.invite-container{\n\t\tpadding: 30upx;\n}\n.invite-title{\n\t\tfont-size: 18px;\n\t\tmargin-bottom: 30upx;\n}\n.invite-container uni-input{\n\t\tpadding: 10upx 0;\n\t\tborder-bottom: 1px solid #e9e9e9;\n}\n.adv-btn2{\n\t\tmargin-top: 50upx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -14748,7 +14920,7 @@ var render = function() {
               _c(
                 "v-uni-view",
                 { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
-                [_vm._v("0.00")]
+                [_vm._v(_vm._$g(12, "t0-0"))]
               ),
               _c(
                 "v-uni-view",
@@ -14769,7 +14941,7 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
-                    [_vm._v("0.00")]
+                    [_vm._v(_vm._$g(16, "t0-0"))]
                   ),
                   _c(
                     "v-uni-view",
@@ -14822,7 +14994,7 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
-                    [_vm._v("0.00 元")]
+                    [_vm._v(_vm._$g(24, "t0-0") + " 元")]
                   )
                 ],
                 1
@@ -14858,7 +15030,7 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
-                    [_vm._v("0 笔")]
+                    [_vm._v(_vm._$g(29, "t0-0") + " 笔")]
                   )
                 ],
                 1
@@ -14894,7 +15066,7 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
-                    [_vm._v("0 人")]
+                    [_vm._v(_vm._$g(34, "t0-0") + " 笔")]
                   )
                 ],
                 1
@@ -14930,7 +15102,7 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(39, "sc"), attrs: { _i: 39 } },
-                    [_vm._v("0 人")]
+                    [_vm._v(_vm._$g(39, "t0-0") + " 人")]
                   )
                 ],
                 1
@@ -16161,7 +16333,7 @@ var render = function() {
               _c(
                 "v-uni-view",
                 { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
-                [_vm._v("23.20元")]
+                [_vm._v(_vm._$g(5, "t0-0") + "元")]
               )
             ],
             1
@@ -16182,7 +16354,7 @@ var render = function() {
               _c(
                 "v-uni-view",
                 { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
-                [_vm._v("0.00元")]
+                [_vm._v(_vm._$g(9, "t0-0") + "元")]
               )
             ],
             1
@@ -16203,7 +16375,7 @@ var render = function() {
               _c(
                 "v-uni-view",
                 { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
-                [_vm._v("0.00元")]
+                [_vm._v(_vm._$g(13, "t0-0") + "元")]
               )
             ],
             1
@@ -16262,8 +16434,86 @@ var render = function() {
             : _vm._e(),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
+            {
+              staticClass: _vm._$g(21, "sc"),
+              attrs: { _i: 21 },
+              on: {
+                click: function($event) {
+                  return _vm.$handleViewEvent($event)
+                }
+              }
+            },
             [_vm._v("我要提现")]
+          )
+        ],
+        1
+      ),
+      _c(
+        "s-popup",
+        {
+          attrs: { _i: 22 },
+          model: {
+            value: _vm._$g(22, "v-model"),
+            callback: function() {},
+            expression: "visible"
+          }
+        },
+        [
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+            [
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
+                [_vm._v("申请提现")]
+              ),
+              _c(
+                "v-uni-view",
+                { attrs: { _i: 25 } },
+                [
+                  _c("v-uni-input", {
+                    attrs: {
+                      type: "number",
+                      placeholder: "请输入要提现金额",
+                      _i: 26
+                    },
+                    on: {
+                      input: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    },
+                    model: {
+                      value: _vm._$g(26, "v-model"),
+                      callback: function() {},
+                      expression: "amount"
+                    }
+                  })
+                ],
+                1
+              ),
+              _c(
+                "v-uni-view",
+                { staticStyle: { "margin-top": "20upx" }, attrs: { _i: 27 } },
+                [
+                  _c(
+                    "v-uni-button",
+                    {
+                      staticClass: _vm._$g(28, "sc"),
+                      attrs: { _i: 28 },
+                      on: {
+                        click: function($event) {
+                          return _vm.$handleViewEvent($event)
+                        }
+                      }
+                    },
+                    [_vm._v("确定")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
           )
         ],
         1
@@ -16302,8 +16552,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
-
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var _index = _interopRequireDefault(__webpack_require__(/*! @/components/s-popup/index */ 276));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
 
   data: function data() {
@@ -16311,7 +16561,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       wxsProps: {} };
 
   },
-  components: {} };exports.default = _default;
+  components: {
+    'sPopup': _index.default } };exports.default = _default;
 
 /***/ }),
 /* 326 */
@@ -16360,7 +16611,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../hbuilderX/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.top-nav{\n\tz-index: 999;\n\tbackground-color: #fff;\n\tposition: fixed;\n\tleft: 0;\n\ttop: 0;\n\twidth: 100%;\n\tbox-sizing: border-box;\n\t\n\t\tpadding-top: var(--status-bar-height);\n\t\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n}\n.nav-content{\n\twidth: 100%;\n\t\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t\n\ttext-align: right;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n}\nbody{\n\t\tbackground-color: #fff;\n}\n.main{\n\t\tborder-top: 20upx solid #f3f3f3;\n\t\t/* margin-top: 86upx; */\n}\n.recommendAward-set{\n\twidth: 750upx;\n\theight: 45upx;\n\tmargin-top: 71upx;\n}\n.recommendAward-set-back{\n\twidth: 21upx;\n\theight: 37upx;\n\tmargin: 4upx 0 0 24upx;\n\tfloat: left;\n}\n.recommendAward-set-title{\n\twidth: 120upx;\n\theight: 100%;\n\tline-height: 45upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 30upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tcolor: #000000;\n\tfloat: left;\n\tmargin-left: 270upx;\n}\n.recommendAward-set-right{\n\twidth: 112upx;\n\theight: 100%;\n\tline-height: 45upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 28upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tcolor: #919191;\n\tfloat: left;\n\tmargin-left: 150upx;\n}\n.recommendAward-card{\n\twidth: 706upx;\n\theight: 90upx;\n\tmargin: 0 auto;\n\tborder-bottom: 2upx solid #f0f0f0;\n}\n.recommendAward-card-img1{\n\twidth: 34upx;\n\theight: 34upx;\n\tfloat: left;\n\tmargin: 28upx 12upx 0 25upx;\n}\n.recommendAward-card-img2{\n\twidth: 33upx;\n\theight: 33upx;\n\tfloat: left;\n\tmargin: 28upx 12upx 0 24upx;\n}\n.recommendAward-card-img3{\n\twidth: 31upx;\n\theight: 30upx;\n\tfloat: left;\n\tmargin: 30upx 13upx 0 26upx;\n}\n.recommendAward-card-left{\n\theight: 100%;\n\tline-height: 90upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 26upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tcolor: #575757;\n\tfloat: left;\n}\n.recommendAward-card-right{\n\theight: 100%;\n\tline-height: 90upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 24upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tcolor: #f82a2a;\n\tfloat: right;\n}\n.recommendAward-card-rights{\n\tcolor: #000000;\n}\n.recommendAward-info{\n\twidth: 706upx;\n\theight: 80upx;\n\tborder-bottom: 2upx solid #f0f0f0;\n\tmargin: 0 auto;\n}\n.recommendAward-info-txt{\n\theight: 100%;\n\tline-height: 70upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 26upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tletter-spacing: 1px;\n\tcolor: #000000;\n\tfloat: left;\n\tmargin-left: 4upx;\n}\n.recommendAward-info-img{\n\twidth: 26upx;\n\theight: 15upx;\n\tfloat: right;\n\tmargin: 36upx 5upx 0 0;\n}\n.showinfo-card{\n\twidth: 706upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 26upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tletter-spacing: 1upx;\n\tcolor: #575757;\n\tmargin: 22upx auto 0;\n}\n.showinfo-cards{\n\tmargin: 8upx auto 0;\n}\n.showinfo-cards uni-text{\n\tcolor: #f82a2a;\n}\n.recommendAward-info-btn{\n\twidth: 80%;\n\tmargin: 0 auto;\n\theight: 90upx;\n\tborder-radius: 90upx;\n\tbackground-color: #ff6d7e;\n\tline-height: 90upx;\n\tmargin-top: 100upx;\n\ttext-align: center;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 30upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tcolor: #ffffff;\n}\n", ""]);
+exports.push([module.i, "\n.top-nav{\n\tz-index: 999;\n\tbackground-color: #fff;\n\tposition: fixed;\n\tleft: 0;\n\ttop: 0;\n\twidth: 100%;\n\tbox-sizing: border-box;\n\t\n\t\tpadding-top: var(--status-bar-height);\n\t\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n}\n.nav-content{\n\twidth: 100%;\n\t\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t\n\ttext-align: right;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n}\nbody{\n\t\tbackground-color: #fff;\n}\n.main{\n\t\tborder-top: 20upx solid #f3f3f3;\n\t\t/* margin-top: 86upx; */\n}\n.recommendAward-set{\n\twidth: 750upx;\n\theight: 45upx;\n\tmargin-top: 71upx;\n}\n.recommendAward-set-back{\n\twidth: 21upx;\n\theight: 37upx;\n\tmargin: 4upx 0 0 24upx;\n\tfloat: left;\n}\n.recommendAward-set-title{\n\twidth: 120upx;\n\theight: 100%;\n\tline-height: 45upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 30upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tcolor: #000000;\n\tfloat: left;\n\tmargin-left: 270upx;\n}\n.recommendAward-set-right{\n\twidth: 112upx;\n\theight: 100%;\n\tline-height: 45upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 28upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tcolor: #919191;\n\tfloat: left;\n\tmargin-left: 150upx;\n}\n.recommendAward-card{\n\twidth: 706upx;\n\theight: 90upx;\n\tmargin: 0 auto;\n\tborder-bottom: 2upx solid #f0f0f0;\n}\n.recommendAward-card-img1{\n\twidth: 34upx;\n\theight: 34upx;\n\tfloat: left;\n\tmargin: 28upx 12upx 0 25upx;\n}\n.recommendAward-card-img2{\n\twidth: 33upx;\n\theight: 33upx;\n\tfloat: left;\n\tmargin: 28upx 12upx 0 24upx;\n}\n.recommendAward-card-img3{\n\twidth: 31upx;\n\theight: 30upx;\n\tfloat: left;\n\tmargin: 30upx 13upx 0 26upx;\n}\n.recommendAward-card-left{\n\theight: 100%;\n\tline-height: 90upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 26upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tcolor: #575757;\n\tfloat: left;\n}\n.recommendAward-card-right{\n\theight: 100%;\n\tline-height: 90upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 24upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tcolor: #f82a2a;\n\tfloat: right;\n}\n.recommendAward-card-rights{\n\tcolor: #000000;\n}\n.recommendAward-info{\n\twidth: 706upx;\n\theight: 80upx;\n\tborder-bottom: 2upx solid #f0f0f0;\n\tmargin: 0 auto;\n}\n.recommendAward-info-txt{\n\theight: 100%;\n\tline-height: 70upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 26upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tletter-spacing: 1px;\n\tcolor: #000000;\n\tfloat: left;\n\tmargin-left: 4upx;\n}\n.recommendAward-info-img{\n\twidth: 26upx;\n\theight: 15upx;\n\tfloat: right;\n\tmargin: 36upx 5upx 0 0;\n}\n.showinfo-card{\n\twidth: 706upx;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 26upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tletter-spacing: 1upx;\n\tcolor: #575757;\n\tmargin: 22upx auto 0;\n}\n.showinfo-cards{\n\tmargin: 8upx auto 0;\n}\n.showinfo-cards uni-text{\n\tcolor: #f82a2a;\n}\n.recommendAward-info-btn{\n\twidth: 80%;\n\tmargin: 0 auto;\n\theight: 90upx;\n\tborder-radius: 90upx;\n\tbackground-color: #ff6d7e;\n\tline-height: 90upx;\n\tmargin-top: 100upx;\n\ttext-align: center;\n\tfont-family: PingFang-SC-Regular;\n\tfont-size: 30upx;\n\tfont-weight: normal;\n\tfont-stretch: normal;\n\tcolor: #ffffff;\n}\n.adv-btn{\n\twidth: 94%;\n\tmargin: 0 auto;\n\tbackground-color: #fba1b0;\n\tcolor: #fff;\n\tborder-radius: 6px;\n\tline-height: 1;\n\tborder: none;\n\toutline: none;\n\tpadding: 20upx 0;\n\ttext-align: center;\n\tmargin-bottom: 20upx;\n\tfont-size: 12px;\n}\n.invite-container{\n\tpadding: 30upx;\n}\n.invite-title{\n\tfont-size: 18px;\n\tmargin-bottom: 30upx;\n}\n.invite-container uni-input{\n\tpadding: 10upx 0;\n\tborder-bottom: 1px solid #e9e9e9;\n}\n.adv-btn2{\n\tmargin-top: 50upx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -16459,7 +16710,7 @@ var render = function() {
           _c(
             "v-uni-view",
             { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
-            [_vm._v("累计金额:+23.20元")]
+            [_vm._v("累计金额:+" + _vm._$g(2, "t0-0") + "元")]
           ),
           _c(
             "v-uni-scroll-view",
@@ -16479,17 +16730,16 @@ var render = function() {
                   {
                     key: item,
                     staticClass: _vm._$g("4-" + $30, "sc"),
-                    attrs: { _i: "4-" + $30 },
-                    on: {
-                      click: function($event) {
-                        return _vm.$handleViewEvent($event)
-                      }
-                    }
+                    attrs: { _i: "4-" + $30 }
                   },
                   [
                     _c("v-uni-image", {
                       staticClass: _vm._$g("5-" + $30, "sc"),
-                      attrs: { src: "", mode: "", _i: "5-" + $30 }
+                      attrs: {
+                        src: _vm._$g("5-" + $30, "a-src"),
+                        mode: "",
+                        _i: "5-" + $30
+                      }
                     }),
                     _c(
                       "v-uni-view",
@@ -16497,7 +16747,7 @@ var render = function() {
                         staticClass: _vm._$g("6-" + $30, "sc"),
                         attrs: { _i: "6-" + $30 }
                       },
-                      [_vm._v("中达花无缺")]
+                      [_vm._v(_vm._$g("6-" + $30, "t0-0"))]
                     ),
                     _c(
                       "v-uni-view",
@@ -16517,7 +16767,7 @@ var render = function() {
                         staticClass: _vm._$g("9-" + $30, "sc"),
                         attrs: { _i: "9-" + $30 }
                       },
-                      [_vm._v("订单编号:DFGHH5588644592148956")]
+                      [_vm._v("订单编号:" + _vm._$g("9-" + $30, "t0-0"))]
                     ),
                     _c(
                       "v-uni-view",
@@ -16525,7 +16775,7 @@ var render = function() {
                         staticClass: _vm._$g("10-" + $30, "sc"),
                         attrs: { _i: "10-" + $30 }
                       },
-                      [_vm._v("下单时间：2020-02-11 12:12")]
+                      [_vm._v("下单时间：" + _vm._$g("10-" + $30, "t0-0"))]
                     ),
                     _c(
                       "v-uni-view",
@@ -16548,7 +16798,7 @@ var render = function() {
                             staticClass: _vm._$g("13-" + $30, "sc"),
                             attrs: { _i: "13-" + $30 }
                           },
-                          [_vm._v("12.20")]
+                          [_vm._v(_vm._$g("13-" + $30, "t0-0"))]
                         ),
                         _c(
                           "v-uni-text",
@@ -16564,7 +16814,7 @@ var render = function() {
                             staticClass: _vm._$g("15-" + $30, "sc"),
                             attrs: { _i: "15-" + $30 }
                           },
-                          [_vm._v("12.20")]
+                          [_vm._v(_vm._$g("15-" + $30, "t0-0"))]
                         )
                       ],
                       1
@@ -16766,7 +17016,7 @@ var render = function() {
     { staticStyle: { background: "white" }, attrs: { _i: 0 } },
     [
       _c("v-uni-view", { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } }, [
-        _vm._v("预计佣金:+50元")
+        _vm._v("预计佣金:+" + _vm._$g(1, "t0-0") + "元")
       ]),
       _c(
         "v-uni-view",
@@ -16809,13 +17059,26 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("已打款")]
+            [_vm._v("未打款")]
           ),
           _c(
             "v-uni-view",
             {
               class: _vm._$g(6, "c"),
               attrs: { _i: 6 },
+              on: {
+                click: function($event) {
+                  return _vm.$handleViewEvent($event)
+                }
+              }
+            },
+            [_vm._v("已打款")]
+          ),
+          _c(
+            "v-uni-view",
+            {
+              class: _vm._$g(7, "c"),
+              attrs: { _i: 7 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -16830,8 +17093,8 @@ var render = function() {
       _c(
         "v-uni-scroll-view",
         {
-          style: _vm._$g(7, "s"),
-          attrs: { "scroll-y": true, id: "sv", _i: 7 },
+          style: _vm._$g(8, "s"),
+          attrs: { "scroll-y": true, id: "sv", _i: 8 },
           on: {
             scrolltolower: function($event) {
               return _vm.$handleViewEvent($event)
@@ -16839,50 +17102,106 @@ var render = function() {
           }
         },
         [
-          _vm._l(_vm._$g(8, "f"), function(item, index, $20, $30) {
+          _vm._l(_vm._$g(9, "f"), function(item, index, $20, $30) {
             return _c(
               "v-uni-view",
               {
                 key: item,
-                staticClass: _vm._$g("8-" + $30, "sc"),
-                attrs: { _i: "8-" + $30 }
+                staticClass: _vm._$g("9-" + $30, "sc"),
+                attrs: { _i: "9-" + $30 }
               },
               [
                 _c(
                   "v-uni-view",
-                  { attrs: { _i: "9-" + $30 } },
+                  { attrs: { _i: "10-" + $30 } },
                   [
-                    _c("v-uni-text", { attrs: { _i: "10-" + $30 } }, [
-                      _vm._v("提现到银行卡")
+                    _c("v-uni-text", { attrs: { _i: "11-" + $30 } }, [
+                      _vm._v(_vm._$g("11-" + $30, "t0-0"))
                     ]),
                     _c(
                       "v-uni-text",
                       {
-                        staticClass: _vm._$g("11-" + $30, "sc"),
-                        attrs: { _i: "11-" + $30 }
+                        staticClass: _vm._$g("12-" + $30, "sc"),
+                        attrs: { _i: "12-" + $30 }
                       },
-                      [_vm._v("+10.00")]
+                      [_vm._v("+" + _vm._$g("12-" + $30, "t0-0"))]
                     )
                   ],
                   1
                 ),
                 _c(
                   "v-uni-view",
-                  { attrs: { _i: "12-" + $30 } },
+                  { attrs: { _i: "13-" + $30 } },
                   [
-                    _c(
-                      "v-uni-text",
-                      {
-                        staticClass: _vm._$g("13-" + $30, "sc"),
-                        attrs: { _i: "13-" + $30 }
-                      },
-                      [_vm._v("2019-10-25 09:44")]
-                    ),
                     _c(
                       "v-uni-text",
                       {
                         staticClass: _vm._$g("14-" + $30, "sc"),
                         attrs: { _i: "14-" + $30 }
+                      },
+                      [_vm._v(_vm._$g("14-" + $30, "t0-0"))]
+                    ),
+                    _c(
+                      "v-uni-text",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm._$g("15-" + $30, "v-show"),
+                            expression: "_$g((\"15-\"+$30),'v-show')"
+                          }
+                        ],
+                        staticClass: _vm._$g("15-" + $30, "sc"),
+                        attrs: { _i: "15-" + $30 }
+                      },
+                      [_vm._v("待审核")]
+                    ),
+                    _c(
+                      "v-uni-text",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm._$g("16-" + $30, "v-show"),
+                            expression: "_$g((\"16-\"+$30),'v-show')"
+                          }
+                        ],
+                        staticClass: _vm._$g("16-" + $30, "sc"),
+                        attrs: { _i: "16-" + $30 }
+                      },
+                      [_vm._v("审核驳回")]
+                    ),
+                    _c(
+                      "v-uni-text",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm._$g("17-" + $30, "v-show"),
+                            expression: "_$g((\"17-\"+$30),'v-show')"
+                          }
+                        ],
+                        staticClass: _vm._$g("17-" + $30, "sc"),
+                        attrs: { _i: "17-" + $30 }
+                      },
+                      [_vm._v("未打款")]
+                    ),
+                    _c(
+                      "v-uni-text",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm._$g("18-" + $30, "v-show"),
+                            expression: "_$g((\"18-\"+$30),'v-show')"
+                          }
+                        ],
+                        staticClass: _vm._$g("18-" + $30, "sc"),
+                        attrs: { _i: "18-" + $30 }
                       },
                       [_vm._v("已打款")]
                     )
@@ -16893,7 +17212,7 @@ var render = function() {
               1
             )
           }),
-          _c("uni-load-more", { attrs: { _i: 15 } })
+          _c("uni-load-more", { attrs: { _i: 19 } })
         ],
         2
       )
@@ -17474,7 +17793,14 @@ var render = function() {
                       _c(
                         "v-uni-view",
                         { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
-                        [_vm._v(_vm._$g(6, "t0-0") + "∨")]
+                        [
+                          _vm._v(_vm._$g(6, "t0-0")),
+                          _c("v-uni-text", {
+                            staticClass: _vm._$g(7, "sc"),
+                            attrs: { _i: 7 }
+                          })
+                        ],
+                        1
                       )
                     ],
                     1
@@ -17490,12 +17816,12 @@ var render = function() {
               type: "text",
               value: "",
               placeholder: "请输入手机号",
-              _i: 7
+              _i: 8
             },
             model: {
-              value: _vm._$g(7, "v-model"),
+              value: _vm._$g(8, "v-model"),
               callback: function($$v) {
-                _vm.$handleVModelEvent(7, $$v)
+                _vm.$handleVModelEvent(8, $$v)
               },
               expression: "mobile"
             }
@@ -17503,18 +17829,18 @@ var render = function() {
         ],
         1
       ),
-      _c("v-uni-view", { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } }, [
+      _c("v-uni-view", { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } }, [
         _vm._v("登录遇到问题")
       ]),
       _c(
         "v-uni-view",
-        { attrs: { _i: 9 } },
+        { attrs: { _i: 10 } },
         [
           _c(
             "v-uni-button",
             {
-              staticClass: _vm._$g(10, "sc"),
-              attrs: { type: "primary", _i: 10 },
+              staticClass: _vm._$g(11, "sc"),
+              attrs: { type: "primary", _i: 11 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -17529,29 +17855,29 @@ var render = function() {
       _c(
         "v-uni-view",
         {
-          staticClass: _vm._$g(11, "sc"),
+          staticClass: _vm._$g(12, "sc"),
           staticStyle: { "margin-bottom": "160upx" },
-          attrs: { _i: 11 }
+          attrs: { _i: 12 }
         },
         [_vm._v("未注册的手机号码验证后自动注册")]
       ),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+        { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
         [
           _c(
             "v-uni-text",
-            { attrs: { _i: 13 } },
+            { attrs: { _i: 14 } },
             [
               _vm._v("登录即代表同意\n\t\t\t"),
               _c(
                 "v-uni-text",
-                { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
                 [_vm._v("《中企商会酒店平台用户服务协议》")]
               ),
               _c(
                 "v-uni-text",
-                { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
+                { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
                 [_vm._v("《隐私政策》")]
               ),
               _vm._v(
@@ -28472,7 +28798,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_2___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_
 var ___CSS_LOADER_URL_REPLACEMENT_3___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_2___);
 var ___CSS_LOADER_URL_REPLACEMENT_4___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_3___, { hash: "#iconfont" });
 // Module
-exports.push([module.i, "@font-face {font-family: \"iconfont\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "); /* IE9 */\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format('embedded-opentype'), \n  url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),\n  url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format('woff'),\n  url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") format('truetype'), \n  url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ") format('svg'); /* iOS 4.1- */\n}\n.iconfont {\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.icon-star:before {\n  content: \"\\e6c3\";\n}\n.icon-arrowup:before {\n  content: \"\\e60f\";\n}\n.icon-arrowdown-copy:before {\n  content: \"\\e623\";\n}\n.icon-previewleft:before {\n  content: \"\\e75b\";\n}\n.icon-shou:before {\n  content: \"\\e650\";\n}\n.icon-share:before {\n  content: \"\\e631\";\n}\n.icon-address:before {\n  content: \"\\e61f\";\n}\n.icon-iconfontshop-copy:before {\n  content: \"\\e61c\";\n}\n.icon-arrow-right:before {\n  content: \"\\e622\";\n}\n.icon-share1:before {\n  content: \"\\e61d\";\n}\n.icon-zan:before {\n  content: \"\\e60c\";\n}\n.icon-down:before {\n  content: \"\\e94d\";\n}\n.icon-share2:before {\n  content: \"\\e624\";\n}\n.icon-tubiao-:before {\n  content: \"\\e61b\";\n}\n.icon-arrow-right1:before {\n  content: \"\\e614\";\n}\n.icon-kefu:before {\n  content: \"\\e60a\";\n}\n.icon-Write:before {\n  content: \"\\e6b9\";\n}\n.icon-tubiao-1:before {\n  content: \"\\e60b\";\n}\n.icon-shoucang:before {\n  content: \"\\e607\";\n}\nbody {\r\n\t\tfont-size: 32upx;\n}\n.padding {\r\n\t\tpadding: 20upx 30upx;\r\n\t\tbox-sizing: border-box;\n}\nuni-icon {\r\n\t\tvertical-align: middle;\n}\n.right-arrow{\r\n\t\tdisplay: inline-block;\r\n\t\t/* vertical-align: top; */\r\n\t\tmargin-left: 20upx;\r\n\t\twidth: 20upx !important;\r\n\t\theight: 30upx !important;\n}\n.down-arrow{\r\n\t\tdisplay: inline-block;\r\n\t\t/* vertical-align: top; */\r\n\t\tmargin-left: 20upx;\r\n\t\twidth: 30upx !important;\r\n\t\theight: 20upx !important;\n}\n.search-img{\r\n\t\twidth: 40upx !important;\r\n\t\theight: 40upx !important;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\n}\n.dots-img{\r\n\t\twidth: 44upx !important;\r\n\t\theight: 12upx !important;\r\n\t\tdisplay: inline-block !important;\r\n\t\tvertical-align: middle !important;\n}\n.pre-img{\r\n\t\twidth: 30upx !important;\r\n\t\theight: 40upx !important;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: bottom;\r\n\t\tmargin-right: 15upx;\n}\n.pre-img2{\r\n\t\twidth: 50upx !important;\r\n\t\theight: 40upx !important;\n}\n.setting-img{\r\n\t\twidth: 40upx !important;\r\n\t\theight: 40upx !important;\n}\n\n/* 字体大小 */\n.s1 {\r\n\t\tfont-size: 28upx;\n}\n.s2 {\r\n\t\tfont-size: 24upx;\n}\n.s3 {\r\n\t\tfont-size: 26upx;\n}\n.s4 {\r\n\t\tfont-size: 40upx;\n}\n.s5 {\r\n\t\tfont-size: 36upx;\n}\n.s6{\r\n\t\tfont-size: 32upx;\n}\n.s7{\r\n\t\tfont-size: 50upx;\n}\n.s8{\r\n\t\tfont-size: 30upx;\n}\n\n/* 字体颜色 */\n.cr {\r\n\t\tcolor: #ff6d7e;\r\n\t\tfont-weight: bold;\n}\n.cg {\r\n\t\tcolor: #808080;\n}\n.cb {\r\n\t\tcolor: #6b6a69;\n}\n.cblue{\r\n\t\tcolor: #2caeff;\n}\n.del {\r\n\t\ttext-decoration: line-through;\n}\n.ellipsis {\r\n\t\ttext-overflow: ellipsis;\r\n\t\toverflow: hidden;\r\n\t\twhite-space: nowrap;\n}\n.fr {\r\n\t\tfloat: right;\n}\n.fl{\r\n\t\tfloat: left;\n}\n.vertical-middle{\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\n}\n.flex-between{\r\n\t\t-webkit-box-align: center;\r\n\t\t-webkit-align-items: center;\r\n\t\t        align-items: center;\r\n\t\tdisplay: -webkit-box;\r\n\t\tdisplay: -webkit-flex;\r\n\t\tdisplay: flex;\r\n\t\t-webkit-box-pack: justify;\r\n\t\t-webkit-justify-content: space-between;\r\n\t\t        justify-content: space-between;\n}\n\n\n\n\n.r-cb uni-checkbox .wx-checkbox-input {\r\n\t\tborder-radius: 50%;\n}\n.r-cb .wx-checkbox-input.wx-checkbox-input-checked {\r\n\t\tborder: 1px solid #ff4500;\r\n\t\tbackground-color: #ff4500;\r\n\t\tcolor: #fff !important;\n}\n.r-cb .wx-checkbox-input.wx-checkbox-input-checked::before {\r\n\t\tfont-size: 18px;\n}\n.r-cb:not([disabled]) .wx-checkbox-input:hover {\r\n\t\tcolor: white;\r\n\t\tborder-color: #d1d1d1;\n}\n.r-cb wx-checkbox {\r\n\t\tdisplay: -webkit-box;\r\n\t\tdisplay: -webkit-flex;\r\n\t\tdisplay: flex;\n}\n\n\n.nav-bar{\r\n\tpadding: 5upx 0 20upx;\n}\nuni-input,\r\nuni-textarea{\r\n\tfont-size: 30upx;\n}\n\n/* @import url(\"/components/gaoyia-parse/parse.css\"); */\n.slideInUp {\r\n\t    -webkit-animation-name: slideInUp;\r\n\t    animation-name: slideInUp\n}\n@-webkit-keyframes slideInUp {\n0% {\r\n\t        -webkit-transform: translate3d(0,100%,0);\r\n\t        transform: translate3d(0,100%,0);\r\n\t        visibility: visible\n}\nto {\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n}\n@keyframes slideInUp {\n0% {\r\n\t        -webkit-transform: translate3d(0,100%,0);\r\n\t        transform: translate3d(0,100%,0);\r\n\t        visibility: visible\n}\nto {\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n}\n@-webkit-keyframes shake {\n0%,to {\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n10%,30%,50%,70%,90% {\r\n\t        -webkit-transform: translate3d(-10px,0,0);\r\n\t        transform: translate3d(-10px,0,0)\n}\n20%,40%,60%,80% {\r\n\t        -webkit-transform: translate3d(10px,0,0);\r\n\t        transform: translate3d(10px,0,0)\n}\n}\n@keyframes shake {\n0%,to {\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n10%,30%,50%,70%,90% {\r\n\t        -webkit-transform: translate3d(-10px,0,0);\r\n\t        transform: translate3d(-10px,0,0)\n}\n20%,40%,60%,80% {\r\n\t        -webkit-transform: translate3d(10px,0,0);\r\n\t        transform: translate3d(10px,0,0)\n}\n}\n.shake {\r\n\t    -webkit-animation-name: shake;\r\n\t    animation-name: shake\n}\n@-webkit-keyframes fadeInDown {\n0% {\r\n\t        opacity: 0;\r\n\t        -webkit-transform: translate3d(0,-100%,0);\r\n\t        transform: translate3d(0,-100%,0)\n}\nto {\r\n\t        opacity: 1;\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n}\n@keyframes fadeInDown {\n0% {\r\n\t        opacity: 0;\r\n\t        -webkit-transform: translate3d(0,-100%,0);\r\n\t        transform: translate3d(0,-100%,0)\n}\nto {\r\n\t        opacity: 1;\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n}\n.animate__fadeInDown {\r\n\t    -webkit-animation-name: fadeInDown;\r\n\t    animation-name: fadeInDown\n}\n.animated {\r\n\t    -webkit-animation-duration: 0.3s;\r\n\t    animation-duration: 0.3s;\r\n\t    -webkit-animation-fill-mode: both;\r\n\t    animation-fill-mode: both\n}\r\n\t\r\n\t\r\n", ""]);
+exports.push([module.i, "@font-face {font-family: \"iconfont\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "); /* IE9 */\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format('embedded-opentype'), \n  url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),\n  url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format('woff'),\n  url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") format('truetype'), \n  url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ") format('svg'); /* iOS 4.1- */\n}\n.iconfont {\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.icon-star:before {\n  content: \"\\e6c3\";\n}\n.icon-arrowup:before {\n  content: \"\\e60f\";\n}\n.icon-arrowdown-copy:before {\n  content: \"\\e623\";\n}\n.icon-previewleft:before {\n  content: \"\\e75b\";\n}\n.icon-shou:before {\n  content: \"\\e650\";\n}\n.icon-share:before {\n  content: \"\\e631\";\n}\n.icon-address:before {\n  content: \"\\e61f\";\n}\n.icon-iconfontshop-copy:before {\n  content: \"\\e61c\";\n}\n.icon-arrow-right:before {\n  content: \"\\e622\";\n}\n.icon-share1:before {\n  content: \"\\e61d\";\n}\n.icon-zan:before {\n  content: \"\\e60c\";\n}\n.icon-down:before {\n  content: \"\\e94d\";\n}\n.icon-share2:before {\n  content: \"\\e624\";\n}\n.icon-tubiao-:before {\n  content: \"\\e61b\";\n}\n.icon-arrow-right1:before {\n  content: \"\\e614\";\n}\n.icon-kefu:before {\n  content: \"\\e60a\";\n}\n.icon-Write:before {\n  content: \"\\e6b9\";\n}\n.icon-tubiao-1:before {\n  content: \"\\e60b\";\n}\n.icon-shoucang:before {\n  content: \"\\e607\";\n}\nbody {\r\n\t\tfont-size: 32upx;\n}\n.padding {\r\n\t\tpadding: 20upx 30upx;\r\n\t\tbox-sizing: border-box;\n}\nuni-icon {\r\n\t\tvertical-align: middle;\n}\n.right-arrow{\r\n\t\tdisplay: inline-block;\r\n\t\t/* vertical-align: top; */\r\n\t\tmargin-left: 20upx;\r\n\t\twidth: 20upx !important;\r\n\t\theight: 30upx !important;\n}\n.down-arrow{\r\n\t\tdisplay: inline-block;\r\n\t\t/* vertical-align: top; */\r\n\t\tmargin-left: 20upx;\r\n\t\twidth: 30upx !important;\r\n\t\theight: 20upx !important;\n}\n.search-img{\r\n\t\twidth: 40upx !important;\r\n\t\theight: 40upx !important;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\n}\n.dots-img{\r\n\t\twidth: 44upx !important;\r\n\t\theight: 12upx !important;\r\n\t\tdisplay: inline-block !important;\r\n\t\tvertical-align: middle !important;\n}\n.pre-img{\r\n\t\twidth: 30upx !important;\r\n\t\theight: 40upx !important;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: bottom;\r\n\t\tmargin-right: 15upx;\n}\n.pre-img2{\r\n\t\twidth: 50upx !important;\r\n\t\theight: 40upx !important;\n}\n.setting-img{\r\n\t\twidth: 40upx !important;\r\n\t\theight: 40upx !important;\n}\n\n/* 字体大小 */\n.s1 {\r\n\t\tfont-size: 28upx;\n}\n.s2 {\r\n\t\tfont-size: 24upx;\n}\n.s3 {\r\n\t\tfont-size: 26upx;\n}\n.s4 {\r\n\t\tfont-size: 40upx;\n}\n.s5 {\r\n\t\tfont-size: 36upx;\n}\n.s6{\r\n\t\tfont-size: 32upx;\n}\n.s7{\r\n\t\tfont-size: 50upx;\n}\n.s8{\r\n\t\tfont-size: 30upx;\n}\n\n/* 字体颜色 */\n.cr {\r\n\t\tcolor: #ff6d7e;\r\n\t\tfont-weight: bold;\n}\n.cg {\r\n\t\tcolor: #808080;\n}\n.cb {\r\n\t\tcolor: #6b6a69;\n}\n.cblue{\r\n\t\tcolor: #2caeff;\n}\n.del {\r\n\t\ttext-decoration: line-through;\n}\n.ellipsis {\r\n\t\ttext-overflow: ellipsis;\r\n\t\toverflow: hidden;\r\n\t\twhite-space: nowrap;\n}\n.fr {\r\n\t\tfloat: right;\n}\n.fl{\r\n\t\tfloat: left;\n}\n.vertical-middle{\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\n}\n.flex-between{\r\n\t\t-webkit-box-align: center;\r\n\t\t-webkit-align-items: center;\r\n\t\t        align-items: center;\r\n\t\tdisplay: -webkit-box;\r\n\t\tdisplay: -webkit-flex;\r\n\t\tdisplay: flex;\r\n\t\t-webkit-box-pack: justify;\r\n\t\t-webkit-justify-content: space-between;\r\n\t\t        justify-content: space-between;\n}\n\n\n\n\n.r-cb uni-checkbox .wx-checkbox-input {\r\n\t\tborder-radius: 50%;\n}\n.r-cb .wx-checkbox-input.wx-checkbox-input-checked {\r\n\t\tborder: 1px solid #ff4500;\r\n\t\tbackground-color: #ff4500;\r\n\t\tcolor: #fff !important;\n}\n.r-cb .wx-checkbox-input.wx-checkbox-input-checked::before {\r\n\t\tfont-size: 18px;\n}\n.r-cb:not([disabled]) .wx-checkbox-input:hover {\r\n\t\tcolor: white;\r\n\t\tborder-color: #d1d1d1;\n}\n.r-cb wx-checkbox {\r\n\t\tdisplay: -webkit-box;\r\n\t\tdisplay: -webkit-flex;\r\n\t\tdisplay: flex;\n}\n\n\n.nav-bar{\r\n\tpadding: 5upx 0 20upx;\n}\nuni-input,\r\nuni-textarea{\r\n\tfont-size: 30upx;\n}\n.slideInUp {\r\n\t    -webkit-animation-name: slideInUp;\r\n\t    animation-name: slideInUp\n}\n@keyframes slideInUp {\n0% {\r\n\t        -webkit-transform: translate3d(0,100%,0);\r\n\t        transform: translate3d(0,100%,0);\r\n\t        visibility: visible\n}\nto {\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n}\n@-webkit-keyframes shake {\n0%,to {\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n10%,30%,50%,70%,90% {\r\n\t        -webkit-transform: translate3d(-10px,0,0);\r\n\t        transform: translate3d(-10px,0,0)\n}\n20%,40%,60%,80% {\r\n\t        -webkit-transform: translate3d(10px,0,0);\r\n\t        transform: translate3d(10px,0,0)\n}\n}\n@keyframes shake {\n0%,to {\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n10%,30%,50%,70%,90% {\r\n\t        -webkit-transform: translate3d(-10px,0,0);\r\n\t        transform: translate3d(-10px,0,0)\n}\n20%,40%,60%,80% {\r\n\t        -webkit-transform: translate3d(10px,0,0);\r\n\t        transform: translate3d(10px,0,0)\n}\n}\n@-webkit-keyframes fadeInDown {\n0% {\r\n\t        opacity: 0;\r\n\t        -webkit-transform: translate3d(0,-100%,0);\r\n\t        transform: translate3d(0,-100%,0)\n}\nto {\r\n\t        opacity: 1;\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n}\n@keyframes fadeInDown {\n0% {\r\n\t        opacity: 0;\r\n\t        -webkit-transform: translate3d(0,-100%,0);\r\n\t        transform: translate3d(0,-100%,0)\n}\nto {\r\n\t        opacity: 1;\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n}\n@-webkit-keyframes slideInUp {\n0% {\r\n\t        -webkit-transform: translate3d(0,100%,0);\r\n\t        transform: translate3d(0,100%,0);\r\n\t        visibility: visible\n}\nto {\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n}\n@keyframes slideInUp {\n0% {\r\n\t        -webkit-transform: translate3d(0,100%,0);\r\n\t        transform: translate3d(0,100%,0);\r\n\t        visibility: visible\n}\nto {\r\n\t        -webkit-transform: translateZ(0);\r\n\t        transform: translateZ(0)\n}\n}\n.shake {\r\n\t    -webkit-animation-name: shake;\r\n\t    animation-name: shake\n}\n.animate__slideInUp {\r\n\t    -webkit-animation-name: slideInUp;\r\n\t    animation-name: slideInUp\n}\n.animate__fadeInDown {\r\n\t    -webkit-animation-name: fadeInDown;\r\n\t    animation-name: fadeInDown\n}\n.animated {\r\n\t    -webkit-animation-duration: 0.3s;\r\n\t    animation-duration: 0.3s;\r\n\t    -webkit-animation-fill-mode: both;\r\n\t    animation-fill-mode: both\n}\r\n\t/* @import url(\"/components/gaoyia-parse/parse.css\"); */\r\n\r\n\t\r\n\t\r\n\t\r\n", ""]);
 // Exports
 module.exports = exports;
 

@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c31bb1fc-e536-4c4f-9d58-ee3d18c593c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator_Desktop_ysby_ysby_pro_android_HBuilder_Hello_app_libs_alipayutdid_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator_Desktop_ysby_ysby_pro_android_HBuilder_Hello_app_libs_qq_mta_sdk_1_6_2_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator_Desktop_ysby_ysby_pro_android_HBuilder_Hello_app_libs_qq_sdk_v3_3_5_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator_Desktop_ysby_ysby_pro_android_HBuilder_Hello_app_libs_wechat_sdk_android_without_mta_5_4_3_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_0516e995293ae6082a5af32bca5e9f5b_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_063ac5b50fb9c3950546aa102c49dfc1_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_10fd0100ad8b1ac463b9cd72bfa94847_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_13959bec7ef8d59ab280fd7f6a2ce201_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_17d09d3e1948b96fd7e0f3431fbceff1_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_1a5656a6c5a2b4bff27cc4e905d15080_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_1bdde809980a50a84e92d67153d70e64_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_1cccc5fb29b1b33768ef7aeab04af31f_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_200d6019d38eb427190d67dbea510d59_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_2037a04074615801533c5c3a610ec513_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_238b2e9ecb2fa1df12328774378fb304_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_26a544a7ec48cf14ece7dd69d177e95c_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_344bfb8919439063ba295ec27c95955d_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_38f447d0eae4fbe375a7e171b2be4580_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_3ce9bcb8d125d95257ed72bb18667475_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_3cf30701b6281bbc7d2ed4e05f2c8a65_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_41355a89364cafc63e8041e2f56e7036_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_4246d99ad88e64bd2d74ef54d97c460e_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_4385be65be9d762a95960a14a6193468_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_4aece95ac9694187b2d58ca503b806ce_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_4deb1bba6e435de62699de4f7477b911_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_5af7a7721a4a18853f08c0e2ce774c76_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_6a43a23544b4fc084e6499b54833ed9c_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_6b08db583c61d4fbe218beffb269bb85_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_6b0a1f6d34ae19893c6fc64e8337b265_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_7879aa9138fdde3c97ef009806b8c956_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_7f380d72736f5546c91fbb5646090a22_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_8041e37fb27ddf30f052751bf5a7246b_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_819347db8cd775e70b3452b324601dd1_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_85a1fa5b9aaf7c03c2c88ed750bfdbc3_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_85cf63dc0181da790a39878708634641_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_8d53649baf1e9e04c3c505822e6d6680_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_91062823bc5fe3e75cc2826c3d9439c0_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_98f24436426fbb881abdd0f26d183886_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_98fa7df04ec0f46772c50b99d6a43039_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_9b323862128bd1e581c36894f0db8864_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_aa34eb5c3a6212f46054a4d7286d7e37_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_ae7dc23d9b237772befad33688c37f59_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_b2310e1ea13d4e077dbae320a3b2c641_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_b6c58b60218db4416c115445bd975b34_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_b99f4d9675d87603846c368e69c03024_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_ba4464df097688e28fdf83eed55078e6_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_bdb7a2fac3f07a30b48998f4ae5edd69_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_bf9db0bb34bb377e52d90074ba47feea_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_c5baa39d1deac75562a7cb5c9f484a1c_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_c91eec96bf73c6beab8882e5c9effd14_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_cf78efeb2c5048fdf4d64b542002ecca_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_d8f2b3e6d6c527850ee0fe4f1d5e6d43_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_e0a76c90bc893857d9ea757557c6d35f_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_e8c68826d2e7def368d515b607ba436e_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_eb8a8c449e45e3d54ad26aa079e23ad9_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_ee6fed92eaa5ef3fb358255cff6ca5ea_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_eeffba1a88bee78f66f20343ff2f558e_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_f24cd8ea5f2d27314aca2d6e8f37fc1e_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_f3729b286cea8f39b37b9de4bb9f4446_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Administrator__gradle_caches_transforms_2_files_2_1_fc54167ac34dc5d46f81eda2da40aae0_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../components/s-popup/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../components/s-popup/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/bussiness/shopPreview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/bussiness/shopPreview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/drawback/chooseWay.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/drawback/chooseWay.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/drawback/goodsBack.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/drawback/goodsBack.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/drawback/moneyBack.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/drawback/moneyBack.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/index/cashier.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/index/cashier.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/index/createOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/index/createOrder.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/index/goodsDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/index/goodsDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/index/orderDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/index/orderDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/index/payResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/index/payResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/login/loginMobile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/login/loginMobile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/tabBar/discover.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/tabBar/discover.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/tabBar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/tabBar/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/tabBar/mine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/tabBar/mine.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../static/js/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../static/js/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/__uniappopenlocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/__uniappopenlocation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-config-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-config-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/js/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/js/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/view.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/view.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/view.umd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/view.umd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/app-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/app-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/app-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/app-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/static/img/pic/index/公告.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/static/img/pic/index/搜索框.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/static/img/pic/index/每日特价背景.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/static/img/pic/index/进店.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/static/img/pic/other/个人选中.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/static/img/pic/other/订单选中.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/static/img/pic/proxy/分隔线.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/static/js/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/dev/app-plus/static/js/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/mp-weixin" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/dev/mp-weixin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/app-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/app-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/app-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/app-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/js/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/js/request.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="8dda20f0" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/assets/data/dcloud_control.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gradle.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/manifest.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="62" selection-start-column="48" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>helloh5</find>
+      <find>tes</find>
+      <find>package</find>
+      <find>appid</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src</dir>
+    </dirStrings>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="G:\BaiduNetdiskDownload\signkey.jks" />
+    <option name="KEY_ALIAS" value="key0" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/gradle.properties" />
+        <option value="$PROJECT_DIR$/app/src/main/assets/data/dcloud_control.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/manifest.json" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="HBuilder-Hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HBuilder-Hello" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="HBuilder-Hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HBuilder-Hello" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="HBuilder-Hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HBuilder-Hello" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HBuilder-Hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HBuilder-Hello" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HBuilder-Hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HBuilder-Hello" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HBuilder-Hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HBuilder-Hello" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HBuilder-Hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HBuilder-Hello" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HBuilder-Hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HBuilder-Hello" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wxapi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HBuilder-Hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HBuilder-Hello" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HBuilder-Hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HBuilder-Hello" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ExportApk.ApkPath" value="C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
+    <property name="ExportApk.SignV2" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="not.eligible.for.single.variant.sync" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c31bb1fc-e536-4c4f-9d58-ee3d18c593c3" name="Default Changelist" comment="" />
+      <created>1589519005255</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589519005255</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23560767" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.32936078" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.30985916" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5010661" side_tool="true" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" sideWeight="0.4989339" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Find" order="8" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/HelloH5/www/manifest.json" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/app-config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/dcloud/HelloH5/wxapi/WXEntryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/dcloud/HelloH5/wxapi/WXPayEntryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="62" selection-start-column="48" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/data/dcloud_control.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

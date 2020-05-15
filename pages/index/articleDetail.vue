@@ -297,6 +297,7 @@
 				if(!ce){
 					return ;
 				}
+				this.$loading()
 				var that=this,url
 				if(!zaned){
 					url='&r=api.college.hotarticle.doLike'
@@ -310,6 +311,7 @@
 				}
 				  this.$apiPost(url,params).then((res) =>{
 					  that.data.isLike=!that.data.isLike
+					  uni.hideLoading()
 					  that.$forceUpdate()
 				  })
 			}

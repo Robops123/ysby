@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C.\Users\Administrator\.gradle\caches\transforms-2\files-2.1\3cf30701b6281bbc7d2ed4e05f2c8a65:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3cf30701b6281bbc7d2ed4e05f2c8a65/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3cf30701b6281bbc7d2ed4e05f2c8a65/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3cf30701b6281bbc7d2ed4e05f2c8a65/jars/libs/MiPush_SDK_Client_3_6_12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -285,7 +285,7 @@
 		 height: 70upx;
 	 }
 	 .add-view>view{
-		 width: 110upx;
+		 width: 128upx;
 		 margin: 0 auto;
 	 }
 	 

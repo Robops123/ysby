@@ -17,6 +17,7 @@ Vue.prototype.$upload=upload
 Vue.prototype.$operateInterceptor=operateInterceptor
 Vue.prototype.$apiPost=request.apiPost
 Vue.prototype.$apiGet=request.apiGet
+Vue.prototype.$imgBaseUrl='http://192.168.1.157/yishuban2/attachment/'
 
 App.siteinfo=siteinfo
 App.mpType = 'app'

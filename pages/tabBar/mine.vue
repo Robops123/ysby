@@ -68,11 +68,11 @@
 							<image src="../../static/img/pic/mine/icon3.png" mode=""></image>
 							<view>代理中心</view>
 						</view>
-						<view class="item-list">
+						<view class="item-list" @click="to('promotion')">
 							<image src="../../static/img/pic/mine/icon11.png" mode=""></image>
 							<view>推广介绍</view>
 						</view>
-						<view class="item-list" @click="showInvite">
+						<view class="item-list" @click="showInvite(data.islocked)">
 							<image src="../../static/img/pic/mine/icon12.png" mode=""></image>
 							<view>邀请人</view>
 						</view>
@@ -105,7 +105,7 @@
 		<!-- 邀请注册 -->
 		<s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
 		  <!-- 内容 -->
-		  <image src="../../static/img/bg/adv.png" mode=""></image>
+		  <image :src="advImg" mode=""></image>
 		  <view style="margin-top: 20upx;">
 			  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
 		  </view>
@@ -120,7 +120,7 @@
 					<input type="text" v-model="invite_code" placeholder="请输入邀请码"/>
 				</view>
 				<view style="margin-top: 20upx;">
-							  <button class="adv-btn adv-btn2" @click="saveImg(advImg)">提交</button>
+							  <button class="adv-btn adv-btn2" @click="saveInvite()">提交</button>
 				</view>
 			</view>
 		</s-popup>
@@ -140,12 +140,16 @@
 				  visible: false,
 				  visible2:false,
 				  advImg:'',
-				  invite_code:''
+				  invite_code:'',
+				  imgBaseUrl:'',
+				  userInfo:{}
 			}
 		},
 		onShow(){
+			// this.imgBaseUrl=this.$imgBaseUrl
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.userInfo=userInfo
 				this.getUserInfo(userInfo)
 				this.logined=true
 			}else{
@@ -246,16 +250,35 @@
 			    });
 			},
 			showAdv(){
-				this.visible=true
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				var that=this
+				var params={
+					uid:this.userInfo.uid,
+					token:this.userInfo.token,
+				}
+				var url='&r=api.common.share.createPoster'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.advImg=res.data.img
+					  that.visible=true
+				  })
 			},
-			showInvite(){
-				this.visible2=true
+			showInvite(locked){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				if(locked && locked==0){
+					this.visible2=true
+				}
 			},
 			saveImg(url){
 				var that=this
 				that.$loading()
 				uni.downloadFile({
-						url: 'https://img-cdn-qiniu.dcloud.net.cn/uploads/avatar/000/78/15/45_avatar_max.jpg',
+						url: url,
 						success: (res) =>{
 							if (res.statusCode === 200){
 								uni.saveImageToPhotosAlbum({
@@ -274,6 +297,22 @@
 							}
 						}
 					})
+			},
+			saveInvite(){
+				var that=this
+				var params={
+					uid:this.userInfo.uid,
+					token:this.userInfo.token,
+					inviteCode:this.invite_code
+				}
+				var url='&r=api.member.my.invite'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.$msg('绑定邀请人成功')
+					  setTimeout(function(){
+						  that.visible2=false
+						  that.getUserInfo(that.userInfo)
+					  },1000)
+				  })
 			}
 		}
 	}
@@ -363,6 +402,7 @@
 		}
 		.advPopup image{
 			width: 100%;
+			height: 320px;
 			margin:  0 auto;
 		}
 		

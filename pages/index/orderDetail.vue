@@ -2,68 +2,74 @@
 	<view style="padding-bottom: 110upx;">
 		<view class="top">
 			<view>
-				<view class="process">卖家已发货</view>
+				<view class="process" v-if='data.status=="1"'>订单未支付</view>
+				<view class="process" v-if='data.status=="2"'>等待卖家发货</view>
+				<view class="process" v-if='data.status=="3"'>卖家已发货</view>
+				<view class="process" v-if='data.status=="4"'>订单已取消</view>
+				<view class="process" v-if='data.status=="5"'>买家已收货，待评论</view>
+				<view class="process" v-if='data.status=="6"'>订单已完成</view>
+				<view class="process" v-if='data.status=="7"'>等待商家退款</view>
+				<view class="process" v-if='data.status=="8"'>退款成功</view>
 			</view>
 			<image src="../../static/img/pic/shape2.png" mode=""></image>
 		</view>
 		<view class="about padding margin bgwhite">
 			<view class="icon-fire iconfont"></view>
 			<view class="s3">
-				<view>羞涩地说  12321312312312</view>
-				<view style="margin-top: 10upx;">北京市还定去超大号速度100</view>
+				<view>{{data.contact}}  {{data.mobile}}</view>
+				<view style="margin-top: 10upx;">{{data.address}}</view>
 			</view>
 		</view>
 		
-		<view class="child-overall-item padding bgwhite">
-			<image src="../../static/img/bg/activity.png" mode=""></image>
+		<view class="child-overall-item padding bgwhite" v-for='(item,index) in data.goods' :key='index'>
+			<image :src="item.goodspic" mode=""></image>
 			<view class="info">
 				<view>
 					<view class="s2 title">
-						儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿
-						童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿
+						{{item.goodsname}}
 					</view>
 					<view class="s3 cg options">
-						海蓝色；24(155/60A)<icon type="" class="icon-fire iconfont"></icon>
+						{{item.specifications}}<icon type="" class="icon-fire iconfont"></icon>
 					</view>
 				</view>
 				<view class="s3" style="text-align: right;">
-					<view class="">$45.00</view>
-					<view class=" cg">*1</view>
+					<view class="">￥{{item.goodsprice}}</view>
+					<view class=" cg">*{{item.amount}}</view>
 				</view>
 			</view>
 		</view>
 		
 		<view class="padding bgwhite margin">
-				<view class="" @click="toFee">
-					<text class="">报名费小计</text>
-					<text class="fr">1600元</text>
+				<view class="" >
+					<text class="">商品小计</text>
+					<text class="fr">{{data.totalprice}}元</text>
 				</view>
 				<view class="margin">
-					<text class="">推广积分</text>
-					<text class="fr">1600元</text>
+					<text class="">运费</text>
+					<text class="fr">{{data.freight}}元</text>
 				</view>
-				<view class="margin" @click="toPromoteFee">
-					<text class="">报名费小计</text>
-					<text class="fr">1600元</text>
+				<view class="margin" >
+					<text class="">实付费(含运费)</text>
+					<text class="fr cr">{{data.totalpricereal}}元</text>
 				</view>
 		</view>
 		<view class="padding bgwhite">
 				<view class="">
-					<text class="pre">提交时间: </text>
-					<text class=""> 2020-02-12 10:07:23</text>
+					<text class="pre">订单编号: </text>
+					<text class=""> {{data.orderno}}</text>
 				</view>
 				<view class="">
-					<text class="pre">开始时间: </text>
-					<text class=""> 2020-02-12 10:07:23</text>
+					<text class="pre">创建时间: </text>
+					<text class=""> {{data.createtime}}</text>
 				</view>
 				<view class="">
-					<text class="pre">截至时间: </text>
-					<text class=""> 2020-02-12 10:07:23</text>
+					<text class="pre">支付时间: </text>
+					<text class=""> {{data.paytime}}</text>
 				</view>
 		</view>
 		<view class="btn-box bgwhite" >
-			<button type="default" class="btn" @click="to('drawback')">申请退款</button>
-			<button type="default" class="btn">确认收货</button>
+			<button type="default" class="btn" @click="toDrawback">申请退款</button>
+			<!-- <button type="default" class="btn">确认收货</button> -->
 		</view>
 	</view>
 </template>
@@ -72,14 +78,40 @@
 	export default{
 		data(){
 			return {
-				
+			uid:'',
+				token:'',
+				orderno:'',
+				data:{}
 			}
 		},
+		onLoad(p){
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+			}
+			this.orderno=p.orderno
+			this.getDetail()
+		},
 		methods:{
-			to(w){
+			toDrawback(){
 				uni.navigateTo({
-					url:'/pages/drawback/chooseWay'
+					url:'/pages/drawback/chooseWay?orderno='+this.orderno+'&goods='+JSON.stringify(this.data.goods)
 				})
+			},
+			getDetail(){
+				this.$loading()
+				var that=this
+				var params={
+					uid:this.uid,
+					token:this.token,
+					orderno:this.orderno
+				}
+				var url='&r=api.member.order.detail'
+				  this.$apiPost(url,params).then((res) =>{
+					uni.hideLoading()
+					that.data=res.data
+				  })
 			}
 		}
 	}
