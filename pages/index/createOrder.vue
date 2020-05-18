@@ -137,6 +137,23 @@
 				this.$loading()
 				var that=this
 				var url='&r=api.member.order.create'
+				var params={
+						uid:this.form.uid,
+						token:this.form.token,
+						// merchid:'',
+						goods:[
+							{
+								goodsid:this.form.goodsid,
+								amount:this.form.amount,
+								specifications:this.form.specifications,
+								freight:this.freight || 0
+							}
+						],
+						addressid:this.form.addressid,
+						remark:this.form.remark,
+						// totalprice:''
+				}
+				params.goods=JSON.stringify(params.goods)
 				  this.$apiPost(url,this.form).then((res) =>{
 					  uni.navigateTo({
 					  	url:'./cashier?orderId='+res.data.orderno+'&contact='+JSON.stringify(that.contact)+'&money='+this.totalMoney

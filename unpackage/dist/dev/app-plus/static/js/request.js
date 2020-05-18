@@ -1,9 +1,10 @@
 
 // const baseURL = 'http://192.168.1.157/yishuban2/app/index.php?i=2&c=entry&m=ewei_shopv2&do=mobile';   //测试
-const baseURL = 'http://yuying.qinshaozhuanshu.cn/web/merchant.php?i=2&c=site&a=entry&m=ewei_shopv2&do=web'; // http://admin.chinaduancai.com/upload/  //正式
+const baseURL = 'http://192.168.1.157/yishuban2/web/merchant.php?i=2c=site&a=entry&m=ewei_shopv2&do=web'; // http://admin.chinaduancai.com/upload/  //正式
 // 参数： url:请求地址  param：请求参数  way：请求方式 res：回调函数http://192.168.1.157/yishuban2/web/merchant.php?i=2c=site&a=entry&m=ewei_shopv2&do=web
+
  /**
-  *  @name 请求
+  *  @name 请求http://yuying.qinshaozhuanshu.cn/web/merchant.php?i=2&c=site&a=entry&m=ewei_shopv2&do=web
   */
  async function apiPost(url,params){
  	// if(!params)console.warn("没有传入参数params");

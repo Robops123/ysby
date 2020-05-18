@@ -180,7 +180,7 @@
 		vertical-align: middle;
 		margin-right: 5upx;
 	}
-	.tw text{
+	.tw>text{
 		color: #a9a9a9;
 		margin-left: 20upx;
 	}

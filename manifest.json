@@ -62,7 +62,8 @@
                 },
                 "oauth" : {},
                 "share" : {},
-                "ad" : {}
+                "ad" : {},
+                "maps" : {}
             }
         }
     },
@@ -80,7 +81,7 @@
         "usingComponents" : true,
         "permission" : {
             "scope.userLocation" : {
-                "desc" : "哈哈哈"
+                "desc" : "该应用需要获取你的当前位置"
             }
         }
     },

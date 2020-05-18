@@ -131,7 +131,7 @@
 		methods:{
 			toGoodsDetail(goodsid){
 				uni.navigateTo({
-					url:'goodsDetail?id='+goodsid
+					url:'../index/goodsDetail?id='+goodsid
 				})
 			},
 			share(){

@@ -6,7 +6,7 @@
 			<!-- #endif -->
 			<view class="nav-content">
 				<text class="iconfont icon-address cr" ></text>
-				<view class="cityName ellipsis">无锡</view>
+				<view class="cityName ellipsis">{{city ? city:'定位中'}}</view>
 				<view class="search-line">
 					<icon type="search" size="20" class="icon" />
 					<input type="text" v-model="keywords" @confirm='search' placeholder="寻找附近的商家"/>
@@ -91,7 +91,7 @@
 			
 			
 		</view>
-		<view class="">
+		<view>
 			<view class="sp-item3"  v-for="(item,index) in businessList" :key='index'>
 				<view class="sp-item3-top">
 					<view>
@@ -101,8 +101,8 @@
 						<view>{{item.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">{{item.collect}}人关注 |  
-							<text class="s2">距离{{item.distance}}千米</text>
+							<text class="s3 cg">{{item.collect}}人关注   
+							<text class="s2" v-if="lng && lat"> | 距离{{parseInt(item.distance)}}千米</text>
 							</text>
 						</view>
 					</view>
@@ -159,9 +159,19 @@
 				carouselList:[],
 				bargainList:[],
 				bannerList:[],
-				businessList:[]
+				businessList:[],
+				lng:'',
+				lat:'',
+				city:''
 			}
 		},
+		// watch:{
+		// 	lng(n){
+		// 		if(n){
+					
+		// 		}
+		// 	}
+		// },
 		mounted(){
 			var that=this
 			var userInfo=uni.getStorageSync('userInfo')
@@ -255,20 +265,24 @@
 				var that=this
 				uni.getLocation({
 					type: 'wgs84',
+					geocode:true,
 					success:(res) =>{
+						that.city=res.address.city
+						that.lng=res.longitude
+						that.lat=res.latitude
 						that.getNearBy(res)
 					},
 					fail:(reason) =>{
 						that.getNearBy({})
-						that.$msg(reason)
+						that.$msg('请打开定位功能')
 					}
 				})
 			},
 			getNearBy(res){
 				var url='&r=api.home.merchant'
 				var params={
-					lng:res.longitude,
-					lat:res.latitude
+					lng:res.longitude || '',
+					lat:res.latitude || ''
 				},that=this
 				this.$apiPost(url,params).then((res) =>{
 					that.businessList=res.data.map((item) =>{

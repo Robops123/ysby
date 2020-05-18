@@ -140,7 +140,7 @@
 		line-height: 75upx;
 		border-radius: 75upx;
 		letter-spacing: 4px;
-		color: white;
+		color: white !important;
 		font-size: 34upx;
 		position: fixed;
 		bottom: 40upx;

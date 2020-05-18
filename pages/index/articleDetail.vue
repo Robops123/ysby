@@ -232,14 +232,13 @@
 				  	const query = uni.createSelectorQuery()
 				var  qs=query.select('#article').boundingClientRect()
 				  	query.exec(function(res) {
-						console.log(res)
 						that.articleH=res[0].height
 						that.topH=res[0].top
-						if(this.articleH-(this.windowH-this.topH)<=0){
+						uni.hideLoading()
+						if(that.articleH-(that.windowH-that.topH)<=0){
 							that.readComplete=true
 							that.$msg('篇幅小，已阅读完成')
 						}
-						uni.hideLoading()
 				  		})
 				  	}
 				 })

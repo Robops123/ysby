@@ -16,7 +16,7 @@
 						<view>{{item.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">1429人关注 | <text class="s2">{{parseInt(item.distance)}}千米</text></text>
+							<text class="s3 cg">1429人关注<text class="s2" v-if="lng && lat"> | {{parseInt(item.distance)}}千米</text></text>
 						</view>
 					</view>
 					<view class="enter-button" @click="toShop(item.id)">进店</view>
@@ -121,6 +121,8 @@
 					uni.getLocation({
 						type: 'wgs84',
 						success:(res) =>{
+							that.lng=res.longitude
+							that.lat=res.latitude
 							params.lng=res.longitude
 							params.lat=res.latitude
 							that.getList(params,url)
@@ -129,7 +131,7 @@
 							params.lng=''
 							params.lat=''
 							that.getList(params,url)
-							that.$msg(reason)
+							that.$msg('请打开定位功能')
 						}
 					})
 				}else{
