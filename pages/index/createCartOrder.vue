@@ -73,25 +73,22 @@
 		data(){
 			return{
 				data:[],
-				totalPrice:'',
-				totalAmount:'',
+				totalPrice:0,
+				totalAmount:0,
 				form:{
 					uid:'',
 					token:'',
 					// merchid:'',
-					goodsid:[],
+					goods:[],
 					addressid:'',
 					remark:'',
-					specifications:'',
-					amount:'',
-					goodsprice:'',
-					// totalprice:''
 				},
 				address:'',
 				spec:'',
 				goodsImg:'',
 				goodsName:'',
 				total:'',
+				contact:{}
 			}
 		},
 		computed:{
@@ -103,7 +100,6 @@
 			}
 		},
 		onLoad(e){
-			console.log(JSON.parse(e.selectedGoods))
 			var userInfo=uni.getStorageSync('userInfo'),that=this
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.form.uid=userInfo.uid
@@ -113,7 +109,12 @@
 			var selectedGoods=JSON.parse(e.selectedGoods)
 			this.data=selectedGoods
 			selectedGoods.forEach((item) =>{
-				that.form.goodsid.push(item.goodsid)
+				that.form.goods.push({
+					goodsid:item.goodsid,
+					amount:item.amount,
+					specifications:item.specifications || '',
+					freight:item.freight || 0
+				})
 				that.totalAmount+=parseInt(item.amount)
 				that.totalPrice+=parseFloat(item.marketprice) * parseInt(item.amount)
 			})
@@ -142,10 +143,10 @@
 				this.$loading()
 				var that=this
 				var url='&r=api.member.order.create'
+				this.form.goods=JSON.stringify(this.form.goods)
 				  this.$apiPost(url,this.form).then((res) =>{
-					  console.log(res)
 					  uni.navigateTo({
-					  	url:'./cashier?orderId='+res.ordero
+					  	url:'./cashier?orderId='+res.data.orderno+'&contact='+JSON.stringify(that.contact)+'&money='+this.totalPrice
 					  })
 					  uni.hideLoading()
 					  // that.$msg('删除成功')
@@ -162,6 +163,7 @@
 				uni.$on('chooseAddress',function(item){
 					that.address=item.province+item.city+item.district+item.address
 					that.form.addressid=item.id
+					that.contact=item
 					uni.$off('chooseAddress')
 				})
 				uni.navigateTo({
@@ -181,6 +183,8 @@
 					res.data.forEach((item) =>{
 						if(item.isdefault=='1'){
 							that.address=item.province+item.city+item.district+item.address
+							that.form.addressid=item.id
+							that.contact=item
 						}
 					})
 				  })

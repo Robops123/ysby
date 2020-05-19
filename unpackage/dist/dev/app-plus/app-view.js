@@ -19617,76 +19617,113 @@ var render = function() {
                         staticClass: _vm._$g("24-" + $30, "sc"),
                         attrs: { _i: "24-" + $30 }
                       },
-                      [
-                        _c(
+                      _vm._l(_vm._$g(25 + "-" + $30, "f"), function(
+                        childItem,
+                        childIndex,
+                        $21,
+                        $31
+                      ) {
+                        return _c(
                           "v-uni-view",
                           {
-                            staticClass: _vm._$g("25-" + $30, "sc"),
-                            attrs: { _i: "25-" + $30 }
+                            key: childItem,
+                            staticClass: _vm._$g("25-" + $30 + "-" + $31, "sc"),
+                            attrs: { _i: "25-" + $30 + "-" + $31 }
                           },
                           [
                             _c("v-uni-image", {
                               attrs: {
-                                src: _vm._$g("26-" + $30, "a-src"),
+                                src: _vm._$g("26-" + $30 + "-" + $31, "a-src"),
                                 mode: "",
-                                _i: "26-" + $30
+                                _i: "26-" + $30 + "-" + $31
                               }
                             }),
                             _c(
                               "v-uni-view",
                               {
-                                staticClass: _vm._$g("27-" + $30, "sc"),
-                                attrs: { _i: "27-" + $30 }
+                                staticClass: _vm._$g(
+                                  "27-" + $30 + "-" + $31,
+                                  "sc"
+                                ),
+                                attrs: { _i: "27-" + $30 + "-" + $31 }
                               },
                               [
                                 _c(
                                   "v-uni-view",
                                   {
-                                    staticClass: _vm._$g("28-" + $30, "sc"),
-                                    attrs: { _i: "28-" + $30 }
+                                    staticClass: _vm._$g(
+                                      "28-" + $30 + "-" + $31,
+                                      "sc"
+                                    ),
+                                    attrs: { _i: "28-" + $30 + "-" + $31 }
                                   },
-                                  [_vm._v(_vm._$g("28-" + $30, "t0-0"))]
+                                  [
+                                    _vm._v(
+                                      _vm._$g("28-" + $30 + "-" + $31, "t0-0")
+                                    )
+                                  ]
                                 ),
                                 _c(
                                   "v-uni-view",
                                   {
-                                    staticClass: _vm._$g("29-" + $30, "sc"),
-                                    attrs: { _i: "29-" + $30 }
+                                    staticClass: _vm._$g(
+                                      "29-" + $30 + "-" + $31,
+                                      "sc"
+                                    ),
+                                    attrs: { _i: "29-" + $30 + "-" + $31 }
                                   },
-                                  [_vm._v(_vm._$g("29-" + $30, "t0-0"))]
+                                  [
+                                    _vm._v(
+                                      _vm._$g("29-" + $30 + "-" + $31, "t0-0")
+                                    )
+                                  ]
                                 ),
                                 _c(
                                   "v-uni-view",
                                   {
-                                    staticClass: _vm._$g("30-" + $30, "sc"),
-                                    attrs: { _i: "30-" + $30 }
+                                    staticClass: _vm._$g(
+                                      "30-" + $30 + "-" + $31,
+                                      "sc"
+                                    ),
+                                    attrs: { _i: "30-" + $30 + "-" + $31 }
                                   },
                                   [
                                     _c(
                                       "v-uni-text",
                                       {
-                                        staticClass: _vm._$g("31-" + $30, "sc"),
-                                        attrs: { _i: "31-" + $30 }
+                                        staticClass: _vm._$g(
+                                          "31-" + $30 + "-" + $31,
+                                          "sc"
+                                        ),
+                                        attrs: { _i: "31-" + $30 + "-" + $31 }
                                       },
                                       [
                                         _vm._v(
                                           "共" +
-                                            _vm._$g("31-" + $30, "t0-0") +
+                                            _vm._$g(
+                                              "31-" + $30 + "-" + $31,
+                                              "t0-0"
+                                            ) +
                                             "件商品 合计:"
                                         ),
                                         _c(
                                           "v-uni-text",
                                           {
                                             staticClass: _vm._$g(
-                                              "32-" + $30,
+                                              "32-" + $30 + "-" + $31,
                                               "sc"
                                             ),
-                                            attrs: { _i: "32-" + $30 }
+                                            attrs: {
+                                              _i: "32-" + $30 + "-" + $31
+                                            }
                                           },
                                           [
                                             _vm._v(
                                               "￥" +
-                                                _vm._$g("32-" + $30, "t0-0")
+                                                _vm._$g(
+                                                  "32-" + $30 + "-" + $31,
+                                                  "t0-0"
+                                                )
                                             )
                                           ]
                                         )
@@ -19702,26 +19739,39 @@ var render = function() {
                             _c(
                               "v-uni-view",
                               {
-                                staticClass: _vm._$g("33-" + $30, "sc"),
-                                attrs: { _i: "33-" + $30 }
+                                staticClass: _vm._$g(
+                                  "33-" + $30 + "-" + $31,
+                                  "sc"
+                                ),
+                                attrs: { _i: "33-" + $30 + "-" + $31 }
                               },
                               [
                                 _c(
                                   "v-uni-view",
                                   {
-                                    staticClass: _vm._$g("34-" + $30, "sc"),
-                                    attrs: { _i: "34-" + $30 }
+                                    staticClass: _vm._$g(
+                                      "34-" + $30 + "-" + $31,
+                                      "sc"
+                                    ),
+                                    attrs: { _i: "34-" + $30 + "-" + $31 }
                                   },
                                   [
                                     _c(
                                       "v-uni-text",
                                       {
-                                        staticClass: _vm._$g("35-" + $30, "sc"),
-                                        attrs: { _i: "35-" + $30 }
+                                        staticClass: _vm._$g(
+                                          "35-" + $30 + "-" + $31,
+                                          "sc"
+                                        ),
+                                        attrs: { _i: "35-" + $30 + "-" + $31 }
                                       },
                                       [
                                         _vm._v(
-                                          "￥" + _vm._$g("35-" + $30, "t0-0")
+                                          "￥" +
+                                            _vm._$g(
+                                              "35-" + $30 + "-" + $31,
+                                              "t0-0"
+                                            )
                                         )
                                       ]
                                     )
@@ -19731,10 +19781,18 @@ var render = function() {
                                 _c(
                                   "v-uni-view",
                                   {
-                                    staticClass: _vm._$g("36-" + $30, "sc"),
-                                    attrs: { _i: "36-" + $30 }
+                                    staticClass: _vm._$g(
+                                      "36-" + $30 + "-" + $31,
+                                      "sc"
+                                    ),
+                                    attrs: { _i: "36-" + $30 + "-" + $31 }
                                   },
-                                  [_vm._v("*" + _vm._$g("36-" + $30, "t0-0"))]
+                                  [
+                                    _vm._v(
+                                      "*" +
+                                        _vm._$g("36-" + $30 + "-" + $31, "t0-0")
+                                    )
+                                  ]
                                 )
                               ],
                               1
@@ -19742,7 +19800,7 @@ var render = function() {
                           ],
                           1
                         )
-                      ],
+                      }),
                       1
                     ),
                     _c(
@@ -19967,7 +20025,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../hbuilderX/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\nbody{\n\tbackground-color: #f3f3f3;\n}\n.nav-bar{\n\ttext-align: center;\n\tpadding: 20upx 0;\n\tbackground-color: white;\n}\n.nav{\n\tcolor: #afafaf;\n\tdisplay: inline-block;\n\twidth: 20%;\n\t-webkit-box-sizing: border-box;\n\t        box-sizing: border-box;\n}\n.nav.active uni-text{\n\tcolor: #000000;\n\tposition: relative;\n}\n.nav.active uni-text::before{\n\tcontent: '';\n\tposition: absolute;\n\tbottom: -10upx;\n\twidth: 50upx;\n\tbackground-color: #ff7379;\n\theight: 2px;\n\tleft: 50%;\n\tmargin-left: -25upx;\n}\n.card{\n\tbackground-color: #fff;\n\tborder-radius: 18upx;\n\tmargin: 20upx 0;\n\t/* border-top: 20upx solid #; */\n}\n.child-overall,.overall{\n\tpadding: 20upx 15upx 0 15upx;\n}\n.child-overall:last-child{\n\tpadding-bottom: 40upx;\n}\n.child-overall-item,\n.overall{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\tjustify-items: center;\n}\n.overall{\n\tpadding-right: 20upx;\n-webkit-box-align: center;\n-webkit-align-items: center;\n        align-items: center;\t\n-webkit-box-pack: justify;\t\n-webkit-justify-content: space-between;\t\n        justify-content: space-between;\n}\n.child-overall-item>uni-image{\n\twidth: 200upx;\n\theight: 200upx;\n\tmargin-right: 20upx;\n\tborder-radius: 17upx;\n}\n.child-overall-item .info{\n\twidth: 320upx;\n\t/* height: 64upx; */\n\toverflow:hidden;/*一定要写 */\n\t    text-overflow: ellipsis;/*超出省略号 */\n\t    display:-webkit-box;/*一定要写 */\n\t    -webkit-line-clamp: 2;/*控制行数 */\n\t    -webkit-box-orient: vertical;/*一定要写 */\n}\n.calculator uni-text{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.calculator .calc{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\twidth: 40upx;\n\theight: 40upx;\n\tmargin: 0 20upx;\n\tfont-size: 36upx;\n\tline-height: 40upx;\n\ttext-align: center;\n\tborder-radius: 50%;\n\tborder: 1px solid #e8e8e8;\n}\n.info{\n\tposition: relative;\n}\n.options{\n\tbackground-color:#f9f9f9;\n\tdisplay: inline-block;\n\tpadding: 5upx 16upx;\n\tborder-radius: 24upx;\n\tmargin-top: 15upx;\n}\n.mount{\n\t-webkit-box-flex: 1;\n\t-webkit-flex: 1;\n\t        flex: 1;\n\tmargin-left: 15upx;\n\ttext-align: right;\n\tpadding-top: 20upx;\n}\n.btn-box{\n\ttext-align: right;\n\tpadding-right: 25upx;\n\tpadding-bottom: 20upx;\n\tmargin: 35upx 0 15upx;\n}\n.btn{\n\twidth: 28%;\n\theight: 75upx;\n\tborder-radius: 75upx;\n\ttext-align: center;\n\tline-height: 75upx;\n\tcolor: white;\n\tfont-size: 28upx;\n\tpadding: 0 !important;\n\tdisplay: inline-block;\n\tbackground-color: white;\n\tmargin-left: 15upx;\n}\n.btn1{\n\tborder: 1px solid #dfdfdf !important;\n\tcolor: #7f7f7f !important;\n}\n.btn2{\n\tborder: 1px solid #ffadb1 !important;\n\tcolor: #ff6f75 !important;\n}\n.bottom-content{\n\tposition: absolute;\n\tbottom: 0;\n\tleft: 0;\n\twidth: 100%;\n\twhite-space: nowrap;\n}\n.overall-title{\n\tmargin: 0 10upx;\n}\n.bottom{\n\tposition: fixed;\n\tleft: 0;\n\tbottom: 50px;\n\twidth: 100%;\n\t-webkit-box-sizing: border-box;\n\t        box-sizing: border-box;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\tpadding:20upx 40upx;\n\tbackground-color: #fff;\n\tborder: 1px solid #f1f1f1;\n}\n.bottom-right uni-button{\n\tmargin-left: 15upx;\n}\n.bottom-right uni-button,\n.bottom-right uni-text{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.bottom-right{\n\t-webkit-box-flex: 1;\n\t-webkit-flex: 1;\n\t        flex: 1;\n\ttext-align: right;\n}\n.arrow{\n\tcolor: #ccc;\n}\n.r-cb{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n}\n", ""]);
+exports.push([module.i, "\nbody{\n\tbackground-color: #f3f3f3;\n}\n.nav-bar{\n\ttext-align: center;\n\tpadding: 20upx 0;\n\tbackground-color: white;\n}\n.nav{\n\tcolor: #afafaf;\n\tdisplay: inline-block;\n\twidth: 20%;\n\t-webkit-box-sizing: border-box;\n\t        box-sizing: border-box;\n}\n.nav.active uni-text{\n\tcolor: #000000;\n\tposition: relative;\n}\n.nav.active uni-text::before{\n\tcontent: '';\n\tposition: absolute;\n\tbottom: -10upx;\n\twidth: 50upx;\n\tbackground-color: #ff7379;\n\theight: 2px;\n\tleft: 50%;\n\tmargin-left: -25upx;\n}\n.card{\n\tbackground-color: #fff;\n\tborder-radius: 18upx;\n\tmargin: 20upx 0;\n\t/* border-top: 20upx solid #; */\n}\n.child-overall,.overall{\n\tpadding: 20upx 15upx 0 15upx;\n}\n.child-overall:last-child{\n\tpadding-bottom: 40upx;\n}\n.child-overall-item,\n.overall{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\tjustify-items: center;\n}\n.overall{\n\tpadding-right: 20upx;\n-webkit-box-align: center;\n-webkit-align-items: center;\n        align-items: center;\t\n-webkit-box-pack: justify;\t\n-webkit-justify-content: space-between;\t\n        justify-content: space-between;\n}\n.child-overall-item>uni-image{\n\twidth: 200upx;\n\theight: 200upx;\n\tmargin-right: 20upx;\n\tborder-radius: 17upx;\n}\n.child-overall-item{\n\tmargin-bottom: 20upx;\n}\n.child-overall-item .info{\n\twidth: 320upx;\n\t/* height: 64upx; */\n\toverflow:hidden;/*一定要写 */\n\t    text-overflow: ellipsis;/*超出省略号 */\n\t    display:-webkit-box;/*一定要写 */\n\t    -webkit-line-clamp: 2;/*控制行数 */\n\t    -webkit-box-orient: vertical;/*一定要写 */\n}\n.calculator uni-text{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.calculator .calc{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\twidth: 40upx;\n\theight: 40upx;\n\tmargin: 0 20upx;\n\tfont-size: 36upx;\n\tline-height: 40upx;\n\ttext-align: center;\n\tborder-radius: 50%;\n\tborder: 1px solid #e8e8e8;\n}\n.info{\n\tposition: relative;\n}\n.options{\n\tbackground-color:#f9f9f9;\n\tdisplay: inline-block;\n\tpadding: 5upx 16upx;\n\tborder-radius: 24upx;\n\tmargin-top: 15upx;\n}\n.mount{\n\t-webkit-box-flex: 1;\n\t-webkit-flex: 1;\n\t        flex: 1;\n\tmargin-left: 15upx;\n\ttext-align: right;\n\tpadding-top: 20upx;\n}\n.btn-box{\n\ttext-align: right;\n\tpadding-right: 25upx;\n\tpadding-bottom: 20upx;\n\tmargin: 35upx 0 15upx;\n}\n.btn{\n\twidth: 28%;\n\theight: 75upx;\n\tborder-radius: 75upx;\n\ttext-align: center;\n\tline-height: 75upx;\n\tcolor: white;\n\tfont-size: 28upx;\n\tpadding: 0 !important;\n\tdisplay: inline-block;\n\tbackground-color: white;\n\tmargin-left: 15upx;\n}\n.btn1{\n\tborder: 1px solid #dfdfdf !important;\n\tcolor: #7f7f7f !important;\n}\n.btn2{\n\tborder: 1px solid #ffadb1 !important;\n\tcolor: #ff6f75 !important;\n}\n.bottom-content{\n\tposition: absolute;\n\tbottom: 0;\n\tleft: 0;\n\twidth: 100%;\n\twhite-space: nowrap;\n}\n.overall-title{\n\tmargin: 0 10upx;\n}\n.bottom{\n\tposition: fixed;\n\tleft: 0;\n\tbottom: 50px;\n\twidth: 100%;\n\t-webkit-box-sizing: border-box;\n\t        box-sizing: border-box;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\tpadding:20upx 40upx;\n\tbackground-color: #fff;\n\tborder: 1px solid #f1f1f1;\n}\n.bottom-right uni-button{\n\tmargin-left: 15upx;\n}\n.bottom-right uni-button,\n.bottom-right uni-text{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n}\n.bottom-right{\n\t-webkit-box-flex: 1;\n\t-webkit-flex: 1;\n\t        flex: 1;\n\ttext-align: right;\n}\n.arrow{\n\tcolor: #ccc;\n}\n.r-cb{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

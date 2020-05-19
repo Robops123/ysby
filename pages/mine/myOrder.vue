@@ -23,23 +23,23 @@
 					</view>
 					
 					<view class="child-overall" >
-						<view class="child-overall-item"> 
-							<image :src="item.goodsPic" mode=""></image>
+						<view class="child-overall-item" v-for="(childItem,childIndex) in item.goods" :key='childIndex'> 
+							<image :src="childItem.goodspic" mode=""></image>
 							<view class="info">
 								<view class="s2 title">
-									{{item.goodsname}}
+									{{childItem.goodsname}}
 								</view>
 								<view class="s3 cg options ellipsis">
-									{{item.specifications}}
+									{{childItem.specifications}}
 									<!-- <image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image> -->
 								</view>
 								<view class="bottom-content">
-									<text class="s3 fr">共{{item.amount}}件商品 合计:<text class="s1">￥{{item.totalprice}}</text></text>
+									<text class="s3 fr">共{{childItem.amount}}件商品 合计:<text class="s1">￥{{item.totalprice}}</text></text>
 								</view>
 							</view>
 							<view class="mount">
-								<view class="s3 fr"><text class="s1">￥{{item.goodsprice}}</text></view>
-								<view class="s3 cg">*{{item.amount}}</view>
+								<view class="s3 fr"><text class="s1">￥{{childItem.goodsprice}}</text></view>
+								<view class="s3 cg">*{{childItem.amount}}</view>
 							</view>
 						</view>
 					</view>
@@ -251,6 +251,9 @@
 		height: 200upx;
 		margin-right: 20upx;
 		border-radius: 17upx;
+	}
+	.child-overall-item{
+		margin-bottom: 20upx;
 	}
 	.child-overall-item .info{
 		width: 320upx;

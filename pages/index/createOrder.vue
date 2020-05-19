@@ -154,7 +154,7 @@
 						// totalprice:''
 				}
 				params.goods=JSON.stringify(params.goods)
-				  this.$apiPost(url,this.form).then((res) =>{
+				  this.$apiPost(url,params).then((res) =>{
 					  uni.navigateTo({
 					  	url:'./cashier?orderId='+res.data.orderno+'&contact='+JSON.stringify(that.contact)+'&money='+this.totalMoney
 					  })
