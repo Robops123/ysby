@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/uniapp-release.aar:unspecified@jar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/450ec20ca645ce7591543c18877c3e40/uniapp-release/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/450ec20ca645ce7591543c18877c3e40/uniapp-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/450ec20ca645ce7591543c18877c3e40/uniapp-release/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/450ec20ca645ce7591543c18877c3e40/uniapp-release/jars/libs/bindingx-core-1.0.9.6.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/450ec20ca645ce7591543c18877c3e40/uniapp-release/jars/libs/bindingx_weex_plugin-1.0.9.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

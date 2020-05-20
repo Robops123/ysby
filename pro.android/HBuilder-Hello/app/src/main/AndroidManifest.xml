@@ -518,6 +518,11 @@
             android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
             android:authorities="io.dcloud.HelloH5.TTMultiProvider"
             android:exported="false" />
+
+
+
+
+
     </application>
 
 </manifest>

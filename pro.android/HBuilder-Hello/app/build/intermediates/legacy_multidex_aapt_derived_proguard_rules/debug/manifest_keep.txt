@@ -1,0 +1,4 @@
+# Referenced at C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:171
+-keep class io.dcloud.application.DCloudApplication { <init>(); }
+# Referenced at C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:714
+-keep class io.dcloud.multiprocess.activity.WebAppActivity1 { <init>(); }

@@ -14,6 +14,13 @@ android {
             abiFilters 'x86','armeabi-v7a'
         }
     }
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                // 此处指定生成的apk文件名
+                outputFileName = "SecTest.apk"
+            }
+    }
     buildTypes {
         release {
             minifyEnabled false

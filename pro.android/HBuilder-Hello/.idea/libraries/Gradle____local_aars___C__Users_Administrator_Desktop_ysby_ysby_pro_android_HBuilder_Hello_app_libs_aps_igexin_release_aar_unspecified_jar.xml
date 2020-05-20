@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/aps-igexin-release.aar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b87226af4e6a4d23760910c066def375/aps-igexin-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b87226af4e6a4d23760910c066def375/aps-igexin-release/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b87226af4e6a4d23760910c066def375/aps-igexin-release/jars/libs/GetuiSDK4.3.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

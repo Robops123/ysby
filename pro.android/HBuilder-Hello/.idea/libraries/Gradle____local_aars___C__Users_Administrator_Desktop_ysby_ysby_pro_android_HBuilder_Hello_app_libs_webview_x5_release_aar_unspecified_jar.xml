@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/webview-x5-release.aar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7e317759a69f142bdb911849d676949a/webview-x5-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7e317759a69f142bdb911849d676949a/webview-x5-release/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7e317759a69f142bdb911849d676949a/webview-x5-release/jars/libs/tbs_sdk_thirdapp_v4.3.0.1148_43697_sharewithdownloadwithfile_withoutGame_obfs_20190805_175505.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

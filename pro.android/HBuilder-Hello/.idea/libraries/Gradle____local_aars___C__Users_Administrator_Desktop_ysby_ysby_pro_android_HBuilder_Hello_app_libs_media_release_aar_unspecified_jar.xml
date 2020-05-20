@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/media-release.aar:unspecified@jar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/85c238f7aa31d68747ac4e247bcf8108/media-release/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/85c238f7aa31d68747ac4e247bcf8108/media-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/85c238f7aa31d68747ac4e247bcf8108/media-release/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/85c238f7aa31d68747ac4e247bcf8108/media-release/jars/libs/danmaku-flame-0.6.2.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/85c238f7aa31d68747ac4e247bcf8108/media-release/jars/libs/ijkplayer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

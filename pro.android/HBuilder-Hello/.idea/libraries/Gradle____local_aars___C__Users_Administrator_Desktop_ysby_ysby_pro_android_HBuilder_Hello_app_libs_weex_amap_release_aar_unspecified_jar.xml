@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/weex_amap-release.aar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2e3515a29211f6b763f4b18e717bad51/weex_amap-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2e3515a29211f6b763f4b18e717bad51/weex_amap-release/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

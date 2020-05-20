@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HBuilder-Hello.iml" filepath="$PROJECT_DIR$/HBuilder-Hello.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HBuilder-Hello.iml" filepath="$PROJECT_DIR$/HBuilder-Hello.iml" group="HBuilder-Hello" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="HBuilder-Hello/app" />
     </modules>
   </component>
 </project>

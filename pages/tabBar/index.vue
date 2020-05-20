@@ -6,7 +6,7 @@
 			<!-- #endif -->
 			<view class="nav-content">
 				<text class="iconfont icon-address cr" ></text>
-				<view class="cityName ellipsis">{{city ? city:'定位中'}}</view>
+				<view class="cityName ellipsis" @click="reLocate">{{city ? city:'定位中'}}</view>
 				<view class="search-line">
 					<icon type="search" size="20" class="icon" />
 					<input type="text" v-model="keywords" @confirm='search' placeholder="寻找附近的商家"/>
@@ -102,7 +102,7 @@
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
 							<text class="s3 cg">{{item.collect}}人关注   
-							<text class="s2" v-if="lng && lat"> | 距离{{parseInt(item.distance)}}千米</text>
+							<text class="s2" v-if="lng && lat"> | 距离{{item.distance}}千米</text>
 							</text>
 						</view>
 					</view>
@@ -260,6 +260,15 @@
 				  }).catch((err) =>{
 					  this.$msg(err)
 				  })
+			},
+			reLocate(){
+				uni.showModal({
+					title:'提示',
+					content:'重新获取定位?',
+					success:() =>{
+						this.getNearbyBusiness()
+					}
+				})
 			},
 			getNearbyBusiness(){
 				var that=this

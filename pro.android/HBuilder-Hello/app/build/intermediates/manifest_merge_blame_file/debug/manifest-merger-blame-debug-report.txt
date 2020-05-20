@@ -1,0 +1,1703 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.dcloud.HelloH5"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="26" />
+9-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
+10
+11    <!-- Barcode(二维码)  begin -->
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:7:5-65
+12-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:7:22-62
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:5-81
+13-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:22-78
+14
+15    <uses-feature android:name="android.hardware.camera" />
+15-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:9:5-60
+15-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:9:19-57
+16    <uses-feature android:name="android.hardware.camera.autofocus" />
+16-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:10:5-70
+16-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:10:19-67
+17
+18    <uses-permission android:name="android.permission.VIBRATE" />
+18-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:11:5-66
+18-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:11:22-63
+19    <uses-permission android:name="android.permission.FLASHLIGHT" />
+19-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:12:5-69
+19-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:12:22-66
+20    <!-- Barcode(二维码)  end -->
+21
+22    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+22-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:15:5-73
+22-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:15:22-71
+23
+24    <!-- Maps(地图) begin -->
+25    <!-- Maps - 百度地图 begin -->
+26    <uses-permission android:name="android.permission.INTERNET" />
+26-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:19:5-67
+26-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:19:22-64
+27    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+27-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:5-81
+27-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:22-78
+28    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+28-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:21:5-81
+28-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:21:22-78
+29    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+29-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:22:5-79
+29-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:22:22-76
+30    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+30-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:23:5-73
+30-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:23:22-70
+31    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+31-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:5-79
+31-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:22-76
+32    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+32-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:25:5-76
+32-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:25:22-73
+33    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+33-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:5-75
+33-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:22-72
+34    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+34-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:27:5-84
+34-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:27:22-81
+35    <uses-permission android:name="android.permission.READ_LOGS" />
+35-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:28:5-68
+35-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:28:22-65
+36    <!-- Maps(地图) end -->
+37
+38
+39    <!-- Push(推送)只能选择一个推送组件 -->
+40    <!-- Push(推送)-MKeyPush begin -->
+41    <!--
+42    <uses-permission android:name="android.permission.INTERNET"/>
+43    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+44    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+45    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+46    -->
+47    <!-- Push(推送)-MKeyPush  end -->
+48
+49
+50    <!-- 小米推送 -->
+51    <!--
+52    <uses-permission android:name="android.permission.INTERNET"/>
+53    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+54    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+55    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+56    <uses-permission android:name="android.permission.GET_TASKS"/>
+57    <uses-permission android:name="android.permission.VIBRATE"/>
+58    <uses-permission android:name="android.permission.GET_TASKS"/>
+59    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+60    <uses-permission android:name="android.permission.GET_TOP_ACTIVITY_INFO"/>
+61    <uses-permission android:name="com.HBuilder.integrate.permission.MIPUSH_RECEIVE"/>
+62    <permission android:name="com.HBuilder.integrate.permission.MIPUSH_RECEIVE" android:protectionLevel="signature"/>
+63    -->
+64    <!-- 小米推送 end -->
+65
+66
+67    <!-- Push(推送)-个推  begin -->
+68    <uses-permission android:name="android.permission.INTERNET" />
+68-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:19:5-67
+68-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:19:22-64
+69    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+69-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:5-75
+69-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:22-72
+70    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+70-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:5-79
+70-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:22-76
+71    <uses-permission android:name="android.permission.WAKE_LOCK" />
+71-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:64:5-68
+71-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:64:22-65
+72    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+72-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:65:5-81
+72-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:65:22-78
+73    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+73-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:5-81
+73-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:22-78
+74    <uses-permission android:name="android.permission.VIBRATE" />
+74-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:11:5-66
+74-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:11:22-63
+75    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+75-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:5-76
+75-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:22-73
+76    <uses-permission android:name="android.permission.CALL_PHONE" />
+76-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:69:5-69
+76-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:69:22-66
+77    <uses-permission android:name="getui.permission.GetuiService.com.HBuilder.integrate" />
+77-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:70:5-92
+77-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:70:22-89
+78
+79    <permission
+79-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:72:5-74:44
+80        android:name="getui.permission.GetuiService.com.HBuilder.integrate"
+80-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:73:9-76
+81        android:protectionLevel="normal" />
+81-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:74:9-41
+82    <!-- Push(推送)-个推    end -->
+83
+84
+85    <!-- Share(分享)  begin -->
+86    <!-- Share - 新浪微博分享 -->
+87    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+87-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:25:5-76
+87-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:25:22-73
+88    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+88-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:5-76
+88-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:22-73
+89    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+89-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:5-79
+89-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:22-76
+90    <!-- Share - 腾讯微博分享 -->
+91    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+91-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:5-79
+91-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:22-76
+92    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+92-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:5-76
+92-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:22-73
+93    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+93-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:25:5-76
+93-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:25:22-73
+94    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+94-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:21:5-81
+94-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:21:22-78
+95    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+95-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:22:5-79
+95-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:22:22-76
+96    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+96-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:89:5-79
+96-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:89:22-76
+97    <!-- Share - 微信分享 -->
+98    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+98-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:91:5-80
+98-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:91:22-77
+99    <!-- Push(推送)   end -->
+100
+101
+102    <!-- Speech(语音识别)  begin -->
+103    <!-- Speech - 讯飞语音云 -->
+104    <uses-permission android:name="android.permission.INTERNET" />
+104-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:19:5-67
+104-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:19:22-64
+105    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+105-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:5-81
+105-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:22-78
+106    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+106-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:99:5-71
+106-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:99:22-68
+107    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+107-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:5-79
+107-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:22-76
+108    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+108-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:5-76
+108-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:22-73
+109    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+109-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:102:5-79
+109-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:102:22-76
+110    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+110-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:5-75
+110-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:22-72
+111    <!-- Speech(语音识别)  end -->
+112
+113
+114    <!-- Statistic(统计)  begin -->
+115    <!-- Statistic - 友盟统计 -->
+116    <uses-permission android:name="android.permission.READ_LOGS" />
+116-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:28:5-68
+116-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:28:22-65
+117    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+117-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:65:5-81
+117-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:65:22-78
+118    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+118-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:111:5-79
+118-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:111:22-76
+119    <!-- Statistic(统计)  end -->
+120
+121
+122    <!-- 小米分享 -->
+123    <uses-permission android:name="com.xiaomi.permission.AUTH_SERVICE" />
+123-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:115:5-74
+123-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:115:22-71
+124
+125    <!-- 蓝牙 ibeacon权限 -->
+126    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+126-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:21:5-81
+126-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:21:22-78
+127    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+127-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:22:5-79
+127-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:22:22-76
+128    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+128-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:120:5-74
+128-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:120:22-71
+129    <uses-permission android:name="android.permission.BLUETOOTH" />
+129-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:121:5-68
+129-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:121:22-65
+130
+131    <!-- 基座删除的部分权限 -->
+132    <uses-permission android:name="android.permission.GET_TASKS" />
+132-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:124:5-68
+132-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:124:22-65
+133    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+133-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:102:5-79
+133-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:102:22-76
+134    <uses-permission android:name="android.permission.READ_CONTACTS" />
+134-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:126:5-72
+134-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:126:22-69
+135    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+135-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:5-76
+135-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:22-73
+136
+137    <uses-feature android:name="android.hardware.camera.autofocus" />
+137-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:10:5-70
+137-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:10:19-67
+138
+139    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+139-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:129:5-73
+139-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:129:22-70
+140    <uses-permission android:name="android.permission.CAMERA" />
+140-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:7:5-65
+140-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:7:22-62
+141    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+141-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:131:5-71
+141-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:131:22-68
+142    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+142-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:99:5-71
+142-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:99:22-68
+143    <uses-permission android:name="android.permission.SEND_SMS" />
+143-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:133:5-67
+143-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:133:22-64
+144    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+144-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:5-75
+144-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:22-72
+145    <uses-permission android:name="android.permission.FLASHLIGHT" />
+145-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:12:5-69
+145-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:12:22-66
+146
+147    <uses-feature android:name="android.hardware.camera" />
+147-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:9:5-60
+147-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:9:19-57
+148
+149    <uses-permission android:name="android.permission.WRITE_SMS" />
+149-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:137:5-68
+149-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:137:22-65
+150    <uses-permission android:name="android.permission.READ_SMS" />
+150-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:138:5-67
+150-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:138:22-64
+151
+152    <supports-screens
+152-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:11:5-16:39
+153        android:anyDensity="true"
+153-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:12:9-34
+154        android:largeScreens="true"
+154-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:13:9-36
+155        android:normalScreens="true"
+155-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:14:9-37
+156        android:resizeable="true"
+156-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:15:9-34
+157        android:smallScreens="true" />
+157-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:16:9-36
+158
+159    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+160    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+160-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:11:5-83
+160-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:11:22-80
+161    <!--
+162    <uses-permission
+163        android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+164    -->
+165    <!-- 华为修改角标需要设置权限 -->
+166    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+166-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:24:5-91
+166-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:24:22-88
+167    <uses-permission android:name="com.asus.msa.SupplementaryDID.ACCESS" />
+167-->[miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:8:5-76
+167-->[miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:8:22-73
+168
+169    <uses-feature android:name="android.hardware.Camera" />
+169-->[weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:16:5-60
+169-->[weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:16:19-57
+170
+171    <application
+171-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:140:5-526:19
+172        android:name="io.dcloud.application.DCloudApplication"
+172-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:141:9-63
+173        android:allowClearUserData="true"
+173-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:142:9-42
+174        android:debuggable="true"
+174-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:146:9-34
+175        android:icon="@drawable/icon"
+175-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:143:9-38
+176        android:label="@string/app_name"
+176-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:144:9-41
+177        android:largeHeap="true"
+177-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:145:9-33
+178        android:supportsRtl="true"
+178-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:158:9-35
+179        android:usesCleartextTraffic="true" >
+179-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:16:18-53
+180        <activity
+180-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:149:9-162:20
+181            android:name="io.dcloud.PandoraEntry"
+181-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:150:13-50
+182            android:configChanges="orientation|keyboardHidden|keyboard|navigation"
+182-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:151:13-83
+183            android:hardwareAccelerated="true"
+183-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:154:13-47
+184            android:label="@string/app_name"
+184-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:152:13-45
+185            android:launchMode="singleTask"
+185-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:153:13-44
+186            android:screenOrientation="user"
+186-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:156:13-45
+187            android:theme="@style/TranslucentTheme"
+187-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:155:13-52
+188            android:windowSoftInputMode="adjustResize" >
+188-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:157:13-55
+189            <intent-filter>
+189-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:158:13-161:29
+190                <action android:name="android.intent.action.MAIN" />
+190-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:159:17-69
+190-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:159:25-66
+191
+192                <category android:name="android.intent.category.LAUNCHER" />
+192-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:160:17-77
+192-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:160:27-74
+193            </intent-filter>
+194        </activity>
+195
+196        <!-- Statistic(统计)-友盟统计 begin -->
+197        <!-- 官方网站：http://www.umeng.com/analytics -->
+198        <!-- meta-data节点android:name="UMENG_APPKEY"项中android:value值为友盟网站申请的APPKEY -->
+199        <!-- meta-data节点android:name="UMENG_CHANNEL"项中android:value值为发行渠道标识，可任意取值，用于各种发行渠道效果统计 -->
+200        <meta-data
+200-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:168:9-170:56
+201            android:name="UMENG_APPKEY"
+201-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:169:13-40
+202            android:value="55b1b625e0f55a138300449d" />
+202-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:170:13-53
+203        <meta-data
+203-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:171:9-173:42
+204            android:name="UMENG_CHANNEL"
+204-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:172:13-41
+205            android:value="googleplay" />
+205-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:173:13-39
+206        <!-- 友盟统计  配置  end -->
+207
+208        <provider
+208-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:176:9-184:20
+209            android:name="io.dcloud.common.util.DCloud_FileProvider"
+209-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:177:13-69
+210            android:authorities="io.dcloud.HelloH5.dc.fileprovider"
+210-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:178:13-68
+211            android:exported="false"
+211-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:179:13-37
+212            android:grantUriPermissions="true" >
+212-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:180:13-47
+213            <meta-data
+213-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:181:13-183:64
+214                android:name="android.support.FILE_PROVIDER_PATHS"
+214-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:182:17-67
+215                android:resource="@xml/dcloud_file_provider" />
+215-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:183:17-61
+216        </provider>
+217
+218        <!-- Maps(地图) begin -->
+219        <!-- meta-data节点android:name="com.baidu.lbsapi.API_KEY"项中android:value值为百度地图应用的Appkey -->
+220        <meta-data
+220-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:188:9-190:55
+221            android:name="com.baidu.lbsapi.API_KEY"
+221-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:189:13-52
+222            android:value="u1vrG5cDGQLioX9fezNAdGkR" />
+222-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:190:13-53
+223        <!--  -->
+224        <service
+224-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:192:9-195:40
+225            android:name="com.baidu.location.f"
+225-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:193:13-48
+226            android:enabled="true"
+226-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:194:13-35
+227            android:process=":remote" />
+227-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:195:13-38
+228        <!-- Maps(地图) end -->
+229        <meta-data
+229-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:197:9-198:63
+230            android:name="com.amap.api.v2.apikey"
+230-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:197:20-57
+231            android:value="1245f55df04583e53eb0fbf511be9a08" />
+231-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:198:13-61
+232
+233        <service android:name="com.amap.api.location.APSService" />
+233-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:199:9-68
+233-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:199:18-65
+234
+235        <!-- Oauth 授权登陆 start -->
+236        <!-- Oauth QQ start -->
+237        <!-- QQ 分享 配置和授权登陆相同 -->
+238        <meta-data
+238-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:204:9-206:42
+239            android:name="QQ_APPID"
+239-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:205:13-36
+240            android:value="1104455702" />
+240-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:206:13-39
+241
+242        <activity
+242-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:208:9-220:20
+243            android:name="com.tencent.tauth.AuthActivity"
+243-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:209:13-58
+244            android:launchMode="singleTask"
+244-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:210:13-44
+245            android:noHistory="true" >
+245-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:211:13-37
+246            <intent-filter>
+246-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:212:13-219:29
+247                <action android:name="android.intent.action.VIEW" />
+247-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:213:17-69
+247-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:213:25-66
+248
+249                <category android:name="android.intent.category.DEFAULT" />
+249-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:17-76
+249-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:27-73
+250                <category android:name="android.intent.category.BROWSABLE" />
+250-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:216:17-78
+250-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:216:27-75
+251
+252                <data android:scheme="1104455702" />
+252-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:17-53
+252-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:23-50
+253            </intent-filter>
+254        </activity>
+255        <activity
+255-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:221:9-224:75
+256            android:name="com.tencent.connect.common.AssistActivity"
+256-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:222:13-69
+257            android:screenOrientation="portrait"
+257-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:223:13-49
+258            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+258-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:224:13-72
+259        <!-- Oauth QQ end -->
+260
+261
+262        <!-- Oauth Sina start -->
+263
+264
+265        <!-- Oauth Sina end -->
+266        <!-- Oauth 授权登陆 end -->
+267
+268
+269        <!-- Speech(语音识别)-讯飞语音 begin -->
+270        <!-- 官方网站：http://open.voicecloud.cn/ -->
+271        <!-- meta-data节点android:name="IFLY_APPKEY"项中android:value值为讯飞语音云网站申请的APPKEY，由于它是和libs目录下的jar包是绑定的，不要修改此值 -->
+272        <meta-data
+272-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:238:9-240:40
+273            android:name="IFLY_APPKEY"
+273-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:239:13-39
+274            android:value="53feacdd" />
+274-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:240:13-37
+275        <!-- Speech(语音识别)-讯飞语音 end -->
+276
+277
+278        <!-- Push(推送)-个推 begin -->
+279        <!-- 官方网站：http://www.igetui.com/ -->
+280        <!-- meta-data节点android:name="appid"项中android:value值为个推服务器上申请的APPID -->
+281        <!-- meta-data节点android:name="appkey"项中android:value值为个推服务器上申请的APPKEY -->
+282        <!-- meta-data节点android:name="appsecret"项中android:value值为个推服务器上申请的APPSECRET -->
+283        <!-- 个推 aps配置  begin -->
+284        <meta-data
+284-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:250:9-252:54
+285            android:name="PUSH_APPID"
+285-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:251:13-38
+286            android:value="pPyZWvH3Fa6PXba10aJ009" />
+286-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:252:13-51
+287        <meta-data
+287-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:253:9-255:54
+288            android:name="PUSH_APPKEY"
+288-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:254:13-39
+289            android:value="b7dOGlNPHR7pqwUxDhpTi4" />
+289-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:255:13-51
+290        <meta-data
+290-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:256:9-258:54
+291            android:name="PUSH_APPSECRET"
+291-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:257:13-42
+292            android:value="IxVYAT9qws8dlNElaTMvg1" />
+292-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:258:13-51
+293
+294        <service
+294-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:260:9-268:19
+295            android:name="com.igexin.sdk.PushService"
+295-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:261:13-54
+296            android:exported="true"
+296-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:262:13-36
+297            android:label="NotificationCenter"
+297-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:263:13-47
+298            android:permission=""
+298-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:264:13-34
+299            android:process=":pushservice" >
+299-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:264:35-65
+300            <intent-filter>
+300-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:265:13-267:29
+301                <action android:name="com.igexin.sdk.action.service.message" />
+301-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:266:17-80
+301-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:266:25-77
+302            </intent-filter>
+303        </service>
+304
+305        <receiver android:name="com.igexin.sdk.PushReceiver" >
+305-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:270:9-280:20
+305-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:270:19-61
+306            <intent-filter>
+306-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:271:13-279:29
+307                <action android:name="android.intent.action.BOOT_COMPLETED" />
+307-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:272:17-79
+307-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:272:25-76
+308                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+308-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:273:17-79
+308-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:273:25-76
+309                <action android:name="android.intent.action.USER_PRESENT" />
+309-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:274:17-77
+309-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:274:25-74
+310                <action android:name="com.igexin.sdk.action.refreshls" />
+310-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:275:17-74
+310-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:275:25-71
+311                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+311-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:276:17-78
+311-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:276:25-75
+312                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+312-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:277:17-87
+312-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:277:25-84
+313                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+313-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:278:17-90
+313-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:278:25-87
+314            </intent-filter>
+315        </receiver>
+316
+317        <activity
+317-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:282:9-288:75
+318            android:name="com.igexin.sdk.PushActivity"
+318-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:283:13-55
+319            android:excludeFromRecents="true"
+319-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:284:13-46
+320            android:exported="false"
+320-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:285:13-37
+321            android:process=":pushservice"
+321-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:286:13-43
+322            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+322-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:287:13-67
+323            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+323-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:288:13-72
+324        <activity
+324-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:289:9-295:75
+325            android:name="com.igexin.sdk.GActivity"
+325-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:290:13-52
+326            android:excludeFromRecents="true"
+326-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:291:13-46
+327            android:exported="true"
+327-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:292:13-36
+328            android:process=":pushservice"
+328-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:293:13-43
+329            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+329-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:294:13-67
+330            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+330-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:295:13-72
+331
+332        <receiver android:name="io.dcloud.feature.apsGt.GTNotificationReceiver" >
+332-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:297:9-305:20
+332-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:297:19-80
+333            <intent-filter>
+333-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:298:13-304:29
+334                <action android:name="android.intent.action.BOOT_COMPLETED" />
+334-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:272:17-79
+334-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:272:25-76
+335                <action android:name="io.dcloud.HelloH5.__CREATE_NOTIFICATION" />
+335-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:300:17-82
+335-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:300:25-79
+336                <action android:name="io.dcloud.HelloH5.__REMOVE_NOTIFICATION" />
+336-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:301:17-82
+336-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:301:25-79
+337                <action android:name="io.dcloud.HelloH5.__CLEAR_NOTIFICATION" />
+337-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:302:17-81
+337-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:302:25-78
+338                <action android:name="io.dcloud.HelloH5.__CLILK_NOTIFICATION" />
+338-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:303:17-81
+338-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:303:25-78
+339            </intent-filter>
+340        </receiver>
+341
+342        <service android:name="io.dcloud.feature.apsGt.GTNormalIntentService" />
+342-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:306:9-307:75
+342-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:307:13-73
+343
+344        <!-- Push(推送)-个推  end -->
+345
+346
+347        <!-- Share(分享) begin -->
+348        <!-- Share - 新浪微博分享 -->
+349        <!-- 官方网站：http://open.weibo.com/ -->
+350        <meta-data
+350-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:315:9-317:53
+351            android:name="SINA_REDIRECT_URI"
+351-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:316:13-45
+352            android:value="http://www.dcloud.io/" />
+352-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:317:13-50
+353        <meta-data
+353-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:318:9-320:64
+354            android:name="SINA_SECRET"
+354-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:319:13-39
+355            android:value="b8fa3ec4b7e47a152044d9e8265cf593" />
+355-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:320:13-61
+356        <meta-data
+356-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:321:9-323:43
+357            android:name="SINA_APPKEY"
+357-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:322:13-39
+358            android:value="_3662743235" />
+358-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:323:13-40
+359        <!-- 分享 -->
+360
+361
+362        <!-- Share - 腾讯微博分享 -->
+363        <!-- 官方网站：http://dev.t.qq.com/ -->
+364        <meta-data
+364-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:329:9-331:53
+365            android:name="TENCENT_REDIRECT_URI"
+365-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:330:13-48
+366            android:value="%腾讯微博开放平台申请应用配置的回调地址%" />
+366-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:331:13-50
+367        <meta-data
+367-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:332:9-334:53
+368            android:name="TENCENT_SECRET"
+368-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:333:13-42
+369            android:value="%腾讯微博开放平台申请应用的Secret%" />
+369-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:334:13-50
+370        <meta-data
+370-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:335:9-337:65
+371            android:name="TENCENT_APPKEY"
+371-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:336:13-42
+372            android:value="_%腾讯微博开放平台申请应用的Appkey，注意前面要添加下划线%" />
+372-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:337:13-62
+373
+374        <activity
+374-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:339:9-341:72
+375            android:name="io.dcloud.share.tencent.WebAuthorize"
+375-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:340:13-64
+376            android:theme="@android:style/Theme.NoTitleBar" />
+376-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:341:13-60
+377        <!-- 微信分享 配置begin -->
+378        <meta-data
+378-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:343:9-345:64
+379            android:name="WX_SECRET"
+379-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:344:13-37
+380            android:value="fdc6251421d3d688a563b4f00dd540e7" />
+380-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:345:13-61
+381        <meta-data
+381-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:346:9-348:50
+382            android:name="WX_APPID"
+382-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:347:13-36
+383            android:value="wx0411fa6a39d61297" />
+383-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:348:13-47
+384
+385        <activity
+385-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:350:9-362:20
+386            android:name="com.zdhy.ysby.wxapi.WXEntryActivity"
+386-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:351:13-50
+387            android:exported="true"
+387-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:352:13-36
+388            android:label="@string/app_name"
+388-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:353:13-45
+389            android:launchMode="singleTop" >
+389-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:354:13-43
+390            <intent-filter>
+390-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:355:13-361:29
+391                <action android:name="android.intent.action.VIEW" />
+391-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:213:17-69
+391-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:213:25-66
+392
+393                <category android:name="android.intent.category.DEFAULT" />
+393-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:17-76
+393-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:27-73
+394
+395                <data android:scheme="wx0411fa6a39d61297" />
+395-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:17-53
+395-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:23-50
+396            </intent-filter>
+397        </activity>
+398        <!-- 微信分享 配置 end -->
+399
+400
+401        <!-- 微信支付配置 start -->
+402        <activity
+402-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:366:9-369:46
+403            android:name="com.zdhy.ysby.wxapi.WXPayEntryActivity"
+403-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:367:13-53
+404            android:exported="true"
+404-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:368:13-36
+405            android:launchMode="singleTop" />
+405-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:369:13-43
+406
+407        <meta-data
+407-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:346:9-348:50
+408            android:name="WX_APPID"
+408-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:347:13-36
+409            android:value="wx0411fa6a39d61297" />
+409-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:348:13-47
+410
+411        <!-- 微信支付配置end -->
+412        <!-- 小米分享 -->
+413        <meta-data
+413-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:377:9-379:45
+414            android:name="MIUI_APPID"
+414-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:378:13-38
+415            android:value="_%小米分享的APPID%" />
+415-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:379:13-42
+416        <meta-data
+416-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:380:9-382:48
+417            android:name="MIUI_APPSECRET"
+417-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:381:13-42
+418            android:value="%小米分享的appSecret%" />
+418-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:382:13-45
+419        <meta-data
+419-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:383:9-385:43
+420            android:name="MIUI_REDIRECT_URI"
+420-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:384:13-45
+421            android:value="%小米分享的回调地址%" />
+421-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:385:13-40
+422
+423        <activity android:name="com.xiaomi.account.openauth.AuthorizeActivity" />
+423-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:387:9-82
+423-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:387:19-79
+424        <!-- 小米分享 end -->
+425
+426
+427        <!-- 小米推送 -->
+428
+429
+430        <!--
+431            <meta-data android:name="PUSH_APPID" android:value="_%小米推送的APPID%"/>
+432        <meta-data android:name="PUSH_APPKEY" android:value="_%小米推送的APPKEY%"/>
+433        -->
+434        <service
+434-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:398:9-401:46
+435            android:name="com.xiaomi.push.service.XMPushService"
+435-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:399:13-65
+436            android:enabled="true"
+436-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:400:13-35
+437            android:process=":pushservice" />
+437-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:401:13-43
+438        <service
+438-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:402:9-407:46
+439            android:name="com.xiaomi.push.service.XMJobService"
+439-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:403:13-64
+440            android:enabled="true"
+440-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:404:13-35
+441            android:exported="false"
+441-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:405:13-37
+442            android:permission="android.permission.BIND_JOB_SERVICE"
+442-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:406:13-69
+443            android:process=":pushservice" />
+443-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:407:13-43
+444        <service
+444-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:408:9-411:39
+445            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+445-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:409:13-68
+446            android:enabled="true"
+446-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:410:13-35
+447            android:exported="true"
+447-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:411:13-36
+448            android:permission="" />
+448-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:409:69-90
+449        <service
+449-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:412:9-414:38
+450            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+450-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:413:13-70
+451            android:enabled="true" />
+451-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:414:13-35
+452
+453        <receiver
+453-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:416:9-424:20
+454            android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
+454-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:417:13-83
+455            android:exported="true" >
+455-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:418:13-36
+456            <intent-filter>
+456-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:419:13-423:29
+457                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+457-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:273:17-79
+457-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:273:25-76
+458
+459                <category android:name="android.intent.category.DEFAULT" />
+459-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:17-76
+459-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:27-73
+460            </intent-filter>
+461        </receiver>
+462        <receiver
+462-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:425:9-432:20
+463            android:name="com.xiaomi.push.service.receivers.PingReceiver"
+463-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:426:13-74
+464            android:exported="false"
+464-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:427:13-37
+465            android:process=":pushservice" >
+465-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:428:13-43
+466            <intent-filter>
+466-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:429:13-431:29
+467                <action android:name="com.xiaomi.push.PING_TIMER" />
+467-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:430:17-69
+467-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:430:25-66
+468            </intent-filter>
+469        </receiver>
+470        <receiver
+470-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:433:9-445:20
+471            android:name="io.dcloud.feature.apsXm.XMMessageReceiver"
+471-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:434:13-69
+472            android:exported="true"
+472-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:435:13-36
+473            android:permission="" >
+473-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:434:70-91
+474            <intent-filter>
+474-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:436:13-438:29
+475                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+475-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:437:17-76
+475-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:437:25-73
+476            </intent-filter>
+477            <intent-filter>
+477-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:439:13-441:29
+478                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+478-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:440:17-76
+478-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:440:25-73
+479            </intent-filter>
+480            <intent-filter>
+480-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:442:13-444:29
+481                <action android:name="com.xiaomi.mipush.ERROR" />
+481-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:443:17-66
+481-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:443:25-63
+482            </intent-filter>
+483        </receiver>
+484        <receiver
+484-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:446:9-456:20
+485            android:name="io.dcloud.feature.apsXm.XMNotificationReceiver"
+485-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:447:13-74
+486            android:exported="true" >
+486-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:448:13-36
+487            <intent-filter>
+487-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:449:13-455:29
+488                <action android:name="android.intent.action.BOOT_COMPLETED" />
+488-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:272:17-79
+488-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:272:25-76
+489                <action android:name="com.HBuilder.integrate.__CREATE_NOTIFICATION" />
+489-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:451:17-87
+489-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:451:25-84
+490                <action android:name="com.HBuilder.integrate.__REMOVE_NOTIFICATION" />
+490-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:452:17-87
+490-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:452:25-84
+491                <action android:name="com.HBuilder.integrate.__CLEAR_NOTIFICATION" />
+491-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:453:17-86
+491-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:453:25-83
+492                <action android:name="com.HBuilder.integrate.__CLILK_NOTIFICATION" />
+492-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:454:17-86
+492-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:454:25-83
+493            </intent-filter>
+494        </receiver>
+495        <!-- 小米推送 end -->
+496        <!--
+497        Dcloud 开屏广告配置>
+498        <meta-data android:name="DCLOUD_STREAMAPP_CHANNEL" android:value="io.dcloud.H57BCF8D2|H57BCF8D2|12331280401"></meta-data>
+499        <meta-data android:name="DCLOUD_AD_ID" android:value="-553621487"></meta-data>
+500        <meta-data android:name="DCLOUD_AD_SPLASH" android:value="true"></meta-data>
+501        < Dcloud 开屏广告配置
+502        -->
+503        <!-- 百度语音识别 start -->
+504        <meta-data
+504-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:464:9-85
+505            android:name="com.baidu.speech.APP_ID"
+505-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:464:20-58
+506            android:value="11770490" />
+506-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:464:59-83
+507        <meta-data
+507-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:465:9-102
+508            android:name="com.baidu.speech.API_KEY"
+508-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:465:20-59
+509            android:value="cDFRHjbhBklzS1ZKFBnz9cHg" />
+509-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:465:60-100
+510        <meta-data
+510-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:466:9-113
+511            android:name="com.baidu.speech.SECRET_KEY"
+511-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:466:20-62
+512            android:value="vZK4rC7ueQTMrhavm3qVlnGicPTeUCEr" />
+512-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:466:63-111
+513
+514        <service
+514-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:467:9-101
+515            android:name="com.baidu.speech.VoiceRecognitionService"
+515-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:467:18-73
+516            android:exported="false" />
+516-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:467:74-98
+517        <!-- 百度语音识别 end -->
+518
+519        <activity
+519-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:470:9-494:20
+520            android:name="io.dcloud.PandoraEntryActivity"
+520-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:471:13-58
+521            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc|fontScale|keyboard"
+521-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:473:13-101
+522            android:hardwareAccelerated="true"
+522-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:474:13-47
+523            android:launchMode="singleTask"
+523-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:472:13-44
+524            android:permission="com.miui.securitycenter.permission.AppPermissionsEditor"
+524-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:475:13-89
+525            android:screenOrientation="user"
+525-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:476:13-45
+526            android:theme="@style/DCloudTheme"
+526-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:477:13-47
+527            android:windowSoftInputMode="adjustResize" >
+527-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:478:13-55
+528            <intent-filter>
+528-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:480:13-493:29
+529                <category android:name="android.intent.category.DEFAULT" />
+529-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:17-76
+529-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:27-73
+530                <category android:name="android.intent.category.BROWSABLE" />
+530-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:216:17-78
+530-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:216:27-75
+531
+532                <action android:name="android.intent.action.VIEW" />
+532-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:213:17-69
+532-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:213:25-66
+533
+534                <data android:scheme="h56131bcf" />
+534-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:17-53
+534-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:23-50
+535            </intent-filter>
+536        </activity>
+537
+538        <provider
+538-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:495:9-504:20
+539            android:name="io.dcloud.gdt.GdtFileProvider"
+539-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:496:13-57
+540            android:authorities="io.dcloud.HelloH5.fileprovider"
+540-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:497:13-65
+541            android:exported="false"
+541-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:498:13-37
+542            android:grantUriPermissions="true" >
+542-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:499:13-47
+543            <meta-data
+543-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:181:13-183:64
+544                android:name="android.support.FILE_PROVIDER_PATHS"
+544-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:182:17-67
+545                android:resource="@xml/gdt_file_path" />
+545-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:183:17-61
+546        </provider>
+547        <provider
+547-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:506:9-515:20
+548            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+548-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:507:13-70
+549            android:authorities="io.dcloud.HelloH5.TTFileProvider"
+549-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:508:13-67
+550            android:exported="false"
+550-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:509:13-37
+551            android:grantUriPermissions="true" >
+551-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:510:13-47
+552            <meta-data
+552-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:181:13-183:64
+553                android:name="android.support.FILE_PROVIDER_PATHS"
+553-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:182:17-67
+554                android:resource="@xml/file_paths" />
+554-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:183:17-61
+555        </provider>
+556        <provider
+556-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:517:9-520:40
+557            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+557-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:518:13-80
+558            android:authorities="io.dcloud.HelloH5.TTMultiProvider"
+558-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:519:13-68
+559            android:exported="false" />
+559-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:520:13-37
+560
+561        <uses-library
+561-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:23:9-25:40
+562            android:name="org.apache.http.legacy"
+562-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:24:13-50
+563            android:required="false" />
+563-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:25:13-37
+564
+565        <activity
+565-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:27:9-32:20
+566            android:name="com.alipay.sdk.app.H5PayActivity"
+566-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:28:13-60
+567            android:configChanges="orientation|keyboardHidden|navigation"
+567-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:29:13-74
+568            android:exported="false"
+568-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:30:13-37
+569            android:screenOrientation="behind" >
+569-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:31:13-47
+570        </activity>
+571        <activity
+571-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:33:9-38:20
+572            android:name="com.alipay.sdk.app.H5AuthActivity"
+572-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:34:13-61
+573            android:configChanges="orientation|keyboardHidden|navigation"
+573-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:35:13-74
+574            android:exported="false"
+574-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:36:13-37
+575            android:screenOrientation="behind" >
+575-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:37:13-47
+576        </activity>
+577        <activity
+577-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:39:9-48:20
+578            android:name="com.alipay.sdk.app.PayResultActivity"
+578-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:40:13-64
+579            android:configChanges="orientation|keyboardHidden|navigation"
+579-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:41:13-74
+580            android:exported="true"
+580-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:42:13-36
+581            android:launchMode="singleInstance"
+581-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:43:13-48
+582            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+582-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:44:13-72
+583            <intent-filter>
+583-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:45:13-47:29
+584                <category android:name="android.intent.category.DEFAULT" />
+584-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:17-76
+584-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:27-73
+585            </intent-filter>
+586        </activity>
+587        <activity
+587-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:49:9-54:20
+588            android:name="com.alipay.sdk.app.AlipayResultActivity"
+588-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:50:13-67
+589            android:exported="true"
+589-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:51:13-36
+590            android:launchMode="singleTask"
+590-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:52:13-44
+591            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+591-->[alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:53:13-72
+592        </activity>
+593
+594        <service
+594-->[aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:10:9-12:40
+595            android:name="io.dcloud.feature.aps.ApsActionService"
+595-->[aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:11:13-66
+596            android:exported="false" />
+596-->[aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:12:13-37
+597
+598        <activity
+598-->[gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:10:9-14:63
+599            android:name="com.dmcbig.mediapicker.PickerActivity"
+599-->[gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:11:13-65
+600            android:configChanges="orientation|screenSize"
+600-->[gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:12:13-59
+601            android:theme="@style/DeviceDefault.Light"
+601-->[gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:13:13-55
+602            android:windowSoftInputMode="stateAlwaysHidden" />
+602-->[gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:14:13-60
+603        <activity
+603-->[gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:15:9-19:63
+604            android:name="com.dmcbig.mediapicker.PreviewActivity"
+604-->[gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:16:13-66
+605            android:configChanges="orientation|screenSize"
+605-->[gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:17:13-59
+606            android:theme="@style/DeviceDefault.Light"
+606-->[gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:18:13-55
+607            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 声明SDK所需要的组件 -->
+607-->[gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:19:13-60
+608        <service
+608-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:20:9-23:43
+609            android:name="com.qq.e.comm.DownloadService"
+609-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:21:13-57
+610            android:exported="false"
+610-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:22:13-37
+611            android:multiprocess="true" /> <!-- 请开发者注意字母的大小写，ADActivity，而不是AdActivity -->
+611-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:23:13-40
+612        <activity
+612-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:24:9-27:43
+613            android:name="com.qq.e.ads.ADActivity"
+613-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:25:13-51
+614            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+614-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:26:13-83
+615            android:multiprocess="true" />
+615-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:27:13-40
+616        <activity
+616-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:28:9-32:52
+617            android:name="com.qq.e.ads.PortraitADActivity"
+617-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:29:13-59
+618            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+618-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:30:13-83
+619            android:multiprocess="true"
+619-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:31:13-40
+620            android:screenOrientation="portrait" />
+620-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:32:13-49
+621        <activity
+621-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:33:9-37:53
+622            android:name="com.qq.e.ads.LandscapeADActivity"
+622-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:34:13-60
+623            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+623-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:35:13-83
+624            android:multiprocess="true"
+624-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:36:13-40
+625            android:screenOrientation="landscape" /> <!-- 用于激励视频可选广告的竖屏透明背景activity -->
+625-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:37:13-50
+626        <activity
+626-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:38:9-42:64
+627            android:name="com.qq.e.ads.RewardvideoPortraitADActivity"
+627-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:39:13-70
+628            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+628-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:40:13-83
+629            android:multiprocess="true"
+629-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:41:13-40
+630            android:theme="@android:style/Theme.Translucent" /> <!-- 用于激励视频可选广告的横屏透明背景activity -->
+630-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:42:13-61
+631        <activity
+631-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:43:9-47:64
+632            android:name="com.qq.e.ads.RewardvideoLandscapeADActivity"
+632-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:44:13-71
+633            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+633-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:45:13-83
+634            android:multiprocess="true"
+634-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:46:13-40
+635            android:theme="@android:style/Theme.Translucent" />
+635-->[GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:47:13-61
+636
+637        <service
+637-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:160:9-162:40
+638            android:name="io.dcloud.common.adapter.io.MiniServerService"
+638-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:161:13-73
+639            android:exported="false" />
+639-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:162:13-37
+640
+641        <receiver android:name="io.dcloud.common.adapter.io.PushReceiver" >
+641-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:164:9-168:20
+641-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:164:19-74
+642            <intent-filter>
+642-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:165:13-167:29
+643                <action android:name="dcloud.push.broswer" />
+643-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:166:17-62
+643-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:166:25-59
+644            </intent-filter>
+645        </receiver>
+646
+647        <activity
+647-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:170:9-173:40
+648            android:name="io.dcloud.imagepick.CustomGalleryActivity"
+648-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:171:13-69
+649            android:exported="false"
+649-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:172:13-37
+650            android:noHistory="true" />
+650-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:173:13-37
+651        <activity
+651-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:174:9-177:58
+652            android:name="io.dcloud.feature.nativeObj.photoview.PhotoActivity"
+652-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:175:13-79
+653            android:noHistory="false"
+653-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:176:13-38
+654            android:theme="@style/DeviceDefault.Light" />
+654-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:177:13-55
+655        <activity
+655-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:178:9-199:20
+656            android:name="io.dcloud.appstream.StreamAppMainActivity"
+656-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:179:13-69
+657            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+657-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:180:13-82
+658            android:exported="true"
+658-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:181:13-36
+659            android:launchMode="singleTask"
+659-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:182:13-44
+660            android:screenOrientation="portrait"
+660-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:183:13-49
+661            android:taskAffinity=":list"
+661-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:184:13-41
+662            android:theme="@android:style/Theme.Wallpaper.NoTitleBar"
+662-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:185:13-70
+663            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+663-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:186:13-73
+664            <intent-filter>
+664-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:187:13-189:29
+665                <action android:name="android.intent.action.MAIN" />
+665-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:159:17-69
+665-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:159:25-66
+666            </intent-filter>
+667            <intent-filter>
+667-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:190:13-198:29
+668                <data android:scheme="streamapp" />
+668-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:17-53
+668-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:23-50
+669                <data android:scheme="streamappmain" />
+669-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:17-53
+669-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:23-50
+670
+671                <action android:name="android.intent.action.VIEW" />
+671-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:213:17-69
+671-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:213:25-66
+672
+673                <category android:name="android.intent.category.DEFAULT" />
+673-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:17-76
+673-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:27-73
+674                <category android:name="android.intent.category.BROWSABLE" />
+674-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:216:17-78
+674-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:216:27-75
+675            </intent-filter>
+676        </activity>
+677        <activity
+677-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:200:9-210:58
+678            android:name="io.dcloud.WebAppActivity"
+678-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:201:13-52
+679            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc|fontScale"
+679-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:202:13-92
+680            android:hardwareAccelerated="true"
+680-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:203:13-47
+681            android:icon="@drawable/dcloud_recent"
+681-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:204:13-51
+682            android:label="@string/stream_my"
+682-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:205:13-46
+683            android:launchMode="singleTask"
+683-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:206:13-44
+684            android:screenOrientation="portrait"
+684-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:207:13-49
+685            android:taskAffinity=":stream"
+685-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:208:13-43
+686            android:theme="@style/DCloudTheme"
+686-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:209:13-47
+687            android:windowSoftInputMode="adjustResize" />
+687-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:210:13-55
+688
+689        <service android:name="io.dcloud.streamdownload.DownloadService" >
+689-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:212:9-216:19
+689-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:212:18-73
+690            <intent-filter>
+690-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:213:13-215:29
+691                <action android:name="com.qihoo.life.plugin.streamapp.ACTION_PUSH_TO_PLUGIN" />
+691-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:214:17-96
+691-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:214:25-93
+692            </intent-filter>
+693        </service>
+694        <service
+694-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:217:9-220:41
+695            android:name="io.dcloud.appstream.service.DaemonService"
+695-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:218:13-69
+696            android:exported="false"
+696-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:219:13-37
+697            android:process=":daemon" />
+697-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:220:13-38
+698        <service
+698-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:221:9-223:40
+699            android:name="io.dcloud.appstream.service.ProtectService"
+699-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:222:13-70
+700            android:exported="false" /> <!-- <receiver -->
+700-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:223:13-37
+701        <!-- android:name="io.dcloud.appstream.receiver.DaemonReceiver"> -->
+702        <!-- <intent-filter -->
+703        <!-- android:priority="1000"> -->
+704        <!-- <action -->
+705        <!-- android:name="android.intent.action.BOOT_COMPLETED" /> -->
+706        <!-- <action -->
+707        <!-- android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+708        <!-- <action -->
+709        <!-- android:name="android.intent.action.USER_PRESENT" /> -->
+710        <!-- </intent-filter> -->
+711        <!-- </receiver> -->
+712        <service android:name="io.dcloud.multiprocess.service.MultiProcessService" />
+712-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:246:9-86
+712-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:246:18-83
+713
+714        <activity
+714-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:248:9-259:58
+715            android:name="io.dcloud.multiprocess.activity.WebAppActivity1"
+715-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:249:13-75
+716            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+716-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:250:13-82
+717            android:hardwareAccelerated="true"
+717-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:251:13-47
+718            android:icon="@drawable/dcloud_recent"
+718-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:252:13-51
+719            android:label="@string/stream_my"
+719-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:253:13-46
+720            android:launchMode="singleTask"
+720-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:254:13-44
+721            android:process="io.dcloud.multiprocess.webapp1"
+721-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:255:13-61
+722            android:screenOrientation="portrait"
+722-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:256:13-49
+723            android:taskAffinity=":webapp1"
+723-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:257:13-44
+724            android:theme="@style/DCloudTheme"
+724-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:258:13-47
+725            android:windowSoftInputMode="adjustResize" />
+725-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:259:13-55
+726        <activity
+726-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:260:9-266:20
+727            android:name="io.dcloud.appstream.OpenStreamAppTransferActivity"
+727-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:261:13-77
+728            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+728-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:262:13-82
+729            android:screenOrientation="portrait"
+729-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:263:13-49
+730            android:theme="@style/OpenStreamAppTransferActivityTheme"
+730-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:264:13-70
+731            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+731-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:265:13-73
+732        </activity>
+733
+734        <meta-data
+734-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:268:9-270:33
+735            android:name="MultiProcessCount"
+735-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:269:13-45
+736            android:value="1" />
+736-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:270:13-30
+737
+738        <activity
+738-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:272:9-278:75
+739            android:name="io.dcloud.ProcessMediator"
+739-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:273:13-53
+740            android:excludeFromRecents="true"
+740-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:274:13-46
+741            android:exported="true"
+741-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:275:13-36
+742            android:label="@string/app_name"
+742-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:276:13-45
+743            android:launchMode="singleTop"
+743-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:277:13-43
+744            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+744-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:278:13-72
+745        <activity
+745-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:279:9-284:20
+746            android:name="io.dcloud.WebviewActivity"
+746-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:280:13-53
+747            android:screenOrientation="portrait"
+747-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:281:13-49
+748            android:theme="@style/ThemeNoTitleBar"
+748-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:282:13-51
+749            android:windowSoftInputMode="adjustPan" >
+749-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:283:13-52
+750        </activity>
+751
+752        <receiver android:name="io.dcloud.common.adapter.io.DownloadReceiver" >
+752-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:286:9-295:20
+752-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:286:19-78
+753            <intent-filter>
+753-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:287:13-289:29
+754                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+754-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:288:17-82
+754-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:288:25-79
+755            </intent-filter>
+756            <intent-filter>
+756-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:290:13-294:29
+757                <action android:name="android.intent.action.PACKAGE_ADDED" />
+757-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:291:17-78
+757-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:291:25-75
+758
+759                <data android:scheme="package" /> <!-- HERE! -->
+759-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:17-53
+759-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:23-50
+760            </intent-filter>
+761        </receiver>
+762        <!--
+763        <provider
+764            android:name="io.dcloud.common.util.DCloud_FileProvider"
+765            android:authorities="${apk.applicationId}.dc.fileprovider"
+766            android:exported="false"
+767            android:grantUriPermissions="true">
+768            <meta-data
+769                android:name="android.support.FILE_PROVIDER_PATHS"
+770                android:resource="@xml/dcloud_file_provider" />
+771        </provider>
+772        -->
+773        <!--
+774            <meta-data
+775            android:name="DCLOUD_STREAMAPP_CHANNEL"
+776            android:value="io.dcloud.%APPID%|%APPID%|" />
+777        -->
+778        <meta-data
+778-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:313:9-315:35
+779            android:name="android.max_aspect"
+779-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:314:13-46
+780            android:value="2.4" />
+780-->[lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:315:13-32
+781
+782        <activity
+782-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:13:9-18:20
+783            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+783-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:14:13-70
+784            android:configChanges="keyboardHidden|orientation"
+784-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:15:13-63
+785            android:exported="false"
+785-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:16:13-37
+786            android:windowSoftInputMode="adjustResize" >
+786-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:17:13-55
+787        </activity>
+788        <activity
+788-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:19:9-35:20
+789            android:name="com.sina.weibo.sdk.share.WbShareResultActivity"
+789-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:20:13-74
+790            android:configChanges="orientation|screenSize|keyboardHidden"
+790-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:21:13-74
+791            android:launchMode="singleTop"
+791-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:22:13-43
+792            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+792-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:23:13-72
+793            <intent-filter>
+793-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:25:13-29:29
+794                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+794-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:26:17-92
+794-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:26:25-89
+795
+796                <category android:name="android.intent.category.DEFAULT" />
+796-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:17-76
+796-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:27-73
+797            </intent-filter>
+798            <intent-filter>
+798-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:30:13-34:29
+799                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_STORY" />
+799-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:31:17-89
+799-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:31:25-86
+800
+801                <category android:name="android.intent.category.DEFAULT" />
+801-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:17-76
+801-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:27-73
+802            </intent-filter>
+803        </activity>
+804        <activity
+804-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:36:9-42:20
+805            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
+805-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:37:13-73
+806            android:configChanges="orientation|screenSize|keyboardHidden"
+806-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:38:13-74
+807            android:launchMode="singleTop"
+807-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:39:13-43
+808            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+808-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:40:13-72
+809        </activity>
+810        <activity
+810-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:43:9-49:20
+811            android:name="com.sina.weibo.sdk.share.WbShareToStoryActivity"
+811-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:44:13-75
+812            android:configChanges="orientation|screenSize|keyboardHidden"
+812-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:45:13-74
+813            android:launchMode="singleTask"
+813-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:46:13-44
+814            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+814-->[openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:47:13-72
+815        </activity>
+816
+817        <service android:name="com.ss.android.socialbase.downloader.notification.DownloadNotificationService" />
+817-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:25:9-113
+817-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:25:18-110
+818        <service android:name="com.ss.android.socialbase.downloader.downloader.DownloadService" />
+818-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:26:9-99
+818-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:26:18-96
+819        <service
+819-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:27:9-33:19
+820            android:name="com.ss.android.socialbase.downloader.downloader.IndependentProcessDownloadService"
+820-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:28:13-109
+821            android:process=":downloader" >
+821-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:29:13-42
+822            <intent-filter>
+822-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:30:13-32:29
+823                <action android:name="com.ss.android.socialbase.downloader.remote" />
+823-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:31:17-86
+823-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:31:25-83
+824            </intent-filter>
+825        </service>
+826        <service android:name="com.ss.android.socialbase.downloader.impls.DownloadHandleService" /> <!-- <receiver android:name="com.ss.android.socialbase.downloader.downloader.DownloadReceiver"> -->
+826-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:34:9-100
+826-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:34:18-97
+827        <!-- <intent-filter> -->
+828        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/> -->
+829        <!-- </intent-filter> -->
+830        <!-- </receiver> -->
+831        <!-- APP DOWNLOADER START -->
+832        <service android:name="com.ss.android.socialbase.appdownloader.DownloadHandlerService" /> <!-- <receiver android:name="com.ss.android.socialbase.appdownloader.DownloadReceiver"> -->
+832-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:42:9-98
+832-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:42:18-95
+833        <!-- <intent-filter> -->
+834        <!-- <action android:name="android.intent.action.BOOT_COMPLETED"/> -->
+835        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/> -->
+836        <!-- <action android:name="android.ss.intent.action.DOWNLOAD_COMPLETE"/> -->
+837        <!-- </intent-filter> -->
+838        <!-- <intent-filter> -->
+839        <!-- <action android:name="android.intent.action.PACKAGE_ADDED"/> -->
+840        <!-- <action android:name="android.intent.action.PACKAGE_REPLACED"/> -->
+841        <!-- <data android:scheme="package"/> -->
+842        <!-- </intent-filter> -->
+843        <!-- <intent-filter> -->
+844        <!-- <action android:name="android.intent.action.MEDIA_MOUNTED"/> -->
+845        <!-- <data android:scheme="file"/> -->
+846        <!-- </intent-filter> -->
+847        <!-- </receiver> -->
+848        <activity
+848-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:58:9-61:59
+849            android:name="com.ss.android.socialbase.appdownloader.view.DownloadSizeLimitActivity"
+849-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:59:13-98
+850            android:launchMode="singleTask"
+850-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:60:13-44
+851            android:theme="@android:style/Theme.Dialog" />
+851-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:61:13-56
+852        <activity
+852-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:62:9-65:59
+853            android:name="com.ss.android.socialbase.appdownloader.view.DownloadTaskDeleteActivity"
+853-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:63:13-99
+854            android:launchMode="singleTask"
+854-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:64:13-44
+855            android:theme="@android:style/Theme.Dialog" />
+855-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:65:13-56
+856        <activity
+856-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:66:9-69:75
+857            android:name="com.ss.android.downloadlib.activity.TTDelegateActivity"
+857-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:67:13-82
+858            android:launchMode="singleTask"
+858-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:68:13-44
+859            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+859-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:69:13-72
+860
+861        <receiver android:name="com.ss.android.downloadlib.core.download.DownloadReceiver" />
+861-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:71:9-94
+861-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:71:19-91
+862        <receiver
+862-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:72:9-75:39
+863            android:name="com.bytedance.embedapplog.collector.Collector"
+863-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:73:13-73
+864            android:enabled="true"
+864-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:74:13-35
+865            android:exported="true" /> <!-- 下面的activity和service必须注册 -->
+865-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:75:13-36
+866        <activity
+866-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:76:9-79:47
+867            android:name="com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity"
+867-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:77:13-86
+868            android:configChanges="keyboardHidden|orientation|screenSize"
+868-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:78:13-74
+869            android:launchMode="singleTask" />
+869-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:79:13-44
+870        <activity
+870-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:80:9-83:47
+871            android:name="com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity"
+871-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:81:13-94
+872            android:configChanges="keyboardHidden|orientation|screenSize"
+872-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:82:13-74
+873            android:launchMode="singleTask" />
+873-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:83:13-44
+874        <activity
+874-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:84:9-87:47
+875            android:name="com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageActivity"
+875-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:85:13-91
+876            android:configChanges="keyboardHidden|orientation|screenSize"
+876-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:86:13-74
+877            android:launchMode="singleTask" />
+877-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:87:13-44
+878        <activity
+878-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:88:9-91:47
+879            android:name="com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity"
+879-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:89:13-86
+880            android:configChanges="keyboardHidden|orientation|screenSize"
+880-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:90:13-74
+881            android:launchMode="singleTask" />
+881-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:91:13-44
+882        <activity
+882-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:92:9-95:47
+883            android:name="com.bytedance.sdk.openadsdk.activity.TTRewardExpressVideoActivity"
+883-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:93:13-93
+884            android:configChanges="keyboardHidden|orientation|screenSize"
+884-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:94:13-74
+885            android:launchMode="singleTask" />
+885-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:95:13-44
+886        <activity
+886-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:96:9-99:47
+887            android:name="com.bytedance.sdk.openadsdk.activity.TTFullScreenVideoActivity"
+887-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:97:13-90
+888            android:configChanges="keyboardHidden|orientation|screenSize"
+888-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:98:13-74
+889            android:launchMode="singleTask" />
+889-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:99:13-44
+890        <activity
+890-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:100:9-103:47
+891            android:name="com.bytedance.sdk.openadsdk.activity.TTFullScreenExpressVideoActivity"
+891-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:101:13-97
+892            android:configChanges="keyboardHidden|orientation|screenSize"
+892-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:102:13-74
+893            android:launchMode="singleTask" />
+893-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:103:13-44
+894        <activity
+894-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:104:9-107:75
+895            android:name="com.bytedance.sdk.openadsdk.activity.TTDelegateActivity"
+895-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:105:13-83
+896            android:launchMode="singleTask"
+896-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:106:13-44
+897            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+897-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:107:13-72
+898
+899        <service android:name="com.bytedance.sdk.openadsdk.multipro.aidl.BinderPoolService" />
+899-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:109:9-95
+899-->[open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:109:18-92
+900
+901        <provider
+901-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:24:9-28:50
+902            android:name="com.ak.torch.shell.provider.TorchProvider"
+902-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:25:13-69
+903            android:authorities="io.dcloud.HelloH5.torchadsdkprovider"
+903-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:26:13-70
+904            android:exported="false"
+904-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:27:13-37
+905            android:grantUriPermissions="true" />
+905-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:28:13-47
+906        <provider
+906-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:29:9-37:20
+907            android:name="com.ak.torch.shell.provider.TorchFileProvider"
+907-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:30:13-73
+908            android:authorities="io.dcloud.HelloH5.torch.fileprovider"
+908-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:31:13-70
+909            android:exported="false"
+909-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:32:13-37
+910            android:grantUriPermissions="true" >
+910-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:33:13-47
+911            <meta-data
+911-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:181:13-183:64
+912                android:name="android.support.FILE_PROVIDER_PATHS"
+912-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:182:17-67
+913                android:resource="@xml/torch_file_paths" />
+913-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:183:17-61
+914        </provider>
+915
+916        <activity
+916-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:39:9-42:40
+917            android:name="com.ak.torch.shell.landingpage.TorchActivity"
+917-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:40:13-72
+918            android:configChanges="orientation|keyboardHidden|screenSize"
+918-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:41:13-74
+919            android:exported="false" /> <!-- 广点通 -->
+919-->[torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:42:13-37
+920        <provider
+920-->[torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:41:9-49:20
+921            android:name="android.support.v4.content.FileProvider"
+921-->[torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:42:13-67
+922            android:authorities="io.dcloud.HelloH5.fileprovider"
+922-->[torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:43:13-64
+923            android:exported="false"
+923-->[torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:44:13-37
+924            android:grantUriPermissions="true" >
+924-->[torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:45:13-47
+925            <meta-data
+925-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:181:13-183:64
+926                android:name="android.support.FILE_PROVIDER_PATHS"
+926-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:182:17-67
+927                android:resource="@xml/torch_file_paths" />
+927-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:183:17-61
+928        </provider>
+929
+930        <receiver
+930-->[uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:30:9-34:20
+931            android:name="com.taobao.weex.WXGlobalEventReceiver"
+931-->[uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:31:13-65
+932            android:enabled="true"
+932-->[uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:32:13-35
+933            android:exported="false" >
+933-->[uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:33:13-37
+934        </receiver>
+935
+936        <meta-data
+936-->[com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:26:9-28:38
+937            android:name="android.support.VERSION"
+937-->[com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:27:13-51
+938            android:value="26.1.0" />
+938-->[com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:28:13-35
+939    </application>
+940
+941</manifest>

@@ -31,7 +31,7 @@
 									</view>
 								</view>
 							</view>
-							<view class="specification-item" v-if="stock && (choosedid!='')">
+							<view class="specification-item" >
 								<view class="item-title">数量</view>
 								<view class="item-wrapper">
 									<stepper size="small" :min="1" :max="stock"  :defaultValue="selectNum"  @change="changeNum"></stepper>
@@ -100,7 +100,6 @@
 		methods: {
 			skuClick(value, index1, index2) {
 				var that=this
-				
 				this.selectNum=1
 				this.categorys[index1].item.map((item,index) =>{
 					if(index==index2){

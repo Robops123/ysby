@@ -28,7 +28,7 @@
 				<text>处理方式</text>
 				<input type="text" value="" />
 			</view>
-			<view class="line">
+			<view class="line no-border" >
 				<text>退款原因</text>
 				<input type="text" value="" />
 			</view>
@@ -36,7 +36,7 @@
 				<text>退款说明</text>
 				<input type="text" value="" />
 			</view>
-			<view class="line">
+			<view class="line no-border">
 				<text>退款金额</text>
 				<input type="text" value="" />
 			</view>
@@ -85,6 +85,9 @@
 	}
 	.padding .line:not(:last-child){
 		border-bottom: 1px solid #dedede;
+	}
+	.no-border{
+		border: none !important;
 	}
 	
 	.btn-box{

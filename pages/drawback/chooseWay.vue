@@ -1,6 +1,7 @@
 <template>
 	<view>
-		<view class="child-overall-item padding bgwhite margin" v-for="(item,index) in goods" :key='index'>
+		<view class="child-overall-item padding bgwhite margin" :class="{choosed:item.choosed}"
+		v-for="(item,index) in goods" :key='index' @click="chooseGoods(index)">
 			<image :src="item.goodspic" mode=""></image>
 			<view class="info">
 				<view>
@@ -8,13 +9,14 @@
 						{{item.goodsname}}
 					</view>
 					<view class="s3 cg options">
-						{{item.specifications}}<icon type="" class="icon-fire iconfont"></icon>
+						{{item.specifications ? item.specifications:'无规格'}}<icon type="" class="icon-fire iconfont"></icon>
 					</view>
 				</view>
 			</view>
+			<icon type="success_no_circle" class="check" v-show="item.choosed" size="12" color='#ff6d7e'></icon>
 		</view>
 		
-		<view class="padding bgwhite choice" @click="to('moneyBack')">
+		<view class="padding bgwhite choice" @click="to('moneyBack',1)">
 			<image src="../../static/img/pic/other/tk.png" mode=""></image>
 			<view class="s2">
 				<view>我要退款(无需退货)</view>
@@ -22,7 +24,7 @@
 			</view>
 			<view class="iconfont icon-fire fr"></view>
 		</view>
-		<view class="padding bgwhite choice" @click="to('goodsBack')">
+		<view class="padding bgwhite choice" @click="to('goodsBack',2)">
 			<image src="../../static/img/pic/other/th.png" mode=""></image>
 			<view class="s2">
 				<view>我要退货退款</view>
@@ -46,12 +48,32 @@
 		onLoad(p){
 			this.orderno=p.orderno
 			this.goods=JSON.parse(p.goods)
+			console.log(this.goods)
 		},
 		methods:{
-			to(w){
+			to(w,t){
+				var p=this.calcPath()
+				if(p.length==0){
+					this.$msg('请选择要退款的商品')
+					return ;
+				}
 				uni.navigateTo({
-					url:`/pages/drawback/${w}`
+					url:`/pages/drawback/moneyBack?goods=${JSON.stringify(p)}&type=${t}&orderno=${this.orderno}`
 				})
+			},
+			// 选择要退的商品
+			chooseGoods(i){
+				this.goods[i].choosed=!this.goods[i].choosed
+				this.$forceUpdate()
+			},
+			calcPath(){
+				var p=[]
+				this.goods.forEach((item,index) =>{
+					if(item.choosed){
+						p.push(item)
+					}
+				})
+				return p;
 			}
 		}
 	}
@@ -69,6 +91,7 @@
 	}
 	.child-overall-item,
 	.overall{
+		position: relative;
 		display: flex;
 		justify-items: center;
 	}
@@ -86,6 +109,11 @@
 		    display:-webkit-box;//一定要写
 		    -webkit-line-clamp: 2;//控制行数
 		    -webkit-box-orient: vertical;//一定要写
+	}
+	.child-overall-item .check {
+		position: absolute;
+		right: 5px;
+		bottom: 5px;
 	}
 	.choice:not(:last-child){
 		border-bottom: 1px solid #dedede;
@@ -105,5 +133,8 @@
 	.choice>view{
 		display: inline-block;
 		vertical-align: top;
+	}
+	.choosed{
+		border: 1px solid #ff6d7e;
 	}
 </style>

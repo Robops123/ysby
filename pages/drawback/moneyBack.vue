@@ -1,47 +1,56 @@
 <template>
 	<view>
-		<view class="child-overall-item padding bgwhite margin">
-			<image src="../../static/img/bg/activity.png" mode=""></image>
+		<view class="child-overall-item padding bgwhite margin" 
+		v-for='(item,index) in goods' :key='index'>
+			<image :src="item.goodspic" mode=""></image>
 			<view class="info">
 				<view>
 					<view class="s2 title">
-						儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿儿童木马麻木童儿
-						童儿儿童木马麻木童儿儿童木马麻木童儿童儿儿童木马麻木童儿儿童木马麻木童儿
+						{{item.goodsname}}
 					</view>
 					<view class="s3 cg options">
-						海蓝色；24(155/60A)<icon type="" class="icon-fire iconfont"></icon>
+						{{item.specifications ? item.specifications:'无规格'}}<icon type="" class="icon-fire iconfont"></icon>
 					</view>
 				</view>
 			</view>
 		</view>
 		
 		<view class="padding bgwhite">
-			<view class="choice">
+			<view class="choice" v-if="form.type==1">
 				<text>货物状态</text>
 				<view class="fr">
 					<picker class="picker" @change="bindPickerChange" :value="cateCurrent" :range="array">
 					     <view class="uni-input">{{array[cateCurrent]}}</view>
 					 </picker>
-					 <text class="icon-fire iconfont cg"></text>
+					 <!-- <text class="icon-arrow-right iconfont cg"></text> -->
 				</view>
 			</view>
 			<view class="choice">
 				<text>退款原因</text>
 				<view class="fr">
 					<picker class="picker" @change="bindPickerChange2" :value="cateCurrent2" :range="array2">
-					     <view class="uni-input">{{array[cateCurrent2]}}</view>
+					     <view class="uni-input">{{array2[cateCurrent2]}}</view>
 					 </picker>
-					 <text class="icon-fire iconfont cg"></text>
+					 <text class="icon-arrow-right iconfont cg"></text>
 				</view>
 			</view>
 			<view class="choice pannel">
 				<view>退款金额：￥
-				<input type="text" value="" />
+				<input type="number" v-model="form.price" @input='filter'/>
 				</view>
 				<view class="cg s3">最多￥45.00,含发货邮费￥0.00</view>
-				<view>
+				<view v-if="form.type==1">
 					<text>退款说明：</text>
-					<input type="text" value="" placeholder="选填"/>
+					<input type="text" v-model="form.remark" placeholder="选填"/>
+				</view>
+			</view>
+			<view class="choice" v-if="form.type==2">
+				<text>退货方式</text>
+				<view class="fr">
+					<picker class="picker" @change="bindPickerChange3" :value="cateCurrent3" :range="array3">
+					     <view class="uni-input">{{array3[cateCurrent3]}}</view>
+					 </picker>
+					 <text class="icon-arrow-right iconfont cg"></text>
 				</view>
 			</view>
 		</view>
@@ -62,7 +71,7 @@
 							</view>
 						</block>
 						<view class='add-view' v-if="imageList.length < imageLength" @tap="chooseImage">
-							<image src="../../static/img/bg/activity.png" mode=""></image>
+							<image src="../../static/img/pic/other/camera.png" mode=""></image>
 							<view class="s2 cg">上传凭证(最多5张)</view>
 						</view>
 					</view>
@@ -71,7 +80,7 @@
 		
 		
 		<view>
-			<button type="default" class="btn" @click="to('afterSale')">提交</button>
+			<button type="default" class="btn" @click="submit">提交</button>
 		</view>
 	</view>
 </template>
@@ -90,11 +99,14 @@
 	export default{
 		data(){
 			return{
+				goods:[],
 				current:1,
 				cateCurrent:0,
 				cateCurrent2:0,
-				 array: ['中国', '美国', '巴西', '日本'],
-				 array2: ['中国', '美国', '巴西', '日本'],
+				cateCurrent3:0,
+				 array: ['待发货', '待收货', '已收货'],
+				 array2: ['质量不好', '欺诈', '无理取闹', '辣鸡'],
+				 array3: ['快递', '快递2'],
 				imageList: [], //保存图片路径集合
 				imageLength: 5, //限制图片张数
 				sourceTypeIndex: 2, //添加方式限制
@@ -102,13 +114,36 @@
 				// 地址
 				lat:'',
 				lng:'',
-				address:''
+				pic:[],
+				address:'',
+				form:{
+					price:'',
+					uid:'',
+					token:'',
+					reason:'',
+					orderno:'',
+					goods:[],
+					ways:'',
+					remark:'',
+					type:'',
+					pics:''
+				}
+			}
+		},
+		onLoad(p){
+			this.goods=JSON.parse(p.goods)
+			this.form.type=p.type
+			this.form.orderno=p.orderno
+			var userInfo=uni.getStorageSync('userInfo'),that=this
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.form.uid=userInfo.uid
+				this.form.token=userInfo.token
 			}
 		},
 		methods:{
 			to(w){
 				uni.navigateTo({
-					url:`/pages/drawback/${w}`
+					url:`/pages/drawback/afterSale`
 				})
 			},
 			//选择图片
@@ -141,11 +176,66 @@
 					that.imageList = images;
 				},
 				bindPickerChange(e){
-					console.log(e)
+					this.cateCurrent=e.detail.value
 				},
 				bindPickerChange2(e){
-					console.log(e)
-				}
+					this.cateCurrent2=e.detail.value
+					this.form.reason=this.array2[this.cateCurrent2]
+				},
+				bindPickerChange3(e){
+					this.cateCurrent3=e.detail.value
+					this.form.ways=this.array3[this.cateCurrent3]
+				},
+				filter(event) { //过滤input密码类型只输入数字
+						let i = Number(event.target.value)
+						// var reg=new RegExp("^[0-9]*$")
+						if(i>45) {
+							setTimeout(() => {
+								this.form.price=45
+							},0)
+						} else if(i<0){
+							setTimeout(() => {
+								this.form.price=0
+							},0)
+						}
+					},
+					submit(){
+						var  that=this,l=this.imageList.length;
+						this.$loading()
+						if(l==0){
+							that.submitForm()
+						}else{
+							this.imageList.forEach((item,index) =>{
+								that.$upload(item,'',(cb) =>{
+									that.pic.push(cb)
+								var	t=this.pic.length
+									if(l==t){
+										that.submitForm()
+									}
+								})
+							})
+						}
+						
+					},
+					submitForm(){
+						var that=this
+						var url='&r=api.member.order.refund'
+						this.goods.forEach((item) =>{
+							this.form.goods.push({
+								goodsid:item.goodsid,
+								amount:item.amount
+							})
+						})
+						this.form.pics=this.pic.join(',')
+						  this.$apiPost(url,this.form).then((res) =>{
+								that.$msg('评价成功')
+								that.pic=[]
+								uni.hideLoading()
+								setTimeout(function(){
+									that.to()
+								},500)
+						  })
+					}
 		}
 	}
 </script>
@@ -291,7 +381,7 @@
 	}
 	 .add-view image{
 		 width: 70upx;
-		 height: 70upx;
+		 height: 60upx;
 	 }
 	 .add-view>view{
 		 width: 128upx;

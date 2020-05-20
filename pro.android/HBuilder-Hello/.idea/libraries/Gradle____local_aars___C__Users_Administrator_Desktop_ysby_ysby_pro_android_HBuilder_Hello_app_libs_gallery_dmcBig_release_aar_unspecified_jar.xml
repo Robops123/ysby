@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/gallery-dmcBig-release.aar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/839e3db814fb52969293665d8c9c7d88/gallery-dmcBig-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/839e3db814fb52969293665d8c9c7d88/gallery-dmcBig-release/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/839e3db814fb52969293665d8c9c7d88/gallery-dmcBig-release/jars/libs/chrisbanes-photoview-1.2.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
