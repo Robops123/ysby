@@ -93,7 +93,7 @@ INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hell
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
 	package
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:4:5-28
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:4:5-32
 		INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -558,9 +558,9 @@ MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:182:17-67
 meta-data#com.baidu.lbsapi.API_KEY
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:188:9-190:55
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:188:9-190:63
 	android:value
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:190:13-53
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:190:13-61
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:189:13-52
 service#com.baidu.location.f
@@ -805,7 +805,7 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:348:13-47
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:347:13-36
-activity#com.zdhy.ysby.wxapi.WXEntryActivity
+activity#io.dcloud.HelloH5.wxapi.WXEntryActivity
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:350:9-362:20
 	android:label
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:353:13-45
@@ -817,7 +817,7 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:351:13-50
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:scheme:wx0411fa6a39d61297
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:355:13-361:29
-activity#com.zdhy.ysby.wxapi.WXPayEntryActivity
+activity#io.dcloud.HelloH5.wxapi.WXPayEntryActivity
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:366:9-369:46
 	android:launchMode
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:369:13-43

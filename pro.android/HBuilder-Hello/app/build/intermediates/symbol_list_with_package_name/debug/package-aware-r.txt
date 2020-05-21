@@ -954,7 +954,6 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable offline_pin
 drawable offline_pin_round
-drawable push
 drawable retry_btn_default
 drawable retry_btn_press
 drawable retry_btn_selector

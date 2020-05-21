@@ -1,14 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_push.png.flat",
-        "source": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\src\\main\\res\\drawable-xxhdpi\\push.png"
+        "merged": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon.9.png.flat",
+        "source": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\src\\main\\res\\drawable\\icon.9.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon.png.flat",
-        "source": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\src\\main\\res\\drawable-xxhdpi\\icon.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_splash.png.flat",
-        "source": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\src\\main\\res\\drawable-xxhdpi\\splash.png"
+        "merged": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash.9.png.flat",
+        "source": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\src\\main\\res\\drawable\\splash.9.png"
     }
 ]

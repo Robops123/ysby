@@ -408,11 +408,11 @@
 218        <!-- Maps(地图) begin -->
 219        <!-- meta-data节点android:name="com.baidu.lbsapi.API_KEY"项中android:value值为百度地图应用的Appkey -->
 220        <meta-data
-220-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:188:9-190:55
+220-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:188:9-190:63
 221            android:name="com.baidu.lbsapi.API_KEY"
 221-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:189:13-52
-222            android:value="u1vrG5cDGQLioX9fezNAdGkR" />
-222-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:190:13-53
+222            android:value="xlTYzzMvANnrgB8loFc2jzqSwe0mCvd7" />
+222-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:190:13-61
 223        <!--  -->
 224        <service
 224-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:192:9-195:40
@@ -700,7 +700,7 @@
 384
 385        <activity
 385-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:350:9-362:20
-386            android:name="com.zdhy.ysby.wxapi.WXEntryActivity"
+386            android:name="io.dcloud.HelloH5.wxapi.WXEntryActivity"
 386-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:351:13-50
 387            android:exported="true"
 387-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:352:13-36
@@ -729,7 +729,7 @@
 401        <!-- 微信支付配置 start -->
 402        <activity
 402-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:366:9-369:46
-403            android:name="com.zdhy.ysby.wxapi.WXPayEntryActivity"
+403            android:name="io.dcloud.HelloH5.wxapi.WXPayEntryActivity"
 403-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:367:13-53
 404            android:exported="true"
 404-->C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:368:13-36

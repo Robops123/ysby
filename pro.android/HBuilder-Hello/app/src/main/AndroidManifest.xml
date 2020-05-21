@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.zdhy.ysby">
+    package="io.dcloud.HelloH5">
 
     <!-- Barcode(二维码)  begin -->
     <uses-permission android:name="android.permission.CAMERA" />
@@ -187,7 +187,7 @@
         <!-- meta-data节点android:name="com.baidu.lbsapi.API_KEY"项中android:value值为百度地图应用的Appkey -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="u1vrG5cDGQLioX9fezNAdGkR"/>
+            android:value="xlTYzzMvANnrgB8loFc2jzqSwe0mCvd7"/>
         <!--  -->
         <service
             android:name="com.baidu.location.f"

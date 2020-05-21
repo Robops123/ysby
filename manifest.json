@@ -1,7 +1,7 @@
 {
     "name" : "ysby",
     "appid" : "__UNI__BD88342",
-    "description" : "",
+    "description" : "来来来",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
@@ -63,7 +63,13 @@
                 "oauth" : {},
                 "share" : {},
                 "ad" : {},
-                "maps" : {}
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "b632687140067ab1436859f4f7aed646",
+                        "appkey_android" : "4258fd75e54a4dd3ac15fea84d5ffa4c"
+                    }
+                },
+                "speech" : {}
             },
             "icons" : {
                 "android" : {
