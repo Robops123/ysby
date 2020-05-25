@@ -2,6 +2,7 @@
   "navigationBarTitleText": "订单管理",
   "usingComponents": {
     "uni-load-more": "/components/uni-load-more/uni-load-more",
-    "pop": "/components/promptOptions/pop"
+    "pop": "/components/promptOptions/pop",
+    "prompt": "/components/zz-prompt/index"
   }
 }

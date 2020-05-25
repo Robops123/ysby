@@ -491,7 +491,7 @@ MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Administrator\.gradl
 	android:largeHeap
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:145:9-33
 	android:icon
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:143:9-38
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:143:13-42
 	android:usesCleartextTraffic
 		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:16:18-53
 	android:name

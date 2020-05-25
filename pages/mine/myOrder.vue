@@ -5,6 +5,7 @@
 			<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
 			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
 			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
+			<view class="nav nav-right" :class="{active:active==5}" @click="toggle(5)"><text>待评价</text></view>
 			<view class="nav nav-left" :class="{active:active==6}" @click="toggle(6)"><text>已完成</text></view>
 		</view>
 		<view class="padding" >
@@ -21,6 +22,7 @@
 								<text class="fr cr s2" v-show='item.status==1'>待付款</text>
 								<text class="fr cr s2" v-show='item.status==2'>待发货</text>
 								<text class="fr cr s2" v-show='item.status==3'>待收货</text>
+								<text class="fr cr s2" v-show='item.status==5'>待评价</text>
 								<text class="fr cr s2" v-show='item.status==6'>已完成</text>
 						</view>
 						<view class="child-overall" >
@@ -48,11 +50,13 @@
 						<view class="btn-box">
 							<button type="default" class="btn btn1" v-show='item.status!=4' @click.stop="addCollect(item2.goodsdata)">加入购物车</button>
 							<button type="default" class="btn btn1" v-show='item.status==4'>删除订单</button>
+							<button type="default" class="btn btn1" v-show='item.status==5' @click="toComment(item2)">评价</button>
 							<button type="default" class="btn btn1" v-show='item.status==1' @click="cancelOrder(item.orderno,index)">取消订单</button>
 							<button type="default" class="btn btn2" v-show='item.status==1' @click="topay(item)">去付款</button>
 							<button type="default" class="btn btn2" v-show='item.status!=1' @click="toDrawback(item)">申请退款</button>
 							<button type="default" class="btn btn2" v-show='item.status==2'>联系卖家</button>
 							<button type="default" class="btn btn2" v-show='item.status==3' @click="confirmReceive(item.orderno)">确认收货</button>
+							
 						</view>
 					</view>
 					
@@ -134,6 +138,11 @@
 			topay(item){
 				uni.navigateTo({
 					url:`/pages/index/cashier?orderId=${item.orderno}&money=${item.totalprice}`
+				})
+			},
+			toComment(item){
+				uni.navigateTo({
+					url:'./comment?item='+JSON.stringify(item)
 				})
 			},
 			toDrawback(item){
@@ -253,7 +262,7 @@
 	.nav{
 		color: #afafaf;
 		display: inline-block;
-		width: 25%;
+		width: 20%;
 		box-sizing: border-box;
 	}
 	.nav.active text{

@@ -3,6 +3,7 @@
   "usingComponents": {
     "uni-rate": "/components/uni-rate/uni-rate",
     "uni-load-more": "/components/uni-load-more/uni-load-more",
-    "u-parse": "/components/gaoyia-parse/parse"
+    "u-parse": "/components/gaoyia-parse/parse",
+    "topicon": "/components/gwh-backTopIcon/gwh-backTopIcon"
   }
 }

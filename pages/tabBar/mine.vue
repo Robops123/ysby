@@ -47,7 +47,7 @@
 							<image src="../../static/img/pic/mine/icon6.png" mode=""></image>
 							<view>待收货</view>
 						</view>
-						<view class="item-list" @click="toMyOrderDetail()">
+						<view class="item-list" @click="toMyOrder(5)">
 							<image src="../../static/img/pic/mine/icon5.png" mode=""></image>
 							<view>待评价</view>
 						</view>

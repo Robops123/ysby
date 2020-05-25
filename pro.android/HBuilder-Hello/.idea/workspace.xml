@@ -6,288 +6,818 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="-----" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c31bb1fc-e536-4c4f-9d58-ee3d18c593c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/index/cashier.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/index/cashier.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/index/createCartOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/index/createCartOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/index/goodsCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/index/goodsCategory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/index/goodsDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/index/goodsDetail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/index/payResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/index/payResult.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-land-hdpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-land-ldpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-land-mdpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-land-xhdpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-land-xxhdpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-land-xxxhdpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-port-hdpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-port-ldpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-port-mdpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-port-xhdpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-port-xxhdpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-port-xxxhdpi/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pages/mine/myOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/mine/myOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/mine/viewHistoryf.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/mine/viewHistoryf.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/tabBar/cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/tabBar/cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/tabBar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/tabBar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/tabBar2/operating.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/tabBar2/operating.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/tabBar2/operating/orderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/tabBar2/operating/orderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/tabBar2/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/tabBar2/order.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/tabBar2/tabMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/tabBar2/tabMain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/tabBar/mine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/tabBar/mine.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_0o26w2gow969/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_0o26w2gow969/demo_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_0o26w2gow969/iconfont.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_0o26w2gow969/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_0o26w2gow969/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_0o26w2gow969/iconfont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_0o26w2gow969/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_0o26w2gow969/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_0o26w2gow969/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_0o26w2gow969/iconfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_gv9pvb702jd/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_gv9pvb702jd/demo_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_gv9pvb702jd/iconfont.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_gv9pvb702jd/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_gv9pvb702jd/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_gv9pvb702jd/iconfont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_gv9pvb702jd/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_gv9pvb702jd/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_gv9pvb702jd/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_gv9pvb702jd/iconfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_o4utcg8sqzk/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_o4utcg8sqzk/demo_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_o4utcg8sqzk/iconfont.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_o4utcg8sqzk/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_o4utcg8sqzk/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_o4utcg8sqzk/iconfont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_o4utcg8sqzk/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_o4utcg8sqzk/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_o4utcg8sqzk/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/font_o4utcg8sqzk/iconfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/css/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/font_faktu1jzwku/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/font_faktu1jzwku/demo_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/font_faktu1jzwku/iconfont.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/font_faktu1jzwku/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/font_faktu1jzwku/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/font_faktu1jzwku/iconfont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/font_faktu1jzwku/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/font_faktu1jzwku/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/font_faktu1jzwku/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/font_faktu1jzwku/iconfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/font/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../static/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/values.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-af/values-af.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ar/values-ar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-az/values-az.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-be/values-be.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bg/values-bg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bn/values-bn.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bs/values-bs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ca/values-ca.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-cs/values-cs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-da/values-da.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-de/values-de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-el/values-el.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en/values-en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es/values-es.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-et/values-et.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-eu/values-eu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fa/values-fa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fi/values-fi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-gl/values-gl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-gu/values-gu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hi/values-hi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hr/values-hr.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hy/values-hy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-in/values-in.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-is/values-is.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-it/values-it.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-iw/values-iw.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ja/values-ja.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kk/values-kk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kn/values-kn.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ky/values-ky.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v17/values-ldltr-v17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldrtl-v17/values-ldrtl-v17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lo/values-lo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lt/values-lt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lv/values-lv.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mk/values-mk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ml/values-ml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mr/values-mr.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-my/values-my.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-nb/values-nb.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-nl/values-nl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pa/values-pa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt/values-pt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ro/values-ro.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ru/values-ru.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-si/values-si.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sk/values-sk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sl/values-sl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sr/values-sr.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sv/values-sv.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw/values-sw.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ta/values-ta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-te/values-te.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-th/values-th.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tl/values-tl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tr/values-tr.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uk/values-uk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ur/values-ur.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uz/values-uz.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v12/values-v12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v13/values-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v22/values-v22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh/values-zh.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zu/values-zu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/app-config-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/app-config-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/app-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/app-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/app-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/app-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/css/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/font/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/img/pic/index/more.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/img/pic/index/more.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/apps/__UNI__BD88342/www/static/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/data/dcloud_properties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/data/dcloud_properties.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/out.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/out.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_icon.9.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_icon.9.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_splash.9.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_splash.9.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values_values.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values_values.arsc.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/SecTest.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/SecTest.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/app-config-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/app-config-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/app-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/app-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/app-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/app-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/css/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/font/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/img/pic/index/more.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/img/pic/index/more.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/__UNI__BD88342/www/static/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/data/dcloud_properties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/data/dcloud_properties.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/icon.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/splash.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-config-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-config-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/app-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_0o26w2gow969/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_0o26w2gow969/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_0o26w2gow969/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_0o26w2gow969/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_0o26w2gow969/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_0o26w2gow969/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_0o26w2gow969/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_0o26w2gow969/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_0o26w2gow969/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_0o26w2gow969/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_gv9pvb702jd/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_gv9pvb702jd/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_gv9pvb702jd/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_gv9pvb702jd/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_gv9pvb702jd/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_gv9pvb702jd/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_gv9pvb702jd/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_gv9pvb702jd/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_gv9pvb702jd/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_gv9pvb702jd/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_o4utcg8sqzk/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_o4utcg8sqzk/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_o4utcg8sqzk/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_o4utcg8sqzk/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_o4utcg8sqzk/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_o4utcg8sqzk/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_o4utcg8sqzk/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_o4utcg8sqzk/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_o4utcg8sqzk/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/font_o4utcg8sqzk/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/css/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/font_faktu1jzwku/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/font_faktu1jzwku/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/font_faktu1jzwku/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/font_faktu1jzwku/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/font_faktu1jzwku/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/font_faktu1jzwku/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/font_faktu1jzwku/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/font_faktu1jzwku/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/font_faktu1jzwku/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/font_faktu1jzwku/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/font/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/img/pic/index/more.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/img/pic/index/more.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/app-plus/static/js/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/app.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/common/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/common/main.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/common/main.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/common/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/common/runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/common/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/Winglau14-lotusAddress/Winglau14-lotusAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/Winglau14-lotusAddress/Winglau14-lotusAddress.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/Winglau14-lotusAddress/Winglau14-lotusAddress.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/Winglau14-lotusAddress/Winglau14-lotusAddress.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/Winglau14-lotusAddress/Winglau14-lotusAddress.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/Winglau14-lotusAddress/Winglau14-lotusAddress.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/gaoyia-parse/components/wxParseAudio.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/gaoyia-parse/components/wxParseAudio.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/gaoyia-parse/components/wxParseImg.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/gaoyia-parse/components/wxParseImg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/gaoyia-parse/components/wxParseTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/gaoyia-parse/components/wxParseTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/gaoyia-parse/components/wxParseTable.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/gaoyia-parse/components/wxParseTable.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/promptOptions/pop.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/promptOptions/pop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/promptOptions/pop.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/promptOptions/pop.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/s-popup/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/s-popup/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/s-popup/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/s-popup/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/sku/components/other/stepper.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/sku/components/other/stepper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/sku/components/other/stepper.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/sku/components/other/stepper.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/sku/pages/sku.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/sku/pages/sku.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/sku/pages/sku.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/sku/pages/sku.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/sku/pages/sku.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/sku/pages/sku.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-goods-nav/uni-goods-nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-goods-nav/uni-goods-nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-goods-nav/uni-goods-nav.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-goods-nav/uni-goods-nav.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-icons/uni-icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-icons/uni-icons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-load-more/uni-load-more.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-load-more/uni-load-more.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-load-more/uni-load-more.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-load-more/uni-load-more.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-rate/uni-rate.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-rate/uni-rate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-status-bar/uni-status-bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/uni-status-bar/uni-status-bar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/ygc-comment/ygc-comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/ygc-comment/ygc-comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/ygc-comment/ygc-comment.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/ygc-comment/ygc-comment.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/zz-prompt/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/zz-prompt/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/zz-prompt/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/zz-prompt/index.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/zz-prompt/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/components/zz-prompt/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/bussiness/shopPreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/bussiness/shopPreview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/bussiness/shopPreview.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/bussiness/shopPreview.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/bussiness/shopPreview.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/bussiness/shopPreview.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/afterSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/afterSale.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/afterSale.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/afterSale.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/afterSale.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/afterSale.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/chooseWay.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/chooseWay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/chooseWay.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/chooseWay.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/chooseWay.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/chooseWay.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/goodsBack.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/goodsBack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/goodsBack.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/goodsBack.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/moneyBack.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/moneyBack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/moneyBack.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/moneyBack.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/moneyBack.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/drawback/moneyBack.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/articleDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/articleDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/articleDetail.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/articleDetail.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/cashier.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/cashier.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/cashier.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/cashier.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/cashier.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/cashier.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/createCartOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/createCartOrder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/createCartOrder.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/createCartOrder.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/createOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/createOrder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/createOrder.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/createOrder.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/createOrder.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/createOrder.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsCategory.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsCategory.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsComments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsComments.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsComments.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/articleDetail.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/articleDetail.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsDetail.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsDetail.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsDetail.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsDetail.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsDetail.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsDetail.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsList.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/goodsList.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/orderDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/orderDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/orderDetail.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/orderDetail.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/orderDetail.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/orderDetail.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/payResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/payResult.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/payResult.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/payResult.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/payResult.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/payResult.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/searchResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/searchResult.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/searchResult.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/index/searchResult.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginMobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginMobile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginMobile.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginMobile.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginMobile.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginMobile.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginPsd.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginPsd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginPsd.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginPsd.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginVeri.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginVeri.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginVeri.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/login/loginVeri.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/account.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/account.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/addressChange.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/addressChange.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/addressChange.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/addressChange.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/addressList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/addressList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/addressList.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/addressList.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/comment.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/comment.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/goods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/goods.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/goods.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/help.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/help.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/myOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/myOrder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/myOrder.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/myOrder.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/myOrder.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/myOrder.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/myOrderDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/myOrderDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/myOrderDetail.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/myOrderDetail.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/password.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/password.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/password.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/password.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/personal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/personal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/personal.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/personal.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/shop.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/shop.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/viewHistoryf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/viewHistoryf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/viewHistoryf.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/viewHistoryf.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/viewHistoryf.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/viewHistoryf.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/viewHistorys.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/viewHistorys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/viewHistorys.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/mine/viewHistorys.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/myTeam.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/myTeam.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/myTeam.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/myTeam.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailCenter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailCenter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailCenter.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailCenter.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailCenter.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailCenter.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailMoney.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailMoney.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailMoney.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailMoney.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailMoney.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailMoney.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailMoney.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailMoney.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailOrder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailOrder.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailOrder.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailOrder.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/retailOrder.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/withdrawDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/withdrawDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/withdrawDetail.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/withdrawDetail.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/withdrawDetail.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/retail/withdrawDetail.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/businessCollege.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/businessCollege.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/businessCollege.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/businessCollege.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/businessCollege.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/businessCollege.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/businessCollege.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/businessCollege.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/cart.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/cart.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/discover.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/discover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/discover.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/discover.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/discover.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/discover.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/mine.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/mine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/mine.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/mine.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/mine.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar/mine.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/financial.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/financial.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/financial.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/financial.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/editGoods.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/editGoods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/editGoods.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/editGoods.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/goods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/goods.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/goods.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderDetail.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderDetail.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderList.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderList.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderList.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderList.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderList.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/orderList.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/setting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/setting.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/operating/setting.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/order.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/order.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/order.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/order.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/tabMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/tabMain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/tabMain.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/tabMain.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/tabMain.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/tabMain.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/vip.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/vip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/vip.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/tabBar2/vip.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/pages/test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_0o26w2gow969/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_0o26w2gow969/demo_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_0o26w2gow969/iconfont.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_0o26w2gow969/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_0o26w2gow969/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_0o26w2gow969/iconfont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_0o26w2gow969/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_0o26w2gow969/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_0o26w2gow969/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_0o26w2gow969/iconfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_gv9pvb702jd/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_gv9pvb702jd/demo_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_gv9pvb702jd/iconfont.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_gv9pvb702jd/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_gv9pvb702jd/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_gv9pvb702jd/iconfont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_gv9pvb702jd/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_gv9pvb702jd/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_gv9pvb702jd/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_gv9pvb702jd/iconfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_o4utcg8sqzk/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_o4utcg8sqzk/demo_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_o4utcg8sqzk/iconfont.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_o4utcg8sqzk/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_o4utcg8sqzk/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_o4utcg8sqzk/iconfont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_o4utcg8sqzk/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_o4utcg8sqzk/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_o4utcg8sqzk/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/font_o4utcg8sqzk/iconfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/css/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/font_faktu1jzwku/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/font_faktu1jzwku/demo_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/font_faktu1jzwku/iconfont.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/font_faktu1jzwku/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/font_faktu1jzwku/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/font_faktu1jzwku/iconfont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/font_faktu1jzwku/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/font_faktu1jzwku/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/font_faktu1jzwku/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/font_faktu1jzwku/iconfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/font/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/img/pic/index/公告.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/img/pic/index/搜索框.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/img/pic/index/每日特价背景.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/img/pic/index/进店.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/img/pic/other/个人选中.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/img/pic/other/订单选中.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/img/pic/proxy/分隔线.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/js/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/js/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/sitemap.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/img/pic/index/more.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/static/img/pic/index/more.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/action-sheet/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/action-sheet/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/action-sheet/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/action-sheet/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/action-sheet/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/area/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/area/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/area/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/area/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/area/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/button/index-loadingColor.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/button/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/button/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/button/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/button/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/button/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/calendar.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/header/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/header/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/header/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/header/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/header/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/month/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/month/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/month/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/month/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/month/index.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/components/month/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/index.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/utils.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/calendar/utils.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/card/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/card/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/card/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/card/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/card/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/cell-group/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/cell-group/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/cell-group/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/cell-group/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/cell-group/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/cell/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/cell/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/cell/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/cell/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/cell/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox-group/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox-group/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox-group/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox-group/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox-group/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox/index.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/checkbox/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/circle/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/circle/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/circle/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/circle/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/circle/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/col/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/col/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/col/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/col/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/col/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/collapse-item/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/collapse-item/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/collapse-item/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/collapse-item/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/collapse-item/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/collapse/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/collapse/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/collapse/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/collapse/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/collapse/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/color.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/color.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/component.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/component.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/style/clearfix.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/style/ellipsis.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/style/hairline.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/style/mixins/clearfix.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/style/mixins/ellipsis.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/style/mixins/hairline.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/style/theme.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/style/var.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/utils.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/common/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/count-down/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/count-down/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/count-down/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/count-down/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/count-down/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/count-down/utils.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/count-down/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/datetime-picker/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/datetime-picker/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/datetime-picker/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/datetime-picker/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/datetime-picker/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/definitions/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/definitions/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/definitions/weapp.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/definitions/weapp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dialog/dialog.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dialog/dialog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dialog/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dialog/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dialog/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dialog/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dialog/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/divider/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/divider/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/divider/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/divider/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/divider/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-item/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-item/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-item/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-item/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-item/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-menu/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-menu/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-menu/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-menu/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-menu/index.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/dropdown-menu/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/field/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/field/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/field/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/field/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/field/index.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/field/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action-button/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action-button/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action-button/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action-button/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action-button/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action-icon/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action-icon/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action-icon/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action-icon/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action-icon/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/goods-action/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/grid-item/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/grid-item/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/grid-item/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/grid-item/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/grid-item/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/grid/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/grid/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/grid/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/grid/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/grid/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/icon/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/icon/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/icon/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/icon/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/icon/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/image/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/image/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/image/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/image/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/image/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/index-anchor/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/index-anchor/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/index-anchor/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/index-anchor/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/index-anchor/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/index-bar/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/index-bar/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/index-bar/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/index-bar/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/index-bar/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/info/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/info/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/info/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/info/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/info/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/loading/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/loading/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/loading/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/loading/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/loading/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/basic.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/basic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/button.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/link.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/link.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/open-type.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/open-type.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/touch.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/touch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/transition.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/mixins/transition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/nav-bar/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/nav-bar/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/nav-bar/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/nav-bar/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/nav-bar/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notice-bar/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notice-bar/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notice-bar/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notice-bar/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notice-bar/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notify/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notify/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notify/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notify/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notify/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notify/notify.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/notify/notify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/overlay/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/overlay/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/overlay/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/overlay/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/overlay/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/panel/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/panel/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/panel/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/panel/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/panel/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker-column/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker-column/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker-column/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker-column/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker-column/index.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker-column/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker/index-isSimple.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker/shared.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker/shared.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/picker/toolbar.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/popup/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/popup/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/popup/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/popup/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/popup/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/progress/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/progress/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/progress/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/progress/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/progress/index.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/progress/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/radio-group/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/radio-group/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/radio-group/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/radio-group/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/radio-group/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/radio/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/radio/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/radio/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/radio/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/radio/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/rate/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/rate/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/rate/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/rate/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/rate/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/row/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/row/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/row/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/row/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/row/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/search/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/search/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/search/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/search/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/search/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sidebar-item/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sidebar-item/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sidebar-item/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sidebar-item/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sidebar-item/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sidebar/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sidebar/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sidebar/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sidebar/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sidebar/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/skeleton/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/skeleton/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/skeleton/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/skeleton/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/skeleton/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/slider/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/slider/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/slider/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/slider/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/slider/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/stepper/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/stepper/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/stepper/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/stepper/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/stepper/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/steps/index-status.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/steps/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/steps/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/steps/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/steps/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/steps/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sticky/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sticky/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sticky/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sticky/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sticky/index.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/sticky/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/submit-bar/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/submit-bar/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/submit-bar/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/submit-bar/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/submit-bar/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/swipe-cell/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/swipe-cell/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/swipe-cell/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/swipe-cell/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/swipe-cell/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/switch/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/switch/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/switch/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/switch/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/switch/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tab/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tab/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tab/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tab/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tab/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabbar-item/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabbar-item/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabbar-item/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabbar-item/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabbar-item/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabbar/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabbar/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabbar/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabbar/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabbar/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabs/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabs/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabs/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabs/index.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tabs/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tag/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tag/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tag/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tag/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tag/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/toast/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/toast/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/toast/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/toast/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/toast/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/toast/toast.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/toast/toast.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/transition/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/transition/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/transition/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/transition/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/transition/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tree-select/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tree-select/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tree-select/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tree-select/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tree-select/index.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/tree-select/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/uploader/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/uploader/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/uploader/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/uploader/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/uploader/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/uploader/shared.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/uploader/shared.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/uploader/utils.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/uploader/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/wxs/add-unit.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/wxs/array.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/wxs/bem.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/wxs/memoize.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/wxs/object.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/dist/build/mp-weixin/wxcomponents/vant/wxs/utils.wxs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../unpackage/dist/dev/mp-weixin" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/dist/dev/mp-weixin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/1024x1024.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/1024x1024.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/144x144.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/152x152.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/152x152.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/167x167.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/167x167.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/180x180.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/180x180.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/192x192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/20x20.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/20x20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/29x29.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/29x29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/40x40.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/40x40.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/58x58.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/58x58.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/60x60.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/60x60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/72x72.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/72x72.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/76x76.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/76x76.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/80x80.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/80x80.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/87x87.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/87x87.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/res/icons/96x96.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/res/icons/96x96.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/app-config-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/app-config-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/app-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/app-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/app-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/app-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_0o26w2gow969/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_0o26w2gow969/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_0o26w2gow969/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_gv9pvb702jd/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_gv9pvb702jd/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_gv9pvb702jd/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/font_o4utcg8sqzk/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/css/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/font_faktu1jzwku/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/font_faktu1jzwku/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/font_faktu1jzwku/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/font/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/img/pic/index/more.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/img/pic/index/more.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../unpackage/resources/__UNI__BD88342/www/static/js/common.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -295,6 +825,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="8dda20f0" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -319,6 +850,7 @@
   <component name="ProjectId" id="1c9fKJqkqXzJ5aP6oiX7PidPAvh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ApkExportedModule" value="app" />
     <property name="ExportApk.ApkPath" value="C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app" />
@@ -333,6 +865,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\res" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\res\drawable" />
     </key>
   </component>
   <component name="RunDashboard">
