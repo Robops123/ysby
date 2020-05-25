@@ -144,6 +144,7 @@
 				var that=this
 				var url='&r=api.member.order.create'
 				this.form.goods=JSON.stringify(this.form.goods)
+				this.form.type=1
 				  this.$apiPost(url,this.form).then((res) =>{
 					  uni.navigateTo({
 					  	url:'./cashier?orderId='+res.data.orderno+'&contact='+JSON.stringify(that.contact)+'&money='+this.totalPrice

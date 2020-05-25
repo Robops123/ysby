@@ -271,6 +271,7 @@
 				  this.$apiPost(url,params).then((res) =>{
 					uni.hideLoading()
 					that.$msg('支付成功')
+					uni.$emit('updateOrder')
 					setTimeout(function(){
 						uni.redirectTo({
 							url:'./payResult?contact='+that.contact+'&money='+that.money+'&orderno='+that.orderno

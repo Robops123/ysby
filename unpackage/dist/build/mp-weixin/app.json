@@ -23,6 +23,7 @@
     "pages/tabBar/cart",
     "pages/tabBar/mine",
     "pages/retail/retailCenter",
+    "pages/mine/promotion",
     "pages/mine/help",
     "pages/mine/viewHistoryf",
     "pages/mine/viewHistorys",
@@ -97,7 +98,7 @@
   },
   "permission": {
     "scope.userLocation": {
-      "desc": "哈哈哈"
+      "desc": "该应用需要获取你的当前位置"
     }
   },
   "usingComponents": {},

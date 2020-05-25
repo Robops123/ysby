@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "代理佣金",
-  "usingComponents": {}
+  "usingComponents": {
+    "s-popup": "/components/s-popup/index"
+  }
 }

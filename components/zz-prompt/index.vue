@@ -147,6 +147,9 @@
 
   button {
     width: 50%;
+	height: 75upx;
+	line-height: 75upx;
+	font-size: 12px;
     background: white;
     border-radius: 0;
   }

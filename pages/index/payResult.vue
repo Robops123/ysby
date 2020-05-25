@@ -10,8 +10,8 @@
 		<view class="about padding margin">
 			<view class="icon-fire iconfont"></view>
 			<view class="s3">
-				<view>{{contact.contactname}}  {{contact.usermobile}}</view>
-				<view style="margin-top: 10upx;">{{contact.province+contact.city+contact.district+contact.address}}</view>
+				<view>{{contact.contact}}  {{contact.mobile}}</view>
+				<view style="margin-top: 10upx;">{{contact.address}}</view>
 			</view>
 		</view>
 		<view class="padding" style="background-color: #fff;">
@@ -32,14 +32,21 @@
 			return {
 				contact:{},
 				orderno:'',
-				money:''
+				money:'',
+				uid:'',
+				token:''
 			}
 		},
 		onLoad(p){
-			console.log(p)
-			this.contact=JSON.parse(p.contact)
+			var userInfo=uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.uid=userInfo.uid
+				this.token=userInfo.token
+			}
+			// this.contact=JSON.parse(p.contact)
 			this.orderno=p.orderno
 			this.money=p.money
+			this.getDetail()
 		},
 		methods:{
 			to(w){
@@ -51,6 +58,20 @@
 				uni.switchTab({
 					url:'/pages/tabBar/index'
 				})
+			},
+			getDetail(){
+				this.$loading()
+				var that=this
+				var params={
+					uid:this.uid,
+					token:this.token,
+					orderno:this.orderno
+				}
+				var url='&r=api.member.order.detail'
+				  this.$apiPost(url,params).then((res) =>{
+					uni.hideLoading()
+					that.contact=res.data
+				  })
 			}
 		}
 	}

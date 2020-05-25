@@ -120,6 +120,10 @@
 			
 		</view>
 		
+		<!--  -->
+		<topicon v-show="showIcon" class="topicon" :iconWidth="100" :iconHeight="100" :startPostion="3" iconPath="../../static/img/pic/top.png"
+		         :marginBottom="0" :marginTop="60" :marginLeft="5" :marginRight="5" @tapIcon="tapIcon"
+		        ></topicon>
 	</view>
 </template>
 
@@ -127,9 +131,11 @@
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	import uParse from '@/components/gaoyia-parse/parse.vue'
+	 import topicon from '@/components/gwh-backTopIcon/gwh-backTopIcon.vue'
 	export default{
 		data(){
 			return{
+				top:0,
 				active:1,
 				msg:[
 					{length:3,
@@ -153,12 +159,16 @@
 		components:{
 			uniRate,
 			uniLoadMore,
-			uParse
+			uParse,
+			topicon
 		},
 		computed: {
 		     noMore () {
 		       return this.dataList.length >= this.total 
 		     },
+			 showIcon(){
+			 				 return this.top>=50
+			 }  
 		   },
 		   onReachBottom(){
 			   if(this.noMore){
@@ -180,6 +190,9 @@
 		   			that.sh=res
 		   		})
 		   	},0)
+		   },
+		   onPageScroll(e){
+			 this.top=e.scrollTop
 		   },
 		methods:{
 			toDetail(item){
@@ -269,6 +282,12 @@
 				uni.previewImage({
 					current:cur,
 					urls:list
+				})
+			},
+			tapIcon(){
+				uni.pageScrollTo({
+					scrollTop:0,
+					duration:300
 				})
 			}
 		}

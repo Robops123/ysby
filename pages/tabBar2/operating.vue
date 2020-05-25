@@ -61,12 +61,12 @@
 					<view>商品管理</view>
 					<view class="cg s3"><text class="cr">{{data.goods}}</text>个</view>
 				</view>
-				<view class="item-list">
+				<view class="item-list" @click="toggletab(1)">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon4.png" mode="" style="width: 60upx;height: 50upx;"></image></view>
 					<view>会员管理</view>
 					<view class="cg s3"><text class="cr">{{data.members}}</text>个</view>
 				</view>
-				<view class="item-list">
+				<view class="item-list" @click="toggletab(3)">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon1.png" mode="" style="width: 70upx;height: 60upx;"></image></view>
 					<view>财务管理</view>
 				</view>
@@ -102,6 +102,9 @@
 				uni.navigateTo({
 					url:'./operating/orderList?active='+type
 				})
+			},
+			toggletab(w){
+				this.$emit('toggletab',w)
 			},
 			toSetting(){
 				var that=this

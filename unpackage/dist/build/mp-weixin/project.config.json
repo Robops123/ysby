@@ -10,7 +10,7 @@
 		"minified": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.4",
+	"libVersion": "2.9.2",
 	"appid": "wx3e1b12e0af8ae0d1",
 	"projectname": "ysby",
 	"simulatorType": "wechat",

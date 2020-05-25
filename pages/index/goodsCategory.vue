@@ -58,6 +58,7 @@
 		},
 		data(){
 			return{
+				type:'',
 				categoryReady:false,
 				url:'&r=api.home.morecate',
 				url2:'&r=api.home.morecate.catemerch',
@@ -78,14 +79,10 @@
 		       return this.dataList.length >= this.total
 		     },
 		   },
-		   mounted(){
-		   	var that=this
-		   	this.getCategory()
-		   	// setTimeout(function(){
-		   	// 	that.$getHeight('#sv',(res) =>{
-		   	// 		that.sh=res
-		   	// 	})
-		   	// },0)
+		   onLoad(p){
+			   var that=this
+			   this.type=p.type
+			   this.getCategory()
 		   },
 		methods:{
 			toggleTab(t,item){

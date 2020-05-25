@@ -1,5 +1,5 @@
 <template>
-	<view style="padding-bottom: 50px;">
+	<view style="padding-bottom: 50px;" v-cloak>
 		<view class="padding top border-bottom">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
 			<swiper class="preview" autoplay="false" duration="500" interval="3000" >
@@ -28,7 +28,7 @@
 		<view class="border-bottom s2" v-if='data.commentstotal'>
 			<view class="padding ">
 				<text class="" style="margin-right: 30upx;">商品评价({{data.commentstotal}})</text>
-				<text class="fr cr" @click="toComments">查看全部 <text class="icon-arrow-right iconfont" style="margin-left: 30upx;"></text></text>
+				<text class="fr cr" @click="toComments" v-if='data.comments'>查看全部 <text class="icon-arrow-right iconfont" style="margin-left: 30upx;"></text></text>
 			</view>
 			<view class="padding" v-for="(item,index) in data.comments" :key='index'>
 				<view class="user">
@@ -46,8 +46,8 @@
 				<view class="s3 cg">{{item.skuname}}</view>
 				
 			</view>
-			<view class="" style="text-align: center;">
-				<button type="default" class="btn" @click="toComments">查看全部评价</button>
+			<view class="" style="text-align: center;" >
+				<button type="default" class="btn" @click="toComments">{{data.toComments ? "查看全部评价":'暂无评论'}}</button>
 			</view>
 		</view>
 		
@@ -121,7 +121,7 @@
 					 						 <image src="../../static/img/bg/activity.png" mode=""></image>
 					 						 <view class="">微信</view>
 					 </view> -->
-					 <view class="share-item">
+					 <view class="share-item" @click="createPoster">
 					 						 <image src="../../static/img/pic/other/post.png" mode=""></image>
 					 						 <view class="">生成海报</view>
 					 </view>
@@ -132,6 +132,16 @@
 				 </view>
 			 </view>
 		 </view>
+		 
+		 
+		 <!-- 海报 -->
+		 <s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
+		   <!-- 内容 -->
+		   <image :src="advImg" mode=""></image>
+		   <view style="margin-top: 20upx;">
+		 	  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
+		   </view>
+		 </s-popup>
 	</view>
 </template>
 
@@ -139,12 +149,14 @@
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniGoodsNav from '@/components/uni-goods-nav/uni-goods-nav.vue'
 	import sku from '@/components/sku/pages/sku.vue'
+	import sPopup from '@/components/s-popup/index';
 	// import uniPopup from "@/components/uni-popup/uni-popup.vue"
 	export default{
 		components:{
 			uniRate,
 			uniGoodsNav,
 			sku,
+			sPopup
 			// uniPopup
 		},
 		onShow(){
@@ -153,10 +165,12 @@
 		data () {
 		      return {
 				  image:'',
+				  advImg:'',
 				  hideNav:true,
 				  path:'',
 				  logined:false,
 				  popshow:false,
+				  visible:false,
 				  uid:'',
 				  token:'',
 				  id:'',
@@ -409,6 +423,9 @@
 				  this.choosedSpec=e
 			  },
 			  toComments(){
+				  if(!this.data.comments){
+					  return ;
+				  }
 				  uni.navigateTo({
 				  	url:'./goodsComments?id='+this.id
 				  })
@@ -418,7 +435,51 @@
 			  		url:`/pages/bussiness/shopPreview?id=${id}`
 			  	})
 			  },
-			  
+			  // 海报
+			  createPoster(){
+				  	var ce=this.$operateInterceptor(this.logined)
+				  	if(!ce){
+				  		return ;
+				  	}
+					this.$loading()
+				  	var that=this
+				  	var params={
+				  		uid:this.uid,
+				  		token:this.token,
+						goodsid:this.id
+				  	}
+				  	var url='&r=api.common.share.createPoster'
+				  	  this.$apiPost(url,params).then((res) =>{
+				  		  that.advImg=res.data.img
+				  		  that.visible=true
+						  that.popshow=false
+						  uni.hideLoading()
+				  	  })
+			  },
+			  saveImg(url){
+			  	var that=this
+			  	that.$loading()
+			  	uni.downloadFile({
+			  			url: url,
+			  			success: (res) =>{
+			  				if (res.statusCode === 200){
+			  					uni.saveImageToPhotosAlbum({
+			  						filePath: res.tempFilePath,
+			  						success: function() {
+			  							that.$msg('保存成功，请到相册中查看')
+			  							that.visible=false
+			  						},
+			  						fail: function() {
+			  							that.$msg('保存失败')
+			  						},
+			  						complete:() =>{
+			  							uni.hideLoading()
+			  						}
+			  					});
+			  				}
+			  			}
+			  		})
+			  },
 			  // 分享
 			  getProvider(){
 				  uni.getProvider({
@@ -796,5 +857,20 @@
 	}
 	.bottom-nav{
 		position: relative;
+	}
+	
+	.adv-btn{
+		width: 94%;
+		margin: 0 auto;
+		background-color: #fba1b0;
+		color: #fff;
+		border-radius: 6px;
+		line-height: 1;
+		border: none;
+		outline: none;
+		padding: 20upx 0;
+		text-align: center;
+		margin-bottom: 20upx;
+		font-size: 12px;
 	}
 </style>

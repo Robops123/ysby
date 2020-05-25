@@ -2,14 +2,14 @@
 	<view>
 		<view class="padding">
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
-				<view class="list" v-for="(item,index) in dataList" :key='index' @click="toGoodsDetail(item.goodsid)">
+				<view class="list" v-for="(item,index) in dataList" :key='index' >
 					<view class="date">{{item.createdate==today ? '今天':item.createdate}}
 					<view class="fr cg" @click="to('viewHistorys',item.createdate)">
 						<text class="s1">浏览更多</text>
 						<text class="iconfont icon-arrow-right"></text>
 					</view>
 					</view>
-					<view class="list2" v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
+					<view class="list2" v-for="(childItem,childIndex) in item.goods" :key='childIndex' @click="toGoodsDetail(childItem.goodsid)">
 						<image :src="childItem.thumb" mode=""></image>
 							<view class="info">
 								<view class="s2 title">

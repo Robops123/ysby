@@ -66,15 +66,15 @@
 				<view class="luntan-card-bot">
 					<view class="luntan-card-bot-card">
 						<text class="iconfont icon-share2"></text>
-						<text>转发{{repost}}</text>
+						<text>转发</text>
 					</view>
 					<view class="luntan-card-bot-card" @click="openComment">
 						<text class="iconfont icon-tubiao-"></text>
-						<text>评论{{comment}}</text>
+						<text>评论</text>
 					</view>
 					<view class="luntan-card-bot-card">
 						<text class="iconfont " :class="{'icon-zan':!data.isLike,'icon-shou':data.isLike,'zaned':data.isLike}" @click="toggleZan(data.isLike)"></text>
-						<text>赞{{like}}</text>
+						<text>赞</text>
 					</view>
 				</view>
 			</view>

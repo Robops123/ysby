@@ -7,6 +7,10 @@
 		box-sizing: border-box;
 	}
 
+	[v-cloak]{
+		display: none;
+	}
+	
 	uni-icon {
 		vertical-align: middle;
 	}
@@ -131,7 +135,6 @@
 	
 	
 	
-	/* #ifdef H5 */
 	.r-cb .uni-checkbox-input {
 		border-radius: 50%;
 	}
@@ -155,7 +158,6 @@
 		display: flex;
 	}
 
-	/* #endif */
 
 
 	/* #ifdef APP-PLUS || MP-WEIXIN */

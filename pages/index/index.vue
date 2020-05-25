@@ -167,7 +167,7 @@
 </script>
 
 <style>
-	@import "../../wxcomponents/vant/common/index.wxss";
+	/* @import "../../wxcomponents/vant/common/index.wxss"; */
 	.content{
 	}
 	video{

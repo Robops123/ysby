@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="nav-bar">
-			<view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view>
+			<!-- <view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view> -->
 			<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
 			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
 			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
@@ -27,27 +27,29 @@
 						<view class="s1 cg">
 							<view>
 								<text>{{item.orderno}}</text>
-								<text class="payway">微信支付</text>
+								<!-- <text class="payway" v-show="item.paytype==0">未支付</text> -->
+								<text class="payway" v-show="item.paytype==1">微信</text>
+								<text class="payway" v-show="item.paytype==2">支付宝</text>
 							</view>
 							<view>
-								2020/03/30 12:30:40
+								{{item.createtime}}
 							</view>
 						</view>
 						<text class="icon-arrow-right iconfont fr"></text>
 					</view>
 					
-					<view class="md-line bottom-border">
+					<view class="md-line bottom-border" v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
 						<view>
-							<image :src="item.goodsPic" mode=""></image>
+							<image :src="childItem.goodspic" mode=""></image>
 						</view>
 						<view class="md-line-word">
 							<view class="s1">
-								<text class="limit-text">{{item.goodsname}}</text>
-								<text class="fr cg s1">￥{{item.goodsprice}}</text>
+								<text class="limit-text">{{childItem.goodsname}}</text>
+								<text class="fr cg s1">￥{{childItem.goodsprice}}</text>
 							</view>
 							<view class="s2 cg">
-								<text class="limit-text">规格:<text class="s3 ">{{item.specifications}}</text></text>
-								<text class="fr s1">*{{item.amount}}</text>
+								<text class="limit-text">规格:<text class="s3 ">{{childItem.specifications ? childItem.specifications:'无规格'}}</text></text>
+								<text class="fr s1">*{{childItem.amount}}</text>
 							</view>
 						</view>
 					</view>
@@ -63,7 +65,7 @@
 						</view>
 						<view class="status-line cg s2">
 							<text>买家昵称</text>
-							<text class="fr ">许愿</text>
+							<text class="fr ">{{item.nickname}}</text>
 						</view>
 						<view class="status-line cg s2">
 							<text>配送方式</text>
@@ -76,9 +78,9 @@
 						共<text class="cr">1</text>件商品 实付:<text class="cr">￥{{item.totalprice}}</text>
 					</view>
 					<view class="bottom-border btn-line">
-						<button type="default" class="btn btn-primary">确认发货</button>
-						<button type="default" class="btn btn-primary">取消发货</button>
-						<button type="default" class="btn ">备注</button>
+						<button type="default" class="btn btn-primary" v-show="active==2" @click="confirmDoSend(item.orderno)">确认发货</button>
+						<button type="default" class="btn btn-primary" v-show="active==2" @click="cancelOrder(item.orderno)">取消发货</button>
+						<button type="default" class="btn " @click="showRemark(item.orderno)">备注</button>
 						<button type="default" class="btn " @click="toDetail(item.orderno)">查看详情</button>
 					</view>
 				</view>
@@ -87,22 +89,36 @@
 		</scroll-view>
 		
 		<pop ref='order' :dataList='orderList'></pop>
+		
+		
+		<!-- 备注 -->
+		<prompt :visible.sync="promptVisible" title='添加备注'
+		  @confirm="clickPromptConfirm" mainColor="#ff6d7e">
+		  <!-- 这里放入slot内容-->
+		  <view>
+			  <text>备注:</text>
+			  <textarea v-model="remark" placeholder="" />
+		  </view>
+		</prompt>
 	</view>
 </template>
 
 <script>
 	import pop from '@/components/promptOptions/pop.vue'
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
+	 import Prompt from '@/components/zz-prompt/index.vue'
 	export default{
 		components:{
 			uniLoadMore,
-			pop
+			pop,
+			Prompt
 		},
 		data(){
 			return{
+				promptVisible:false,
 				uid:'',
 				token:'',
-				active:0,
+				active:1,
 				orderList:[
 					{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'}
 				],
@@ -113,7 +129,8 @@
 				total:0,
 				more:'',
 				orderno:'',
-				keywords:''
+				keywords:'',
+				remark:''
 			}
 		},
 		computed: {
@@ -124,7 +141,7 @@
 		   onLoad(p){
 			   var that=this
 			  var userInfo=uni.getStorageSync('userInfo'),that=this
-			  if(p){
+			  if(p.active!=0){
 			  	this.active=p.active
 			  }
 			  if(userInfo!='' & userInfo!=null & userInfo!=undefined){
@@ -211,6 +228,38 @@
 				this.dataList=[]
 				this.more=''
 				this.getList(this.page,this.orderno,this.keywords)
+			},
+			cancelOrder(order){
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token: this.token,
+					orderno:order
+				}
+				  var url='&r=api.myshop.orders.cancelSend'
+				  this.$apiPost(url,params).then((res) =>{
+					  this.$msg('取消成功')
+					  this.search()
+						// that.options[2].info++
+				  })
+			},
+			confirmDoSend(no){
+				this.$loading()
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token:this.token,
+				  orderno:no,
+				}
+				  var url='&r=api.myshop.orders.doSend'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.$msg('发货成功')
+					  	uni.hideLoading()
+						that.search()
+				  })
+			},
+			showRemark(){
+				this.promptVisible=true
 			}
 		}
 	}
@@ -224,7 +273,7 @@
 	.nav{
 		color: #afafaf;
 		display: inline-block;
-		width: 20%;
+		width: 25%;
 		box-sizing: border-box;
 	}
 	.nav.active text{

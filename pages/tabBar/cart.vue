@@ -361,7 +361,7 @@
 					return ;
 				}
 				uni.navigateTo({
-					url:'../index/createCartOrder?selectedGoods='+JSON.stringify(selectedGoods)
+					url:'../index/createCartOrder?selectedGoods='+JSON.stringify(selectedGoods)+'&type=1'
 				})
 			}
 		}

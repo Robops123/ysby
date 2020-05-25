@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "推广介绍",
+  "usingComponents": {
+    "u-parse": "/components/gaoyia-parse/parse"
+  }
+}

@@ -12,7 +12,7 @@
         <view class="line-h"></view>
         <swiper :current="tabIndex" class="swiper-box" style="flex: 1;" :duration="300" @change="ontabchange">
             <swiper-item class="swiper-item">
-				<operating ref='com0'></operating>
+				<operating ref='com0' @toggletab='toggletab'></operating>
 				<!-- <operating v-if="tabIndex==0"></operating> -->
 				<!-- <operating v-else></operating> -->
             </swiper-item>
@@ -96,14 +96,14 @@
 				uni.setNavigationBarTitle({
 				    title: that.toggleTitle(0)
 				});
-              this.tabBars.forEach((tabBar) => {
-                  this.newsList.push({
-                      data: [],
-                      isLoading: false,
-                      refreshText: "",
-                      loadingText: '加载更多...'
-                  });
-              });
+              // this.tabBars.forEach((tabBar) => {
+              //     this.newsList.push({
+              //         data: [],
+              //         isLoading: false,
+              //         refreshText: "",
+              //         loadingText: '加载更多...'
+              //     });
+              // });
             },350)
         },
         methods: {
@@ -119,12 +119,16 @@
             },
             loadMore(e) {
             },
+			toggletab(e){
+				 this.switchTab(Number(e));
+			},
             ontabtap(e) {
                 let index = e.target.dataset.current || e.currentTarget.dataset.current;
 				if(index==4){
 					uni.switchTab({
 						url:'/pages/tabBar/mine'
 					})
+					return ;
 				}
                 this.switchTab(Number(index));
             },
@@ -142,13 +146,13 @@
                 }
 
                 // 缓存 tabId
-                if (this.newsList[this.tabIndex].data.length > 5) {
-                    let isExist = this.cacheTab.indexOf(this.tabIndex);
-                    if (isExist < 0) {
-                        this.cacheTab.push(this.tabIndex);
-                        //console.log("cache index:: " + this.tabIndex);
-                    }
-                }
+                // if (this.newsList[this.tabIndex].data.length > 5) {
+                //     let isExist = this.cacheTab.indexOf(this.tabIndex);
+                //     if (isExist < 0) {
+                //         this.cacheTab.push(this.tabIndex);
+                //         //console.log("cache index:: " + this.tabIndex);
+                //     }
+                // }
 				uni.setNavigationBarTitle({
 				    title: that.toggleTitle(index)
 				});

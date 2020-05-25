@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view v-cloak>
 		<view class="nav padding">
 			<!-- #ifdef APP-PLUS || H5 -->
 				<uni-status-bar />
@@ -39,7 +39,7 @@
 			
 			<!-- 类型 -->
 			<view class="list ">
-				<view class="list-item" v-for="(item,index) in productList" :key='index' @click="toCategory">
+				<view class="list-item" v-for="(item,index) in productList" :key='index' @click="toCategory(item.type)">
 					<image :src="`${item.imgUrl}`" mode=""></image>
 					<view class="item-name cg s3">{{item.name}}</view>
 				</view>
@@ -201,9 +201,9 @@
 					url:`/pages/index/searchResult?keyword=${this.keywords}`
 				})
 			},
-			toCategory(){
+			toCategory(t){
 				uni.navigateTo({
-					url:`/pages/index/goodsCategory`
+					url:`/pages/index/goodsCategory?type=${t}`
 				})
 			},
 			toDetail(id){
@@ -303,13 +303,6 @@
 				})
 			},
 			addCollect(id){
-				// if(!this.logined){
-				// 	this.$msg('请先登录')
-				// 	uni.navigateTo({
-				// 		url:'../login/loginMobile?passitive=true'
-				// 	})
-				// 	return ;
-				// }
 				var ce=this.$operateInterceptor(this.logined)
 				if(!ce){
 					return ;
