@@ -53,7 +53,7 @@
 				uid:'',
 				totalCommission:'',
 				token:'',
-				active:1,
+				active:0,
 				tabActive:0,
 				sh:'',
 				dataList:[],

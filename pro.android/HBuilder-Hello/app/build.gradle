@@ -48,6 +48,8 @@ repositories {
     }
 }
 dependencies {
+
+    implementation 'com.amap.api:location:latest.integration'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation fileTree(include: ['*.aar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'

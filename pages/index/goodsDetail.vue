@@ -2,7 +2,11 @@
 	<view style="padding-bottom: 50px;" v-cloak>
 		<view class="padding top border-bottom">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
-			<swiper class="preview" autoplay="false" duration="500" interval="3000" >
+			<swiper class="preview" :autoplay="autoplay" duration="500" interval="3000" @transition='swiperChange'>
+				<swiper-item>
+								<video id="myVideo" :src="data.video"
+							  loop muted show-play-btn controls objectFit="cover" @pause="pause" @play='play'></video>
+							</swiper-item>
 			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index">
 			    	<image :src="item" mode="" class="banner"></image>
 			    </swiper-item>
@@ -57,8 +61,8 @@
 					<view>
 						<image :src="data.logo" mode="" class="headface"></image>
 					</view>
-					<view class="sp-item3-top-middle">
-						<view>{{data.merchname}}</view>
+					<view >
+						<view class="sp-item3-top-middle ellipsis">{{data.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" :value="data.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
 							<text class="s3 cg">{{data.collect}}人关注</text>
@@ -164,9 +168,11 @@
 		},
 		data () {
 		      return {
+				  videoContext:'',
 				  image:'',
 				  advImg:'',
 				  hideNav:true,
+				  autoplay:true,
 				  path:'',
 				  logined:false,
 				  popshow:false,
@@ -397,6 +403,7 @@
 						}
 						that.$nextTick(function(){
 							that.getCategory()
+							that.videoContext = uni.createVideoContext('myVideo')
 						})
 				  	  // that.total=res.total
 				  	  // that.dataList=that.dataList.concat(res.data)
@@ -419,6 +426,16 @@
 							})
 				    })
 			  },
+			  pause(){
+				this.autoplay=true
+				},
+				play(){
+				this.autoplay=false
+				},
+				swiperChange(e){
+					this.autoplay=true
+					this.videoContext.pause();
+				},
 			  completeSpecChoose(e){
 				  this.choosedSpec=e
 			  },
@@ -698,6 +715,9 @@
 		border-radius: 50%;
 		margin: 0 15upx;
 	}
+	.sp-item3-top-middle{
+		max-width: 350upx;
+	}
 	.sp-item3-top-middle image{
 		width: 25upx;
 		height: 25upx;
@@ -733,7 +753,7 @@
 		padding: 0 30upx;
 		/* margin: 0 18upx; */
 		display: flex;
-		justify-content: space-between;
+		/* justify-content: space-between; */
 		padding-bottom: 22upx;
 	}
 	.sp-item3-bottom image{

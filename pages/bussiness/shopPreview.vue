@@ -18,8 +18,8 @@
 			<view>
 				<image :src="basic.logo" mode="" class="headface"></image>
 			</view>
-			<view class="sp-item3-top-middle">
-				<view>{{basic.merchname}}</view>
+			<view >
+				<view class="sp-item3-top-middle ellipsis">{{basic.merchname}}</view>
 				<view>
 					<uni-rate disabled="true" size="12" :value="basic.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
 					<text class="s3 cg">{{basic.collect}}人关注</text>
@@ -310,6 +310,9 @@
 		height: 25upx;
 		vertical-align: middle;
 		margin-right: 5upx;
+	}
+	.sp-item3-top-middle{
+		max-width: 400upx;
 	}
 	.sp-item3-top-middle text text{
 		color: #a9a9a9;

@@ -155,7 +155,7 @@
 <style scoped lang="scss">
 	.fixedView{
 		position: fixed;
-		z-index: 200;
+		z-index: 9999;
 	}
 	
 	.icon{

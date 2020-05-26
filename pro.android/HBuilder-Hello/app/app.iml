@@ -35,10 +35,10 @@
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/renderscript_source_output_dir/debug/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/debug" type="java-resource" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/ap_generated_sources/debugAndroidTest/out" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/renderscript_source_output_dir/debugAndroidTest/out" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/aidl_source_output_dir/debugAndroidTest/out" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/renderscript_source_output_dir/debugAndroidTest/out" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/debug" type="java-test-resource" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/ap_generated_sources/debugUnitTest/out" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/res" type="java-resource" />
@@ -89,9 +89,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support:multidex-instrumentation:1.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/alipayutdid.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/qq_mta-sdk-1.6.2.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/qq_sdk_v3.3.5.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/wechat-sdk-android-without-mta-5.4.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.amap.api:location:4.9.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:27.1.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:common:1.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:common:1.1.0@jar" level="project" />
@@ -99,60 +98,24 @@
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:disklrucache:4.9.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:annotations:4.9.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.alibaba:fastjson:1.1.46.android@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/ads-360-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/ads-csj-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/ads-gdt-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/ads-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/alipaySdk-15.6.5-20190718211159-noUtdid.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/amap-libs-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/android-gif-drawable-release@1.2.17.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/aps-dhPush-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/aps-igexin-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/aps-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/aps-xiaomi-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/audio-mp3aac-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/baidu-libs-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/Bluetooth-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/contacts-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/fingerprint-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/gallery-dmcBig-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/GDTSDK.unionNormal.4.110.980.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/geolocation-amap-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/geolocation-baidu-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/iBeacon-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/lib.5plus.base-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/map-amap-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/map-baidu-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/media-livepusher-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/media-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/messaging-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/miit_mdid_1.0.10.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/oauth-miui-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/oauth-qq-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/oauth-sina-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/oauth-weixin-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/openDefault-4.4.1.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/open_ad_sdk.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/payment-alipay-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/payment-weixin-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/share-qq-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/share-sina-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/share-tencent-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/share-weixin-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/speech-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/speech_baidu-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/speech_ifly-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/sqlite-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/statistics-umeng-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/torch-adcore-5.12.3140.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/torch-plcsjsdk-5.12.3140.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/torch-plgdtapi-5.12.3140.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/torch-plgdtsdk-5.12.3140.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/uniapp-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/webview-x5-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/weex_ad-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/weex_amap-release.aar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/weex_livepusher-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/weex_videoplayer-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C./Users/Administrator/Desktop/ysby/ysby/pro.android/HBuilder-Hello/app/libs/weex_webview-x5-release.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:multidex:1.0.2@aar" level="project" />

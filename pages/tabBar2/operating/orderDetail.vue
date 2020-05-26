@@ -87,17 +87,17 @@
 				<text class="fr">(价格单位:元)</text>
 			</view>
 			
-			<view class="content">
+			<view class="content" v-for="(item,index) in data.goods" :key='index'>
 				<view class="img">
-					<image :src="data.goodsPic" mode=""></image>
+					<image :src="item.goodspic" mode=""></image>
 				</view>
 					<view class="s1 ellipsis">
-						<view class="limit-text">{{data.goodsname}}</view>
+						<view class="limit-text">{{item.goodsname}}</view>
 						<view class="s2 cg">
-							<text class="limit-text">规格<text class="s3 ">{{data.specifications}}</text></text>
+							<text class="limit-text">规格:<text class="s3 ">{{item.specifications ? item.specifications:'无规格'}}</text></text>
 						</view>
 						<view class="s2 cg">
-							<text class="limit-text">单价/数量:<text class="s3 ">{{data.goodsprice}}*{{data.amount}}</text></text>
+							<text class="limit-text">单价/数量:<text class="s3 ">{{item.goodsprice}}*{{item.amount}}</text></text>
 						</view>
 					</view>
 			</view>
@@ -133,9 +133,9 @@
 		
 		<view class="s3 cg" style="text-align: center;padding: 30upx 0 40upx;background-color: #F3F3F3;">更多设置请到PC端后台</view>
 		
-		<view class="btn-box">
+		<!-- <view class="btn-box">
 			<button class="btn">确认收货</button>
-		</view>
+		</view> -->
 		
 		<!-- <view class="location">
 			<icon type="" class="icon-fire iconfont"></icon>

@@ -4,60 +4,24 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
-MERGED from [ads-360-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d74e80932f44a7bcbb5cacabba53f1fa\ads-360-release\AndroidManifest.xml:2:1-21:12
-MERGED from [ads-csj-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d8e7268fd45c7550e51d570689d37b6a\ads-csj-release\AndroidManifest.xml:2:1-10:12
-MERGED from [ads-gdt-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\9592a228dd030f5eb1fc27a0bf5092d1\ads-gdt-release\AndroidManifest.xml:2:1-10:12
-MERGED from [ads-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e51dad71847ac50e339af61be03d12d4\ads-release\AndroidManifest.xml:2:1-9:12
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:2:1-57:12
-MERGED from [amap-libs-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d27da562116564d0297e336e7eb989c3\amap-libs-release\AndroidManifest.xml:2:1-12:12
 MERGED from [android-gif-drawable-release@1.2.17.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\97546723e3e189fe5d83ae766f26d4ac\android-gif-drawable-release@1.2.17\AndroidManifest.xml:2:1-10:12
-MERGED from [aps-dhPush-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\fc855904663f1f0826ae2dd20b421938\aps-dhPush-release\AndroidManifest.xml:2:1-11:12
-MERGED from [aps-igexin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b87226af4e6a4d23760910c066def375\aps-igexin-release\AndroidManifest.xml:2:1-11:12
-MERGED from [aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:2:1-15:12
-MERGED from [aps-xiaomi-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7b245986f1e07576f1b092d25c0d9cd7\aps-xiaomi-release\AndroidManifest.xml:2:1-11:12
 MERGED from [audio-mp3aac-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5cf55033b4650fbc2b83a33cb9754953\audio-mp3aac-release\AndroidManifest.xml:2:1-9:12
-MERGED from [baidu-libs-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\9e5c635365f4fed9f51c15457f6c3172\baidu-libs-release\AndroidManifest.xml:2:1-12:12
-MERGED from [Bluetooth-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\57848f4e1a298b0fa49b27c3aea0852c\Bluetooth-release\AndroidManifest.xml:2:1-11:12
 MERGED from [contacts-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a0eb996b49adf4041e676c7c16086002\contacts-release\AndroidManifest.xml:2:1-11:12
-MERGED from [fingerprint-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f1a57b3e62a3d8698b0703dc1637da72\fingerprint-release\AndroidManifest.xml:2:1-13:12
 MERGED from [gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:2:1-22:12
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:2:1-50:12
 MERGED from [geolocation-amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e5ae8f3ca87da0918c677d0519f74f43\geolocation-amap-release\AndroidManifest.xml:2:1-11:12
-MERGED from [geolocation-baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e288d629be85625489b1414b843f7421\geolocation-baidu-release\AndroidManifest.xml:2:1-11:12
-MERGED from [iBeacon-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7a5d35ad6ba86ac8e5b698d5dc207fe3\iBeacon-release\AndroidManifest.xml:2:1-11:12
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:2:1-318:12
 MERGED from [map-amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ff92549be37ac3eee74ee82d6a3cb1ef\map-amap-release\AndroidManifest.xml:2:1-9:12
-MERGED from [map-baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d613ef46d96de468bb1f7eaffca028ab\map-baidu-release\AndroidManifest.xml:2:1-9:12
-MERGED from [media-livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aec33ba198cf3db7df9ef23e41bac40a\media-livepusher-release\AndroidManifest.xml:2:1-11:12
 MERGED from [media-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\85c238f7aa31d68747ac4e247bcf8108\media-release\AndroidManifest.xml:2:1-11:12
 MERGED from [messaging-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17dda3ff4ff35f6d7d9b64690f163025\messaging-release\AndroidManifest.xml:2:1-11:12
-MERGED from [miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:1:1-10:12
-MERGED from [oauth-miui-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4724f0f7424cc5722fabc69729d14f65\oauth-miui-release\AndroidManifest.xml:2:1-11:12
-MERGED from [oauth-qq-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aaa4856b1655df004765a537a21b27de\oauth-qq-release\AndroidManifest.xml:2:1-11:12
-MERGED from [oauth-sina-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8312b288b278b61de8a46167e0d0b874\oauth-sina-release\AndroidManifest.xml:2:1-9:12
 MERGED from [oauth-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5c2b5c7e6573a339e0275cbb349d57bb\oauth-weixin-release\AndroidManifest.xml:2:1-11:12
 MERGED from [openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:2:1-52:12
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:2:1-112:12
 MERGED from [payment-alipay-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\04381c4abec8adf70ceba775da8b9f0b\payment-alipay-release\AndroidManifest.xml:2:1-11:12
 MERGED from [payment-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a4271cbd62577189b8c04685853b4602\payment-weixin-release\AndroidManifest.xml:2:1-11:12
-MERGED from [share-qq-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d4cd329a71f3a4eda523688c4e5d334a\share-qq-release\AndroidManifest.xml:2:1-11:12
-MERGED from [share-sina-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\3f70c6919b6bdc90dcb5e1e4db2369ed\share-sina-release\AndroidManifest.xml:2:1-11:12
-MERGED from [share-tencent-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\df7313038858b28d79c6c6d69138563c\share-tencent-release\AndroidManifest.xml:2:1-11:12
 MERGED from [share-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e24d55022aab2e61071a5113492e9b7e\share-weixin-release\AndroidManifest.xml:2:1-11:12
-MERGED from [speech-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\557f6b4ffede66be801c31c7caea9be9\speech-release\AndroidManifest.xml:2:1-9:12
-MERGED from [speech_baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\0c7df778add4ec914c9cab1f077c132e\speech_baidu-release\AndroidManifest.xml:2:1-9:12
-MERGED from [speech_ifly-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e036eb8504678a4c0a77887ef1f7a244\speech_ifly-release\AndroidManifest.xml:2:1-12:12
-MERGED from [sqlite-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2c3cfc5ea465b5309f337e46a0b46975\sqlite-release\AndroidManifest.xml:2:1-9:12
-MERGED from [statistics-umeng-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5dec26abc6953aa0178c0441cd60916a\statistics-umeng-release\AndroidManifest.xml:2:1-11:12
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:2:1-45:12
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:2:1-51:12
-MERGED from [torch-plgdtapi-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f65c03bb44ff1767c3057051c412a397\torch-plgdtapi-5.12.3140\AndroidManifest.xml:2:1-11:12
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:2:1-52:12
 MERGED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:20:1-37:12
 MERGED from [webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e317759a69f142bdb911849d676949a\webview-x5-release\AndroidManifest.xml:2:1-13:12
-MERGED from [weex_ad-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\72784c69f75a8af375dacb832435d4ef\weex_ad-release\AndroidManifest.xml:2:1-13:12
 MERGED from [weex_amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2e3515a29211f6b763f4b18e717bad51\weex_amap-release\AndroidManifest.xml:2:1-13:12
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:2:1-19:12
 MERGED from [weex_videoplayer-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4abb91d802886e73bcb61de92f7b4279\weex_videoplayer-release\AndroidManifest.xml:2:1-3:46
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:2:1-19:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ffccf2cce8766b99c945592d3e73e3d3\multidex-1.0.2\AndroidManifest.xml:17:1-22:12
@@ -110,24 +74,12 @@ INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hell
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.CAMERA
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:7:5-65
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:13:5-65
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:13:5-65
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:7:22-62
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:5-81
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:16:5-81
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:16:5-81
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:14:5-81
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:14:5-81
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:15:5-81
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:15:5-81
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:19:5-81
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:19:5-81
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:17:5-81
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:17:5-81
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:8:5-81
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:8:5-81
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:7:5-81
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:7:5-81
 	android:name
@@ -138,8 +90,6 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:9:19-57
 uses-feature#android.hardware.camera.autofocus
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:10:5-70
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:17:5-70
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:17:5-70
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:10:19-67
 uses-permission#android.permission.VIBRATE
@@ -152,80 +102,36 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:12:22-66
 uses-permission#android.permission.USE_FINGERPRINT
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:15:5-73
-MERGED from [fingerprint-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f1a57b3e62a3d8698b0703dc1637da72\fingerprint-release\AndroidManifest.xml:9:5-74
-MERGED from [fingerprint-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f1a57b3e62a3d8698b0703dc1637da72\fingerprint-release\AndroidManifest.xml:9:5-74
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:15:22-71
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:19:5-67
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:18:5-67
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:18:5-67
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:12:5-67
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:12:5-67
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:17:5-67
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:17:5-67
-MERGED from [miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:6:5-67
-MERGED from [miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:6:5-67
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:20:5-67
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:20:5-67
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:11:5-67
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:11:5-67
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:14:5-67
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:14:5-67
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:11:5-67
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:11:5-67
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:5:5-67
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:5:5-67
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:10:5-67
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:10:5-67
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:19:22-64
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:21:5-81
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:16:5-81
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:16:5-81
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:21:5-81
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:21:5-81
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:15:5-81
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:15:5-81
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:21:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:22:5-79
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:17:5-79
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:17:5-79
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:26:5-79
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:26:5-79
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:16:5-79
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:16:5-79
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:22:22-76
 uses-permission#android.permission.WRITE_SETTINGS
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:23:5-73
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:18:5-73
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:18:5-73
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:23:22-70
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:5-79
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:19:5-79
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:19:5-79
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:13:5-79
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:13:5-79
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:18:5-79
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:18:5-79
-MERGED from [miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:4:5-79
-MERGED from [miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:4:5-79
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:13:5-79
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:13:5-79
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:13:5-79
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:13:5-79
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:16:5-79
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:16:5-79
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:12:5-79
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:12:5-79
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:6:5-79
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:6:5-79
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:8:5-79
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:8:5-79
 	android:name
@@ -236,18 +142,6 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:25:22-73
 uses-permission#android.permission.READ_PHONE_STATE
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:5-75
-MERGED from [miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:5:5-75
-MERGED from [miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:5:5-75
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:18:5-75
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:18:5-75
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:14:5-75
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:14:5-75
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:15:5-75
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:15:5-75
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:14:5-75
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:14:5-75
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:14:5-75
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:14:5-75
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:11:5-75
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:11:5-75
 	android:name
@@ -260,38 +154,22 @@ uses-permission#android.permission.READ_LOGS
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:28:5-68
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:28:22-65
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:36:5-75
+MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:20:5-76
+MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:20:5-76
+MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:9:5-76
+MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:9:5-76
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:36:22-73
 uses-permission#android.permission.WAKE_LOCK
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:64:5-68
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:18:5-68
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:18:5-68
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:28:5-68
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:28:5-68
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:64:22-65
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:65:5-81
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:65:22-78
-uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:5-76
-MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:20:5-76
-MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:20:5-76
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:14:5-76
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:14:5-76
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:19:5-76
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:19:5-76
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:12:5-76
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:12:5-76
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:20:5-76
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:20:5-76
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:13:5-76
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:13:5-76
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:7:5-76
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:7:5-76
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:9:5-76
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:9:5-76
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:68:22-73
 uses-permission#android.permission.CALL_PHONE
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:69:5-69
 	android:name
@@ -312,20 +190,14 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:89:22-76
 uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:91:5-80
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:11:5-80
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:11:5-80
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:91:22-77
 uses-permission#android.permission.RECORD_AUDIO
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:99:5-71
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:10:5-71
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:10:5-71
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:99:22-68
 uses-permission#android.permission.CHANGE_NETWORK_STATE
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:102:5-79
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:17:5-79
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:17:5-79
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:102:22-76
 uses-permission#android.permission.RECEIVE_USER_PRESENT
@@ -342,14 +214,10 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:120:22-71
 uses-permission#android.permission.BLUETOOTH
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:121:5-68
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:12:5-68
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:12:5-68
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:121:22-65
 uses-permission#android.permission.GET_TASKS
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:124:5-68
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:23:5-68
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:23:5-68
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:124:22-65
 uses-permission#android.permission.READ_CONTACTS
@@ -378,88 +246,36 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:138:22-64
 application
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:140:5-526:19
-MERGED from [ads-360-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d74e80932f44a7bcbb5cacabba53f1fa\ads-360-release\AndroidManifest.xml:9:5-19:19
-MERGED from [ads-360-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d74e80932f44a7bcbb5cacabba53f1fa\ads-360-release\AndroidManifest.xml:9:5-19:19
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:22:5-55:19
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:22:5-55:19
-MERGED from [amap-libs-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d27da562116564d0297e336e7eb989c3\amap-libs-release\AndroidManifest.xml:9:5-10:19
-MERGED from [amap-libs-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d27da562116564d0297e336e7eb989c3\amap-libs-release\AndroidManifest.xml:9:5-10:19
-MERGED from [aps-dhPush-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\fc855904663f1f0826ae2dd20b421938\aps-dhPush-release\AndroidManifest.xml:9:5-20
-MERGED from [aps-dhPush-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\fc855904663f1f0826ae2dd20b421938\aps-dhPush-release\AndroidManifest.xml:9:5-20
-MERGED from [aps-igexin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b87226af4e6a4d23760910c066def375\aps-igexin-release\AndroidManifest.xml:9:5-20
-MERGED from [aps-igexin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b87226af4e6a4d23760910c066def375\aps-igexin-release\AndroidManifest.xml:9:5-20
-MERGED from [aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:9:5-13:19
-MERGED from [aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:9:5-13:19
-MERGED from [aps-xiaomi-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7b245986f1e07576f1b092d25c0d9cd7\aps-xiaomi-release\AndroidManifest.xml:9:5-20
-MERGED from [aps-xiaomi-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7b245986f1e07576f1b092d25c0d9cd7\aps-xiaomi-release\AndroidManifest.xml:9:5-20
 MERGED from [audio-mp3aac-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5cf55033b4650fbc2b83a33cb9754953\audio-mp3aac-release\AndroidManifest.xml:7:5-20
 MERGED from [audio-mp3aac-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5cf55033b4650fbc2b83a33cb9754953\audio-mp3aac-release\AndroidManifest.xml:7:5-20
-MERGED from [baidu-libs-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\9e5c635365f4fed9f51c15457f6c3172\baidu-libs-release\AndroidManifest.xml:9:5-10:19
-MERGED from [baidu-libs-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\9e5c635365f4fed9f51c15457f6c3172\baidu-libs-release\AndroidManifest.xml:9:5-10:19
-MERGED from [Bluetooth-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\57848f4e1a298b0fa49b27c3aea0852c\Bluetooth-release\AndroidManifest.xml:9:5-20
-MERGED from [Bluetooth-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\57848f4e1a298b0fa49b27c3aea0852c\Bluetooth-release\AndroidManifest.xml:9:5-20
 MERGED from [contacts-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a0eb996b49adf4041e676c7c16086002\contacts-release\AndroidManifest.xml:9:5-20
 MERGED from [contacts-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a0eb996b49adf4041e676c7c16086002\contacts-release\AndroidManifest.xml:9:5-20
-MERGED from [fingerprint-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f1a57b3e62a3d8698b0703dc1637da72\fingerprint-release\AndroidManifest.xml:11:5-20
-MERGED from [fingerprint-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f1a57b3e62a3d8698b0703dc1637da72\fingerprint-release\AndroidManifest.xml:11:5-20
 MERGED from [gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:9:5-20:19
 MERGED from [gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:9:5-20:19
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:16:5-48:19
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:16:5-48:19
 MERGED from [geolocation-amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e5ae8f3ca87da0918c677d0519f74f43\geolocation-amap-release\AndroidManifest.xml:9:5-20
 MERGED from [geolocation-amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e5ae8f3ca87da0918c677d0519f74f43\geolocation-amap-release\AndroidManifest.xml:9:5-20
-MERGED from [geolocation-baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e288d629be85625489b1414b843f7421\geolocation-baidu-release\AndroidManifest.xml:9:5-20
-MERGED from [geolocation-baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e288d629be85625489b1414b843f7421\geolocation-baidu-release\AndroidManifest.xml:9:5-20
-MERGED from [iBeacon-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7a5d35ad6ba86ac8e5b698d5dc207fe3\iBeacon-release\AndroidManifest.xml:9:5-20
-MERGED from [iBeacon-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7a5d35ad6ba86ac8e5b698d5dc207fe3\iBeacon-release\AndroidManifest.xml:9:5-20
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:156:5-316:19
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:156:5-316:19
-MERGED from [media-livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aec33ba198cf3db7df9ef23e41bac40a\media-livepusher-release\AndroidManifest.xml:9:5-20
-MERGED from [media-livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aec33ba198cf3db7df9ef23e41bac40a\media-livepusher-release\AndroidManifest.xml:9:5-20
 MERGED from [media-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\85c238f7aa31d68747ac4e247bcf8108\media-release\AndroidManifest.xml:9:5-20
 MERGED from [media-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\85c238f7aa31d68747ac4e247bcf8108\media-release\AndroidManifest.xml:9:5-20
 MERGED from [messaging-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17dda3ff4ff35f6d7d9b64690f163025\messaging-release\AndroidManifest.xml:9:5-20
 MERGED from [messaging-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17dda3ff4ff35f6d7d9b64690f163025\messaging-release\AndroidManifest.xml:9:5-20
-MERGED from [oauth-miui-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4724f0f7424cc5722fabc69729d14f65\oauth-miui-release\AndroidManifest.xml:9:5-20
-MERGED from [oauth-miui-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4724f0f7424cc5722fabc69729d14f65\oauth-miui-release\AndroidManifest.xml:9:5-20
-MERGED from [oauth-qq-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aaa4856b1655df004765a537a21b27de\oauth-qq-release\AndroidManifest.xml:9:5-20
-MERGED from [oauth-qq-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aaa4856b1655df004765a537a21b27de\oauth-qq-release\AndroidManifest.xml:9:5-20
 MERGED from [oauth-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5c2b5c7e6573a339e0275cbb349d57bb\oauth-weixin-release\AndroidManifest.xml:9:5-20
 MERGED from [oauth-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5c2b5c7e6573a339e0275cbb349d57bb\oauth-weixin-release\AndroidManifest.xml:9:5-20
 MERGED from [openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:12:5-50:19
 MERGED from [openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:12:5-50:19
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:22:5-110:19
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:22:5-110:19
 MERGED from [payment-alipay-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\04381c4abec8adf70ceba775da8b9f0b\payment-alipay-release\AndroidManifest.xml:9:5-20
 MERGED from [payment-alipay-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\04381c4abec8adf70ceba775da8b9f0b\payment-alipay-release\AndroidManifest.xml:9:5-20
 MERGED from [payment-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a4271cbd62577189b8c04685853b4602\payment-weixin-release\AndroidManifest.xml:9:5-20
 MERGED from [payment-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a4271cbd62577189b8c04685853b4602\payment-weixin-release\AndroidManifest.xml:9:5-20
-MERGED from [share-qq-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d4cd329a71f3a4eda523688c4e5d334a\share-qq-release\AndroidManifest.xml:9:5-20
-MERGED from [share-qq-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d4cd329a71f3a4eda523688c4e5d334a\share-qq-release\AndroidManifest.xml:9:5-20
-MERGED from [share-sina-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\3f70c6919b6bdc90dcb5e1e4db2369ed\share-sina-release\AndroidManifest.xml:9:5-20
-MERGED from [share-sina-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\3f70c6919b6bdc90dcb5e1e4db2369ed\share-sina-release\AndroidManifest.xml:9:5-20
-MERGED from [share-tencent-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\df7313038858b28d79c6c6d69138563c\share-tencent-release\AndroidManifest.xml:9:5-20
-MERGED from [share-tencent-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\df7313038858b28d79c6c6d69138563c\share-tencent-release\AndroidManifest.xml:9:5-20
 MERGED from [share-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e24d55022aab2e61071a5113492e9b7e\share-weixin-release\AndroidManifest.xml:9:5-20
 MERGED from [share-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e24d55022aab2e61071a5113492e9b7e\share-weixin-release\AndroidManifest.xml:9:5-20
-MERGED from [speech-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\557f6b4ffede66be801c31c7caea9be9\speech-release\AndroidManifest.xml:7:5-20
-MERGED from [speech-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\557f6b4ffede66be801c31c7caea9be9\speech-release\AndroidManifest.xml:7:5-20
-MERGED from [speech_ifly-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e036eb8504678a4c0a77887ef1f7a244\speech_ifly-release\AndroidManifest.xml:9:5-10:19
-MERGED from [speech_ifly-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e036eb8504678a4c0a77887ef1f7a244\speech_ifly-release\AndroidManifest.xml:9:5-10:19
-MERGED from [statistics-umeng-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5dec26abc6953aa0178c0441cd60916a\statistics-umeng-release\AndroidManifest.xml:9:5-20
-MERGED from [statistics-umeng-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5dec26abc6953aa0178c0441cd60916a\statistics-umeng-release\AndroidManifest.xml:9:5-20
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:21:5-43:19
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:21:5-43:19
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:30:5-49:19
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:30:5-49:19
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:20:5-50:19
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:20:5-50:19
 MERGED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:29:5-35:19
 MERGED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:29:5-35:19
 MERGED from [webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e317759a69f142bdb911849d676949a\webview-x5-release\AndroidManifest.xml:7:5-11:19
 MERGED from [webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e317759a69f142bdb911849d676949a\webview-x5-release\AndroidManifest.xml:7:5-11:19
-MERGED from [weex_ad-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\72784c69f75a8af375dacb832435d4ef\weex_ad-release\AndroidManifest.xml:11:5-20
-MERGED from [weex_ad-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\72784c69f75a8af375dacb832435d4ef\weex_ad-release\AndroidManifest.xml:11:5-20
 MERGED from [weex_amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2e3515a29211f6b763f4b18e717bad51\weex_amap-release\AndroidManifest.xml:11:5-20
 MERGED from [weex_amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2e3515a29211f6b763f4b18e717bad51\weex_amap-release\AndroidManifest.xml:11:5-20
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:13:5-17:19
@@ -493,7 +309,7 @@ MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Administrator\.gradl
 	android:icon
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:143:13-42
 	android:usesCleartextTraffic
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:16:18-53
+		ADDED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:159:9-44
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:141:9-63
 activity#io.dcloud.PandoraEntry
@@ -548,13 +364,8 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:177:13-69
 meta-data#android.support.FILE_PROVIDER_PATHS
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:181:13-183:64
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:40:13-43:37
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:40:13-43:37
 	android:resource
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:183:17-61
-		REJECTED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:42:17-57
-	tools:replace
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:503:17-49
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:182:17-67
 meta-data#com.baidu.lbsapi.API_KEY
@@ -563,64 +374,12 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:190:13-61
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:189:13-52
-service#com.baidu.location.f
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:192:9-195:40
-	android:process
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:195:13-38
-	android:enabled
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:194:13-35
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:193:13-48
-meta-data#com.amap.api.v2.apikey
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:197:9-198:63
-	android:value
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:198:13-61
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:197:20-57
-service#com.amap.api.location.APSService
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:199:9-68
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:199:18-65
 meta-data#QQ_APPID
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:204:9-206:42
 	android:value
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:206:13-39
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:205:13-36
-activity#com.tencent.tauth.AuthActivity
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:208:9-220:20
-	android:launchMode
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:210:13-44
-	android:noHistory
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:211:13-37
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:209:13-58
-intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:1104455702
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:212:13-219:29
-action#android.intent.action.VIEW
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:213:17-69
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:213:25-66
-category#android.intent.category.DEFAULT
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:17-76
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:215:27-73
-category#android.intent.category.BROWSABLE
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:216:17-78
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:216:27-75
-data
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:17-53
-	android:scheme
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:218:23-50
-activity#com.tencent.connect.common.AssistActivity
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:221:9-224:75
-	android:screenOrientation
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:223:13-49
-	android:theme
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:224:13-72
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:222:13-69
 meta-data#IFLY_APPKEY
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:238:9-240:40
 	android:value
@@ -645,112 +404,6 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:258:13-51
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:257:13-42
-service#com.igexin.sdk.PushService
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:260:9-268:19
-	android:process
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:264:35-65
-	android:label
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:263:13-47
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:262:13-36
-	android:permission
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:264:13-34
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:261:13-54
-intent-filter#action:name:com.igexin.sdk.action.service.message
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:265:13-267:29
-action#com.igexin.sdk.action.service.message
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:266:17-80
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:266:25-77
-receiver#com.igexin.sdk.PushReceiver
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:270:9-280:20
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:270:19-61
-intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED+action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MEDIA_MOUNTED+action:name:android.intent.action.USER_PRESENT+action:name:android.net.conn.CONNECTIVITY_CHANGE+action:name:com.igexin.sdk.action.refreshls
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:271:13-279:29
-action#android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:272:17-79
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:272:25-76
-action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:273:17-79
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:273:25-76
-action#android.intent.action.USER_PRESENT
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:274:17-77
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:274:25-74
-action#com.igexin.sdk.action.refreshls
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:275:17-74
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:275:25-71
-action#android.intent.action.MEDIA_MOUNTED
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:276:17-78
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:276:25-75
-action#android.intent.action.ACTION_POWER_CONNECTED
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:277:17-87
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:277:25-84
-action#android.intent.action.ACTION_POWER_DISCONNECTED
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:278:17-90
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:278:25-87
-activity#com.igexin.sdk.PushActivity
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:282:9-288:75
-	android:process
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:286:13-43
-	android:excludeFromRecents
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:284:13-46
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:285:13-37
-	android:theme
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:288:13-72
-	android:taskAffinity
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:287:13-67
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:283:13-55
-activity#com.igexin.sdk.GActivity
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:289:9-295:75
-	android:process
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:293:13-43
-	android:excludeFromRecents
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:291:13-46
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:292:13-36
-	android:theme
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:295:13-72
-	android:taskAffinity
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:294:13-67
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:290:13-52
-receiver#io.dcloud.feature.apsGt.GTNotificationReceiver
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:297:9-305:20
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:297:19-80
-intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:io.dcloud.HelloH5.__CLEAR_NOTIFICATION+action:name:io.dcloud.HelloH5.__CLILK_NOTIFICATION+action:name:io.dcloud.HelloH5.__CREATE_NOTIFICATION+action:name:io.dcloud.HelloH5.__REMOVE_NOTIFICATION
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:298:13-304:29
-action#io.dcloud.HelloH5.__CREATE_NOTIFICATION
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:300:17-82
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:300:25-79
-action#io.dcloud.HelloH5.__REMOVE_NOTIFICATION
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:301:17-82
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:301:25-79
-action#io.dcloud.HelloH5.__CLEAR_NOTIFICATION
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:302:17-81
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:302:25-78
-action#io.dcloud.HelloH5.__CLILK_NOTIFICATION
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:303:17-81
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:303:25-78
-service#io.dcloud.feature.apsGt.GTNormalIntentService
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:306:9-307:75
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:307:13-73
 meta-data#SINA_REDIRECT_URI
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:315:9-317:53
 	android:value
@@ -787,12 +440,6 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:337:13-62
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:336:13-42
-activity#io.dcloud.share.tencent.WebAuthorize
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:339:9-341:72
-	android:theme
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:341:13-60
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:340:13-64
 meta-data#WX_SECRET
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:343:9-345:64
 	android:value
@@ -817,6 +464,18 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:351:13-50
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:scheme:wx0411fa6a39d61297
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:355:13-361:29
+action#android.intent.action.VIEW
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:356:17-69
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:356:25-66
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:358:17-76
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:358:27-73
+data
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:360:17-61
+	android:scheme
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:360:23-58
 activity#io.dcloud.HelloH5.wxapi.WXPayEntryActivity
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:366:9-369:46
 	android:launchMode
@@ -843,118 +502,6 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:385:13-40
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:384:13-45
-activity#com.xiaomi.account.openauth.AuthorizeActivity
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:387:9-82
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:387:19-79
-service#com.xiaomi.push.service.XMPushService
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:398:9-401:46
-	android:process
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:401:13-43
-	android:enabled
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:400:13-35
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:399:13-65
-service#com.xiaomi.push.service.XMJobService
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:402:9-407:46
-	android:process
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:407:13-43
-	android:enabled
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:404:13-35
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:405:13-37
-	android:permission
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:406:13-69
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:403:13-64
-service#com.xiaomi.mipush.sdk.PushMessageHandler
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:408:9-411:39
-	android:enabled
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:410:13-35
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:411:13-36
-	android:permission
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:409:69-90
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:409:13-68
-service#com.xiaomi.mipush.sdk.MessageHandleService
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:412:9-414:38
-	android:enabled
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:414:13-35
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:413:13-70
-receiver#com.xiaomi.push.service.receivers.NetworkStatusReceiver
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:416:9-424:20
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:418:13-36
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:417:13-83
-intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE+category:name:android.intent.category.DEFAULT
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:419:13-423:29
-receiver#com.xiaomi.push.service.receivers.PingReceiver
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:425:9-432:20
-	android:process
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:428:13-43
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:427:13-37
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:426:13-74
-intent-filter#action:name:com.xiaomi.push.PING_TIMER
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:429:13-431:29
-action#com.xiaomi.push.PING_TIMER
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:430:17-69
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:430:25-66
-receiver#io.dcloud.feature.apsXm.XMMessageReceiver
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:433:9-445:20
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:435:13-36
-	android:permission
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:434:70-91
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:434:13-69
-intent-filter#action:name:com.xiaomi.mipush.RECEIVE_MESSAGE
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:436:13-438:29
-action#com.xiaomi.mipush.RECEIVE_MESSAGE
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:437:17-76
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:437:25-73
-intent-filter#action:name:com.xiaomi.mipush.MESSAGE_ARRIVED
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:439:13-441:29
-action#com.xiaomi.mipush.MESSAGE_ARRIVED
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:440:17-76
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:440:25-73
-intent-filter#action:name:com.xiaomi.mipush.ERROR
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:442:13-444:29
-action#com.xiaomi.mipush.ERROR
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:443:17-66
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:443:25-63
-receiver#io.dcloud.feature.apsXm.XMNotificationReceiver
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:446:9-456:20
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:448:13-36
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:447:13-74
-intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:com.HBuilder.integrate.__CLEAR_NOTIFICATION+action:name:com.HBuilder.integrate.__CLILK_NOTIFICATION+action:name:com.HBuilder.integrate.__CREATE_NOTIFICATION+action:name:com.HBuilder.integrate.__REMOVE_NOTIFICATION
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:449:13-455:29
-action#com.HBuilder.integrate.__CREATE_NOTIFICATION
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:451:17-87
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:451:25-84
-action#com.HBuilder.integrate.__REMOVE_NOTIFICATION
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:452:17-87
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:452:25-84
-action#com.HBuilder.integrate.__CLEAR_NOTIFICATION
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:453:17-86
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:453:25-83
-action#com.HBuilder.integrate.__CLILK_NOTIFICATION
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:454:17-86
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:454:25-83
 meta-data#com.baidu.speech.APP_ID
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:464:9-85
 	android:value
@@ -973,12 +520,6 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:466:63-111
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:466:20-62
-service#com.baidu.speech.VoiceRecognitionService
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:467:9-101
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:467:74-98
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:467:18-73
 activity#io.dcloud.PandoraEntryActivity
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:470:9-494:20
 	android:screenOrientation
@@ -999,138 +540,44 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:471:13-58
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:h56131bcf
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:480:13-493:29
-provider#io.dcloud.gdt.GdtFileProvider
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:495:9-504:20
-	android:grantUriPermissions
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:499:13-47
-	android:authorities
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:497:13-65
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:498:13-37
+category#android.intent.category.BROWSABLE
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:485:17-486:72
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:496:13-57
-provider#com.bytedance.sdk.openadsdk.TTFileProvider
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:506:9-515:20
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:35:9-44:20
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:35:9-44:20
-	android:grantUriPermissions
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:510:13-47
-	android:authorities
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:508:13-67
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:509:13-37
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:507:13-70
-provider#com.bytedance.sdk.openadsdk.multipro.TTMultiProvider
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:517:9-520:40
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:45:9-48:40
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:45:9-48:40
-	android:authorities
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:519:13-68
-	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:520:13-37
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:518:13-80
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:486:21-69
 uses-sdk
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
-MERGED from [ads-360-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d74e80932f44a7bcbb5cacabba53f1fa\ads-360-release\AndroidManifest.xml:7:5-44
-MERGED from [ads-360-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d74e80932f44a7bcbb5cacabba53f1fa\ads-360-release\AndroidManifest.xml:7:5-44
-MERGED from [ads-csj-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d8e7268fd45c7550e51d570689d37b6a\ads-csj-release\AndroidManifest.xml:8:5-44
-MERGED from [ads-csj-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d8e7268fd45c7550e51d570689d37b6a\ads-csj-release\AndroidManifest.xml:8:5-44
-MERGED from [ads-gdt-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\9592a228dd030f5eb1fc27a0bf5092d1\ads-gdt-release\AndroidManifest.xml:8:5-44
-MERGED from [ads-gdt-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\9592a228dd030f5eb1fc27a0bf5092d1\ads-gdt-release\AndroidManifest.xml:8:5-44
-MERGED from [ads-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e51dad71847ac50e339af61be03d12d4\ads-release\AndroidManifest.xml:7:5-44
-MERGED from [ads-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e51dad71847ac50e339af61be03d12d4\ads-release\AndroidManifest.xml:7:5-44
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:7:5-9:41
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:7:5-9:41
-MERGED from [amap-libs-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d27da562116564d0297e336e7eb989c3\amap-libs-release\AndroidManifest.xml:7:5-44
-MERGED from [amap-libs-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d27da562116564d0297e336e7eb989c3\amap-libs-release\AndroidManifest.xml:7:5-44
 MERGED from [android-gif-drawable-release@1.2.17.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\97546723e3e189fe5d83ae766f26d4ac\android-gif-drawable-release@1.2.17\AndroidManifest.xml:6:5-8:41
 MERGED from [android-gif-drawable-release@1.2.17.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\97546723e3e189fe5d83ae766f26d4ac\android-gif-drawable-release@1.2.17\AndroidManifest.xml:6:5-8:41
-MERGED from [aps-dhPush-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\fc855904663f1f0826ae2dd20b421938\aps-dhPush-release\AndroidManifest.xml:7:5-44
-MERGED from [aps-dhPush-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\fc855904663f1f0826ae2dd20b421938\aps-dhPush-release\AndroidManifest.xml:7:5-44
-MERGED from [aps-igexin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b87226af4e6a4d23760910c066def375\aps-igexin-release\AndroidManifest.xml:7:5-44
-MERGED from [aps-igexin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b87226af4e6a4d23760910c066def375\aps-igexin-release\AndroidManifest.xml:7:5-44
-MERGED from [aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:7:5-44
-MERGED from [aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:7:5-44
-MERGED from [aps-xiaomi-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7b245986f1e07576f1b092d25c0d9cd7\aps-xiaomi-release\AndroidManifest.xml:7:5-44
-MERGED from [aps-xiaomi-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7b245986f1e07576f1b092d25c0d9cd7\aps-xiaomi-release\AndroidManifest.xml:7:5-44
-MERGED from [baidu-libs-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\9e5c635365f4fed9f51c15457f6c3172\baidu-libs-release\AndroidManifest.xml:7:5-44
-MERGED from [baidu-libs-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\9e5c635365f4fed9f51c15457f6c3172\baidu-libs-release\AndroidManifest.xml:7:5-44
-MERGED from [Bluetooth-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\57848f4e1a298b0fa49b27c3aea0852c\Bluetooth-release\AndroidManifest.xml:7:5-44
-MERGED from [Bluetooth-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\57848f4e1a298b0fa49b27c3aea0852c\Bluetooth-release\AndroidManifest.xml:7:5-44
 MERGED from [contacts-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a0eb996b49adf4041e676c7c16086002\contacts-release\AndroidManifest.xml:7:5-44
 MERGED from [contacts-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a0eb996b49adf4041e676c7c16086002\contacts-release\AndroidManifest.xml:7:5-44
-MERGED from [fingerprint-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f1a57b3e62a3d8698b0703dc1637da72\fingerprint-release\AndroidManifest.xml:7:5-44
-MERGED from [fingerprint-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f1a57b3e62a3d8698b0703dc1637da72\fingerprint-release\AndroidManifest.xml:7:5-44
 MERGED from [gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:7:5-44
 MERGED from [gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:7:5-44
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:7:5-9:41
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:7:5-9:41
 MERGED from [geolocation-amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e5ae8f3ca87da0918c677d0519f74f43\geolocation-amap-release\AndroidManifest.xml:7:5-44
 MERGED from [geolocation-amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e5ae8f3ca87da0918c677d0519f74f43\geolocation-amap-release\AndroidManifest.xml:7:5-44
-MERGED from [geolocation-baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e288d629be85625489b1414b843f7421\geolocation-baidu-release\AndroidManifest.xml:7:5-44
-MERGED from [geolocation-baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e288d629be85625489b1414b843f7421\geolocation-baidu-release\AndroidManifest.xml:7:5-44
-MERGED from [iBeacon-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7a5d35ad6ba86ac8e5b698d5dc207fe3\iBeacon-release\AndroidManifest.xml:7:5-44
-MERGED from [iBeacon-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7a5d35ad6ba86ac8e5b698d5dc207fe3\iBeacon-release\AndroidManifest.xml:7:5-44
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:7:5-44
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:7:5-44
 MERGED from [map-amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ff92549be37ac3eee74ee82d6a3cb1ef\map-amap-release\AndroidManifest.xml:7:5-44
 MERGED from [map-amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ff92549be37ac3eee74ee82d6a3cb1ef\map-amap-release\AndroidManifest.xml:7:5-44
-MERGED from [map-baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d613ef46d96de468bb1f7eaffca028ab\map-baidu-release\AndroidManifest.xml:7:5-44
-MERGED from [map-baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d613ef46d96de468bb1f7eaffca028ab\map-baidu-release\AndroidManifest.xml:7:5-44
-MERGED from [media-livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aec33ba198cf3db7df9ef23e41bac40a\media-livepusher-release\AndroidManifest.xml:7:5-44
-MERGED from [media-livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aec33ba198cf3db7df9ef23e41bac40a\media-livepusher-release\AndroidManifest.xml:7:5-44
 MERGED from [media-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\85c238f7aa31d68747ac4e247bcf8108\media-release\AndroidManifest.xml:7:5-44
 MERGED from [media-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\85c238f7aa31d68747ac4e247bcf8108\media-release\AndroidManifest.xml:7:5-44
 MERGED from [messaging-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17dda3ff4ff35f6d7d9b64690f163025\messaging-release\AndroidManifest.xml:7:5-44
 MERGED from [messaging-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17dda3ff4ff35f6d7d9b64690f163025\messaging-release\AndroidManifest.xml:7:5-44
-MERGED from [oauth-miui-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4724f0f7424cc5722fabc69729d14f65\oauth-miui-release\AndroidManifest.xml:7:5-44
-MERGED from [oauth-miui-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4724f0f7424cc5722fabc69729d14f65\oauth-miui-release\AndroidManifest.xml:7:5-44
-MERGED from [oauth-qq-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aaa4856b1655df004765a537a21b27de\oauth-qq-release\AndroidManifest.xml:7:5-44
-MERGED from [oauth-qq-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aaa4856b1655df004765a537a21b27de\oauth-qq-release\AndroidManifest.xml:7:5-44
-MERGED from [oauth-sina-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8312b288b278b61de8a46167e0d0b874\oauth-sina-release\AndroidManifest.xml:7:5-44
-MERGED from [oauth-sina-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8312b288b278b61de8a46167e0d0b874\oauth-sina-release\AndroidManifest.xml:7:5-44
 MERGED from [oauth-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5c2b5c7e6573a339e0275cbb349d57bb\oauth-weixin-release\AndroidManifest.xml:7:5-44
 MERGED from [oauth-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5c2b5c7e6573a339e0275cbb349d57bb\oauth-weixin-release\AndroidManifest.xml:7:5-44
 MERGED from [openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:8:5-10:41
 MERGED from [openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:8:5-10:41
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:8:5-11:591
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:8:5-11:591
 MERGED from [payment-alipay-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\04381c4abec8adf70ceba775da8b9f0b\payment-alipay-release\AndroidManifest.xml:7:5-44
 MERGED from [payment-alipay-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\04381c4abec8adf70ceba775da8b9f0b\payment-alipay-release\AndroidManifest.xml:7:5-44
 MERGED from [payment-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a4271cbd62577189b8c04685853b4602\payment-weixin-release\AndroidManifest.xml:7:5-44
 MERGED from [payment-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a4271cbd62577189b8c04685853b4602\payment-weixin-release\AndroidManifest.xml:7:5-44
-MERGED from [share-qq-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d4cd329a71f3a4eda523688c4e5d334a\share-qq-release\AndroidManifest.xml:7:5-44
-MERGED from [share-qq-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d4cd329a71f3a4eda523688c4e5d334a\share-qq-release\AndroidManifest.xml:7:5-44
-MERGED from [share-sina-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\3f70c6919b6bdc90dcb5e1e4db2369ed\share-sina-release\AndroidManifest.xml:7:5-44
-MERGED from [share-sina-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\3f70c6919b6bdc90dcb5e1e4db2369ed\share-sina-release\AndroidManifest.xml:7:5-44
-MERGED from [share-tencent-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\df7313038858b28d79c6c6d69138563c\share-tencent-release\AndroidManifest.xml:7:5-44
-MERGED from [share-tencent-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\df7313038858b28d79c6c6d69138563c\share-tencent-release\AndroidManifest.xml:7:5-44
 MERGED from [share-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e24d55022aab2e61071a5113492e9b7e\share-weixin-release\AndroidManifest.xml:7:5-44
 MERGED from [share-weixin-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e24d55022aab2e61071a5113492e9b7e\share-weixin-release\AndroidManifest.xml:7:5-44
-MERGED from [speech_baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\0c7df778add4ec914c9cab1f077c132e\speech_baidu-release\AndroidManifest.xml:7:5-44
-MERGED from [speech_baidu-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\0c7df778add4ec914c9cab1f077c132e\speech_baidu-release\AndroidManifest.xml:7:5-44
-MERGED from [speech_ifly-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e036eb8504678a4c0a77887ef1f7a244\speech_ifly-release\AndroidManifest.xml:7:5-44
-MERGED from [speech_ifly-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e036eb8504678a4c0a77887ef1f7a244\speech_ifly-release\AndroidManifest.xml:7:5-44
-MERGED from [sqlite-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2c3cfc5ea465b5309f337e46a0b46975\sqlite-release\AndroidManifest.xml:7:5-44
-MERGED from [sqlite-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2c3cfc5ea465b5309f337e46a0b46975\sqlite-release\AndroidManifest.xml:7:5-44
-MERGED from [statistics-umeng-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5dec26abc6953aa0178c0441cd60916a\statistics-umeng-release\AndroidManifest.xml:7:5-44
-MERGED from [statistics-umeng-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5dec26abc6953aa0178c0441cd60916a\statistics-umeng-release\AndroidManifest.xml:7:5-44
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:7:5-9:41
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:7:5-9:41
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:8:5-11:69
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:8:5-11:69
-MERGED from [torch-plgdtapi-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f65c03bb44ff1767c3057051c412a397\torch-plgdtapi-5.12.3140\AndroidManifest.xml:7:5-9:41
-MERGED from [torch-plgdtapi-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f65c03bb44ff1767c3057051c412a397\torch-plgdtapi-5.12.3140\AndroidManifest.xml:7:5-9:41
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:7:5-9:41
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:7:5-9:41
 MERGED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:25:5-27:41
 MERGED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:25:5-27:41
-MERGED from [weex_ad-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\72784c69f75a8af375dacb832435d4ef\weex_ad-release\AndroidManifest.xml:7:5-9:41
-MERGED from [weex_ad-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\72784c69f75a8af375dacb832435d4ef\weex_ad-release\AndroidManifest.xml:7:5-9:41
 MERGED from [weex_amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2e3515a29211f6b763f4b18e717bad51\weex_amap-release\AndroidManifest.xml:7:5-9:41
 MERGED from [weex_amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2e3515a29211f6b763f4b18e717bad51\weex_amap-release\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ffccf2cce8766b99c945592d3e73e3d3\multidex-1.0.2\AndroidManifest.xml:20:5-43
@@ -1194,7 +641,7 @@ MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Administrator\.gradle\cac
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:11:9-588
+		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
@@ -1219,12 +666,6 @@ MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\t
 		ADDED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:12:9-34
 uses-library#org.apache.http.legacy
 ADDED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:23:9-25:40
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:17:9-19:40
-MERGED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:17:9-19:40
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:31:9-33:40
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:31:9-33:40
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:21:9-23:40
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:21:9-23:40
 MERGED from [webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e317759a69f142bdb911849d676949a\webview-x5-release\AndroidManifest.xml:8:9-10:40
 MERGED from [webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e317759a69f142bdb911849d676949a\webview-x5-release\AndroidManifest.xml:8:9-10:40
 MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:14:9-16:40
@@ -1277,17 +718,8 @@ ADDED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\
 		ADDED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:53:13-72
 	android:name
 		ADDED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:50:13-67
-service#io.dcloud.feature.aps.ApsActionService
-ADDED from [aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:10:9-12:40
-	android:exported
-		ADDED from [aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:12:13-37
-	android:name
-		ADDED from [aps-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad821d497c2b60106381faef5a125b55\aps-release\AndroidManifest.xml:11:13-66
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 IMPLIED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12 reason: io.dcloud.feature requested WRITE_EXTERNAL_STORAGE
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:16:5-88
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:9:5-80
-MERGED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:9:5-80
 activity#com.dmcbig.mediapicker.PickerActivity
 ADDED from [gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:10:9-14:63
 	android:windowSoftInputMode
@@ -1308,80 +740,6 @@ ADDED from [gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\tr
 		ADDED from [gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:18:13-55
 	android:name
 		ADDED from [gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:16:13-66
-uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
-ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:11:5-83
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:19:5-83
-MERGED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:19:5-83
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:22:5-83
-MERGED from [torch-plcsjsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c532f17058131bf54e55e3a4bb2f053f\torch-plcsjsdk-5.12.3140\AndroidManifest.xml:22:5-83
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:18:5-83
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:18:5-83
-	android:name
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:11:22-80
-service#com.qq.e.comm.DownloadService
-ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:20:9-23:43
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:25:9-27:40
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:25:9-27:40
-	android:multiprocess
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:23:13-40
-	android:exported
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:22:13-37
-	android:name
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:21:13-57
-activity#com.qq.e.ads.ADActivity
-ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:24:9-27:43
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:29:9-31:86
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:29:9-31:86
-	android:multiprocess
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:27:13-40
-	android:configChanges
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:26:13-83
-	android:name
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:25:13-51
-activity#com.qq.e.ads.PortraitADActivity
-ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:28:9-32:52
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:32:9-35:52
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:32:9-35:52
-	android:screenOrientation
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:32:13-49
-	android:multiprocess
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:31:13-40
-	android:configChanges
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:30:13-83
-	android:name
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:29:13-59
-activity#com.qq.e.ads.LandscapeADActivity
-ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:33:9-37:53
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:36:9-39:53
-MERGED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:36:9-39:53
-	android:screenOrientation
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:37:13-50
-	android:multiprocess
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:36:13-40
-	android:configChanges
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:35:13-83
-	android:name
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:34:13-60
-activity#com.qq.e.ads.RewardvideoPortraitADActivity
-ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:38:9-42:64
-	android:multiprocess
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:41:13-40
-	android:configChanges
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:40:13-83
-	android:theme
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:42:13-61
-	android:name
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:39:13-70
-activity#com.qq.e.ads.RewardvideoLandscapeADActivity
-ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:43:9-47:64
-	android:multiprocess
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:46:13-40
-	android:configChanges
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:45:13-83
-	android:theme
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:47:13-61
-	android:name
-		ADDED from [GDTSDK.unionNormal.4.110.980.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\874ac5c4c75ac8dc366cde4d9de8ef4d\GDTSDK.unionNormal.4.110.980\AndroidManifest.xml:44:13-71
 uses-permission#com.huawei.android.launcher.permission.CHANGE_BADGE
 ADDED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:24:5-91
 	android:name
@@ -1578,10 +936,6 @@ ADDED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\tr
 		ADDED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:315:13-32
 	android:name
 		ADDED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:314:13-46
-uses-permission#com.asus.msa.SupplementaryDID.ACCESS
-ADDED from [miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:8:5-76
-	android:name
-		ADDED from [miit_mdid_1.0.10.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7367854a68c0679b093cdc7939376fe7\miit_mdid_1.0.10\AndroidManifest.xml:8:22-73
 activity#com.sina.weibo.sdk.web.WeiboSdkWebActivity
 ADDED from [openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:13:9-18:20
 	android:windowSoftInputMode
@@ -1640,178 +994,6 @@ ADDED from [openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transfo
 		ADDED from [openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:48:13-42
 	android:name
 		ADDED from [openDefault-4.4.1.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\db285d80abde3ea3cc314e27c54537b7\openDefault-4.4.1\AndroidManifest.xml:44:13-75
-android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
-MERGED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:16:5-88
-service#com.ss.android.socialbase.downloader.notification.DownloadNotificationService
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:25:9-113
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:25:18-110
-service#com.ss.android.socialbase.downloader.downloader.DownloadService
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:26:9-99
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:26:18-96
-service#com.ss.android.socialbase.downloader.downloader.IndependentProcessDownloadService
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:27:9-33:19
-	android:process
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:29:13-42
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:28:13-109
-intent-filter#action:name:com.ss.android.socialbase.downloader.remote
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:30:13-32:29
-action#com.ss.android.socialbase.downloader.remote
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:31:17-86
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:31:25-83
-service#com.ss.android.socialbase.downloader.impls.DownloadHandleService
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:34:9-100
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:34:18-97
-service#com.ss.android.socialbase.appdownloader.DownloadHandlerService
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:42:9-98
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:42:18-95
-activity#com.ss.android.socialbase.appdownloader.view.DownloadSizeLimitActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:58:9-61:59
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:60:13-44
-	android:theme
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:61:13-56
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:59:13-98
-activity#com.ss.android.socialbase.appdownloader.view.DownloadTaskDeleteActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:62:9-65:59
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:64:13-44
-	android:theme
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:65:13-56
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:63:13-99
-activity#com.ss.android.downloadlib.activity.TTDelegateActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:66:9-69:75
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:68:13-44
-	android:theme
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:69:13-72
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:67:13-82
-receiver#com.ss.android.downloadlib.core.download.DownloadReceiver
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:71:9-94
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:71:19-91
-receiver#com.bytedance.embedapplog.collector.Collector
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:72:9-75:39
-	android:enabled
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:74:13-35
-	android:exported
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:75:13-36
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:73:13-73
-activity#com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:76:9-79:47
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:79:13-44
-	android:configChanges
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:78:13-74
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:77:13-86
-activity#com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:80:9-83:47
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:83:13-44
-	android:configChanges
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:82:13-74
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:81:13-94
-activity#com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:84:9-87:47
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:87:13-44
-	android:configChanges
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:86:13-74
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:85:13-91
-activity#com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:88:9-91:47
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:91:13-44
-	android:configChanges
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:90:13-74
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:89:13-86
-activity#com.bytedance.sdk.openadsdk.activity.TTRewardExpressVideoActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:92:9-95:47
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:95:13-44
-	android:configChanges
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:94:13-74
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:93:13-93
-activity#com.bytedance.sdk.openadsdk.activity.TTFullScreenVideoActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:96:9-99:47
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:99:13-44
-	android:configChanges
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:98:13-74
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:97:13-90
-activity#com.bytedance.sdk.openadsdk.activity.TTFullScreenExpressVideoActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:100:9-103:47
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:103:13-44
-	android:configChanges
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:102:13-74
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:101:13-97
-activity#com.bytedance.sdk.openadsdk.activity.TTDelegateActivity
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:104:9-107:75
-	android:launchMode
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:106:13-44
-	android:theme
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:107:13-72
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:105:13-83
-service#com.bytedance.sdk.openadsdk.multipro.aidl.BinderPoolService
-ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:109:9-95
-	android:name
-		ADDED from [open_ad_sdk.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\17fcf56ef7ed7046e508022db6fc41ad\open_ad_sdk\AndroidManifest.xml:109:18-92
-provider#com.ak.torch.shell.provider.TorchProvider
-ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:24:9-28:50
-	android:grantUriPermissions
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:28:13-47
-	android:authorities
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:26:13-70
-	android:exported
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:27:13-37
-	android:name
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:25:13-69
-provider#com.ak.torch.shell.provider.TorchFileProvider
-ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:29:9-37:20
-	android:grantUriPermissions
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:33:13-47
-	android:authorities
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:31:13-70
-	android:exported
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:32:13-37
-	android:name
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:30:13-73
-activity#com.ak.torch.shell.landingpage.TorchActivity
-ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:39:9-42:40
-	android:exported
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:42:13-37
-	android:configChanges
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:41:13-74
-	android:name
-		ADDED from [torch-adcore-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4ea099afbd56e07219a2f4fa2e109e6a\torch-adcore-5.12.3140\AndroidManifest.xml:40:13-72
-provider#android.support.v4.content.FileProvider
-ADDED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:41:9-49:20
-	android:grantUriPermissions
-		ADDED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:45:13-47
-	android:authorities
-		ADDED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:43:13-64
-	android:exported
-		ADDED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:44:13-37
-	android:name
-		ADDED from [torch-plgdtsdk-5.12.3140.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8805348d71c696fab74a1c372cf340b0\torch-plgdtsdk-5.12.3140\AndroidManifest.xml:42:13-67
 receiver#com.taobao.weex.WXGlobalEventReceiver
 ADDED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:30:9-34:20
 	android:enabled
@@ -1820,10 +1002,6 @@ ADDED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms
 		ADDED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:33:13-37
 	android:name
 		ADDED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:31:13-65
-uses-feature#android.hardware.Camera
-ADDED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:16:5-60
-	android:name
-		ADDED from [weex_livepusher-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bb79186a91da62e571d122902770684e\weex_livepusher-release\AndroidManifest.xml:16:19-57
 meta-data#android.support.VERSION
 ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\6b7a0c702b4c2b55caf9a175f5b41a11\recyclerview-v7-26.1.0\AndroidManifest.xml:23:9-25:38

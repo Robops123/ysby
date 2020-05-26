@@ -4,23 +4,6 @@
             "outputFile": "C:\\Users\\Administrator\\Desktop\\ysby\\ysby\\pro.android\\HBuilder-Hello\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\17fcf56ef7ed7046e508022db6fc41ad\\open_ad_sdk\\res\\values-v21\\values-v21.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,174",
-                        "endColumns": "118,125",
-                        "endOffsets": "169,295"
-                    },
-                    "to": {
-                        "startLines": "303,304",
-                        "startColumns": "4,4",
-                        "startOffsets": "22123,22242",
-                        "endColumns": "118,125",
-                        "endOffsets": "22237,22363"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\ce685f01a8afe01af0e1ad3e8c9fc18b\\support-media-compat-26.1.0\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",

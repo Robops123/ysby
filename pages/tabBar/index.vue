@@ -6,7 +6,8 @@
 			<!-- #endif -->
 			<view class="nav-content">
 				<text class="iconfont icon-address cr" ></text>
-				<view class="cityName ellipsis" @click="reLocate">{{city ? city:'定位中'}}</view>
+				<view class="cityName ellipsis" v-show="located">{{city ? city:'定位中'}}</view>
+				<view v-show="!located" @click="reLocate">重新获取</view>
 				<view class="search-line">
 					<icon type="search" size="20" class="icon" />
 					<input type="text" v-model="keywords" @confirm='search' placeholder="寻找附近的商家"/>
@@ -97,8 +98,8 @@
 					<view>
 						<image :src="item.logo" mode="" class="headface"></image>
 					</view>
-					<view class="sp-item3-top-middle ellipsis">
-						<view>{{item.merchname}}</view>
+					<view >
+						<view class="sp-item3-top-middle ellipsis">{{item.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
 							<text class="s3 cg">{{item.collect}}人关注   
@@ -139,6 +140,7 @@
 		data(){
 			return{
 				logined:false,
+				located:true,
 				uid:'',
 				token:'',
 				keywords:'',
@@ -282,6 +284,7 @@
 						that.getNearBy(res)
 					},
 					fail:(reason) =>{
+						that.located=false
 						that.getNearBy({})
 						that.$msg('请打开定位功能')
 					}
@@ -563,7 +566,7 @@
 		padding: 0 48upx;
 		/* margin: 0 18upx; */
 		display: flex;
-		justify-content: space-between;
+		/* justify-content: space-between; */
 		border-bottom: 22upx solid #f6f1f3;
 		padding-bottom: 22upx;
 	}

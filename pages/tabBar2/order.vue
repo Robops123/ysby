@@ -1,7 +1,7 @@
 <template>
 	<view style="background-color: #fff;">
 		<view class="nav-bar">
-			<view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view>
+			<!-- <view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view> -->
 			<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
 			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
 			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
@@ -78,9 +78,9 @@
 						共<text class="cr">1</text>件商品 实付:<text class="cr">￥{{item.totalprice}}</text>
 					</view>
 					<view class="bottom-border btn-line">
-						<button type="default" class="btn btn-primary">确认发货</button>
-						<button type="default" class="btn btn-primary">取消发货</button>
-						<button type="default" class="btn ">备注</button>
+						<button type="default" class="btn btn-primary" v-show="active==2" @click="confirmDoSend(item.orderno)">确认发货</button>
+						<button type="default" class="btn btn-primary" v-show="active==2" @click="cancelOrder(item.orderno)">取消发货</button>
+						<button type="default" class="btn " @click="showRemark(item.orderno)">备注</button>
 						<button type="default" class="btn " @click="toDetail(item.orderno)">查看详情</button>
 					</view>
 				</view>
@@ -104,7 +104,7 @@
 			return{
 				uid:'',
 				token:'',
-				active:0,
+				active:1,
 				orderList:[
 					{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'}
 				],
@@ -228,6 +228,23 @@
 					  	uni.hideLoading()
 						that.search()
 				  })
+			},
+			cancelOrder(order){
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token: this.token,
+					orderno:order
+				}
+				  var url='&r=api.myshop.orders.cancelSend'
+				  this.$apiPost(url,params).then((res) =>{
+					  this.$msg('取消成功')
+					  this.search()
+						// that.options[2].info++
+				  })
+			},
+			showRemark(){
+				this.promptVisible=true
 			}
 		}
 	}
@@ -241,7 +258,7 @@
 	.nav{
 		color: #afafaf;
 		display: inline-block;
-		width: 20% !important;
+		width: 25% !important;
 		box-sizing: border-box;
 	}
 	.nav.active text{

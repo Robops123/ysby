@@ -12,11 +12,11 @@
 					<view>
 						<image :src="item.logo" mode="" class="headface"></image>
 					</view>
-					<view class="sp-item3-top-middle ellipsis">
-						<view>{{item.merchname}}</view>
+					<view >
+						<view class="sp-item3-top-middle ellipsis">{{item.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">1429人关注<text class="s2" v-if="lng && lat"> | {{parseInt(item.distance)}}千米</text></text>
+							<text class="s3 cg">{{item.collect}}人关注<text class="s2" v-if="lng && lat"> | {{parseInt(item.distance)}}千米</text></text>
 						</view>
 					</view>
 					<view class="enter-button" @click="toShop(item.id)">进店</view>
@@ -59,6 +59,7 @@
 	export default{
 		data(){
 			return{
+				located:false,
 				active:1,
 				sh:'',
 				dataList:[],
@@ -118,22 +119,13 @@
 					},url
 				if(this.active==1){
 					 url='&r=api.discovery.merchant'
-					uni.getLocation({
-						type: 'wgs84',
-						success:(res) =>{
-							that.lng=res.longitude
-							that.lat=res.latitude
-							params.lng=res.longitude
-							params.lat=res.latitude
-							that.getList(params,url)
-						},
-						fail:(reason) =>{
-							params.lng=''
-							params.lat=''
-							that.getList(params,url)
-							that.$msg('请打开定位功能')
-						}
-					})
+					if(this.located){
+						params.lng=this.longitude
+						params.lat=this.latitude
+						this.getList(params,url)
+					}else{
+						this.locate(params,url)
+					}
 				}else{
 					 url='&r=api.discovery.goods'
 					that.getList(params,url)
@@ -152,6 +144,27 @@
 					  	uni.hideLoading()
 					  }
 				  })
+			},
+			locate(params,url){
+				var that=this
+				uni.getLocation({
+					type: 'wgs84',
+					success:(res) =>{
+						that.located=true
+						that.lng=res.longitude
+						that.lat=res.latitude
+						params.lng=res.longitude
+						params.lat=res.latitude
+						that.getList(params,url)
+					},
+					fail:(reason) =>{
+						params.lng=''
+						params.lat=''
+						that.getList(params,url)
+						that.located=false
+						that.$msg('请打开定位功能')
+					}
+				})
 			},
 			toBottom(){
 				if(this.noMore){
@@ -283,7 +296,7 @@
 		padding: 0 30upx;
 		/* margin: 0 18upx; */
 		display: flex;
-		justify-content: space-between;
+		/* justify-content: space-between; */
 		padding-bottom: 22upx;
 	}
 	.sp-item3-bottom image{

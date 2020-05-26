@@ -1,11 +1,13 @@
 <template>
 	<view>
 		<view class="padding">
-			<view class="top">
-				<image :src="data.thumb" mode=""></image>
-				<view class="s3 ">
-					<view class="ellipsis title">{{data.goodsname}}</view>
-					<view class="cg" style="margin-top: 15upx;">分类:{{data.specifications}}</view>
+			<view  v-for="(item,index) in data.goods" :key='index'>
+				<view class="top" v-for="(childItem,childIndex) in item.goodsdata" :key='childIndex'>
+					 <image :src="childItem.goodspic" mode=""></image>
+					 <view class="s3 ">
+						<view class="ellipsis title">{{childItem.goodsname}}</view>
+						<view class="cg" style="margin-top: 15upx;">分类:{{childItem.specifications ? childItem.specifications:'无分类'}}</view>
+					 </view>
 				</view>
 			</view>
 			
@@ -95,6 +97,7 @@
 				this.form.token=userInfo.token
 			}
 			var info=JSON.parse(p.item)
+			console.log(info)
 			this.data=info
 			this.form.orderid=info.orderno
 		},
@@ -159,6 +162,7 @@
 					  this.$apiPost(url,this.form).then((res) =>{
 							that.$msg('评价成功')
 							uni.hideLoading()
+							uni.$emit('updateOrder')
 							setTimeout(function(){
 								uni.navigateBack({
 									delta:1
@@ -171,7 +175,7 @@
 </script>
 
 <style>
-	.top>image{
+	.top image{
 		width: 90upx;
 		height: 90upx;
 		margin-right: 25upx;
@@ -180,7 +184,7 @@
 		width: 500upx;
 	}
 	.top>view,
-	.top>image{
+	.top image{
 		display: inline-block;
 		vertical-align: middle;
 	}

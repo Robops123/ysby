@@ -48,14 +48,14 @@
 						</view>
 						
 						<view class="btn-box">
-							<button type="default" class="btn btn1" v-show='item.status!=4' @click.stop="addCollect(item2.goodsdata)">加入购物车</button>
-							<button type="default" class="btn btn1" v-show='item.status==4'>删除订单</button>
-							<button type="default" class="btn btn1" v-show='item.status==5' @click="toComment(item2)">评价</button>
-							<button type="default" class="btn btn1" v-show='item.status==1' @click="cancelOrder(item.orderno,index)">取消订单</button>
-							<button type="default" class="btn btn2" v-show='item.status==1' @click="topay(item)">去付款</button>
-							<button type="default" class="btn btn2" v-show='item.status!=1' @click="toDrawback(item)">申请退款</button>
-							<button type="default" class="btn btn2" v-show='item.status==2'>联系卖家</button>
-							<button type="default" class="btn btn2" v-show='item.status==3' @click="confirmReceive(item.orderno)">确认收货</button>
+							<button type="default" class="btn btn1" v-show='active!=4' @click.stop="addCollect(item2.goodsdata)">加入购物车</button>
+							<button type="default" class="btn btn1" v-show='active==4'>删除订单</button>
+							<button type="default" class="btn btn1" v-show='active==5' @click="toComment(item)">评价</button>
+							<button type="default" class="btn btn1" v-show='active==1' @click="cancelOrder(item.orderno,index)">取消订单</button>
+							<button type="default" class="btn btn2" v-show='active==1' @click="topay(item)">去付款</button>
+							<button type="default" class="btn btn2" v-show='active!=1' @click="toDrawback(item)">申请退款</button>
+							<button type="default" class="btn btn2" v-show='active==2'>联系卖家</button>
+							<button type="default" class="btn btn2" v-show='active==3' @click="confirmReceive(item.orderno)">确认收货</button>
 							
 						</view>
 					</view>

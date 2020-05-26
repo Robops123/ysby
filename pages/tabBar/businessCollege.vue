@@ -21,8 +21,8 @@
 								<view>
 									<image :src="item.logo" mode="" class="headface"></image>
 								</view>
-								<view class="sp-item3-top-middle">
-									<view class="cr">{{item.merchname}}</view>
+								<view class="">
+									<view class="cr sp-item3-top-middle ellipsis">{{item.merchname}}</view>
 								</view>
 							</view>
 							<view class="sp-item3-middle" @click="toDetail(item)">
@@ -78,8 +78,8 @@
 							<view>
 								<image :src="item.logo" mode="" class="headface"></image>
 							</view>
-							<view class="sp-item3-top-middle">
-								<view>{{item.merchname}}</view>
+							<view >
+								<view class="sp-item3-top-middle ellipsis">{{item.merchname}}</view>
 								<view>
 									<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
 									<text class="s3 cg">{{item.collect}}人关注</text>
@@ -121,8 +121,8 @@
 		</view>
 		
 		<!--  -->
-		<topicon v-show="showIcon" class="topicon" :iconWidth="100" :iconHeight="100" :startPostion="3" iconPath="../../static/img/pic/top.png"
-		         :marginBottom="0" :marginTop="60" :marginLeft="5" :marginRight="5" @tapIcon="tapIcon"
+		<topicon v-show="showIcon" class="topicon" :iconWidth="80" :iconHeight="80" :startPostion="3" iconPath="../../static/img/pic/top.png"
+		         :marginBottom="20" :marginTop="60" :marginLeft="5" :marginRight="5" @tapIcon="tapIcon"
 		        ></topicon>
 	</view>
 </template>
@@ -372,6 +372,9 @@
 		color: #a9a9a9;
 		margin-left: 10upx;
 	}
+	.sp-item3-top-middle{
+		max-width: 400upx;
+		}
 	.sp-item3-top>view{
 		display: inline-block;
 		vertical-align: middle;
