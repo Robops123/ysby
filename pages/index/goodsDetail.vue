@@ -4,8 +4,8 @@
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
 			<swiper class="preview" :autoplay="autoplay" duration="500" interval="3000" @transition='swiperChange'>
 				<swiper-item>
-								<video id="myVideo" :src="data.video"
-							  loop muted show-play-btn controls objectFit="cover" @pause="pause" @play='play'></video>
+								<video id="myVideo" :src="data.video" class="banner"
+							    show-play-btn controls  @pause="pause" @play='play'></video>
 							</swiper-item>
 			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index">
 			    	<image :src="item" mode="" class="banner"></image>
@@ -892,5 +892,8 @@
 		text-align: center;
 		margin-bottom: 20upx;
 		font-size: 12px;
+	}
+	.banner{
+		height: 100%;
 	}
 </style>

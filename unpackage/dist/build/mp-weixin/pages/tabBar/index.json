@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "易舒",
+  "navigationBarTitleText": "易舒伴",
   "usingComponents": {
     "uni-rate": "/components/uni-rate/uni-rate",
     "uni-status-bar": "/components/uni-status-bar/uni-status-bar"
