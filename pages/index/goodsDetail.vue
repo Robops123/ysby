@@ -3,7 +3,7 @@
 		<view class="padding top border-bottom">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
 			<swiper class="preview" :autoplay="autoplay" duration="500" interval="3000" @transition='swiperChange'>
-				<swiper-item>
+				<swiper-item v-if="data.video">
 								<video id="myVideo" :src="data.video" class="banner"
 							    show-play-btn controls  @pause="pause" @play='play'></video>
 							</swiper-item>
@@ -62,13 +62,14 @@
 						<image :src="data.logo" mode="" class="headface"></image>
 					</view>
 					<view >
-						<view class="sp-item3-top-middle ellipsis">{{data.merchname}}</view>
+						<view class="sp-item3-top-middle ellipsis">{{data.merchname ? data.merchname:"官方自营"}}</view>
 						<view>
-							<uni-rate disabled="true" size="12" :value="data.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
+							<uni-rate disabled="true" size="12" v-if="data.merchid!=0" :value="data.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
+							<uni-rate disabled="true" size="12" v-else value="5" style="float: left;margin-top: 24upx;"></uni-rate>
 							<text class="s3 cg">{{data.collect}}人关注</text>
 						</view>
 					</view>
-					<view class="enter-button enter-button1" @click="focus(data.merchid)">{{data.isCollect=='1' ? '已关注':'关注'}}</view>
+					<view class="enter-button enter-button1" v-if="data.merchid!=0" @click="focus(data.merchid)">{{data.isCollect=='1' ? '已关注':'关注'}}</view>
 					<view class="enter-button enter-button2" @click="toShop(data.merchid)">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
@@ -89,7 +90,7 @@
 		</view>
 		
 		<view class="hot">
-			<text>热卖商品</text>
+			<text>商品详情</text>
 		</view>
 		<view class="detail" v-html="data.content">
 			
@@ -141,7 +142,7 @@
 		 <!-- 海报 -->
 		 <s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
 		   <!-- 内容 -->
-		   <image :src="advImg" mode=""></image>
+		   <image :src="advImg" mode="" style="width: 100%;height: 320px;"></image>
 		   <view style="margin-top: 20upx;">
 		 	  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
 		   </view>
@@ -730,7 +731,7 @@
 	}
 	.sp-item3-top>view{
 		display: inline-block;
-		vertical-align: middle;
+		vertical-align: top;
 	}
 	.enter-button{
 		color: #ff8f94;
@@ -738,7 +739,7 @@
 		padding: 10upx 15upx;
 		border-radius: 52upx;
 		float: right;
-		margin-top: 19upx;
+		margin-top: 16upx;
 	}
 	.sp-item3-bottom>view{
 			display: inline-block;

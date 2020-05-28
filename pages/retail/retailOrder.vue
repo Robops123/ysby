@@ -104,7 +104,7 @@
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='&r=api.member.agent.order'
+				  var url='&r=api.member.agents.order'
 				  this.$apiPost(url,params).then((res) =>{
 					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)

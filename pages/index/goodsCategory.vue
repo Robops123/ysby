@@ -9,12 +9,12 @@
 			<!-- #endif -->
 				<view class="nav-bar">
 					<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>商品专区</text></view>
-					<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>品牌专区</text></view>
+					<view class="nav nav-right" v-if="type=='false'" :class="{active:active==2}" @click="toggle(2)"><text>品牌专区</text></view>
 				</view>
 		</view>
 		
 		<!-- 菜 -->
-		<view class="content">
+		<view class="content" v-cloak>
 			<scroll-view scroll-y="true" class="left-scroll">
 				<view class="">
 					<view class="left-item s1 " :class="{active:tabActive==index}" @click="toggleTab(index,item)"  v-for="(item,index) in category" :key='index'>
@@ -23,11 +23,11 @@
 				</view>
 			</scroll-view>
 			<scroll-view scroll-y="true" class="right-scroll"  >
-				<view class="" v-if="categoryReady">
-					<image  :src="category[tabActive].advimg" mode="" class="banner" ></image>
+				<view class="" >
+					<image  :src="category[tabActive].advimg" v-if="category.length>0 && categoryReady" mode="" class="banner" ></image>
 					<!-- <image v-else :src="category[tabActive].thumb" mode="" class="banner"></image> -->
-					<view class="s1 headline" v-if="active==1">{{tapped!='' ? '全部'+category[tabActive].name+'商家':'全部'+category[0].name+'商家'}}</view>
-					<view class="s1 headline" v-if="active==2">{{tapped!='' ? '全部'+category[tabActive].name+'用品':'全部'+category[0].name+'用品'}}</view>
+					<view class="s1 headline" v-if="active==1 && category.length>0">{{tapped!='' ? '全部'+category[tabActive].name+'商家':'全部'+category[0].name+'商家'}}</view>
+					<view class="s1 headline" v-if="active==2 && category.length>0">{{tapped!='' ? '全部'+category[tabActive].name+'用品':'全部'+category[0].name+'用品'}}</view>
 					<!-- 区 -->
 					<view class="right-content" v-if="active==1">
 						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList',tabActive,item.id)">
@@ -81,8 +81,12 @@
 		   },
 		   onLoad(p){
 			   var that=this
-			   this.type=p.type
-			   this.getCategory()
+			   // if(p.type!='false'){
+				   this.type=p.type
+				   
+			   // }
+			   this.getCategory(this.type)
+			   
 		   },
 		methods:{
 			toggleTab(t,item){
@@ -92,17 +96,18 @@
 				this.getList('',item.id)
 			},
 			to(w,id1,id2){
-				var cateId,goodsId
 				if(this.active==1){
-					cateId=this.category[id1].id
-					goodsId=id2
+					// cateId=this.category[id1].id
+					// goodsId=id2
+					uni.navigateTo({
+						url:'./goodsList?merchId='+id2+'&cateId='+this.category[id1].id+'&type=1'
+					})
 				}else{
-					goodsId=this.category[id1].id
-					cateId=id2
+					uni.navigateTo({
+						url:'./goodsList?brandId='+this.category[id1].id+'&cateId='+id2+'&type=2'
+					})
 				}
-				uni.navigateTo({
-					url:'./goodsList?cateId='+cateId+'&goodsId='+goodsId
-				})
+				
 			},
 			back(){
 				uni.navigateBack({
@@ -111,33 +116,34 @@
 			},
 			toggle(t){
 				this.active=t
-				if(t==1){
+				this.category=[]
+				this.tapped=false
+				this.reset()
+				this.getCategory(this.type)
+			},
+			reset(){
+				if(this.active==1){
 					 this.url='&r=api.home.morecate'
 					 this.url2='&r=api.home.morecate.catemerch'
 				}else{
 					 this.url='&r=api.home.morecate.brand'
 					this.url2='&r=api.home.morecate.brandcates'
 				}
-				this.tapped=false
-				this.reset()
-				this.getCategory()
-			},
-			reset(){
 				this.page=1
 				this.total=0
 				this.dataList=[]
 				this.more=''
 			},
-			getCategory(){
+			getCategory(t=''){
 				var that=this
 				  var params={
-				  	   id:''
+				  	   id:t
 				  }
 				  this.$apiPost(this.url,params).then((res) =>{
 					  that.category=res.data
 					  that.tabActive=0
 					  that.categoryReady=true
-					  that.getList('',res.data[0].id)
+				res.data.length>0 && that.getList('',res.data[0].id || 0)
 				  })
 			},
 			getList(p,id){
@@ -152,6 +158,7 @@
 				  // var params={
 				  // 	   id:id
 				  // }
+				  
 				  if(this.active==1){
 					  this.url2+='&cateid='+id
 				  }else{

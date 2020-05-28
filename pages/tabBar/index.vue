@@ -40,9 +40,17 @@
 			
 			<!-- 类型 -->
 			<view class="list ">
-				<view class="list-item" v-for="(item,index) in productList" :key='index' @click="toCategory(item.type)">
-					<image :src="`${item.imgUrl}`" mode=""></image>
+				<view class="list-item" v-for="(item,index) in productList" :key='index' @click="toCategory(item.id)">
+					<image :src="item.icon" mode=""></image>
 					<view class="item-name cg s3">{{item.name}}</view>
+				</view>
+				<view class="list-item"  @click="toCategory(false)">
+					<image src="../../static/img/pic/index/icon4.png" mode=""></image>
+					<view class="item-name cg s3">更多分类</view>
+				</view>
+				<view class="list-item"  >
+					<image src="../../static/img/pic/index/icon10.png" mode=""></image>
+					<view class="item-name cg s3">在线客服</view>
 				</view>
 			</view>
 			
@@ -71,9 +79,9 @@
 			<view class=" sp2">
 				<view class="sp-item2 " v-for="(item,index) in hotList" :key='index' @click="toDetail(item.id)">
 					<image :src="item.thumb" mode=""></image>
-					<view class="s3 ellipsis">{{item.title}}</view>
+					<view class="s3 ellipsis" >{{item.title}}</view>
 					<view class="cr s5 word-bottom">
-						<text>￥{{item.marketprice}}</text>
+						<text style="line-height: 70upx;">￥{{item.marketprice}}</text>
 						<view class="buy fr">
 							<image src="../../static/img/pic/cart.png" mode="" @click.stop="addCollect(item.id)"></image>
 						</view>
@@ -132,6 +140,7 @@
 <script>
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniStatusBar from "@/components/uni-status-bar/uni-status-bar"
+	import amap from '@/common/amap-wx.js';  
 	export default{
 		components:{
 			uniRate,
@@ -145,16 +154,16 @@
 				token:'',
 				keywords:'',
 				productList:[
-					{name:'睡眠用品',type:1,imgUrl:'../../static/img/pic/index/icon6.png'},
-					{name:'出行用品',type:2,imgUrl:'../../static/img/pic/index/icon2.png'},
-					{name:'浴室用品',type:3,imgUrl:'../../static/img/pic/index/icon8.png'},
-					{name:'幼教玩具',type:4,imgUrl:'../../static/img/pic/index/icon7.png'},
-					{name:'哺乳用品',type:5,imgUrl:'../../static/img/pic/index/icon1.png'},
-					{name:'护理用品',type:6,imgUrl:'../../static/img/pic/index/icon5.png'},
-					{name:'服饰鞋帽',type:7,imgUrl:'../../static/img/pic/index/icon3.png'},
-					{name:'孕产用品',type:8,imgUrl:'../../static/img/pic/index/icon9.png'},
-					{name:'更多分类',type:9,imgUrl:'../../static/img/pic/index/icon4.png'},
-					{name:'在线客服',type:10,imgUrl:'../../static/img/pic/index/icon10.png'}
+					// {name:'睡眠用品',type:1,imgUrl:'../../static/img/pic/index/icon6.png'},
+					// {name:'出行用品',type:2,imgUrl:'../../static/img/pic/index/icon2.png'},
+					// {name:'浴室用品',type:3,imgUrl:'../../static/img/pic/index/icon8.png'},
+					// {name:'幼教玩具',type:4,imgUrl:'../../static/img/pic/index/icon7.png'},
+					// {name:'哺乳用品',type:5,imgUrl:'../../static/img/pic/index/icon1.png'},
+					// {name:'护理用品',type:6,imgUrl:'../../static/img/pic/index/icon5.png'},
+					// {name:'服饰鞋帽',type:7,imgUrl:'../../static/img/pic/index/icon3.png'},
+					// {name:'孕产用品',type:8,imgUrl:'../../static/img/pic/index/icon9.png'},
+					// {name:'更多分类',type:9,imgUrl:'../../static/img/pic/index/icon4.png'},
+					// {name:'在线客服',type:10,imgUrl:'../../static/img/pic/index/icon10.png'}
 				],
 				hotList:[],
 				noticeList:[],
@@ -164,7 +173,9 @@
 				businessList:[],
 				lng:'',
 				lat:'',
-				city:''
+				city:'',
+				amapPlugin:null,
+				key:'364f9609be0c585e1d79d1c6f5ca4faf'
 			}
 		},
 		// watch:{
@@ -190,6 +201,12 @@
 				that.uid=userInfo2.uid
 				that.token=userInfo2.token
 			})
+			// #ifdef MP-WEIXIN
+			this.amapPlugin = new amap.AMapWX({  
+			            key: this.key  
+			        });  
+			// #endif
+			this.getCate()
 			this.getHotList()
 			this.getNotice()
 			this.getCarsouselList()
@@ -212,6 +229,16 @@
 				uni.navigateTo({
 					url:`/pages/index/goodsDetail?id=${id}`
 				})
+			},
+			// 商品分类列表
+			getCate(){
+				var that=this,url='&r=api.home.category',params={
+				  	   id:''
+				  }
+				  this.$apiPost(url,params).then((res) =>{
+					  // that.category=res.data
+					  this.productList=res.data
+				  })
 			},
 			// 公告
 			getNotice(p){
@@ -273,6 +300,30 @@
 				})
 			},
 			getNearbyBusiness(){
+				// #ifdef APP-PLUS
+				this.appLocate()
+				// #endif
+				// #ifdef MP-WEIXIN
+				this.mpLocate()
+				// #endif
+			},
+			mpLocate(){
+				var that=this
+				this.amapPlugin.getRegeo({
+				                success: (res) => {  
+									that.city=res[0].regeocodeData.addressComponent.city
+									that.lng=res[0].longitude
+									that.lat=res[0].latitude
+									that.getNearBy(res[0])
+				                },
+								  fail:(reason) =>{
+									  that.located=false
+									  that.getNearBy({})
+									  that.$msg('请打开定位功能')
+								  }
+				            });  
+			},
+			appLocate(){
 				var that=this
 				uni.getLocation({
 					type: 'wgs84',
@@ -543,7 +594,7 @@
 	}
 	.sp-item3-top>view{
 		display: inline-block;
-		vertical-align: middle;
+		vertical-align: top;
 	}
 	.enter-button{
 		color: #ff8f94;
@@ -551,7 +602,7 @@
 		padding: 10upx 15upx;
 		border-radius: 52upx;
 		float: right;
-		margin-top: 19upx;
+		margin-top: 16upx;
 	}
 	.sp-item3-bottom>view{
 			display: inline-block;

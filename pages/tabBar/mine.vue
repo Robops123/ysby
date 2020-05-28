@@ -64,7 +64,7 @@
 						<text>我的服务</text>
 					</view>
 					<view class="dd2 ">
-						<view class="item-list" @click="toRetail">
+						<view class="item-list" @click="toRetail()" >
 							<image src="../../static/img/pic/mine/icon3.png" mode=""></image>
 							<view>代理中心</view>
 						</view>
@@ -92,7 +92,7 @@
 							<image src="../../static/img/pic/mine/icon8.png" mode=""></image>
 							<view>官方客服</view>
 						</view>
-						<view class="item-list" @click="to2()">
+						<view class="item-list" @click="to2(data.merchStatus)" v-if="data.merchStatus>=2 && data.merchStatus<=4">
 							<image src="../../static/img/pic/mine/icon7.png" mode=""></image>
 							<view>我的店铺</view>
 						</view>
@@ -166,9 +166,17 @@
 					url:`/pages/mine/${where}`
 				})
 			},
-			to2(){
+			to2(s){
 				var ce=this.$operateInterceptor(this.logined)
 				if(!ce){
+					return ;
+				}
+				if(s==3){
+					this.$msg('已被禁用')
+					return ;
+				}
+				if(s==4){
+					this.$msg('商家申请审核中，请耐心等待')
 					return ;
 				}
 				uni.navigateTo({

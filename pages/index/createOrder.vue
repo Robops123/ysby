@@ -82,6 +82,7 @@
 					specifications:'',
 					amount:'',
 					goodsprice:'',
+					skuidsort:''
 					// totalprice:''
 				},
 				freight:'',
@@ -112,6 +113,7 @@
 				this.getAddressList()
 			}
 			var choosedSpec=JSON.parse(e.choosedSpec)
+			this.form.skuidsort=choosedSpec.choosedid.join(',')
 			this.spec=choosedSpec.selectArr
 			this.goodsImg=choosedSpec.goodsImg
 			// this.form.merchid=e.merchId 
@@ -146,7 +148,8 @@
 								goodsid:this.form.goodsid,
 								amount:this.form.amount,
 								specifications:this.form.specifications,
-								freight:this.freight || 0
+								freight:this.freight || 0,
+								skuidsort:this.form.skuidsort
 							}
 						],
 						addressid:this.form.addressid,

@@ -231,9 +231,9 @@
 								that.$msg('评价成功')
 								that.pic=[]
 								uni.hideLoading()
-								setTimeout(function(){
-									that.to()
-								},500)
+								// setTimeout(function(){
+								// 	that.to()
+								// },500)
 						  })
 					}
 		}

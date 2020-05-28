@@ -35,7 +35,7 @@
 								{{item.createtime}}
 							</view>
 						</view>
-						<text class="icon-arrow-right iconfont fr"></text>
+						<!-- <text class="icon-arrow-right iconfont fr"></text> -->
 					</view>
 					
 					<view class="md-line bottom-border" v-for="(childItem,childIndex) in item.goods" :key='childIndex'>
@@ -80,7 +80,7 @@
 					<view class="bottom-border btn-line">
 						<button type="default" class="btn btn-primary" v-show="active==2" @click="confirmDoSend(item.orderno)">确认发货</button>
 						<button type="default" class="btn btn-primary" v-show="active==2" @click="cancelOrder(item.orderno)">取消发货</button>
-						<button type="default" class="btn " @click="showRemark(item.orderno)">备注</button>
+						<button type="default" class="btn " @click="showRemark(item.remark)">备注</button>
 						<button type="default" class="btn " @click="toDetail(item.orderno)">查看详情</button>
 					</view>
 				</view>
@@ -92,12 +92,12 @@
 		
 		
 		<!-- 备注 -->
-		<prompt :visible.sync="promptVisible" title='添加备注'
-		  @confirm="clickPromptConfirm" mainColor="#ff6d7e">
+		<prompt :visible.sync="promptVisible" title='备注' :useDefault='false' :needCancelBtn='false'
+		 mainColor="#ff6d7e" @confirm='promptVisible=false'>
 		  <!-- 这里放入slot内容-->
-		  <view>
-			  <text>备注:</text>
-			  <textarea v-model="remark" placeholder="" />
+		  <view class="remark">
+			  <!-- <text>备注:</text> -->
+			  <textarea v-model="remark" placeholder="" disabled />
 		  </view>
 		</prompt>
 	</view>
@@ -258,7 +258,8 @@
 						that.search()
 				  })
 			},
-			showRemark(){
+			showRemark(rm){
+				this.remark=rm || '无备注'
 				this.promptVisible=true
 			}
 		}
@@ -382,5 +383,26 @@
 	}
 	.item{
 		border-bottom: 20upx solid #f3f3f3;
+	}
+	.remark{
+		padding: 20upx;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.remark text,
+	.remark textarea{
+		display: inline-block;
+		vertical-align: top;
+	}
+	.remark text{
+		width: 30%;
+		text-align: center;
+	}
+	.remark textarea{
+		width: 100%;
+		height: 90px;
+		/* border: 1px dashed #f2f2f2; */
+		padding-left: 20upx;
+		box-sizing: border-box;
 	}
 </style>

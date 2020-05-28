@@ -8,8 +8,8 @@
       </view>
       <slot></slot>
       <view class="prompt-buttons">
-        <button class="prompt-cancle" :style="'color:' + mainColor" @click="close">取消</button>
-        <button class="prompt-confirm" :style="'background:' + mainColor" @click="confirm">确定</button>
+        <button class="prompt-cancle" :style="'color:' + mainColor" @click="close" v-show="needCancelBtn">取消</button>
+        <button class="prompt-confirm" :style="'background:' + mainColor" @click="confirm" v-show="needConfirmBtn">确定</button>
       </view>
     </view>
   </view>
@@ -49,6 +49,14 @@
         default: false,
       },
 	  useDefault:{
+		  type:Boolean,
+		  default:true
+	  },
+	  needConfirmBtn:{
+		  type:Boolean,
+		  default:true
+	  },
+	  needCancelBtn:{
 		  type:Boolean,
 		  default:true
 	  }

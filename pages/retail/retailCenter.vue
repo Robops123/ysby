@@ -88,7 +88,7 @@
 			},
 			getInfo(){
 				var that=this
-				var url='&r=api.member.agent'
+				var url='&r=api.member.agents'
 				var params={
 					uid:this.uid,
 					token:this.token
@@ -99,7 +99,7 @@
 			},
 			getPromoteQrcode(){
 				var that=this
-				var url='&r=api.member.agent.invited_qrcode'
+				var url='&r=api.member.agents.invited_qrcode'
 				var params={
 					uid:this.uid,
 					token:this.token

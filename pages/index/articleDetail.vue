@@ -369,7 +369,7 @@
 	.luntan-card-top{
 		width: 100%;
 		height: 80upx;
-		padding-top: 24upx;
+		padding: 24upx 0;
 	}
 	.luntan-card-top-img{
 		width: 80upx;
@@ -553,10 +553,17 @@
 		padding: 10upx 15upx;
 		border-radius: 52upx;
 		float: right;
-		margin-top: 19upx;
+		margin-top: 16upx;
 	}
 	
 	.zaned{
 		color: red;
+	}
+	
+	.luntan-card-bot-card .iconfont{
+		margin: 0 10upx;
+	}
+	.luntan-card-bot-card>text{
+		vertical-align: middle;
 	}
 </style>

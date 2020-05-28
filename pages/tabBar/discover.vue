@@ -273,7 +273,7 @@
 	}
 	.sp-item3-top>view{
 		display: inline-block;
-		vertical-align: middle;
+		vertical-align: top;
 	}
 	.enter-button{
 		color: #ff8f94;
@@ -281,7 +281,7 @@
 		padding: 10upx 15upx;
 		border-radius: 52upx;
 		float: right;
-		margin-top: 19upx;
+		margin-top: 16upx;
 	}
 	.sp-item3-bottom>view{
 			display: inline-block;

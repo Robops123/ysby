@@ -113,7 +113,8 @@
 					goodsid:item.goodsid,
 					amount:item.amount,
 					specifications:item.specifications || '',
-					freight:item.freight || 0
+					freight:item.freight || 0,
+					skuidsort:item.skuidsort.join(',')
 				})
 				that.totalAmount+=parseInt(item.amount)
 				that.totalPrice+=parseFloat(item.marketprice) * parseInt(item.amount)
@@ -143,6 +144,7 @@
 				this.$loading()
 				var that=this
 				var url='&r=api.member.order.create'
+				console.log(this.form.goods)
 				this.form.goods=JSON.stringify(this.form.goods)
 				this.form.type=1
 				  this.$apiPost(url,this.form).then((res) =>{

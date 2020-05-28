@@ -195,7 +195,14 @@
 	.list .bottom-content{
 		margin: 80upx 0 0;
 	}
+	.info{
+		position: relative;
+		height: 280upx;
+	}
 	.buy{
+		position: absolute;
+		bottom: 0;
+		right: 0;
 		text-align: right;
 		display: flex;
 		align-items: center;

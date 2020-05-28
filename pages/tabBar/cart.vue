@@ -201,7 +201,9 @@
 				if(e.detail.value[0]!=undefined){
 					this.dataList[i].checked=true
 					this.dataList[i].goods.forEach((item) =>{
-						item.checked=true
+						// if(item.hasSpec){
+							item.checked=true
+						// }
 					})
 				}else{
 					this.chooseAll=false
@@ -279,6 +281,7 @@
 							  // this.choosedSpec=e
 							  this.receivedCategory=false
 				this.dataList[this.choosedPi].goods[this.choosedCi].specs=e.selectArr
+				this.dataList[this.choosedPi].goods[this.choosedCi].skuidsort=e.choosedid
 				this.dataList[this.choosedPi].goods[this.choosedCi].marketprice=e.marketPrice
 				this.dataList[this.choosedPi].goods[this.choosedCi].amount=e.selectNum
 				this.dataList[this.choosedPi].goods[this.choosedCi].stock=e.stock
@@ -349,13 +352,21 @@
 			getChecked(){
 				var that=this
 				var selectedGoods=[]
-				this.dataList.forEach((item) =>{
-					item.goods.forEach((item2) =>{
-						if(item2.checked){
-							selectedGoods.push(item2)
-						}
+				try{
+					this.dataList.forEach((item) =>{
+						item.goods.forEach((item2) =>{
+							if(item2.checked){
+								if(!item2.skuidsort){
+									throw new Error('specError')
+								}
+								selectedGoods.push(item2)
+							}
+						})
 					})
-				})
+				}catch(e){
+					this.$msg('请选择规格')
+					return ;
+				}
 				if(selectedGoods.length==0){
 					this.$msg('请选择要购买的商品')
 					return ;

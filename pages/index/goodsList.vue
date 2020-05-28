@@ -43,8 +43,9 @@
 			return{
 				uid:'',
 				token:'',
-				goodsId:'',
 				merchId:'',
+				cateId:'',
+				brandId:'',
 				url:'',
 				active:1,
 				rangeActive:'',
@@ -63,9 +64,12 @@
 		     },
 		   },
 		   onLoad(e){
-			 this.merchId=e.cateId
-			 this.goodsId=e.goodsId
 			 var that=this
+			 if(e.type==1){
+				 this.merchId=e.merchId
+				 this.cateId=e.cateId
+				 this.url=''
+			 }
 			 this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
 			 var userInfo=uni.getStorageSync('userInfo')
 			 if(userInfo!='' & userInfo!=null & userInfo!=undefined){
@@ -125,11 +129,11 @@
 				}
 			},
 			getList(p){
-				var that=this
-				// var params={
-				//   page:p,
-				//   pagesize: this.pageSize
-				// }
+				var that=this,url='&r=api.goods'
+				var params={
+				  page:p,
+				  pagesize: this.pageSize
+				}
 				if(this.page==1){
 					this.$loading()
 				}

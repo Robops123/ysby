@@ -9,15 +9,15 @@
 		</view>
 		<view class="item-3 s1 item-3-t bgw">
 			<view>
-				<view>{{data.todayOrder}}</view>
+				<view>{{data.todayOrder || 0}}</view>
 				<view>今日订单</view>
 			</view>
 			<view>
-				<view>{{data.todayDeal}}</view>
+				<view>{{data.todayDeal || 0}}</view>
 				<view>今日成交</view>
 			</view>
 			<view>
-				<view>{{data.newMembers}}</view>
+				<view>{{data.newMembers || 0}}</view>
 				<view>新增会员</view>
 			</view>
 		</view>
@@ -34,17 +34,17 @@
 				<view class="item-list" @click="toOrderList(2)">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon3.png" mode="" style="width: 90upx;"></image></view>
 					<view>待发货</view>
-					<view class="cg s3"><text class="cr">{{data.notSend}}</text>单</view>
+					<view class="cg s3"><text class="cr">{{data.notSend || 0}}</text>单</view>
 				</view>
 				<view class="item-list" @click="toOrderList(1)">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon2.png" mode=""></image></view>
 					<view>待付款</view>
-					<view class="cg s3"><text class="cr">{{data.notPay}}</text>笔</view>
+					<view class="cg s3"><text class="cr">{{data.notPay || 0}}</text>笔</view>
 				</view>
 				<view class="item-list">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon6.png" mode=""></image></view>
 					<view>维权订单</view>
-					<view class="cg s3"><text class="cr">{{data.rightsOrder}}</text>笔</view>
+					<view class="cg s3"><text class="cr">{{data.rightsOrder || 0}}</text>笔</view>
 				</view>
 			</view>
 		</view>
@@ -59,12 +59,12 @@
 				<view class="item-list" @click="toGoods">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon5.png" mode="" style="width: 70upx;height: 70upx;"></image></view>
 					<view>商品管理</view>
-					<view class="cg s3"><text class="cr">{{data.goods}}</text>个</view>
+					<view class="cg s3"><text class="cr">{{data.goods || 0}}</text>个</view>
 				</view>
 				<view class="item-list" @click="toggletab(1)">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon4.png" mode="" style="width: 60upx;height: 50upx;"></image></view>
 					<view>会员管理</view>
-					<view class="cg s3"><text class="cr">{{data.members}}</text>个</view>
+					<view class="cg s3"><text class="cr">{{data.members || 0}}</text>个</view>
 				</view>
 				<view class="item-list" @click="toggletab(3)">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon1.png" mode="" style="width: 70upx;height: 60upx;"></image></view>

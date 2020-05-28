@@ -103,7 +103,7 @@
 				if(this.page==1){
 					this.$loading()
 				}
-				  var url='&r=api.member.agent.team'
+				  var url='&r=api.member.agents.team'
 				  this.$apiPost(url,params).then((res) =>{
 					  if(that.active==1){
 						  that.total=res.total1

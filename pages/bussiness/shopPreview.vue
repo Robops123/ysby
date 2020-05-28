@@ -8,7 +8,7 @@
 				<view class="search-line">
 					<input type="text" v-model="keywords" placeholder="寻找附近的商家" @confirm='search'/>
 				</view>
-				<text class="iconfont icon-share1 fr" style="font-size: 50upx;"></text>
+				<text class="iconfont icon-share1 fr" style="font-size: 56upx;"></text>
 			</view>
 		</view>
 		
@@ -302,7 +302,7 @@
 	.sp-item3-top .headface{
 		width: 90upx;
 		height: 90upx;
-		border-radius: 50%;
+		/* border-radius: 50%; */
 		margin: 0 15upx;
 	}
 	.sp-item3-top-middle image{
@@ -320,7 +320,7 @@
 	}
 	.sp-item3-top>view{
 		display: inline-block;
-		vertical-align: middle;
+		vertical-align: top;
 	}
 	.sp-item3-top-middle image{
 		width: 25upx;
@@ -338,7 +338,7 @@
 		padding: 10upx 15upx;
 		border-radius: 52upx;
 		float: right;
-		margin-top: 19upx;
+		margin-top: 16upx;
 	}
 	
 	

@@ -22,7 +22,7 @@
 									<image :src="item.logo" mode="" class="headface"></image>
 								</view>
 								<view class="">
-									<view class="cr sp-item3-top-middle ellipsis">{{item.merchname}}</view>
+									<view class="cr sp-item3-top-middle ellipsis" style="line-height: 90upx;">{{item.merchname}}</view>
 								</view>
 							</view>
 							<view class="sp-item3-middle" @click="toDetail(item)">
@@ -377,7 +377,7 @@
 		}
 	.sp-item3-top>view{
 		display: inline-block;
-		vertical-align: middle;
+		vertical-align: top;
 	}
 	.enter-button{
 		color: #ff8f94;
@@ -385,7 +385,7 @@
 		padding: 10upx 15upx;
 		border-radius: 52upx;
 		float: right;
-		margin-top: 19upx;
+		margin-top: 16upx;
 	}
 	.sp-item3-bottom>view{
 			display: inline-block;
@@ -467,7 +467,7 @@
 		} */
 		
 		.luntan-card-bot{
-			background: #f9f9f9;
+			/* background: #f9f9f9; */
 			width: 100%;
 			height: 74upx;
 			border-top: 2upx solid #e6e6e6;
@@ -500,5 +500,11 @@
 		}
 		.article-detail /deep/ .edui-upload-video{
 			display: none !important;
+		}
+		.luntan-card-bot-card .iconfont{
+			margin: 0 10upx;
+		}
+		.luntan-card-bot-card>text{
+			vertical-align: middle;
 		}
 </style>

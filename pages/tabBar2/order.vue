@@ -80,7 +80,7 @@
 					<view class="bottom-border btn-line">
 						<button type="default" class="btn btn-primary" v-show="active==2" @click="confirmDoSend(item.orderno)">确认发货</button>
 						<button type="default" class="btn btn-primary" v-show="active==2" @click="cancelOrder(item.orderno)">取消发货</button>
-						<button type="default" class="btn " @click="showRemark(item.orderno)">备注</button>
+						<button type="default" class="btn " @click="showRemark(item.remark)">备注</button>
 						<button type="default" class="btn " @click="toDetail(item.orderno)">查看详情</button>
 					</view>
 				</view>
@@ -89,19 +89,32 @@
 		</scroll-view>
 		
 		<pop ref='order' :dataList='orderList'></pop>
+		
+		<!-- 备注 -->
+		<prompt :visible.sync="promptVisible" title='备注' :useDefault='false' :needCancelBtn='false'
+		 mainColor="#ff6d7e" @confirm='promptVisible=false'>
+		  <!-- 这里放入slot内容-->
+		  <view class="remark">
+			  <!-- <text>备注:</text> -->
+			  <textarea v-model="remark" placeholder="" disabled />
+		  </view>
+		</prompt>
 	</view>
 </template>
 
 <script>
 	import pop from '@/components/promptOptions/pop.vue'
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
+	 import Prompt from '@/components/zz-prompt/index.vue'
 	export default{
 		components:{
 			uniLoadMore,
-			pop
+			pop,
+			Prompt
 		},
 		data(){
 			return{
+				promptVisible:false,
 				uid:'',
 				token:'',
 				active:1,
@@ -115,7 +128,8 @@
 				total:0,
 				more:'',
 				orderno:'',
-				keywords:''
+				keywords:'',
+				remark:''
 			}
 		},
 		computed: {
@@ -243,7 +257,8 @@
 						// that.options[2].info++
 				  })
 			},
-			showRemark(){
+			showRemark(rm){
+				this.remark=rm || '无备注'
 				this.promptVisible=true
 			}
 		}
@@ -367,5 +382,26 @@
 	}
 	.item{
 		border-bottom: 20upx solid #f3f3f3;
+	}
+	.remark{
+		padding: 20upx;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.remark text,
+	.remark textarea{
+		display: inline-block;
+		vertical-align: top;
+	}
+	.remark text{
+		width: 30%;
+		text-align: center;
+	}
+	.remark textarea{
+		width: 100%;
+		height: 90px;
+		/* border: 1px dashed #f2f2f2; */
+		padding-left: 20upx;
+		box-sizing: border-box;
 	}
 </style>
