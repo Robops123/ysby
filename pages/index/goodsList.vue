@@ -42,11 +42,12 @@
 		data(){
 			return{
 				uid:'',
+				sorts:1,
 				token:'',
 				merchId:'',
 				cateId:'',
 				brandId:'',
-				url:'',
+				url:'&r=api.goods',
 				active:1,
 				rangeActive:'',
 				sh:'',
@@ -68,9 +69,11 @@
 			 if(e.type==1){
 				 this.merchId=e.merchId
 				 this.cateId=e.cateId
-				 this.url=''
+			 }else{
+				 this.brandId=e.brandId
+				 this.cateId=e.cateId
 			 }
-			 this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
+			 // this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
 			 var userInfo=uni.getStorageSync('userInfo')
 			 if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 			 	this.logined=true
@@ -118,27 +121,34 @@
 				this.more=''
 				if(this.active!=3){
 					this.rangeActive=''
-					this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
+					this.sorts=this.active
+					// this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
 				}else{
 					this.rangeActive= this.rangeActive == 1 ? 2:1
 					if(this.rangeActive==1){
-						this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+3
+						this.sorts=3
+						// this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+3
 					}else if(this.rangeActive==2){
-						this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+4
+						this.sorts=4
+						// this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+4
 					}
 				}
 			},
 			getList(p){
-				var that=this,url='&r=api.goods'
+				var that=this
 				var params={
 				  page:p,
-				  pagesize: this.pageSize
+				  pagesize: this.pageSize,
+				  sort:this.sorts,
+				  brandid:this.brandId,
+				  cateid:this.cateId,
+				  merchid:this.merchId
 				}
 				if(this.page==1){
 					this.$loading()
 				}
 				  // var url='/wangtosale_list'
-				  this.$apiPost(this.url).then((res) =>{
+				  this.$apiPost(this.url,params).then((res) =>{
 					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
@@ -156,7 +166,7 @@
 				this.more='loading'
 			  // setTimeout(function(){
 				  that.page++
-				  this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
+				  // this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
 				  that.getList(that.page)
 			  // },2000)
 			},
@@ -171,7 +181,6 @@
 				  token: this.token,
 					goodsid:id
 				}
-				console.log(params)
 				  var url='&r=api.member.cart.add'
 				  this.$apiPost(url,params).then((res) =>{
 						// that.options[2].info++

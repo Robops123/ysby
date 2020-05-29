@@ -26,7 +26,7 @@
 						<view class='upload-image-view'>
 							<!-- 标题已经省略 -->
 							<!-- <view class='title'>上传xxxx图片</view> -->
-							<block v-for="(image,index) in imageList" :key="index" v-if="data.banner">
+							<block v-for="(image,index) in imageList" :key="index" >
 								<view class='image-view'>
 									<image :src="image" :data-src="image" @tap="previewImage"></image>
 									<view class='del-btn' v-show="imageList.length>=1" :data-index="index" @tap='deleteImage'>
@@ -113,7 +113,9 @@
 				  this.$apiPost(url,params).then((res) =>{
 					  that.pic=[]
 						that.data=res.data
-						that.imageList=res.data.banner.split(',')
+						if(res.data.banner){
+							that.imageList=res.data.banner.split(',')
+						}
 						that.loaded=true
 						that.lng=res.data.lng
 						that.lat=res.data.lat
@@ -149,7 +151,7 @@
 						count: this.imageLength - this.imageList.length,
 						success: (res) => {
 							this.imageList=this.imageList.concat(res.tempFilePaths);
-						}
+						},
 					})
 				},
 				//预览图片
@@ -175,6 +177,7 @@
 					var that=this
 					uni.chooseLocation({
 						success:(res) =>{
+							console.log(res)
 							that.lat=res.latitude
 							that.lng=res.longitude
 							that.data.address=res.name
@@ -449,7 +452,7 @@
 			text-align: center;
 			line-height: 75upx;
 			letter-spacing: 4px;
-			color: white;
+			color: white !important;
 			font-size: 34upx;
 			margin-top: 20upx;
 		}

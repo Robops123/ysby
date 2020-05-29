@@ -4,9 +4,9 @@
 			<view class="sub-title">自助服务</view>
 			<view class="opt-container">
 				<view style="width: max-content;margin: 40upx 0;">
-					<view class="item-list" @click="getList()" v-for="(item,index) in 5" :key='index'>
-						<image src="../../static/img/pic/mine/icon2.png" mode=""></image>
-						<view>退款/售后</view>
+					<view class="item-list" @click="getCorespondList(item.id)" v-for="(item,index) in cateList" :key='index'>
+						<image :src="item.icon" mode=""></image>
+						<view>{{item.title}}</view>
 					</view>
 				</view>
 			</view>
@@ -15,31 +15,60 @@
 		<view class="sub-title padding">猜你想问</view>
 		<view class="question" v-for="(item,index) in questionList" :key='index'>
 			<view @click="showQuestion(index)">
-				<text>{{index+1}}、如何催单 商品不想要了怎么推开</text>
+				<text>{{index+1}}、{{item.title}}</text>
 				<text class="fr iconfont icon-down" ></text>
 			</view>
 			<view v-show="item.show" class="question-detail" :class="{animate__fadeInDown:item.show}">
-				啊实打实大师大所大所大所多所多所啊实打实大师大所大所大所大所多啊实打实大师大所大所多
-				啊实打实大师大所大所大所多所多所啊实打实大师大所大所大所大所多啊实打实大师大所大所多
-				啊实打实大师大所大所大所多所多所啊实打实大师大所大所大所大所多啊实打实大师大所大所多
+				 <u-parse :content="item.content" id="article" class="article"  ref='article'/>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import uParse from '@/components/gaoyia-parse/parse.vue'
 	export default{
+		components:{
+			uParse
+		},
 		data(){
 			return{
-				questionList:[{},{},{},{}]
+				page:1,
+				pageSize:10,
+				cateList:[],
+				questionList:[]
 			}
 		},
 		onLoad(){
-			
+			this.getList()
 		},
 		methods:{
 			getList(){
-				
+				var that=this
+				var params={
+				  page:this.page,
+				  pagesize: this.pageSize
+				}
+				  var url='&r=api.helper.category'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.cateList=that.cateList.concat(res.data)
+					  that.getCorespondList(res.data[0].id)
+				  })
+			},
+			getCorespondList(id){
+				this.questionList=[]
+				this.$loading()
+				var that=this
+				var params={
+				  page:this.page,
+				  pagesize: this.pageSize,
+				  cateid:id
+				}
+				  var url='&r=api.helper.catehelp'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.questionList=that.questionList.concat(res.data)
+					  uni.hideLoading()
+				  })
 			},
 			showQuestion(from){
 				this.questionList[from].show=!this.questionList[from].show

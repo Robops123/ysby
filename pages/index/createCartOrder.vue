@@ -109,10 +109,11 @@
 			var selectedGoods=JSON.parse(e.selectedGoods)
 			this.data=selectedGoods
 			selectedGoods.forEach((item) =>{
+				console.log(item)
 				that.form.goods.push({
 					goodsid:item.goodsid,
 					amount:item.amount,
-					specifications:item.specifications || '',
+					specifications:item.specs || '',
 					freight:item.freight || 0,
 					skuidsort:item.skuidsort.join(',')
 				})

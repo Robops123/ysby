@@ -75,7 +75,7 @@
 						</view>
 					</view>
 					<view class="bottom-border s2 cg" style="text-align: right;padding-right: 30upx;">
-						共<text class="cr">1</text>件商品 实付:<text class="cr">￥{{item.totalprice}}</text>
+						共<text class="cr">{{item.totalgoods}}</text>件商品 实付:<text class="cr">￥{{item.totalprice}}</text>
 					</view>
 					<view class="bottom-border btn-line">
 						<button type="default" class="btn btn-primary" v-show="active==2" @click="confirmDoSend(item.orderno)">确认发货</button>

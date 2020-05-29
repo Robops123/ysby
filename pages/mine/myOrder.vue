@@ -1,12 +1,15 @@
 <template>
 	<view>
 		<view class="nav-bar">
-			<!-- <view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view> -->
-			<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
-			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
-			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
-			<view class="nav nav-right" :class="{active:active==5}" @click="toggle(5)"><text>待评价</text></view>
-			<view class="nav nav-left" :class="{active:active==6}" @click="toggle(6)"><text>已完成</text></view>
+			<view class="" style="white-space: nowrap;"> 
+				<view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view>
+				<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
+				<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
+				<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
+				<view class="nav nav-right" :class="{active:active==5}" @click="toggle(5)"><text>待评价</text></view>
+				<view class="nav nav-left" :class="{active:active==6}" @click="toggle(6)"><text>已完成</text></view>
+				<view class="nav nav-left" :class="{active:active==11}" @click="toggle(11)"><text>订单取消</text></view>
+			</view>
 		</view>
 		<view class="padding" >
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
@@ -37,7 +40,7 @@
 										<!-- <image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image> -->
 									</view>
 									<view class="bottom-content">
-										<text class="s3 fr">共{{childItem.amount}}件商品 合计:<text class="s1">￥{{item.totalprice}}</text></text>
+										<text class="s3 ">共{{childItem.amount}}件商品 合计:<text class="s1">￥{{childItem.goodsprice * childItem.amount}}</text></text>
 									</view>
 								</view>
 								<view class="mount">
@@ -49,7 +52,7 @@
 						
 						<view class="btn-box">
 							<button type="default" class="btn btn1" v-show='active!=4' @click.stop="addCollect(item2.goodsdata)">加入购物车</button>
-							<button type="default" class="btn btn1" v-show='active==4'>删除订单</button>
+							<!-- <button type="default" class="btn btn1" v-show='active==4'>删除订单</button> -->
 							<button type="default" class="btn btn1" v-show='active==5' @click="toComment(item)">评价</button>
 							<button type="default" class="btn btn1" v-show='active==1' @click="cancelOrder(item.orderno,index)">取消订单</button>
 							<button type="default" class="btn btn2" v-show='active==1' @click="topay(item)">去付款</button>
@@ -65,21 +68,23 @@
 				<uni-load-more :status="more"></uni-load-more>
 			</scroll-view>
 		</view>
-		
+		<pop  ref='merch' ></pop>
 	</view>
 </template>
 
 <script>
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
+	import pop from '@/components/promptOptions/pop'
 	export default{
 		components:{
-			uniLoadMore
+			uniLoadMore,
+			pop
 		},
 		data(){
 			return{
 				uid:'',
 				token:'',
-				active:1,
+				active:0,
 				cartList:[
 					{
 						
@@ -96,9 +101,9 @@
 		onLoad(p){
 			var that=this
 			var userInfo=uni.getStorageSync('userInfo'),that=this
-			if(p.active!=0){
+			// if(p.active!=0){
 				this.active=p.active
-			}
+			// }
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.uid=userInfo.uid
 				this.token=userInfo.token
@@ -258,11 +263,14 @@
 		text-align: center;
 		padding: 20upx 0;
 		background-color: white;
+		width: 100%;
+		box-sizing: border-box;
+		overflow: auto;
 	}
 	.nav{
 		color: #afafaf;
 		display: inline-block;
-		width: 20%;
+		width:  160upx;
 		box-sizing: border-box;
 	}
 	.nav.active text{

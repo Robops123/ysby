@@ -28,7 +28,9 @@
 				</view>
 				<view class="lh1">
 					<text class="c2">支付方式: </text>
-					<text class="fr">{{data.paytype}}</text>
+					<text class="fr" v-show="data.paytype=='1'">微信</text>
+					<text class="fr" v-show="data.paytype=='2'">支付宝</text>
+					<text class="fr" v-show="data.paytype=='3'">余额</text>
 				</view>
 				<view class="lh1">
 					<text class="c2">配送状态: </text>
