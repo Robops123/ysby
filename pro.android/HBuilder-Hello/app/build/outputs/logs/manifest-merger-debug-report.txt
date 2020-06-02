@@ -452,7 +452,7 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:348:13-47
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:347:13-36
-activity#io.dcloud.HelloH5.wxapi.WXEntryActivity
+activity#com.zdbonanza.ysb.wxapi.WXEntryActivity
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:350:9-362:20
 	android:label
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:353:13-45
@@ -462,7 +462,7 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:352:13-36
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:351:13-50
-intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:scheme:wx0411fa6a39d61297
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:scheme:wx57ee8bd987b635b0
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:355:13-361:29
 action#android.intent.action.VIEW
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:356:17-69
@@ -476,7 +476,7 @@ data
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:360:17-61
 	android:scheme
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:360:23-58
-activity#io.dcloud.HelloH5.wxapi.WXPayEntryActivity
+activity#com.zdbonanza.ysb.wxapi.WXPayEntryActivity
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:366:9-369:46
 	android:launchMode
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:369:13-43

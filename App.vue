@@ -16,7 +16,7 @@
 <style>
 @import "./static/css/iconfont.css";
 	@import './static/css/common.css';
-	@import './static/css/animate.css'
+	@import './static/css/animate.css';
 	/* @import url("/components/gaoyia-parse/parse.css"); */
 
 	

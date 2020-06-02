@@ -1,4 +1,4 @@
-io.dcloud.HelloH5
+com.zdbonanza.ysb
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1312,9 +1312,6 @@ layout weex_video_layout_bottom_bar
 layout weex_video_layout_player_view
 layout weex_video_layout_top_bar
 layout weex_video_layout_touch_gestures
-mipmap ic_launcher
-mipmap ic_launcher_foreground
-mipmap ic_launcher_round
 string abc_action_bar_home_description
 string abc_action_bar_home_description_format
 string abc_action_bar_home_subtitle_description_format

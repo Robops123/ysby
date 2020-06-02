@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.dcloud.HelloH5"
+    package="com.zdbonanza.ysb"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -377,13 +377,13 @@
         <!-- 微信分享 配置begin -->
         <meta-data
             android:name="WX_SECRET"
-            android:value="fdc6251421d3d688a563b4f00dd540e7" />
+            android:value="1a05bab901b1206c347cf1981edac25a" />
         <meta-data
             android:name="WX_APPID"
-            android:value="wx0411fa6a39d61297" />
+            android:value="wx57ee8bd987b635b0" />
 
         <activity
-            android:name="io.dcloud.HelloH5.wxapi.WXEntryActivity"
+            android:name="com.zdbonanza.ysb.wxapi.WXEntryActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTop" >
@@ -392,7 +392,7 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
 
-                <data android:scheme="wx0411fa6a39d61297" />
+                <data android:scheme="wx57ee8bd987b635b0" />
             </intent-filter>
         </activity>
         <!-- 微信分享 配置 end -->
@@ -400,13 +400,13 @@
 
         <!-- 微信支付配置 start -->
         <activity
-            android:name="io.dcloud.HelloH5.wxapi.WXPayEntryActivity"
+            android:name="com.zdbonanza.ysb.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
 
         <meta-data
             android:name="WX_APPID"
-            android:value="wx0411fa6a39d61297" />
+            android:value="wx57ee8bd987b635b0" />
 
         <!-- 微信支付配置end -->
         <!-- 小米分享 -->

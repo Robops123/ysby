@@ -61,10 +61,19 @@
             "sdkConfigs" : {
                 "payment" : {
                     "alipay" : {},
-                    "appleiap" : {}
+                    "appleiap" : {},
+                    "weixin" : {
+                        "appid" : "wx57ee8bd987b635b0",
+                        "UniversalLinks" : ""
+                    }
                 },
                 "oauth" : {},
-                "share" : {},
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wx57ee8bd987b635b0",
+                        "UniversalLinks" : ""
+                    }
+                },
                 "ad" : {},
                 "maps" : {
                     "amap" : {

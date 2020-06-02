@@ -2,15 +2,18 @@
 	<view style="padding-bottom: 50px;" v-cloak>
 		<view class="padding top border-bottom">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
-			<swiper class="preview" :autoplay="autoplay" duration="500" interval="3000" @transition='swiperChange'>
+			<swiper class="preview" :autoplay="autoplay" duration="500" interval="9999999" @transition='swiperChange'>
 				<swiper-item v-if="data.video">
-								<video id="myVideo" :src="data.video" class="banner"
-							    show-play-btn controls  @pause="pause" @play='play'></video>
+								<video :src="data.video" class="preview" id="myVideo"  @click="visible2=true">
+								</video>
 							</swiper-item>
 			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index">
 			    	<image :src="item" mode="" class="banner"></image>
 			    </swiper-item>
 			   </swiper>
+			
+			<!-- <custom-swiper class="preview" :swiperList="swiperList" v-if="swiperList.length>0"></custom-swiper> -->
+			
 			<view class="show-top" style="margin-top: 20upx;">
 				<view class="name">{{data.title}}</view>
 				<view class="share" @click="openShare">
@@ -147,6 +150,12 @@
 		 	  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
 		   </view>
 		 </s-popup>
+		 
+		 
+		 <s-popup custom-class="demo-popup" position="center" v-model="visible2" customClass='advPopup'>
+		   <!-- 内容 -->
+		   <video :src="data.video" controls style="width: 100%;height: 320px;"></video>
+		 </s-popup>
 	</view>
 </template>
 
@@ -161,7 +170,7 @@
 			uniRate,
 			uniGoodsNav,
 			sku,
-			sPopup
+			sPopup,
 			// uniPopup
 		},
 		onShow(){
@@ -178,12 +187,14 @@
 				  logined:false,
 				  popshow:false,
 				  visible:false,
+				  visible2:false,
 				  uid:'',
 				  token:'',
 				  id:'',
 				  merchId:'',
 				  data:'',
 				  thumb_url:'',
+				  swiperList:[],
 				  category:[],
 				  total:'',
 				  receivedCategory:false,
@@ -242,6 +253,7 @@
 				})
 			},
 			onShareAppMessage() {
+				
 				return {
 					title: "小美女小帅哥快来买啊",
 					path: '/pages/index/goodsDetail?id='+this.id,
@@ -395,6 +407,18 @@
 				    this.$apiPost(url).then((res) =>{
 						that.data=res.data
 						that.thumb_url=res.data.thumb_url
+						// if(res.data.video){
+						// 	this.swiperList.push({
+						// 		type:'video',
+						// 		url:res.data.video
+						// 	})
+						// }
+						// for(let i in res.data.thumb_url){
+						// 	this.swiperList.push({
+						// 		type:"image",
+						// 		url:res.data.thumb_url[i]
+						// 	})
+						// }
 						if(that.data.isFavorite=='1'){
 								that.options[2].collected=true
 								that.options[2].icon='icon-shoucang'
@@ -581,14 +605,14 @@
 			  		success: (e) => {
 			  			console.log('success', e);
 			  			uni.showModal({
-			  				content: '已分享',
+			  				content: e,
 			  				showCancel:false
 			  			})
 			  		},
 			  		fail: (e) => {
 			  			console.log('fail', e)
 			  			uni.showModal({
-			  				content: e.errMsg,
+			  				content: e,
 			  				showCancel:false
 			  			})
 			  		},
@@ -600,7 +624,7 @@
 			  	switch (this.shareType){
 			  		case 0:
 			  			shareOPtions.summary = '好玩';
-			  			shareOPtions.imageUrl = 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png';
+			  			shareOPtions.imageUrl =this.data.thumb_url['1'];
 			  			shareOPtions.title = this.data.title;
 			  			shareOPtions.href = 'https://uniapp.dcloud.io';
 			  			break;
@@ -624,15 +648,28 @@
 			  			break;
 			  	}
 			  	
-			  	if(shareOPtions.type === 0 && plus.os.name === 'iOS'){//如果是图文分享，且是ios平台，则压缩图片 
-			  		shareOPtions.imageUrl = await this.compress();
-			  	}
+			  	// if(shareOPtions.type === 0 && plus.os.name === 'iOS'){//如果是图文分享，且是ios平台，则压缩图片 
+			  	// 	shareOPtions.imageUrl = await this.compress();
+			  	// }
 			  	if(shareOPtions.type === 1 && shareOPtions.provider === 'qq'){//如果是分享文字到qq，则必须加上href和title
 			  		shareOPtions.href = 'https://uniapp.dcloud.io';
 			  		shareOPtions.title = '欢迎体验uniapp';
 			  	}
 			  	uni.share(shareOPtions);
 			  },
+			  compress(url){
+				  uni.compressImage({
+				    src: url,
+				    quality: 80,
+				    success: res => {
+						console.log(res.tempFilePath)
+						return res.tempFilePath;
+				    },
+					fail:(reason) =>{
+						console.log(reason)
+					}
+				  })
+			  }
 		    }
 	}
 </script>
@@ -896,5 +933,8 @@
 	}
 	.banner{
 		height: 100%;
+	}
+	.detail img{
+		width: 100%;
 	}
 </style>

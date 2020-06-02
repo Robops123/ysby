@@ -48,7 +48,7 @@
 		onLoad(p){
 			this.orderno=p.orderno
 			this.goods=JSON.parse(p.goods)
-			console.log(this.goods)
+			console.log(p)
 		},
 		methods:{
 			to(w,t){

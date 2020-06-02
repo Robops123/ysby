@@ -131,6 +131,7 @@
 			}
 		},
 		onLoad(p){
+			console.log(p)
 			this.goods=JSON.parse(p.goods)
 			this.form.type=p.type
 			this.form.orderno=p.orderno
@@ -226,6 +227,7 @@
 								amount:item.amount
 							})
 						})
+						this.form.goods=JSON.stringify(this.form.goods)
 						this.form.pics=this.pic.join(',')
 						  this.$apiPost(url,this.form).then((res) =>{
 								that.$msg('评价成功')
