@@ -9,7 +9,7 @@
 			<!-- #endif -->
 				<view class="nav-bar">
 					<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>商品专区</text></view>
-					<view class="nav nav-right" v-if="type=='false'" :class="{active:active==2}" @click="toggle(2)"><text>品牌专区</text></view>
+					<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>品牌专区</text></view>
 				</view>
 		</view>
 		
@@ -26,8 +26,8 @@
 				<view class="" >
 					<image  :src="category[tabActive].advimg" v-if="category.length>0 && categoryReady" mode="" class="banner" ></image>
 					<!-- <image v-else :src="category[tabActive].thumb" mode="" class="banner"></image> -->
-					<view class="s1 headline" v-if="active==1 && category.length>0">{{tapped!='' ? '全部'+category[tabActive].name+'商家':'全部'+category[0].name+'商家'}}</view>
-					<view class="s1 headline" v-if="active==2 && category.length>0">{{tapped!='' ? '全部'+category[tabActive].name+'用品':'全部'+category[0].name+'用品'}}</view>
+					<view class="s1 headline" v-if="active==1 && category.length>0">{{'全部'+category[tabActive].name+'商家'}}</view>
+					<view class="s1 headline" v-if="active==2 && category.length>0">{{'全部'+category[tabActive].name+'用品'}}</view>
 					<!-- 区 -->
 					<view class="right-content" v-if="active==1">
 						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList',tabActive,item.id)">
@@ -65,7 +65,7 @@
 				tapped:'',
 				category:[],
 				active:1,
-				tabActive:0,
+				tabActive:'',
 				sh:'',
 				dataList:[],
 				page:1,
@@ -136,14 +136,22 @@
 			},
 			getCategory(t=''){
 				var that=this
-				  var params={
-				  	   id:t
-				  }
-				  this.$apiPost(this.url,params).then((res) =>{
+				  // var params={
+				  // 	   id:t
+				  // }
+				  this.$apiPost(this.url).then((res) =>{
 					  that.category=res.data
-					  that.tabActive=0
+					  // that.tabActive=0
+					  for(var i=0;i<res.data.length;i++){
+						  if(res.data[i].id==t){
+							  that.tabActive=i
+						  }
+					  }
+					  if(!this.tabActive){
+						  this.tabActive=0
+					  }
 					  that.categoryReady=true
-				res.data.length>0 && that.getList('',res.data[0].id || 0)
+				res.data.length>0 && that.getList('',t || res.data[0].id)
 				  })
 			},
 			getList(p,id){
@@ -199,7 +207,7 @@
 		box-sizing: border-box;
 		padding: 35upx 0 35upx 40upx;
 		/* #ifdef APP-PLUS */
-			padding: 20upx 0 20upx 40upx;
+			/* padding: 20upx 0 20upx 40upx; */
 			padding-top: var(--status-bar-height);
 		/* #endif */
 		display: flex;

@@ -3,10 +3,10 @@
 		<view class="padding top border-bottom">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
 			<swiper class="preview" :autoplay="autoplay" duration="500" interval="9999999" @transition='swiperChange'>
-				<swiper-item v-if="data.video">
+				<!-- <swiper-item v-if="data.video">
 								<video :src="data.video" class="preview" id="myVideo"  @click="visible2=true">
 								</video>
-							</swiper-item>
+							</swiper-item> -->
 			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index">
 			    	<image :src="item" mode="" class="banner"></image>
 			    </swiper-item>
@@ -22,7 +22,7 @@
 				</view>
 			</view>
 			<view class="cr s5">￥{{data.marketprice}}</view>
-			<view class="cg s3">快递:10</view>
+			<!-- <view class="cg s3">快递:10</view> -->
 		</view>
 		
 		<view class="padding s2 border-bottom" @click="chooseCategory">
@@ -101,55 +101,17 @@
 		
 		
 		<uni-goods-nav :fill="true"  :options="options" :buttonGroup="buttonGroup" 
-		 @click="onClick" @buttonClick="buttonClick" class="goods-nav animated slideInUp" v-show="!hideNav"/>
+		 @click="onClick" @buttonClick="buttonClick" class="goods-nav animated slideInUp" />
 		 
-		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='thumb_url[1]'
+		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='thumb_url["1"]'
 		 :category='category' :total='total' v-if="receivedCategory" :goodsid='id'></sku>
 		 
 		 
-		 <view  class="popup-box" v-if="popshow">
-			 <view class="wrapper" @click="popshow=false"></view>
-			 <view class="popup animated slideInUp">
-				 <view class="cr s5">分享给好友</view>
-				 <view class="padding">
-					 <!-- #ifdef APP-PLUS -->
-					 <view class="share-item" v-for="(item,index) in providerList" :key='index' @tap="share(item)">
-					 						 <image src="../../static/img/pic/other/weixin.png" mode="" v-if="item.name=='微信'"></image>
-											 <image src="../../static/img/pic/other/pyq.png" mode="" v-if="item.name=='朋友圈'"></image>
-					 						 <view class="">{{item.name}}</view>
-					 </view>
-					 <!-- #endif -->
-					 <!-- #ifdef MP-WEIXIN -->
-						<button class="share-item share-btn" open-type="share">
-											<image src="../../static/img/pic/other/weixin.png" mode="" ></image>
-												 <view class="">微信</view>
-						</button>
-					 <!-- #endif -->
-					 <!-- <view class="share-item">
-					 						 <image src="../../static/img/bg/activity.png" mode=""></image>
-					 						 <view class="">微信</view>
-					 </view> -->
-					 <view class="share-item" @click="createPoster">
-					 						 <image src="../../static/img/pic/other/post.png" mode=""></image>
-					 						 <view class="">生成海报</view>
-					 </view>
-					 
-				 </view>
-				 <view>
-					 <button type="default" class="text-btn" @click="popshow=false">取消</button>
-				 </view>
-			 </view>
-		 </view>
+		
+		 
+		 <share-prompt :show='popshow' v-if="data.thumb_url['1']" :shareImg='data.thumb_url["1"]' :shareTitle="'密码门'" @close='closeSharePrompt' :goodsid="id" :uid='uid' :token='token'></share-prompt>
 		 
 		 
-		 <!-- 海报 -->
-		 <s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
-		   <!-- 内容 -->
-		   <image :src="advImg" mode="" style="width: 100%;height: 320px;"></image>
-		   <view style="margin-top: 20upx;">
-		 	  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
-		   </view>
-		 </s-popup>
 		 
 		 
 		 <s-popup custom-class="demo-popup" position="center" v-model="visible2" customClass='advPopup'>
@@ -164,6 +126,7 @@
 	import uniGoodsNav from '@/components/uni-goods-nav/uni-goods-nav.vue'
 	import sku from '@/components/sku/pages/sku.vue'
 	import sPopup from '@/components/s-popup/index';
+	import sharePrompt from '@/components/sharePrompt/sharePrompt'
 	// import uniPopup from "@/components/uni-popup/uni-popup.vue"
 	export default{
 		components:{
@@ -171,6 +134,7 @@
 			uniGoodsNav,
 			sku,
 			sPopup,
+			sharePrompt
 			// uniPopup
 		},
 		onShow(){
@@ -224,10 +188,7 @@
 		          color: '#fff'
 		        }
 		        ],
-				// 分享
-				providerList:[],
-				shareType:0,
-				shareText:'嘎哈'
+				
 		      }
 		    },
 			onLoad(p){
@@ -243,7 +204,7 @@
 					this.logined=false
 				}
 				this.getDetail()
-				this.getProvider()
+				// this.getProvider()
 				uni.$on('logined',function(){
 					var userInfo2=uni.getStorageSync('userInfo')
 					that.logined=true
@@ -394,6 +355,10 @@
 				  }
 			  },
 			  openShare(){
+				  var ce=this.$operateInterceptor(this.logined)
+				  if(!ce){
+				  	return ;
+				  }
 				  this.popshow=true
 			  },
 			  getDetail(){
@@ -463,6 +428,10 @@
 				},
 			  completeSpecChoose(e){
 				  this.choosedSpec=e
+				  uni.navigateTo({
+				  	url:'./createOrder?goodsId='+this.id+'&merchId='+this.data.merchid
+				  					+'&choosedSpec='+JSON.stringify(this.choosedSpec)+'&goodsName='+this.data.title+'&total='+this.total+'&marketprice='+this.data.marketprice
+				  })
 			  },
 			  toComments(){
 				  if(!this.data.comments){
@@ -477,199 +446,22 @@
 			  		url:`/pages/bussiness/shopPreview?id=${id}`
 			  	})
 			  },
-			  // 海报
-			  createPoster(){
-				  	var ce=this.$operateInterceptor(this.logined)
-				  	if(!ce){
-				  		return ;
-				  	}
-					this.$loading()
-				  	var that=this
-				  	var params={
-				  		uid:this.uid,
-				  		token:this.token,
-						goodsid:this.id
-				  	}
-				  	var url='&r=api.common.share.createPoster'
-				  	  this.$apiPost(url,params).then((res) =>{
-				  		  that.advImg=res.data.img
-				  		  that.visible=true
-						  that.popshow=false
-						  uni.hideLoading()
-				  	  })
-			  },
-			  saveImg(url){
-			  	var that=this
-			  	that.$loading()
-			  	uni.downloadFile({
-			  			url: url,
-			  			success: (res) =>{
-			  				if (res.statusCode === 200){
-			  					uni.saveImageToPhotosAlbum({
-			  						filePath: res.tempFilePath,
-			  						success: function() {
-			  							that.$msg('保存成功，请到相册中查看')
-			  							that.visible=false
-			  						},
-			  						fail: function() {
-			  							that.$msg('保存失败')
-			  						},
-			  						complete:() =>{
-			  							uni.hideLoading()
-			  						}
-			  					});
-			  				}
-			  			}
-			  		})
-			  },
-			  // 分享
-			  getProvider(){
-				  uni.getProvider({
-				  	service: 'share',
-				  	success: (e) => {
-				  		console.log('success', e);
-				  		let data = []
-				  		for (let i = 0; i < e.provider.length; i++) {
-				  			switch (e.provider[i]) {
-				  				case 'weixin':
-				  					data.push({
-				  						name: '微信',
-				  						id: 'weixin',
-				  						sort:0
-				  					})
-				  					data.push({
-				  						name: '朋友圈',
-				  						id: 'weixin',
-				  						type:'WXSenceTimeline',
-				  						sort:1
-				  					})
-				  					break;
-				  				// case 'sinaweibo':
-				  				// 	data.push({
-				  				// 		name: '分享到新浪微博',
-				  				// 		id: 'sinaweibo',
-				  				// 		sort:2
-				  				// 	})
-				  				// 	break;
-				  				// case 'qq':
-				  				// 	data.push({
-				  				// 		name: '分享到QQ',
-				  				// 		id: 'qq',
-				  				// 		sort:3
-				  				// 	})
-				  				// 	break;
-				  				default:
-				  					break;
-				  			}
-				  		}
-				  		this.providerList = data.sort((x,y) => {
-				  			return x.sort - y.sort
-				  		});
-				  	},
-				  	fail: (e) => {
-				  		console.log('获取分享通道失败', e);
-				  		uni.showModal({
-				  			content:'获取分享通道失败',
-				  			showCancel:false
-				  		})
-				  	}
-				  });
-			  },
-			  async share(e) {
-				  console.log(e)
-			  	console.log('分享通道:'+ e.id +'； 分享类型:' + this.shareType);
-			  	
-			  	// if(!this.shareText && (this.shareType === 1 || this.shareType === 0)){
-			  	// 	uni.showModal({
-			  	// 		content:'分享内容不能为空',
-			  	// 		showCancel:false
-			  	// 	})
-			  	// 	return;
-			  	// }
-			  	
-			  	// if(!this.image && (this.shareType === 2 || this.shareType === 0)){
-			  	// 	uni.showModal({
-			  	// 		content:'分享图片不能为空',
-			  	// 		showCancel:false
-			  	// 	})
-			  	// 	return;
-			  	// }
-			  	
-			  	let shareOPtions = {
-			  		provider: e.id,
-					extra: {
-						scene: "WXSceneSession"
-					},
-			  		scene: e.type && e.type === 'WXSenceTimeline' ? 'WXSenceTimeline' : 'WXSceneSession', //WXSceneSession”分享到聊天界面，“WXSenceTimeline”分享到朋友圈，“WXSceneFavorite”分享到微信收藏     
-			  		type: this.shareType,
-			  		success: (e) => {
-			  			console.log('success', e);
-			  			uni.showModal({
-			  				content: e,
-			  				showCancel:false
-			  			})
-			  		},
-			  		fail: (e) => {
-			  			console.log('fail', e)
-			  			uni.showModal({
-			  				content: e,
-			  				showCancel:false
-			  			})
-			  		},
-			  		complete:function(){
-			  			console.log('分享操作结束!')
-			  		}
-			  	}
-			  	
-			  	switch (this.shareType){
-			  		case 0:
-			  			shareOPtions.summary = '好玩';
-			  			shareOPtions.imageUrl =this.data.thumb_url['1'];
-			  			shareOPtions.title = this.data.title;
-			  			shareOPtions.href = 'https://uniapp.dcloud.io';
-			  			break;
-			  		case 1:
-			  			shareOPtions.summary = this.shareText;
-			  			break;
-			  		case 2:
-			  			shareOPtions.imageUrl = this.image;
-			  			break;
-			  		case 5:
-			  			shareOPtions.imageUrl = this.image ? this.image : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
-			  			shareOPtions.title = this.data.title+'买啊';
-			  			shareOPtions.miniProgram = {
-			  				id:'gh_33446d7f7a26',
-			  				path:'/pages/tabBar/component/component',
-			  				webUrl:'https://uniapp.dcloud.io',
-			  				type:0
-			  			};
-			  			break;
-			  		default:
-			  			break;
-			  	}
-			  	
-			  	// if(shareOPtions.type === 0 && plus.os.name === 'iOS'){//如果是图文分享，且是ios平台，则压缩图片 
-			  	// 	shareOPtions.imageUrl = await this.compress();
-			  	// }
-			  	if(shareOPtions.type === 1 && shareOPtions.provider === 'qq'){//如果是分享文字到qq，则必须加上href和title
-			  		shareOPtions.href = 'https://uniapp.dcloud.io';
-			  		shareOPtions.title = '欢迎体验uniapp';
-			  	}
-			  	uni.share(shareOPtions);
-			  },
-			  compress(url){
-				  uni.compressImage({
-				    src: url,
-				    quality: 80,
-				    success: res => {
-						console.log(res.tempFilePath)
-						return res.tempFilePath;
-				    },
-					fail:(reason) =>{
-						console.log(reason)
-					}
-				  })
+			  closeSharePrompt(){
+				  this.popshow=false
 			  }
+			  // compress(url){
+				 //  uni.compressImage({
+				 //    src: url,
+				 //    quality: 80,
+				 //    success: res => {
+					// 	console.log(res.tempFilePath)
+					// 	return res.tempFilePath;
+				 //    },
+					// fail:(reason) =>{
+					// 	console.log(reason)
+					// }
+				 //  })
+			  // }
 		    }
 	}
 </script>
@@ -932,6 +724,7 @@
 		font-size: 12px;
 	}
 	.banner{
+		width: 100%;
 		height: 100%;
 	}
 	.detail img{

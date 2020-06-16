@@ -63,6 +63,12 @@
 					   }
 					},
 					{
+					    "path": "pages/index/webKf",
+					    "style": {
+					       "navigationBarTitleText": "在线客服"
+					   }
+					},
+					{
 					    "path": "pages/index/goodsDetail",
 					    "style": {
 					       "navigationBarTitleText": "商品详情"
@@ -72,6 +78,22 @@
 					    "path": "pages/index/goodsComments",
 					    "style": {
 					       "navigationBarTitleText": "用户评价"
+					   }
+					},
+					{
+					    "path": "pages/index/bannerDetail",
+					    "style": {
+					       "navigationBarTitleText": "商品详情",
+						   "app-plus": {
+						                       "titleNView": {
+						                           "buttons": [
+						                               {
+						                                   "text": "分享" ,
+														   "fontSize":"14px"
+						                               }
+						                           ]
+						                       }
+						                   }
 					   }
 					},
 					{
@@ -292,6 +314,14 @@
 				    }
 				},
 				{
+				    "path": "pages/login/register",
+				    "style" : {
+				    	"navigationBarTitleText": "",
+				    	"navigationBarBackgroundColor": "#FFFFFF",
+				    	"backgroundColor": "#FFFFFF"
+				    }
+				},
+				{
 				    "path": "pages/mine/goods",
 				    "style": {
 						"navigationBarTitleText": "商品",
@@ -322,7 +352,14 @@
 				    "style": {
 						"navigationBarTitleText": "我的订单"
 				    }
-				},{
+				},
+				{
+				    "path": "pages/chat/chat",
+				    "style": {
+						"navigationBarTitleText": ""
+				    }
+				},
+				{
 				    "path": "pages/mine/addressList",
 				    "style": {
 						"navigationBarTitleText": "收货地址管理"

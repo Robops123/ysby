@@ -6,9 +6,12 @@
 				<text class="iconfont icon-previewleft " @click="back"></text>
 				<!-- #endif -->
 				<view class="search-line">
+					<icon type="search" size="20" class="icon" />
 					<input type="text" v-model="keywords" placeholder="寻找附近的商家" @confirm='search'/>
 				</view>
-				<text class="iconfont icon-share1 fr" style="font-size: 56upx;"></text>
+				<!-- <view class="comment">
+					<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
+				</view> -->
 			</view>
 		</view>
 		
@@ -260,6 +263,9 @@
 		/* display: flex;
 		justify-content: space-around; */
 		
+	}
+	.top-nav .iconfont{
+		font-size: 27px;
 	}
 	 .nav-content{
 		display: flex;

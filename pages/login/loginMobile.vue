@@ -19,7 +19,7 @@
 		<view>
 			<button type="primary" class="btn" @click="next">下一步</button>
 		</view>
-		<view class="f3 s2" style="margin-bottom: 160upx;">未注册的手机号码验证后自动注册</view>
+		<!-- <view class="f3 s2" style="margin-bottom: 160upx;">未注册的手机号码验证后自动注册</view> -->
 		
 	<!-- 	<view class="f3 other-login">
 			<view class="line"></view>
@@ -91,7 +91,7 @@
 				  }).catch((reason) =>{
 					  if(reason.resultMessage=='用户不存在'){
 						 uni.navigateTo({
-						 	url:'/pages/login/loginVeri?mobile='+this.mobile+'&passitive='+this.passitive
+						 	url:'/pages/login/register?mobile='+this.mobile+'&passitive='+this.passitive
 						 })
 						}else{
 							uni.navigateTo({

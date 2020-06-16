@@ -2,7 +2,7 @@
 	<view style="padding-bottom: 80upx;">
 		<view class="margin padding s2" @click="chooseAddress">
 			<text>收货地址</text>
-			<text class="cg fr">
+			<text class="cg fr address ellipsis">
 				{{address ? address:'添加收货地址'}}
 					<text class="icon-arrow-right iconfont"></text>
 			</text>
@@ -323,5 +323,9 @@
 	.disabled{
 		border-color: #f4f4f4;
 		background-color: #f4f4f4;
+	}
+	.address{
+		display: inline-block;
+		max-width: 70%;
 	}
 </style>

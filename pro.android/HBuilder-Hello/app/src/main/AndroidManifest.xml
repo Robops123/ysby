@@ -185,18 +185,18 @@
 
         <!-- Maps(地图) begin -->
         <!-- meta-data节点android:name="com.baidu.lbsapi.API_KEY"项中android:value值为百度地图应用的Appkey -->
-        <meta-data
-            android:name="com.baidu.lbsapi.API_KEY"
-            android:value="xlTYzzMvANnrgB8loFc2jzqSwe0mCvd7"/>
-        <!--  -->
+<!--        <meta-data-->
+<!--            android:name="com.baidu.lbsapi.API_KEY"-->
+<!--            android:value="xlTYzzMvANnrgB8loFc2jzqSwe0mCvd7"/>-->
+<!--        &lt;!&ndash;  &ndash;&gt;-->
 <!--        <service-->
 <!--            android:name="com.baidu.location.f"-->
 <!--            android:enabled="true"-->
 <!--            android:process=":remote"/>-->
-<!--        &lt;!&ndash; Maps(地图) end &ndash;&gt;-->
-<!--        <meta-data android:name="com.amap.api.v2.apikey"-->
-<!--            android:value="1245f55df04583e53eb0fbf511be9a08"/>-->
-<!--        <service android:name="com.amap.api.location.APSService" />-->
+        <!-- Maps(地图) end -->
+        <meta-data android:name="com.amap.api.v2.apikey"
+            android:value="4258fd75e54a4dd3ac15fea84d5ffa4c"/>
+        <service android:name="com.amap.api.location.APSService" />
 
         <!-- Oauth 授权登陆 start -->
         <!-- Oauth QQ start -->
@@ -348,7 +348,7 @@
             android:value="wx57ee8bd987b635b0" />
 
         <activity
-            android:name=".wxapi.WXEntryActivity"
+            android:name="com.zdbonanza.ysb.wxapi.WXEntryActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTop">
@@ -363,10 +363,26 @@
         <!-- 微信分享 配置 end -->
 
         <!-- 微信支付配置 start -->
+
         <activity
-            android:name=".wxapi.WXPayEntryActivity"
-            android:exported="true"
-            android:launchMode="singleTop" />
+            android:name= "com.zdbonanza.ysb.wxapi.WXPayEntryActivity"
+            android:label= "@string/app_name"
+            android:exported= "true"
+            android:enabled="true"
+            android:launchMode= "singleTop">
+
+            <intent-filter >
+                <action android:name ="android.intent.action.VIEW"/>
+                <category android:name= "android.intent.category.DEFAULT" />
+                <data android:scheme ="wx57ee8bd987b635b0"/><!-- 注意这里，似乎对程序有影响，要加上-->
+            </intent-filter >
+        </activity >
+
+
+<!--        <activity-->
+<!--            android:name="com.zdbonanza.ysb.wxapi.WXPayEntryActivity"-->
+<!--            android:exported="true"-->
+<!--            android:launchMode="singleTop" />-->
 
         <meta-data
             android:name="WX_APPID"

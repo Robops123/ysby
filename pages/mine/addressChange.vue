@@ -10,7 +10,8 @@
 		</view>
 		<view class="bottom-border">
 			<text style="vertical-align: top;" class="label-80">所在地区</text>
-			<input v-model="region" placeholder="省市区 乡镇等" @click="openPicker"/>
+			<view class="choose-place" @click="openPicker">{{choosed ? region : '省市区 乡镇等'}}</view>
+			<!-- <input v-model="region" placeholder="省市区 乡镇等" /> -->
 		</view>
 		<view class="bottom-border">
 			<text style="vertical-align: top;" class="label-80">详细地址</text>
@@ -44,6 +45,7 @@
 		},
 		data(){
 			return{
+				choosed:false,
 				type:'add',
 				uid:'',
 				token:'',
@@ -104,10 +106,12 @@
 			},
 			//回传已选的省市区的值
 			choseValue(res){
+				
 			    //res数据源包括已选省市区与省市区code
 			    this.lotusAddressData.visible = res.visible;//visible为显示与关闭组件标识true显示false隐藏
 			    //res.isChose = 1省市区已选 res.isChose = 0;未选
 			    if(res.isChose){
+					this.choosed=true
 			        this.lotusAddressData.provinceName = res.province;//省
 			        this.lotusAddressData.cityName = res.city;//市
 			        this.lotusAddressData.townName = res.town;//区
@@ -185,7 +189,12 @@
 			vertical-align: middle;
 		}
 		.bottom-border textarea,
-		.bottom-border input{
+		.bottom-border input
+		{
+			width: 500upx;
+			display: inline-block;
+		}
+		.choose-place{
 			width: 500upx;
 			display: inline-block;
 		}

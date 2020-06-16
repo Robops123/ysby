@@ -32,11 +32,11 @@
 				</template>
 				<!-- #endif -->
 				<!-- 余额？ -->
-				<view class="padding">
+				<!-- <view class="padding">
 					<image src="" mode=""></image>
 					<text>余额支付</text>
 					<radio value='rest' class="fr" style="transform:scale(0.7)"/>
-				</view>
+				</view> -->
 			</radio-group>
 		</view>
 		
@@ -83,11 +83,20 @@
 			},
 			radioChange(e){
 				this.type=e.detail.value
-				if(this.type=='rest'){
-					this.restPay()
-				}else{
-					this.requestPayment(this.type)
-				}
+				let method=this.providerList.filter((item) => {return item.id==this.type})[0].name
+				uni.showModal({
+					title:'提示',
+					content:'确认使用'+method+'支付吗',
+					success:(e) =>{
+						if(e.confirm){
+							if(this.type=='rest'){
+								this.restPay()
+							}else{
+								this.requestPayment(this.type)
+							}
+						}
+					}
+ 				})
 				// if(this.type=='wxpay'){
 				// 	this.weixinPay()
 				// }else{
@@ -171,8 +180,7 @@
 			                            },
 			                            fail: (res) => {
 			                                uni.showModal({
-			                                    content: "支付失败,原因为: " + res
-			                                        .errMsg,
+			                                    content: "支付失败",
 			                                    showCancel: false
 			                                })
 			                            },
@@ -191,7 +199,7 @@
 			                    console.log("fail", e);
 			                    this.loading = false;
 			                    uni.showModal({
-			                        content: "支付失败,原因为: " + e.errMsg,
+			                        content: "支付失败",
 			                        showCancel: false
 			                    })
 			                }
@@ -201,38 +209,40 @@
 			            console.log("fail", e);
 			            this.loading = false;
 			            uni.showModal({
-			                content: "支付失败,原因为: " + e.errMsg,
+			                content: "支付失败",
 			                showCancel: false
 			            })
 			        }
 			    })
 			},
 			async requestPayment(e) {
+				var that=this
+				this.$loading()
 			    this.loading = true;
 			    let orderInfo = await this.getOrderInfo(e);
+			    // if (orderInfo.statusCode !== 200) {
+			    //     console.log("获得订单信息失败", orderInfo);
+			    //     uni.showModal({
+			    //         content: "获得订单信息失败",
+			    //         showCancel: false
+			    //     })
+			    //     return;
+			    // }
 				console.log(orderInfo)
-			    console.log("得到订单信息", orderInfo);
-			    if (orderInfo.statusCode !== 200) {
-			        console.log("获得订单信息失败", orderInfo);
-			        uni.showModal({
-			            content: "获得订单信息失败",
-			            showCancel: false
-			        })
-			        return;
-			    }
 			    uni.requestPayment({
 			        provider: e,
-			        orderInfo: orderInfo.data,
+					orderInfo:orderInfo.data,
 			        success: (e) => {
-			            console.log("success", e);
-			            uni.showToast({
-			                title: "感谢您的赞助!"
-			            })
+			            uni.$emit('updateOrder')
+			            setTimeout(function(){
+			            	uni.redirectTo({
+			            		url:'./payResult?contact='+that.contact+'&money='+that.money+'&orderno='+that.orderno
+			            	})
+			            },1000)
 			        },
 			        fail: (e) => {
-			            console.log("fail", e);
 			            uni.showModal({
-			                content: "支付失败,原因为: " + e.errMsg,
+			                content: "支付失败",
 			                showCancel: false
 			            })
 			        },
@@ -246,14 +256,27 @@
 			    // #ifdef APP-PLUS
 			    appid = plus.runtime.appid;
 			    // #endif
-			    let url = 'https://demo.dcloud.net.cn/payment/?payid=' + e + '&appid=' + appid + '&total=' + this.price;
+			    // let url = 'https://demo.dcloud.net.cn/payment/?payid=' + e + '&appid=' + appid + '&total=' + this.price;
+				// let url='http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.member.order.payOrder'
+				let url='http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.member.order.payOrder'
+				let params={
+					uid:this.uid,
+					token:this.token,
+					type:e,
+					orderno:this.orderno
+				}
+				// console.log(params)
 			    return new Promise((res) => {
 			        uni.request({
 			            url: url,
+						data:params,
+						// method:'get',
 			            success: (result) => {
+							uni.hideLoading()
 			                res(result);
 			            },
 			            fail: (e) => {
+							uni.hideLoading()
 			                res(e);
 			            }
 			        })

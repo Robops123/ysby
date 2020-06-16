@@ -64,7 +64,7 @@
 				</view>
 				
 				<view class="luntan-card-bot">
-					<view class="luntan-card-bot-card">
+					<view class="luntan-card-bot-card"  @click="openShare">
 						<text class="iconfont icon-share2"></text>
 						<text>转发</text>
 					</view>
@@ -81,6 +81,8 @@
 			
 		</view>
 		
+		<share-prompt :show='popshow'  :shareTitle="'密码门'" @close='closeSharePrompt'  :uid='uid' :token='token'></share-prompt>
+		
 		<ygc-comment ref="ygcComment" 
 		        :placeholder="'发布评论'" 
 		        @pubComment="pubComment"></ygc-comment>
@@ -91,14 +93,17 @@
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	import ygcComment from '@/components/ygc-comment/ygc-comment.vue';
 	import uParse from '@/components/gaoyia-parse/parse.vue'
+	import sharePrompt from '@/components/sharePrompt/sharePrompt'
 	export default{
 		components:{
 			uniLoadMore,
 			ygcComment,
-			uParse
+			uParse,
+			sharePrompt
 		},
 		data(){
 			return{
+				popshow:false,
 				id:'',
 				active:1,
 				tabActive:0,
@@ -150,8 +155,11 @@
 			// this.calcArticleHeight()
 			if(!this.readComplete){
 				if(e.scrollTop>=this.articleH-(this.windowH-this.topH)){
-					this.readComplete=true
-					this.$msg('阅读完成')
+					if(this.logined){
+						this.readComplete=true
+						// this.$msg('阅读完成')
+						this.reportReadProgress()
+					}
 				}
 			}
 		},
@@ -236,8 +244,11 @@
 						that.topH=res[0].top
 						uni.hideLoading()
 						if(that.articleH-(that.windowH-that.topH)<=0){
-							that.readComplete=true
-							that.$msg('篇幅小，已阅读完成')
+							if(that.logined){
+								that.readComplete=true
+								// this.$msg('阅读完成')
+								that.reportReadProgress()
+							}
 						}
 				  		})
 				  	}
@@ -313,6 +324,29 @@
 					  uni.hideLoading()
 					  that.$forceUpdate()
 				  })
+			},
+			reportReadProgress(){
+				var that=this,url
+					url='&r=api.college.hotarticle.status'
+				var params={
+				  collegeid:this.data.id,
+				  uid:this.uid,
+				  token:this.token,
+				  status:1
+				}
+				  this.$apiPost(url,params).then((res) =>{
+					  that.$msg('已阅读完成')
+				  })
+			},
+			closeSharePrompt(){
+				 this.popshow=false
+			},
+			openShare(){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				this.popshow=true
 			}
 		}
 	}

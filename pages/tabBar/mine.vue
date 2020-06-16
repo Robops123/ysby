@@ -5,7 +5,7 @@
 				<view class="setting" >
 					<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img" @click="toSetting"></image>
 				</view>
-				<view v-if="logined">
+				<view v-if="logined" @click="toPersonal">
 					<image :src="data.avatar" mode="" class="headface" ></image>
 					<text class="s4"   >{{data.nickname}}</text>
 				</view>
@@ -148,6 +148,7 @@
 		onShow(){
 			// this.imgBaseUrl=this.$imgBaseUrl
 			var userInfo=uni.getStorageSync('userInfo')
+			console.log(userInfo)
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.userInfo=userInfo
 				this.getUserInfo(userInfo)
@@ -157,6 +158,11 @@
 			}
 		},
 		methods:{
+			toPersonal(){
+				uni.navigateTo({
+					url:`/pages/mine/personal`
+				})
+			},
 			to(where){
 				var ce=this.$operateInterceptor(this.logined)
 				if(!ce){
@@ -189,7 +195,7 @@
 					return ;
 				}
 				uni.navigateTo({
-					url:`/pages/mine/myOrder?active=${active}`
+					url:`/pages/mine/myOrder?active=${active}&userName=${this.data.nickname}`
 				})
 			},
 			toMyOrderDetail(){
@@ -232,6 +238,7 @@
 			getUserInfo(u){
 				var that=this
 				var url='&r=api.member.my&uid='+u.uid+'&token='+u.token
+				console.log(u)
 				  this.$apiPost(url).then((res) =>{
 					that.data=res.data	
 				  })
@@ -280,6 +287,8 @@
 				}
 				if(locked && locked==0){
 					this.visible2=true
+				}else{
+					this.$msg('已绑定邀请人无需重复绑定')
 				}
 			},
 			saveImg(url){

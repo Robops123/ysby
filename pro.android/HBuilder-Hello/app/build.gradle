@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion '28.0.3'
     defaultConfig {
-        applicationId "io.dcloud.HelloH5"
+        applicationId "com.zdbonanza.ysb"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1

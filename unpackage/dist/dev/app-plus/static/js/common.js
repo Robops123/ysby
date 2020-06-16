@@ -43,7 +43,7 @@ export const operateInterceptor=function(logined){
 
 export const upload=function(file,data,succb){
 	uni.uploadFile({
-	    url: 'http://192.168.1.157/yishuban/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.common.upload.img', 
+	    url: 'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.common.upload.img', 
 	    filePath: file,
 		// header:{"content-type":"multipart/form-data"},
 	    name: 'file',

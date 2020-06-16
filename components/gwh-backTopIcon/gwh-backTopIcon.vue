@@ -158,6 +158,11 @@
 		z-index: 9999;
 	}
 	
+	.icon image{
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
 	.icon{
 		border-radius: 50%;
 		overflow: hidden;

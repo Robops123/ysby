@@ -21,8 +21,8 @@
 		<!-- 列表 -->
 		<view class="padding main">
 			<swiper class="swiper" autoplay="false" duration="500" interval="3000" >
-			    <swiper-item v-for="(item, index) in carouselList" :key="index">
-			    	<image :src="item.thumb" mode="" class="banner"></image>
+			    <swiper-item v-for="(item, index) in carouselList" class="swiper-item" :key="index" @click='toBannerDetail(item.link)'>
+			    	<image :src="item.thumb" mode="" style="width: 100%;"></image>
 			    </swiper-item>
 			   </swiper>
 			
@@ -44,17 +44,17 @@
 					<image :src="item.icon" mode=""></image>
 					<view class="item-name cg s3">{{item.name}}</view>
 				</view>
-				<view class="list-item"  @click="toCategory(false)">
+				<view class="list-item"  @click="toCategory()">
 					<image src="../../static/img/pic/index/icon4.png" mode=""></image>
 					<view class="item-name cg s3">更多分类</view>
 				</view>
-				<view class="list-item"  >
+				<view class="list-item"  @click="contact">
 					<image src="../../static/img/pic/index/icon10.png" mode=""></image>
 					<view class="item-name cg s3">在线客服</view>
 				</view>
 			</view>
 			
-			<image :src="bannerList[0].thumb" v-if="bannerList[0]" mode="" class="banner banner2"></image>
+			<image :src="bannerList[0].thumb" v-if="bannerList[0]" @click='toBannerDetail(bannerList[0].link)' mode="" class="banner banner2"></image>
 			
 			<view class="card card1">
 				<view>
@@ -72,7 +72,7 @@
 			</view>
 		</view>
 		
-		<image :src="bannerList[1].thumb" v-if="bannerList[1]" mode="" class="banner banner3"></image>
+		<image :src="bannerList[1].thumb" v-if="bannerList[1]" mode="" @click='toBannerDetail(bannerList[1].link)' class="banner banner3"></image>
 		
 		<view class="hot padding">
 			<view class="hot-title"><image src="../../static/img/pic/index/hot.png" mode=""></image>热卖商品</view>
@@ -90,7 +90,7 @@
 			</view>
 		</view>
 		
-		<image :src="bannerList[2].thumb" v-if="bannerList[2]" mode="" class="banner banner2"></image>
+		<image :src="bannerList[2].thumb" v-if="bannerList[2]" @click='toBannerDetail(bannerList[2].link)' mode="" class="banner banner2"></image>
 		
 		<view class="padding">
 			<view class="card card2">
@@ -215,6 +215,17 @@
 			this.getNearbyBusiness()
 		},
 		methods:{
+			// 轮播链接
+			toBannerDetail(link){
+				uni.navigateTo({
+					url:`/pages/index/bannerDetail?url=`+link
+				})
+			},
+			contact(){
+				uni.navigateTo({
+					url:`/pages/index/webKf`
+				})
+			},
 			search(){
 				uni.navigateTo({
 					url:`/pages/index/searchResult?keyword=${this.keywords}`
@@ -300,7 +311,7 @@
 				})
 			},
 			getNearbyBusiness(){
-				// #ifdef APP-PLUS
+				// #ifdef APP-PLUS || H5
 				this.appLocate()
 				// #endif
 				// #ifdef MP-WEIXIN
@@ -427,18 +438,29 @@
 	.main{
 		padding-top: 96upx;
 	}
+	uni-swiper{
+		height: 500upx;
+	}
+	.swiper-item{
+		width: 100%;
+		/* height: 600upx !important; */
+	}
+	.swiper-item image{
+		width: 100%;
+		height: 100%;
+	}
 	.banner{
 		border-radius: 10upx;
 		width: 100%;
-		height: 320upx;
+		height: 360upx;
 	}
 	.banner2{
-		height: 220upx;
+		height: 360upx;
 		margin-top: 20upx;
 	}
 	.banner3{
 		margin: 10upx 0 20upx;
-		height: 260upx;
+		height: 390upx;
 	}
 	.title{
 		margin-right: 10upx;
@@ -497,7 +519,7 @@
 		border-radius: 5upx;
 	}
 	.sp-item{
-		margin:8upx 2% 20upx 0;
+		margin:8upx 2% 10upx 0;
 		display: inline-block;
 		vertical-align: top;
 		width: 31%;

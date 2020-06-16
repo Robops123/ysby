@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<text :style="{ color: color, 'font-size': size + 'px' }" class="iconfont " :class='type' @click="_onClick" v-if="classIcon"></text>
+		<text :style="{ color: color, 'font-size': size + 'px' }" class="iconfont " :class='type' @click="_onClick" v-if="classIcon" ></text>
 		<text :style="{ color: color, 'font-size': size + 'px' }" class="uni-icons" @click="_onClick"  v-else>{{icons[type]}}</text>
 	</view>
 </template>

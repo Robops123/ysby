@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
-INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
-INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
-INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-544:12
+INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-544:12
+INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-544:12
+INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-544:12
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:2:1-57:12
 MERGED from [android-gif-drawable-release@1.2.17.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\97546723e3e189fe5d83ae766f26d4ac\android-gif-drawable-release@1.2.17\AndroidManifest.xml:2:1-10:12
 MERGED from [audio-mp3aac-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5cf55033b4650fbc2b83a33cb9754953\audio-mp3aac-release\AndroidManifest.xml:2:1-9:12
@@ -23,23 +23,22 @@ MERGED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transform
 MERGED from [webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e317759a69f142bdb911849d676949a\webview-x5-release\AndroidManifest.xml:2:1-13:12
 MERGED from [weex_amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2e3515a29211f6b763f4b18e717bad51\weex_amap-release\AndroidManifest.xml:2:1-13:12
 MERGED from [weex_videoplayer-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4abb91d802886e73bcb61de92f7b4279\weex_videoplayer-release\AndroidManifest.xml:2:1-3:46
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:2:1-19:12
-MERGED from [com.android.support:multidex:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ffccf2cce8766b99c945592d3e73e3d3\multidex-1.0.2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ffccf2cce8766b99c945592d3e73e3d3\multidex-1.0.2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c33838df7ee8a7c79c8a8915fd94ce59\constraint-layout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\6b7a0c702b4c2b55caf9a175f5b41a11\recyclerview-v7-26.1.0\AndroidManifest.xml:17:1-28:12
 MERGED from [com.facebook.fresco:fresco:1.13.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\85681c28b5b90c8e97b9ac6cb037b4a6\fresco-1.13.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:animated-gif:1.13.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\206e8d6d391deca834a7df3ea9a3193c\animated-gif-1.13.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\0865f5517562af071b8cc4536e4e3cb7\glide-4.9.0\AndroidManifest.xml:2:1-12:12
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad8087564b2788669e53d265209d6fac\gifdecoder-4.9.0\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\933f3bfa839305120a007079ca95f0cc\support-fragment-27.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ce685f01a8afe01af0e1ad3e8c9fc18b\support-media-compat-26.1.0\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\933f3bfa839305120a007079ca95f0cc\support-fragment-27.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1734c377f84778276f9c70a1c9320f81\animated-vector-drawable-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e14c8e678e33ed4303e96e4c7293465\support-vector-drawable-27.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\538a7bcb70d2290be98c8cfd53628197\support-core-ui-27.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8c00bf5bceb97c729caf614a82fd89b4\support-core-utils-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e14c8e678e33ed4303e96e4c7293465\support-vector-drawable-27.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\eca680df61ecfe3adc4e697ffde78153\support-compat-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad8087564b2788669e53d265209d6fac\gifdecoder-4.9.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.fresco:animated-base:1.13.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e872d5e258786480279ee1fcae2ae882\animated-base-1.13.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:animated-drawable:1.13.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4807c69c76276ab158e9278dbfb3d92b\animated-drawable-1.13.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:drawee:1.13.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\24e9c6594cf5823289523e6ac430cb7d\drawee-1.13.0\AndroidManifest.xml:2:1-9:12
@@ -53,22 +52,22 @@ MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Administrator\.gradl
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\df57c66ccef6c23045b0eb90c1dc7f86\livedata-core-1.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\a01d6d5b2a5abbbcbecf279c53fc9895\viewmodel-1.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\aa20964aa788cd55cc30e26e8d003b21\runtime-1.1.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
-INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
-INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
+INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-544:12
+INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-544:12
+INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-544:12
 	package
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:4:5-32
 		INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-544:12
 		INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-544:12
 		INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:11-69
@@ -80,8 +79,6 @@ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:5-81
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:16:5-81
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:16:5-81
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:7:5-81
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:7:5-81
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:8:22-78
 uses-feature#android.hardware.camera
@@ -110,8 +107,6 @@ MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:18:5-67
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:17:5-67
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:17:5-67
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:10:5-67
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:10:5-67
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:19:22-64
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
@@ -132,8 +127,6 @@ MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:19:5-79
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:18:5-79
 MERGED from [lib.5plus.base-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c141e84c260bb1e8e9a7bdc813e80a3f\lib.5plus.base-release\AndroidManifest.xml:18:5-79
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:8:5-79
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:8:5-79
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:24:22-76
 uses-permission#android.permission.CHANGE_WIFI_STATE
@@ -142,8 +135,6 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:25:22-73
 uses-permission#android.permission.READ_PHONE_STATE
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:5-75
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:11:5-75
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:11:5-75
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:26:22-72
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
@@ -158,8 +149,6 @@ uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:36:5-75
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:20:5-76
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:20:5-76
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:9:5-76
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:9:5-76
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:36:22-73
 uses-permission#android.permission.WAKE_LOCK
@@ -245,7 +234,7 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:138:22-64
 application
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:140:5-526:19
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:140:5-542:19
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:22:5-55:19
 MERGED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:22:5-55:19
 MERGED from [audio-mp3aac-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\5cf55033b4650fbc2b83a33cb9754953\audio-mp3aac-release\AndroidManifest.xml:7:5-20
@@ -278,22 +267,20 @@ MERGED from [webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\trans
 MERGED from [webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e317759a69f142bdb911849d676949a\webview-x5-release\AndroidManifest.xml:7:5-11:19
 MERGED from [weex_amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2e3515a29211f6b763f4b18e717bad51\weex_amap-release\AndroidManifest.xml:11:5-20
 MERGED from [weex_amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2e3515a29211f6b763f4b18e717bad51\weex_amap-release\AndroidManifest.xml:11:5-20
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:13:5-17:19
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:13:5-17:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c33838df7ee8a7c79c8a8915fd94ce59\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c33838df7ee8a7c79c8a8915fd94ce59\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\6b7a0c702b4c2b55caf9a175f5b41a11\recyclerview-v7-26.1.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\6b7a0c702b4c2b55caf9a175f5b41a11\recyclerview-v7-26.1.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\0865f5517562af071b8cc4536e4e3cb7\glide-4.9.0\AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\0865f5517562af071b8cc4536e4e3cb7\glide-4.9.0\AndroidManifest.xml:10:5-20
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad8087564b2788669e53d265209d6fac\gifdecoder-4.9.0\AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad8087564b2788669e53d265209d6fac\gifdecoder-4.9.0\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ce685f01a8afe01af0e1ad3e8c9fc18b\support-media-compat-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ce685f01a8afe01af0e1ad3e8c9fc18b\support-media-compat-26.1.0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad8087564b2788669e53d265209d6fac\gifdecoder-4.9.0\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad8087564b2788669e53d265209d6fac\gifdecoder-4.9.0\AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bd9fb102a845331437c0811ca4129acf\soloader-0.6.0\AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\bd9fb102a845331437c0811ca4129acf\soloader-0.6.0\AndroidManifest.xml:11:5-20
 	android:supportsRtl
@@ -368,12 +355,16 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:183:17-61
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:182:17-67
-meta-data#com.baidu.lbsapi.API_KEY
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:188:9-190:63
+meta-data#com.amap.api.v2.apikey
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:197:9-198:63
 	android:value
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:190:13-61
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:198:13-61
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:189:13-52
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:197:20-57
+service#com.amap.api.location.APSService
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:199:9-68
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:199:18-65
 meta-data#QQ_APPID
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:204:9-206:42
 	android:value
@@ -461,7 +452,7 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 	android:exported
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:352:13-36
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:351:13-50
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:351:13-67
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:scheme:wx57ee8bd987b635b0
 ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:355:13-361:29
 action#android.intent.action.VIEW
@@ -477,73 +468,77 @@ ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\a
 	android:scheme
 		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:360:23-58
 activity#com.zdbonanza.ysb.wxapi.WXPayEntryActivity
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:366:9-369:46
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:367:9-379:21
+	android:enabled
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:371:13-35
+	android:label
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:369:13-46
 	android:launchMode
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:369:13-43
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:372:13-44
 	android:exported
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:368:13-36
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:370:13-37
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:367:13-53
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:368:13-71
 meta-data#MIUI_APPID
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:377:9-379:45
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:393:9-395:45
 	android:value
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:379:13-42
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:395:13-42
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:378:13-38
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:394:13-38
 meta-data#MIUI_APPSECRET
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:380:9-382:48
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:396:9-398:48
 	android:value
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:382:13-45
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:398:13-45
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:381:13-42
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:397:13-42
 meta-data#MIUI_REDIRECT_URI
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:383:9-385:43
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:399:9-401:43
 	android:value
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:385:13-40
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:401:13-40
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:384:13-45
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:400:13-45
 meta-data#com.baidu.speech.APP_ID
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:464:9-85
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:480:9-85
 	android:value
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:464:59-83
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:480:59-83
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:464:20-58
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:480:20-58
 meta-data#com.baidu.speech.API_KEY
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:465:9-102
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:481:9-102
 	android:value
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:465:60-100
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:481:60-100
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:465:20-59
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:481:20-59
 meta-data#com.baidu.speech.SECRET_KEY
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:466:9-113
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:482:9-113
 	android:value
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:466:63-111
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:482:63-111
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:466:20-62
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:482:20-62
 activity#io.dcloud.PandoraEntryActivity
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:470:9-494:20
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:486:9-510:20
 	android:screenOrientation
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:476:13-45
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:492:13-45
 	android:launchMode
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:472:13-44
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:488:13-44
 	android:hardwareAccelerated
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:474:13-47
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:490:13-47
 	android:windowSoftInputMode
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:478:13-55
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:494:13-55
 	android:permission
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:475:13-89
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:491:13-89
 	android:configChanges
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:473:13-101
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:489:13-101
 	android:theme
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:477:13-47
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:493:13-47
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:471:13-58
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:487:13-58
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:h56131bcf
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:480:13-493:29
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:496:13-509:29
 category#android.intent.category.BROWSABLE
-ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:485:17-486:72
+ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:501:17-502:72
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:486:21-69
+		ADDED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:502:21-69
 uses-sdk
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml
@@ -580,10 +575,12 @@ MERGED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transform
 MERGED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:25:5-27:41
 MERGED from [weex_amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2e3515a29211f6b763f4b18e717bad51\weex_amap-release\AndroidManifest.xml:7:5-9:41
 MERGED from [weex_amap-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2e3515a29211f6b763f4b18e717bad51\weex_amap-release\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:multidex:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ffccf2cce8766b99c945592d3e73e3d3\multidex-1.0.2\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ffccf2cce8766b99c945592d3e73e3d3\multidex-1.0.2\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ffccf2cce8766b99c945592d3e73e3d3\multidex-1.0.2\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ffccf2cce8766b99c945592d3e73e3d3\multidex-1.0.2\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c33838df7ee8a7c79c8a8915fd94ce59\constraint-layout-1.1.3\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c33838df7ee8a7c79c8a8915fd94ce59\constraint-layout-1.1.3\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\6b7a0c702b4c2b55caf9a175f5b41a11\recyclerview-v7-26.1.0\AndroidManifest.xml:20:5-44
@@ -594,24 +591,22 @@ MERGED from [com.facebook.fresco:animated-gif:1.13.0] C:\Users\Administrator\.gr
 MERGED from [com.facebook.fresco:animated-gif:1.13.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\206e8d6d391deca834a7df3ea9a3193c\animated-gif-1.13.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\0865f5517562af071b8cc4536e4e3cb7\glide-4.9.0\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\0865f5517562af071b8cc4536e4e3cb7\glide-4.9.0\AndroidManifest.xml:6:5-8:41
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad8087564b2788669e53d265209d6fac\gifdecoder-4.9.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad8087564b2788669e53d265209d6fac\gifdecoder-4.9.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\933f3bfa839305120a007079ca95f0cc\support-fragment-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\933f3bfa839305120a007079ca95f0cc\support-fragment-27.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ce685f01a8afe01af0e1ad3e8c9fc18b\support-media-compat-26.1.0\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ce685f01a8afe01af0e1ad3e8c9fc18b\support-media-compat-26.1.0\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\933f3bfa839305120a007079ca95f0cc\support-fragment-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\933f3bfa839305120a007079ca95f0cc\support-fragment-27.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1734c377f84778276f9c70a1c9320f81\animated-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1734c377f84778276f9c70a1c9320f81\animated-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e14c8e678e33ed4303e96e4c7293465\support-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e14c8e678e33ed4303e96e4c7293465\support-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\538a7bcb70d2290be98c8cfd53628197\support-core-ui-27.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\538a7bcb70d2290be98c8cfd53628197\support-core-ui-27.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8c00bf5bceb97c729caf614a82fd89b4\support-core-utils-27.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8c00bf5bceb97c729caf614a82fd89b4\support-core-utils-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e14c8e678e33ed4303e96e4c7293465\support-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e14c8e678e33ed4303e96e4c7293465\support-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\eca680df61ecfe3adc4e697ffde78153\support-compat-27.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\eca680df61ecfe3adc4e697ffde78153\support-compat-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad8087564b2788669e53d265209d6fac\gifdecoder-4.9.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ad8087564b2788669e53d265209d6fac\gifdecoder-4.9.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:animated-base:1.13.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e872d5e258786480279ee1fcae2ae882\animated-base-1.13.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:animated-base:1.13.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e872d5e258786480279ee1fcae2ae882\animated-base-1.13.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:animated-drawable:1.13.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\4807c69c76276ab158e9278dbfb3d92b\animated-drawable-1.13.0\AndroidManifest.xml:5:5-7:41
@@ -668,8 +663,6 @@ uses-library#org.apache.http.legacy
 ADDED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:23:9-25:40
 MERGED from [webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e317759a69f142bdb911849d676949a\webview-x5-release\AndroidManifest.xml:8:9-10:40
 MERGED from [webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\7e317759a69f142bdb911849d676949a\webview-x5-release\AndroidManifest.xml:8:9-10:40
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:14:9-16:40
-MERGED from [weex_webview-x5-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b30062bd10ddc8ae4d34a825d2f628dd\weex_webview-x5-release\AndroidManifest.xml:14:9-16:40
 	android:required
 		ADDED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:25:13-37
 	android:name
@@ -719,7 +712,7 @@ ADDED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\
 	android:name
 		ADDED from [alipaySdk-15.6.5-20190718211159-noUtdid.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\1887a99e1a794fceb9ff1b41e77355b9\alipaySdk-15.6.5-20190718211159-noUtdid\AndroidManifest.xml:50:13-67
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-528:12 reason: io.dcloud.feature requested WRITE_EXTERNAL_STORAGE
+IMPLIED from C:\Users\Administrator\Desktop\ysby\ysby\pro.android\HBuilder-Hello\app\src\main\AndroidManifest.xml:2:1-544:12 reason: io.dcloud.feature requested WRITE_EXTERNAL_STORAGE
 activity#com.dmcbig.mediapicker.PickerActivity
 ADDED from [gallery-dmcBig-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\839e3db814fb52969293665d8c9c7d88\gallery-dmcBig-release\AndroidManifest.xml:10:9-14:63
 	android:windowSoftInputMode
@@ -1004,10 +997,10 @@ ADDED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms
 		ADDED from [uniapp-release.aar] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\450ec20ca645ce7591543c18877c3e40\uniapp-release\AndroidManifest.xml:31:13-65
 meta-data#android.support.VERSION
 ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\65648d1f2c95227ab193b3dd913500f8\appcompat-v7-26.1.0\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\6b7a0c702b4c2b55caf9a175f5b41a11\recyclerview-v7-26.1.0\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\6b7a0c702b4c2b55caf9a175f5b41a11\recyclerview-v7-26.1.0\AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\2bf8f95ab94366698cc7bc04fd2283fd\support-v4-26.1.0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\6b7a0c702b4c2b55caf9a175f5b41a11\recyclerview-v7-26.1.0\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\6b7a0c702b4c2b55caf9a175f5b41a11\recyclerview-v7-26.1.0\AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ce685f01a8afe01af0e1ad3e8c9fc18b\support-media-compat-26.1.0\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ce685f01a8afe01af0e1ad3e8c9fc18b\support-media-compat-26.1.0\AndroidManifest.xml:26:9-28:38
 	android:value

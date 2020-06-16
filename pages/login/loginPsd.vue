@@ -1,6 +1,6 @@
 <template>
 	<view class="box">
-		<view class="f1">手机号登录/注册</view>
+		<view class="f1">手机号登录</view>
 		<view class="fn"><text>您输入的号码是</text>+86 {{mobile}}</view>
 		
 		<view class="input-line">
@@ -9,7 +9,7 @@
 			mode="" class="fr" @click="showpsd()"></image> -->
 		</view>
 		<view class="f2" style="overflow: hidden;">
-			<!-- <text @click="loginveri()">验证码登录</text> -->
+			<text @click="loginveri()">验证码登录</text>
 			<text class="fr">登录遇到问题</text>
 			<text ></text>
 		</view>

@@ -122,6 +122,6 @@
 		transition: 0.4s linear all;
 		margin-top: 20upx;
 		line-height: 1.5;
-		text-indent: 20px;
+		/* text-indent: 20px; */
 	}
 </style>

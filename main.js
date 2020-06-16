@@ -4,8 +4,29 @@ import App from './App'
 // js
 import { getHeight,loading,msg,operateInterceptor,upload } from './static/js/common.js'
 import request from './static/js/request.js'
-
+let WebIM = require("utils/WebIM")["default"];
 // css
+
+
+// 环信
+let conn = {
+	closed: false,
+	curOpenOpt: {},
+	open(opt) {
+		this.curOpenOpt = opt;
+		WebIM.conn.open(opt);
+		this.closed = false;
+	},
+	reopen() {
+		if (this.closed) {
+			//this.open(this.curOpenOpt);
+			WebIM.conn.open(this.curOpenOpt);
+			this.closed = false;
+		}
+	}
+};
+Vue.prototype.$im = WebIM;
+Vue.prototype.$conn = conn;
 
 
 Vue.config.productionTip = false
