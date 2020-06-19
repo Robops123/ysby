@@ -34,8 +34,9 @@
 		  'uni-fab__content--other-platform': !isAndroidNvue
 		}"
 		 class="uni-fab__circle uni-fab__plus" :style="{ 'background-color': styles.buttonColor }" @click="_onClick">
-			<view class="fab-circle-v" :class="{'uni-fab__plus--active': isShow}"></view>
-			<view class="fab-circle-h" :class="{'uni-fab__plus--active': isShow}"></view>
+		 <image src="../../static/img/pic/top.png" mode="" style="width:80%;height:80%"></image>
+			<!-- <view class="fab-circle-v" :class="{'uni-fab__plus--active': isShow}"></view>
+			<view class="fab-circle-h" :class="{'uni-fab__plus--active': isShow}"></view> -->
 		</view>
 	</view>
 </template>
@@ -270,10 +271,10 @@
 		/* #endif */
 		justify-content: center;
 		align-items: center;
-		width: 55px;
-		height: 55px;
+		width: 40px;
+		height: 40px;
 		background-color: #3c3e49;
-		border-radius: 55px;
+		border-radius: 40px;
 		z-index: 11;
 	}
 

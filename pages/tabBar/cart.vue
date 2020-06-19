@@ -28,7 +28,7 @@
 								{{ChildItem.title}}
 							</view>
 							<view class="s3 cg options" @click="getCategory(ChildItem,index,ChildIndex)">
-								{{ChildItem.specs ? ChildItem.specs:'选择规格'}}<icon type="" class="icon-arrowdown-copy iconfont"></icon>
+								{{ChildItem.specifications ? ChildItem.specifications:'选择规格'}}<icon type="" class="icon-arrowdown-copy iconfont"></icon>
 							</view>
 							<view class="bottom-content">
 								<text class="cr">￥{{ChildItem.marketprice}}</text>
@@ -280,8 +280,8 @@
 			completeSpecChoose(e){
 							  // this.choosedSpec=e
 							  this.receivedCategory=false
-				this.dataList[this.choosedPi].goods[this.choosedCi].specs=e.selectArr
-				this.dataList[this.choosedPi].goods[this.choosedCi].skuidsort=e.choosedid
+				this.dataList[this.choosedPi].goods[this.choosedCi].specifications=e.selectArr
+				this.dataList[this.choosedPi].goods[this.choosedCi].skuidsort=e.choosedid.join(',')
 				this.dataList[this.choosedPi].goods[this.choosedCi].marketprice=e.marketPrice
 				this.dataList[this.choosedPi].goods[this.choosedCi].amount=e.selectNum
 				this.dataList[this.choosedPi].goods[this.choosedCi].stock=e.stock

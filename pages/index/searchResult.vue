@@ -40,7 +40,7 @@
 									</view>
 									<view class="bottom-content cr s5"><text class="s1">￥</text>{{item.marketprice}}</view>
 									<view class="buy">
-										<image src="../../static/img/pic/cart.png" mode="" @click.stop="addCollect(item.id)"></image>
+										<image src="../../static/img/pic/cart.png" mode="" @click.stop="getCategory(item.id,item.thumb,item.marketprice)"></image>
 									</view>
 								</view>
 						</view>
@@ -60,20 +60,30 @@
 				<uni-load-more :status="more"></uni-load-more>
 			</scroll-view>
 		</view>
-		
+		<!--  -->
+		<sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='defaultImg' :defaultPrice='defaultPrice'
+		:category='category' :total='totalsku' v-if="receivedCategory" :goodsid='id'></sku>
 	</view>
 </template>
 
 <script>
 	import uniStatusBar from "@/components/uni-status-bar/uni-status-bar"
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
+	import sku from '@/components/sku/pages/sku.vue'
 	export default{
 		components:{
 			uniStatusBar,
-			uniLoadMore
+			uniLoadMore,
+			sku
 		},
 		data(){
 			return{
+				defaultPrice:0,
+				defaultImg:'',
+				id:'',
+				category:[],
+				receivedCategory:false,
+				totalsku:0,
 				logined:false,
 				uid:'',
 				token:'',
@@ -143,23 +153,6 @@
 				uni.navigateTo({
 					url:`/pages/bussiness/shopPreview?id=${id}`
 				})
-			},
-			addCollect(id){
-				var ce=this.$operateInterceptor(this.logined)
-				if(!ce){
-					return ;
-				}
-				var that=this
-				var params={
-				  uid:this.uid,
-				  token: this.token,
-					goodsid:id
-				}
-				  var url='&r=api.member.cart.add'
-				  this.$apiPost(url,params).then((res) =>{
-						// that.options[2].info++
-										that.$msg('添加成功')
-				  })
 			},
 			reset(){
 				this.page=1
@@ -239,7 +232,54 @@
 				this.active=0
 				this.reset()
 				this.getList()
-			}
+			},
+			getCategory(id,img,price){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				this.defaultImg=img
+				this.defaultPrice=price.split(' - ')[0]
+				this.$loading()
+				this.id=id
+							  var that=this
+							  var url='&r=api.goods.detail.sku&goodsid='+id
+							    this.$apiPost(url).then((res) =>{
+										that.category=res.data
+										that.totalsku=res.stock
+										// if(res.resultMessage=='暂无数据'){
+										// 	that.needCategory=false
+										// }else{
+										// 	that.needCategory=true
+										// }
+										that.receivedCategory=true
+										that.$nextTick(function(){
+											that.$refs.sku.specClass='show'
+											uni.hideLoading()
+										})
+							    })
+			},
+			completeSpecChoose(e){
+				this.addCollect(this.id,e.choosedid.join(','),e.selectArr)
+				this.receivedCategory=false
+			},
+			addCollect(id,skuidsort,specifications){
+				this.$loading()
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token: this.token,
+					goodsid:id,
+					specifications:specifications,
+					skuidsort:skuidsort
+				}
+				  var url='&r=api.member.cart.add'
+				  this.$apiPost(url,params).then((res) =>{
+						// that.options[2].info++
+						uni.hideLoading()
+										that.$msg('添加成功')
+				  })
+			},
 		}
 	}
 </script>

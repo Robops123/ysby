@@ -3,7 +3,7 @@
 		<view class="option-box">
 			<view class="option-item" >
 				<text>手机号</text>
-				<text class="f1 fr"><text style="padding-right: 20upx;">{{uid}}</text></text>
+				<text class="f1 fr"><text style="padding-right: 20upx;">{{mobile}}</text></text>
 			</view>
 			<view class="option-item" >
 				<text>密码</text>
@@ -17,13 +17,13 @@
 	export default{
 		data(){
 			return{
-				uid:''
+				mobile:''
 			}
 		},
 		mounted(){
 			var userInfo=uni.getStorageSync('userInfo'),that=this
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
-				this.uid=userInfo.uid
+				this.mobile=userInfo.mobile
 			} 
 		},
 		methods:{

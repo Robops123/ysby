@@ -95,6 +95,7 @@
 		},
 		watch:{
 			show(n){
+				console.log(n)
 				this.popshow=n
 			}
 		},
@@ -111,12 +112,14 @@
 							  				case 'weixin':
 							  					data.push({
 							  						name: '微信',
+													way:5,
 							  						id: 'weixin',
 							  						sort:0
 							  					})
 							  					data.push({
 							  						name: '朋友圈',
 							  						id: 'weixin',
+													way:0,
 							  						type:'WXSenceTimeline',
 							  						sort:1
 							  					})
@@ -160,7 +163,7 @@
 									scene: "WXSceneSession"
 								},
 					scene: e.type && e.type === 'WXSenceTimeline' ? 'WXSenceTimeline' : 'WXSceneSession', //WXSceneSession”分享到聊天界面，“WXSenceTimeline”分享到朋友圈，“WXSceneFavorite”分享到微信收藏     
-					type: this.shareType,
+					type: e.way,
 					success: (e) => {
 						console.log('success', e);
 						uni.showModal({
@@ -181,7 +184,7 @@
 					}
 				}
 				// 1文字  2图片  0图文   5小程序
-				switch (this.shareType){
+				switch (e.way){
 					case 0:
 						shareOPtions.summary = '好玩';
 						shareOPtions.imageUrl =this.shareImg ? this.shareImg : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
@@ -268,9 +271,10 @@
 
 <style>
 	.popup{
+		position: relative;
 		text-align: center;
 		background-color: #fff;
-		z-index: 99;
+		z-index: 99999999999999;
 		padding-top: 30upx;
 	}
 	.share-item{

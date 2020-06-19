@@ -1,15 +1,14 @@
 <template>
 	<view>
-		<view class="child-overall-item padding bgwhite margin" 
-		v-for='(item,index) in goods' :key='index'>
-			<image :src="item.goodspic" mode=""></image>
+		<view class="child-overall-item padding bgwhite margin" >
+			<image :src="goods.goodspic" mode=""></image>
 			<view class="info">
 				<view>
 					<view class="s2 title">
-						{{item.goodsname}}
+						{{goods.goodsname}}
 					</view>
 					<view class="s3 cg options">
-						{{item.specifications ? item.specifications:'无规格'}}<icon type="" class="icon-fire iconfont"></icon>
+						{{goods.specifications ? goods.specifications:'无规格'}}<icon type="" class="icon-fire iconfont"></icon>
 					</view>
 				</view>
 			</view>
@@ -99,7 +98,7 @@
 	export default{
 		data(){
 			return{
-				goods:[],
+				goods:{},
 				current:1,
 				cateCurrent:0,
 				cateCurrent2:0,
@@ -221,18 +220,21 @@
 					submitForm(){
 						var that=this
 						var url='&r=api.member.order.refund'
-						this.goods.forEach((item) =>{
-							this.form.goods.push({
-								goodsid:item.goodsid,
-								amount:item.amount
-							})
-						})
-						this.form.goods=JSON.stringify(this.form.goods)
+						// this.goods.forEach((item) =>{
+						// 	this.form.goods.push({
+						// 		goodsid:item.goodsid,
+						// 		amount:item.amount
+						// 	})
+						// })
+						// this.form.goods=JSON.stringify(this.form.goods)
 						this.form.pics=this.pic.join(',')
 						  this.$apiPost(url,this.form).then((res) =>{
-								that.$msg('评价成功')
+								that.$msg('申请成功，请等待审核')
 								that.pic=[]
 								uni.hideLoading()
+								uni.navigateBack({
+									delta:2
+								})
 								// setTimeout(function(){
 								// 	that.to()
 								// },500)

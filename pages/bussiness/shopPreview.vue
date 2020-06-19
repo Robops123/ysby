@@ -7,7 +7,7 @@
 				<!-- #endif -->
 				<view class="search-line">
 					<icon type="search" size="20" class="icon" />
-					<input type="text" v-model="keywords" placeholder="寻找附近的商家" @confirm='search'/>
+					<input type="text" v-model="keywords" placeholder="寻找商品" @confirm='search'/>
 				</view>
 				<!-- <view class="comment">
 					<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
@@ -33,7 +33,7 @@
 		
 		<!-- <image src="../../static/img/pic/logo.png" mode="" class="banner"></image> -->
 		
-		<swiper class="banner" autoplay="false" duration="500" interval="3000" >
+		<swiper class="banner" autoplay="false" duration="500" interval="3000" :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
 		    <swiper-item v-for="(item, index) in carouselList" :key="index">
 		    	<image :src="item.thumb" mode="" class="banner"></image>
 		    </swiper-item>

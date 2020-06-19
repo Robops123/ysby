@@ -124,7 +124,8 @@
 			    var that=this
 			    this.$loading()
 			    var params={
-			    	mobile:this.mobile
+			    	mobile:this.mobile,
+					type:1
 			    	// pwd:this.pwd
 			    }
 			    // var url='&r=api.member.account.register'

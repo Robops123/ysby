@@ -11,7 +11,8 @@
 						{{item.content}}
 					</view>
 					<view class="comment-pic">
-						<image :src="commentImgItem" mode="" v-for="(commentImgItem,commentImgIndex) in item.picurl" v-if='commentImgIndex<=3' :key='commentImgIndex'></image>
+						<image :src="commentImgItem" mode="" v-for="(commentImgItem,commentImgIndex) in item.picurl.split(',')"
+						 v-if='commentImgIndex<=3' :key='commentImgIndex' @click="readImg(commentImgItem)"></image>
 					</view>
 				</view>
 				<view class="s3 cg">{{item.skuname}}</view>
@@ -88,6 +89,12 @@
 				  that.getList(that.page)
 			  // },2000)
 			},
+			readImg(url){
+							  uni.previewImage({
+							  	current:url,
+							  	urls:[url]
+							  })
+			}
 		}
 	}
 </script>

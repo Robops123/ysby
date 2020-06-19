@@ -4,7 +4,7 @@
 		<view class="fn"><text>您输入的号码是</text>+86 {{mobile}}</view>
 		
 		<view class="input-line">
-			<input type="text" v-model="verifycode" placeholder="请输入验证码"/>
+			<input type="text" v-model="code" placeholder="请输入验证码"/>
 			<button type="primary" class="veri" @click="getveri">{{enable? '发送验证码':'剩余'+remain+'s'}}</button>
 		</view>
 		<view class="f2" style="overflow: hidden;">
@@ -25,7 +25,7 @@
 			return{
 				show:false,
 				mobile:'',
-				pwd:'',
+				code:'',
 				passitive:'',
 				remain:60,
 				timer:null,
@@ -39,12 +39,12 @@
 		methods:{
 			loginveri(){
 				uni.redirectTo({
-					url:'/pages/login/loginPsd?passitive='+this.passitive
+					url:'/pages/login/loginPsd?passitive='+this.passitive+'&mobile='+this.mobile
 				})
 			},
 			submit(){
 				var that=this
-				var url='&r=api.member.account.login&mobile='+this.mobile+'&pwd='+this.pwd
+				var url='&r=api.member.account.loginByCode&mobile='+this.mobile+'&code='+this.code
 				  this.$apiPost(url).then((res) =>{
 					   uni.setStorageSync('userInfo',res.data)
 					   if(that.passitive){
@@ -66,7 +66,7 @@
 			if(this.enable){
 			  var that=this
 			  this.enable=false
-			  // this.getcode()
+			  this.getcode()
 			  this.timer = setInterval(function(){
 			        // 定时器到底了 兄弟们回家啦
 			        that.settime()
@@ -83,12 +83,19 @@
 			    }
 			  },
 			  getcode(){
-			    var that=this,param
-			    http.post('/sendsms',param).then(res =>{
-			      that.$success('发送成功')
-			    }).catch((reason) =>{
-			        that.$error(reason)
-			    })
+			    var that=this
+			    this.$loading()
+			    var params={
+			    	mobile:this.mobile,
+					type:2
+			    	// pwd:this.pwd
+			    }
+			    // var url='&r=api.member.account.register'
+			    var url=`&r=api.member.account.registercode`
+			      this.$apiPost(url,params).then((res) =>{
+			    	  uni.hideLoading()
+					that.$msg('验证码发送成功')
+			      })
 			  }
 		}
 	}

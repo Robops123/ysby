@@ -28,8 +28,12 @@
 		methods:{
 			getDetail(){
 				var that=this
+				var params={
+					uid:this.uid,
+					token:this.token
+				}
 				var url='&r=api.member.promoteintro'
-				  this.$apiPost(url).then((res) =>{
+				  this.$apiPost(url,params).then((res) =>{
 					that.data=res.data.content
 				  })
 			}

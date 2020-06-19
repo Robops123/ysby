@@ -1,7 +1,8 @@
 <template>
 	<view>
 		<view class="child-overall-item padding bgwhite margin" :class="{choosed:item.choosed}"
-		v-for="(item,index) in goods" :key='index' @click="chooseGoods(index)">
+		 >
+		 <!-- @click="chooseGoods(index)" -->
 			<image :src="item.goodspic" mode=""></image>
 			<view class="info">
 				<view>
@@ -13,7 +14,7 @@
 					</view>
 				</view>
 			</view>
-			<icon type="success_no_circle" class="check" v-show="item.choosed" size="12" color='#ff6d7e'></icon>
+			<!-- <icon type="success_no_circle" class="check" v-show="item.choosed" size="12" color='#ff6d7e'></icon> -->
 		</view>
 		
 		<view class="padding bgwhite choice" @click="to('moneyBack',1)">
@@ -42,23 +43,24 @@
 		data(){
 			return {
 				orderno:'',
+				item:{},
 				goods:[]
 			}
 		},
 		onLoad(p){
 			this.orderno=p.orderno
-			this.goods=JSON.parse(p.goods)
+			this.item=JSON.parse(p.goods)
 			console.log(p)
 		},
 		methods:{
 			to(w,t){
-				var p=this.calcPath()
-				if(p.length==0){
-					this.$msg('请选择要退款的商品')
-					return ;
-				}
+				// var p=this.calcPath()
+				// if(p.length==0){
+				// 	this.$msg('请选择要退款的商品')
+				// 	return ;
+				// }
 				uni.navigateTo({
-					url:`/pages/drawback/moneyBack?goods=${JSON.stringify(p)}&type=${t}&orderno=${this.orderno}`
+					url:`/pages/drawback/moneyBack?goods=${JSON.stringify(this.item)}&type=${t}&orderno=${this.orderno}`
 				})
 			},
 			// 选择要退的商品

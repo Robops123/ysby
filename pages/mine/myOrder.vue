@@ -28,8 +28,8 @@
 							<text class="fr cr s2" v-show='item.status==5'>待评价</text>
 							<text class="fr cr s2" v-show='item.status==6'>已完成</text>
 						</view>
-						<view class="child-overall">
-							<view class="child-overall-item" v-for="(childItem,childIndex) in item2.goodsdata" :key='childIndex' @click="toGoodsDetail(childItem.goodsid)">
+						<view class="child-overall" v-for="(childItem,childIndex) in item2.goodsdata" :key='childIndex' @click="toGoodsDetail(childItem.goodsid)">
+							<view class="child-overall-item" >
 								<image :src="childItem.goodspic" mode=""></image>
 								<view class="info">
 									<view class="s2 title">
@@ -48,19 +48,25 @@
 									<view class="s3 cg">*{{childItem.amount}}</view>
 								</view>
 							</view>
+							<view class="btn-box">
+								<button type="default" class="btn btn2" v-show='active==3' @click.stop="confirmReceive(item.orderno,childItem.goodsid)">确认收货</button>
+								<button type="default" class="btn btn1" v-show='active!=4' @click.stop="getCategory(childItem.goodsid,childItem.goodspic,childItem.goodsprice)">加入购物车</button>
+								<button type="default" class="btn btn1" v-show='active==5' @click.stop="toComment(item2)">评价</button>
+								<button type="default" class="btn btn1" v-show='active==1' @click.stop="cancelOrder(item.orderno,index)">取消订单</button>
+								<button type="default" class="btn btn2" v-show='active==1' @click.stop="topay(item2.goodsdata,item2.orderno)">去付款</button>
+								<button type="default" class="btn btn2" v-show='active!=1' @click.stop="toDrawback(childItem)">申请退款</button>
+								<button type="default" class="btn btn2" v-show="item2.merchid!=0" @click.stop='tochat(item2.merchid)'>联系卖家</button>
+							</view>
 						</view>
 
-						<view class="btn-box">
+						<!-- <view class="btn-box">
 							<button type="default" class="btn btn1" v-show='active!=4' @click.stop="addCollect(item2.goodsdata)">加入购物车</button>
-							<!-- <button type="default" class="btn btn1" v-show='active==4'>删除订单</button> -->
 							<button type="default" class="btn btn1" v-show='active==5' @click="toComment(item)">评价</button>
 							<button type="default" class="btn btn1" v-show='active==1' @click="cancelOrder(item.orderno,index)">取消订单</button>
 							<button type="default" class="btn btn2" v-show='active==1' @click="topay(item)">去付款</button>
 							<button type="default" class="btn btn2" v-show='active!=1' @click="toDrawback(item)">申请退款</button>
 							<button type="default" class="btn btn2" v-show='active==2' @click='tochat(item2.merchid)'>联系卖家</button>
-							<button type="default" class="btn btn2" v-show='active==3' @click="confirmReceive(item.orderno)">确认收货</button>
-
-						</view>
+						</view> -->
 					</view>
 
 
@@ -69,19 +75,30 @@
 			</scroll-view>
 		</view>
 		<pop ref='merch'></pop>
+		
+		<sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='defaultImg' :defaultPrice='defaultPrice'
+		:category='category' :total='totalsku' v-if="receivedCategory" :goodsid='id'></sku>
 	</view>
 </template>
 
 <script>
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	import pop from '@/components/promptOptions/pop'
+	import sku from '@/components/sku/pages/sku.vue'
 	export default {
 		components: {
 			uniLoadMore,
-			pop
+			pop,
+			sku
 		},
 		data() {
 			return {
+				defaultPrice:0,
+				defaultImg:'',
+				id:'',
+				category:[],
+				receivedCategory:false,
+				totalsku:0,
 				uid: '',
 				token: '',
 				userName:'',
@@ -172,25 +189,29 @@
 					url: `/pages/index/goodsDetail?id=${id}`
 				})
 			},
-			topay(item) {
+			topay(item,orderno) {
+				var totalprice=0
+				item.forEach((goods) =>{
+					totalprice+=Number(goods.amount) * Number(goods.goodsprice)
+				})
 				uni.navigateTo({
-					url: `/pages/index/cashier?orderId=${item.orderno}&money=${item.totalprice}`
+					url: `/pages/index/cashier?orderId=${orderno}&money=${totalprice}`
 				})
 			},
 			toComment(item) {
 				uni.navigateTo({
-					url: './comment?item=' + JSON.stringify(item)
+					url: './myOrderDetail?item=' + JSON.stringify(item)
 				})
 			},
 			toDrawback(item) {
-				var goods = []
-				item.goods.forEach((item1) => {
-					item1.goodsdata.forEach((item2) => {
-						goods.push(item2)
-					})
-				})
+				// var goods = []
+				// item.goods.forEach((item1) => {
+				// 	item1.goodsdata.forEach((item2) => {
+				// 		goods.push(item2)
+				// 	})
+				// })
 				uni.navigateTo({
-					url: `/pages/drawback/chooseWay?goods=${JSON.stringify(goods)}&orderno=${item.orderno}`
+					url: `/pages/drawback/chooseWay?goods=${JSON.stringify(item)}&orderno=${item.orderno}`
 				})
 			},
 			toggle(t) {
@@ -238,23 +259,6 @@
 				that.getList(that.page)
 				// },2000)
 			},
-			addCollect(item) {
-				var that = this,
-					ids = []
-				item.forEach((items) => {
-					ids.push(items.goodsid)
-				})
-				var params = {
-					uid: this.uid,
-					token: this.token,
-					goodsid: ids.join(',')
-				}
-				var url = '&r=api.member.cart.add'
-				this.$apiPost(url, params).then((res) => {
-					// that.options[2].info++
-					that.$msg('添加成功')
-				})
-			},
 			cancelOrder(order, from) {
 				var that = this
 				var params = {
@@ -269,12 +273,13 @@
 					that.dataList.splice(from, 1)
 				})
 			},
-			confirmReceive(order) {
+			confirmReceive(order,goodsid) {
 				var that = this
 				var params = {
 					uid: this.uid,
 					token: this.token,
-					orderno: order
+					orderno: order,
+					goodsid:goodsid
 				}
 				var url = '&r=api.member.order.receive'
 				this.$apiPost(url, params).then((res) => {
@@ -283,7 +288,50 @@
 					this.getList(this.page)
 					// that.options[2].info++
 				})
-			}
+			},
+			getCategory(id,img,price){
+				this.defaultImg=img
+				this.defaultPrice=price.split(' - ')[0]
+				this.$loading()
+				this.id=id
+							  var that=this
+							  var url='&r=api.goods.detail.sku&goodsid='+id
+							    this.$apiPost(url).then((res) =>{
+										that.category=res.data
+										that.totalsku=res.stock
+										// if(res.resultMessage=='暂无数据'){
+										// 	that.needCategory=false
+										// }else{
+										// 	that.needCategory=true
+										// }
+										that.receivedCategory=true
+										that.$nextTick(function(){
+											that.$refs.sku.specClass='show'
+											uni.hideLoading()
+										})
+							    })
+			},
+			completeSpecChoose(e){
+				this.addCollect(this.id,e.choosedid.join(','),e.selectArr)
+				this.receivedCategory=false
+			},
+			addCollect(id,skuidsort,specifications){
+				this.$loading()
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token: this.token,
+					goodsid:id,
+					specifications:specifications,
+					skuidsort:skuidsort
+				}
+				  var url='&r=api.member.cart.add'
+				  this.$apiPost(url,params).then((res) =>{
+						// that.options[2].info++
+						uni.hideLoading()
+										that.$msg('添加成功')
+				  })
+			},
 		}
 	}
 </script>
@@ -338,7 +386,7 @@
 	}
 
 	.child-overall:last-child {
-		padding-bottom: 40upx;
+		padding-bottom: 20upx;
 	}
 
 	.child-overall-item,
@@ -414,8 +462,10 @@
 	.btn-box {
 		text-align: right;
 		padding-right: 25upx;
-		padding-bottom: 20upx;
+		/* padding-bottom: 20upx; */
 		margin: 35upx 0 15upx;
+		overflow-x: auto;
+		white-space: nowrap;
 	}
 
 	.btn {

@@ -16,7 +16,7 @@
 							{{item.title}}
 						</view>
 						<view class="s3 cg options">
-							{{item.specs ? item.specs:'无规格'}}
+							{{item.specifications ? item.specifications:'无规格'}}
 							<!-- <image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image> -->
 						</view>
 					</view>
@@ -109,17 +109,17 @@
 			var selectedGoods=JSON.parse(e.selectedGoods)
 			this.data=selectedGoods
 			selectedGoods.forEach((item) =>{
-				console.log(item)
 				that.form.goods.push({
 					goodsid:item.goodsid,
 					amount:item.amount,
-					specifications:item.specs || '',
+					specifications:item.specifications || '',
 					freight:item.freight || 0,
-					skuidsort:item.skuidsort.join(',')
+					skuidsort:item.skuidsort || ''
 				})
 				that.totalAmount+=parseInt(item.amount)
 				that.totalPrice+=parseFloat(item.marketprice) * parseInt(item.amount)
 			})
+			console.log(this.form)
 			// this.spec=choosedSpec.selectArr
 			// this.goodsImg=choosedSpec.goodsImg
 			// // this.form.merchid=e.merchId 

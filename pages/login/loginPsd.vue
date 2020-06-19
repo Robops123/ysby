@@ -37,7 +37,7 @@
 		methods:{
 			loginveri(){
 				uni.redirectTo({
-					url:'/pages/login/loginVeri?passitive='+this.passitive
+					url:'/pages/login/loginVeri?passitive='+this.passitive+'&mobile='+this.mobile
 				})
 			},
 			submit(){

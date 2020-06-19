@@ -20,8 +20,8 @@
 		
 		<!-- 列表 -->
 		<view class="padding main">
-			<swiper class="swiper" autoplay="false" duration="500" interval="3000" >
-			    <swiper-item v-for="(item, index) in carouselList" class="swiper-item" :key="index" @click='toBannerDetail(item.link)'>
+			<swiper class="swiper" autoplay="false" duration="500" interval="3000" :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
+			    <swiper-item v-for="(item, index) in carouselList" class="swiper-item" :key="index" @click='toBannerDetail(item)'>
 			    	<image :src="item.thumb" mode="" style="width: 100%;"></image>
 			    </swiper-item>
 			   </swiper>
@@ -54,7 +54,7 @@
 				</view>
 			</view>
 			
-			<image :src="bannerList[0].thumb" v-if="bannerList[0]" @click='toBannerDetail(bannerList[0].link)' mode="" class="banner banner2"></image>
+			<image :src="bannerList[0].thumb" v-if="bannerList[0]" @click='toBannerDetail(bannerList[0])' mode="" class="banner banner2"></image>
 			
 			<view class="card card1">
 				<view>
@@ -72,7 +72,7 @@
 			</view>
 		</view>
 		
-		<image :src="bannerList[1].thumb" v-if="bannerList[1]" mode="" @click='toBannerDetail(bannerList[1].link)' class="banner banner3"></image>
+		<image :src="bannerList[1].thumb" v-if="bannerList[1]" mode="" @click='toBannerDetail(bannerList[1])' class="banner banner3"></image>
 		
 		<view class="hot padding">
 			<view class="hot-title"><image src="../../static/img/pic/index/hot.png" mode=""></image>热卖商品</view>
@@ -83,14 +83,14 @@
 					<view class="cr s5 word-bottom">
 						<text style="line-height: 70upx;">￥{{item.marketprice}}</text>
 						<view class="buy fr">
-							<image src="../../static/img/pic/cart.png" mode="" @click.stop="addCollect(item.id)"></image>
+							<image src="../../static/img/pic/cart.png" mode="" @click.stop="getCategory(item.id,item.thumb,item.marketprice)"></image>
 						</view>
 					</view>
 				</view>
 			</view>
 		</view>
 		
-		<image :src="bannerList[2].thumb" v-if="bannerList[2]" @click='toBannerDetail(bannerList[2].link)' mode="" class="banner banner2"></image>
+		<image :src="bannerList[2].thumb" v-if="bannerList[2]" @click='toBannerDetail(bannerList[2])' mode="" class="banner banner2"></image>
 		
 		<view class="padding">
 			<view class="card card2">
@@ -134,6 +134,11 @@
 			</view>
 		</view>
 		<!-- <uni-rate disabled="true" size="12" value="3.5" style="float: left;margin-top: 24upx;"></uni-rate> -->
+		
+		
+		<!-- 规格 -->
+		<sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='defaultImg' :defaultPrice='defaultPrice'
+		:category='category' :total='total' v-if="receivedCategory" :goodsid='id'></sku>
 	</view>
 </template>
 
@@ -141,13 +146,21 @@
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniStatusBar from "@/components/uni-status-bar/uni-status-bar"
 	import amap from '@/common/amap-wx.js';  
+	import sku from '@/components/sku/pages/sku.vue'
 	export default{
 		components:{
 			uniRate,
-			uniStatusBar
+			uniStatusBar,
+			sku
 		},
 		data(){
 			return{
+				defaultPrice:0,
+				defaultImg:'',
+				id:'',
+				category:[],
+				receivedCategory:false,
+				total:0,
 				logined:false,
 				located:true,
 				uid:'',
@@ -216,10 +229,25 @@
 		},
 		methods:{
 			// 轮播链接
-			toBannerDetail(link){
-				uni.navigateTo({
-					url:`/pages/index/bannerDetail?url=`+link
-				})
+			toBannerDetail(item){
+				switch(item.type){
+					case '1':
+					uni.navigateTo({
+						url:`/pages/index/bannerDetail?url=`+item.link
+					})
+					break ;
+					case '2':
+					uni.navigateTo({
+						url:`/pages/index/goodsDetail?id=`+item.goodsid
+					})
+					break ;
+					case '3':
+					uni.navigateTo({
+						url:`/pages/bussiness/shopPreview?id=`+item.merchid
+					})
+					break ;
+				}
+				
 			},
 			contact(){
 				uni.navigateTo({
@@ -367,23 +395,6 @@
 					this.$msg(err)
 				})
 			},
-			addCollect(id){
-				var ce=this.$operateInterceptor(this.logined)
-				if(!ce){
-					return ;
-				}
-				var that=this
-				var params={
-				  uid:this.uid,
-				  token: this.token,
-					goodsid:id
-				}
-				  var url='&r=api.member.cart.add'
-				  this.$apiPost(url,params).then((res) =>{
-						// that.options[2].info++
-										that.$msg('添加成功')
-				  })
-			},
 			toShop(id){
 				uni.navigateTo({
 					url:`/pages/bussiness/shopPreview?id=${id}`
@@ -393,6 +404,54 @@
 				uni.navigateTo({
 					url:'/pages/index/goodsDetail?id='+goodsid+'&merchId='+merchid
 				})
+			},
+			// 
+			getCategory(id,img,price){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				this.defaultImg=img
+				this.defaultPrice=price.split(' - ')[0]
+				this.$loading()
+				this.id=id
+							  var that=this
+							  var url='&r=api.goods.detail.sku&goodsid='+id
+							    this.$apiPost(url).then((res) =>{
+										that.category=res.data
+										that.total=res.stock
+										// if(res.resultMessage=='暂无数据'){
+										// 	that.needCategory=false
+										// }else{
+										// 	that.needCategory=true
+										// }
+										that.receivedCategory=true
+										that.$nextTick(function(){
+											that.$refs.sku.specClass='show'
+											uni.hideLoading()
+										})
+							    })
+			},
+			completeSpecChoose(e){
+				this.addCollect(this.id,e.choosedid.join(','),e.selectArr)
+				this.receivedCategory=false
+			},
+			addCollect(id,skuidsort,specifications){
+				this.$loading()
+				var that=this
+				var params={
+				  uid:this.uid,
+				  token: this.token,
+					goodsid:id,
+					specifications:specifications,
+					skuidsort:skuidsort
+				}
+				  var url='&r=api.member.cart.add'
+				  this.$apiPost(url,params).then((res) =>{
+						// that.options[2].info++
+						uni.hideLoading()
+										that.$msg('添加成功')
+				  })
 			},
 		}
 	}

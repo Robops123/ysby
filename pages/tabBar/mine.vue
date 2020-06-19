@@ -36,23 +36,38 @@
 					</view>
 					<view class="dd">
 						<view class="item-list" @click="toMyOrder(1)">
-							<image src="../../static/img/pic/mine/icon2.png" mode=""></image>
+							<view>
+								<text class="rest" v-if="data.orderAmount1>0">{{data.orderAmount1}}</text>
+								<image src="../../static/img/pic/mine/icon2.png" mode=""></image>
+							</view>
 							<view>待付款</view>
 						</view>
 						<view class="item-list" @click="toMyOrder(2)">
-							<image src="../../static/img/pic/mine/icon4.png" mode=""></image>
+							<view>
+								<text class="rest" v-if="data.orderAmount2>0">{{data.orderAmount2}}</text>
+								<image src="../../static/img/pic/mine/icon4.png" mode=""></image>
+							</view>
 							<view>待发货</view>
 						</view>
 						<view class="item-list" @click="toMyOrder(3)">
-							<image src="../../static/img/pic/mine/icon6.png" mode=""></image>
+							<view>
+								<text class="rest" v-if="data.orderAmount3>0">{{data.orderAmount3}}</text>
+								<image src="../../static/img/pic/mine/icon6.png" mode=""></image>
+							</view>
 							<view>待收货</view>
 						</view>
 						<view class="item-list" @click="toMyOrder(5)">
-							<image src="../../static/img/pic/mine/icon5.png" mode=""></image>
+							<view>
+								<text class="rest" v-if="data.orderAmount4>0">{{data.orderAmount4}}</text>
+								<image src="../../static/img/pic/mine/icon5.png" mode=""></image>
+							</view>
 							<view>待评价</view>
 						</view>
 						<view class="item-list">
-							<image src="../../static/img/pic/mine/icon10.png" mode=""></image>
+							<view>
+								<text class="rest" v-if="data.orderAmount5>0">{{data.orderAmount5}}</text>
+								<image src="../../static/img/pic/mine/icon10.png" mode=""></image>
+							</view>
 							<view>售后/退款</view>
 						</view>
 					</view>
@@ -378,6 +393,7 @@
 		}
 		
 		.item-list{
+			position: relative;
 			text-align: center;
 			margin-top: 60upx;
 			display: inline-block;
@@ -451,5 +467,21 @@
 		}
 		.adv-btn2{
 			margin-top: 50upx;
+		}
+		
+		.item-list .rest{
+			width: 40upx;
+			height: 40upx;
+			display: inline-block;
+			position: absolute;
+			border: 1px solid #ffb6b9;
+			border-radius: 40upx;
+			color: #fff;
+			background-image: radial-gradient(#ff6d7e, #ffb6b9, #fff);
+			/* background-color: #fff; */
+			top: -15upx;
+			left: 50%;
+			z-index: 1;
+			margin-left: 10upx;
 		}
 </style>

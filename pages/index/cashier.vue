@@ -83,20 +83,22 @@
 			},
 			radioChange(e){
 				this.type=e.detail.value
-				let method=this.providerList.filter((item) => {return item.id==this.type})[0].name
-				uni.showModal({
-					title:'提示',
-					content:'确认使用'+method+'支付吗',
-					success:(e) =>{
-						if(e.confirm){
-							if(this.type=='rest'){
-								this.restPay()
-							}else{
+				if(this.type=='rest'){
+					this.restPay()
+				}else{
+					let method=this.providerList.filter((item) => {return item.id==this.type})[0].name
+					uni.showModal({
+						title:'提示',
+						content:'确认使用'+method+'支付吗',
+						success:(e) =>{
+							if(e.confirm){
 								this.requestPayment(this.type)
 							}
 						}
-					}
- 				})
+					})
+				}
+				
+				
 				// if(this.type=='wxpay'){
 				// 	this.weixinPay()
 				// }else{

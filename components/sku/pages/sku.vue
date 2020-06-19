@@ -6,11 +6,15 @@
 				<view class="specification-wrapper">
 					<scroll-view class="specification-wrapper-content" scroll-y="true">
 						<view class="specification-header">
-							<view class="specification-left"><image class="product-img" :src="goodsImg"></image></view>
+							<view class="specification-left">
+								<image class="product-img" :src="goodsImg" v-show="goodsImg"></image>
+								<image class="product-img" :src="defaultImg" v-show="!goodsImg"></image>
+								</view>
 							<view class="specification-right">
 								<view class="price-content">
 									<text class="sign">¥</text>
-									<text class="price">{{ marketPrice*selectNum || 0 }}</text>
+									<text class="price" v-show="marketPrice">{{ marketPrice*selectNum || 0 }}</text>
+									<text class="price" v-show="!marketPrice">{{defaultPrice}}</text>
 								</view>
 								<view class="inventory">库存:{{ stock || 0 }}</view>
 								<view class="choose">已选:{{ selectArr.join(',') }}</view>
@@ -55,7 +59,7 @@
 	// import skuList from '../json/skuList.json';
 	// import specList from '../json/specList.json';
 	export default{
-		props:['category','total','goodsid'],
+		props:['category','total','goodsid','defaultImg','defaultPrice'],
 		components:{
 			stepper
 		},
@@ -287,6 +291,7 @@
 		bottom: 0;
 		z-index: 99999;
 		overflow: hidden;
+		background-color: rgba(0,0,0,0.3);
 	
 		&.show {
 			display: block;
@@ -320,7 +325,7 @@
 			width: 100%;
 			height: 100%;
 			z-index: 1;
-			background-color: rgba(0, 0, 0, 0.3);
+			// background-color: rgba(0, 0, 0, 0.3);
 		}
 	
 		.layer {

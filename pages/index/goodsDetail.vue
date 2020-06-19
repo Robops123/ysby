@@ -2,7 +2,7 @@
 	<view style="padding-bottom: 50px;" v-cloak>
 		<view class="padding top border-bottom">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
-			<swiper class="preview" :autoplay="autoplay" duration="500" interval="9999999" @transition='swiperChange'>
+			<swiper class="preview" :autoplay="autoplay" duration="500" interval="9999999" @transition='swiperChange' :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
 				<!-- <swiper-item v-if="data.video">
 								<video :src="data.video" class="preview" id="myVideo"  @click="visible2=true">
 								</video>
@@ -47,14 +47,15 @@
 						{{item.content}}
 					</view>
 					<view class="comment-pic">
-						<image :src="commentImgItem" mode="" v-for="(commentImgItem,commentImgIndex) in item.picurl" v-if='commentImgIndex<=3' :key='commentImgIndex'></image>
+						<image :src="commentImgItem" mode="" v-for="(commentImgItem,commentImgIndex) in item.picurl.split(',')"
+						 v-if='commentImgIndex<=3' :key='commentImgIndex' @click="readImg(commentImgItem)"></image>
 					</view>
 				</view>
 				<view class="s3 cg">{{item.skuname}}</view>
 				
 			</view>
 			<view class="" style="text-align: center;" >
-				<button type="default" class="btn" @click="toComments">{{data.toComments ? "查看全部评价":'暂无评论'}}</button>
+				<button type="default" class="btn" @click="toComments">{{data.comments.length>0 ? "查看全部评价":'暂无评论'}}</button>
 			</view>
 		</view>
 		
@@ -103,21 +104,20 @@
 		<uni-goods-nav :fill="true"  :options="options" :buttonGroup="buttonGroup" 
 		 @click="onClick" @buttonClick="buttonClick" class="goods-nav animated slideInUp" />
 		 
-		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='thumb_url["1"]'
+		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='thumb_url["1"] || ""' :defaultPrice='defaultPrice'
 		 :category='category' :total='total' v-if="receivedCategory" :goodsid='id'></sku>
 		 
 		 
 		
 		 
-		 <share-prompt :show='popshow' v-if="data.thumb_url['1']" :shareImg='data.thumb_url["1"]' :shareTitle="'密码门'" @close='closeSharePrompt' :goodsid="id" :uid='uid' :token='token'></share-prompt>
+		 <share-prompt :show='popshow' v-if="data.thumb_url" :shareImg='data.thumb_url["1"]' :shareTitle="'密码门'" @close='closeSharePrompt' :goodsid="id" :uid='uid' :token='token'></share-prompt>
 		 
 		 
 		 
 		 
-		 <s-popup custom-class="demo-popup" position="center" v-model="visible2" customClass='advPopup'>
-		   <!-- 内容 -->
+		 <!-- <s-popup custom-class="demo-popup" position="center" v-model="visible2" customClass='advPopup'>
 		   <video :src="data.video" controls style="width: 100%;height: 320px;"></video>
-		 </s-popup>
+		 </s-popup> -->
 	</view>
 </template>
 
@@ -125,7 +125,7 @@
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniGoodsNav from '@/components/uni-goods-nav/uni-goods-nav.vue'
 	import sku from '@/components/sku/pages/sku.vue'
-	import sPopup from '@/components/s-popup/index';
+	// import sPopup from '@/components/s-popup/index';
 	import sharePrompt from '@/components/sharePrompt/sharePrompt'
 	// import uniPopup from "@/components/uni-popup/uni-popup.vue"
 	export default{
@@ -133,7 +133,7 @@
 			uniRate,
 			uniGoodsNav,
 			sku,
-			sPopup,
+			// sPopup,
 			sharePrompt
 			// uniPopup
 		},
@@ -142,6 +142,7 @@
 		},
 		data () {
 		      return {
+				  defaultPrice:0,
 				  videoContext:'',
 				  image:'',
 				  advImg:'',
@@ -188,7 +189,7 @@
 		          color: '#fff'
 		        }
 		        ],
-				
+				collectOperate:false,
 		      }
 		    },
 			onLoad(p){
@@ -252,14 +253,19 @@
 		      buttonClick (e) {
 		        console.log(e)
 				if(e.index==0){
-					this.addCollect()
+					if((this.choosedSpec.choosedid=='' || this.choosedSpec.choosedid==undefined || this.choosedSpec.choosedid==null) & this.needCategory){
+										  this.collectOperate=true
+						this.chooseCategory()
+						return ;
+					}
+					this.addCollect(this.choosedSpec)
 				}else{
 					this.buy()
 				}
 		        // this.options[2].info++
 		      },
 			  // 添加购物车
-			  addCollect(){
+			  addCollect(e){
 				  var ce=this.$operateInterceptor(this.logined)
 				  if(!ce){
 				  	return ;
@@ -268,11 +274,14 @@
 				  var params={
 				    uid:this.uid,
 				    token: this.token,
-					goodsid:this.id
+					goodsid:this.id,
+					specifications:e.selectArr,
+					skuidsort:e.choosedid.join(',')
 				  }
 				    var url='&r=api.member.cart.add'
 				    this.$apiPost(url,params).then((res) =>{
 				  		// that.options[2].info++
+						that.collectOperate=false
 						that.$msg('添加成功')
 				    })
 			  },
@@ -351,6 +360,7 @@
 			  },
 			  chooseCategory(){
 				  if(this.needCategory){
+					  this.defaultPrice=this.data.marketprice.split(' - ')[0]
 					  this.$refs.sku.specClass='show'
 				  }
 			  },
@@ -371,6 +381,7 @@
 				    // var url='/wangtosale_list'
 				    this.$apiPost(url).then((res) =>{
 						that.data=res.data
+						console.log(that.data)
 						that.thumb_url=res.data.thumb_url
 						// if(res.data.video){
 						// 	this.swiperList.push({
@@ -393,7 +404,7 @@
 						}
 						that.$nextTick(function(){
 							that.getCategory()
-							that.videoContext = uni.createVideoContext('myVideo')
+							// that.videoContext = uni.createVideoContext('myVideo')
 						})
 				  	  // that.total=res.total
 				  	  // that.dataList=that.dataList.concat(res.data)
@@ -423,10 +434,14 @@
 				this.autoplay=false
 				},
 				swiperChange(e){
-					this.autoplay=true
-					this.videoContext.pause();
+					// this.autoplay=true
+					// this.videoContext.pause();
 				},
 			  completeSpecChoose(e){
+				  if(this.collectOperate){
+					  this.addCollect(e)
+					  return ;
+				  }
 				  this.choosedSpec=e
 				  uni.navigateTo({
 				  	url:'./createOrder?goodsId='+this.id+'&merchId='+this.data.merchid
@@ -448,6 +463,12 @@
 			  },
 			  closeSharePrompt(){
 				  this.popshow=false
+			  },
+			  readImg(url){
+				  uni.previewImage({
+				  	current:url,
+				  	urls:[url]
+				  })
 			  }
 			  // compress(url){
 				 //  uni.compressImage({
@@ -702,8 +723,9 @@
 	.goods-nav{
 		position: fixed;
 		bottom: 0;
+		left: 0;
 		width: 100%;
-		z-index: 3;
+		z-index: 100;
 	}
 	.bottom-nav{
 		position: relative;

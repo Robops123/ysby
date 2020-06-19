@@ -1,12 +1,12 @@
 <template>
 	<view>
 		<view class="padding">
-			<view  v-for="(item,index) in data.goods" :key='index'>
-				<view class="top" v-for="(childItem,childIndex) in item.goodsdata" :key='childIndex'>
-					 <image :src="childItem.goodspic" mode=""></image>
+			<view >
+				<view class="top">
+					 <image :src="data.goodspic" mode=""></image>
 					 <view class="s3 ">
-						<view class="ellipsis title">{{childItem.goodsname}}</view>
-						<view class="cg" style="margin-top: 15upx;">分类:{{childItem.specifications ? childItem.specifications:'无分类'}}</view>
+						<view class="ellipsis title">{{data.goodsname}}</view>
+						<view class="cg" style="margin-top: 15upx;">分类:{{data.specifications ? data.specifications:'无分类'}}</view>
 					 </view>
 				</view>
 			</view>
@@ -74,6 +74,7 @@
 			return {
 				data:'',
 				form:{
+					merchid:'',
 					uid:'',
 					token:'',
 					orderid:'',
@@ -97,8 +98,9 @@
 				this.form.token=userInfo.token
 			}
 			var info=JSON.parse(p.item)
-			console.log(info)
 			this.data=info
+			this.form.goodsid=info.goodsid
+			this.form.merchid=p.merchid
 			this.form.orderid=info.orderno
 		},
 		methods:{

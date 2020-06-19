@@ -5,108 +5,55 @@
 				<view class="card" v-for="(item,index) in dataList" :key='index'>
 					<view class="child-overall" >
 						<view class="child-overall-item"> 
-							<image :src="item.thumb" mode=""></image>
+							<image :src="item.goodspic" mode=""></image>
 							<view class="info">
 								<view class="s2 title">
 									{{item.goodsname}}
 								</view>
 								<view class="btn-box">
 									<button type="default" class="btn btn1">再来一单</button>
-									<button type="default" class="btn btn2" @click="toComment(item)">评价</button>
+									<button type="default" class="btn btn2" @click="toComment(item,data.merchid)">评价</button>
 								</view>
 							</view>
 						</view>
 					</view>
 				</view>
-				<uni-load-more :status="more"></uni-load-more>
 			</scroll-view>
 		</view>
 	</view>
 </template>
 
 <script>
-	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default{
-		components:{
-			uniLoadMore
-		},
 		data(){
 			return{
-				cartList:[],
-				sh:'',
+				data:{},
 				dataList:[],
-				page:1,
-				pageSize:10,
-				total:0,
-				more:'',
 				uid:'',
 				token:''
 			}
 		},
-		computed: {
-		     noMore () {
-		       return this.dataList.length >= this.total
-		     },
-		   },
-		   onReachBottom(){
-			 if(this.noMore){
-			 					this.more='noMore'
-			 					return;
-			 				}
-			 				var that=this
-			 				this.more='loading'
+		   onLoad(p){
+			 this.data=JSON.parse(p.item)
+			 this.dataList=this.data.goodsdata
+			 var that=this
+			 var userInfo=uni.getStorageSync('userInfo'),that=this
+			 if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+			 	this.uid=userInfo.uid
+			 	this.token=userInfo.token
+			 }
+			 // this.getList(this.page)
 			 // setTimeout(function(){
-			 				  that.page++
-			 				  that.getList(that.page)
-			 // },2000)  
-		   },
-		   mounted(){
-		   	var that=this
-			var userInfo=uni.getStorageSync('userInfo'),that=this
-			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
-				this.uid=userInfo.uid
-				this.token=userInfo.token
-			}
-			this.getList(this.page)
-		   	setTimeout(function(){
-		   		that.$getHeight('#sv',(res) =>{
-		   			that.sh=res
-		   		})
-		   	},0)
+			 // 	that.$getHeight('#sv',(res) =>{
+			 // 		that.sh=res
+			 // 	})
+			 // },0)
 		   },
 		methods:{
-			toComment(item){
+			toComment(item,merchid){
 				uni.navigateTo({
-					url:'./comment?item='+JSON.stringify(item)
+					url:'./comment?item='+JSON.stringify(item)+'&merchid='+merchid
 				})
-			},
-			reset(){
-				this.page=1
-				this.total=0
-				this.dataList=[]
-				this.more=''
-			},
-			getList(p){
-				var that=this
-				var params={
-				  page:p,
-				  pagesize: this.pageSize,
-				  uid:this.uid,
-				  token:this.token,
-				  status:5
-				}
-				if(this.page==1){
-					this.$loading()
-				}
-				  var url='&r=api.member.order'
-				  this.$apiPost(url,params).then((res) =>{
-					  that.total=res.total
-					  that.dataList=that.dataList.concat(res.data)
-					  that.more=''
-					  if(that.page==1){
-					  	uni.hideLoading()
-					  }
-				  })
 			},
 		}
 	}

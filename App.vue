@@ -1,3 +1,4 @@
+
 <script>
 	require("sdk/libs/strophe");
 	let msgStorage = require("comps/chat/msgstorage");
