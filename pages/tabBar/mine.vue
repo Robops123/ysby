@@ -103,7 +103,7 @@
 							<image src="../../static/img/pic/mine/icon1.png" mode=""></image>
 							<view>帮助中心</view>
 						</view>
-						<view class="item-list">
+						<view class="item-list" @click="contact">
 							<image src="../../static/img/pic/mine/icon8.png" mode=""></image>
 							<view>官方客服</view>
 						</view>
@@ -173,6 +173,11 @@
 			}
 		},
 		methods:{
+			contact(){
+				uni.navigateTo({
+					url:`/pages/index/webKf`
+				})
+			},
 			toPersonal(){
 				uni.navigateTo({
 					url:`/pages/mine/personal`

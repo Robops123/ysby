@@ -72,6 +72,7 @@
 		},
 		data(){
 			return {
+				index:'',
 				data:'',
 				form:{
 					merchid:'',
@@ -98,10 +99,11 @@
 				this.form.token=userInfo.token
 			}
 			var info=JSON.parse(p.item)
+			this.index=p.index
 			this.data=info
 			this.form.goodsid=info.goodsid
 			this.form.merchid=p.merchid
-			this.form.orderid=info.orderno
+			this.form.orderid=p.orderno
 		},
 		methods:{
 			starChange(e){
@@ -165,6 +167,7 @@
 							that.$msg('评价成功')
 							uni.hideLoading()
 							uni.$emit('updateOrder')
+							uni.$emit('disableComment',this.index)
 							setTimeout(function(){
 								uni.navigateBack({
 									delta:1

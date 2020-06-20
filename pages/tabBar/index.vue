@@ -12,8 +12,9 @@
 					<icon type="search" size="20" class="icon" />
 					<input type="text" v-model="keywords" @confirm='search' placeholder="寻找附近的商家"/>
 				</view>
-				<view class="comment">
+				<view class="comment" @click="toMessage">
 					<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
+					<uni-badge :text="msgNum" type='main' class="badge" size="small" v-show="msgNum>0"></uni-badge>
 				</view>
 			</view>
 		</view>
@@ -147,11 +148,14 @@
 	import uniStatusBar from "@/components/uni-status-bar/uni-status-bar"
 	import amap from '@/common/amap-wx.js';  
 	import sku from '@/components/sku/pages/sku.vue'
+	import uniBadge from "@/components/uni-badge/uni-badge.vue"
+	let msgStorage = require("@/comps/chat/msgstorage");
 	export default{
 		components:{
 			uniRate,
 			uniStatusBar,
-			sku
+			sku,
+			uniBadge
 		},
 		data(){
 			return{
@@ -188,7 +192,8 @@
 				lat:'',
 				city:'',
 				amapPlugin:null,
-				key:'364f9609be0c585e1d79d1c6f5ca4faf'
+				key:'364f9609be0c585e1d79d1c6f5ca4faf',
+				msgNum:''
 			}
 		},
 		// watch:{
@@ -199,6 +204,8 @@
 		// 	}
 		// },
 		mounted(){
+			// uni.clearStorageSync()
+			uni.setStorageSync('member',[{name:'cd82566fd157be7887d7ca6cb646575d'}])
 			var that=this
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
@@ -226,6 +233,31 @@
 			this.getBargain()
 			this.getBanner()
 			this.getNearbyBusiness()
+			this.calcUnRead()
+			msgStorage.on("newChatMsg", function(renderableMsg, type, curChatMsg, sesskey){
+				// console.log(renderableMsg, type, curChatMsg, sesskey)
+				// 判断是否属于当前会话
+				let members=uni.getStorageSync('member') || [],
+				existance=false
+				if(members.length==0){
+					members.push({
+						name:renderableMsg.yourname
+					})
+				}else {
+					for(var i=0;i<members.length;i++){
+						if(members[i].name==renderableMsg.yourname){
+							existance=true
+						}
+					}
+					if(!existance){
+						members.push({
+							name:renderableMsg.yourname
+						})
+					}
+				}
+				uni.setStorageSync('member',members)
+				that.calcUnRead();
+			});
 		},
 		methods:{
 			// 轮播链接
@@ -248,6 +280,16 @@
 					break ;
 				}
 				
+			},
+			toMessage(){
+				console.log(this.msgNum)
+				uni.$on('reduceMsg',(res) =>{
+					console.log(res)
+					this.msgNum-=res
+				})
+				uni.navigateTo({
+					url:`/pages/chat/message`
+				})
 			},
 			contact(){
 				uni.navigateTo({
@@ -313,6 +355,16 @@
 			getBargain(){
 				var that=this
 				  var url='&r=api.home.goods.bargain'
+				  this.$apiPost(url).then((res) =>{
+					 that.bargainList=res.data
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
+			},
+			// 限时活动
+			getActivity(){
+				var that=this
+				  var url='&r=api.home.activity'
 				  this.$apiPost(url).then((res) =>{
 					 that.bargainList=res.data
 				  }).catch((err) =>{
@@ -453,6 +505,29 @@
 										that.$msg('添加成功')
 				  })
 			},
+			calcUnRead(){
+				var member = uni.getStorageSync("member");
+				var myName = uni.getStorageSync("myUsername");
+				var num=0
+				for(let i = 0; i < member.length; i++){
+					let newChatMsgs = uni.getStorageSync(member[i].name + myName) || [];
+					let historyChatMsgs = uni.getStorageSync("rendered_" + member[i].name + myName) || [];
+					let curChatMsgs = historyChatMsgs.concat(newChatMsgs);
+					if(curChatMsgs.length){
+						let lastChatMsg = curChatMsgs[curChatMsgs.length - 1];
+						num+=newChatMsgs.length
+						// lastChatMsg.unReadCount = newChatMsgs.length;
+						// if(lastChatMsg.unReadCount > 99) {
+						// 	lastChatMsg.unReadCount = "99+";
+						// }
+						
+					}
+				}
+				if(num > 99){
+					num='99+'
+				}
+				this.msgNum=num
+			}
 		}
 	}
 </script>
@@ -718,6 +793,7 @@
 		}
 		
 		.comment image{
+			position: relative;
 			width: 45upx;
 			height: 40upx;
 			display: inline-block;
@@ -736,5 +812,14 @@
 		.cityName{
 			max-width: 120upx;
 			overflow: hidden;
+		}
+		
+		.comment{
+			position: relative;
+		}
+		.badge{
+			position: absolute;
+			right: -8px;
+			top: -8px;
 		}
 </style>

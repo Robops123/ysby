@@ -3,7 +3,7 @@
 	require("sdk/libs/strophe");
 	let msgStorage = require("comps/chat/msgstorage");
 	let msgType = require("comps/chat/msgtype");
-	 
+	
 	let disp = require("utils/broadcast");
 	let logout = false;
 	let is_reconnect = false;
@@ -48,15 +48,46 @@
 			});
 			
 			
+			var userInfo = uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.$conn.open({
+											apiUrl: this.$im.config.apiURL,
+											user: userInfo.hx_openid,
+											pwd: userInfo.hx_pwd,
+											grant_type: 'password',
+											appKey: this.$im.config.appkey
+										});
+										uni.setStorageSync('myUsername',userInfo.hx_openid)
+			}
+			
+			
+			
 			this.$im.conn.listen({
+				onOpened: (message)=>{
+					this.$im.conn.setPresence();
+					console.log('登录成功');
+					message.accessToken && uni.setStorageSync("myToken", message.accessToken);
+					if (is_reconnect) {
+						uni.hideToast();
+						this.$helper.toast('success', '登陆成功', 2000)
+						is_reconnect = false;
+					}
+					if(this.getCurrentRoute() == "pages/login/login" || getCurrentRoute() == "pages/login_token/login_token"){
+						this.onLoginSuccess();
+					}
+					
+				},
 				onReconnect: ()=>{
-					// this.$helper.toast('loading', '重连中...', 2000)
+					this.$helper.toast('loading', '重连中...', 2000)
 				},
 				onSocketConnected: ()=>{
-					// this.$helper.toast('success', '登陆成功', 2000)
+					this.$helper.toast('success', '登陆成功', 2000)
 				},
 				onClosed: ()=>{
-					// this.$helper.toast('none', '网络已断开', 2000)
+					this.$helper.toast('none', '网络已断开', 2000)
+					uni.redirectTo({
+						url: "../login/login"
+					});
 					this.$conn.closed = true;
 					this.$im.conn.close();
 				},
@@ -112,7 +143,7 @@
 						});
 						break;
 					case "memberJoinPublicGroupSuccess":
-						// this.$helper.toast('none', '已进群', 1000)
+						this.$helper.toast('none', '已进群', 1000)
 						break;
 					// 好友列表
 					// case "subscribed":
@@ -208,7 +239,6 @@
 				// },
 			
 				onTextMessage: (message)=>{
-					console.log("onTextMessage", message);
 					if(message){
 						if(this.onMessageError(message)){
 							msgStorage.saveReceiveMsg(message, msgType.TEXT);
@@ -219,7 +249,6 @@
 				},
 			
 				onEmojiMessage: (message)=>{
-					console.log("onEmojiMessage", message);
 					if(message){
 						if(this.onMessageError(message)){
 							msgStorage.saveReceiveMsg(message, msgType.EMOJI);
@@ -241,7 +270,6 @@
 				},
 			
 				onFileMessage: (message)=>{
-					console.log('onFileMessage', message);
 					if (message) {
 						if(this.onMessageError(message)){
 							msgStorage.saveReceiveMsg(message, msgType.FILE);
@@ -302,6 +330,19 @@
 				},
 			});
 			
+			// // #ifdef H5
+			// if(!this.$im.conn.isOpened() && uni.getStorageSync("myToken") && uni.getStorageSync("myUsername")) {
+			// 	is_reconnect = true;
+			// 	this.$helper.toast('loading', '自动登陆中...', 10000, true);
+			// 	//尝试使用token重新登陆
+			// 	this.$conn.open({
+			// 		apiUrl: this.$im.config.apiURL,
+			// 		user: uni.getStorageSync("myUsername"),
+			// 		accessToken: uni.getStorageSync("myToken"),
+			// 		appKey: this.$im.config.appkey
+			// 	});
+			// }
+			// // #endif
 			
 			
 		},
@@ -312,6 +353,14 @@
 			console.log('App Hide')
 		},
 		methods: {
+	
+			onLoginSuccess(){
+				uni.hideToast();
+				uni.switchTab({
+					url: "../chat/chat"
+				});
+			},
+			
 			ack(receiveMsg){
 				// 处理未读消息回执
 				var bodyId = receiveMsg.id;         // 需要发送已读回执的消息id
@@ -333,11 +382,11 @@
 				return true;
 			},
 			
-			// getCurrentRoute(){
-			// 	let pages = getCurrentPages();
-			// 	let currentPage = pages[pages.length - 1];
-			// 	return currentPage.route;
-			// },
+			getCurrentRoute(){
+				let pages = getCurrentPages();
+				let currentPage = pages[pages.length - 1];
+				return currentPage.route;
+			},
 			
 			calcUnReadSpot(message){
 				let myName = uni.getStorageSync("myUsername");

@@ -31,7 +31,7 @@
 		  },
 		onLoad(p){
 			this.url=p.url
-			 bottomImageMenu = new BottomImageMenu(menus)
+			 bottomImageMenu = new BottomImageMenu(this.menus)
 		},
 		onNavigationBarButtonTap(){
 			// this.$loading()

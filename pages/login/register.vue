@@ -77,6 +77,14 @@
 					  setTimeout(function(){
 						that.$msg('注册成功')  
 					  },100)
+					  that.$conn.open({
+					  							apiUrl: that.$im.config.apiURL,
+					  							user: res.data.hx_openid,
+					  							pwd: res.data.hx_pwd,
+					  							grant_type: 'password',
+					  							appKey: that.$im.config.appkey
+					  						});
+											uni.setStorageSync('myUsername',res.data.hx_openid)
 					  uni.setStorageSync('userInfo',res.data)
 					 if(that.passitive){
 					 						    uni.$emit('logined')

@@ -104,9 +104,11 @@ msgStorage.saveReceiveMsg = function(receiveMsg, type){
 	this.saveMsg(sendableMsg, type, receiveMsg);
 };
 msgStorage.saveMsg = function(sendableMsg, type, receiveMsg){
+	// console.log(sendableMsg)
 	//console.log('sendableMsgsendableMsg', sendableMsg)
 	let me = this;
 	let myName = wx.getStorageSync("myUsername");
+	// console.log(myName)
 	let sessionKey;
 	// 仅用作群聊收消息，发消息没有 receiveMsg
 	if(receiveMsg && receiveMsg.type == "groupchat"){
@@ -119,12 +121,14 @@ msgStorage.saveMsg = function(sendableMsg, type, receiveMsg){
 			: sendableMsg.body.from + myName;
 	}
 	let curChatMsg = wx.getStorageSync(sessionKey) || [];
+	// console.log(sendableMsg, type, myName)
 	let renderableMsg = msgPackager(sendableMsg, type, myName);
 	if(type == msgType.AUDIO) {
 		renderableMsg.msg.length = sendableMsg.body.length;
 		renderableMsg.msg.token = sendableMsg.accessToken;
 	}
 	curChatMsg.push(renderableMsg);
+	// console.log(curChatMsg,sessionKey)
 	//console.log('renderableMsgrenderableMsg', renderableMsg)
 	if(type == msgType.AUDIO){
 		renderableMsg.msg.token = sendableMsg.accessToken;
@@ -155,6 +159,7 @@ msgStorage.saveMsg = function(sendableMsg, type, receiveMsg){
 
 	save();
 	function save(){
+		console.log(renderableMsg, type, curChatMsg, sessionKey)
 		wx.setStorage({
 			key: sessionKey,
 			data: curChatMsg,

@@ -1,12 +1,13 @@
 <template>
-	<view
+	<scroll-view
+	style="height: calc(100vh - 160rpx - 44px);"
 		scroll-y="true"
 		:class="view"
 		class="wrap chat-list"
 		@tap="onTap"
 		@scroll="scrollmore"
 		@scrolltoupper="getHistoryMsg"
-		:scroll-into-view="toView">
+		>
 		<view class="message" v-for="item in chatMsg" :key="item.mid" :id="item.mid">
 			<!-- <view class="time">
 				<text class="time-text">{{ item.time }}</text>
@@ -14,7 +15,7 @@
 			<view class="main" :class="item.style">
 				<view class="user">
 					<!-- yourname：就是消息的 from -->
-					<text class="user-text">dddd{{ item.yourname + ' ' + item.time}}</text>
+					<text class="user-text">{{ item.yourname + ' ' + item.time}}</text>
 				</view>
 				<image class="avatar" src="/static/images/theme@2x.png"/>
 				<view class="msg">
@@ -54,7 +55,7 @@
 				</view>
 			</view>
 		</view>
-	</view>
+	</scroll-view>
 	<!-- <view style="height: 1px;"></view> -->
 </template>
 
@@ -114,8 +115,9 @@
 				let sessionKey = username.groupId
 					? username.groupId + myUsername
 					: username.your + myUsername;
-				
+				console.log(sessionKey)
 				let chatMsg = uni.getStorageSync(sessionKey) || [];
+				console.log(chatMsg)
 				
 				this.renderMsg(null, null, chatMsg, sessionKey);
 				uni.setStorageSync(sessionKey, null);
@@ -169,30 +171,28 @@
 			},
 			
 			getHistoryMsg(){
-				console.log('getHistoryMsg');
-				return;
+				// console.log('getHistoryMsg');
+				// return;
 				let me = this
-				let username = this.data.username;
+				let username = this.username;
 				let myUsername = wx.getStorageSync("myUsername");
 				let sessionKey = username.groupId ? username.groupId + myUsername : username.your + myUsername;
 				let historyChatMsgs = wx.getStorageSync("rendered_" + sessionKey) || [];
-			
 				if (Index < historyChatMsgs.length) {
-					let timesMsgList = historyChatMsgs.slice(-Index-10, -Index)
-			
-					this.setData({
-						chatMsg: timesMsgList.concat(me.data.chatMsg),
-						toView: timesMsgList[timesMsgList.length - 1].mid,
-					});
-					Index += timesMsgList.length;
-					if (timesMsgList.length == 10) {
-						page ++
-					}
+					let timesMsgList = historyChatMsgs.slice(-Index, -Index-10)
+					this.chatMsg=timesMsgList.concat(me.chatMsg)
+					// this.toView=timesMsgList[timesMsgList.length - 1].mid
+					// this.setData({
+						
+					// });
+					Index += 10;
+					// if (timesMsgList.length == 10) {
+					// 	page ++
+					// }
 					wx.stopPullDownRefresh()
 				}
 			},
 			renderMsg(renderableMsg, type, curChatMsg, sessionKey, isnew){
-				console.log(renderableMsg, type, curChatMsg, sessionKey, isnew)
 				let me = this
 				if (curChatMsg.length > 1) {
 					this.chatMsg.map(function(elem, index) {
@@ -219,10 +219,8 @@
 					this.toView = historyChatMsgs[historyChatMsgs.length - 1].mid
 				}
 				uni.pageScrollTo({
-				    scrollTop: 99999999999,
-				    duration: 300
-				});
-				
+				  	scrollTop: 9999,
+				})
 				uni.setStorageSync("rendered_" + sessionKey, historyChatMsgs);
 			
 				let chatMsg = uni.getStorageSync(sessionKey) || [];
@@ -237,9 +235,7 @@
 			
 				uni.setStorageSync(sessionKey, chatMsg);
 				Index = historyChatMsgs.slice(-10).length;
-				uni.pageScrollTo({
-				  	scrollTop: 9999,
-				})
+				
 			
 				if (isFail) {
 					this.renderFail(sessionKey)
@@ -267,7 +263,6 @@
 				
 			},
 			scrollmore(e){
-				console.log(e)
 			}
 		}
 	}

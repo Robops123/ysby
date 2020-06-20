@@ -360,6 +360,12 @@
 				    }
 				},
 				{
+				    "path": "pages/chat/message",
+				    "style": {
+				       "navigationBarTitleText": "消息"
+				   }
+				},
+				{
 				    "path": "pages/mine/addressList",
 				    "style": {
 						"navigationBarTitleText": "收货地址管理"
@@ -483,6 +489,6 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#fff",
-		"backgroundColor": "#fff"
+		"backgroundColor": "#F0F0F0"
 	}
 }

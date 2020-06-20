@@ -51,9 +51,9 @@
 							<view class="btn-box">
 								<button type="default" class="btn btn2" v-show='active==3' @click.stop="confirmReceive(item.orderno,childItem.goodsid)">确认收货</button>
 								<button type="default" class="btn btn1" v-show='active!=4' @click.stop="getCategory(childItem.goodsid,childItem.goodspic,childItem.goodsprice)">加入购物车</button>
-								<button type="default" class="btn btn1" v-show='active==5' @click.stop="toComment(item2)">评价</button>
+								<button type="default" class="btn btn1" v-show='active==5' @click.stop="toComment(item2,item.orderno)">评价</button>
 								<button type="default" class="btn btn1" v-show='active==1' @click.stop="cancelOrder(item.orderno,index)">取消订单</button>
-								<button type="default" class="btn btn2" v-show='active==1' @click.stop="topay(item2.goodsdata,item2.orderno)">去付款</button>
+								<button type="default" class="btn btn2" v-show='active==1' @click.stop="topay(item2.goodsdata,item.orderno)">去付款</button>
 								<button type="default" class="btn btn2" v-show='active!=1' @click.stop="toDrawback(childItem)">申请退款</button>
 								<button type="default" class="btn btn2" v-show="item2.merchid!=0" @click.stop='tochat(item2.merchid)'>联系卖家</button>
 							</view>
@@ -122,6 +122,7 @@
 				that = this
 			// if(p.active!=0){
 			this.active = p.active
+			console.log(p)
 			this.userName=p.userName
 			// }
 			if (userInfo != '' & userInfo != null & userInfo != undefined) {
@@ -147,7 +148,7 @@
 			},
 		},
 		methods: {
-			tochat(id) {
+			async tochat(id) {
 				var that = this
 				var params = {
 					merchid:id,
@@ -156,7 +157,7 @@
 				}
 				var url = '&r=api.member.order.contactMerch'
 				this.$apiPost(url, params).then((res) => {
-						this.$conn.open({
+					 this.$conn.open({
 							apiUrl: this.$im.config.apiURL,
 							user: that.hx_openid,
 							pwd: that.hx_pwd,
@@ -165,11 +166,11 @@
 						});
 						uni.setStorageSync('myUsername',that.hx_openid)
 						var username={
-							your:res.data.merchname,
-							myName:that.userName
+							your:res.data.merch_hx_openid,
+							myName:that.hx_openid
 						}
 					uni.navigateTo({
-						url: `/pages/chat/chat?username=${JSON.stringify(username)}`
+						url: `/pages/chat/chat?username=${JSON.stringify(username)}&title=${res.data.merchname}`
 					})
 				})
 				
@@ -198,9 +199,9 @@
 					url: `/pages/index/cashier?orderId=${orderno}&money=${totalprice}`
 				})
 			},
-			toComment(item) {
+			toComment(item,orderno) {
 				uni.navigateTo({
-					url: './myOrderDetail?item=' + JSON.stringify(item)
+					url: './myOrderDetail?item=' + JSON.stringify(item)+'&orderno='+orderno
 				})
 			},
 			toDrawback(item) {
@@ -270,7 +271,9 @@
 				this.$apiPost(url, params).then((res) => {
 					this.$msg('取消成功')
 					// that.options[2].info++
-					that.dataList.splice(from, 1)
+					setTimeout(() =>{
+						that.dataList.splice(from, 1)
+					},500)
 				})
 			},
 			confirmReceive(order,goodsid) {
@@ -284,8 +287,10 @@
 				var url = '&r=api.member.order.receive'
 				this.$apiPost(url, params).then((res) => {
 					this.$msg('确认收货成功')
-					this.reset()
-					this.getList(this.page)
+					setTimeout(() =>{
+						this.reset()
+						this.getList(this.page)
+					},500)
 					// that.options[2].info++
 				})
 			},

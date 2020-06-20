@@ -2,7 +2,7 @@
 	<view>
 		<view class="padding" style="padding-bottom: 66px;">
 			<scroll-view scroll-y="true" id="sv" >
-				<view class="card" v-for="(item,index) in dataList" :key='index'>
+				<view class="card" v-for="(item,index) in dataList" :key='index' v-show="item.status=='5'">
 					<view class="child-overall" >
 						<view class="child-overall-item"> 
 							<image :src="item.goodspic" mode=""></image>
@@ -12,13 +12,15 @@
 								</view>
 								<view class="btn-box">
 									<button type="default" class="btn btn1">再来一单</button>
-									<button type="default" class="btn btn2" @click="toComment(item,data.merchid)">评价</button>
+									<button type="default" class="btn btn2" @click="toComment(item,data.merchid,orderno,index)">评价</button>
 								</view>
 							</view>
 						</view>
 					</view>
 				</view>
 			</scroll-view>
+			
+			<view style="text-align: center;" v-show="dataList.length==0">暂无待评论商品</view>
 		</view>
 	</view>
 </template>
@@ -30,12 +32,14 @@
 				data:{},
 				dataList:[],
 				uid:'',
-				token:''
+				token:'',
+				orderno:''
 			}
 		},
 		   onLoad(p){
 			 this.data=JSON.parse(p.item)
 			 this.dataList=this.data.goodsdata
+			 this.orderno=p.orderno
 			 var that=this
 			 var userInfo=uni.getStorageSync('userInfo'),that=this
 			 if(userInfo!='' & userInfo!=null & userInfo!=undefined){
@@ -50,9 +54,12 @@
 			 // },0)
 		   },
 		methods:{
-			toComment(item,merchid){
+			toComment(item,merchid,orderno,index){
+				uni.$on('disableComment',(i) =>{
+					this.dataList.splice(i,1)
+				})
 				uni.navigateTo({
-					url:'./comment?item='+JSON.stringify(item)+'&merchid='+merchid
+					url:'./comment?item='+JSON.stringify(item)+'&merchid='+merchid+'&orderno='+orderno+'&index='+index
 				})
 			},
 		}

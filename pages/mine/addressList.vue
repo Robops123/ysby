@@ -9,6 +9,7 @@
 				</view>
 				<view class="flex-between magin">
 					<text class="address">{{item.province+item.city+item.district+item.address}}</text>
+					<image src="../../static/img/pic/trash.png" mode="" style="width: 16px; height: 16px;" @click.stop='deleteAddress(item.id,item)'></image>
 					<view class="icon-Write iconfont " @click.stop="toChange('edit',item)"></view>
 				</view>
 			</view>
@@ -70,26 +71,28 @@
 				var that=this,list
 				if(this.mode==1){
 					list=['删除','选为收货地址']
-				}else{
-					list=['删除']
+					uni.showActionSheet({
+					    itemList: list,
+					    success: function (res) {
+							console.log(res)
+							if(res.tapIndex==0){
+								that.deleteAddress(id)
+							}else if(res.tapIndex==1){
+								uni.$emit('chooseAddress',item)
+								uni.navigateBack({
+									delta:1
+								})
+							}
+					    },
+					    fail: function (res) {
+					        console.log(res.errMsg);
+					    }
+					});
 				}
-				uni.showActionSheet({
-				    itemList: list,
-				    success: function (res) {
-						console.log(res)
-						if(res.tapIndex==0){
-							that.deleteAddress(id)
-						}else if(res.tapIndex==1){
-							uni.$emit('chooseAddress',item)
-							uni.navigateBack({
-								delta:1
-							})
-						}
-				    },
-				    fail: function (res) {
-				        console.log(res.errMsg);
-				    }
-				});
+				// else{
+				// 	list=['删除']
+				// }
+				
 			},
 			deleteAddress(id){
 				var that=this
@@ -103,7 +106,7 @@
 					  that.$msg('删除成功')
 					  setTimeout(function(){
 						  that.getAddressList()
-					  },0)
+					  },500)
 				  })
 			}
 		}
@@ -125,6 +128,7 @@
 	.address{
 		display: inline-block;
 		width: 80%;
+		word-break: break-word;
 	}
 	.magin{
 		margin: 10upx 0;

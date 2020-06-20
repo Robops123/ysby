@@ -8,8 +8,8 @@ module.exports = function(sendableMsg, type, myName){
 			from: sendableMsg.body.from,
 			to: sendableMsg.body.to
 		},
-		username: sendableMsg.body.from == myName ? sendableMsg.body.to : sendableMsg.body.from,
-		yourname: sendableMsg.body.from,
+		username: myName,
+		yourname: sendableMsg.body.from == myName ? sendableMsg.body.to : sendableMsg.body.from,
 		msg: {
 			type: type,
 			url: sendableMsg.body.body.url,

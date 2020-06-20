@@ -106,6 +106,7 @@
 				}
 				let id = this.$im.conn.getUniqueId();
 				let msg = new this.$im.message(msgType.TEXT, id);
+				console.log(this.chatType,this.username.myName,this.getSendToParam(),id,msg)
 				msg.set({
 					msg: this.userMessage,
 					from: this.username.myName,
@@ -113,6 +114,7 @@
 					roomType: false,
 					chatType: this.chatType,
 					success(id, serverMsgId){
+						console.log(id,serverMsgId)
 						//console.log('成功了')
 						disp.fire('em.chat.sendSuccess', id, me.userMessage);
 					},

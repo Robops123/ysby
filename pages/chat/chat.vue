@@ -7,8 +7,8 @@
 <script>
 	import chat from "@/comps/chat/chat.vue";
 	let disp = require("../../utils/broadcast");
-	
-	
+
+
 	export default {
 		components: {
 			chat
@@ -18,18 +18,22 @@
 				username: {
 					your: "",
 				},
+				title: ''
 			}
 		},
-		onUnload(){
-			
+		onUnload() {
+
+		},
+		onShow() {
+
 		},
 		onLoad(options) {
-		
-			
+
+			this.title = options.title
 			let username = JSON.parse(options.username);
 			this.username = username;
 			uni.setNavigationBarTitle({
-				title: this.username.your
+				title: this.title
 			});
 		},
 		onUnload() {
@@ -49,7 +53,7 @@
 </script>
 
 <style>
-page{
-	background-color: #FAFAFA;
-}
+	page {
+		background-color: #FAFAFA;
+	}
 </style>

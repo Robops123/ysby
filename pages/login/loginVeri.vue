@@ -47,6 +47,14 @@
 				var url='&r=api.member.account.loginByCode&mobile='+this.mobile+'&code='+this.code
 				  this.$apiPost(url).then((res) =>{
 					   uni.setStorageSync('userInfo',res.data)
+					   that.$conn.open({
+					   							apiUrl: that.$im.config.apiURL,
+					   							user: res.data.hx_openid,
+					   							pwd: res.data.hx_pwd,
+					   							grant_type: 'password',
+					   							appKey: that.$im.config.appkey
+					   						});
+											uni.setStorageSync('myUsername',res.data.hx_openid)
 					   if(that.passitive){
 						    uni.$emit('logined')
 							uni.navigateBack({
