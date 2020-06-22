@@ -10,7 +10,7 @@
 				<input type="password" v-model="form.newPass" placeholder="填写新密码"/>
 			</view>
 			<view class="option-item" >
-				<text>确认</text>
+				<text>确认密码</text>
 				<input type="password" v-model="form.confirmPass" placeholder="再次填写确认"/>
 			</view>
 		</view>
@@ -47,13 +47,19 @@
 				this.$loading()
 				var that=this
 				  this.$apiPost(this.url,this.form).then((res) =>{
-					  that.$msg('修改成功')
-					  uni.hideLoading()
-					  setTimeout(function(){
-						  uni.navigateBack({
-						  	delta:1
-						  })
-					  },300)
+					  uni.showModal({
+					  	showCancel:false,
+						title:'提示',
+						content:'密码修改成功',
+						confirmColor:'#ff6d7e',
+						success:(res) =>{
+							if(res.confirm){
+								uni.navigateBack({
+									delta:1
+								})
+							}
+						}
+					  })
 				  })
 			}
 		}
@@ -90,7 +96,7 @@
 		text-align: center;
 		line-height: 75upx;
 		letter-spacing: 4px;
-		color: white;
+		color: white !important;
 		font-size: 34upx;
 		margin-top: 200upx;
 	}

@@ -3,7 +3,7 @@
 		<view class="luntan">
 			<view class="luntan-card" >
 				<view class="luntan-card-top">
-					<image class="luntan-card-top-img" src="../../static/img/bg/activity.png" mode=""></image>
+					<image class="luntan-card-top-img" :src="data.logo" mode=""></image>
 					<view class="luntan-card-top-txt">
 						<view class="luntan-card-top-txt-title">{{data.merchname}}</view>
 						<view class="luntan-card-top-txt-time">{{data.createtime}}</view>
@@ -49,8 +49,8 @@
 									<view class="f2">
 										<text class="date">{{item.createtime}}</text>
 										<view class="fr">
-											<view class="luntan-card-bot-card">
-												<text class="iconfont icon-zan"></text>
+											<view class="luntan-card-bot-card" @click="commentDoLike(item.id,item.isLike,index)">
+												<text class="iconfont icon-zan" :class="{'icon-zan':!item.isLike,'icon-shou':item.isLike,'zaned':item.isLike}"></text>
 												<text>{{item.like}}</text>
 											</view>
 										</view>
@@ -72,8 +72,8 @@
 						<text class="iconfont icon-tubiao-"></text>
 						<text>评论</text>
 					</view>
-					<view class="luntan-card-bot-card">
-						<text class="iconfont " :class="{'icon-zan':!data.isLike,'icon-shou':data.isLike,'zaned':data.isLike}" @click="toggleZan(data.isLike)"></text>
+					<view class="luntan-card-bot-card" @click="toggleZan(data.isLike)">
+						<text class="iconfont " :class="{'icon-zan':!data.isLike,'icon-shou':data.isLike,'zaned':data.isLike}" ></text>
 						<text>赞</text>
 					</view>
 				</view>
@@ -188,7 +188,9 @@
 				var that=this
 				 await that.getList()
 				var params={
-				  id:this.id
+				  id:this.id,
+				  uid:this.uid,
+				  token:this.token
 				}
 				  var url='&r=api.college.hotarticle.detail&id='+this.id
 				  this.$apiPost(url,params).then((res) =>{
@@ -302,6 +304,38 @@
 					url:`/pages/bussiness/shopPreview?id=${id}`
 				})
 			},
+			// 评论点赞
+			commentDoLike(id,zaned,from){
+				var ce=this.$operateInterceptor(this.logined)
+				if(!ce){
+					return ;
+				}
+				this.$loading()
+				var that=this,url
+				if(!zaned){
+					url='&r=api.college.hotarticle.commentDoLike'
+				}else{
+					url='&r=api.college.hotarticle.commentDoLikeCancel'
+				}
+				var params={
+				  college_comment_id:id,
+				  uid:this.uid,
+				  token:this.token
+				}
+				  this.$apiPost(url,params).then((res) =>{
+					  this.commentList[from].isLike=!this.commentList[from].isLike
+					  if(!zaned){
+					  	this.commentList[from].like++
+						that.$msg('点赞成功')
+					  }else{
+					  	this.commentList[from].like--
+						that.$msg('取消点赞')
+					  }
+					  uni.hideLoading()
+					  that.$forceUpdate()
+				  })
+			},
+			// 文章点赞
 			toggleZan(zaned){
 				var ce=this.$operateInterceptor(this.logined)
 				if(!ce){
@@ -321,6 +355,11 @@
 				}
 				  this.$apiPost(url,params).then((res) =>{
 					  that.data.isLike=!that.data.isLike
+					  if(!zaned){
+						  that.$msg('点赞成功')
+					  }else{
+						  that.$msg('取消点赞')
+					  }
 					  uni.hideLoading()
 					  that.$forceUpdate()
 				  })

@@ -120,8 +120,9 @@
 				if(this.active==1){
 					 url='&r=api.discovery.merchant'
 					if(this.located){
-						params.lng=this.longitude
-						params.lat=this.latitude
+						params.lng=this.lng
+						params.lat=this.lat
+						console.log(params)
 						this.getList(params,url)
 					}else{
 						this.locate(params,url)

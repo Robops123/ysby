@@ -49,7 +49,7 @@
 								</view>
 							</view>
 							<view style="overflow: hidden;">
-									<video class="img-1" :src="item.video" v-if="item.video" :id='item.video'
+									<video class="img-1" :src="item.video" v-if="item.video" :id='item.video' :initial-time	='item.video_seen_time=="" ? 0:item.video_seen_time'
 									 @loadedmetadata='getVideoInfo($event,index)' @play='recordPrepare' @pause='recordProgress(item.id,index)' @timeupdate='timeupdate($event,index)'
 									 controls style="position: relative;"></video>
 								</view>
@@ -64,8 +64,8 @@
 									<text class="iconfont icon-tubiao-"></text>
 									<text>评论{{item.comment}}</text>
 								</view> 
-								<view class="luntan-card-bot-card" @click="toggleZan(item.isLike,item.id,index)">
-									<text class="iconfont " :class="{'icon-zan':!item.isLike,'icon-shou':item.isLike,'zaned':item.isLike}" ></text>
+								<view class="luntan-card-bot-card" @click="toggleZan(Number(item.isLike),item.id,index)">
+									<text class="iconfont " :class="{'icon-zan':!Number(item.isLike),'icon-shou':Number(item.isLike),'zaned':Number(item.isLike)}" ></text>
 									<text>赞{{item.like}}</text>
 								</view>
 							</view>
@@ -289,7 +289,7 @@
 				},url
 				if(this.active==1){
 					url='&r=api.college.hotarticle'
-					params.uid=1182
+					params.uid=this.uid
 				}else if(this.active==2){
 					url='&r=api.college.merchant&&page='+this.page+'&pagesize='+this.pageSize
 				}else if(this.active==3){
@@ -409,8 +409,10 @@
 				  this.$apiPost(url,params).then((res) =>{
 					  that.dataList[index].isLike=!that.dataList[index].isLike
 					  if(that.dataList[index].isLike){
+						  that.$msg('点赞成功')
 						  that.dataList[index].like++
 					  }else{
+						  that.$msg('取消点赞')
 						  that.dataList[index].like--
 					  }
 					  uni.hideLoading()
@@ -430,7 +432,6 @@
 			    },
 				share(type,way){
 					this.$loading()
-					console.log(type)
 					let shareOPtions = {
 						provider: 'weixin',
 									// extra: {
@@ -439,14 +440,12 @@
 						scene: type, //WXSceneSession”分享到聊天界面，“WXSenceTimeline”分享到朋友圈，“WXSceneFavorite”分享到微信收藏,
 						type:way,
 						success: (e) => {
-							console.log('success', e);
 							uni.showModal({
 								content: '已分享',
 								showCancel:false
 							})
 						},
 						fail: (e) => {
-							console.log('fail', e)
 							uni.showModal({
 								content: JSON.stringify(e),
 								showCancel:false
@@ -454,7 +453,6 @@
 						},
 						complete:function(){
 							uni.hideLoading()
-							console.log('分享操作结束!')
 						}
 					}
 					// 1文字  2图片  0图文   5小程序
@@ -483,7 +481,6 @@
 						default:
 							break;
 					}
-					console.log(shareOPtions)
 					// if(shareOPtions.type === 0 && plus.os.name === 'iOS'){//如果是图文分享，且是ios平台，则压缩图片 
 					// 	shareOPtions.imageUrl = await this.compress();
 					// }

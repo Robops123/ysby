@@ -15,12 +15,12 @@
 		<view class="tixian">
 			<view class="tixian-success">
 				<view class="tixian-success-num">{{data.doneCommission}}</view>
-				<view class="tixian-success-txt">成功提现金额(元)</view>
+				<view class="tixian-success-txt">成功提现佣金(元)</view>
 			</view>
 			<view class="tixian-ke">
 				<view class="tixian-ke-left">
 					<view class="tixian-success-num">{{data.canCommission}}</view>
-					<view class="tixian-success-txt">可提现金额(元)</view>
+					<view class="tixian-success-txt">可提现佣金(元)</view>
 				</view>
 				<view class="tixian-ke-right">推荐提现</view>
 			</view>

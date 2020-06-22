@@ -1,11 +1,9 @@
 <template>
 	<!-- #ifdef APP-PLUS || H5 -->
-	<web-view src="/hybrid/html/local.html" @message='message' :webview-styles="webviewStyles"></web-view>
+	<web-view src="http://yuying.qinshaozhuanshu.cn/web/merchant.php?c=site&a=entry&i=2&m=zhonghong_zhihui&do=web&r=chat" @message='message' :webview-styles="webviewStyles"></web-view>
 	<!-- #endif -->
 	
-	<!-- #ifdef MP-WEIXIN -->
-	<web-view src=""></web-view>
-	<!-- #endif -->
+	<!-- <web-view src=""></web-view> -->
 	
 </template>
 

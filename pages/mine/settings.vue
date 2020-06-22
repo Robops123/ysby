@@ -16,7 +16,7 @@
 				<text>意见反馈</text>
 				<text class="f1 fr"><text style="padding-right: 20upx;">让我们更好</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
-			<view class="option-item">
+			<view class="option-item" @click="to('aboutUs')">
 				<text>关于我们</text>
 				<text class="f1 fr"><text class="icon-arrow-right iconfont"></text></text>
 			</view>

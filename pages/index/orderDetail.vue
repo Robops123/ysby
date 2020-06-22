@@ -64,11 +64,11 @@
 				</view>
 				<view class="">
 					<text class="pre">支付时间: </text>
-					<text class=""> {{data.paytime}}</text>
+					<text class=""> {{data.paytime || '未支付'}}</text>
 				</view>
 		</view>
 		<view class="btn-box bgwhite" >
-			<button type="default" class="btn" @click="toDrawback">申请退款</button>
+			<!-- <button type="default" class="btn" @click="toDrawback">申请退款</button> -->
 			<!-- <button type="default" class="btn">确认收货</button> -->
 		</view>
 	</view>
@@ -81,6 +81,7 @@
 			uid:'',
 				token:'',
 				orderno:'',
+				merchid:'',
 				data:{}
 			}
 		},
@@ -91,6 +92,7 @@
 				this.token=userInfo.token
 			}
 			this.orderno=p.orderno
+			this.merchid=p.merchid || ''
 			this.getDetail()
 		},
 		methods:{
@@ -105,7 +107,8 @@
 				var params={
 					uid:this.uid,
 					token:this.token,
-					orderno:this.orderno
+					orderno:this.orderno,
+					merchid:this.merchid
 				}
 				var url='&r=api.member.order.detail'
 				  this.$apiPost(url,params).then((res) =>{

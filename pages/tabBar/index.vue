@@ -13,7 +13,7 @@
 					<input type="text" v-model="keywords" @confirm='search' placeholder="寻找附近的商家"/>
 				</view>
 				<view class="comment" @click="toMessage">
-					<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
+					<image src="../../static/img/pic/msg.png" mode="" class="" ></image>
 					<uni-badge :text="msgNum" type='main' class="badge" size="small" v-show="msgNum>0"></uni-badge>
 				</view>
 			</view>
@@ -58,9 +58,9 @@
 			<image :src="bannerList[0].thumb" v-if="bannerList[0]" @click='toBannerDetail(bannerList[0])' mode="" class="banner banner2"></image>
 			
 			<view class="card card1">
-				<view>
+				<view style="padding:0  2%;">
 					<text >每日特价</text>
-					<view class="fr s3 more">超低价好货<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
+					<view class="fr s3 more" style="margin-top: 4upx;" @click="toCategory(activityData.id)">{{activityData.title}}<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
 				</view>
 				<view class="sp">
 					<view class="sp-item" v-for="(item,index) in bargainList" :key='index' @click="toDetail(item.id)">
@@ -96,7 +96,7 @@
 		<view class="padding">
 			<view class="card card2">
 				<text>附近商家</text>
-				<view class="fr s3 more">聚集知名店铺<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
+				<view class="fr s3 more" style="margin-top: 6upx;" @click="toDiscover">聚集知名店铺<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
 			</view>
 			
 			
@@ -193,7 +193,8 @@
 				city:'',
 				amapPlugin:null,
 				key:'364f9609be0c585e1d79d1c6f5ca4faf',
-				msgNum:''
+				msgNum:'',
+				activityData:{}
 			}
 		},
 		// watch:{
@@ -205,7 +206,7 @@
 		// },
 		mounted(){
 			// uni.clearStorageSync()
-			uni.setStorageSync('member',[{name:'cd82566fd157be7887d7ca6cb646575d'}])
+			// uni.setStorageSync('member',[{name:'cd82566fd157be7887d7ca6cb646575d'}])
 			var that=this
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
@@ -234,6 +235,9 @@
 			this.getBanner()
 			this.getNearbyBusiness()
 			this.calcUnRead()
+			this.getActivity()
+			let members=uni.getStorageSync('member') || []
+			this.transToName(members)
 			msgStorage.on("newChatMsg", function(renderableMsg, type, curChatMsg, sesskey){
 				// console.log(renderableMsg, type, curChatMsg, sesskey)
 				// 判断是否属于当前会话
@@ -243,6 +247,9 @@
 					members.push({
 						name:renderableMsg.yourname
 					})
+					// for(var i=0;i<members.length;i++){
+						this.transToName(members)
+					// }
 				}else {
 					for(var i=0;i<members.length;i++){
 						if(members[i].name==renderableMsg.yourname){
@@ -253,13 +260,49 @@
 						members.push({
 							name:renderableMsg.yourname
 						})
+						// for(var i=0;i<members.length;i++){
+							this.transToName(members)
+						// }
 					}
 				}
-				uni.setStorageSync('member',members)
-				that.calcUnRead();
+				
 			});
 		},
 		methods:{
+			async transToName(members){
+				for(let i=0;i<members.length;i++){
+					if(!members[i].chatTarget){
+				await	this.getNameById(members[i].name).then((res) =>{
+							if(res){
+								members[i].chatTarget=res
+							}else{
+								members[i].chatTarget=''
+							}
+						})
+						// members[i].chatTarget=await this.getNameById(members[i].name)
+						// console.log(name)
+					}
+				}
+				uni.setStorageSync('member',members)
+				this.calcUnRead();
+			},
+			getNameById(id){
+				var that=this,merchname,
+				params={
+					uid:this.uid,
+					token:this.token,
+					hxid:id
+				}
+				  var url='&r=api.member.assist.hxidToMerch'
+				  return new Promise((resolve,reject) =>{
+					  this.$apiPost(url,params).then((res) =>{
+						  resolve(res.data.merchname)
+					  }).catch((err) =>{
+					  	this.$msg(err)
+					  })
+				  })
+				  
+			},
 			// 轮播链接
 			toBannerDetail(item){
 				switch(item.type){
@@ -282,9 +325,7 @@
 				
 			},
 			toMessage(){
-				console.log(this.msgNum)
 				uni.$on('reduceMsg',(res) =>{
-					console.log(res)
 					this.msgNum-=res
 				})
 				uni.navigateTo({
@@ -294,6 +335,12 @@
 			contact(){
 				uni.navigateTo({
 					url:`/pages/index/webKf`
+				})
+			},
+			// 聚集知名店铺
+			toDiscover(){
+				uni.switchTab({
+					url:'./discover'
 				})
 			},
 			search(){
@@ -366,7 +413,8 @@
 				var that=this
 				  var url='&r=api.home.activity'
 				  this.$apiPost(url).then((res) =>{
-					 that.bargainList=res.data
+					  that.activityData=res.data[0]
+					 // that.bargainList=res.data
 				  }).catch((err) =>{
 					  this.$msg(err)
 				  })
@@ -653,11 +701,14 @@
 		border-radius: 5upx;
 	}
 	.sp-item{
-		margin:8upx 2% 10upx 0;
+		margin:8upx 0 10upx 2%;
 		display: inline-block;
 		vertical-align: top;
 		width: 31%;
 		/* pad */
+	}
+	..sp-item:last-child{
+		margin-right: 0;
 	}
 	.sp-item .ellipsis{
 		width: 200upx;

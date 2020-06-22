@@ -9,6 +9,7 @@
 				<view class="nav nav-right" :class="{active:active==5}" @click="toggle(5)"><text>待评价</text></view>
 				<view class="nav nav-left" :class="{active:active==6}" @click="toggle(6)"><text>已完成</text></view>
 				<view class="nav nav-left" :class="{active:active==11}" @click="toggle(11)"><text>订单取消</text></view>
+				<view class="nav nav-left" :class="{active:active==99}" @click="toggle(99)"><text>售后</text></view>
 			</view>
 		</view>
 		<view class="padding">
@@ -28,7 +29,7 @@
 							<text class="fr cr s2" v-show='item.status==5'>待评价</text>
 							<text class="fr cr s2" v-show='item.status==6'>已完成</text>
 						</view>
-						<view class="child-overall" v-for="(childItem,childIndex) in item2.goodsdata" :key='childIndex' @click="toGoodsDetail(childItem.goodsid)">
+						<view class="child-overall" v-for="(childItem,childIndex) in item2.goodsdata" :key='childIndex' @click="toOrderDetail(item.orderno,item2.merchid)">
 							<view class="child-overall-item" >
 								<image :src="childItem.goodspic" mode=""></image>
 								<view class="info">
@@ -54,7 +55,7 @@
 								<button type="default" class="btn btn1" v-show='active==5' @click.stop="toComment(item2,item.orderno)">评价</button>
 								<button type="default" class="btn btn1" v-show='active==1' @click.stop="cancelOrder(item.orderno,index)">取消订单</button>
 								<button type="default" class="btn btn2" v-show='active==1' @click.stop="topay(item2.goodsdata,item.orderno)">去付款</button>
-								<button type="default" class="btn btn2" v-show='active!=1' @click.stop="toDrawback(childItem)">申请退款</button>
+								<button type="default" class="btn btn2" v-show='active==3' @click.stop="toDrawback(childItem)">申请退款</button>
 								<button type="default" class="btn btn2" v-show="item2.merchid!=0" @click.stop='tochat(item2.merchid)'>联系卖家</button>
 							</view>
 						</view>
@@ -213,6 +214,13 @@
 				// })
 				uni.navigateTo({
 					url: `/pages/drawback/chooseWay?goods=${JSON.stringify(item)}&orderno=${item.orderno}`
+				})
+			},
+			// 订单详情
+			toOrderDetail(orderno,id){
+				console.log(orderno,id)
+				uni.navigateTo({
+					url: `../index/orderDetail?orderno=${orderno}&merchid=${id}`
 				})
 			},
 			toggle(t) {

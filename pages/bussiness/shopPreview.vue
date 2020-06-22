@@ -226,7 +226,9 @@
 							  	return ;
 							  }
 							  if(this.basic.isCollect=='1'){
-								  return ;
+							  	var url='&r=api.member.collection.remove'
+							  }else{
+							  	var url='&r=api.member.collection.add'
 							  }
 							  var that=this
 							  var params={
@@ -234,11 +236,14 @@
 							    token: this.token,
 							  	merchid:id
 							  }
-							    var url='&r=api.member.collection.add'
 							    this.$apiPost(url,params).then((res) =>{
 							  		// that.options[2].info++
+									if(this.basic.isCollect=='1'){
+										that.$msg('取消关注')
+									}else{
+										that.$msg('已关注')
+									}
 									that.getBasic()
-							  						that.$msg('已关注')
 							    })
 			},
 		}

@@ -28,12 +28,12 @@
 
 		},
 		onLoad(options) {
-
+			console.log(options)
 			this.title = options.title
 			let username = JSON.parse(options.username);
 			this.username = username;
 			uni.setNavigationBarTitle({
-				title: this.title
+				title: this.title 
 			});
 		},
 		onUnload() {

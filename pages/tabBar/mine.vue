@@ -63,7 +63,7 @@
 							</view>
 							<view>待评价</view>
 						</view>
-						<view class="item-list">
+						<view class="item-list" @click="toMyOrder(99)">
 							<view>
 								<text class="rest" v-if="data.orderAmount5>0">{{data.orderAmount5}}</text>
 								<image src="../../static/img/pic/mine/icon10.png" mode=""></image>
