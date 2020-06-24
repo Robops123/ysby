@@ -106,7 +106,7 @@
 		width: 100%;
 		height: auto;
 		border-top: 1px solid #CFCFCF;
-		/* position: fixed; */
+		position: fixed;
 		bottom: 0;
 		right: 0;
 		z-index: 1;

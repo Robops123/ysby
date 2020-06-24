@@ -15,7 +15,7 @@
 		</view>
 		<view class="input-line">
 			<input type="text" v-model="verifycode" placeholder="请输入验证码"/>
-			<button type="primary" class="veri" @click="getveri">{{enable? '发送验证码':'剩余'+remain+'s'}}</button>
+			<button  class="veri" @click="getveri">{{enable? '发送验证码':'剩余'+remain+'s'}}</button>
 		</view>
 		<!-- <view class="f2">
 			<text @click="loginpsd()">密码登录</text>
@@ -110,13 +110,7 @@
 			},
 			getveri(){
 			if(this.enable){
-			  var that=this
-			  this.enable=false
 			  this.getcode()
-			  this.timer = setInterval(function(){
-			        // 定时器到底了 兄弟们回家啦
-			        that.settime()
-			      }, 1000)
 				}
 			},
 			  settime(){
@@ -141,6 +135,11 @@
 			      this.$apiPost(url,params).then((res) =>{
 			    	  uni.hideLoading()
 					that.$msg('验证码发送成功')
+					that.enable=false
+					that.timer = setInterval(function(){
+					      // 定时器到底了 兄弟们回家啦
+					      that.settime()
+					    }, 1000)
 			      })
 			  }
 		}

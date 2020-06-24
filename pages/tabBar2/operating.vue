@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="height: calc(100% - 40px);overflow-y: auto;">
 		<view class="top">
 			<view class="set" @click="toSetting">
 				<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img"></image>
@@ -73,7 +73,7 @@
 			</view>
 		</view>
 		
-		<view class="s3 cg" style="text-align: center;margin: 20upx 0;">更多设置请到PC端后台</view>
+		<view class="s3 cg" style="text-align: center;margin: 30upx 0;">更多设置请到PC端后台</view>
 	</view>
 </template>
 
@@ -144,7 +144,7 @@
 	}
 	.top{
 		background: linear-gradient(to right,#fbd8d8,#febab4);
-		padding: 20upx 10upx;
+		padding: 40upx 10upx;
 	}
 	.headface{
 		width: 120upx;

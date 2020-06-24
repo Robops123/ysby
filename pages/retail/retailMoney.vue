@@ -320,7 +320,7 @@
 		line-height: 1;
 		border: none;
 		outline: none;
-		padding: 20upx 0;
+		padding: 35upx 0;
 		text-align: center;
 		margin-bottom: 20upx;
 		font-size: 12px;

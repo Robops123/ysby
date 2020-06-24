@@ -48,7 +48,7 @@
 		</view>
 		
 		<view class="activity flex-between">
-			<text class="cg ">关闭店铺</text>
+			<text class="cg ">是否开启店铺</text>
 			<switch class="fr" style="transform:scale(0.7)" value='6' :checked="data.merch_status=='6'" @change="switch1Change" />
 		</view>
 		

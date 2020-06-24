@@ -51,9 +51,9 @@
 			</view>
 			<view class="bottom-border">
 				<text class="label-80 cg">商品分类</text>
-				<view @click="chooseLocation">
+				<view>
 					<picker class="picker" @change="bindPickerChange" :value="cateCurrent" :range="array" :range-key="'name'">
-					     <view class="uni-input " style="display: inline-block;">{{displayCate}}</view>
+					     <view class="uni-input " style="display: inline-block;">{{displayCate || "其他分类"}}</view>
 						 <text class="icon-arrow-right iconfont fr"></text>
 					 </picker>
 					<!-- <text class="ellipsis cg" v-if="address==''">点击选择</text>
@@ -222,7 +222,10 @@
 							that.pic=[]
 							that.array=res.data.category
 							that.imageList=res.data.thumb.split(',')
-							that.displayCate=that.array.filter((item) =>{return item.id==res.data.cates})[0].name
+							var regCate=that.array.filter((item) =>{return item.id==res.data.cates})
+							if(regCate.length>0){
+								that.displayCate=regCate[0].name
+							}
 							// that.imageList=res.data
 							uni.hideLoading()
 					  })
@@ -275,10 +278,10 @@
 					var url='&r=api.myshop.goods.doEdit'
 					  this.$apiPost(url,params).then((res) =>{
 							that.$msg('修改成功')
-							uni.hideLoading()
 							setTimeout(function(){
+								uni.hideLoading()
 								that.getDetail()
-							},500)
+							},1500)
 					  })
 				}
 		}
@@ -491,7 +494,7 @@
 			text-align: center;
 			line-height: 75upx;
 			letter-spacing: 4px;
-			color: white;
+			color: white !important;
 			font-size: 34upx;
 		}
 		.label-80{

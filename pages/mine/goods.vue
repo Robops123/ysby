@@ -8,10 +8,10 @@
 				<view class="list" v-for="(item,index) in dataList" :key='index' @click="toGoodsDetail(item.goodsid)">
 					<image :src="item.thumb" mode=""></image>
 						<view class="info">
-							<view class="s2 title">
+							<view class=" title">
 								{{item.title}}
 							</view>
-							<view class="bottom-content cr s5"><text class="s1">￥</text>{{item.marketprice}}</view>
+							<view class="bottom-content cr s5"><text class="s3">￥</text>{{item.marketprice}}</view>
 							<view class="buy" >
 								<text class="" style="color: #ff5b62;margin-right: 20upx;" v-if="operate" @click.stop="deleteCollect(item.goodsid,index)">删除</text>
 								<image src="../../static/img/pic/cart.png" mode="" @click.stop="getCategory(item.goodsid,item.thumb,item.marketprice)"></image>
@@ -249,8 +249,8 @@
 		justify-content: flex-end;
 	}
 	.buy image{
-		width: 60upx;
-		height: 60upx;
+		width: 55upx;
+		height: 55upx;
 		padding: 10upx;
 	}
 	

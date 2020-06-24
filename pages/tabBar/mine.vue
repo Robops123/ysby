@@ -30,40 +30,40 @@
 				<view class="card">
 					<view class="s5">
 						<text>我的订单</text>
-						<view class="s3 cg fr" @click="toMyOrder(0)">查看全部
+						<view class="s3 cg fr" @click="toMyOrder(0,0)">查看全部
 						<text class="icon-arrow-right iconfont"></text>
 						</view>
 					</view>
 					<view class="dd">
-						<view class="item-list" @click="toMyOrder(1)">
+						<view class="item-list" @click="toMyOrder(1,0)">
 							<view>
 								<text class="rest" v-if="data.orderAmount1>0">{{data.orderAmount1}}</text>
 								<image src="../../static/img/pic/mine/icon2.png" mode=""></image>
 							</view>
 							<view>待付款</view>
 						</view>
-						<view class="item-list" @click="toMyOrder(2)">
+						<view class="item-list" @click="toMyOrder(2,0)">
 							<view>
 								<text class="rest" v-if="data.orderAmount2>0">{{data.orderAmount2}}</text>
 								<image src="../../static/img/pic/mine/icon4.png" mode=""></image>
 							</view>
 							<view>待发货</view>
 						</view>
-						<view class="item-list" @click="toMyOrder(3)">
+						<view class="item-list" @click="toMyOrder(3,60)">
 							<view>
 								<text class="rest" v-if="data.orderAmount3>0">{{data.orderAmount3}}</text>
 								<image src="../../static/img/pic/mine/icon6.png" mode=""></image>
 							</view>
 							<view>待收货</view>
 						</view>
-						<view class="item-list" @click="toMyOrder(5)">
+						<view class="item-list" @click="toMyOrder(5,120)">
 							<view>
 								<text class="rest" v-if="data.orderAmount4>0">{{data.orderAmount4}}</text>
 								<image src="../../static/img/pic/mine/icon5.png" mode=""></image>
 							</view>
 							<view>待评价</view>
 						</view>
-						<view class="item-list" @click="toMyOrder(99)">
+						<view class="item-list" @click="toMyOrder(99,240)">
 							<view>
 								<text class="rest" v-if="data.orderAmount5>0">{{data.orderAmount5}}</text>
 								<image src="../../static/img/pic/mine/icon10.png" mode=""></image>
@@ -120,7 +120,7 @@
 		<!-- 邀请注册 -->
 		<s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
 		  <!-- 内容 -->
-		  <image :src="advImg" mode=""></image>
+		  <image :src="advImg" mode="widthFix" style="max-width: 100%;border-radius: 25upx;"></image>
 		  <view style="margin-top: 20upx;">
 			  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
 		  </view>
@@ -163,7 +163,6 @@
 		onShow(){
 			// this.imgBaseUrl=this.$imgBaseUrl
 			var userInfo=uni.getStorageSync('userInfo')
-			console.log(userInfo)
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.userInfo=userInfo
 				this.getUserInfo(userInfo)
@@ -209,13 +208,13 @@
 					url:`/pages/tabBar2/tabMain`
 				})
 			},
-			toMyOrder(active){
+			toMyOrder(active,margin){
 				var ce=this.$operateInterceptor(this.logined)
 				if(!ce){
 					return ;
 				}
 				uni.navigateTo({
-					url:`/pages/mine/myOrder?active=${active}&userName=${this.data.nickname}`
+					url:`/pages/mine/myOrder?active=${active}&userName=${this.data.nickname}&margin=${margin}`
 				})
 			},
 			toMyOrderDetail(){
@@ -453,7 +452,7 @@
 			line-height: 1;
 			border: none;
 			outline: none;
-			padding: 20upx 0;
+			padding: 35upx 0;
 			text-align: center;
 			margin-bottom: 20upx;
 			font-size: 12px;

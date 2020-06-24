@@ -65,16 +65,18 @@
 				
 				<view class="luntan-card-bot">
 					<view class="luntan-card-bot-card"  @click="openShare">
-						<text class="iconfont icon-share2"></text>
-						<text>转发</text>
+						<!-- <text class="iconfont icon-share2"></text> -->
+						<image src="../../static/img/pic/fenxiang.png" mode="" class="operate-pic"></image>
+						<text class="operate-word">转发</text>
 					</view>
 					<view class="luntan-card-bot-card" @click="openComment">
-						<text class="iconfont icon-tubiao-"></text>
-						<text>评论</text>
+						<image src="../../static/img/pic/pinglun.png" mode="" class="operate-pic"></image>
+						<!-- <text class="iconfont icon-tubiao-"></text> -->
+						<text class="operate-word">评论</text>
 					</view>
 					<view class="luntan-card-bot-card" @click="toggleZan(data.isLike)">
 						<text class="iconfont " :class="{'icon-zan':!data.isLike,'icon-shou':data.isLike,'zaned':data.isLike}" ></text>
-						<text>赞</text>
+						<text class="operate-word">赞</text>
 					</view>
 				</view>
 			</view>
@@ -323,6 +325,7 @@
 				  token:this.token
 				}
 				  this.$apiPost(url,params).then((res) =>{
+					  uni.hideLoading()
 					  this.commentList[from].isLike=!this.commentList[from].isLike
 					  if(!zaned){
 					  	this.commentList[from].like++
@@ -331,7 +334,7 @@
 					  	this.commentList[from].like--
 						that.$msg('取消点赞')
 					  }
-					  uni.hideLoading()
+					  
 					  that.$forceUpdate()
 				  })
 			},
@@ -563,7 +566,7 @@
 		width: 30upx;
 		height: 30upx;
 		vertical-align: middle;
-		margin: 0 10upx 6upx 0;
+		/* margin: 0 10upx 6upx 0; */
 	}
 	.share{
 		padding: 0 0 30upx 60upx;
@@ -622,8 +625,8 @@
 	
 	.enter-button{
 		color: #ff8f94;
-		border: 2px solid #ff8f94;
-		padding: 10upx 15upx;
+		border: 1px solid #ff8f94;
+		padding: 6upx 25upx;
 		border-radius: 52upx;
 		float: right;
 		margin-top: 16upx;
@@ -638,5 +641,13 @@
 	}
 	.luntan-card-bot-card>text{
 		vertical-align: middle;
+	}
+	.operate-pic{
+		/* width: 1rem;
+		height: 1rem; */
+		margin: 0 10upx;
+	}
+	.operate-word{
+		font-size: 28upx;
 	}
 </style>

@@ -12,7 +12,7 @@
 		</view>
 		
 		<view class="option-box">
-			<view class="option-item">
+			<view class="option-item" @click="to('suggestion')" v-show="logined">
 				<text>意见反馈</text>
 				<text class="f1 fr"><text style="padding-right: 20upx;">让我们更好</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
@@ -25,6 +25,8 @@
 		<view>
 			<button type="primary" class="btn" @click="quit" v-if="logined">退出登录</button>
 		</view>
+		
+		
 	</view>
 </template>
 
@@ -32,7 +34,8 @@
 	export default{
 		data(){
 			return{
-				logined:false
+				logined:false,
+				visible:false,
 			}
 		},
 		mounted(){
@@ -65,7 +68,12 @@
 						delta:1
 					})
 				},1000)
-			}
+			},
+			openPop(){
+				// this.content=''
+				// this.visible=true
+			},
+			
 		}
 	}
 </script>
@@ -108,4 +116,5 @@
 		letter-spacing: 4px;
 		font-size: 34upx;
 	}
+
 </style>

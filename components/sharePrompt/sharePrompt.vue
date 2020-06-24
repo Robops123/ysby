@@ -1,7 +1,7 @@
 <template>
 	<view  class="popup-box" v-show="popshow">
-				 <view class="wrapper" @click="close"></view>
-				 <view class="popup animated slideInUp">
+				 <view class="wrapper" @click="close" ></view>
+				 <view class="popup animated slideInUp" >
 					 <view class="cr s5">分享给好友</view>
 					 <view class="padding">
 						 <!-- #ifdef APP-PLUS -->
@@ -33,23 +33,16 @@
 				 </view>
 				 
 				 
-				 <!-- 海报 -->
-				 <s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
-				   <!-- 内容 -->
-				   <image :src="advImg" mode="" style="width: 100%;height: 320px;"></image>
-				   <view style="margin-top: 20upx;">
-				 	  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
-				   </view>
-				 </s-popup>
+				
 	</view>
 </template>
 
 <script>
-	import sPopup from '@/components/s-popup/index';
+	
 	export default{
-		components:{
-			sPopup
-		},
+		// components:{
+		// 	sPopup
+		// },
 		props:{
 			uid:{
 				type:String
@@ -85,7 +78,8 @@
 				shareText:'嘎哈',
 				visible:false,
 				spopshow:false,
-				advImg:''
+				advImg:'',
+				popupShow:true,
 			}
 		},
 		mounted(){
@@ -231,9 +225,11 @@
 							  	}
 							  	var url='&r=api.common.share.createPoster'
 							  	  this.$apiPost(url,params).then((res) =>{
-							  		  that.advImg=res.data.img
-							  		  that.visible=true
-									  that.spopshow=false
+							  		  // that.advImg=res.data.img
+							  		//   that.visible=true
+									  // that.popupShow=false
+									  that.$emit('poster',res.data.img)
+									  that.close()
 									  uni.hideLoading()
 							  	  })
 			},

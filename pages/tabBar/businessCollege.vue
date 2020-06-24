@@ -57,16 +57,18 @@
 							
 							<view class="luntan-card-bot">
 								<view class="luntan-card-bot-card" @click='showMenu'>
-									<text class="iconfont icon-share2"></text>
-									<text>转发{{item.repost}}</text>
+									<!-- <text class="iconfont icon-share2"></text> -->
+									<image src="/static/img/pic/fenxiang.png" mode="" class="operate-pic"></image>
+									<text class="operate-word">转发{{item.repost}}</text>
 								</view>
 								<view class="luntan-card-bot-card" @click="toDetail(item)"> 
-									<text class="iconfont icon-tubiao-"></text>
-									<text>评论{{item.comment}}</text>
+									<!-- <text class="iconfont icon-tubiao-"></text> -->
+									<image src="/static/img/pic/pinglun.png" mode="" class="operate-pic" style="margin-top: 2px;"></image>
+									<text class="operate-word">评论{{item.comment}}</text>
 								</view> 
 								<view class="luntan-card-bot-card" @click="toggleZan(Number(item.isLike),item.id,index)">
 									<text class="iconfont " :class="{'icon-zan':!Number(item.isLike),'icon-shou':Number(item.isLike),'zaned':Number(item.isLike)}" ></text>
-									<text>赞{{item.like}}</text>
+									<text class="operate-word">赞{{item.like}}</text>
 								</view>
 							</view>
 					</view>
@@ -84,7 +86,7 @@
 								<view class="sp-item3-top-middle ellipsis">{{item.merchname}}</view>
 								<view>
 									<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-									<text class="s3 cg">{{item.collect}}人关注</text>
+									<text class="s3 cg collectnum">{{item.collect}}人关注</text>
 								</view>
 							</view>
 							<view class="enter-button" @click="toShop(item.id)">进店</view>
@@ -407,6 +409,7 @@
 				  token:this.token
 				}
 				  this.$apiPost(url,params).then((res) =>{
+					  uni.hideLoading()
 					  that.dataList[index].isLike=!that.dataList[index].isLike
 					  if(that.dataList[index].isLike){
 						  that.$msg('点赞成功')
@@ -415,7 +418,7 @@
 						  that.$msg('取消点赞')
 						  that.dataList[index].like--
 					  }
-					  uni.hideLoading()
+					  
 					  that.$forceUpdate()
 				  })
 			},
@@ -587,8 +590,8 @@
 	}
 	.enter-button{
 		color: #ff8f94;
-		border: 2px solid #ff8f94;
-		padding: 10upx 15upx;
+		border: 1px solid #ff8f94;
+		padding: 6upx 25upx;
 		border-radius: 52upx;
 		float: right;
 		margin-top: 16upx;
@@ -596,11 +599,15 @@
 	.sp-item3-bottom>view{
 			display: inline-block;
 			vertical-align: top;
-			width: 33%;
+			width: 32%;
+			margin-right: 2%;
 			height: 220upx;
 			position: relative;
 			overflow: hidden;
 			border-radius: 20upx;
+	}
+	.sp-item3-bottom>view:last-child{
+		margin-right: 0;
 	}
 	.sp-item3-bottom{
 		padding: 0 30upx;
@@ -619,9 +626,10 @@
 			border-radius:0 20upx 0 20upx;
 			bottom: 0;
 			color: white;
-			padding: 5upx 8upx;
+			padding: 3upx 12upx;
 			background-color: #999;
 			opacity: 0.8;
+			font-size: 24upx;
 		}
 		
 		.all{
@@ -692,7 +700,7 @@
 			width: 30upx;
 			height: 30upx;
 			vertical-align: middle;
-			margin: 0 10upx 6upx 0;
+			/* margin: 0 10upx 6upx 0; */
 		}
 		
 		
@@ -715,5 +723,16 @@
 		}
 		.zaned{
 			color: red;
+		}
+		.collectnum{
+			margin-left: 15upx;
+		}
+		.operate-pic{
+			width: 20px;
+			height: 20px;
+			margin: 0 10upx;
+		}
+		.operate-word{
+			font-size: 28upx;
 		}
 </style>

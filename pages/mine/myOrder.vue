@@ -1,16 +1,16 @@
 <template>
 	<view>
-		<view class="nav-bar">
-			<view class="" style="white-space: nowrap;">
-				<view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view>
-				<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
-				<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
-				<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
-				<view class="nav nav-right" :class="{active:active==5}" @click="toggle(5)"><text>待评价</text></view>
-				<view class="nav nav-left" :class="{active:active==6}" @click="toggle(6)"><text>已完成</text></view>
-				<view class="nav nav-left" :class="{active:active==11}" @click="toggle(11)"><text>订单取消</text></view>
-				<view class="nav nav-left" :class="{active:active==99}" @click="toggle(99)"><text>售后</text></view>
-			</view>
+		<view class="nav-bar" >
+			<scroll-view class="" style="white-space: nowrap;height: 68upx;" scroll-x :scroll-left="margin" >
+				<view class="nav nav-left" :class="{active:active==0}" @click="toggle($event,0)" id='id0' data-distance='0'><text>全部</text></view>
+				<view class="nav nav-right" :class="{active:active==1}" @click="toggle($event,1)" id='id1' data-distance='0'><text>待付款</text></view>
+				<view class="nav nav-left" :class="{active:active==2}" @click="toggle($event,2)" id='id2' data-distance='0'><text>待发货</text></view>
+				<view class="nav nav-right" :class="{active:active==3}" @click="toggle($event,3)" id='id3' data-distance='60'><text>待收货</text></view>
+				<view class="nav nav-right" :class="{active:active==5}" @click="toggle($event,5)" id='id5' data-distance='120'><text>待评价</text></view>
+				<view class="nav nav-left" :class="{active:active==6}" @click="toggle($event,6)" id='id6' data-distance='180'><text>已完成</text></view>
+				<view class="nav nav-left" :class="{active:active==11}" @click="toggle($event,11)" id='id11' data-distance='240'><text>订单取消</text></view>
+				<view class="nav nav-left" :class="{active:active==99}" @click="toggle($event,99)" id='id99' data-distance='240'><text>售后</text></view>
+			</scroll-view>
 		</view>
 		<view class="padding">
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}" @scrolltolower='toBottom'>
@@ -94,6 +94,10 @@
 		},
 		data() {
 			return {
+				margin:0,
+				old:{
+					margin:0
+				},
 				defaultPrice:0,
 				defaultImg:'',
 				id:'',
@@ -122,8 +126,8 @@
 			var userInfo = uni.getStorageSync('userInfo'),
 				that = this
 			// if(p.active!=0){
+				console.log(p.margin)
 			this.active = p.active
-			console.log(p)
 			this.userName=p.userName
 			// }
 			if (userInfo != '' & userInfo != null & userInfo != undefined) {
@@ -142,6 +146,9 @@
 				this.reset()
 				this.getList(this.page)
 			})
+			this.$nextTick(() =>{
+				this.margin=Number(p.margin)
+			})
 		},
 		computed: {
 			noMore() {
@@ -149,6 +156,9 @@
 			},
 		},
 		methods: {
+			// scroll(e){
+			// 	this.old.margin = e.detail.scrollTop
+			// },
 			async tochat(id) {
 				var that = this
 				var params = {
@@ -223,8 +233,9 @@
 					url: `../index/orderDetail?orderno=${orderno}&merchid=${id}`
 				})
 			},
-			toggle(t) {
+			toggle(e,t) {
 				this.active = t
+				this.margin=e.currentTarget.dataset.distance
 				this.reset()
 				this.getList(this.page)
 			},
@@ -281,7 +292,7 @@
 					// that.options[2].info++
 					setTimeout(() =>{
 						that.dataList.splice(from, 1)
-					},500)
+					},1500)
 				})
 			},
 			confirmReceive(order,goodsid) {
@@ -298,7 +309,7 @@
 					setTimeout(() =>{
 						this.reset()
 						this.getList(this.page)
-					},500)
+					},1500)
 					// that.options[2].info++
 				})
 			},
@@ -356,7 +367,8 @@
 
 	.nav-bar {
 		text-align: center;
-		padding: 20upx 0;
+		/* padding: 20upx 0; */
+		padding:0 ;
 		background-color: white;
 		width: 100%;
 		box-sizing: border-box;

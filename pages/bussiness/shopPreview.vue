@@ -25,7 +25,7 @@
 				<view class="sp-item3-top-middle ellipsis">{{basic.merchname}}</view>
 				<view>
 					<uni-rate disabled="true" size="12" :value="basic.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-					<text class="s3 cg">{{basic.collect}}人关注</text>
+					<text class="s3 cg collectnum">{{basic.collect}}人关注</text>
 				</view>
 			</view>
 			<view class="enter-button" @click="focus(id)">{{basic.isCollect=='1' ? '已关注':'关注'}}</view>
@@ -345,8 +345,8 @@
 	}
 	.enter-button{
 		color: #ff8f94;
-		border: 2px solid #ff8f94;
-		padding: 10upx 15upx;
+		border: 1px solid #ff8f94;
+		padding: 6upx 25upx;
 		border-radius: 52upx;
 		float: right;
 		margin-top: 16upx;
@@ -422,5 +422,8 @@
 	}
 	.range>text.active{
 		color: #000000;
+	}
+	.collectnum{
+		margin-left: 15upx;
 	}
 </style>

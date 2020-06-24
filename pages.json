@@ -81,6 +81,12 @@
 					   }
 					},
 					{
+					    "path": "pages/mine/suggestion",
+					    "style": {
+					       "navigationBarTitleText": "意见反馈"
+					   }
+					},
+					{
 					    "path": "pages/index/bannerDetail",
 					    "style": {
 					       "navigationBarTitleText": "商品详情",

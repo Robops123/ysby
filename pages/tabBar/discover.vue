@@ -16,7 +16,7 @@
 						<view class="sp-item3-top-middle ellipsis">{{item.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">{{item.collect}}人关注<text class="s2" v-if="lng && lat"> | {{parseInt(item.distance)}}千米</text></text>
+							<text class="s3 cg collectnum">{{item.collect}}人关注<text class="s2" v-if="lng && lat"> | {{parseInt(item.distance)}}千米</text></text>
 						</view>
 					</view>
 					<view class="enter-button" @click="toShop(item.id)">进店</view>
@@ -278,8 +278,8 @@
 	}
 	.enter-button{
 		color: #ff8f94;
-		border: 2px solid #ff8f94;
-		padding: 10upx 15upx;
+		border: 1px solid #ff8f94;
+		padding: 6upx 25upx;
 		border-radius: 52upx;
 		float: right;
 		margin-top: 16upx;
@@ -287,11 +287,15 @@
 	.sp-item3-bottom>view{
 			display: inline-block;
 			vertical-align: top;
-			width: 33%;
+			width: 32%;
+			margin-right: 2%;
 			height: 220upx;
 			position: relative;
 			overflow: hidden;
 			border-radius: 20upx;
+	}
+	.sp-item3-bottom>view:last-child{
+		margin-right: 0;
 	}
 	.sp-item3-bottom{
 		padding: 0 30upx;
@@ -310,8 +314,12 @@
 			border-radius:0 20upx 0 20upx;
 			bottom: 0;
 			color: white;
-			padding: 5upx 8upx;
+			padding: 3upx 12upx;
 			background-color: #999;
 			opacity: 0.8;
+			font-size: 24upx;
+		}
+		.collectnum{
+			margin-left: 15upx;
 		}
 </style>

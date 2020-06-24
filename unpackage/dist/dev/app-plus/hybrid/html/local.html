@@ -7,7 +7,7 @@
 		<title>在线客服</title>
 	</head>
 	<style type="text/css">
-		.ysb-web-body .easemobim-chat-panel.easemobim-mobile.easemobim-minimized{
+		/* .ysb-web-body .easemobim-chat-panel.easemobim-mobile.easemobim-minimized{
 			width: initial !important;
 			height:  initial !important;
 			
@@ -20,24 +20,71 @@
 		}
 		.ysb-web-body .em-widget-box{
 			/* display: block !important; */
-		}
+		} */
 	</style>
-	<body class='ysb-web-body' style='display: none;'>
+	<body class='ysb-web-body' >
+		<script src='http://kefu.easemob.com/webim/easemob.js'></script>
 		<script type="text/javascript" src="http://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
 		<!-- <script src='http://kefu.easemob.com/webim/easemob.js?configId=8aea2b26-152b-4474-af35-2ac4df14958f'></script> -->
 		<script>
-		window.easemobim = window.easemobim || {};
-		easemobim.config = {
-		    configId: '8aea2b26-152b-4474-af35-2ac4df14958f',
-		    //聊天窗口加载成功回调
-		    onready: function () {
-		        document.querySelector('.ysb-web-body').style.display='block'
-				uni.postMessage(' ')
-		    },
-		};
+		// window.easemobim = window.easemobim || {};
+		// easemobim.config = {
+		//     configId: 'f2c97084-66cb-48a0-8aa1-41e5c649b075',
+		//     //聊天窗口加载成功回调
+		//     onready: function () {
+		// 		console.log('re')
+		//         document.querySelector('.ysb-web-body').style.display='block'
+		// 		uni.postMessage(' ')
+		//     },
+		// };
 		</script>
-		<script src='http://kefu.easemob.com/webim/easemob.js'></script>
-		<!-- uni 的 SDK -->
+	
+		<script>
+			var username='',password=''
+				var p=getParams()
+				username=p['hx_openid']
+				password=p['hx_pwd']
+				
+		window.easemobim = window.easemobim || {};
+		if(window.easemobim){
+			console.log(username)
+			console.log(password)
+			easemobim.bind({
+				configId:'f2c97084-66cb-48a0-8aa1-41e5c649b075'
+			})
+		}
+		easemobim.config = {
+		    hide: true,
+		    autoConnect: true,
+			user:{
+				username:username,
+				password:password
+			},
+			 visitor: {
+			        trueName: '黎小冷',
+			        qq: '12345678',
+			        phone: '18812345678',
+			        companyName: '环信',
+			        userNickname: '小冷',
+			        description: '意向客户',
+			        email: 'xiaoleng@easemob.com'
+			    },
+			hideKeyboard:true,
+			onready:function(){
+				console.log('ready')
+				uni.postMessage(' ')
+			}
+		};
 		
+		
+		function getParams(){
+			var params=location.search.slice(1).split('&'),obj={}
+			params.map((item) =>{
+				var p=item.split('=')
+				obj[p[0]]=p[1]
+			})
+			return obj;
+		}
+		</script>
 	</body>
 </html>

@@ -5,7 +5,8 @@
 				<uni-status-bar />
 			<!-- #endif -->
 			<view class="nav-content">
-				<text class="iconfont icon-address cr" ></text>
+				<image src="../../static/img/pic/index/address.png" mode="" class="" style="width: 0.9rem;height: 1rem;margin: 3px 3px 0 0;"></image>
+				<!-- <text class="iconfont icon-address cr" ></text> -->
 				<view class="cityName ellipsis" v-show="located">{{city ? city:'定位中'}}</view>
 				<view v-show="!located" @click="reLocate">重新获取</view>
 				<view class="search-line">
@@ -21,18 +22,20 @@
 		
 		<!-- 列表 -->
 		<view class="padding main">
-			<swiper class="swiper" autoplay="false" duration="500" interval="3000" :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
+			<swiper class="swiper" style='border-radius: 8px;' autoplay="false" duration="500" interval="3000" 
+			:indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
 			    <swiper-item v-for="(item, index) in carouselList" class="swiper-item" :key="index" @click='toBannerDetail(item)'>
-			    	<image :src="item.thumb" mode="" style="width: 100%;"></image>
+			    	<image :src="item.thumb" mode="" ></image>
 			    </swiper-item>
 			   </swiper>
 			
 			
 			<view class="announcement">
 				<text class="s1 cr title">公告</text>
-				  <swiper class="swiper content s2 cg ellipsis" vertical="true" autoplay="false" duration="500" interval="5000" >
+				  <swiper class="content s2 cg ellipsis" :vertical="true"  :autoplay="true" duration="500" interval="5000" >
 				    <swiper-item v-for="(item, index) in noticeList" :key="index">
-				     <view ><icon type="" class="iconfont icon-tubiao-1" size="12" style="vertical-align: middle;"/>{{item.title}}</view>
+				     <icon type="" class="iconfont icon-tubiao-1" size="12" style="vertical-align: middle;"/>
+				<view  class='notice-content'>{{item.title}}</view>
 				    </swiper-item>
 				   </swiper>
 				<!-- <view class="s2 cg content ellipsis">中企商会酒店APP将于今年4月全新asdasd上线，敬请期待！</view> -->
@@ -54,13 +57,13 @@
 					<view class="item-name cg s3">在线客服</view>
 				</view>
 			</view>
-			
-			<image :src="bannerList[0].thumb" v-if="bannerList[0]" @click='toBannerDetail(bannerList[0])' mode="" class="banner banner2"></image>
-			
+			</view>
+			<image :src="bannerList[0].thumb" v-if="bannerList[0]" @click='toBannerDetail(bannerList[0])' mode="" class="banner banner2 banner-low"></image>
+			<view class="padding main" style="padding-top: 20upx;">
 			<view class="card card1">
 				<view style="padding:0  2%;">
 					<text >每日特价</text>
-					<view class="fr s3 more" style="margin-top: 4upx;" @click="toCategory(activityData.id)">{{activityData.title}}<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
+					<view class="fr s3 more" style="margin-top: 4upx;" @click="toGoodsList(activityData.id)">{{activityData.title}}<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
 				</view>
 				<view class="sp">
 					<view class="sp-item" v-for="(item,index) in bargainList" :key='index' @click="toDetail(item.id)">
@@ -80,9 +83,9 @@
 			<view class=" sp2">
 				<view class="sp-item2 " v-for="(item,index) in hotList" :key='index' @click="toDetail(item.id)">
 					<image :src="item.thumb" mode=""></image>
-					<view class="s3 ellipsis" >{{item.title}}</view>
+					<view class=" ellipsis" >{{item.title}}</view>
 					<view class="cr s5 word-bottom">
-						<text style="line-height: 70upx;">￥{{item.marketprice}}</text>
+						<text style="line-height: 70upx;"><text class="s3">￥</text>{{item.marketprice}}</text>
 						<view class="buy fr">
 							<image src="../../static/img/pic/cart.png" mode="" @click.stop="getCategory(item.id,item.thumb,item.marketprice)"></image>
 						</view>
@@ -111,7 +114,7 @@
 						<view class="sp-item3-top-middle ellipsis">{{item.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">{{item.collect}}人关注   
+							<text class="s3 cg collectnum">{{item.collect}}人关注   
 							<text class="s2" v-if="lng && lat"> | 距离{{item.distance}}千米</text>
 							</text>
 						</view>
@@ -358,6 +361,11 @@
 					url:`/pages/index/goodsDetail?id=${id}`
 				})
 			},
+			toGoodsList(id){
+				uni.navigateTo({
+					url:`/pages/index/goodsList?id=${id}`
+				})
+			},
 			// 商品分类列表
 			getCate(){
 				var that=this,url='&r=api.home.category',params={
@@ -575,6 +583,9 @@
 					num='99+'
 				}
 				this.msgNum=num
+			},
+			noticeChange(e){
+				console.log(e)
 			}
 		}
 	}
@@ -620,16 +631,22 @@
 	.main{
 		padding-top: 96upx;
 	}
-	uni-swiper{
-		height: 500upx;
+	.swiper{
+		/* #ifdef APP-PLUS */
+		margin-top: 76upx;
+		/* #endif */
+		height: 150px;
 	}
 	.swiper-item{
 		width: 100%;
+		height: 100%;
+		border-radius: 8px;
 		/* height: 600upx !important; */
 	}
 	.swiper-item image{
 		width: 100%;
 		height: 100%;
+		border-radius: 8px;
 	}
 	.banner{
 		border-radius: 10upx;
@@ -637,12 +654,20 @@
 		height: 360upx;
 	}
 	.banner2{
-		height: 360upx;
+		height: 125px;
 		margin-top: 20upx;
+		border-radius: 0 !important;
 	}
 	.banner3{
 		margin: 10upx 0 20upx;
-		height: 390upx;
+		height: 125px;
+		border-radius: 0 !important;
+	}
+	.banner-low{
+		height: 200upx;
+		width: 710upx;
+		display: block;
+		margin: 0 auto;
 	}
 	.title{
 		margin-right: 10upx;
@@ -652,11 +677,14 @@
 	.content icon{
 		margin-right: 5upx;
 		color: #ffba2d;
+		display: inline-block;
+		vertical-align: top !important;
 	}
 	.content{
 		display: inline-block;
 		vertical-align: middle;
-		width: 80%;
+		overflow-x: auto;
+		width: 86%;
 		height: 38upx;
 	}
 	
@@ -698,7 +726,7 @@
 	.sp-item image{
 		width: 200upx;
 		height: 200upx;
-		border-radius: 5upx;
+		border-radius: 10upx;
 	}
 	.sp-item{
 		margin:8upx 0 10upx 2%;
@@ -805,8 +833,8 @@
 	}
 	.enter-button{
 		color: #ff8f94;
-		border: 2px solid #ff8f94;
-		padding: 10upx 15upx;
+		border: 1px solid #ff8f94;
+		padding: 6upx 25upx;
 		border-radius: 52upx;
 		float: right;
 		margin-top: 16upx;
@@ -814,14 +842,18 @@
 	.sp-item3-bottom>view{
 			display: inline-block;
 			vertical-align: top;
-			width: 33%;
+			width: 32%;
+			margin-right: 2%;
 			height: 220upx;
 			position: relative;
 			overflow: hidden;
 			border-radius: 20upx;
 	}
+	.sp-item3-bottom>view:last-child{
+		margin-right: 0;
+	}
 	.sp-item3-bottom{
-		padding: 0 48upx;
+		padding: 0 30upx;
 		/* margin: 0 18upx; */
 		display: flex;
 		/* justify-content: space-between; */
@@ -838,9 +870,10 @@
 			border-radius:0 20upx 0 20upx;
 			bottom: 0;
 			color: white;
-			padding: 5upx 8upx;
+			padding: 3upx 12upx;
 			background-color: #999;
 			opacity: 0.8;
+			font-size: 24upx;
 		}
 		
 		.comment image{
@@ -852,8 +885,8 @@
 		}
 		
 		.buy image{
-			width: 60upx;
-			height: 60upx;
+			width: 55upx;
+			height: 55upx;
 			padding: 10upx;
 		}
 		.word-bottom>view{
@@ -872,5 +905,16 @@
 			position: absolute;
 			right: -8px;
 			top: -8px;
+		}
+		.collectnum{
+			margin:0 15upx;
+		}
+		.announcement{
+			margin-top: 15upx;
+		}
+		.notice-content{
+			width: 90%;
+			display: inline-block;
+			overflow-x: auto;
 		}
 </style>

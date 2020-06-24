@@ -12,10 +12,10 @@
 					<view class="list2" v-for="(childItem,childIndex) in item.goods" :key='childIndex' @click="toGoodsDetail(childItem.goodsid)">
 						<image :src="childItem.thumb" mode=""></image>
 							<view class="info">
-								<view class="s2 title">
+								<view class=" title">
 									{{childItem.title}}
 								</view>
-								<view class="bottom-content cr s5"><text class="s1">￥</text>{{childItem.marketprice}}</view>
+								<view class="bottom-content cr s5"><text class="s3">￥</text>{{childItem.marketprice}}</view>
 								<view class="buy" >
 									
 									<!-- <text class="" style="color: #ff5b62;margin-right: 20upx;" v-if="operate" @click="deleteCollect(item.goodsid,index)">删除</text> -->
@@ -256,8 +256,8 @@
 		justify-content: flex-end;
 	}
 	.buy image{
-		width: 60upx;
-		height: 60upx;
+		width: 55upx;
+		height: 55upx;
 		padding: 10upx;
 	}
 	

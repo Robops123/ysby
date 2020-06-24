@@ -10,7 +10,7 @@
 		</view>
 		<view class="f2" style="overflow: hidden;">
 			<text @click="loginveri()">验证码登录</text>
-			<text class="fr">登录遇到问题</text>
+			<text class="fr" @click="contact">登录遇到问题</text>
 			<text ></text>
 		</view>
 		
@@ -35,6 +35,11 @@
 			this.passitive=e.passitive
 		},
 		methods:{
+			contact(){
+				uni.navigateTo({
+					url:`/pages/index/webKf`
+				})
+			},
 			loginveri(){
 				uni.redirectTo({
 					url:'/pages/login/loginVeri?passitive='+this.passitive+'&mobile='+this.mobile

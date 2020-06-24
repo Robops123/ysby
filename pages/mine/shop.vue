@@ -12,7 +12,7 @@
 						<view class="s3 merchname">{{item.merchname}}</view>
 						<view class="tw">
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">{{item.collect}}人关注 </text>
+							<text class="s3 cg collectnum">{{item.collect}}人关注 </text>
 						</view>
 					</view>
 						<text class="fr" style="color: #ff5b62;margin-right: 20upx;" v-if="operate" @click.stop="deleteCollect(item.merchid,index)">删除</text>
@@ -211,5 +211,8 @@
 		    display:-webkit-box;//一定要写
 		    -webkit-line-clamp: 2;//控制行数
 		    -webkit-box-orient: vertical;//一定要写
+	}
+	.collectnum{
+		margin-left: 15upx;
 	}
 </style>

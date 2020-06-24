@@ -164,9 +164,10 @@
 													gridType:'dash',
 													gridColor:'#CCCCCC',
 													dashLength:8,
-													// splitNumber:(max-min)/6,
-													// min:min,
+													splitNumber:(max-min) >= 4 ? 5: Math.floor(max-min),
+													min:min,
 													max:max,
+													format:(val)=>{return val.toFixed(0)}
 													// format:(val)=>{return val}
 												},
 												width: this.cWidth-10,
@@ -236,6 +237,7 @@
 		color: #afafaf;
 		text-align: center;
 		box-sizing: border-box;
+		position: relative;
 	}
 	.nav text{
 		/* display: inline-block;
@@ -245,15 +247,15 @@
 		color: #000000;
 		position: relative;
 	}
-	.nav.active text::before{
+	.nav.active::before{
 		content: '';
 		position: absolute;
 		bottom: -10upx;
-		width: 50upx;
+		width: 100%;
 		background-color: #ff7379;
 		height: 2px;
-		left: 50%;
-		margin-left: -25upx;
+		left: 0;
+		/* margin-left: -25upx; */
 	}
 	.item-5{
 		
@@ -276,7 +278,7 @@
 		
 		
 		.conclude{
-			padding-left: 100upx;
+			padding-left: 75upx;
 			background-color: #fff;
 		}
 		.conclude text{

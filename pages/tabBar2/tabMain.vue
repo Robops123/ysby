@@ -176,13 +176,13 @@
 			toggleTitle(index){
 				switch(index){
 					case 0:
-					return '工作台';
+					return '我的店铺';
 					case 1:
-					return '会员';
+					return '会员管理';
 					case 2:
-					return '订单';
+					return '订单管理';
 					case 3:
-					return '财务';
+					return '财务管理';
 					case 4:
 					return '我的';
 				}

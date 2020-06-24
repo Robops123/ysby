@@ -381,7 +381,7 @@ export default {
   align-items: center;
   .s-popup-wrapper {
     position: relative;
-	width: 90%;
+	width: 85%;
 	margin: 0 auto;
 	border-radius: 10px;
   }

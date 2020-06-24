@@ -83,7 +83,7 @@
 		"xmppURL": "wss://im-api.easemob.com/",
 		"apiURL": "https://a1.easemob.com",
 		// "appkey": "1100190906107692#uni-huanxin-im",
-		"appkey":"1103200423107761#helloim",
+		"appkey":"1123200609010189#yishuban",
 		"https": false,
 		"isMultiLoginSessions": false,
 		"isWindowSDK": false,

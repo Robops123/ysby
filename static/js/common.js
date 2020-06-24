@@ -20,11 +20,11 @@ export const loading=function(msg){
 	})
 }
 
-export const msg=function(msg,type){
+export const msg=function(msg,duration,type){
 	uni.showToast({
 	    title: msg,
 		icon:type || 'none',
-	    duration: 2000
+	    duration: duration || 2000
 	});
 }
 

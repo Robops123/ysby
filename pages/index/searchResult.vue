@@ -35,10 +35,10 @@
 						<view v-if="item.isgoods==1" @click="toDetail(item.id)">
 							<image :src="item.thumb" mode=""></image>
 								<view class="info">
-									<view class="s2 title">
+									<view class=" title">
 										{{item.title}}
 									</view>
-									<view class="bottom-content cr s5"><text class="s1">￥</text>{{item.marketprice}}</view>
+									<view class="bottom-content cr s5"><text class="s3">￥</text>{{item.marketprice}}</view>
 									<view class="buy">
 										<image src="../../static/img/pic/cart.png" mode="" @click.stop="getCategory(item.id,item.thumb,item.marketprice)"></image>
 									</view>
@@ -50,7 +50,7 @@
 								<view class="s3 merchname">{{item.merchname}}</view>
 								<view class="tw">
 									<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-									<text class="s3 cg">{{item.collect}}人关注 </text>
+									<text class="s3 cg collectnum">{{item.collect}}人关注 </text>
 								</view>
 							</view>
 							<view class="enter-button" @click="toShop(item.id)">进店</view>
@@ -430,8 +430,8 @@
 		height: 10upx;
 	}
 	.buy image{
-		width: 60upx;
-		height: 60upx;
+		width: 55upx;
+		height: 55upx;
 		padding: 10upx;
 	}
 	
@@ -467,10 +467,13 @@
 	}
 	.enter-button{
 		color: #ff8f94;
-		border: 2px solid #ff8f94;
-		padding: 10upx 15upx;
+		border: 1px solid #ff8f94;
+		padding: 6upx 25upx;
 		border-radius: 52upx;
 		float: right;
 		margin-top: 16upx;
+	}
+	.collectnum{
+		margin-left: 15upx;
 	}
 </style>

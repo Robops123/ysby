@@ -14,7 +14,7 @@
 			</view>
 			<input type="text" value="" v-model="mobile" placeholder="请输入手机号"/>
 		</view>
-		<view class="f2 s2">登录遇到问题</view>
+		<view class="f2 s2" @click="contact">登录遇到问题</view>
 		
 		<view>
 			<button type="primary" class="btn" @click="next">下一步</button>
@@ -42,11 +42,7 @@
 			</view> -->
 			
 			<view class="f3 sm-word">
-				<text>登录即代表同意
-				<text class="f5">《中企商会酒店平台用户服务协议》</text>
-				<text class="f5">《隐私政策》</text>
-				等，接受免除或者限制责任，诉讼管辖约定等粗体标示条款。
-				</text>
+				<text>登录即代表同意<text class="f5" @click="openPDF">《易舒伴平台用户服务协议》</text><text class="f5">《隐私政策》</text>等，接受免除或者限制责任，诉讼管辖约定等粗体标示条款。</text>
 			</view>
 	</view>
 </template>
@@ -65,6 +61,11 @@
 			this.passitive=e.passitive
 		},
 		methods:{
+			contact(){
+				uni.navigateTo({
+					url:`/pages/index/webKf`
+				})
+			},
 			bindPickerChange(e){
 				this.index=e.detail.value
 				console.log(e)
@@ -100,15 +101,31 @@
 						}
 						uni.hideLoading()
 				  })
+			},
+			openPDF(){
+				uni.openDocument({
+				      filePath: 'https://example.com/somefile.pdf',
+				      success: function (res) {
+				        console.log('打开文档成功');
+				      }
+				    });
 			}
 		}
 	}
 </script>
 
 <style>
+	uni-page-body{
+		height: 100%;
+	}
 	.box{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		box-sizing: border-box;
 		background: white;
 		padding: 30upx 40upx;
+		word-break: keep-all;
 	}
 	.input-line{
 		background: white;
@@ -187,7 +204,13 @@
 		text-align: center;
 		color: #6e6e6e;
 	}
+	.f3.sm-word>text{
+		width: 100%;
+		display: inline-block;
+	}
 	.f3.sm-word{
+		position: absolute;
+		bottom: 20upx;
 		font-size: 26upx;
 		text-align: left;
 		padding-bottom: 120upx;

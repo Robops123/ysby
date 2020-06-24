@@ -70,7 +70,7 @@
 						<view>
 							<uni-rate disabled="true" size="12" v-if="data.merchid!=0" :value="data.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
 							<uni-rate disabled="true" size="12" v-else value="5" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg">{{data.collect}}人关注</text>
+							<text class="s3 cg collectnum">{{data.collect}}人关注</text>
 						</view>
 					</view>
 					<view class="enter-button enter-button1" v-if="data.merchid!=0" @click="focus(data.merchid)">{{data.isCollect=='1' ? '已关注':'关注'}}</view>
@@ -110,10 +110,18 @@
 		 
 		
 		 
-		 <share-prompt :show='popshow' v-if="data.thumb_url" :shareImg='data.thumb_url["1"]' :shareTitle="'密码门'" @close='closeSharePrompt' :goodsid="id" :uid='uid' :token='token'></share-prompt>
+		 <share-prompt :show='popshow' v-if="data.thumb_url" :shareImg='data.thumb_url["1"]' :shareTitle="'密码门'"
+		  @close='closeSharePrompt' :goodsid="id" :uid='uid' :token='token' @poster='getPoster'></share-prompt>
 		 
 		 
-		 
+		 <!-- 海报 -->
+		 <s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
+		   <!-- 内容 -->
+		   <image :src="advImg" mode="widthFix" style="max-width: 100%;border-radius: 25upx;"></image>
+		   <view style="margin-top: 20upx;">
+		 	  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
+		   </view>
+		 </s-popup>
 		 
 		 <!-- <s-popup custom-class="demo-popup" position="center" v-model="visible2" customClass='advPopup'>
 		   <video :src="data.video" controls style="width: 100%;height: 320px;"></video>
@@ -125,7 +133,7 @@
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniGoodsNav from '@/components/uni-goods-nav/uni-goods-nav.vue'
 	import sku from '@/components/sku/pages/sku.vue'
-	// import sPopup from '@/components/s-popup/index';
+	import sPopup from '@/components/s-popup/index';
 	import sharePrompt from '@/components/sharePrompt/sharePrompt'
 	// import uniPopup from "@/components/uni-popup/uni-popup.vue"
 	export default{
@@ -133,7 +141,7 @@
 			uniRate,
 			uniGoodsNav,
 			sku,
-			// sPopup,
+			sPopup,
 			sharePrompt
 			// uniPopup
 		},
@@ -142,6 +150,8 @@
 		},
 		data () {
 		      return {
+				  hx_openid:'',
+				  hx_pwd:'',
 				  defaultPrice:0,
 				  videoContext:'',
 				  image:'',
@@ -201,6 +211,8 @@
 					this.logined=true
 					this.uid=userInfo.uid
 					this.token=userInfo.token
+					this.hx_openid=userInfo.hx_openid
+					this.hx_pwd=userInfo.hx_pwd
 				}else{
 					this.logined=false
 				}
@@ -211,6 +223,8 @@
 					that.logined=true
 					that.uid=userInfo2.uid
 					that.token=userInfo2.token
+					this.hx_openid=userInfo.hx_openid
+					this.hx_pwd=userInfo.hx_pwd
 					that.getDetail()
 				})
 			},
@@ -238,6 +252,7 @@
 		      onClick (e) {
 				  if(e.index==0){
 					  // 客服
+					  this.tochat(this.data.merchid)
 				  }else if(e.index==1){
 					  // 店铺
 					  this.toShop(this.data.merchid)
@@ -250,6 +265,40 @@
 		        //   icon: 'none'
 		        // })
 		      },
+			  // 客服聊天
+			  async tochat(id) {
+				  var ce=this.$operateInterceptor(this.logined)
+				  if(!ce){
+				  	return ;
+				  }
+			  	var that = this
+				this.$loading()
+			  	var params = {
+			  		merchid:id,
+			  		uid:this.uid,
+			  		token:this.token
+			  	}
+			  	var url = '&r=api.member.order.contactMerch'
+			  	this.$apiPost(url, params).then((res) => {
+			  		 this.$conn.open({
+			  				apiUrl: this.$im.config.apiURL,
+			  				user: that.hx_openid,
+			  				pwd: that.hx_pwd,
+			  				grant_type: 'password',
+			  				appKey: this.$im.config.appkey
+			  			});
+			  			uni.setStorageSync('myUsername',that.hx_openid)
+			  			var username={
+			  				your:res.data.merch_hx_openid,
+			  				myName:that.hx_openid
+			  			}
+						uni.hideLoading()
+			  		uni.navigateTo({
+			  			url: `/pages/chat/chat?username=${JSON.stringify(username)}&title=${res.data.merchname}`
+			  		})
+			  	})
+			  	
+			  },
 		      buttonClick (e) {
 		        console.log(e)
 				if(e.index==0){
@@ -478,6 +527,10 @@
 				  	current:url,
 				  	urls:[url]
 				  })
+			  },
+			  getPoster(e){
+				  this.visible=true
+				  this.advImg=e
 			  }
 			  // compress(url){
 				 //  uni.compressImage({
@@ -594,8 +647,8 @@
 	}
 	.enter-button{
 		color: #ff8f94;
-		border: 2px solid #ff8f94;
-		padding: 10upx 15upx;
+		border: 1px solid #ff8f94;
+		padding: 6upx 25upx;
 		border-radius: 52upx;
 		float: right;
 		margin-top: 16upx;
@@ -603,11 +656,15 @@
 	.sp-item3-bottom>view{
 			display: inline-block;
 			vertical-align: top;
-			width: 33%;
+			width: 32%;
+			margin-right: 2%;
 			height: 220upx;
 			position: relative;
 			overflow: hidden;
 			border-radius: 20upx;
+	}
+	.sp-item3-bottom>view:last-child{
+		margin-right: 0;
 	}
 	.sp-item3-bottom{
 		padding: 0 30upx;
@@ -626,9 +683,10 @@
 			border-radius:0 20upx 0 20upx;
 			bottom: 0;
 			color: white;
-			padding: 5upx 8upx;
+			padding: 3upx 12upx;
 			background-color: #999;
 			opacity: 0.8;
+			font-size: 24upx;
 		}
 	.enter-button1{
 		margin-left: 30upx;
@@ -749,7 +807,7 @@
 		line-height: 1;
 		border: none;
 		outline: none;
-		padding: 20upx 0;
+		padding: 35upx 0;
 		text-align: center;
 		margin-bottom: 20upx;
 		font-size: 12px;
@@ -760,5 +818,11 @@
 	}
 	.detail img{
 		width: 100%;
+	}
+	.collectnum{
+		margin-left: 15upx;
+	}
+	.advPopup{
+		padding: 20upx 0;
 	}
 </style>

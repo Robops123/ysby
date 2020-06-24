@@ -18,9 +18,9 @@
 				<view class="list" v-for="(item,index) in dataList" :key='index' @click="to('goodsDetail',item.id)">
 					<image :src="item.thumb" mode=""></image>
 					<view class="word">
-						<view class="s3 ellipsis">{{item.title}}</view>
+						<view class=" ellipsis">{{item.title}}</view>
 						<view class="s5 cr word-bottom">
-							<view>￥{{item.marketprice}}</view>
+							<view><text class="s3">￥</text>{{item.marketprice}}</view>
 							<view class="buy fr">
 								<image src="../../static/img/pic/cart.png" mode="" @click.stop="getCategory(item.id,item.thumb,item.marketprice)"></image>
 							</view>
@@ -49,6 +49,7 @@
 			defaultPrice:0,
 			defaultImg:'',
 			id:'',
+			activityId:'',
 			category:[],
 			receivedCategory:false,
 			totalsku:0,
@@ -80,9 +81,11 @@
 			 if(e.type==1){
 				 this.merchId=e.merchId
 				 this.cateId=e.cateId
-			 }else{
+			 }else if(e.type==2){
 				 this.brandId=e.brandId
 				 this.cateId=e.cateId
+			 }else{
+				 this.activityId=e.id
 			 }
 			 // this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
 			 var userInfo=uni.getStorageSync('userInfo')
@@ -153,7 +156,8 @@
 				  sort:this.sorts,
 				  brandid:this.brandId,
 				  cateid:this.cateId,
-				  merchid:this.merchId
+				  merchid:this.merchId,
+				  id:this.activityId
 				}
 				if(this.page==1){
 					this.$loading()
@@ -305,8 +309,8 @@
 		color: #000000;
 	}
 	.buy image{
-		width: 60upx;
-		height: 60upx;
+		width: 55upx;
+		height: 55upx;
 		padding: 10upx;
 	}
 	.word-bottom>view{
