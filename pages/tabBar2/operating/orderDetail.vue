@@ -42,7 +42,9 @@
 		
 		<view class="activity">
 			<view class="margin1" >
-				<image src="../../../static/img/pic/address.png" mode="" class="pre-img"></image>
+				<view class="img-container">
+					<image src="../../../static/img/pic/address.png" mode="" class="pre-img pre-img1"></image>
+				</view>
 				<text class="">收件信息</text>
 				<view class="fr cr" @click="openchange">修改
 				<image src="../../../static/img/pic/more.png" mode="" class="right-arrow"></image></view>
@@ -57,14 +59,16 @@
 				</view>
 				<view class="margin1" @click="toPromoteFee">
 					<text class="c2">收货地址：</text>
-					<text class="fr">{{data.address}}</text>
+					<text class="fr address ellipsis">{{data.address}}</text>
 				</view>
 		</view>
 		
 		
 		<view class=" activity">
 			<view class="margin1" >
-				<image src="../../../static/img/pic/info.png" mode="" class=" pre-img pre-img2"></image>
+				<view class="img-container">
+					<image src="../../../static/img/pic/info.png" mode="" class=" pre-img pre-img2"></image>
+				</view>
 				<text class="">会员信息</text>
 			</view>
 			<view class="content">
@@ -84,7 +88,9 @@
 		
 		<view class="activity">
 			<view class="margin1" >
-				<image src="../../../static/img/pic/goods.png" class="pre-img" mode=""></image>
+				<view class="img-container">
+					<image src="../../../static/img/pic/goods.png" class="pre-img pre-img3" mode="" ></image>
+				</view>
 				<text class="">订单商品</text>
 				<text class="fr">(价格单位:元)</text>
 			</view>
@@ -411,5 +417,22 @@
 				.change-table .line input{
 					width: 60%;
 					border-bottom: 1px solid #c9c9c9;
+				}
+				.address{
+					max-width: 70%;
+				}
+				.img-container{
+					display: inline-block;
+					vertical-align: middle;
+					width: 60upx;
+					text-align: center;
+				}
+				.img-container .pre-img3{
+					width: 37upx !important;
+					display: inline-block;
+				}
+				.img-container .pre-img1{
+					width: 37upx !important;
+					display: inline-block;
 				}
 </style>

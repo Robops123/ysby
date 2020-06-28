@@ -3,6 +3,7 @@
   "usingComponents": {
     "uni-load-more": "/components/uni-load-more/uni-load-more",
     "ygc-comment": "/components/ygc-comment/ygc-comment",
-    "u-parse": "/components/gaoyia-parse/parse"
+    "u-parse": "/components/gaoyia-parse/parse",
+    "share-prompt": "/components/sharePrompt/sharePrompt"
   }
 }

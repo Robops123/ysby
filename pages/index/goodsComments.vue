@@ -122,7 +122,7 @@
 	}
 	.comment-word{
 		line-height: 1.5;
-		height: 72upx;
+		/* height: 72upx; */
 		overflow:hidden;//一定要写
 		    text-overflow: ellipsis;//超出省略号
 		    display:-webkit-box;//一定要写

@@ -355,7 +355,7 @@
 	
 	.banner{
 		width: 100%;
-		height: 320upx;
+		height: 360upx;
 	}
 	
 	.nav-bar{

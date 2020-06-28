@@ -3,7 +3,8 @@
   "usingComponents": {
     "uni-rate": "/components/uni-rate/uni-rate",
     "uni-load-more": "/components/uni-load-more/uni-load-more",
+    "uni-fab": "/components/uni-fab/uni-fab",
     "u-parse": "/components/gaoyia-parse/parse",
-    "topicon": "/components/gwh-backTopIcon/gwh-backTopIcon"
+    "share-prompt": "/components/sharePrompt/sharePrompt"
   }
 }

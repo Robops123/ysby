@@ -320,14 +320,16 @@
 								uni.saveImageToPhotosAlbum({
 									filePath: res.tempFilePath,
 									success: function() {
+										uni.hideLoading()
 										that.$msg('保存成功，请到相册中查看')
 										that.visible=false
 									},
 									fail: function() {
+										uni.hideLoading()
 										that.$msg('保存失败')
 									},
 									complete:() =>{
-										uni.hideLoading()
+										
 									}
 								});
 							}
@@ -403,8 +405,12 @@
 			display: inline-block;
 			vertical-align: top;
 		}
+		.dd{
+			margin-top: 60upx;
+		}
 		.dd .item-list{
 			width: 20%;
+			margin-top: 0;
 		}
 		.card.card2{
 			box-shadow: none;
@@ -487,5 +493,8 @@
 			left: 50%;
 			z-index: 1;
 			margin-left: 10upx;
+		}
+		.icon-arrow-right{
+			vertical-align: text-top;
 		}
 </style>

@@ -133,7 +133,7 @@
 		            @fabClick="toTop"
 		        ></uni-fab>		
 				
-		<!-- <share-prompt :show='popshow'  :shareTitle="'密码门'" @close='closeSharePrompt'  :uid='uid' :token='token'></share-prompt> -->
+		<share-prompt :show='popshow'  :shareTitle="'密码门'" @close='closeSharePrompt'  :uid='uid' :token='token'></share-prompt>
 	</view>
 </template>
 
@@ -145,7 +145,9 @@
 	import BottomImageMenu from '@/components/zh-bottom-image-menu/zh-bottom-image-menu.js'
 	var bottomImageMenu = null
 	 // import topicon from '@/components/gwh-backTopIcon/gwh-backTopIcon.vue'
-	 // import sharePrompt from '@/components/sharePrompt/sharePrompt'
+	 // #ifdef MP
+	 import sharePrompt from '@/components/sharePrompt/sharePrompt'
+	 // #endif
 	export default{
 		data(){
 			return{
@@ -201,9 +203,11 @@
 			uniRate,
 			uniLoadMore,
 			uParse,
-			uniFab
+			uniFab,
 			// topicon,
-			// sharePrompt
+			// #ifdef MP
+			sharePrompt
+			// #endif
 		},
 		computed: {
 		     noMore () {
@@ -422,16 +426,22 @@
 					  that.$forceUpdate()
 				  })
 			},
-			// closeSharePrompt(){
-			// 	 this.popshow=false
-			// },
+			closeSharePrompt(){
+				 this.popshow=false
+			},
 			showMenu() {
+			      // #ifdef APP-PLUS
 			      if (!bottomImageMenu) {
 			        bottomImageMenu = new BottomImageMenu(this.menus, (menu, index) => {
 			          uni.showToast({ title: `点击了:${menu.label},索引是${index},这是统一处理的`, icon: 'none' })
 			        })
 			      }
 			      bottomImageMenu.show()
+			      // #endif
+				  
+				  // #ifdef MP
+					this.popshow=true
+				  // #endif
 			    },
 				share(type,way){
 					this.$loading()

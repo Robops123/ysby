@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="child-overall-item padding bgwhite margin">
-			<image src="../../static/img/bg/activity.png" mode=""></image>
+			<!-- <image src="../../static/img/bg/activity.png" mode=""></image> -->
 			<view class="info">
 				<view>
 					<view class="s2 title">
@@ -58,7 +58,7 @@
 							</view>
 						</block>
 						<view class='add-view' v-if="imageList.length < imageLength" @tap="chooseImage">
-							<image src="../../static/img/bg/activity.png" mode=""></image>
+							<!-- <image src="../../static/img/bg/activity.png" mode=""></image> -->
 							<view class="s2 cg">上传凭证(最多5张)</view>
 						</view>
 					</view>

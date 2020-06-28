@@ -4,6 +4,7 @@
     "uni-rate": "/components/uni-rate/uni-rate",
     "uni-goods-nav": "/components/uni-goods-nav/uni-goods-nav",
     "sku": "/components/sku/pages/sku",
-    "s-popup": "/components/s-popup/index"
+    "s-popup": "/components/s-popup/index",
+    "share-prompt": "/components/sharePrompt/sharePrompt"
   }
 }

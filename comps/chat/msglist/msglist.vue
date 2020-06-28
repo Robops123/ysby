@@ -1,6 +1,6 @@
 <template>
 	<scroll-view
-	style="height: calc(100vh - 160rpx - 44px);"
+	style="height: calc(100vh - 160rpx);"
 		scroll-y="true"
 		:class="view"
 		class="wrap chat-list"

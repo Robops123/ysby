@@ -2,6 +2,7 @@
   "component": true,
   "usingComponents": {
     "uni-load-more": "/components/uni-load-more/uni-load-more",
-    "pop": "/components/promptOptions/pop"
+    "pop": "/components/promptOptions/pop",
+    "prompt": "/components/zz-prompt/index"
   }
 }

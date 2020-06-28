@@ -200,7 +200,7 @@
 						return ;
 					}else{
 						this.imageList.forEach((item,index) =>{
-							if(item.indexOf('blob')>-1){
+							if(item.indexOf('http://')<0 && item.indexOf('https://')<0){
 								that.$upload(item,'',(cb) =>{
 									that.pic.push(cb)
 								var	t=this.pic.length

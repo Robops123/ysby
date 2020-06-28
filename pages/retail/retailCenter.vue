@@ -22,7 +22,7 @@
 					<view class="tixian-success-num">{{data.canCommission}}</view>
 					<view class="tixian-success-txt">可提现佣金(元)</view>
 				</view>
-				<view class="tixian-ke-right">推荐提现</view>
+				<view class="tixian-ke-right" @click="to('retailMoney')">佣金提现</view>
 			</view>
 		</view>
 		<view class="distribution-info">

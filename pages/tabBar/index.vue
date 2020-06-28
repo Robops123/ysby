@@ -76,7 +76,7 @@
 			</view>
 		</view>
 		
-		<image :src="bannerList[1].thumb" v-if="bannerList[1]" mode="" @click='toBannerDetail(bannerList[1])' class="banner banner3"></image>
+		<image :src="bannerList[1].thumb" v-if="bannerList[1]" mode="widthFix" @click='toBannerDetail(bannerList[1])' class="banner banner3"></image>
 		
 		<view class="hot padding">
 			<view class="hot-title"><image src="../../static/img/pic/index/hot.png" mode=""></image>热卖商品</view>
@@ -94,7 +94,7 @@
 			</view>
 		</view>
 		
-		<image :src="bannerList[2].thumb" v-if="bannerList[2]" @click='toBannerDetail(bannerList[2])' mode="" class="banner banner2"></image>
+		<image :src="bannerList[2].thumb" v-if="bannerList[2]" @click='toBannerDetail(bannerList[2])' mode="widthFix" class="banner banner2"></image>
 		
 		<view class="padding">
 			<view class="card card2">
@@ -246,12 +246,13 @@
 				// 判断是否属于当前会话
 				let members=uni.getStorageSync('member') || [],
 				existance=false
+				
 				if(members.length==0){
 					members.push({
 						name:renderableMsg.yourname
 					})
 					// for(var i=0;i<members.length;i++){
-						this.transToName(members)
+						that.transToName(members)
 					// }
 				}else {
 					for(var i=0;i<members.length;i++){
@@ -264,7 +265,7 @@
 							name:renderableMsg.yourname
 						})
 						// for(var i=0;i<members.length;i++){
-							this.transToName(members)
+							that.transToName(members)
 						// }
 					}
 				}
@@ -654,13 +655,13 @@
 		height: 360upx;
 	}
 	.banner2{
-		height: 125px;
+		height: 135px;
 		margin-top: 20upx;
 		border-radius: 0 !important;
 	}
 	.banner3{
 		margin: 10upx 0 20upx;
-		height: 125px;
+		height: 135px;
 		border-radius: 0 !important;
 	}
 	.banner-low{

@@ -503,10 +503,13 @@
 		font-size: 28upx;
 		padding: 0 !important;
 		display: inline-block;
-		background-color: white;
+		background-color: white !important;
 		margin-left: 15upx;
 	}
-
+	.btn:before,
+	.btn:after{
+		display: none;
+	}
 	.btn1 {
 		border: 1px solid #dfdfdf !important;
 		color: #7f7f7f !important;

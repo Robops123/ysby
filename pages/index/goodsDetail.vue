@@ -531,7 +531,33 @@
 			  getPoster(e){
 				  this.visible=true
 				  this.advImg=e
-			  }
+			  },
+			  saveImg(url){
+			  	var that=this
+			  	that.$loading()
+			  	uni.downloadFile({
+			  			url: url,
+			  			success: (res) =>{
+			  				if (res.statusCode === 200){
+			  					uni.saveImageToPhotosAlbum({
+			  						filePath: res.tempFilePath,
+			  						success: function() {
+										uni.hideLoading()
+			  							that.$msg('保存成功，请到相册中查看')
+											that.visible=false
+			  						},
+			  						fail: function() {
+										uni.hideLoading()
+			  							that.$msg('保存失败')
+			  						},
+			  						complete:() =>{
+			  							
+			  						}
+			  					});
+			  				}
+			  			}
+			  		})
+			  },
 			  // compress(url){
 				 //  uni.compressImage({
 				 //    src: url,
@@ -587,7 +613,7 @@
 	}
 	.comment-word{
 		line-height: 1.5;
-		height: 72upx;
+		/* height: 72upx; */
 		overflow:hidden;//一定要写
 		    text-overflow: ellipsis;//超出省略号
 		    display:-webkit-box;//一定要写
@@ -609,7 +635,7 @@
 		border-radius: 50upx;
 		display: inline-block;
 		font-size: 30upx;
-		background-color: #fff;
+		background-color: #fff !important;
 		margin: 30upx 0;
 	}
 	
@@ -824,5 +850,8 @@
 	}
 	.advPopup{
 		padding: 20upx 0;
+	}
+	.icon-arrow-right{
+		vertical-align: middle;
 	}
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<view style="height: calc(100% - 40px);overflow-y: auto;">
+	<view style="overflow-y: auto;" class="operate-component">
 		<view class="top">
 			<view class="set" @click="toSetting">
 				<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img"></image>
@@ -223,5 +223,10 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
+		}
+		.operate-component{
+			/* #ifndef MP */
+			height: calc(100% - 40px);
+			/* #endif */
 		}
 </style>

@@ -5,8 +5,11 @@
     "pages/index/goodsCategory",
     "pages/index/goodsList",
     "pages/test",
+    "pages/index/webKf",
     "pages/index/goodsDetail",
     "pages/index/goodsComments",
+    "pages/mine/suggestion",
+    "pages/index/bannerDetail",
     "pages/index/createOrder",
     "pages/index/createCartOrder",
     "pages/index/cashier",
@@ -25,6 +28,7 @@
     "pages/retail/retailCenter",
     "pages/mine/promotion",
     "pages/mine/help",
+    "pages/mine/aboutUs",
     "pages/mine/viewHistoryf",
     "pages/mine/viewHistorys",
     "pages/retail/retailMoney",
@@ -34,9 +38,12 @@
     "pages/login/loginMobile",
     "pages/login/loginPsd",
     "pages/login/loginVeri",
+    "pages/login/register",
     "pages/mine/goods",
     "pages/mine/shop",
     "pages/mine/myOrder",
+    "pages/chat/chat",
+    "pages/chat/message",
     "pages/mine/addressList",
     "pages/mine/addressChange",
     "pages/mine/myOrderDetail",
@@ -57,7 +64,7 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#fff",
-    "backgroundColor": "#fff"
+    "backgroundColor": "#F0F0F0"
   },
   "tabBar": {
     "color": "#7A7E83",
@@ -101,6 +108,5 @@
       "desc": "该应用需要获取你的当前位置"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

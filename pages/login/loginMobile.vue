@@ -14,7 +14,7 @@
 			</view>
 			<input type="text" value="" v-model="mobile" placeholder="请输入手机号"/>
 		</view>
-		<view class="f2 s2" @click="contact">登录遇到问题</view>
+		<view class="f2 " @click="contact">登录遇到问题</view>
 		
 		<view>
 			<button type="primary" class="btn" @click="next">下一步</button>
