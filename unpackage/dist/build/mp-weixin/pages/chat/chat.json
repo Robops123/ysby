@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "chat": "/comps/chat/chat"
+  }
+}

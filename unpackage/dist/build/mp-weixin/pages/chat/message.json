@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "消息",
+  "usingComponents": {
+    "uni-swipe-action": "/comps/uni/uni-swipe-action/uni-swipe-action"
+  }
+}
