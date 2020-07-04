@@ -1,10 +1,11 @@
 <template>
 	<view>
-		<view class="padding" :class="{padding1:active==1}">
+		<view class="padding" :class="{padding1:active==1 || active==4}">
 			<view class="nav-bar">
 				<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>热门推文</text></view>
 				<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>精选商家</text></view>
 				<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>推荐产品</text></view>
+				<view class="nav nav-left" :class="{active:active==4}" @click="toggle(4)"><text>资讯</text></view>
 			</view>
 			
 			
@@ -26,12 +27,13 @@
 								</view>
 							</view>
 							<view class="sp-item3-middle" @click="toDetail(item)">
-								<!-- <view class="title" v-html="item.detail"></view> -->
+								<view class="title" >{{item.title}}</view>
 								<view class="synopsis">
-									<u-parse :content="item.detail"  class="article-detail" />
+									<text>{{item.abstract}}</text>
+									<!-- <u-parse :content="item.detail"  class="article-detail" /> -->
 									<!-- <text v-html="item.detail" class="article-detail">
 								    </text> -->
-									<text class="all">全文</text>
+									<text class="all" v-show="item.abstract">全文</text>
 								</view>
 							</view>
 							<view class="media-place">
@@ -49,14 +51,15 @@
 								</view>
 							</view>
 							<view style="overflow: hidden;">
-									<video class="img-1" :src="item.video" v-if="item.video" :id='item.video' :initial-time	='item.video_seen_time=="" ? 0:item.video_seen_time'
-									 @loadedmetadata='getVideoInfo($event,index)' @play='recordPrepare' @pause='recordProgress(item.id,index)' @timeupdate='timeupdate($event,index)'
+									<video class="img-1" :src="item.video" v-if="item.video" :id="'video'+index" :ref="'video'+index"
+									:initial-time='item.video_seen_time=="" ? 0:item.video_seen_time' :poster='item.videopic'
+									 @loadedmetadata='getVideoInfo($event,index)' @play='recordPrepare($event,index,this)' @pause='recordProgress(item.id,index)' @timeupdate='timeupdate($event,index)'
 									 controls style="position: relative;"></video>
 								</view>
 						</view>
 							
 							<view class="luntan-card-bot">
-								<view class="luntan-card-bot-card" @click='showMenu'>
+								<view class="luntan-card-bot-card" @click='showMenu(item.id,item.title)'>
 									<!-- <text class="iconfont icon-share2"></text> -->
 									<image src="/static/img/pic/fenxiang.png" mode="" class="operate-pic"></image>
 									<text class="operate-word">转发{{item.repost}}</text>
@@ -66,8 +69,8 @@
 									<image src="/static/img/pic/pinglun.png" mode="" class="operate-pic" style="margin-top: 2px;"></image>
 									<text class="operate-word">评论{{item.comment}}</text>
 								</view> 
-								<view class="luntan-card-bot-card" @click="toggleZan(Number(item.isLike),item.id,index)">
-									<text class="iconfont " :class="{'icon-zan':!Number(item.isLike),'icon-shou':Number(item.isLike),'zaned':Number(item.isLike)}" ></text>
+								<view class="luntan-card-bot-card" @click="toggleZan(item.isLike,item.id,index)">
+									<text class="iconfont " :class="{'icon-zan':item.isLike=='0','icon-shou':item.isLike=='1','zaned':item.isLike=='1'}" ></text>
 									<text class="operate-word">赞{{item.like}}</text>
 								</view>
 							</view>
@@ -118,6 +121,29 @@
 					</view>
 				</view>
 				
+				<!-- 资讯 -->
+				<view class="" v-if="active==4">
+					<view class="zx" v-for="(item,index) in dataList" :key='index' @click="toZxDetail(item.id)">
+						<view class="zx-content" v-if="index%2==1">
+							<view class="zx-title">{{item.title}}</view>
+							<view class="cg zx-date">
+								<text >{{item.createtime}}</text>
+								<!-- <image src="../../static/img/app.jpg" mode=""></image> -->
+							</view>
+						</view>
+						<view class="zx-image-box" :class="{alterbox:index%2==1}">
+							<image :src="item.newspic" mode=""></image>
+						</view>
+						<view class="zx-content" v-if='index%2==0'>
+							<view class="zx-title">{{item.title}}</view>
+							<view class="cg zx-date">
+								<text>{{item.createtime}}</text>
+								<!-- <image src="../../static/img/app.jpg" mode=""></image> -->
+							</view>
+						</view>
+					</view>
+				</view>
+				
 				<uni-load-more :status="more"></uni-load-more>
 			</view>
 			
@@ -133,7 +159,10 @@
 		            @fabClick="toTop"
 		        ></uni-fab>		
 				
-		<share-prompt :show='popshow'  :shareTitle="'密码门'" @close='closeSharePrompt'  :uid='uid' :token='token'></share-prompt>
+		<!-- #ifdef MP -->
+			<share-prompt :show='popshow'  :shareTitle="title" @close='closeSharePrompt' :alterUrl="'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+collegeid"
+			 :miniProgramPath="'/pages/index/articleDetail?id='+collegeid"  :uid='uid' :token='token'></share-prompt>
+		<!-- #endif -->
 	</view>
 </template>
 
@@ -151,6 +180,8 @@
 	export default{
 		data(){
 			return{
+				collegeid:'',
+				title:'',
 				pattern:{
 					color:'#fff',
 					buttonColor:'#ffb6b9'
@@ -229,16 +260,27 @@
 			   				  that.apart()
 			   // },2000)
 		   },
+		   onShareAppMessage() {
+		   	
+		   	return {
+		   		title: this.title,
+		   		path: '/pages/index/articleDetail?id='+this.collegeid,
+		   		imageUrl:this.image ? this.image : '/static/img/app.jpg'
+		   	}
+		   },
+		   onShow(){
+		   	var userInfo=uni.getStorageSync('userInfo')
+		   	if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+		   		this.logined=true
+		   		this.uid=userInfo.uid
+		   		this.token=userInfo.token
+		   	}else{
+		   		this.logined=false
+		   	}
+		   	
+		   },
 		   mounted(){
 		   	var that=this
-			var userInfo=uni.getStorageSync('userInfo')
-			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
-				this.logined=true
-				this.uid=userInfo.uid
-				this.token=userInfo.token
-			}else{
-				this.logined=false
-			}
 		   	this.apart()
 			 bottomImageMenu = new BottomImageMenu(this.menus)
 			uni.$on('logined',function(){
@@ -265,6 +307,11 @@
 			toDetail(item){
 				uni.navigateTo({
 					url:'/pages/index/articleDetail?id='+item.id+'&like='+item.like+'&comment='+item.comment+'&repost='+item.repost
+				})
+			},
+			toZxDetail(id){
+				uni.navigateTo({
+					url:'../index/informationDetail?id='+id
 				})
 			},
 			toShop(id){
@@ -300,6 +347,8 @@
 					url='&r=api.college.merchant&&page='+this.page+'&pagesize='+this.pageSize
 				}else if(this.active==3){
 					url='&r=api.college.goods&&page='+this.page+'&pagesize='+this.pageSize
+				}else if(this.active==4){
+					url='&r=api.college.news&&page='+this.page+'&pagesize='+this.pageSize
 				}
 				// else if(this.active==2){
 				// 	var url='&r=api.discovery.goods'
@@ -358,8 +407,8 @@
 			// 	})
 			// },
 			// 视频观看记录
-			recordPrepare(e){
-				let id=e.target.id
+			recordPrepare(e,index,t){
+				let id=e.target.id || 'video'+index
 				if(this.videoContext){
 					if(this.videoContext.id!=id){
 						this.videoContext.pause()
@@ -402,7 +451,7 @@
 				}
 				this.$loading()
 				var that=this,url
-				if(!zaned){
+				if(zaned=='0'){
 					url='&r=api.college.hotarticle.doLike'
 				}else{
 					url='&r=api.college.hotarticle.doLikeCancel'
@@ -414,11 +463,13 @@
 				}
 				  this.$apiPost(url,params).then((res) =>{
 					  uni.hideLoading()
-					  that.dataList[index].isLike=!that.dataList[index].isLike
-					  if(that.dataList[index].isLike){
+					  // that.dataList[index].isLike=!that.dataList[index].isLike
+					  if(zaned=='0'){
+						  that.dataList[index].isLike='1'
 						  that.$msg('点赞成功')
 						  that.dataList[index].like++
 					  }else{
+						  that.dataList[index].isLike='0'
 						  that.$msg('取消点赞')
 						  that.dataList[index].like--
 					  }
@@ -429,13 +480,16 @@
 			closeSharePrompt(){
 				 this.popshow=false
 			},
-			showMenu() {
+			showMenu(id,title) {
+				this.collegeid=id
+				this.title=title
 			      // #ifdef APP-PLUS
 			      if (!bottomImageMenu) {
 			        bottomImageMenu = new BottomImageMenu(this.menus, (menu, index) => {
 			          uni.showToast({ title: `点击了:${menu.label},索引是${index},这是统一处理的`, icon: 'none' })
 			        })
 			      }
+				  
 			      bottomImageMenu.show()
 			      // #endif
 				  
@@ -472,9 +526,9 @@
 					switch (way){
 						case 0:
 							shareOPtions.summary = ' ';
-							shareOPtions.imageUrl =this.shareImg ? this.shareImg : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
-							shareOPtions.title = '我的分享';
-							shareOPtions.href = 'www.baidu.com';
+							shareOPtions.imageUrl =this.shareImg ? this.shareImg : '/static/img/app.jpg'
+							shareOPtions.title = this.title;
+							shareOPtions.href = 'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.collegeid;
 							break;
 						case 1:
 							shareOPtions.summary = this.shareText;
@@ -482,11 +536,11 @@
 							shareOPtions.imageUrl = this.image;
 							break;
 						case 5:
-							shareOPtions.imageUrl = 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
-							// shareOPtions.title = '买啊';
+							shareOPtions.imageUrl = '/static/img/app.jpg'
+							shareOPtions.title = this.title;
 							shareOPtions.miniProgram = {
-								id:'gh_33446d7f7a26',
-								path:'/pages/tabBar/component/component',
+								id:'gh_2f5dfaa2fae2',
+								path:'/pages/index/articleDetail?id='+this.collegeid,
 								webUrl:'https://uniapp.dcloud.io',
 								type:0
 							};
@@ -523,7 +577,7 @@
 	.nav{
 		color: #afafaf;
 		display: inline-block;
-		width: 33%;
+		width: 25%;
 		box-sizing: border-box;
 	}
 	.nav.active text{
@@ -744,5 +798,85 @@
 		}
 		.operate-word{
 			font-size: 28upx;
+		}
+		
+		.synopsis{
+			line-height: 1.5;
+			overflow:hidden;//一定要写
+			    text-overflow: ellipsis;//超出省略号
+			    display:-webkit-box;//一定要写
+			    -webkit-line-clamp: 5;//控制行数
+			    -webkit-box-orient: vertical;//一定要写
+				margin: 25upx 0 15upx;
+		}
+		
+		.zx{
+			background-color: #fff;
+			margin-bottom: 20upx;
+		}
+		.zx-content{
+			position: relative;
+			height: 135px;
+		}
+		.zx .zx-image-box{
+			width: 60%;
+			height: 135px;
+			position: relative;
+		}
+		.zx-image-box:after{
+			position: absolute;
+			content: '';
+			right: 0;
+			top: 0;
+			border-top: 0;
+			border-bottom: 135px solid transparent;
+			border-left:0 solid transparent;
+			border-right: 100upx solid #fff;
+			z-index: 99;
+		}
+		.alterbox:after{
+			position: absolute;
+			content: '';
+			left: 0;
+			top: 0;
+			border-top: 0;
+			border-bottom: 135px solid transparent;
+			border-right:0 solid transparent;
+			border-left: 100upx solid #fff;
+			z-index: 99;
+		}
+		.zx-image-box image{
+			width: 100%;
+			height: 100%;
+		}
+		.zx>view{
+			vertical-align: top;
+			display: inline-block;
+			width: 40%;
+			
+		}
+		.zx-title{
+			margin: 20upx 0;
+			overflow:hidden;//一定要写
+			    text-overflow: ellipsis;//超出省略号
+			    display:-webkit-box;//一定要写
+			    -webkit-line-clamp: 4;//控制行数
+			    -webkit-box-orient: vertical;//一定要写
+		}
+		.zx-date{
+			position: absolute;
+			bottom: 20upx;
+			left: 0;
+		}
+		.zx-date image,
+		.zx-date text{
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 12px;
+		}
+		.zx-date image{
+			margin-left: 20upx;
+			width: 60upx;
+			height: 60upx;
 		}
 </style>

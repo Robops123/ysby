@@ -2,17 +2,19 @@
 	<view>
 		<view class="padding" style="padding-bottom: 66px;">
 			<scroll-view scroll-y="true" id="sv" >
-				<view class="card" v-for="(item,index) in dataList" :key='index' v-show="item.status=='5'">
-					<view class="child-overall" >
-						<view class="child-overall-item"> 
-							<image :src="item.goodspic" mode=""></image>
-							<view class="info">
-								<view class="s2 title">
-									{{item.goodsname}}
-								</view>
-								<view class="btn-box">
-									<button type="default" class="btn btn1">再来一单</button>
-									<button type="default" class="btn btn2" @click="toComment(item,data.merchid,orderno,index)">评价</button>
+				<view class="card" v-for="(item,index) in dataList" :key='index'>
+					<view v-for="(item2,index2) in item.goods" :key='index2'>
+						<view class="child-overall" v-for="(item3,index3) in item2.goodsdata" :key='index3'>
+							<view class="child-overall-item"> 
+								<image :src="item3.goodspic" mode=""></image>
+								<view class="info">
+									<view class="s2 title">
+										{{item3.goodsname}}
+									</view>
+									<view class="btn-box">
+										<button type="default" class="btn btn1" @click="toGoodsDetail(item3.goodsid)">再来一单</button>
+										<button type="default" class="btn btn2" @click="toComment(item3,item2.merchid,item.orderno,index,index2,index3)">评价</button>
+									</view>
 								</view>
 							</view>
 						</view>
@@ -22,46 +24,99 @@
 			
 			<view style="text-align: center;" v-show="dataList.length==0">暂无待评论商品</view>
 		</view>
+		<uni-load-more :status="more"></uni-load-more>
 	</view>
 </template>
 
 <script>
+	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	export default{
+		components:{
+			uniLoadMore
+		},
 		data(){
 			return{
 				data:{},
 				dataList:[],
+				page:1,
+				pageSize:99,
+				total:0,
+				more:'',
 				uid:'',
 				token:'',
 				orderno:''
 			}
 		},
+		onReachBottom(){
+			if(this.noMore){
+								this.more='noMore'
+								return;
+							}
+							var that=this
+							this.more='loading'
+							  that.page++
+							  that.getList()
+		},
+		computed: {
+		     noMore () {
+		       return this.dataList.length >= this.total
+		     },
+		   },
 		   onLoad(p){
-			 this.data=JSON.parse(p.item)
-			 this.dataList=this.data.goodsdata
-			 this.orderno=p.orderno
+			 // this.data=JSON.parse(p.item)
+			 // this.dataList=this.data.goodsdata
+			 // this.orderno=p.orderno
 			 var that=this
 			 var userInfo=uni.getStorageSync('userInfo'),that=this
 			 if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 			 	this.uid=userInfo.uid
 			 	this.token=userInfo.token
 			 }
-			 // this.getList(this.page)
-			 // setTimeout(function(){
-			 // 	that.$getHeight('#sv',(res) =>{
-			 // 		that.sh=res
-			 // 	})
-			 // },0)
+			 this.getList()
 		   },
 		methods:{
-			toComment(item,merchid,orderno,index){
-				uni.$on('disableComment',(i) =>{
-					this.dataList.splice(i,1)
-				})
+			toGoodsDetail(id){
 				uni.navigateTo({
-					url:'./comment?item='+JSON.stringify(item)+'&merchid='+merchid+'&orderno='+orderno+'&index='+index
+					url:'/pages/index/goodsDetail?id='+id
 				})
 			},
+			toComment(item,merchid,orderno,index,index2,index3){
+				uni.$on('disableComment',(i) =>{
+					this.dataList[i.index].goods[i.index2].goodsdata.splice(i.index3,1)
+					// this.total--
+				})
+				uni.navigateTo({
+					url:'./comment?item='+JSON.stringify(item)+'&merchid='+merchid+'&orderno='+orderno+'&index='+index+'&index2='+index2+'&index3='+index3
+				})
+			},
+			reset(){
+				this.page=1
+				this.total=0
+				this.dataList=[]
+				this.more=''
+			},
+			getList(){
+				var that = this
+				var params = {
+					page: this.page,
+					pagesize: this.pageSize,
+					uid: this.uid,
+					token: this.token,
+					status: 5
+				}
+				if (this.page == 1) {
+					this.$loading()
+				}
+				var url = '&r=api.member.order'
+				this.$apiPost(url, params).then((res) => {
+					that.total = res.total
+					that.dataList = that.dataList.concat(res.data)
+					that.more = ''
+					if (that.page == 1) {
+						uni.hideLoading()
+					}
+				})
+			}
 		}
 	}
 </script>
@@ -171,16 +226,20 @@
 		text-align: right;
 	}
 	.btn{
-		height: 75upx;
-		border-radius: 75upx;
+		height: 66upx;
+		border-radius: 66upx;
 		text-align: center;
-		line-height: 75upx;
+		line-height: 66upx;
 		color: white;
 		font-size: 28upx;
 		padding: 0 25upx;
 		display: inline-block;
 		background-color: white;
 		margin-left: 15upx;
+	}
+	.btn:before,
+	.btn:after{
+		display: none;
 	}
 	.btn1{
 		border: 1px solid #dfdfdf !important;

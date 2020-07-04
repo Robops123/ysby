@@ -92,8 +92,8 @@
 		overflow-x: auto;
 	}
 	.item-list image{
-		width: 70upx;
-		height: 60upx;
+		width: 30px;
+		height: 30px;
 		margin-bottom: 20upx;
 	}
 	.item-list{

@@ -98,7 +98,7 @@
 						case 0:
 							shareOPtions.summary = ' ';
 							shareOPtions.imageUrl =this.shareImg ? this.shareImg : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
-							shareOPtions.title = '我的分享';
+							shareOPtions.title = '';
 							shareOPtions.href = this.url;
 							break;
 						case 1:
@@ -111,7 +111,7 @@
 							shareOPtions.imageUrl = this.shareImg ? this.shareImg : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
 							shareOPtions.title = this.shareTitle+'买啊';
 							shareOPtions.miniProgram = {
-								id:'gh_33446d7f7a26',
+								id:'gh_2f5dfaa2fae2',
 								path:'/pages/tabBar/component/component',
 								webUrl:'https://uniapp.dcloud.io',
 								type:0

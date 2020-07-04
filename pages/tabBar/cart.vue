@@ -5,7 +5,7 @@
 		<!-- #endif -->
 		<view class="padding" style="padding-bottom: 46px;">
 			
-			<view class="card" v-for="(item,index) in dataList" :key='index' v-if="logined">
+			<view class="card" v-for="(item,index) in dataList" :key='index' v-if="logined && item.goods && item.goods.length>0">
 				<view class="overall">
 					<checkbox-group @change="parentChange($event,item,index)" class="r-cb" v-show="operate">
 					    <checkbox value="" :checked="item.checked" style="transform:scale(0.7)"/>
@@ -113,12 +113,14 @@
 			 result(){
 				 var result={totalPrice:0,totalAmount:0}
 				 this.dataList.forEach((item) =>{
-				 	item.goods.forEach((item2) =>{
-				 		if(item2.checked){
-				 			result.totalPrice+=item2.amount * item2.marketprice
-							result.totalAmount++
-				 		}
-				 	})
+					 if(item.goods && item.goods.length>0){
+						 item.goods.forEach((item2) =>{
+						 	if(item2.checked){
+						 		result.totalPrice+=item2.amount * item2.marketprice
+						 		result.totalAmount++
+						 	}
+						 })
+					 }
 				 })
 				 return result
 			 },
@@ -352,6 +354,7 @@
 			getChecked(){
 				var that=this
 				var selectedGoods=[]
+				console.log(this.dataList)
 				try{
 					this.dataList.forEach((item) =>{
 						item.goods.forEach((item2) =>{

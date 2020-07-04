@@ -86,6 +86,9 @@
 				 this.cateId=e.cateId
 			 }else{
 				 this.activityId=e.id
+				 uni.setNavigationBarTitle({
+				 	title:e.title
+				 })
 			 }
 			 // this.url='&r=api.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active
 			 var userInfo=uni.getStorageSync('userInfo')

@@ -42,4 +42,7 @@
 </script>
 
 <style>
+	view,.p{
+		word-break: break-all;
+	}
 </style>

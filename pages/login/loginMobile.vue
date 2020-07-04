@@ -42,7 +42,12 @@
 			</view> -->
 			
 			<view class="f3 sm-word">
-				<text>登录即代表同意<text class="f5" @click="openPDF">《易舒伴平台用户服务协议》</text><text class="f5">《隐私政策》</text>等，接受免除或者限制责任，诉讼管辖约定等粗体标示条款。</text>
+				<!-- <text> -->
+					<text>登录即代表同意</text>
+					<text class="f5" @click="openWebView('https://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html?spm=a2145.7268393.0.0.f9aa5d7cvRAlIP','服务协议')">《易舒伴平台用户服务协议》</text>
+					<text class="f5" @click="openWebView('https://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html?spm=a2145.7268393.0.0.f9aa5d7cvRAlIP','隐私政策')">《隐私政策》</text>
+					<text>等，接受免除或者限制责任，诉讼管辖约定等粗体标示条款。</text>
+					<!-- </text> -->
 			</view>
 	</view>
 </template>
@@ -109,6 +114,12 @@
 				        console.log('打开文档成功');
 				      }
 				    });
+			},
+			openWebView(src,title){
+				console.log(src)
+				uni.navigateTo({
+					url:'/pages/login/agreement?src='+src+'&title='+title
+				})
 			}
 		}
 	}
@@ -205,15 +216,17 @@
 		color: #6e6e6e;
 	}
 	.f3.sm-word>text{
-		width: 100%;
+		/* width: 100%; */
 		display: inline-block;
 	}
 	.f3.sm-word{
 		position: absolute;
+		width: calc(100% - 80upx);
 		bottom: 20upx;
 		font-size: 26upx;
 		text-align: left;
 		padding-bottom: 120upx;
+		word-break: break-all;
 	}
 	.f5{
 		color: #ff6b74;

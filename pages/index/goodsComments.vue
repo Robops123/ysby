@@ -10,12 +10,12 @@
 					<view class="comment-word">
 						{{item.content}}
 					</view>
-					<view class="comment-pic">
+					<view class="comment-pic" v-if='item.picurl.length>0'>
 						<image :src="commentImgItem" mode="" v-for="(commentImgItem,commentImgIndex) in item.picurl.split(',')"
-						 v-if='commentImgIndex<=3' :key='commentImgIndex' @click="readImg(commentImgItem)"></image>
+						v-if="commentImgIndex<=3"  :key='commentImgIndex' @click="readImg(commentImgItem)"></image>
 					</view>
 				</view>
-				<view class="s3 cg">{{item.skuname}}</view>
+				<view class="s3 cg">{{item.skuname ? item.skuname:'无规格'}}</view>
 				
 			</view>
 			<uni-load-more :status="more"></uni-load-more>
@@ -123,11 +123,11 @@
 	.comment-word{
 		line-height: 1.5;
 		/* height: 72upx; */
-		overflow:hidden;//一定要写
+		/* overflow:hidden;//一定要写
 		    text-overflow: ellipsis;//超出省略号
 		    display:-webkit-box;//一定要写
 		    -webkit-line-clamp: 2;//控制行数
-		    -webkit-box-orient: vertical;//一定要写
+		    -webkit-box-orient: vertical;//一定要写 */
 			margin: 25upx 0 15upx;
 	}
 	

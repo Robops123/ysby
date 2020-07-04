@@ -24,7 +24,7 @@
 			</scroll-view>
 			<scroll-view scroll-y="true" class="right-scroll"  >
 				<view class="" >
-					<image  :src="category[tabActive].advimg" v-if="category.length>0 && categoryReady" mode="" class="banner" ></image>
+					<image  :src="category[tabActive].advimg" v-if="category.length>0 && categoryReady" mode="widthFix" class="banner" ></image>
 					<!-- <image v-else :src="category[tabActive].thumb" mode="" class="banner"></image> -->
 					<view class="s1 headline" v-if="active==1 && category.length>0">{{'全部'+category[tabActive].name+'商家'}}</view>
 					<view class="s1 headline" v-if="active==2 && category.length>0">{{'全部'+category[tabActive].name+'用品'}}</view>
@@ -288,7 +288,8 @@
 	}
 	.right-scroll .banner{
 		width: 100%;
-		height: 240upx;
+		/* height: 240upx; */
+		max-height: 120px;
 		margin-top: 20upx;
 	}
 	.right-scroll .headline{

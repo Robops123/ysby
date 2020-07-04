@@ -14,7 +14,7 @@
 		<view class="payway">
 			<radio-group @change="radioChange">
 				<!-- #ifdef MP-WEIXIN || MP-QQ -->
-				<view class="padding">
+				<view class="padding border-bottom">
 					<image src="../../static/img/pic/other/wxpay.png" mode=""></image>
 					<text>微信支付</text>
 					<radio value="wxpay" :checked="type=='wxpay'" class="fr" style="transform:scale(0.7)"/>
@@ -22,7 +22,7 @@
 				<!-- #endif -->
 				<!-- #ifdef APP-PLUS -->
 				<template v-if="providerList.length > 0">
-				<view class="padding" v-for="(item,index) in providerList" :key="index"   >
+				<view class="padding border-bottom" v-for="(item,index) in providerList" :key="index"   >
 					<image src="../../static/img/pic/other/alipay.png" mode="" v-if='item.id=="alipay"'></image>
 					<image src="../../static/img/pic/other/wxpay.png" mode="" v-if='item.id=="wxpay"'></image>
 					<image src="../../static/img/pic/other/applepay.png" mode="" v-if='item.id=="appleiap"'></image>
@@ -32,11 +32,11 @@
 				</template>
 				<!-- #endif -->
 				<!-- 余额？ -->
-				<!-- <view class="padding">
+				<view class="padding border-bottom">
 					<image src="" mode=""></image>
 					<text>余额支付</text>
 					<radio value='rest' class="fr" style="transform:scale(0.7)"/>
-				</view> -->
+				</view>
 			</radio-group>
 		</view>
 		
@@ -86,13 +86,23 @@
 				if(this.type=='rest'){
 					this.restPay()
 				}else{
-					let method=this.providerList.filter((item) => {return item.id==this.type})[0].name
+					let method=this.providerList.filter((item) => {return item.id==this.type}),way
+					if(method.length>0){
+						way=method[0].name
+					}else{
+						way='微信'
+					}
 					uni.showModal({
 						title:'提示',
-						content:'确认使用'+method+'支付吗',
+						content:'确认使用'+way+'支付吗',
 						success:(e) =>{
 							if(e.confirm){
+								// #ifdef APP-PLUS
 								this.requestPayment(this.type)
+								// #endif
+								// #ifdef MP
+								this.weixinPay()
+								// #endif
 							}
 						}
 					})
@@ -150,13 +160,18 @@
 				// #endif
 			},
 			weixinPay() {
-			    console.log("发起支付");
 			    this.loading = true;
+				var that=this
 			    uni.login({
+					 provider: 'weixin',
 			        success: (e) => {
 			            console.log("login success", e);
+						// let params={
+						// 	code:e.code,
+						// }
 			            uni.request({
-			                url: `https://unidemo.dcloud.net.cn/payment/wx/mp?code=${e.code}&amount=${this.price}`,
+			                url: `https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.member.order.payOrderMini&code=${e.code}&money=${that.money}&uid=${that.uid}&token=${that.token}`,
+							method:'GET',
 			                success: (res) => {
 			                    console.log("pay request success", res);
 			                    if (res.statusCode !== 200) {
@@ -168,8 +183,9 @@
 			                    }
 			                    if (res.data.ret === 0) {
 			                        console.log("得到接口prepay_id", res.data.payment);
-			                        let paymentData = res.data.payment;
+			                        let paymentData = res;
 			                        uni.requestPayment({
+										provider:'wxpay',
 			                            timeStamp: paymentData.timeStamp,
 			                            nonceStr: paymentData.nonceStr,
 			                            package: paymentData.package,

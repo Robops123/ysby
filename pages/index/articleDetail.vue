@@ -50,7 +50,7 @@
 										<text class="date">{{item.createtime}}</text>
 										<view class="fr">
 											<view class="luntan-card-bot-card" @click="commentDoLike(item.id,item.isLike,index)">
-												<text class="iconfont icon-zan" :class="{'icon-zan':!item.isLike,'icon-shou':item.isLike,'zaned':item.isLike}"></text>
+												<text class="iconfont icon-zan" :class="{'icon-zan':item.isLike=='0','icon-shou':item.isLike=='1','zaned':item.isLike=='1'}"></text>
 												<text>{{item.like}}</text>
 											</view>
 										</view>
@@ -75,7 +75,7 @@
 						<text class="operate-word">评论</text>
 					</view>
 					<view class="luntan-card-bot-card" @click="toggleZan(data.isLike)">
-						<text class="iconfont " :class="{'icon-zan':!data.isLike,'icon-shou':data.isLike,'zaned':data.isLike}" ></text>
+						<text class="iconfont " :class="{'icon-zan':data.isLike=='0','icon-shou':data.isLike=='1','zaned':data.isLike=='1'}" ></text>
 						<text class="operate-word">赞</text>
 					</view>
 				</view>
@@ -83,7 +83,8 @@
 			
 		</view>
 		
-		<share-prompt :show='popshow'  :shareTitle="'密码门'" @close='closeSharePrompt'  :uid='uid' :token='token'></share-prompt>
+		<share-prompt :show='popshow'  :shareTitle="title" @close='closeSharePrompt' :alterUrl="'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+id"
+		 :miniProgramPath="'/pages/index/articleDetail?id='+id"  :uid='uid' :token='token'></share-prompt>
 		
 		<ygc-comment ref="ygcComment" 
 		        :placeholder="'发布评论'" 
@@ -105,6 +106,7 @@
 		},
 		data(){
 			return{
+				title:'',
 				popshow:false,
 				id:'',
 				active:1,
@@ -314,7 +316,7 @@
 				}
 				this.$loading()
 				var that=this,url
-				if(!zaned){
+				if(zaned=='0'){
 					url='&r=api.college.hotarticle.commentDoLike'
 				}else{
 					url='&r=api.college.hotarticle.commentDoLikeCancel'
@@ -326,12 +328,14 @@
 				}
 				  this.$apiPost(url,params).then((res) =>{
 					  uni.hideLoading()
-					  this.commentList[from].isLike=!this.commentList[from].isLike
-					  if(!zaned){
-					  	this.commentList[from].like++
+					  // this.commentList[from].isLike=!this.commentList[from].isLike
+					  if(zaned=='0'){
+						that.commentList[from].isLike='1'
+					  	that.commentList[from].like++
 						that.$msg('点赞成功')
 					  }else{
-					  	this.commentList[from].like--
+						  that.commentList[from].isLike='0'
+					  	that.commentList[from].like--
 						that.$msg('取消点赞')
 					  }
 					  
@@ -346,7 +350,7 @@
 				}
 				this.$loading()
 				var that=this,url
-				if(!zaned){
+				if(zaned=='0'){
 					url='&r=api.college.hotarticle.doLike'
 				}else{
 					url='&r=api.college.hotarticle.doLikeCancel'
@@ -357,10 +361,12 @@
 				  token:this.token
 				}
 				  this.$apiPost(url,params).then((res) =>{
-					  that.data.isLike=!that.data.isLike
-					  if(!zaned){
+					  // that.data.isLike=!that.data.isLike
+					  if(zaned=='0'){
+						  that.data.isLike='1'
 						  that.$msg('点赞成功')
 					  }else{
+						  that.data.isLike='0'
 						  that.$msg('取消点赞')
 					  }
 					  uni.hideLoading()
@@ -388,6 +394,7 @@
 				if(!ce){
 					return ;
 				}
+				this.title=this.data.title || '文章分享'
 				this.popshow=true
 			}
 		}
@@ -439,7 +446,7 @@
 	}
 	.luntan-card{
 		width: 100%;
-		padding: 0 24upx;
+		padding: 20upx 24upx;
 		box-sizing: border-box;
 	}
 	.luntan-card-top{

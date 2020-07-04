@@ -9,15 +9,15 @@
 		</view>
 		<view class="item-3 s1 item-3-t bgw">
 			<view>
-				<view>{{data.todayOrder || 0}}</view>
+				<view class="show-num">{{data.todayOrder || 0}}</view>
 				<view>今日订单</view>
 			</view>
 			<view>
-				<view>{{data.todayDeal || 0}}</view>
+				<view class="show-num">{{data.todayDeal || 0}}</view>
 				<view>今日成交</view>
 			</view>
 			<view>
-				<view>{{data.newMembers || 0}}</view>
+				<view class="show-num">{{data.newMembers || 0}}</view>
 				<view>新增会员</view>
 			</view>
 		</view>
@@ -159,6 +159,12 @@
 	}
 	.bgw{
 		background-color: #fff;
+	}
+	.bgw>view{
+		padding: 20upx 0;
+	}
+	.bgw .show-num{
+		margin-bottom: 10upx;
 	}
 	.item-3>view{
 		text-align: center;

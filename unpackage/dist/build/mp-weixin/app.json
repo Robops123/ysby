@@ -6,6 +6,7 @@
     "pages/index/goodsList",
     "pages/test",
     "pages/index/webKf",
+    "pages/login/agreement",
     "pages/index/goodsDetail",
     "pages/index/goodsComments",
     "pages/mine/suggestion",
@@ -23,12 +24,15 @@
     "pages/bussiness/shopPreview",
     "pages/tabBar/businessCollege",
     "pages/index/articleDetail",
+    "pages/index/informationDetail",
     "pages/tabBar/cart",
     "pages/tabBar/mine",
     "pages/retail/retailCenter",
     "pages/mine/promotion",
     "pages/mine/help",
     "pages/mine/aboutUs",
+    "pages/mine/recharge",
+    "pages/mine/rechargeList",
     "pages/mine/viewHistoryf",
     "pages/mine/viewHistorys",
     "pages/retail/retailMoney",
@@ -108,5 +112,6 @@
       "desc": "该应用需要获取你的当前位置"
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

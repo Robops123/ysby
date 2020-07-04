@@ -118,6 +118,10 @@
 			},
 			//初始化数据
 			initFn(){
+				// var pc=lotusAddressJson.filter((item) =>{
+				// 	return	item.name.indexOf('省') > 0 || item.name.indexOf('市') > 0 ;
+				// })
+				// console.log(JSON.stringify(pc))
 				if(!this.province.length){
 					lotusAddressJson.map((item,index)=>{
 						if(index<=34){

@@ -48,11 +48,11 @@
 		<view class="padding conclude">
 			<view>
 				<text>商品小计</text>
-				<text class='fr'>￥{{totalPrice}}</text>
+				<text class='fr'>￥{{totalMoney}}</text>
 			</view>
 			<view>
 				<text>运费</text>
-				<text class='fr'>￥0.00</text>
+				<text class='fr'>￥{{freight || 0}}</text>
 			</view>
 		</view>
 		
@@ -72,6 +72,7 @@
 	export default{
 		data(){
 			return{
+				freight:0,
 				data:[],
 				totalPrice:0,
 				totalAmount:0,
@@ -88,7 +89,8 @@
 				goodsImg:'',
 				goodsName:'',
 				total:'',
-				contact:{}
+				contact:{},
+				ids:[]
 			}
 		},
 		computed:{
@@ -97,29 +99,31 @@
 			},
 			disabled2(){
 				return this.form.amount>=this.total
+			},
+			totalMoney(){
+				return this.totalPrice+(Number(this.freight));
 			}
 		},
 		onLoad(e){
 			var userInfo=uni.getStorageSync('userInfo'),that=this
-			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
-				this.form.uid=userInfo.uid
-				this.form.token=userInfo.token
-				this.getAddressList()
-			}
 			var selectedGoods=JSON.parse(e.selectedGoods)
 			this.data=selectedGoods
 			selectedGoods.forEach((item) =>{
+				that.ids.push(item.goodsid)
 				that.form.goods.push({
 					goodsid:item.goodsid,
 					amount:item.amount,
 					specifications:item.specifications || '',
-					freight:item.freight || 0,
 					skuidsort:item.skuidsort || ''
 				})
 				that.totalAmount+=parseInt(item.amount)
 				that.totalPrice+=parseFloat(item.marketprice) * parseInt(item.amount)
 			})
-			console.log(this.form)
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.form.uid=userInfo.uid
+				this.form.token=userInfo.token
+				this.getAddressList()
+			}
 			// this.spec=choosedSpec.selectArr
 			// this.goodsImg=choosedSpec.goodsImg
 			// // this.form.merchid=e.merchId 
@@ -145,7 +149,6 @@
 				this.$loading()
 				var that=this
 				var url='&r=api.member.order.create'
-				console.log(this.form.goods)
 				this.form.goods=JSON.stringify(this.form.goods)
 				this.form.type=1
 				  this.$apiPost(url,this.form).then((res) =>{
@@ -168,6 +171,7 @@
 					that.address=item.province+item.city+item.district+item.address
 					that.form.addressid=item.id
 					that.contact=item
+					that.calcFreight()
 					uni.$off('chooseAddress')
 				})
 				uni.navigateTo({
@@ -189,8 +193,27 @@
 							that.address=item.province+item.city+item.district+item.address
 							that.form.addressid=item.id
 							that.contact=item
+							that.calcFreight()
 						}
 					})
+				  })
+			},
+			calcFreight(){
+				this.$loading()
+				var that=this
+				var params={
+					uid:this.form.uid,
+					token:this.form.token,
+					goodsid:this.ids.join(','),
+					addressid:this.form.addressid
+				}
+				var url='&r=api.member.order.freight'
+				  this.$apiPost(url,params).then((res) =>{
+					  uni.hideLoading()
+					  res.data.freight.forEach((item,index) =>{
+						  that.form.goods[index].freight=item
+					  })
+					that.freight=res.data.freightTotal
 				  })
 			}
 		}

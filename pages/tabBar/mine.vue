@@ -5,9 +5,10 @@
 				<view class="setting" >
 					<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img" @click="toSetting"></image>
 				</view>
-				<view v-if="logined" @click="toPersonal">
-					<image :src="data.avatar" mode="" class="headface" ></image>
-					<text class="s4"   >{{data.nickname}}</text>
+				<view v-if="logined" >
+					<image :src="data.avatar" mode="" class="headface" @click="toPersonal"></image>
+					<text class="s4" @click="toPersonal">{{data.nickname}}</text>
+					<text class="fr s4" style="margin-top: 50upx;" @click="to('recharge',data.balance)">余额:{{data.balance}}</text>
 				</view>
 			</view>
 			<view class="s4" style="padding: 50upx 0;text-align: center;" @click="tologin" v-if='!logined'>请先登录</view>
@@ -37,35 +38,35 @@
 					<view class="dd">
 						<view class="item-list" @click="toMyOrder(1,0)">
 							<view>
-								<text class="rest" v-if="data.orderAmount1>0">{{data.orderAmount1}}</text>
+								<text class="rest" v-if="data.orderAmount1>0 && logined">{{data.orderAmount1}}</text>
 								<image src="../../static/img/pic/mine/icon2.png" mode=""></image>
 							</view>
 							<view>待付款</view>
 						</view>
 						<view class="item-list" @click="toMyOrder(2,0)">
 							<view>
-								<text class="rest" v-if="data.orderAmount2>0">{{data.orderAmount2}}</text>
+								<text class="rest" v-if="data.orderAmount2>0 && logined">{{data.orderAmount2}}</text>
 								<image src="../../static/img/pic/mine/icon4.png" mode=""></image>
 							</view>
 							<view>待发货</view>
 						</view>
 						<view class="item-list" @click="toMyOrder(3,60)">
 							<view>
-								<text class="rest" v-if="data.orderAmount3>0">{{data.orderAmount3}}</text>
+								<text class="rest" v-if="data.orderAmount3>0 && logined">{{data.orderAmount3}}</text>
 								<image src="../../static/img/pic/mine/icon6.png" mode=""></image>
 							</view>
 							<view>待收货</view>
 						</view>
-						<view class="item-list" @click="toMyOrder(5,120)">
+						<view class="item-list" @click="to('myOrderDetail')">
 							<view>
-								<text class="rest" v-if="data.orderAmount4>0">{{data.orderAmount4}}</text>
+								<text class="rest" v-if="data.orderAmount4>0 && logined">{{data.orderAmount4}}</text>
 								<image src="../../static/img/pic/mine/icon5.png" mode=""></image>
 							</view>
 							<view>待评价</view>
 						</view>
-						<view class="item-list" @click="toMyOrder(99,240)">
+						<view class="item-list" @click="toMyOrder('sh',240)">
 							<view>
-								<text class="rest" v-if="data.orderAmount5>0">{{data.orderAmount5}}</text>
+								<text class="rest" v-if="data.orderAmount5>0 && logined">{{data.orderAmount5}}</text>
 								<image src="../../static/img/pic/mine/icon10.png" mode=""></image>
 							</view>
 							<view>售后/退款</view>
@@ -120,7 +121,7 @@
 		<!-- 邀请注册 -->
 		<s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
 		  <!-- 内容 -->
-		  <image :src="advImg" mode="widthFix" style="max-width: 100%;border-radius: 25upx;"></image>
+		  <image :src="advImg" mode="widthFix" style="width: 100%;border-radius: 25upx;"></image>
 		  <view style="margin-top: 20upx;">
 			  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
 		  </view>
@@ -182,13 +183,13 @@
 					url:`/pages/mine/personal`
 				})
 			},
-			to(where){
+			to(where,data){
 				var ce=this.$operateInterceptor(this.logined)
 				if(!ce){
 					return ;
 				}
 				uni.navigateTo({
-					url:`/pages/mine/${where}`
+					url:`/pages/mine/${where}?data=${data}`
 				})
 			},
 			to2(s){
@@ -373,7 +374,7 @@
 		vertical-align: middle;
 		margin: 20upx 30upx 10upx 30upx;
 	}
-	.headface+text{
+	.headface~text{
 		display: inline-block;
 		vertical-align: middle;
 	}

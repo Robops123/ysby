@@ -234,8 +234,8 @@
 					}
 					var url='&r=api.myshop.my.change'
 					  this.$apiPost(url,params).then((res) =>{
+						  uni.hideLoading()
 							that.$msg('修改成功')
-							uni.hideLoading()
 							uni.$emit('updateOperating')
 							setTimeout(function(){
 								that.getDetail()

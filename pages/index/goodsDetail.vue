@@ -1,16 +1,19 @@
 <template>
-	<view style="padding-bottom: 50px;" v-cloak>
+	<view style="padding-bottom: 50px;" >
 		<view class="padding top border-bottom">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
-			<swiper class="preview" :autoplay="autoplay" duration="500" interval="9999999" @transition='swiperChange' :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
-				<!-- <swiper-item v-if="data.video">
-								<video :src="data.video" class="preview" id="myVideo"  @click="visible2=true">
+			<!-- #ifdef MP || H5 -->
+			<swiper class="preview" :autoplay="autoplay" duration="500" interval="5000" 
+			@transition='swiperChange' :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
+				<swiper-item v-if="data.video">
+								<video :src="data.video" class="preview" id="myVideo" :poster='data.videopic'  @play='play' @pause='pause'>
 								</video>
-							</swiper-item> -->
+							</swiper-item>
 			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index">
 			    	<image :src="item" mode="" class="banner"></image>
 			    </swiper-item>
 			   </swiper>
+			<!-- #endif -->
 			
 			<!-- <custom-swiper class="preview" :swiperList="swiperList" v-if="swiperList.length>0"></custom-swiper> -->
 			
@@ -22,7 +25,7 @@
 				</view>
 			</view>
 			<view class="cr s5">￥{{data.marketprice}}</view>
-			<!-- <view class="cg s3">快递:10</view> -->
+			<view class="cg s3">运费:{{data.freight}}</view>
 		</view>
 		
 		<view class="padding s2 border-bottom" @click="chooseCategory">
@@ -35,7 +38,7 @@
 		<view class="border-bottom s2" v-if='data.commentstotal'>
 			<view class="padding ">
 				<text class="" style="margin-right: 30upx;">商品评价({{data.commentstotal}})</text>
-				<text class="fr cr" @click="toComments" v-if='data.comments'>查看全部 <text class="icon-arrow-right iconfont" style="margin-left: 30upx;"></text></text>
+				<text class="fr cr" @click="toComments" v-if='data.comments'>查看全部 <text class="icon-arrow-right iconfont" style="margin-left: 12upx;"></text></text>
 			</view>
 			<view class="padding" v-for="(item,index) in data.comments" :key='index'>
 				<view class="user">
@@ -46,12 +49,12 @@
 					<view class="comment-word">
 						{{item.content}}
 					</view>
-					<view class="comment-pic">
+					<view class="comment-pic" v-if='item.picurl.length>0'>
 						<image :src="commentImgItem" mode="" v-for="(commentImgItem,commentImgIndex) in item.picurl.split(',')"
-						 v-if='commentImgIndex<=3' :key='commentImgIndex' @click="readImg(commentImgItem)"></image>
+						v-if="commentImgIndex<=3"  :key='commentImgIndex' @click="readImg(commentImgItem)"></image>
 					</view>
 				</view>
-				<view class="s3 cg">{{item.skuname}}</view>
+				<view class="s3 cg">{{item.skuname ? item.skuname:'无规格'}}</view>
 				
 			</view>
 			<view class="" style="text-align: center;" >
@@ -110,14 +113,15 @@
 		 
 		
 		 
-		 <share-prompt :show='popshow' v-if="data.thumb_url" :shareImg='data.thumb_url["1"]' :shareTitle="'密码门'"
+		 <share-prompt :show='popshow'  :shareTitle="title" :miniProgramPath="'/pages/index/GoodsDetail?id='+id"
+		 :alterUrl="'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.goods.detail&id='+id"
 		  @close='closeSharePrompt' :goodsid="id" :uid='uid' :token='token' @poster='getPoster'></share-prompt>
 		 
 		 
 		 <!-- 海报 -->
 		 <s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
 		   <!-- 内容 -->
-		   <image :src="advImg" mode="widthFix" style="max-width: 100%;border-radius: 25upx;"></image>
+		   <image :src="advImg" mode="widthFix" style="width: 100%;border-radius: 25upx;"></image>
 		   <view style="margin-top: 20upx;">
 		 	  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
 		   </view>
@@ -150,6 +154,7 @@
 		},
 		data () {
 		      return {
+				  title:'',
 				  hx_openid:'',
 				  hx_pwd:'',
 				  defaultPrice:0,
@@ -233,7 +238,7 @@
 				return {
 					title: "小美女小帅哥快来买啊",
 					path: '/pages/index/goodsDetail?id='+this.id,
-					imageUrl:this.image ? this.image : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
+					imageUrl:this.image ? this.image : '/static/img/app.jpg'
 				}
 			},
 			onPageScroll(e){
@@ -427,6 +432,7 @@
 				  if(!ce){
 				  	return ;
 				  }
+				  this.title=this.data.title
 				  this.popshow=true
 			  },
 			  getDetail(){
@@ -439,8 +445,16 @@
 				    // var url='/wangtosale_list'
 				    this.$apiPost(url).then((res) =>{
 						that.data=res.data
-						console.log(that.data)
 						that.thumb_url=res.data.thumb_url
+						// #ifdef APP-PLUS
+						const subNVue = uni.getSubNVueById('sp'); // 通过 id 获取 nvue 子窗体
+						subNVue.show('slide-in-top', 250);
+						uni.$emit('page-popup', {  
+							thumb_url:res.data.thumb_url,
+							video:res.data.video,
+							poster:res.data.videopic
+						});
+						// #endif
 						// if(res.data.video){
 						// 	this.swiperList.push({
 						// 		type:'video',
@@ -462,7 +476,9 @@
 						}
 						that.$nextTick(function(){
 							that.getCategory()
-							// that.videoContext = uni.createVideoContext('myVideo')
+							// #ifdef MP || H5
+							that.videoContext = uni.createVideoContext('myVideo')
+							// #endif
 						})
 				  	  // that.total=res.total
 				  	  // that.dataList=that.dataList.concat(res.data)
@@ -492,8 +508,8 @@
 				this.autoplay=false
 				},
 				swiperChange(e){
-					// this.autoplay=true
-					// this.videoContext.pause();
+					this.autoplay=true
+					this.videoContext.pause();
 				},
 			  completeSpecChoose(e){
 				  if(this.collectOperate){
@@ -853,5 +869,10 @@
 	}
 	.icon-arrow-right{
 		vertical-align: middle;
+	}
+	.top{
+		/* #ifdef APP-PLUS */
+			padding-top: 250px;
+		/* #endif */
 	}
 </style>

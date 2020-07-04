@@ -73,6 +73,8 @@
 		data(){
 			return {
 				index:'',
+				index2:'',
+				index3:'',
 				data:'',
 				form:{
 					merchid:'',
@@ -100,6 +102,8 @@
 			}
 			var info=JSON.parse(p.item)
 			this.index=p.index
+			this.index2=p.index2
+			this.index3=p.index3
 			this.data=info
 			this.form.goodsid=info.goodsid
 			this.form.merchid=p.merchid
@@ -166,8 +170,8 @@
 					  this.$apiPost(url,this.form).then((res) =>{
 							that.$msg('评价成功')
 							uni.hideLoading()
-							uni.$emit('updateOrder')
-							uni.$emit('disableComment',this.index)
+							// uni.$emit('updateOrder')
+							uni.$emit('disableComment',{index:that.index,index2:that.index2,index3:that.index3})
 							setTimeout(function(){
 								uni.navigateBack({
 									delta:1

@@ -54,6 +54,14 @@
 				type:String,
 				default:''
 			},
+			miniProgramPath:{
+				type:String,
+				default:''
+			},
+			alterUrl:{
+				type:String,
+				default:''
+			},
 			// 
 			show:{
 				type:Boolean,
@@ -180,10 +188,10 @@
 				// 1文字  2图片  0图文   5小程序
 				switch (e.way){
 					case 0:
-						shareOPtions.summary = '好玩';
-						shareOPtions.imageUrl =this.shareImg ? this.shareImg : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
+						shareOPtions.summary = '';
+						shareOPtions.imageUrl =this.shareImg ? this.shareImg : '/static/img/app.jpg'
 						shareOPtions.title = this.shareTitle;
-						shareOPtions.href = 'https://uniapp.dcloud.io';
+						shareOPtions.href = this.alterUrl;
 						break;
 					case 1:
 						shareOPtions.summary = this.shareText;
@@ -192,12 +200,12 @@
 						shareOPtions.imageUrl = this.image;
 						break;
 					case 5:
-						shareOPtions.imageUrl = this.shareImg ? this.shareImg : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
-						shareOPtions.title = this.shareTitle+'买啊';
+						shareOPtions.imageUrl = this.shareImg ? this.shareImg : '/static/img/app.jpg'
+						shareOPtions.title = this.shareTitle;
 						shareOPtions.miniProgram = {
-							id:'gh_33446d7f7a26',
-							path:'/pages/tabBar/component/component',
-							webUrl:'https://uniapp.dcloud.io',
+							id:'gh_2f5dfaa2fae2',
+							path:this.miniProgramPath,
+							webUrl:this.alterUrl,
 							type:0
 						};
 						break;

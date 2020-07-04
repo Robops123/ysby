@@ -14,8 +14,8 @@
 				<icon type="search" class="fr" size="20"/>
 			</view> -->
 			<view>
-				<icon type="search" size="20" style="float: left;"/>
-				<input type="text" v-model="keywords" placeholder="输入关键字" @confirm='search'/>
+				<icon type="search" size="16" style="float: left;margin: 0 25upx 0 10upx;"/>
+				<input type="text" v-model="keywords" placeholder="输入关键字..." @confirm='search'/>
 			</view>
 		</view>
 		

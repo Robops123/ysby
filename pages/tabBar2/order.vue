@@ -12,12 +12,11 @@
 			<view class="select">
 				<image src="../../static/img/pic/search.png" mode="" class="search-img" ></image>
 				<!-- <text class="order" @click="open">asdasd123123123123asdad</text> -->
-				<input type="text" class="order" v-model="orderno" placeholder="订单号" @confirm='search'/>
+				<input type="text" class="order order1" v-model="orderno" placeholder="订单号" @confirm='search'/>
 				<!-- <image src="../../static/img/pic/more3.png" mode="" class="down-arrow"></image> -->
+				<input type="text" class="order order2" v-model="keywords" placeholder="输入关键字..." @confirm='search'/>
 			</view>
-			<view>
-				<input type="text" v-model="keywords" placeholder="输入关键字" @confirm='search'/>
-			</view>
+			<view class="search-btn" @click="search">搜索</view>
 		</view>
 		
 		<scroll-view scroll-y="true" id="sv" :style="{height:sh-120+'px'}"  @scrolltolower='toBottom'>
@@ -296,28 +295,57 @@
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
+		padding-left: 15upx;
 	}
 	
 	.search{
 		background-color: #f7f7f8;
+		display: flex;
+	}
+	.select{
+		display: flex;
+		background-color: #fff;
+			/* width: 48%; */
+			/* padding: 10upx 0; */
+			margin:0 20upx 0 0;
+			flex: 1;
+			/* display: inline-block; */
+			/* vertical-align: middle; */
+	}
+	.select image{
+		width: 20px;
+		height: 17px;
+	}
+	.order1{
+		flex: 4;
+		/* padding-left: 15upx; */
+		border-right: 1px solid #f3f3f3;
+	}
+	.order2{
+		flex: 6;
+	}
+	.search-btn{
+		font-size: 28upx;
+		width: 120upx;
+		color: white;
+		background: linear-gradient(to bottom,#ff9da1,#ff7076);
+		line-height: 25px;
+		text-align: center;
+		border-radius: 25px;
 	}
 	.select .order{
 		display: inline-block;
 		vertical-align: middle;
-		width: 70%;
+		/* width: 70%; */
 	}
-	.select icon,
-	.select text{
+	.select image,
+	.select input{
 		display: inline-block;
 		vertical-align: middle;
 	}
 	.search>view{
-		background-color: #fff;
-			width: 48%;
-			padding: 10upx 0;
-			margin:0 1%;
-			display: inline-block;
-			vertical-align: middle;
+		height: 25px;
+		align-items: center;
 	}
 	.payway{
 		margin-left: 38upx;

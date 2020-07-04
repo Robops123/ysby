@@ -31,12 +31,12 @@
 				<text style="line-height: 60upx;">购买数量</text>
 				<view class="calculator fr">
 					<view class="calc minus" :class="{disabled:disabled1}" @click="minus">-</view>
-					<text class="result">{{form.amount}}</text>
+					<text class="result">{{form.amount || 1}}</text>
 					<view class="calc plus" :class="{disabled:disabled2}" @click="plus">+</view>
 				</view>
 			</view>
 			<view style="text-align: right;margin: 70upx 0 0;">
-				共{{form.amount}}件商品 共计:<text class="cr">￥{{form.goodsprice*form.amount}}</text>
+				共{{form.amount || 1}}件商品 共计:<text class="cr">￥{{form.goodsprice*form.amount}}</text>
 			</view>
 		</view>
 		
@@ -102,22 +102,23 @@
 				return (this.form.amount>=this.total) || (this.form.amount>49)
 			},
 			totalMoney(){
-				return this.form.goodsprice*this.form.amount+(this.freight || 0);
+				return this.form.goodsprice*this.form.amount+(Number(this.freight) || 0);
 			}
 		},
 		onLoad(e){
 			var userInfo=uni.getStorageSync('userInfo')
+			var choosedSpec=JSON.parse(e.choosedSpec)
+			this.form.goodsid=e.goodsId
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.form.uid=userInfo.uid
 				this.form.token=userInfo.token
 				this.getAddressList()
 			}
-			var choosedSpec=JSON.parse(e.choosedSpec)
 			this.form.skuidsort=choosedSpec.choosedid.join(',')
 			this.spec=choosedSpec.selectArr
 			this.goodsImg=choosedSpec.goodsImg
 			// this.form.merchid=e.merchId 
-			this.form.goodsid=e.goodsId
+			
 			this.goodsName=e.goodsName
 			this.total=choosedSpec.stock || e.total
 			this.form.amount=choosedSpec.selectNum || 1
@@ -136,6 +137,10 @@
 				}
 			},
 			createOrder(){
+				if(!this.form.addressid){
+					this.$msg('请选择收货地址')
+					return ;
+				}
 				this.$loading()
 				var that=this
 				var url='&r=api.member.order.create'
@@ -177,6 +182,7 @@
 					that.contact=item
 					that.address=item.province+item.city+item.district+item.address
 					that.form.addressid=item.id
+					that.calcFreight()
 					uni.$off('chooseAddress')
 				})
 				uni.navigateTo({
@@ -198,8 +204,24 @@
 							that.form.addressid=item.id
 							that.contact=item
 							that.address=item.province+item.city+item.district+item.address
+							that.calcFreight()
 						}
 					})
+				  })
+			},
+			calcFreight(){
+				this.$loading()
+				var that=this
+				var params={
+					uid:this.form.uid,
+					token:this.form.token,
+					goodsid:this.form.goodsid,
+					addressid:this.form.addressid
+				}
+				var url='&r=api.member.order.freight'
+				  this.$apiPost(url,params).then((res) =>{
+					  uni.hideLoading()
+					that.freight=res.data.freightTotal
 				  })
 			}
 		}

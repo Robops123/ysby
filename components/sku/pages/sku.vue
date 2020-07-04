@@ -43,7 +43,7 @@
 							</view>
 						</view>
 					</scroll-view>
-					<view class="close" @tap="closeSf"><image class="close-item" src="../static/close.png"></image></view>
+					<view class="close" @tap="closeSf"><image class="close-item" src="/static/img/pic/close.png"></image></view>
 				</view>
 				<view class="btn-wrapper"><button class="sure" :class="{disabedbtn:stock==0 || stock==NaN || stock==null || marketPrice==0 || choosedid==''}"
 				 @click="confirmChoose" :disabled="stock==0 || stock==null || stock==NaN || marketPrice==0 || choosedid==''">确定</button></view>

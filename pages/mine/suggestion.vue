@@ -32,7 +32,6 @@
 						</view>
 					</view>
 					</view>
-					<view class="s2 cg">首张图片为商品主图</view>
 		</view>
 		<view style="margin-top: 20upx;">
 			<button class="adv-btn adv-btn2" @click="submit()">提交</button>

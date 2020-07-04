@@ -1,5 +1,5 @@
 <template>
-	<view class="padding">
+	<view class="padding container">
 		<view class="bottom-border">
 			<text style="vertical-align: top;" class="label-80">收货人</text>
 			<input v-model="contactname" placeholder="请输入收货人姓名" />
@@ -19,16 +19,18 @@
 		</view>
 		
 		
-		<view class="setting bottom-border flex-between">
-			<view>
-				<view class="s8">设置默认地址</view>
-				<view class="s2">提醒:每次下单会默认推荐使用改地址</view>
+		<view class="bottom-container padding">
+			<view class="setting bottom-border flex-between">
+				<view>
+					<view class="s8">设置默认地址</view>
+					<view class="s2">提醒:每次下单会默认推荐使用该地址</view>
+				</view>
+				<switch color='#ff6d7e' :checked="isdefault=='1'" @change="switch1Change" style="transform:scale(0.7)"/>
 			</view>
-			<switch color='#ff6d7e' :checked="isdefault=='1'" @change="switch1Change" style="transform:scale(0.7)"/>
-		</view>
-		
-		<view style="text-align: center;">
-			<button type="default" class="btn" @click="submit">保存</button>
+			
+			<view style="text-align: center;">
+				<button type="default" class="btn" @click="submit">保存</button>
+			</view>
 		</view>
 		
 		
@@ -216,5 +218,19 @@
 			letter-spacing: 4px;
 			color: white !important;
 			font-size: 34upx;
+		}
+		
+		.container{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
+		.bottom-container{
+			position: absolute;
+			bottom: 20px;
+			left: 0;
+			right: 0;
 		}
 </style>

@@ -63,7 +63,7 @@
 			<view class="card card1">
 				<view style="padding:0  2%;">
 					<text >每日特价</text>
-					<view class="fr s3 more" style="margin-top: 4upx;" @click="toGoodsList(activityData.id)">{{activityData.title}}<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
+					<view class="fr s3 more" style="margin-top: 4upx;" @click="toGoodsList(activityData.id,activityData.title)">{{activityData.title}}<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
 				</view>
 				<view class="sp">
 					<view class="sp-item" v-for="(item,index) in bargainList" :key='index' @click="toDetail(item.id)">
@@ -207,23 +207,29 @@
 		// 		}
 		// 	}
 		// },
-		mounted(){
-			// uni.clearStorageSync()
-			// uni.setStorageSync('member',[{name:'cd82566fd157be7887d7ca6cb646575d'}])
-			var that=this
+		onShow(){
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.logined=true
 				this.uid=userInfo.uid
 				this.token=userInfo.token
+				this.msgListener()
 			}else{
 				this.logined=false
 			}
+			
+		},
+		mounted(){
+			console.log('mounted')
+			// uni.clearStorageSync()
+			// uni.setStorageSync('member',[{name:'cd82566fd157be7887d7ca6cb646575d'}])
+			var that=this
 			uni.$on('logined',function(){
 				var userInfo2=uni.getStorageSync('userInfo')
 				that.logined=true
 				that.uid=userInfo2.uid
 				that.token=userInfo2.token
+				that.msgListener()
 			})
 			// #ifdef MP-WEIXIN
 			this.amapPlugin = new amap.AMapWX({  
@@ -241,38 +247,42 @@
 			this.getActivity()
 			let members=uni.getStorageSync('member') || []
 			this.transToName(members)
-			msgStorage.on("newChatMsg", function(renderableMsg, type, curChatMsg, sesskey){
-				// console.log(renderableMsg, type, curChatMsg, sesskey)
-				// 判断是否属于当前会话
-				let members=uni.getStorageSync('member') || [],
-				existance=false
-				
-				if(members.length==0){
-					members.push({
-						name:renderableMsg.yourname
-					})
-					// for(var i=0;i<members.length;i++){
-						that.transToName(members)
-					// }
-				}else {
-					for(var i=0;i<members.length;i++){
-						if(members[i].name==renderableMsg.yourname){
-							existance=true
-						}
-					}
-					if(!existance){
+			
+		},
+		methods:{
+			msgListener(){
+				var that=this
+				msgStorage.on("newChatMsg", function(renderableMsg, type, curChatMsg, sesskey){
+					// console.log(renderableMsg, type, curChatMsg, sesskey)
+					// 判断是否属于当前会话
+					let members=uni.getStorageSync('member') || [],
+					existance=false
+					
+					if(members.length==0){
 						members.push({
 							name:renderableMsg.yourname
 						})
 						// for(var i=0;i<members.length;i++){
 							that.transToName(members)
 						// }
+					}else {
+						for(var i=0;i<members.length;i++){
+							if(members[i].name==renderableMsg.yourname){
+								existance=true
+							}
+						}
+						if(!existance){
+							members.push({
+								name:renderableMsg.yourname
+							})
+							// for(var i=0;i<members.length;i++){
+								that.transToName(members)
+							// }
+						}
 					}
-				}
-				
-			});
-		},
-		methods:{
+					
+				});
+			},
 			async transToName(members){
 				for(let i=0;i<members.length;i++){
 					if(!members[i].chatTarget){
@@ -362,9 +372,9 @@
 					url:`/pages/index/goodsDetail?id=${id}`
 				})
 			},
-			toGoodsList(id){
+			toGoodsList(id,title){
 				uni.navigateTo({
-					url:`/pages/index/goodsList?id=${id}`
+					url:`/pages/index/goodsList?id=${id}&title=${title}`
 				})
 			},
 			// 商品分类列表

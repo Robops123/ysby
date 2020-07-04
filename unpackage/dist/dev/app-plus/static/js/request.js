@@ -1,6 +1,6 @@
 
 // const baseURL = 'http://192.168.1.157/yishuban/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile';   //测试
-const baseURL = 'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile';   //正式
+const baseURL = 'https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile';   //正式
 // 参数： url:请求地址  param：请求参数  way：请求方式 res：回调函数http://192.168.1.157/yishuban/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile
 
  /**
@@ -23,6 +23,14 @@ const baseURL = 'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zh
 					resolve(res.data)
 				}else if(res.data.resultMessage=='暂无数据'){
 					resolve(res.data)
+				}else if(res.data.resultMessage=='token有误'){
+					uni.removeStorageSync('userInfo')
+					uni.showToast({
+						title:'请重新登录',
+						icon:'none',
+						duration:2000
+						
+					})
 				}else{
 					uni.hideLoading()
 					uni.showToast({
@@ -61,7 +69,16 @@ const baseURL = 'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zh
  			success(res) {
  				if(res.resultCode==0){
  					resolve(res.data)
- 				}else{
+ 				}else if(res.data.resultMessage=='暂无数据'){
+					resolve(res.data)
+				}else if(res.data.resultMessage=='token有误'){
+					uni.showToast({
+						title:'请重新登录',
+						icon:'none',
+						duration:2000
+					})
+					uni.removeStorageSync('userInfo')
+				}else{
 					uni.showToast({
 					    title: res.data.resultMessage,
 						icon:'none',

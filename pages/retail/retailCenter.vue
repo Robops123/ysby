@@ -7,7 +7,7 @@
 				<view class="userinfo-txt-people">推荐人：{{data.invited_name ? data.invited_name:'暂无'}}</view>
 			</view>
 		</view>
-		<view class="invisity-code" @click="showQrcode">
+		<view class="invisity-code" @click="getPic">
 			<image class="invisity-code-img" src="../../static/img/pic/proxy/icon7.png" mode=""></image>
 			<text class="invisity-code-txt">我的邀请码: {{data.invited_code}}</text>
 			<image class="invisity-code-img fr invisity-code-img-r" src="../../static/img/pic/proxy/icon4.png" mode=""></image>
@@ -53,7 +53,7 @@
 			</view>
 		</view>
 		<view style="clear: both;"></view>
-		<view class="tuiguang" @click="showQrcode">
+		<view class="tuiguang" @click="getPic">
 			<image class="tuiguang-ma-img" src="../../static/img/pic/proxy/icon4.png" mode=""></image>
 			<text class="tuiguang-txt">推广二维码</text>
 			<text class="fr iconfont icon-fire cg"></text>
@@ -113,6 +113,20 @@
 					current:this.qrcode,
 					urls:[this.qrcode]
 				})
+			},
+			getPic(){
+				this.$loading()
+				var that=this
+				var params={
+					uid:this.uid,
+					token:this.token,
+				}
+				var url='&r=api.common.share.createPoster'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.qrcode=res.data.img
+					  uni.hideLoading()
+					  that.showQrcode()
+				  })
 			}
 		}
 	}

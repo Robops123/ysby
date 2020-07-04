@@ -1,0 +1,62 @@
+<template>
+	<div class="sp-container">
+		<swiper class="preview" :autoplay="autoplay" duration="500" interval="5000" 
+			@transition='swiperChange' :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
+						<swiper-item v-if="video" class="sp-swiper-item">
+										<video :src="video" class="preview" id="myVideo"  :poster='videoPic' @play='play' @pause='pause'>
+										</video>
+									</swiper-item>
+		    <swiper-item v-for="(item, index) in thumb_url" :key="index" class="sp-swiper-item">
+		    	<image :src="item" mode="" class="banner"></image>
+		    </swiper-item>
+		   </swiper>
+	</div>
+</template>
+
+<script>
+	export default {
+		data(){
+			return {
+				thumb_url:[],
+				video:'',
+				videoPic:'',
+				autoplay:true,
+				videoContext:''
+			}
+		},
+		mounted(){
+			var that=this
+			uni.$on('page-popup', (data) => {  
+				that.thumb_url=data.thumb_url
+				that.video=data.video
+				that.videoPic=data.videopic
+				that.videoContext = uni.createVideoContext('myVideo')
+			})  
+
+		},
+		methods:{
+			pause(){
+							this.autoplay=true
+							},
+							play(){
+							this.autoplay=false
+							},
+							swiperChange(e){
+								this.autoplay=true
+								this.videoContext.pause();
+							},
+		}
+	}
+</script>
+
+<style>
+.sp-container{
+	height: 250px;
+}
+.preview,.sp-swiper-item{
+	height: 250px;
+}
+.banner{
+	height: 250px;
+}
+</style>

@@ -6,17 +6,17 @@
 				<view class="nav nav-right" :class="{active:active==1}" @click="toggle($event,1)" id='id1' data-distance='0'><text>待付款</text></view>
 				<view class="nav nav-left" :class="{active:active==2}" @click="toggle($event,2)" id='id2' data-distance='0'><text>待发货</text></view>
 				<view class="nav nav-right" :class="{active:active==3}" @click="toggle($event,3)" id='id3' data-distance='60'><text>待收货</text></view>
-				<view class="nav nav-right" :class="{active:active==5}" @click="toggle($event,5)" id='id5' data-distance='120'><text>待评价</text></view>
+				<!-- <view class="nav nav-right" :class="{active:active==5}" @click="toggle($event,5)" id='id5' data-distance='120'><text>待评价</text></view> -->
 				<view class="nav nav-left" :class="{active:active==6}" @click="toggle($event,6)" id='id6' data-distance='180'><text>已完成</text></view>
-				<view class="nav nav-left" :class="{active:active==11}" @click="toggle($event,11)" id='id11' data-distance='240'><text>订单取消</text></view>
-				<view class="nav nav-left" :class="{active:active==99}" @click="toggle($event,99)" id='id99' data-distance='240'><text>售后</text></view>
+				<view class="nav nav-left" :class="{active:active=='qx'}" @click="toggle($event,'qx')" id='id11' data-distance='240'><text>订单取消</text></view>
+				<view class="nav nav-left" :class="{active:active=='sh'}" @click="toggle($event,'sh')" id='id99' data-distance='240'><text>售后</text></view>
 			</scroll-view>
 		</view>
 		<view class="padding">
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}" @scrolltolower='toBottom'>
 				<view class="card" v-for="(item,index) in dataList" :key='index'>
 
-					<view v-for="(item2,index2) in item.goods" :key='index2'>
+					<view v-for="(item2,index2) in item.goods" :key='index2' v-if='item2.goodsdata.length>0'>
 						<view class="overall">
 							<view @click.stop="toShop(item2.merchid)">
 								<icon type="" class="icon-iconfontshop-copy iconfont"></icon>
@@ -50,13 +50,14 @@
 								</view>
 							</view>
 							<view class="btn-box">
-								<button type="default" class="btn btn2" v-show='active==3' @click.stop="confirmReceive(item.orderno,childItem.goodsid)">确认收货</button>
-								<button type="default" class="btn btn1" v-show='active!=4' @click.stop="getCategory(childItem.goodsid,childItem.goodspic,childItem.goodsprice)">加入购物车</button>
-								<button type="default" class="btn btn1" v-show='active==5' @click.stop="toComment(item2,item.orderno)">评价</button>
-								<button type="default" class="btn btn1" v-show='active==1' @click.stop="cancelOrder(item.orderno,index)">取消订单</button>
-								<button type="default" class="btn btn2" v-show='active==1' @click.stop="topay(item2.goodsdata,item.orderno)">去付款</button>
-								<button type="default" class="btn btn2" v-show='active==3' @click.stop="toDrawback(childItem)">申请退款</button>
-								<button type="default" class="btn btn2" v-show="item2.merchid!=0" @click.stop='tochat(item2.merchid)'>联系卖家</button>
+								<button type="default" class="btn btn2" v-show='childItem.status==3' @click.stop="confirmReceive(item.orderno,childItem.goodsid)">确认收货</button>
+								<button type="default" class="btn btn1" v-show='childItem.status!=3' @click.stop="getCategory(childItem.goodsid,childItem.goodspic,childItem.goodsprice)">加入购物车</button>
+								<!-- <button type="default" class="btn btn1" v-show='active==5' @click.stop="toComment(item2,item.orderno)">评价</button> -->
+								<button type="default" class="btn btn1" v-show='childItem.status==1' @click.stop="cancelOrder(item.orderno,childItem.goodsid,index)">取消订单</button>
+								<button type="default" class="btn btn1" v-show='childItem.status!=1' @click.stop="deleteOrder(item.orderno,childItem.goodsid,index)">删除订单</button>
+								<button type="default" class="btn btn2" v-show='childItem.status==1' @click.stop="topay(item2.goodsdata,item.orderno)">去付款</button>
+								<button type="default" class="btn btn2" v-show='childItem.status==3' @click.stop="toDrawback(childItem)">申请退款</button>
+								<button type="default" class="btn btn2"  @click.stop='tochat(item2.merchid)'>联系卖家</button>
 							</view>
 						</view>
 
@@ -279,20 +280,40 @@
 				that.getList(that.page)
 				// },2000)
 			},
-			cancelOrder(order, from) {
+			cancelOrder(order, id,from) {
 				var that = this
 				var params = {
 					uid: this.uid,
 					token: this.token,
-					orderno: order
+					orderno: order,
+					goodsid:id
 				}
 				var url = '&r=api.member.order.cancel'
 				this.$apiPost(url, params).then((res) => {
 					this.$msg('取消成功')
 					// that.options[2].info++
 					setTimeout(() =>{
-						that.dataList.splice(from, 1)
-					},1500)
+						this.reset()
+						this.getList(this.page)
+					},500)
+				})
+			},
+			deleteOrder(order, id,from){
+				var that = this
+				var params = {
+					uid: this.uid,
+					token: this.token,
+					orderno: order,
+					goodsid:id
+				}
+				var url = '&r=api.member.order.delete'
+				this.$apiPost(url, params).then((res) => {
+					this.$msg('删除成功')
+					// that.options[2].info++
+					setTimeout(() =>{
+						this.reset()
+						this.getList(this.page)
+					},500)
 				})
 			},
 			confirmReceive(order,goodsid) {
@@ -489,19 +510,19 @@
 		padding-right: 25upx;
 		/* padding-bottom: 20upx; */
 		margin: 35upx 0 15upx;
-		overflow-x: auto;
-		white-space: nowrap;
+		/* overflow-x: auto;
+		white-space: nowrap; */
 	}
 
 	.btn {
-		width: 28%;
-		height: 75upx;
-		border-radius: 75upx;
+		/* width: 28%; */
+		height: 66upx;
+		border-radius: 66upx;
+		line-height: 66upx !important;
 		text-align: center;
-		line-height: 75upx;
 		color: white;
 		font-size: 28upx;
-		padding: 0 !important;
+		padding: 0 15upx !important;
 		display: inline-block;
 		background-color: white !important;
 		margin-left: 15upx;

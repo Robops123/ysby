@@ -1,7 +1,13 @@
 <template>
-	<!-- #ifdef APP-PLUS || H5 -->
-	<web-view :src="'/hybrid/html/local.html?hx_openid='+hx_openid+'&hx_pwd='+hx_pwd" @message='message' :webview-styles="webviewStyles"></web-view>
-	<!-- #endif -->
+	<view>
+		<!-- #ifdef APP-PLUS || H5 -->
+		<web-view :src="'/hybrid/html/local.html?hx_openid='+hx_openid+'&hx_pwd='+hx_pwd" @message='message' :webview-styles="webviewStyles"></web-view>
+		<!-- #endif -->
+		
+		<!-- #ifdef MP -->
+		<web-view :src="'https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.chat?hx_openid='+hx_openid+'&hx_pwd='+hx_pwd" @message='message' :webview-styles="webviewStyles"></web-view>
+		<!-- #endif -->
+	</view>
 	
 	<!-- <web-view src=""></web-view> -->
 	
