@@ -132,7 +132,6 @@
 			
 			//监听未读消息数
 			disp.on("em.xmpp.unreadspot", function(message){
-				console.log('dddd')
 				me.arr = me.getChatList();
 				me.unReadSpotNum = getApp().globalData.unReadMessageNum > 99 ? '99+' : getApp().globalData.unReadMessageNum;
 			});
@@ -144,7 +143,6 @@
 			// });
 			
 			disp.on("em.xmpp.contacts.remove", function(){
-				console.log('dddd')
 				me.getRoster();
 				// me.setData({
 				// 	arr: me.getChatList(),
@@ -153,7 +151,6 @@
 			});
 			var that=this
 			msgStorage.on("newChatMsg", function(renderableMsg, type, curChatMsg, sesskey){
-				console.log('dddd')
 				// 判断是否属于当前会话
 				let members=uni.getStorageSync('member') || [],
 				existance=false

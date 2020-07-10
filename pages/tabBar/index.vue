@@ -232,7 +232,6 @@
 			
 		},
 		mounted(){
-			console.log('mounted')
 			// uni.clearStorageSync()
 			// uni.setStorageSync('member',[{name:'cd82566fd157be7887d7ca6cb646575d'}])
 			var that=this
@@ -290,6 +289,8 @@
 							// for(var i=0;i<members.length;i++){
 								that.transToName(members)
 							// }
+						}else{
+							that.transToName(members)
 						}
 					}
 					
@@ -594,7 +595,10 @@
 					let curChatMsgs = historyChatMsgs.concat(newChatMsgs);
 					if(curChatMsgs.length){
 						let lastChatMsg = curChatMsgs[curChatMsgs.length - 1];
-						num+=newChatMsgs.length
+						if(lastChatMsg.info.from!=lastChatMsg.username){
+							num+=newChatMsgs.length
+						}
+						
 						// lastChatMsg.unReadCount = newChatMsgs.length;
 						// if(lastChatMsg.unReadCount > 99) {
 						// 	lastChatMsg.unReadCount = "99+";

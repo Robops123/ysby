@@ -159,7 +159,7 @@ msgStorage.saveMsg = function(sendableMsg, type, receiveMsg){
 
 	save();
 	function save(){
-		console.log(renderableMsg, type, curChatMsg, sessionKey)
+		// console.log(renderableMsg, type, curChatMsg, sessionKey)
 		wx.setStorage({
 			key: sessionKey,
 			data: curChatMsg,
