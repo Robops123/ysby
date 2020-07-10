@@ -104,11 +104,23 @@
 							<image src="../../static/img/pic/mine/icon1.png" mode=""></image>
 							<view>帮助中心</view>
 						</view>
-						<view class="item-list" @click="contact">
-							<image src="../../static/img/pic/mine/icon8.png" mode=""></image>
+						<!-- #ifdef APP-PLUS || H5 -->
+						<view class="item-list" @click="contact" style="vertical-align: bottom;">
+								<image src="../../static/img/pic/mine/icon8.png" mode=""></image>
 							<view>官方客服</view>
 						</view>
-						<view class="item-list" @click="to2(data.merchStatus)" v-if="data.merchStatus>=2 && data.merchStatus<=4">
+						<!-- #endif -->
+						
+						<!-- #ifdef MP -->
+						<view class="item-list" style="vertical-align: bottom;">
+							<button class="userinfo-btn" open-type="contact" >
+								<image src="../../static/img/pic/mine/icon8.png" mode=""></image>
+							</button>
+							<view>官方客服</view>
+						</view>
+						<!-- #endif -->
+						
+						<view class="item-list" @click="to2(data.merchStatus)" v-if="data.merchStatus==2 || data.merchStatus==6">
 							<image src="../../static/img/pic/mine/icon7.png" mode=""></image>
 							<view>我的店铺</view>
 						</view>
@@ -247,7 +259,7 @@
 			},
 			toSetting() {
 			    uni.navigateTo({
-			    	url:`/pages/mine/settings`
+			    	url:`/pages/mine/settings?is_oAuth=`+this.data.is_oAuth
 			    })    
 			},
 			test(){
@@ -293,6 +305,7 @@
 				var params={
 					uid:this.userInfo.uid,
 					token:this.userInfo.token,
+					type:1
 				}
 				var url='&r=api.common.share.createPoster'
 				  this.$apiPost(url,params).then((res) =>{
@@ -497,5 +510,22 @@
 		}
 		.icon-arrow-right{
 			vertical-align: text-top;
+		}
+		
+		/* 联系客服 */
+		.userinfo-btn:before,
+		.userinfo-btn:after{
+			display: none;
+		}
+		.userinfo-btn{
+			display: inline-block;
+			background: none;
+			padding: 0 !important;
+			border: none;
+			outline: none;
+			width: 50upx;
+			height: 50upx;
+			margin-bottom: 20upx;
+			text-align: center;
 		}
 </style>

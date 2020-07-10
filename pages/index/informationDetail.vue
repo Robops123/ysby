@@ -10,7 +10,8 @@
 					{{data.title}}
 				</view>
 				<view class="cg " style="margin-bottom: 20upx;text-align: right;">{{data.createtime}}</view>
-				 <u-parse :content="data.content" v-if="data" id="article" class="article"  ref='article'/>
+				<view v-html="data.content"></view>
+				 <!-- <u-parse :content="data.content" v-if="data" id="article" class="article"  ref='article'/> -->
 				<!-- <view class="luntan-card-title">中期商会与你携手前行</view>
 				<view class="luntan-card-lianjie">#坚守共赢胜利#</view>
 				<view class="luntan-card-introduce">抗击疫情，中企商会在行动！截至2月8日，中企商会持续投入抗击疫情，面对这场突如其来的“疫”战，中企商会与大家共同坚守，终将会取得这场疫情防控狙击战的胜利！加油！</view>
@@ -651,5 +652,9 @@
 	}
 	.operate-word{
 		font-size: 28upx;
+	}
+	.article img{
+		width: initial;
+		max-width: 100%;
 	}
 </style>

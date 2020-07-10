@@ -4,7 +4,14 @@
 			<view class="padding comment" v-for="(item,index) in dataList" :key='index'>
 				<view class="user">
 					<image :src="item.headimgurl" mode="" class="headface"></image>
-					<text>{{item.nickname}}</text>
+					<view>
+						<view>
+							{{item.nickname}}
+						</view>
+						<view class="createtime">
+							{{item.createtime}}
+						</view>
+					</view>
 				</view>
 				<view class="comment">
 					<view class="comment-word">
@@ -109,7 +116,7 @@
 		margin-top: 20upx;
 	}
 	.user>image,
-	.user>text{
+	.user>view{
 		vertical-align: middle;
 		display: inline-block;
 	}
@@ -129,6 +136,7 @@
 		    -webkit-line-clamp: 2;//控制行数
 		    -webkit-box-orient: vertical;//一定要写 */
 			margin: 25upx 0 15upx;
+			word-break: break-word;
 	}
 	
 	.comment-pic image{
@@ -136,5 +144,11 @@
 		height: 200upx;
 		border-radius: 10upx;
 		margin-right: 2% ;
+	}
+	.createtime{
+		font-size: 22upx;
+		line-height: 22upx;
+		margin-top: 16upx;
+		color: #c3c3c3;
 	}
 </style>

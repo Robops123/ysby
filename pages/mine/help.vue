@@ -19,7 +19,8 @@
 				<text class="fr iconfont icon-down" ></text>
 			</view>
 			<view v-show="item.show" class="question-detail" :class="{animate__fadeInDown:item.show}">
-				 <u-parse :content="item.content" id="article" class="article"  ref='article'/>
+				 <!-- <u-parse :content="item.content" id="article" class="article"  ref='article'/> -->
+				 <view v-html="item.content"></view>
 			</view>
 		</view>
 	</view>
@@ -123,5 +124,9 @@
 		margin-top: 20upx;
 		line-height: 1.5;
 		/* text-indent: 20px; */
+	}
+	.article img{
+		width: initial;
+		max-width: 100%;
 	}
 </style>

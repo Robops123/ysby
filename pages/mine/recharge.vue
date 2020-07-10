@@ -6,7 +6,7 @@
 		<view class=" margin">
 			<view class="border-bottom padding">
 				<text>充值金额</text>
-				<input type="number" v-model="money" placeholder="请输入充值金额" class="fr" style="text-align: right;"/>
+				<input type="digit" v-model="money" placeholder="请输入充值金额" class="fr" style="text-align: right;"/>
 				<!-- <text class="fr">{{orderno}}</text> -->
 			</view>
 			<view class="padding">
@@ -95,13 +95,23 @@
 				})
 			},
 			pay(){
-				let method=this.providerList.filter((item) => {return item.id==this.type})[0].name
+				let method=this.providerList.filter((item) => {return item.id==this.type}),way
+				if(method.length>0){
+					way=method[0].name
+				}else{
+					way='微信'
+				}
 				uni.showModal({
 					title:'提示',
-					content:'确认使用'+method+'支付吗',
+					content:'确认使用'+way+'支付吗',
 					success:(e) =>{
 						if(e.confirm){
+							// #ifdef APP-PLUS
 							this.requestPayment(this.type)
+							// #endif
+							// #ifdef MP
+							this.weixinPay()
+							// #endif
 						}
 					}
 				})
@@ -150,13 +160,18 @@
 				// #endif
 			},
 			weixinPay() {
-			    console.log("发起支付");
+				if(!this.money){
+					this.$msg('请输入充值金额')
+					return ;
+				}
 			    this.loading = true;
+				var that=this
 			    uni.login({
+					 provider: 'weixin',
 			        success: (e) => {
-			            console.log("login success", e);
 			            uni.request({
-			                url: `https://unidemo.dcloud.net.cn/payment/wx/mp?code=${e.code}&amount=${this.price}`,
+			                url: `https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.order.pay&code=${e.code}&money=${that.money}&uid=${that.uid}&token=${that.token}&type=1`,
+							method:'GET',
 			                success: (res) => {
 			                    console.log("pay request success", res);
 			                    if (res.statusCode !== 200) {
@@ -166,19 +181,20 @@
 			                        });
 			                        return;
 			                    }
-			                    if (res.data.ret === 0) {
-			                        console.log("得到接口prepay_id", res.data.payment);
-			                        let paymentData = res.data.payment;
+			                    if (res.data.state === 200) {
+			                        console.log("得到接口prepay_id", res.data);
+			                        let paymentData = res.data;
 			                        uni.requestPayment({
+										provider:'wxpay',
 			                            timeStamp: paymentData.timeStamp,
 			                            nonceStr: paymentData.nonceStr,
 			                            package: paymentData.package,
 			                            signType: 'MD5',
 			                            paySign: paymentData.paySign,
 			                            success: (res) => {
-			                                uni.showToast({
-			                                    title: "感谢您的赞助!"
-			                                })
+			                                that.$msg('充值成功')
+			                                
+			                                that.getUserInfo()
 			                            },
 			                            fail: (res) => {
 			                                uni.showModal({

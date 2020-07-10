@@ -10,13 +10,22 @@
 		</view>
 		<view class="f2" style="overflow: hidden;">
 			<text @click="loginveri()">验证码登录</text>
+			<!-- #ifndef MP -->
 			<text class="fr" @click="contact">登录遇到问题</text>
+			<!-- #endif -->
+			<!-- #ifdef MP -->
+			<button class="userinfo-btn2 fr" open-type="contact">
+				登录遇到问题
+			</button>
+			<!-- #endif -->
 			<text ></text>
 		</view>
 		
 		<view>
 			<button type="primary" class="btn" @click="submit">登录</button>
 		</view>
+		
+		
 	</view>
 </template>
 
@@ -68,11 +77,13 @@
 						   	url:'../tabBar/mine'
 						   })
 					   }
+					    that.$msg('登录成功')
 				  })
 			},
 			showpsd(){
 				this.show=!this.show
-			}
+			},
+			
 		}
 	}
 </script>
@@ -162,5 +173,22 @@
 	}
 	.fn text{
 		color: #7a7a7a;
+	}
+	/* 联系客服 */
+	.userinfo-btn2:before,
+	.userinfo-btn2:after{
+		display: none;
+	}
+	.userinfo-btn2{
+		display: inline-block;
+		font-size: 13px;
+		background: none;
+		padding: 0 !important;
+		border: none;
+		outline: none;
+		margin: 0 auto;
+		text-align: center;
+		color: #ff6b74 !important;
+		line-height: initial !important; 
 	}
 </style>

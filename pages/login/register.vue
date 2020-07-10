@@ -74,9 +74,7 @@
 				var url=`&r=api.member.account.register&mobile=${this.mobile}&pwd=${this.pwd}&verifycode=${this.verifycode}&invited_code=${this.invited_code}`
 				  this.$apiPost(url).then((res) =>{
 					  uni.hideLoading()
-					  setTimeout(function(){
-						that.$msg('注册成功')  
-					  },100)
+					 
 					  that.$conn.open({
 					  							apiUrl: that.$im.config.apiURL,
 					  							user: res.data.hx_openid,
@@ -96,6 +94,9 @@
 					 						   	url:'../tabBar/mine'
 					 						   })
 					 }
+					 setTimeout(function(){
+					 						that.$msg('注册成功')  
+					 },100)
 				  })
 			},
 			validate(){

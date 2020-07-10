@@ -81,6 +81,7 @@
 				})
 			},
 			toComment(item,merchid,orderno,index,index2,index3){
+				console.log(item,merchid,orderno,index,index2,index3)
 				uni.$on('disableComment',(i) =>{
 					this.dataList[i.index].goods[i.index2].goodsdata.splice(i.index3,1)
 					// this.total--
@@ -270,7 +271,7 @@
 		align-items: center;
 		justify-content: space-between;
 		padding:20upx 40upx;
-		background-color: #fff;
+		background-color: #fff !important;
 		border: 1px solid #f1f1f1;
 	}
 	.bottom-right button{

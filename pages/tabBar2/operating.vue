@@ -41,7 +41,7 @@
 					<view>待付款</view>
 					<view class="cg s3"><text class="cr">{{data.notPay || 0}}</text>笔</view>
 				</view>
-				<view class="item-list">
+				<view class="item-list" @click="toOrderList('qx')">
 					<view class="img-box"><image src="../../static/img/pic/shop/icon6.png" mode=""></image></view>
 					<view>维权订单</view>
 					<view class="cg s3"><text class="cr">{{data.rightsOrder || 0}}</text>笔</view>

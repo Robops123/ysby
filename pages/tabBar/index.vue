@@ -52,10 +52,20 @@
 					<image src="../../static/img/pic/index/icon4.png" mode=""></image>
 					<view class="item-name cg s3">更多分类</view>
 				</view>
-				<view class="list-item"  @click="contact">
-					<image src="../../static/img/pic/index/icon10.png" mode=""></image>
+				<!-- #ifdef APP-PLUS || H5 -->
+				<view class="list-item"  @click="contact" style="vertical-align: bottom;">
+						<image src="../../static/img/pic/index/icon10.png" mode=""></image>
 					<view class="item-name cg s3">在线客服</view>
 				</view>
+				<!-- #endif -->
+				<!-- #ifdef MP -->
+				<view class="list-item"  style="vertical-align: bottom;">
+					<button class="userinfo-btn" open-type="contact">
+						<image src="../../static/img/pic/index/icon10.png" mode=""></image>
+					</button>
+					<view class="item-name cg s3">在线客服</view>
+				</view>
+				<!-- #endif -->
 			</view>
 			</view>
 			<image :src="bannerList[0].thumb" v-if="bannerList[0]" @click='toBannerDetail(bannerList[0])' mode="" class="banner banner2 banner-low"></image>
@@ -162,6 +172,8 @@
 		},
 		data(){
 			return{
+				nickName:'aa',
+				avatarUrl:'',
 				defaultPrice:0,
 				defaultImg:'',
 				id:'',
@@ -927,5 +939,23 @@
 			width: 90%;
 			display: inline-block;
 			overflow-x: auto;
+		}
+		
+		
+		/* 联系客服 */
+		.userinfo-btn:before,
+		.userinfo-btn:after{
+			display: none;
+		}
+		.userinfo-btn{
+			display: inline-block;
+			background: none;
+			padding: 0 !important;
+			border: none;
+			outline: none;
+			width: 90upx;
+			height: 90upx;
+			margin: 0 auto;
+			text-align: center;
 		}
 </style>

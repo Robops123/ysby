@@ -2,5 +2,7 @@
   "navigationBarTitleText": "",
   "navigationBarBackgroundColor": "#FFFFFF",
   "backgroundColor": "#FFFFFF",
-  "usingComponents": {}
+  "usingComponents": {
+    "s-popup": "/components/s-popup/index"
+  }
 }

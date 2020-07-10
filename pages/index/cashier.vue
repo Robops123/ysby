@@ -170,7 +170,7 @@
 						// 	code:e.code,
 						// }
 			            uni.request({
-			                url: `https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.member.order.payOrderMini&code=${e.code}&money=${that.money}&uid=${that.uid}&token=${that.token}`,
+			                url: `https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.order.pay&code=${e.code}&orderno=${that.orderno}&uid=${that.uid}&token=${that.token}&type=2`,
 							method:'GET',
 			                success: (res) => {
 			                    console.log("pay request success", res);
@@ -181,9 +181,9 @@
 			                        });
 			                        return;
 			                    }
-			                    if (res.data.ret === 0) {
-			                        console.log("得到接口prepay_id", res.data.payment);
-			                        let paymentData = res;
+			                    if (res.data.state === 200) {
+			                        console.log("得到接口prepay_id", res.data);
+			                        let paymentData = res.data;
 			                        uni.requestPayment({
 										provider:'wxpay',
 			                            timeStamp: paymentData.timeStamp,
@@ -192,9 +192,12 @@
 			                            signType: 'MD5',
 			                            paySign: paymentData.paySign,
 			                            success: (res) => {
-			                                uni.showToast({
-			                                    title: "感谢您的赞助!"
-			                                })
+			                                uni.$emit('updateOrder')
+			                                setTimeout(function(){
+			                                	uni.redirectTo({
+			                                		url:'./payResult?contact='+that.contact+'&money='+that.money+'&orderno='+that.orderno
+			                                	})
+			                                },1000)
 			                            },
 			                            fail: (res) => {
 			                                uni.showModal({
@@ -251,6 +254,7 @@
 			        provider: e,
 					orderInfo:orderInfo.data,
 			        success: (e) => {
+						uni.hideLoading()
 			            uni.$emit('updateOrder')
 			            setTimeout(function(){
 			            	uni.redirectTo({

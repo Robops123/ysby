@@ -1,6 +1,6 @@
 <template>
 	<view style="background: white;">
-		<view class="tip">预计佣金:+{{totalCommission || 0}}元</view>
+		<view class="tip">预计佣金:+{{expectCommission || 0}}元</view>
 		<view  class="nav-bar">
 			<view :class="{active:active==0}" @click="toggleNav(0)">所有</view>
 			<view :class="{active:active==1}" @click="toggleNav(1)">待审核</view>
@@ -11,15 +11,17 @@
 		<scroll-view scroll-y id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 			<view class="list-item s2" v-for='(item,index) in dataList' :key='index'>
 				<view>
-					<text>{{item.paytype==1 ? '提现到微信钱包':'提现到银行卡'}}</text>
-					<text class="fr">+{{item.commission}}</text>
+					<text v-show="item.paytype==1">提现到微信钱包</text>
+					<text v-show="item.paytype==2">提现到银行卡</text>
+					<text v-show="item.paytype==3">提现到支付宝</text>
+					<text class="fr"><text v-show="item.status=='4'">+</text>{{item.commission}}</text>
 				</view>
 				<view>
 					<text class="sm-gray">{{item.createtime}}</text>
 					<text class="fr" v-show='item.status=="1"'>待审核</text>
-					<text class="fr" v-show='item.status=="2"'>审核驳回</text>
-					<text class="fr" v-show='item.status=="3"'>未打款</text>
-					<text class="fr" v-show='item.status=="4"'>已打款</text>
+					<text class="fr fail" v-show='item.status=="2"'>审核驳回</text>
+					<text class="fr success" v-show='item.status=="3"'>未打款</text>
+					<text class="fr success" v-show='item.status=="4"'>已打款</text>
 				</view>
 			</view>
 			
@@ -56,7 +58,12 @@
 				active:0,
 				tabActive:0,
 				sh:'',
-				dataList:[],
+				dataList:[
+					// {paytype:1,createtime:'2020-03-04',commission:20,status:'1'},
+					// {paytype:2,createtime:'2020-03-04',commission:20,status:'2'},
+					// {paytype:3,createtime:'2020-03-04',commission:20,status:'3'},
+					// {paytype:1,createtime:'2020-03-04',commission:20,status:'4'}
+				],
 				page:1,
 				pageSize:20,
 				total:0,
@@ -109,7 +116,7 @@
 				  var url='&r=api.member.commission.detail'
 				  this.$apiPost(url,params).then((res) =>{
 					  that.total=res.total
-					  that.totalCommission=res.totalCommission
+					  that.expectCommission=res.expectCommission
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
 					  if(that.page==1){
@@ -169,5 +176,11 @@
 	}
 	.fr{
 		float: right;
+	}
+	.success{
+		color: #67c23a;
+	}
+	.fail{
+		color: #f56c6c;
 	}
 </style>

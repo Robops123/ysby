@@ -229,7 +229,8 @@
 							  	var params={
 							  		uid:this.uid,
 							  		token:this.token,
-									goodsid:this.goodsid
+									goodsid:this.goodsid,
+									type:3
 							  	}
 							  	var url='&r=api.common.share.createPoster'
 							  	  this.$apiPost(url,params).then((res) =>{

@@ -14,7 +14,8 @@
 					
 				</view> -->
 				<!-- <rich-text :nodes=""></rich-text> -->
-				 <u-parse :content="data.detail" v-if="data" id="article" class="article"  ref='article'/>
+				<view v-html="data.detail" id="article"></view>
+				 <!-- <u-parse :content="data.detail" v-if="data" id="article" class="article"  ref='article'/> -->
 				<!-- <view class="luntan-card-title">中期商会与你携手前行</view>
 				<view class="luntan-card-lianjie">#坚守共赢胜利#</view>
 				<view class="luntan-card-introduce">抗击疫情，中企商会在行动！截至2月8日，中企商会持续投入抗击疫情，面对这场突如其来的“疫”战，中企商会与大家共同坚守，终将会取得这场疫情防控狙击战的胜利！加油！</view>
@@ -215,6 +216,7 @@
 				// }
 				  var url='&r=api.college.hotarticle.comment&page='+this.page+'&pagesize='+this.pageSize+'&collegeid='+this.id
 				  this.$apiPost(url).then((res) =>{
+					  console.log(res)
 					  that.total=res.total
 					  that.commentList=that.dataList.concat(res.data)
 					  that.more=''
@@ -246,6 +248,7 @@
 				  	const query = uni.createSelectorQuery()
 				var  qs=query.select('#article').boundingClientRect()
 				  	query.exec(function(res) {
+						console.log()
 						that.articleH=res[0].height
 						that.topH=res[0].top
 						uni.hideLoading()
@@ -656,5 +659,9 @@
 	}
 	.operate-word{
 		font-size: 28upx;
+	}
+	.article img{
+		width: initial;
+		max-width: 100%;
 	}
 </style>

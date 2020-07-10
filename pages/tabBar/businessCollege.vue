@@ -70,7 +70,7 @@
 									<text class="operate-word">评论{{item.comment}}</text>
 								</view> 
 								<view class="luntan-card-bot-card" @click="toggleZan(item.isLike,item.id,index)">
-									<text class="iconfont " :class="{'icon-zan':item.isLike=='0','icon-shou':item.isLike=='1','zaned':item.isLike=='1'}" ></text>
+									<text class="iconfont " :class="{'icon-zan':item.isLike=='0' || !item.isLike,'icon-shou':item.isLike=='1','zaned':item.isLike=='1'}" ></text>
 									<text class="operate-word">赞{{item.like}}</text>
 								</view>
 							</view>
@@ -275,19 +275,24 @@
 		   		this.uid=userInfo.uid
 		   		this.token=userInfo.token
 		   	}else{
+				this.uid=''
+				this.token=''
 		   		this.logined=false
 		   	}
-		   	
+		   	this.reset()
+		   	this.apart()
 		   },
 		   mounted(){
 		   	var that=this
-		   	this.apart()
+		   	
 			 bottomImageMenu = new BottomImageMenu(this.menus)
 			uni.$on('logined',function(){
 				var userInfo2=uni.getStorageSync('userInfo')
 				that.logined=true
 				that.uid=userInfo2.uid
 				that.token=userInfo2.token
+				that.reset()
+				that.apart()
 			})
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{

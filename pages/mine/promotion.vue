@@ -1,6 +1,7 @@
 <template>
 	<view class="padding">
-		<u-parse :content="data" v-if="data" id="article" class="article"  ref='article'/>
+		<view v-html="data"></view>
+		<!-- <u-parse :content="data" v-if="data" id="article" class="article"  ref='article'/> -->
 	</view>
 </template>
 
@@ -44,5 +45,9 @@
 <style>
 	view,.p{
 		word-break: break-all;
+	}
+	.article img{
+		width: initial;
+		max-width: 100%;
 	}
 </style>

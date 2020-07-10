@@ -328,9 +328,12 @@
 				this.$apiPost(url, params).then((res) => {
 					this.$msg('确认收货成功')
 					setTimeout(() =>{
-						this.reset()
-						this.getList(this.page)
-					},1500)
+							this.reset()
+							this.getList(this.page)
+						uni.navigateTo({
+							url:`/pages/mine/myOrderDetail`
+						})
+					},1000)
 					// that.options[2].info++
 				})
 			},

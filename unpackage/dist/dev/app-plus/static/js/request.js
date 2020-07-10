@@ -24,6 +24,7 @@ const baseURL = 'https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=z
 				}else if(res.data.resultMessage=='暂无数据'){
 					resolve(res.data)
 				}else if(res.data.resultMessage=='token有误'){
+					uni.hideLoading()
 					uni.removeStorageSync('userInfo')
 					uni.showToast({
 						title:'请重新登录',
@@ -40,6 +41,7 @@ const baseURL = 'https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=z
 					});
 					reject(res.data)
 				}
+				
  			},
  			fail(err) {
 				uni.hideLoading()
@@ -72,6 +74,7 @@ const baseURL = 'https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=z
  				}else if(res.data.resultMessage=='暂无数据'){
 					resolve(res.data)
 				}else if(res.data.resultMessage=='token有误'){
+					uni.hideLoading()
 					uni.showToast({
 						title:'请重新登录',
 						icon:'none',
@@ -79,12 +82,12 @@ const baseURL = 'https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=z
 					})
 					uni.removeStorageSync('userInfo')
 				}else{
+					uni.hideLoading()
 					uni.showToast({
 					    title: res.data.resultMessage,
 						icon:'none',
 					    duration: 2000
 					});
-					uni.hideLoading()
  					reject(res.data)
  				}
  			},

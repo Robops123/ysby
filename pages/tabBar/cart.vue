@@ -133,6 +133,8 @@
 				this.token=userInfo.token
 				this.getList()
 			}else{
+				this.uid=''
+				this.token=''
 				this.logined=false
 			}
 		},
@@ -357,14 +359,19 @@
 				console.log(this.dataList)
 				try{
 					this.dataList.forEach((item) =>{
-						item.goods.forEach((item2) =>{
-							if(item2.checked){
-								if(!item2.skuidsort){
-									throw new Error('specError')
+						if(item.goods && item.goods.length>0){
+							item.goods.forEach((item2) =>{
+								console.log(item2)
+								if(item2.checked){
+									console.log(item2.checked)
+									if(!item2.skuidsort){
+										throw new Error('specError')
+									}
+									selectedGoods.push(item2)
 								}
-								selectedGoods.push(item2)
-							}
-						})
+							})
+						}
+						
 					})
 				}catch(e){
 					this.$msg('请选择规格')

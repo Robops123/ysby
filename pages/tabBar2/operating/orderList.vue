@@ -6,6 +6,7 @@
 			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
 			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
 			<view class="nav nav-left" :class="{active:active==6}" @click="toggle(6)"><text>已完成</text></view>
+			<view class="nav nav-left" :class="{active:active=='qx'}" @click="toggle('qx')"><text>售后</text></view>
 		</view>
 		
 		<view class="padding search">
@@ -273,7 +274,7 @@
 	.nav{
 		color: #afafaf;
 		display: inline-block;
-		width: 25%;
+		width: 20%;
 		box-sizing: border-box;
 	}
 	.nav.active text{

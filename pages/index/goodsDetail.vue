@@ -99,7 +99,7 @@
 		<view class="hot">
 			<text>商品详情</text>
 		</view>
-		<view class="detail" v-html="data.content">
+		<view class="detail padding" v-html="data.content">
 			
 		</view>
 		
@@ -119,7 +119,7 @@
 		 
 		 
 		 <!-- 海报 -->
-		 <s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
+		 <s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup' @hide='hide'>
 		   <!-- 内容 -->
 		   <image :src="advImg" mode="widthFix" style="width: 100%;border-radius: 25upx;"></image>
 		   <view style="margin-top: 20upx;">
@@ -154,6 +154,7 @@
 		},
 		data () {
 		      return {
+				  subNVue:'',
 				  title:'',
 				  hx_openid:'',
 				  hx_pwd:'',
@@ -445,10 +446,16 @@
 				    // var url='/wangtosale_list'
 				    this.$apiPost(url).then((res) =>{
 						that.data=res.data
+						var range=that.data.marketprice.split(' - ')
+						if(range.length>1){
+							if(range[0]==range[1]){
+								that.data.marketprice=range[0]
+							}
+						}
 						that.thumb_url=res.data.thumb_url
 						// #ifdef APP-PLUS
-						const subNVue = uni.getSubNVueById('sp'); // 通过 id 获取 nvue 子窗体
-						subNVue.show('slide-in-top', 250);
+						this.subNVue = uni.getSubNVueById('sp'); // 通过 id 获取 nvue 子窗体
+						this.subNVue.show('slide-in-top', 250);
 						uni.$emit('page-popup', {  
 							thumb_url:res.data.thumb_url,
 							video:res.data.video,
@@ -545,6 +552,9 @@
 				  })
 			  },
 			  getPoster(e){
+				  // #ifdef APP-PLUS
+				  this.subNVue.hide()
+				  // #endif
 				  this.visible=true
 				  this.advImg=e
 			  },
@@ -560,6 +570,9 @@
 			  						success: function() {
 										uni.hideLoading()
 			  							that.$msg('保存成功，请到相册中查看')
+										// #ifdef APP-PLUS
+										that.subNVue.show()
+										// #endif
 											that.visible=false
 			  						},
 			  						fail: function() {
@@ -574,6 +587,11 @@
 			  			}
 			  		})
 			  },
+			  hide(){
+				  // #ifdef APP-PLUS
+				  this.subNVue.show()
+				  // #endif
+			  }
 			  // compress(url){
 				 //  uni.compressImage({
 				 //    src: url,
@@ -858,8 +876,12 @@
 		width: 100%;
 		height: 100%;
 	}
+	.detail{
+		word-break: break-all;
+	}
 	.detail img{
-		width: 100%;
+		width: initial;
+		max-width: 100%;
 	}
 	.collectnum{
 		margin-left: 15upx;

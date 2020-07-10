@@ -25,6 +25,10 @@
 					<text class="fr payway" v-if="data.status=='4'">已取消</text>
 					<text class="fr payway" v-if="data.status=='5'">待评论</text>
 					<text class="fr payway" v-if="data.status=='6'">已完成</text>
+					<text class="fr payway" v-if="data.status=='8'">退款成功</text>
+					<text class="fr payway" v-if="data.status=='9'">退款审核中</text>
+					<text class="fr payway" v-if="data.status=='10'">退款驳回</text>
+					<text class="fr payway" v-if="data.status=='11'">取消发货</text>
 				</view>
 				<view class="lh1">
 					<text class="c2">支付方式: </text>
@@ -33,7 +37,7 @@
 					<text class="fr" v-show="data.paytype=='3'">余额</text>
 				</view>
 				<view class="lh1">
-					<text class="c2">配送状态: </text>
+					<text class="c2">配送方式: </text>
 					<text class="fr " v-if="data.delivery=='1'">快递</text>
 					<text class="fr " v-if="data.delivery=='2'">自提</text>
 					<text class="fr " v-if="data.delivery=='3'">其他</text>

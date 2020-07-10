@@ -1,1 +1,1 @@
-<view class="padding"><block wx:if="{{data}}"><u-parse class="article vue-ref" vue-id="3f68d5e6-1" content="{{data}}" id="article" data-ref="article" bind:__l="__l"></u-parse></block></view>
+<view class="padding"><view><rich-text nodes="{{data}}"></rich-text></view></view>

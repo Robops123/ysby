@@ -49,7 +49,7 @@
 		
 		<view class="activity flex-between">
 			<text class="cg ">是否开启店铺</text>
-			<switch class="fr" style="transform:scale(0.7)" value='6' :checked="data.merch_status=='6'" @change="switch1Change" />
+			<switch class="fr" style="transform:scale(0.7)" value='2' :checked="data.merch_status=='2'" @change="switch1Change" />
 		</view>
 		
 		<view style="text-align: center;">
@@ -187,9 +187,9 @@
 				switch1Change(e){
 					var v=e.detail.value
 					if(v==true){
-						this.data.merch_status='6'
-					}else{
 						this.data.merch_status='2'
+					}else{
+						this.data.merch_status='6'
 					}
 				},
 				submit(){
@@ -205,6 +205,7 @@
 									that.pic.push(cb)
 								var	t=this.pic.length
 									if(l==t){
+										uni.hideLoading()
 										that.submitForm()
 									}
 								})
@@ -212,6 +213,7 @@
 								that.pic.push(item)
 								var	t=this.pic.length
 									if(l==t){
+										uni.hideLoading()
 										that.submitForm()
 									}
 							}
@@ -220,6 +222,7 @@
 					
 				},
 				submitForm(){
+					this.$loading()
 					var that=this
 					var params={
 						uid:this.uid,
@@ -236,10 +239,10 @@
 					  this.$apiPost(url,params).then((res) =>{
 						  uni.hideLoading()
 							that.$msg('修改成功')
-							uni.$emit('updateOperating')
 							setTimeout(function(){
 								that.getDetail()
-							},500)
+								uni.$emit('updateOperating')
+							},1500)
 					  })
 				}
 		}

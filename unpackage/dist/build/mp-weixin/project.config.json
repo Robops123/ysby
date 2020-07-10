@@ -17,18 +17,20 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
 		},
+		"useIsolateContext": true,
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
 	"appid": "wxd52df5988224f6be",
-	"projectname": "%E6%98%93%E8%88%92%E4%BC%B4",
+	"projectname": "易舒伴",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

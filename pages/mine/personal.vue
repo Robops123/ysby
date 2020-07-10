@@ -38,7 +38,7 @@
 			<view class="option-item" @click="openPicker">
 				<text>常居地</text>
 				<text class="f1 fr"><text style="padding-right: 20upx;">
-				{{data.province}} {{data.city}} 
+				{{data.province}} {{data.city}} {{data.area}}
 				</text>
 				<text class="icon-arrow-right iconfont"></text>
 				</text>
@@ -61,7 +61,7 @@
 		</view>
 		
 		<!-- 地区选择 -->
-		<lotus-address v-on:choseVal="choseValue" :secondary='true' :lotusAddressData="lotusAddressData"></lotus-address>
+		<lotus-address v-on:choseVal="choseValue"  :lotusAddressData="lotusAddressData"></lotus-address>
 		
 		<!-- 性别选择 -->
 		<pop  ref='sex' :dataList='sexList'></pop>
@@ -201,7 +201,7 @@
 			                 this.lotusAddressData.cityName = res.city;//市
 							 this.data.province = res.province;//省
 							 this.data.city = res.city;//市
-			                 // this.lotusAddressData.townName = res.town;//区
+			                 this.data.area = res.town;//区
 			                 this.region = `${res.province} ${res.city} ${res.town}`; //region为已选的省市区的值
 							  this.submitPersonalInfo()
 			             }

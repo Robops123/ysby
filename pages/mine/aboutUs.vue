@@ -1,6 +1,7 @@
 <template>
 	<view class="main-container">
-		<u-parse :content="data.content" v-if="data" id="article" class="article"  ref='article'/>
+		<view v-html="data.content"></view>
+		<!-- <u-parse :content="data.content" v-if="data" id="article" class="article"  ref='article'/> -->
 	</view>
 </template>
 
@@ -35,5 +36,9 @@
 <style>
 	.main-container{
 		padding: 20upx;
+	}
+	.article img{
+		width: initial;
+		max-width: 100%;
 	}
 </style>

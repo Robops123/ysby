@@ -5,7 +5,7 @@
 				<text>手机号</text>
 				<text class="f1 fr"><text style="padding-right: 20upx;">{{mobile}}</text></text>
 			</view>
-			<view class="option-item" >
+			<view class="option-item" v-show="is_oAuth=='0'">
 				<text>密码</text>
 				<text class="f1 fr"><text class="f2 cr"  style="padding-right: 20upx;" @click="toPassword">修改</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
@@ -17,10 +17,12 @@
 	export default{
 		data(){
 			return{
-				mobile:''
+				mobile:'',
+				is_oAuth:''
 			}
 		},
-		mounted(){
+		onLoad(p){
+			this.is_oAuth=p.is_oAuth
 			var userInfo=uni.getStorageSync('userInfo'),that=this
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.mobile=userInfo.mobile

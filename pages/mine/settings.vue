@@ -5,7 +5,7 @@
 				<text>个人资料</text>
 				<text class="f1 fr"><text class="icon-arrow-right iconfont"></text></text>
 			</view>
-			<view class="option-item" @click="to('account')">
+			<view class="option-item" @click="to('account',is_oAuth)">
 				<text>账号与安全</text>
 				<text class="f1 fr"><text class="icon-arrow-right iconfont"></text></text>
 			</view>
@@ -36,9 +36,11 @@
 			return{
 				logined:false,
 				visible:false,
+				is_oAuth:''
 			}
 		},
-		mounted(){
+		onLoad(p){
+			this.is_oAuth=p.is_oAuth
 			var userInfo=uni.getStorageSync('userInfo'),that=this
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.logined=true
@@ -51,13 +53,13 @@
 			})
 		},
 		methods:{
-			to(where){
+			to(where,data){
 				var ce=this.$operateInterceptor(this.logined)
 				if(!ce){
 					return ;
 				}
 				uni.navigateTo({
-					url:`/pages/mine/${where}`
+					url:`/pages/mine/${where}?data=${data}`
 				})
 			},
 			quit(){

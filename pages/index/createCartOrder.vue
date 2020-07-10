@@ -48,7 +48,7 @@
 		<view class="padding conclude">
 			<view>
 				<text>商品小计</text>
-				<text class='fr'>￥{{totalMoney}}</text>
+				<text class='fr'>￥{{totalPrice}}</text>
 			</view>
 			<view>
 				<text>运费</text>
@@ -61,7 +61,7 @@
 			<view class="bottom-right" style="text-align: right;">
 				<text class="s2 cg">共{{totalAmount}}件,</text>
 				<text class="cg s1">合计:</text>
-				<text class="cr" style="font-size: 34upx;">￥{{totalPrice}}</text>
+				<text class="cr" style="font-size: 34upx;">￥{{totalMoney}}</text>
 				<button type="warn" @click="createOrder">立即支付</button>
 			</view>
 		</view>

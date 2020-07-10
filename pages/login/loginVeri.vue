@@ -9,7 +9,14 @@
 		</view>
 		<view class="f2" style="overflow: hidden;">
 			<text @click="loginveri()">密码登录</text>
+			<!-- #ifndef MP -->
 			<text class="fr" @click="contact">登录遇到问题</text>
+			<!-- #endif -->
+			<!-- #ifdef MP -->
+			<button class="userinfo-btn2 fr" open-type="contact">
+				登录遇到问题
+			</button>
+			<!-- #endif -->
 			<text ></text>
 		</view>
 		
@@ -51,6 +58,7 @@
 				var that=this
 				var url='&r=api.member.account.loginByCode&mobile='+this.mobile+'&code='+this.code
 				  this.$apiPost(url).then((res) =>{
+					  
 					   uni.setStorageSync('userInfo',res.data)
 					   that.$conn.open({
 					   							apiUrl: that.$im.config.apiURL,
@@ -70,6 +78,7 @@
 						   	url:'../tabBar/mine'
 						   })
 					   }
+					    that.$msg('登录成功')
 				  })
 			},
 			showpsd(){
@@ -198,5 +207,22 @@
 	}
 	.fn text{
 		color: #7a7a7a;
+	}
+	/* 联系客服 */
+	.userinfo-btn2:before,
+	.userinfo-btn2:after{
+		display: none;
+	}
+	.userinfo-btn2{
+		display: inline-block;
+		font-size: 13px;
+		background: none;
+		padding: 0 !important;
+		border: none;
+		outline: none;
+		margin: 0 auto;
+		text-align: center;
+		color: #ff6b74 !important;
+		line-height: initial !important; 
 	}
 </style>

@@ -36,7 +36,7 @@
 				<image class="distribution-info-card-img" src="../../static/img/pic/proxy/icon2.png" mode=""></image>
 				<view class="distribution-info-card-right">
 					<view class="distribution-info-card-right-top">代理订单</view>
-					<view class="distribution-info-card-right-bot">{{data.xxx || 0}} 笔</view>
+					<view class="distribution-info-card-right-bot">{{data.distributionOrder || 0}} 笔</view>
 				</view>
 			</view><view class="distribution-info-card" @click="to('withdrawDetail')">
 				<image class="distribution-info-card-img" src="../../static/img/pic/proxy/icon5.png" mode=""></image>
@@ -71,7 +71,7 @@
 				qrcode:''
 			}
 		},
-		mounted(){
+		onShow(){
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.uid=userInfo.uid
@@ -80,6 +80,9 @@
 				this.getPromoteQrcode()
 			}
 		},
+		// mounted(){
+			
+		// },
 		methods: {
 			to(where){
 				uni.navigateTo({
@@ -120,6 +123,7 @@
 				var params={
 					uid:this.uid,
 					token:this.token,
+					type:2
 				}
 				var url='&r=api.common.share.createPoster'
 				  this.$apiPost(url,params).then((res) =>{
