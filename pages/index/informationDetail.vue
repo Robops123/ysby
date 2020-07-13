@@ -9,7 +9,7 @@
 				<view class="s5" >
 					{{data.title}}
 				</view>
-				<view class="cg " style="margin-bottom: 20upx;">{{data.createtime}}</view>
+				<view class="cg " style="margin-bottom: 20upx;border-bottom: 1px solid #f3f3f3;padding-bottom: 10upx;">{{data.createtime}}</view>
 				<view v-html="data.content"></view>
 				 <!-- <u-parse :content="data.content" v-if="data" id="article" class="article"  ref='article'/> -->
 				<!-- <view class="luntan-card-title">中期商会与你携手前行</view>
@@ -442,7 +442,7 @@
 	}
 	.luntan-card{
 		width: 100%;
-		padding: 0 24upx;
+		padding: 0 24upx 20upx;
 		box-sizing: border-box;
 	}
 	.luntan-card-top{

@@ -2,7 +2,7 @@
 	<view class="">
 		<view class="luntan">
 			<view class="luntan-card" >
-				<view class="luntan-card-top">
+				<view class="luntan-card-top" style="border-bottom: 1px solid #f3f3f3;margin-bottom: 10upx;">
 					<image class="luntan-card-top-img" :src="data.logo" mode=""></image>
 					<view class="luntan-card-top-txt">
 						<view class="luntan-card-top-txt-title">{{data.merchname}}</view>
@@ -13,7 +13,7 @@
 				<view class="s5" >
 					{{data.title}}
 				</view>
-				<view class="cg " style="margin-bottom: 20upx;">{{data.abstract}}</view>
+				<view class="cg " style="margin-bottom: 20upx;border-bottom: 1px solid #f3f3f3;padding-bottom: 10upx;">{{data.abstract}}</view>
 				<!-- <view v-html="data.detail" id="article">
 					
 				</view> -->

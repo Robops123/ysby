@@ -18,7 +18,7 @@
 				<view v-if="active==1" style="margin-top: 30upx;">
 					<view class="sp-item3  news"  v-for="(item,index) in dataList" :key='index' >
 						<view class="padding">
-							<view class="sp-item3-top " style="margin-top: 0;padding-top: 0;" @click="toDetail(item)">
+							<view class="sp-item3-top " style="margin-top: 0;padding-top: 0;" @click.stop ="toDetail(item)">
 								<view>
 									<image :src="item.logo" mode="" class="headface"></image>
 								</view>
@@ -95,7 +95,7 @@
 							<view class="enter-button" @click="toShop(item.id)">进店</view>
 						</view>
 						<view class="sp-item3-bottom">
-							<view class=""  v-for="(childItem,childIndex) in item.goods" :key='childIndex' @click="toGoodsDetail(childItem.goodsid)">
+							<view class=""  v-for="(childItem,childIndex) in item.goods" :key='childIndex' @click.stop="toGoodsDetail(childItem.goodsid)">
 								<image :src="childItem.thumb" mode=""></image>
 								<view class="price">￥{{childItem.marketprice}}</view>
 							</view>
@@ -112,7 +112,7 @@
 				</view>
 				
 				<view class="box" v-if="active==3">
-					<view class="list" v-for="(item,index) in dataList" :key='index' @click="toGoodsDetail(item.id)">
+					<view class="list" v-for="(item,index) in dataList" :key='index' @click.stop="toGoodsDetail(item.id)">
 						<image :src="item.thumb" mode=""></image>
 						<view class="word">
 							<view class="s3 ellipsis">{{item.title}}</view>
@@ -123,7 +123,7 @@
 				
 				<!-- 资讯 -->
 				<view class="" v-if="active==4">
-					<view class="zx" v-for="(item,index) in dataList" :key='index' @click="toZxDetail(item.id)">
+					<view class="zx" v-for="(item,index) in dataList" :key='index' @click.stop="toZxDetail(item.id)">
 						<view class="zx-content" v-if="index%2==1">
 							<view class="zx-title">{{item.title}}</view>
 							<view class="cg zx-date">
@@ -151,7 +151,7 @@
 		</view>
 		
 		<!--  -->
-		 <uni-fab
+		 <uni-fab  v-show="showFab"
 		            :pattern="pattern"
 		            horizontal="right"
 					:popMenu="false"
@@ -180,6 +180,7 @@
 	export default{
 		data(){
 			return{
+				showFab:false,
 				collegeid:'',
 				title:'',
 				pattern:{
@@ -302,6 +303,11 @@
 		   },
 		   onPageScroll(e){
 			 this.top=e.scrollTop
+			 if(this.top>0){
+				 this.showFab=true
+			 }else{
+				 this.showFab=false
+			 }
 			 if(this.videoContext){
 				 if(e.scrollTop>this.playPosition + 225 ){
 					 this.videoContext.pause()

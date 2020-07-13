@@ -33,7 +33,7 @@
 				<!-- #endif -->
 				<!-- 余额？ -->
 				<view class="padding border-bottom">
-					<image src="" mode=""></image>
+					<image src="../../static/img/pic/other/ye.jpg" mode=""></image>
 					<text>余额支付</text>
 					<radio value='rest' class="fr" style="transform:scale(0.7)"/>
 				</view>
@@ -84,7 +84,15 @@
 			radioChange(e){
 				this.type=e.detail.value
 				if(this.type=='rest'){
-					this.restPay()
+					uni.showModal({
+						title:'提示',
+						content:'确认使用余额支付吗',
+						success:(e) =>{
+							if(e.confirm){
+								this.restPay()
+							}
+						}
+					})
 				}else{
 					let method=this.providerList.filter((item) => {return item.id==this.type}),way
 					if(method.length>0){

@@ -306,6 +306,7 @@
 		width: 100upx;
 		height: 100upx;
 		margin-bottom: 30upx;
+		border-radius: 50%;
 	}
 	.right-content{
 		text-align: justify;

@@ -225,7 +225,8 @@
 							"titleNView": {
 								"buttons": [{
 									"text":"管理",
-									"fontSize":"16px"}]
+									"fontSize":"14px",
+									"color":"#6C6C6C"}]
 									} 
 						}
 		            }

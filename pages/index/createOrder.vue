@@ -1,9 +1,9 @@
 <template>
 	<view style="padding-bottom: 80upx;">
-		<view class="margin padding s2" @click="chooseAddress">
-			<text>收货地址</text>
-			<text class="cg fr address ellipsis">
-				{{address ? address:'添加收货地址'}}
+		<view class="margin padding s2 addressLine" @click="chooseAddress">
+			<text class="addressTitle">收货地址</text>
+			<text class="cg  address" :class="{left:address}">
+				<text>{{address ? address:'添加收货地址'}}</text>
 					<text class="icon-arrow-right iconfont"></text>
 			</text>
 		</view>
@@ -236,6 +236,18 @@
 		margin: 20upx 0;
 		background-color: #fff;
 	}
+	.addressLine{
+		display: flex;
+		justify-content: space-between;
+	}
+	.addressTitle{
+		display: inline-block;
+		width: 150upx;
+		/* margin-right: 20upx; */
+	}
+	.address{
+		flex: 1;
+	}
 	.child-overall,.overall{
 		padding: 20upx 15upx;
 	}
@@ -348,6 +360,13 @@
 	}
 	.address{
 		display: inline-block;
-		max-width: 70%;
+		text-align: right;
+		/* max-width: 70%; */
+	}
+	.left{
+		text-align: left;
+	}
+	.left .iconfont{
+		float: right;
 	}
 </style>

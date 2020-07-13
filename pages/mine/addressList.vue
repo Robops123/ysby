@@ -4,7 +4,7 @@
 			<view class="padding s2">
 				<view class="s8 magin">
 					<text class="label-80">{{item.contactname}}</text>
-					<text>{{item.usermobile}}</text>
+					<text style="display: inline-block;vertical-align: middle;">{{item.usermobile}}</text>
 					<text class="fr cr" v-if="item.isdefault=='1'">默认地址</text>
 				</view>
 				<view class="flex-between magin">
@@ -123,7 +123,8 @@
 	.label-80{
 		display: inline-block;
 		margin-right: 20upx;
-		width: 160upx;
+		width: 300upx;
+		vertical-align: middle;
 	}
 	.address{
 		display: inline-block;

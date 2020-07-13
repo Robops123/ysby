@@ -350,6 +350,9 @@
 				}
 				  this.$apiPost(this.url,params).then((res) =>{
 					  that.total=res.data.length
+					  if(that.total>0){
+						  that.operate=true
+					  }
 					that.dataList=res.data	
 				  })
 			},
