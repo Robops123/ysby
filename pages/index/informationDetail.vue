@@ -6,10 +6,10 @@
 					
 				</view> -->
 				<!-- <rich-text :nodes=""></rich-text> -->
-				<view class="s5" style="text-align: center;">
+				<view class="s5" >
 					{{data.title}}
 				</view>
-				<view class="cg " style="margin-bottom: 20upx;text-align: right;">{{data.createtime}}</view>
+				<view class="cg " style="margin-bottom: 20upx;">{{data.createtime}}</view>
 				<view v-html="data.content"></view>
 				 <!-- <u-parse :content="data.content" v-if="data" id="article" class="article"  ref='article'/> -->
 				<!-- <view class="luntan-card-title">中期商会与你携手前行</view>

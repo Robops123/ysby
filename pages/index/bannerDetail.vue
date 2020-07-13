@@ -1,7 +1,7 @@
 <template>
-	<view style="width: 300upx; height: 400upx;">
-		<web-view :src="url"  :webview-styles="webviewStyles" >
-		</web-view>
+	<view >
+		<!-- <web-view :src="url"  :webview-styles="webviewStyles" >
+		</web-view> -->
 	</view>
 </template>
 
@@ -32,6 +32,19 @@
 		onLoad(p){
 			this.url=p.url
 			 bottomImageMenu = new BottomImageMenu(this.menus)
+			           // #ifdef APP-PLUS
+			           var  wv = plus.webview.create("","custom-webview",{
+			                      plusrequire:"none", //禁止远程网页使用plus的API，有些使用mui制作的网页可能会监听plus.key，造成关闭页面混乱，可以通过这种方式禁止
+			                'uni-app': 'none', //不加载uni-app渲染层框架，避免样式冲突
+			                      top:uni.getSystemInfoSync().statusBarHeight+44 //放置在titleNView下方。如果还想在webview上方加个地址栏的什么的，可以继续降低TOP值
+			                  })
+			                  wv.loadURL(this.url)
+			                  var currentWebview = this.$scope.$getAppWebview(); //此对象相当于html5plus里的plus.webview.currentWebview()。在uni-app里vue页面直接使用plus.webview.currentWebview()无效，非v3编译模式使用this.$mp.page.$getAppWebview()
+			                  currentWebview.append(wv);//一定要append到当前的页面里！！！才能跟随当前页面一起做动画，一起关闭
+			                  setTimeout(function() {
+			                      console.log(wv.getStyle())
+			                  }, 1000);//如果是首页的onload调用时需要延时一下，二级页面无需延时，可直接获取
+			                  // #endif
 		},
 		onNavigationBarButtonTap(){
 			// this.$loading()
@@ -76,17 +89,9 @@
 						scene: type, //WXSceneSession”分享到聊天界面，“WXSenceTimeline”分享到朋友圈，“WXSceneFavorite”分享到微信收藏     
 						success: (e) => {
 							console.log('success', e);
-							uni.showModal({
-								content: '已分享',
-								showCancel:false
-							})
 						},
 						fail: (e) => {
 							console.log('fail', e)
-							uni.showModal({
-								content: JSON.stringify(e),
-								showCancel:false
-							})
 						},
 						complete:function(){
 							uni.hideLoading()
@@ -97,18 +102,18 @@
 					switch (this.shareType){
 						case 0:
 							shareOPtions.summary = ' ';
-							shareOPtions.imageUrl =this.shareImg ? this.shareImg : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
-							shareOPtions.title = '';
+							shareOPtions.imageUrl =this.shareImg ? this.shareImg : '/static/img/app.jpg'
+							shareOPtions.title = '分享链接';
 							shareOPtions.href = this.url;
 							break;
 						case 1:
-							shareOPtions.summary = this.shareText;
+							shareOPtions.summary = '分享链接';
 							break;
 						case 2:
 							shareOPtions.imageUrl = this.image;
 							break;
 						case 5:
-							shareOPtions.imageUrl = this.shareImg ? this.shareImg : 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/app/share-logo@3.png'
+							shareOPtions.imageUrl = this.shareImg ? this.shareImg : '/static/img/app.jpg'
 							shareOPtions.title = this.shareTitle+'买啊';
 							shareOPtions.miniProgram = {
 								id:'gh_2f5dfaa2fae2',

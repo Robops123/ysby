@@ -254,9 +254,10 @@
 			},
 			closeSf() {
 				this.specClass = 'hide';
+				uni.$emit('closeSku')
 				setTimeout(() => {
 					this.specClass = 'none';
-					uni.$emit('closeSku')
+					
 				}, 250);
 			},
 			changeNum(val) {

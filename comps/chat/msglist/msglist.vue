@@ -15,7 +15,7 @@
 			<view class="main" :class="item.style">
 				<view class="user">
 					<!-- yourname：就是消息的 from -->
-					<text class="user-text">{{ item.yourname + ' ' + item.time}}</text>
+					<text class="user-text">{{item.time}}</text>
 				</view>
 				<image class="avatar" src="/static/images/theme@2x.png"/>
 				<view class="msg">

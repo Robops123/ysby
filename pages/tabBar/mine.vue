@@ -7,8 +7,8 @@
 				</view>
 				<view v-if="logined" >
 					<image :src="data.avatar" mode="" class="headface" @click="toPersonal"></image>
-					<text class="s4" @click="toPersonal">{{data.nickname}}</text>
-					<text class="fr s4" style="margin-top: 50upx;" @click="to('recharge',data.balance)">余额:{{data.balance}}</text>
+					<text class="s4 ellipsis nickname" @click="toPersonal">{{data.nickname}}</text>
+					<text class="fr s5" style="margin-top: 50upx;" @click="to('recharge',data.balance)">余额:{{data.balance}}</text>
 				</view>
 			</view>
 			<view class="s4" style="padding: 50upx 0;text-align: center;" @click="tologin" v-if='!logined'>请先登录</view>
@@ -527,5 +527,8 @@
 			height: 50upx;
 			margin-bottom: 20upx;
 			text-align: center;
+		}
+		.nickname{
+			max-width: 240upx;
 		}
 </style>

@@ -24,7 +24,7 @@
 						</checkbox-group>
 						<image :src="ChildItem.thumb" mode=""></image>
 						<view class="info">
-							<view class="s2 title">
+							<view class="s6 title">
 								{{ChildItem.title}}
 							</view>
 							<view class="s3 cg options" @click="getCategory(ChildItem,index,ChildIndex)">
@@ -444,6 +444,7 @@
 	}
 	.info{
 		position: relative;
+		flex: 1;
 	}
 	.bottom-content{
 		position: absolute;

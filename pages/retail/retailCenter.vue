@@ -8,7 +8,7 @@
 			</view>
 		</view>
 		<view class="invisity-code" @click="getPic">
-			<image class="invisity-code-img" src="../../static/img/pic/proxy/icon7.png" mode=""></image>
+			<image class="invisity-code-img" src="../../static/img/pic/proxy/icon7.png" mode="" style="width: 32upx;height: 32upx;"></image>
 			<text class="invisity-code-txt">我的邀请码: {{data.invited_code}}</text>
 			<image class="invisity-code-img fr invisity-code-img-r" src="../../static/img/pic/proxy/icon4.png" mode=""></image>
 		</view>
@@ -198,8 +198,8 @@
 	background-color: white;
 }
 .invisity-code-img{
-	width: 32upx;
-	height: 32upx;
+	width: 40upx;
+	height: 40upx;
 	vertical-align: middle;
 	margin-right: 20upx;
 }

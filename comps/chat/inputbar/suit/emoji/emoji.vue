@@ -34,7 +34,7 @@
 					</view>
 				</swiper-item>
 			</block>
-			<block class="second">
+			<!-- <block class="second">
 				<swiper-item>
 					<view class="emoji_item">
 						<image
@@ -61,7 +61,7 @@
 							:data-emoji="index" />
 					</view>
 				</swiper-item>
-			</block>
+			</block> -->
 		</swiper>
 		
 	

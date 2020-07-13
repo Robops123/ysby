@@ -37,7 +37,7 @@
 		<view class="option-box">
 			<view class="option-item" @click="openPicker">
 				<text>常居地</text>
-				<text class="f1 fr"><text style="padding-right: 20upx;">
+				<text class="f1 fr"><text style="padding-right: 20upx;" v-show="data.province">
 				{{data.province}} {{data.city}} {{data.area}}
 				</text>
 				<text class="icon-arrow-right iconfont"></text>

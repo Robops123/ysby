@@ -24,7 +24,7 @@
 			<view >
 				<view class="sp-item3-top-middle ellipsis">{{basic.merchname}}</view>
 				<view>
-					<uni-rate disabled="true" size="12" :value="basic.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
+					<uni-rate disabled="true" size="12" v-if="star!==''" :value="star" style="float: left;margin-top: 24upx;"></uni-rate>
 					<text class="s3 cg collectnum">{{basic.collect}}人关注</text>
 				</view>
 			</view>
@@ -35,10 +35,10 @@
 		
 		<swiper class="banner" autoplay="false" duration="500" interval="3000" :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
 		    <swiper-item v-for="(item, index) in carouselList" :key="index">
-		    	<image :src="item.thumb" mode="" class="banner"></image>
+		    	<image :src="item.thumb" mode="" class="banner" @click='toBannerDetail(item)'></image>
 		    </swiper-item>
 		   </swiper>
-		<view class="nav-bar">
+		<view class="nav-bar" style="background: #f3f3f3;">
 			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>精选</text></view>
 			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>新品</text></view>
 			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>销量</text></view>
@@ -52,8 +52,8 @@
 		</view>
 		
 		<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
-			<view class="padding" style="background-color:#fff;">
-				<view class="box">
+			<view class="padding" style="background-color:#f3f3f3;padding-top: 0;">
+				<view class="box" style="margin-top: 0;">
 					<view class="list" v-for="(item,index) in dataList" :key='index' @click="toGoodsDetail(item.id)">
 						<image :src="item.thumb" mode=""></image>
 						<view class="word">
@@ -63,7 +63,7 @@
 					</view>
 				</view>
 			</view>
-			<uni-load-more :status="more"></uni-load-more>
+			<uni-load-more :status="more" style="background-color: #f3f3f3;"></uni-load-more>
 		</scroll-view>
 	</view>
 </template>
@@ -78,6 +78,7 @@
 		},
 		data(){
 			return{
+				star:'',
 				uid:'',
 				token:'',
 				keywords:'',
@@ -198,6 +199,8 @@
 				  var url='&r=api.merchant.home&merchid='+this.id+'&uid='+this.uid+'&token='+this.token
 				  this.$apiPost(url).then((res) =>{
 					  that.basic=res.data
+					  that.star=that.basic.avgstar
+					  this.$forceUpdate()
 				  })
 			},
 			getCarousel(){
@@ -218,6 +221,27 @@
 				  that.page++
 				  that.getList(that.page)
 			  // },2000)
+			},
+			// 轮播链接
+			toBannerDetail(item){
+				switch(item.type){
+					case '1':
+					uni.navigateTo({
+						url:`/pages/index/bannerDetail?url=`+item.link
+					})
+					break ;
+					case '2':
+					uni.navigateTo({
+						url:`/pages/index/goodsDetail?id=`+item.goodsid
+					})
+					break ;
+					case '3':
+					uni.navigateTo({
+						url:`/pages/bussiness/shopPreview?id=`+item.merchid
+					})
+					break ;
+				}
+				
 			},
 			// 关注
 			focus(id){
@@ -252,7 +276,7 @@
 
 <style>
 	page{
-		background-color: #f7f7f7;
+		background-color: #f3f3f3;
 	}
 	.top-nav{
 		z-index: 999;
@@ -313,7 +337,7 @@
 	.sp-item3-top .headface{
 		width: 90upx;
 		height: 90upx;
-		/* border-radius: 50%; */
+		border-radius: 50%;
 		margin: 0 15upx;
 	}
 	.sp-item3-top-middle image{

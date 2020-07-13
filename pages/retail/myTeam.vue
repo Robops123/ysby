@@ -9,7 +9,7 @@
 		<view class="distributionOrder" >
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 				<view class="distributionOrder-card"  v-for='(item,index) in dataList' :key='index'>
-					<image class="distributionOrder-card-img" :src="item.avatar" mode=""></image>
+					<image class="distributionOrder-card-img" :src="item.avatar ? item.avatar:'/static/img/app.jpg'" mode=""></image>
 					<view class="distributionOrder-card-title">
 						<view>{{item.nickname}}</view>
 						<view class="s3 cg">注册时间:{{item.createtime}}</view>
@@ -194,7 +194,6 @@ page{
 	float: left;
 	margin: 16upx 23upx 0;
 	border-radius: 50%;
-	background-color: #007AFF;
 }
 .distributionOrder-card-title{
 	font-family: PingFang-SC-Regular;

@@ -1,6 +1,6 @@
 <template>
 	<view v-cloak>
-		<view class="nav padding">
+		<view class="nav padding" style="padding-bottom: 10upx;">
 			<!-- #ifdef APP-PLUS || H5 -->
 				<uni-status-bar />
 			<!-- #endif -->
@@ -11,7 +11,7 @@
 				<view v-show="!located" @click="reLocate">重新获取</view>
 				<view class="search-line">
 					<icon type="search" size="20" class="icon" />
-					<input type="text" v-model="keywords" @confirm='search' placeholder="寻找附近的商家"/>
+					<input type="text" v-model="keywords" @confirm='search' placeholder="搜索商家/商品"/>
 				</view>
 				<view class="comment" @click="toMessage">
 					<image src="../../static/img/pic/msg.png" mode="" class="" ></image>
@@ -88,14 +88,14 @@
 		
 		<image :src="bannerList[1].thumb" v-if="bannerList[1]" mode="widthFix" @click='toBannerDetail(bannerList[1])' class="banner banner3"></image>
 		
-		<view class="hot padding">
+		<view class="hot " style="padding-top: 20upx;">
 			<view class="hot-title"><image src="../../static/img/pic/index/hot.png" mode=""></image>热卖商品</view>
-			<view class=" sp2">
-				<view class="sp-item2 " v-for="(item,index) in hotList" :key='index' @click="toDetail(item.id)">
+			<view class=" sp2" style="margin-bottom: 0;padding:20upx 20upx 0 20upx;background: #f3f3f3;">
+				<view class="sp-item2 list" style="margin-top: 0;margin-bottom: 20upx;" v-for="(item,index) in hotList" :key='index' @click="toDetail(item.id)">
 					<image :src="item.thumb" mode=""></image>
-					<view class=" ellipsis" >{{item.title}}</view>
-					<view class="cr s5 word-bottom">
-						<text style="line-height: 70upx;"><text class="s3">￥</text>{{item.marketprice}}</text>
+					<view class=" ellipsis" style="padding-left: 20upx;">{{item.title}}</view>
+					<view class="cr s5 word-bottom" style="padding: 5upx 20upx  20upx ;box-sizing: border-box;">
+						<text><text class="s3">￥</text>{{item.marketprice}}</text>
 						<view class="buy fr">
 							<image src="../../static/img/pic/cart.png" mode="" @click.stop="getCategory(item.id,item.thumb,item.marketprice)"></image>
 						</view>
@@ -104,7 +104,7 @@
 			</view>
 		</view>
 		
-		<image :src="bannerList[2].thumb" v-if="bannerList[2]" @click='toBannerDetail(bannerList[2])' mode="widthFix" class="banner banner2"></image>
+		<image :src="bannerList[2].thumb" v-if="bannerList[2]" style="margin-top: 0;" @click='toBannerDetail(bannerList[2])' mode="widthFix" class="banner banner2"></image>
 		
 		<view class="padding">
 			<view class="card card2">
@@ -125,7 +125,7 @@
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
 							<text class="s3 cg collectnum">{{item.collect}}人关注   
-							<text class="s2" v-if="lng && lat"> | 距离{{item.distance}}千米</text>
+							<text class="s2" v-if="lng && lat"> | 距离{{item.distance < 10 ? (item.distance * 1000)+'米' : item.distance+'千米'}}</text>
 							</text>
 						</view>
 					</view>
@@ -656,7 +656,7 @@
 	}
 	
 	.main{
-		padding-top: 96upx;
+		padding-top: 84upx;
 	}
 	.swiper{
 		/* #ifdef APP-PLUS */
@@ -806,18 +806,19 @@
 		margin: 40upx 0 20upx;
 	}
 	.sp2 .sp-item2{
-		width: 47%;
+		background: #FFF;
+		width: 49%;
 		display: inline-block;
-		margin-bottom: 15upx;
+		/* margin-bottom: 15upx; */
 	}
 	.sp2 .sp-item2:nth-of-type(odd){
-		margin-right: 5%;
+		margin-right: 2%;
 	}
 	.sp2 .sp-item2 view{
-		margin-bottom: 20upx;
+		/* margin-bottom: 20upx; */
 	}
 	.sp2 image{
-		margin-bottom: 10upx;
+		/* margin-bottom: 10upx; */
 		width: 100%;
 		height: 350upx;
 	}
@@ -915,10 +916,11 @@
 			width: 55upx;
 			height: 55upx;
 			padding: 10upx;
+			margin-top: -15upx;
 		}
 		.word-bottom>view{
 			display: inline-block;
-			vertical-align:-webkit-baseline-middle;
+			vertical-align:middle;
 		}
 		.cityName{
 			max-width: 120upx;

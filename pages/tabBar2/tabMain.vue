@@ -10,8 +10,8 @@
             </view>
         </scroll-view>
         <view class="line-h"></view>
-        <swiper :current="tabIndex" class="swiper-box" style="flex: 1;" :duration="300" @change="ontabchange">
-            <swiper-item class="swiper-item">
+        <swiper :current="tabIndex" class="swiper-box" style="flex: 1;" :duration="300" @change="ontabchange" >
+            <swiper-item class="swiper-item" style="height: calc(100% - 40px);">
 				<operating ref='com0' @toggletab='toggletab'></operating>
 				<!-- <operating v-if="tabIndex==0"></operating> -->
 				<!-- <operating v-else></operating> -->
@@ -415,7 +415,7 @@
 	
 	.swiper-box{
 		
-		height: calc(100vh - 100upx);
+		height: calc(100vh - 40px);
 	}
 	.swiper-box .swiper-item{
 		overflow: auto;

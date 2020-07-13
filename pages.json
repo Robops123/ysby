@@ -107,7 +107,7 @@
 					{
 					    "path": "pages/index/bannerDetail",
 					    "style": {
-					       "navigationBarTitleText": "商品详情",
+					       "navigationBarTitleText": "",
 						   "app-plus": {
 						                       "titleNView": {
 						                           "buttons": [

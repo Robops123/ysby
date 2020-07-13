@@ -231,8 +231,6 @@
 			white-space: nowrap;
 		}
 		.operate-component{
-			/* #ifndef MP */
-			height: calc(100% - 40px);
-			/* #endif */
+			height: 100%;
 		}
 </style>

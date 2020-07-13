@@ -16,7 +16,7 @@
 						<view class="sp-item3-top-middle ellipsis">{{item.merchname}}</view>
 						<view>
 							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
-							<text class="s3 cg collectnum">{{item.collect}}人关注<text class="s2" v-if="lng && lat"> | {{parseInt(item.distance)}}千米</text></text>
+							<text class="s3 cg collectnum">{{item.collect}}人关注<text class="s2" v-if="lng && lat"> | {{item.distance < 10 ? (item.distance * 1000)+'米' : item.distance+'千米'}}</text></text>
 						</view>
 					</view>
 					<view class="enter-button" @click="toShop(item.id)">进店</view>
@@ -139,6 +139,7 @@
 				}
 				  this.$apiPost(url,p).then((res) =>{
 					  that.dataList=that.dataList.concat(res.data)
+					  console.log(res)
 					  that.total=res.total
 					  that.more=''
 					  if(that.page==1){
@@ -236,7 +237,7 @@
 	}
 	.list image{
 		width: 100%;
-		height: 380upx;
+		height: 350upx;
 	}
 	.list .word .ellipsis{
 		margin-bottom: 15upx;

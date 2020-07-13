@@ -70,7 +70,7 @@
 									<text class="operate-word">评论{{item.comment}}</text>
 								</view> 
 								<view class="luntan-card-bot-card" @click="toggleZan(item.isLike,item.id,index)">
-									<text class="iconfont " :class="{'icon-zan':item.isLike=='0' || !item.isLike,'icon-shou':item.isLike=='1','zaned':item.isLike=='1'}" ></text>
+									<text class="iconfont " :class="{'icon-zan':item.isLike=='0' || !item.isLike,'icon-shou':item.isLike=='1' && logined,'zaned':item.isLike=='1' && logined}" ></text>
 									<text class="operate-word">赞{{item.like}}</text>
 								</view>
 							</view>
@@ -275,16 +275,16 @@
 		   		this.uid=userInfo.uid
 		   		this.token=userInfo.token
 		   	}else{
-				this.uid=''
-				this.token=''
+		   		this.uid=''
+		   		this.token=''
 		   		this.logined=false
 		   	}
-		   	this.reset()
-		   	this.apart()
 		   },
 		   mounted(){
 		   	var that=this
 		   	
+		   	this.reset()
+		   	this.apart()
 			 bottomImageMenu = new BottomImageMenu(this.menus)
 			uni.$on('logined',function(){
 				var userInfo2=uni.getStorageSync('userInfo')
@@ -719,14 +719,21 @@
 			width: 100%;
 		}
 		.img-1 image{
+			margin-bottom: 10upx;
 			width: 100%;
 			height: 300upx;
 		}
 		.img-2 image{
+			margin-bottom: 10upx;
 			width: 49%;
 			height: 260upx;
 		}
+		.img-3{
+			display: flex;
+			justify-content: space-between;
+		}
 		.img-3 image{
+			margin-bottom: 10upx;
 			width: 33%;
 			height: 220upx;
 		}

@@ -10,6 +10,10 @@
 					</view>
 					<view class="enter-button" @click="toShop(data.merchid)">进店</view>
 				</view>
+				<view class="s5" >
+					{{data.title}}
+				</view>
+				<view class="cg " style="margin-bottom: 20upx;">{{data.abstract}}</view>
 				<!-- <view v-html="data.detail" id="article">
 					
 				</view> -->
@@ -32,7 +36,7 @@
 			<view>
 				<view style="width: 750upx;height: 26upx;background-color: #f6f7fb;"></view>
 				
-				<view class="luntan-card">
+				<view class="luntan-card" style="padding-top: 0;">
 					<view class="luntan-change">
 						<view class="luntan-change-card">
 							<text class="luntan-change-card-txt luntan-change-card-txts">评论{{total}}</text>
@@ -40,8 +44,8 @@
 						</view>
 					</view>
 					
-					<view class="comment">
-						<scroll-view scroll-y="true" id="sv" style="max-height: 250px;"  @scrolltolower='toBottom'>
+					<view class="comment" >
+						<scroll-view scroll-y="true" id="sv" style="max-height: 300px;"  @scrolltolower='toBottom'>
 							<view class="comment-item" v-for='(item,index) in commentList' :key='index'>
 								<image class="" :src="item.avatar" mode=""></image>
 								<view class="word">
@@ -149,6 +153,7 @@
 			}
 			this.getDetail()
 			uni.$on('logined',function(){
+				console.log('logined')
 				var userInfo2=uni.getStorageSync('userInfo')
 				that.logined=true
 				that.uid=userInfo2.uid
@@ -406,11 +411,11 @@
 
 <style>
 	.luntan-change{
-		margin-bottom: 40upx;
+		margin-bottom: 20upx;
 		padding-left: 30upx;
 		/* width: 750upx; */
 		box-sizing: border-box;
-		height: 92upx;
+		/* height: 92upx; */
 		border-bottom: 1px solid #f7f7f7;
 		display: flex;
 		justify-content: space-between;
@@ -421,8 +426,9 @@
 	.luntan-change-card{
 		width: 100%;
 		
-		height: 60upx;
-		margin-top: 20upx;
+		padding: 10upx 0;
+		/* height: 60upx; */
+		/* margin-top: 20upx; */
 	}
 	.luntan-change-card-txt{
 		font-size: 28upx;
@@ -556,9 +562,12 @@
 		vertical-align: middle;
 	}
 	.luntan-card-bot{
+		position: fixed;
+		bottom: 0;
+		left: 0;
 		background: #f9f9f9;
 		width: 100%;
-		height: 74upx;
+		/* height: 74upx; */
 		margin-top: 30upx;
 		border-top: 2upx solid #e6e6e6;
 		display: flex;
@@ -568,7 +577,8 @@
 	.luntan-card-bot-card{
 		width: 237upx;
 		height: 100%;
-		line-height: 74upx;
+		padding: 20upx 0;
+		/* line-height: 74upx; */
 		font-size: 22upx;
 		text-align: center;
 	}
@@ -596,7 +606,7 @@
 		
 	}
 	.comment{
-		padding-left: 20upx;
+		padding: 0 0 62upx 20upx;
 	}
 	.comment-item{
 		display: flex;

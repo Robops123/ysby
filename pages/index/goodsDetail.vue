@@ -1,9 +1,18 @@
 <template>
 	<view style="padding-bottom: 50px;" >
-		<view class="padding top border-bottom">
+		<swiper class="preview alterPreview" :autoplay="autoplay" duration="500" interval="3000" v-show='alterShow'
+		 :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
+			<swiper-item v-if="data.video && data.videopic" style='width: 100%;'>
+							<image :src="data.videopic" mode="" class="banner"></image>
+						</swiper-item>
+		    <swiper-item v-for="(item, index) in data.thumb_url" :key="index" style='width: 100%;'>
+		    	<image :src="item" mode="" class="banner"></image>
+		    </swiper-item>
+		   </swiper>
+		<view class="padding top border-bottom" style="padding-bottom: 0;" :class="{resetTop:alterShow}">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
 			<!-- #ifdef MP || H5 -->
-			<swiper class="preview" :autoplay="autoplay" duration="500" interval="5000" 
+			<swiper class="preview " :autoplay="autoplay" duration="500" interval="3000" 
 			@transition='swiperChange' :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
 				<swiper-item v-if="data.video">
 								<video :src="data.video" class="preview" id="myVideo" :poster='data.videopic'  @play='play' @pause='pause'>
@@ -15,17 +24,20 @@
 			   </swiper>
 			<!-- #endif -->
 			
+			
+			
+			
 			<!-- <custom-swiper class="preview" :swiperList="swiperList" v-if="swiperList.length>0"></custom-swiper> -->
 			
-			<view class="show-top" style="margin-top: 20upx;">
-				<view class="name">{{data.title}}</view>
+			<view class="show-top" style="margin-top: 20upx;margin-bottom: 0;">
+				<view class="name" style="margin-bottom: 0;">{{data.title}}</view>
 				<view class="share" @click="openShare">
 					<view class="icon-share iconfont cr"></view>
 					<view class="cr s2">分享</view>
 				</view>
 			</view>
-			<view class="cr s5">￥{{data.marketprice}}</view>
-			<view class="cg s3">运费:{{data.freight}}</view>
+			<view class="cr s5" style="margin-bottom: 0;">￥{{data.marketprice}}</view>
+			<view class="cg s3" style="margin-bottom: 10upx;">运费:{{data.freight}}</view>
 		</view>
 		
 		<view class="padding s2 border-bottom" @click="chooseCategory">
@@ -107,7 +119,7 @@
 		<uni-goods-nav :fill="true"  :options="options" :buttonGroup="buttonGroup" 
 		 @click="onClick" @buttonClick="buttonClick" class="goods-nav animated slideInUp" />
 		 
-		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='thumb_url["1"] || ""' :defaultPrice='defaultPrice'
+		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='thumb_url["1"] || ""' :defaultPrice='defaultPrice' @closeSku='closesku'
 		 :category='category' :total='total' v-if="receivedCategory" :goodsid='id'></sku>
 		 
 		 
@@ -154,6 +166,7 @@
 		},
 		data () {
 		      return {
+				  alterShow:false,
 				  subNVue:'',
 				  title:'',
 				  hx_openid:'',
@@ -208,6 +221,9 @@
 				collectOperate:false,
 		      }
 		    },
+			onUnload(){
+				uni.$off('logined')
+			},
 			onLoad(p){
 				var that=this
 				this.id=p.id
@@ -424,6 +440,15 @@
 			  },
 			  chooseCategory(){
 				  if(this.needCategory){
+					  var that=this
+					  // #ifdef APP-PLUS
+					  this.subNVue.hide()
+					  this.alterShow=true
+					  // #endif
+					  uni.$on('closeSku',function(){
+						  that.subNVue.show()
+						  that.alterShow=false
+					  })
 					  this.defaultPrice=this.data.marketprice.split(' - ')[0]
 					  this.$refs.sku.specClass='show'
 				  }
@@ -446,6 +471,9 @@
 				    // var url='/wangtosale_list'
 				    this.$apiPost(url).then((res) =>{
 						that.data=res.data
+						uni.setNavigationBarTitle({
+							title:res.data.title
+						})
 						var range=that.data.marketprice.split(' - ')
 						if(range.length>1){
 							if(range[0]==range[1]){
@@ -551,9 +579,15 @@
 				  	urls:[url]
 				  })
 			  },
+			  closesku(){
+				  console.log('close')
+				   this.subNVue.show()
+				   this.alterShow=false
+			  },
 			  getPoster(e){
 				  // #ifdef APP-PLUS
 				  this.subNVue.hide()
+				  this.alterShow=true
 				  // #endif
 				  this.visible=true
 				  this.advImg=e
@@ -572,6 +606,7 @@
 			  							that.$msg('保存成功，请到相册中查看')
 										// #ifdef APP-PLUS
 										that.subNVue.show()
+										that.alterShow=false
 										// #endif
 											that.visible=false
 			  						},
@@ -590,6 +625,7 @@
 			  hide(){
 				  // #ifdef APP-PLUS
 				  this.subNVue.show()
+				  this.alterShow=false
 				  // #endif
 			  }
 			  // compress(url){
@@ -896,5 +932,13 @@
 		/* #ifdef APP-PLUS */
 			padding-top: 250px;
 		/* #endif */
+	}
+	.resetTop{
+		/* #ifdef APP-PLUS */
+			padding-top: 0 !important;
+		/* #endif */
+	}
+	.alterPreview{
+		height: 250px !important;
 	}
 </style>
