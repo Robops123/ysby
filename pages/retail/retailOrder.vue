@@ -5,7 +5,12 @@
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 				<view class="distributionOrder-card"  v-for='(item,index) in dataList' :key='index' >
 					<image class="distributionOrder-card-img" :src="item.avatar" mode=""></image>
-					<view class="distributionOrder-card-title">{{item.nickname}}</view>
+					<view class="distributionOrder-card-title">
+					{{item.nickname}}
+					<text v-show="item.level=='1'">一级</text>
+					<text v-show="item.level=='2'">二级</text>
+					<text v-show="item.level=='3'">三级</text>
+					</view>
 					<view class="distributionOrder-card-zhuangtai cr">已完成</view>
 					<view style="clear: both;"></view>
 					<view class="distributionOrder-card-code">订单编号:{{item.orderno}}</view>
@@ -176,6 +181,9 @@ page{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+.distributionOrder-card-title text{
+	margin-left: 40upx;
 }
 .distributionOrder-card-zhuangtai{
 	height: 57upx;

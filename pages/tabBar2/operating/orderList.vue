@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="nav-bar">
-			<!-- <view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view> -->
+			<view class="nav nav-left" :class="{active:active=='qb'}" @click="toggle('qb')"><text>全部</text></view>
 			<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
 			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
 			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
@@ -118,7 +118,7 @@
 				promptVisible:false,
 				uid:'',
 				token:'',
-				active:1,
+				active:0,
 				orderList:[
 					{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'}
 				],
@@ -141,9 +141,7 @@
 		   onLoad(p){
 			   var that=this
 			  var userInfo=uni.getStorageSync('userInfo'),that=this
-			  if(p.active!=0){
 			  	this.active=p.active
-			  }
 			  if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 			  	this.uid=userInfo.uid
 			  	this.token=userInfo.token
@@ -274,7 +272,7 @@
 	.nav{
 		color: #afafaf;
 		display: inline-block;
-		width: 20%;
+		width: 16.6%;
 		box-sizing: border-box;
 	}
 	.nav.active text{

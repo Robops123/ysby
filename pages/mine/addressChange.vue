@@ -72,6 +72,7 @@
 				this.contactname=item.contactname
 				this.usermobile=item.usermobile
 				this.address=item.address
+				this.choosed=true
 				this.lotusAddressData.provinceName=item.province
 				this.lotusAddressData.cityName=item.city
 				this.lotusAddressData.townName=item.district

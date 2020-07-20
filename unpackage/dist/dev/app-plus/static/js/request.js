@@ -25,7 +25,7 @@ const baseURL = 'https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=z
 					resolve(res.data)
 				}else if(res.data.resultMessage=='token有误'){
 					uni.hideLoading()
-					uni.removeStorageSync('userInfo')
+					// uni.removeStorageSync('userInfo')
 					uni.showToast({
 						title:'请重新登录',
 						icon:'none',
@@ -80,7 +80,7 @@ const baseURL = 'https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=z
 						icon:'none',
 						duration:2000
 					})
-					uni.removeStorageSync('userInfo')
+					// uni.removeStorageSync('userInfo')
 				}else{
 					uni.hideLoading()
 					uni.showToast({

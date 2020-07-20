@@ -1,0 +1,3 @@
+page{background:#f3f3f3}.margin{margin:20rpx 0;background-color:#fff}.border-bottom{border-bottom:1px solid #ededed}.payway{background-color:#fff}.payway image{width:60rpx;height:60rpx;margin-right:30rpx}.payway image,
+.payway text,
+.payway radio{display:inline-block;vertical-align:middle}.payway radio{margin-top:10rpx}.btn{width:80%;height:75rpx;background:#ff6d7e!important;border-radius:75rpx;margin:200rpx auto 0;text-align:center;line-height:75rpx;letter-spacing:4px;color:#fff!important;font-size:34rpx}.manage{text-align:right;padding:20rpx;box-sizing:border-box;background-color:#fff}

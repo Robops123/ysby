@@ -33,7 +33,7 @@
 				<!-- #endif -->
 				<!-- 余额？ -->
 				<view class="padding border-bottom">
-					<image src="../../static/img/pic/other/ye.jpg" mode=""></image>
+					<image src="../../static/img/pic/other/ye.png" mode=""></image>
 					<text>余额支付</text>
 					<radio value='rest' class="fr" style="transform:scale(0.7)"/>
 				</view>
@@ -324,8 +324,8 @@
 				  this.$apiPost(url,params).then((res) =>{
 					uni.hideLoading()
 					that.$msg('支付成功')
-					uni.$emit('updateOrder')
 					setTimeout(function(){
+						uni.$emit('updateOrder')
 						uni.redirectTo({
 							url:'./payResult?contact='+that.contact+'&money='+that.money+'&orderno='+that.orderno
 						})

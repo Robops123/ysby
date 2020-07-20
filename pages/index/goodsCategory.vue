@@ -311,4 +311,10 @@
 	.right-content{
 		text-align: justify;
 	}
+	
+	::-webkit-scrollbar {
+	  width: 0px;
+	  height: 0px;
+	  color:#transparent;
+	}
 </style>

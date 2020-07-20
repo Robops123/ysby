@@ -37,7 +37,7 @@
 				<view>退款金额：￥
 				<input type="number" v-model="form.price" @input='filter'/>
 				</view>
-				<view class="cg s3">最多￥45.00,含发货邮费￥0.00</view>
+				<view class="cg s3">最多￥{{ goods.goodsprice + goods.freight}},含发货邮费￥{{goods.freight}}</view>
 				<view v-if="form.type==1">
 					<text>退款说明：</text>
 					<input type="text" v-model="form.remark" placeholder="选填"/>
@@ -104,8 +104,8 @@
 				cateCurrent2:0,
 				cateCurrent3:0,
 				 array: ['待发货', '待收货', '已收货'],
-				 array2: ['质量不好', '欺诈', '无理取闹', '辣鸡'],
-				 array3: ['快递', '快递2'],
+				 array2: ['质量不好', '买错了', '不想要了'],
+				 array3: ['快递'],
 				imageList: [], //保存图片路径集合
 				imageLength: 5, //限制图片张数
 				sourceTypeIndex: 2, //添加方式限制
@@ -130,7 +130,6 @@
 			}
 		},
 		onLoad(p){
-			console.log(p)
 			this.goods=JSON.parse(p.goods)
 			this.form.type=p.type
 			this.form.orderno=p.orderno
@@ -188,10 +187,11 @@
 				},
 				filter(event) { //过滤input密码类型只输入数字
 						let i = Number(event.target.value)
+						let uphold=this.goods.goodsprice + this.goods.freight
 						// var reg=new RegExp("^[0-9]*$")
-						if(i>45) {
+						if(i>uphold) {
 							setTimeout(() => {
-								this.form.price=45
+								this.form.price=uphold
 							},0)
 						} else if(i<0){
 							setTimeout(() => {
@@ -229,12 +229,13 @@
 						// this.form.goods=JSON.stringify(this.form.goods)
 						this.form.pics=this.pic.join(',')
 						  this.$apiPost(url,this.form).then((res) =>{
-								that.$msg('申请成功，请等待审核')
+								
 								that.pic=[]
 								uni.hideLoading()
 								uni.navigateBack({
 									delta:2
 								})
+								that.$msg('申请成功，请等待审核')
 								// setTimeout(function(){
 								// 	that.to()
 								// },500)

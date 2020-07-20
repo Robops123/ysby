@@ -143,7 +143,6 @@
 			}
 			this.getDetail()
 			uni.$on('logined',function(){
-				console.log('login')
 				var userInfo2=uni.getStorageSync('userInfo')
 				that.logined=true
 				that.uid=userInfo2.uid
@@ -399,11 +398,11 @@
 
 <style>
 	.luntan-change{
-		margin-bottom: 40upx;
+		margin-bottom: 20upx;
 		padding-left: 30upx;
 		/* width: 750upx; */
 		box-sizing: border-box;
-		height: 92upx;
+		/* height: 92upx; */
 		border-bottom: 1px solid #f7f7f7;
 		display: flex;
 		justify-content: space-between;
@@ -414,8 +413,9 @@
 	.luntan-change-card{
 		width: 100%;
 		
-		height: 60upx;
-		margin-top: 20upx;
+		padding: 10upx 0;
+		/* height: 60upx; */
+		/* margin-top: 20upx; */
 	}
 	.luntan-change-card-txt{
 		font-size: 28upx;
@@ -442,7 +442,7 @@
 	}
 	.luntan-card{
 		width: 100%;
-		padding: 0 24upx 20upx;
+		padding: 20upx 24upx;
 		box-sizing: border-box;
 	}
 	.luntan-card-top{
@@ -549,9 +549,12 @@
 		vertical-align: middle;
 	}
 	.luntan-card-bot{
+		position: fixed;
+		bottom: 0;
+		left: 0;
 		background: #f9f9f9;
 		width: 100%;
-		height: 74upx;
+		/* height: 74upx; */
 		margin-top: 30upx;
 		border-top: 2upx solid #e6e6e6;
 		display: flex;
@@ -561,7 +564,8 @@
 	.luntan-card-bot-card{
 		width: 237upx;
 		height: 100%;
-		line-height: 74upx;
+		padding: 20upx 0;
+		/* line-height: 74upx; */
 		font-size: 22upx;
 		text-align: center;
 	}
@@ -570,6 +574,80 @@
 		height: 30upx;
 		vertical-align: middle;
 		/* margin: 0 10upx 6upx 0; */
+	}
+	.share{
+		padding: 0 0 30upx 60upx;
+		font-size: 26upx;
+		color: #7f7f7f;
+		margin: 40upx 0 10upx;
+	}
+	.share>text,
+	.share image{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.share image{
+		width: 50upx;
+		height: 50upx;
+		margin: 0 35upx ;
+		
+	}
+	.comment{
+		padding: 0 0 62upx 20upx;
+	}
+	.comment-item{
+		display: flex;
+		margin-bottom: 30upx;
+	}
+	.comment-item>image,
+	.comment-item>view{
+		/* display: inline-block;
+		vertical-align: top; */
+	}
+	.comment-item>view{
+		flex: 1;
+	}
+	.comment-item>image{
+		width: 80upx;
+		height: 80upx;
+		margin-right: 30upx;
+	}
+	.f1{
+		color: #2447C2;
+	}
+	.f2{
+		color: #858585;
+		margin-top: 15upx;
+	}
+	.fr .luntan-card-bot-card{
+		width: initial;
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 44upx;
+		margin-left: 40upx;
+	}
+	.fr{
+		float: right;
+	}
+	
+	.enter-button{
+		color: #ff8f94;
+		border: 1px solid #ff8f94;
+		padding: 6upx 25upx;
+		border-radius: 52upx;
+		float: right;
+		margin-top: 16upx;
+	}
+	
+	.zaned{
+		color: red;
+	}
+	
+	.luntan-card-bot-card .iconfont{
+		margin: 0 10upx;
+	}
+	.luntan-card-bot-card>text{
+		vertical-align: middle;
 	}
 	.share{
 		padding: 0 0 30upx 60upx;

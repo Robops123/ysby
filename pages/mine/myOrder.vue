@@ -45,6 +45,9 @@
 									</view>
 								</view>
 								<view class="mount">
+									<view class=" cr s3" v-show='childItem.status==8'>退款成功</view>
+									<view class=" cr s3" v-show='childItem.status==9'>退款审核中</view>
+									<view class=" cr s3" v-show='childItem.status==10'>退款驳回</view>
 									<view class="s3 "><text class="s1">￥{{childItem.goodsprice}}</text></view>
 									<view class="s3 cg">*{{childItem.amount}}</view>
 								</view>
@@ -460,9 +463,12 @@
 	.child-overall-item {
 		margin-bottom: 20upx;
 	}
-
-	.child-overall-item .info {
+	
+	.child-overall-item .info{
 		width: 320upx;
+	}
+	.child-overall-item .info .title {
+		
 		/* height: 64upx; */
 		overflow: hidden; //一定要写
 		text-overflow: ellipsis; //超出省略号

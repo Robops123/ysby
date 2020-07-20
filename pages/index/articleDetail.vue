@@ -24,12 +24,12 @@
 				<view class="luntan-card-lianjie">#坚守共赢胜利#</view>
 				<view class="luntan-card-introduce">抗击疫情，中企商会在行动！截至2月8日，中企商会持续投入抗击疫情，面对这场突如其来的“疫”战，中企商会与大家共同坚守，终将会取得这场疫情防控狙击战的胜利！加油！</view>
 				<image class="luntan-card-img" src="../../static/img/bg/activity.png" mode=""></image> -->
-				<!-- <view class="share" id="share">
+				<view class="share" id="share">
 					<text>分享</text>
-					<image src="../../static/img/pic/other/weixin.png" mode="" style="width: 55upx;"></image>
-					<image src="../../static/img/pic/other/pyq.png" mode=""></image>
-					<image src="../../static/img/pic/other/QQ.png" mode=""></image>
-				</view> -->
+					<image src="../../static/img/pic/other/weixin.png" mode="" style="width: 55upx;" @click="share('WXSceneSession',5)"></image>
+					<image src="../../static/img/pic/other/pyq.png" mode="" @click="share('WXSenceTimeline',0)"></image>
+					<!-- <image src="../../static/img/pic/other/QQ.png" mode=""></image> -->
+				</view>
 			</view>
 			
 			
@@ -139,6 +139,7 @@
 			}
 		},
 		onLoad(e){
+			var that=this
 			this.id=e.id
 			this.like=e.like
 			this.comment=e.comment
@@ -404,7 +405,67 @@
 				}
 				this.title=this.data.title || '文章分享'
 				this.popshow=true
-			}
+			},
+			share(type,way){
+				this.$loading()
+				let shareOPtions = {
+					provider: 'weixin',
+								// extra: {
+								// 	scene: type
+								// },
+					scene: type, //WXSceneSession”分享到聊天界面，“WXSenceTimeline”分享到朋友圈，“WXSceneFavorite”分享到微信收藏,
+					type:way,
+					success: (e) => {
+						uni.showModal({
+							content: '已分享',
+							showCancel:false
+						})
+					},
+					fail: (e) => {
+						uni.showModal({
+							content: JSON.stringify(e),
+							showCancel:false
+						})
+					},
+					complete:function(){
+						uni.hideLoading()
+					}
+				}
+				// 1文字  2图片  0图文   5小程序
+				switch (way){
+					case 0:
+						shareOPtions.summary = ' ';
+						shareOPtions.imageUrl =this.shareImg ? this.shareImg : '/static/img/app.jpg'
+						shareOPtions.title = this.data.title;
+						shareOPtions.href = 'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.id;
+						break;
+					case 1:
+						shareOPtions.summary = this.shareText;
+					case 2:
+						shareOPtions.imageUrl = this.image;
+						break;
+					case 5:
+						shareOPtions.imageUrl = '/static/img/app.jpg'
+						shareOPtions.title = this.data.title;
+						shareOPtions.miniProgram = {
+							id:'gh_2f5dfaa2fae2',
+							path:'/pages/index/articleDetail?id='+this.id,
+							webUrl:'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.id,
+							type:0
+						};
+						break;
+					default:
+						break;
+				}
+				// if(shareOPtions.type === 0 && plus.os.name === 'iOS'){//如果是图文分享，且是ios平台，则压缩图片 
+				// 	shareOPtions.imageUrl = await this.compress();
+				// }
+				// if(shareOPtions.type === 1 && shareOPtions.provider === 'qq'){//如果是分享文字到qq，则必须加上href和title
+				// 	shareOPtions.href = 'https://uniapp.dcloud.io';
+				// 	shareOPtions.title = '欢迎体验uniapp';
+				// }
+				uni.share(shareOPtions);
+			},
 		}
 	}
 </script>
@@ -602,7 +663,7 @@
 	.share image{
 		width: 50upx;
 		height: 50upx;
-		margin: 0 35upx ;
+		margin-left:50upx ;
 		
 	}
 	.comment{

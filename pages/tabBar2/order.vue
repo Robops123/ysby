@@ -1,11 +1,12 @@
 <template>
 	<view style="background-color: #fff;">
 		<view class="nav-bar">
-			<!-- <view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view> -->
+			<view class="nav nav-left" :class="{active:active=='qb'}" @click="toggle('qb')"><text>全部</text></view>
 			<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>待付款</text></view>
 			<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)"><text>待发货</text></view>
 			<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>待收货</text></view>
 			<view class="nav nav-left" :class="{active:active==6}" @click="toggle(6)"><text>已完成</text></view>
+			<view class="nav nav-left" :class="{active:active=='qx'}" @click="toggle('qx')"><text>售后</text></view>
 		</view>
 		
 		<view class="padding search">
@@ -116,7 +117,7 @@
 				promptVisible:false,
 				uid:'',
 				token:'',
-				active:1,
+				active:'qb',
 				orderList:[
 					{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'},{name:'asdasdasds'}
 				],
@@ -272,7 +273,7 @@
 	.nav{
 		color: #afafaf;
 		display: inline-block;
-		width: 25% !important;
+		width: 16.6% !important;
 		box-sizing: border-box;
 	}
 	.nav.active text{

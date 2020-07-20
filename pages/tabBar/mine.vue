@@ -6,8 +6,8 @@
 					<image src="../../static/img/pic/setting.png" mode="" class="fr setting-img" @click="toSetting"></image>
 				</view>
 				<view v-if="logined" >
-					<image :src="data.avatar" mode="" class="headface" @click="toPersonal"></image>
-					<text class="s4 ellipsis nickname" @click="toPersonal">{{data.nickname}}</text>
+					<image :src="data.avatar ? data.avatar:'/static/img/app.jpg'" mode="" class="headface" @click="toPersonal"></image>
+					<text class="s4 ellipsis nickname" @click="toPersonal">{{data.nickname ? data.nickname:'请重新登录'}}</text>
 					<text class="fr s5" style="margin-top: 50upx;" @click="to('recharge',data.balance)">余额:{{data.balance}}</text>
 				</view>
 			</view>

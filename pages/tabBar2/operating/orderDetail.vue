@@ -8,7 +8,7 @@
 				<view class="process" v-if="data.status=='4'">订单已取消</view>
 				<view class="process" v-if="data.status=='5'">买家已收货，待评论</view>
 				<view class="process" v-if="data.status=='6'">订单已完成</view>
-				<view class="intro">订单金额(含运费):￥{{data.totalprice}}</view>
+				<view class="intro">订单金额(含运费):￥{{data.totalpricereal}}</view>
 			</view>
 			<image src="../../../static/img/pic/shape1.png" mode=""></image>
 		</view>

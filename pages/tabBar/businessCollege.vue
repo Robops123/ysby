@@ -51,7 +51,7 @@
 								</view>
 							</view>
 							<view style="overflow: hidden;">
-									<video class="img-1" :src="item.video" v-if="item.video" :id="'video'+index" :ref="'video'+index"
+									<video class="img-1" :src="item.video" v-if="item.video" :id="item.id" :ref="item.id" :data-id="item.id"
 									:initial-time='item.video_seen_time=="" ? 0:item.video_seen_time' :poster='item.videopic'
 									 @loadedmetadata='getVideoInfo($event,index)' @play='recordPrepare($event,index,this)' @pause='recordProgress(item.id,index)' @timeupdate='timeupdate($event,index)'
 									 controls style="position: relative;"></video>
@@ -70,7 +70,7 @@
 									<text class="operate-word">评论{{item.comment}}</text>
 								</view> 
 								<view class="luntan-card-bot-card" @click="toggleZan(item.isLike,item.id,index)">
-									<text class="iconfont " :class="{'icon-zan':item.isLike=='0' || !item.isLike,'icon-shou':item.isLike=='1' && logined,'zaned':item.isLike=='1' && logined}" ></text>
+									<text class="iconfont " :class="{'icon-zan':item.isLike=='0' || !logined,'icon-shou':item.isLike=='1' && logined,'zaned':item.isLike=='1' && logined}" ></text>
 									<text class="operate-word">赞{{item.like}}</text>
 								</view>
 							</view>
@@ -171,8 +171,10 @@
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	import uParse from '@/components/gaoyia-parse/parse.vue'
 	import uniFab from '@/components/uni-fab/uni-fab.vue';
+	// #ifdef APP-PLUS
 	import BottomImageMenu from '@/components/zh-bottom-image-menu/zh-bottom-image-menu.js'
 	var bottomImageMenu = null
+	// #endif
 	 // import topicon from '@/components/gwh-backTopIcon/gwh-backTopIcon.vue'
 	 // #ifdef MP
 	 import sharePrompt from '@/components/sharePrompt/sharePrompt'
@@ -286,7 +288,7 @@
 		   	
 		   	this.reset()
 		   	this.apart()
-			 bottomImageMenu = new BottomImageMenu(this.menus)
+			 
 			uni.$on('logined',function(){
 				var userInfo2=uni.getStorageSync('userInfo')
 				that.logined=true
@@ -298,6 +300,9 @@
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
 		   			that.sh=res
+					// #ifdef APP-PLUS
+					bottomImageMenu = new BottomImageMenu(that.menus)
+					// #endif
 		   		})
 		   	},0)
 		   },
@@ -386,7 +391,7 @@
 					  }else{
 						   that.dataList=that.dataList.concat(res.data)
 					  }
-					 
+					 that.$forceUpdate()
 					  that.more=''
 					  if(that.page==1){
 					  	uni.hideLoading()
@@ -419,19 +424,32 @@
 			// },
 			// 视频观看记录
 			recordPrepare(e,index,t){
-				let id=e.target.id || 'video'+index
+				let id=e.currentTarget.dataset.id
 				if(this.videoContext){
-					if(this.videoContext.id!=id){
+					var tempContext=uni.createVideoContext(id)
+					if(this.videoContext!=tempContext){
 						this.videoContext.pause()
-						setTimeout(() =>{
-							this.playPosition=e.target.offsetTop
-							 this.videoContext = uni.createVideoContext(id)
-						})
+								setTimeout(() =>{
+									this.playPosition=e.target.offsetTop
+									 this.videoContext = uni.createVideoContext(id)
+								})
 					}
 				}else{
 					this.playPosition=e.target.offsetTop
-					 this.videoContext = uni.createVideoContext(id)
+					this.videoContext = uni.createVideoContext(id)
 				}
+				// if(this.videoContext){
+				// 	if(this.videoContext.id!=id){
+				// 		this.videoContext.pause()
+				// 		setTimeout(() =>{
+				// 			this.playPosition=e.target.offsetTop
+				// 			 this.videoContext = uni.createVideoContext(id)
+				// 		})
+				// 	}
+				// }else{
+				// 	this.playPosition=e.target.offsetTop
+				// 	 this.videoContext = uni.createVideoContext(id)
+				// }
 			},
 			getVideoInfo(info,index){
 				this.dataList[index].duration=info.detail.duration
@@ -552,7 +570,7 @@
 							shareOPtions.miniProgram = {
 								id:'gh_2f5dfaa2fae2',
 								path:'/pages/index/articleDetail?id='+this.collegeid,
-								webUrl:'https://uniapp.dcloud.io',
+								webUrl:'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.collegeid,
 								type:0
 							};
 							break;
@@ -834,11 +852,11 @@
 		}
 		.zx-content{
 			position: relative;
-			height: 135px;
+			height: 108px;
 		}
 		.zx .zx-image-box{
 			width: 60%;
-			height: 135px;
+			height: 108px;
 			position: relative;
 		}
 		.zx-image-box:after{
@@ -847,7 +865,7 @@
 			right: 0;
 			top: 0;
 			border-top: 0;
-			border-bottom: 135px solid transparent;
+			border-bottom: 108px solid transparent;
 			border-left:0 solid transparent;
 			border-right: 100upx solid #fff;
 			z-index: 99;
@@ -858,7 +876,7 @@
 			left: 0;
 			top: 0;
 			border-top: 0;
-			border-bottom: 135px solid transparent;
+			border-bottom: 108px solid transparent;
 			border-right:0 solid transparent;
 			border-left: 100upx solid #fff;
 			z-index: 99;

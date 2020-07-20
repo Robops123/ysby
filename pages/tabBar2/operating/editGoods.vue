@@ -44,11 +44,11 @@
 		
 		
 		<view class="activity s2">
-			<view class="bottom-border">
+			<!-- <view class="bottom-border">
 				<text class="label-80 cg">商品类型</text>
 				<text>商品分类</text>
 				<text class="fr s3">不可修改</text>
-			</view>
+			</view> -->
 			<view class="bottom-border">
 				<text class="label-80 cg">商品分类</text>
 				<view>

@@ -26,7 +26,7 @@
 			<view class="s5">
 				<image src="../../static/img/pic/other/icon1.png" mode="" style="width: 35upx;height: 40upx;margin-right: 15upx;vertical-align: middle;" class=""></image>
 				<text>订单管理</text>
-				<view class="s3 cg fr" @click="toOrderList(0)">全部
+				<view class="s3 cg fr" @click="toOrderList('qb')">全部
 				<text class="icon-arrow-right iconfont "></text>
 				</view>
 			</view>

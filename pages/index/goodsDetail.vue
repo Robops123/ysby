@@ -19,7 +19,7 @@
 								</video>
 							</swiper-item>
 			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index">
-			    	<image :src="item" mode="" class="banner"></image>
+			    	<image :src="item" mode="heightFix" class="banner"></image>
 			    </swiper-item>
 			   </swiper>
 			<!-- #endif -->
@@ -253,7 +253,7 @@
 			onShareAppMessage() {
 				
 				return {
-					title: "小美女小帅哥快来买啊",
+					title: this.data.title,
 					path: '/pages/index/goodsDetail?id='+this.id,
 					imageUrl:this.image ? this.image : '/static/img/app.jpg'
 				}
@@ -427,6 +427,7 @@
 				  }
 				    
 				    this.$apiPost(url,params).then((res) =>{
+						uni.hideLoading()
 				  		// that.options[2].info++
 						if(this.data.isCollect=='1'){
 							that.$msg('取消关注')
@@ -435,7 +436,7 @@
 							that.$msg('已关注')
 							that.data.isCollect='1'
 						}
-						uni.hideLoading()
+						
 				    })
 			  },
 			  chooseCategory(){
@@ -909,6 +910,7 @@
 		font-size: 12px;
 	}
 	.banner{
+		margin: 0 auto;
 		width: 100%;
 		height: 100%;
 	}

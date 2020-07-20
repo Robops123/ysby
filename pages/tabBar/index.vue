@@ -68,7 +68,7 @@
 				<!-- #endif -->
 			</view>
 			</view>
-			<image :src="bannerList[0].thumb" v-if="bannerList[0]" @click='toBannerDetail(bannerList[0])' mode="" class="banner banner2 banner-low"></image>
+			<image :src="bannerList[0].thumb" v-if="bannerList[0]" mode="widthFix" @click='toBannerDetail(bannerList[0])' class="banner banner2 banner-low"></image>
 			<view class="padding main" style="padding-top: 20upx;">
 			<view class="card card1">
 				<view style="padding:0  2%;">
@@ -627,7 +627,9 @@
 		top: 0;
 		width: 100%;
 		box-sizing: border-box;
-		
+		/* #ifdef MP */
+		padding-top: 0 !important;
+		/* #endif */
 		
 	}
 	.nav .nav-content{
@@ -691,10 +693,11 @@
 		border-radius: 0 !important;
 	}
 	.banner-low{
-		height: 200upx;
-		width: 710upx;
-		display: block;
-		margin: 0 auto;
+		width: 100%;
+		/* height: 200upx; */
+		/* width: 710upx; */
+		/* display: block; */
+		/* margin: 0 auto; */
 	}
 	.title{
 		margin-right: 10upx;

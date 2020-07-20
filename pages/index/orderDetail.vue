@@ -5,11 +5,14 @@
 				<view class="process" v-if='data.status=="1"'>订单未支付</view>
 				<view class="process" v-if='data.status=="2"'>等待卖家发货</view>
 				<view class="process" v-if='data.status=="3"'>卖家已发货</view>
-				<view class="process" v-if='data.status=="4"'>订单已取消</view>
+				<view class="process" v-if='data.status=="4"'>用户已取消</view>
 				<view class="process" v-if='data.status=="5"'>买家已收货，待评论</view>
 				<view class="process" v-if='data.status=="6"'>订单已完成</view>
 				<view class="process" v-if='data.status=="7"'>等待商家退款</view>
 				<view class="process" v-if='data.status=="8"'>退款成功</view>
+				<view class="process" v-if='data.status=="9"'>退款审核中</view>
+				<view class="process" v-if='data.status=="10"'>退款驳回</view>
+				<view class="process" v-if='data.status=="11"'>商家取消发货</view>
 			</view>
 			<image src="../../static/img/pic/shape2.png" mode=""></image>
 		</view>
