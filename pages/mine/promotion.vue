@@ -15,10 +15,11 @@
 			return {
 				uid:'',
 				token:'',
-				data:''
+				data:'',
+				type:''
 			}
 		},
-		mounted(){
+		onLoad(p){
 			var userInfo=uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.uid=userInfo.uid

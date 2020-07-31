@@ -8,7 +8,7 @@
 				<view v-if="logined" >
 					<image :src="data.avatar ? data.avatar:'/static/img/app.jpg'" mode="" class="headface" @click="toPersonal"></image>
 					<text class="s4 ellipsis nickname" @click="toPersonal">{{data.nickname ? data.nickname:'请重新登录'}}</text>
-					<text class="fr s5" style="margin-top: 50upx;" @click="to('recharge',data.balance)">余额:{{data.balance}}</text>
+					<text class="fr s5" style="margin-top: 50upx;" @click="to('recharge',data.balance)">余额:{{data.balance ? data.balance:0}}</text>
 				</view>
 			</view>
 			<view class="s4" style="padding: 50upx 0;text-align: center;" @click="tologin" v-if='!logined'>请先登录</view>
@@ -17,7 +17,7 @@
 					<view>{{logined ? data.collectGoods:0}}</view>
 					<view>我的收藏</view>
 				</view>
-				<view class="options1-item" @click="to('shop')">
+				<view class="options1-item" @click="to('shop')" v-show="merchModelStatus==1">
 					<view>{{logined ? data.collectMerch:0}}</view>
 					<view>关注店铺</view>
 				</view>
@@ -163,6 +163,7 @@
 		  },
 		data(){
 			return {
+				merchModelStatus:0,
 				data:'',
 				logined:false,
 				  visible: false,
@@ -183,6 +184,14 @@
 			}else{
 				this.logined=false
 			}
+		},
+		onLoad(){
+			// #ifdef MP
+			this.wdnmd()
+			// #endif
+			// #ifdef APP-PLUS
+			this.merchModelStatus=Number(1)
+			// #endif
 		},
 		methods:{
 			contact(){
@@ -220,6 +229,16 @@
 				uni.navigateTo({
 					url:`/pages/tabBar2/tabMain`
 				})
+			},
+			// 小程序绕开审核
+			wdnmd(){
+				var that=this
+				  var url='&r=api.mo'
+				  this.$apiPost(url).then((res) =>{
+					 that.merchModelStatus=Number(res.data.status)
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
 			},
 			toMyOrder(active,margin){
 				var ce=this.$operateInterceptor(this.logined)

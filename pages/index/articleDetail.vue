@@ -26,8 +26,12 @@
 				<image class="luntan-card-img" src="../../static/img/bg/activity.png" mode=""></image> -->
 				<view class="share" id="share">
 					<text>分享</text>
-					<image src="../../static/img/pic/other/weixin.png" mode="" style="width: 55upx;" @click="share('WXSceneSession',5)"></image>
+					<button class="share-item share-btn" open-type="share">
+										<image src="../../static/img/pic/other/weixin.png"  style="width: 55upx;" ></image>
+					</button>
+					<!-- #ifdef APP-PLUS -->
 					<image src="../../static/img/pic/other/pyq.png" mode="" @click="share('WXSenceTimeline',0)"></image>
+					<!-- #endif -->
 					<!-- <image src="../../static/img/pic/other/QQ.png" mode=""></image> -->
 				</view>
 			</view>
@@ -153,6 +157,7 @@
 				this.logined=false
 			}
 			this.getDetail()
+			this.getProvider()
 			uni.$on('logined',function(){
 				console.log('logined')
 				var userInfo2=uni.getStorageSync('userInfo')
@@ -161,6 +166,17 @@
 				that.token=userInfo2.token
 				that.getDetail()
 			})
+		},
+		onShareAppMessage() {
+			
+			return {
+				title: this.title,
+				path: '/pages/index/articleDetail?id='+this.id,
+				imageUrl:this.image ? this.image : '/static/img/app.jpg'
+			}
+		},
+		onUnload(){
+			uni.$off('logined')
 		},
 		onPageScroll(e){
 			// this.calcArticleHeight()
@@ -436,7 +452,7 @@
 					case 0:
 						shareOPtions.summary = ' ';
 						shareOPtions.imageUrl =this.shareImg ? this.shareImg : '/static/img/app.jpg'
-						shareOPtions.title = this.data.title;
+						shareOPtions.title = this.title;
 						shareOPtions.href = 'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.id;
 						break;
 					case 1:
@@ -446,7 +462,7 @@
 						break;
 					case 5:
 						shareOPtions.imageUrl = '/static/img/app.jpg'
-						shareOPtions.title = this.data.title;
+						shareOPtions.title = this.title;
 						shareOPtions.miniProgram = {
 							id:'gh_2f5dfaa2fae2',
 							path:'/pages/index/articleDetail?id='+this.id,
@@ -465,6 +481,21 @@
 				// 	shareOPtions.title = '欢迎体验uniapp';
 				// }
 				uni.share(shareOPtions);
+			},
+			
+			getProvider(){
+							  uni.getProvider({
+							  	service: 'share',
+							  	success: (e) => {
+							  		console.log(e)
+							  	},
+							  	fail: (e) => {
+							  		uni.showModal({
+							  			content:'获取分享通道失败',
+							  			showCancel:false
+							  		})
+							  	}
+							  });
 			},
 		}
 	}
@@ -734,5 +765,17 @@
 	.article img{
 		width: initial;
 		max-width: 100%;
+	}
+	.share-btn{
+		outline: none;
+		display: inline-block;
+		background-color: initial;
+		color: initial;
+		line-height: initial;
+		vertical-align: middle;
+		font-size: 14px;
+	}
+	.share-btn::after{
+		display: none;
 	}
 </style>

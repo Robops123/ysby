@@ -29,7 +29,7 @@
 			uni.$on('page-popup', (data) => {  
 				that.thumb_url=data.thumb_url
 				that.video=data.video
-				that.videoPic=data.videopic
+				that.videoPic=data.poster
 				that.videoContext = uni.createVideoContext('myVideo')
 			})  
 

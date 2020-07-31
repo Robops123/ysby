@@ -106,7 +106,7 @@
 		
 		<image :src="bannerList[2].thumb" v-if="bannerList[2]" style="margin-top: 0;" @click='toBannerDetail(bannerList[2])' mode="widthFix" class="banner banner2"></image>
 		
-		<view class="padding">
+		<view class="padding" v-show="merchModelStatus==1">
 			<view class="card card2">
 				<text>附近商家</text>
 				<view class="fr s3 more" style="margin-top: 6upx;" @click="toDiscover">聚集知名店铺<icon class="iconfont icon-arrow-right1" type="" size='14'/></view>
@@ -114,7 +114,7 @@
 			
 			
 		</view>
-		<view>
+		<view v-show="merchModelStatus==1">
 			<view class="sp-item3"  v-for="(item,index) in businessList" :key='index'>
 				<view class="sp-item3-top">
 					<view>
@@ -172,6 +172,7 @@
 		},
 		data(){
 			return{
+				merchModelStatus:0,
 				nickName:'aa',
 				avatarUrl:'',
 				defaultPrice:0,
@@ -242,10 +243,14 @@
 				that.token=userInfo2.token
 				that.msgListener()
 			})
-			// #ifdef MP-WEIXIN
+			// #ifdef MP
 			this.amapPlugin = new amap.AMapWX({  
 			            key: this.key  
 			        });  
+			this.wdnmd()
+			// #endif
+			// #ifdef APP-PLUS
+			this.merchModelStatus=Number(1)
 			// #endif
 			this.getCate()
 			this.getHotList()
@@ -461,6 +466,16 @@
 					  this.$msg(err)
 				  })
 			},
+			// 小程序绕开审核
+			wdnmd(){
+				var that=this
+				  var url='&r=api.mo'
+				  this.$apiPost(url).then((res) =>{
+					 that.merchModelStatus=Number(res.data.status)
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
+			},
 			reLocate(){
 				uni.showModal({
 					title:'提示',
@@ -480,14 +495,21 @@
 			},
 			mpLocate(){
 				var that=this
+				console.log('mplocate')
 				this.amapPlugin.getRegeo({
 				                success: (res) => {  
 									that.city=res[0].regeocodeData.addressComponent.city
 									that.lng=res[0].longitude
 									that.lat=res[0].latitude
-									that.getNearBy(res[0])
+									var params={
+										longitude:res[0].longitude,
+										latitude:res[0].latitude
+									}
+									that.located=true
+									that.getNearBy(params)
 				                },
 								  fail:(reason) =>{
+									  console.log(reason)
 									  that.located=false
 									  that.getNearBy({})
 									  that.$msg('请打开定位功能')
@@ -503,6 +525,7 @@
 						that.city=res.address.city
 						that.lng=res.longitude
 						that.lat=res.latitude
+						that.located=true
 						that.getNearBy(res)
 					},
 					fail:(reason) =>{

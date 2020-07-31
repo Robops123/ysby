@@ -1,8 +1,8 @@
 <template>
 	<view class="padding">
 		<view class="nav-bar">
-			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>附近商家</text></view>
-			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>优质产品</text></view>
+			<view class="nav " :class="{active:active==1}" v-show="merchModelStatus==1" @click="toggle(1)"><text>附近商家</text></view>
+			<view class="nav " :class="{active:active==2,noMerchStatus:merchModelStatus!=1}" @click="toggle(2)"><text>优质产品</text></view>
 		</view>
 		
 		<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom' >
@@ -56,9 +56,11 @@
 <script>
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
+	import amap from '@/common/amap-wx.js'; 
 	export default{
 		data(){
 			return{
+				merchModelStatus:0,
 				located:false,
 				active:1,
 				sh:'',
@@ -68,7 +70,9 @@
 				total:0,
 				more:'',
 				lat:'',
-				lng:''
+				lng:'',
+				amapPlugin:null,
+				key:'364f9609be0c585e1d79d1c6f5ca4faf',
 			}
 		},
 		components:{
@@ -81,6 +85,15 @@
 		     },
 		   },
 		   mounted(){
+			   // #ifdef MP-WEIXIN
+			   this.amapPlugin = new amap.AMapWX({  
+			               key: this.key  
+			           });  
+				this.wdnmd()
+			   // #endif
+			   // #ifdef APP-PLUS
+			   this.merchModelStatus=Number(1)
+			   // #endif
 		   	var that=this
 		   	this.apart()
 		   	setTimeout(function(){
@@ -112,6 +125,19 @@
 				this.dataList=[]
 				this.more=''
 			},
+			// 小程序绕开审核
+			wdnmd(){
+				var that=this
+				  var url='&r=api.mo'
+				  this.$apiPost(url).then((res) =>{
+					 that.merchModelStatus=Number(res.data.status)
+					 if(that.merchModelStatus!=1){
+							that.toggle(2)
+					}
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
+			},
 			apart(){
 				var that=this,params={
 						page:this.page,
@@ -122,10 +148,14 @@
 					if(this.located){
 						params.lng=this.lng
 						params.lat=this.lat
-						console.log(params)
 						this.getList(params,url)
 					}else{
-						this.locate(params,url)
+						// #ifdef APP-PLUS || H5
+						this.appLocate(params,url)
+						// #endif
+						// #ifdef MP-WEIXIN
+						this.mpLocate(params,url)
+						// #endif
 					}
 				}else{
 					 url='&r=api.discovery.goods'
@@ -139,7 +169,6 @@
 				}
 				  this.$apiPost(url,p).then((res) =>{
 					  that.dataList=that.dataList.concat(res.data)
-					  console.log(res)
 					  that.total=res.total
 					  that.more=''
 					  if(that.page==1){
@@ -147,11 +176,56 @@
 					  }
 				  })
 			},
+			mpLocate(p,url){
+				var that=this
+				this.amapPlugin.getRegeo({
+				                success: (res) => {  
+									that.lng=res[0].longitude
+									that.lat=res[0].latitude
+									p.lng=res[0].longitude
+									p.lat=res[0].latitude
+									that.located=true
+									that.getList(p,url)
+				                },
+								  fail:(reason) =>{
+									  console.log(reason)
+									  p.lng=''
+									  p.lat=''
+									  that.located=false
+									  that.getList(p,url)
+									  that.$msg('请打开定位功能')
+								  }
+				            });  
+			},
+			appLocate(p,url){
+				var that=this
+				uni.getLocation({
+					type: 'wgs84',
+					geocode:true,
+					success:(res) =>{
+						that.lng=res.longitude
+						that.lat=res.latitude
+						p.lng=res.longitude
+						p.lat=res.latitude
+						that.located=true
+						that.getList(p,url)
+					},
+					fail:(reason) =>{
+						console.log(reason)
+						p.lng=''
+						p.lat=''
+						that.located=false
+						that.getNearBy({})
+						that.$msg('请打开定位功能')
+					}
+				})
+			},
 			locate(params,url){
 				var that=this
 				uni.getLocation({
 					type: 'wgs84',
 					success:(res) =>{
+						console.log(res)
 						that.located=true
 						that.lng=res.longitude
 						that.lat=res.latitude
@@ -160,6 +234,7 @@
 						that.getList(params,url)
 					},
 					fail:(reason) =>{
+						console.log(reason)
 						params.lng=''
 						params.lat=''
 						that.getList(params,url)
@@ -322,5 +397,8 @@
 		}
 		.collectnum{
 			margin-left: 15upx;
+		}
+		.noMerchStatus{
+			width: 100% !important;
 		}
 </style>

@@ -510,6 +510,7 @@
 	.mount {
 		flex: 1;
 		margin-left: 15upx;
+		word-break: keep-all;
 		text-align: right;
 		padding-top: 20upx;
 	}
@@ -597,5 +598,10 @@
 
 	.r-cb {
 		display: flex;
+	}
+	::-webkit-scrollbar {
+	  width: 0px;
+	  height: 0px;
+	  color:#transparent;
 	}
 </style>

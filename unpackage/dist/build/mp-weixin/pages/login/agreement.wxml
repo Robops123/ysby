@@ -1,1 +1,1 @@
-<web-view src="{{src}}"></web-view>
+<view class="padding"><view class="s5" style="text-align:center;">{{title}}</view><view><rich-text nodes="{{data}}"></rich-text></view></view>

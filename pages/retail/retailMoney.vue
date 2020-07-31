@@ -45,12 +45,12 @@
 				<picker @change="withdrawWayChange" :value="index" :range="array"  class="border-bottom">
 				    <view class="uni-input">{{array[index] || '选择提现方式'}}</view>
 				</picker>
-				<view v-show="index===0">
+				<view v-show="index===0 || index==='0'">
 					<view class="border-bottom">
 						<input type="text" v-model="wxno" placeholder="请输入微信号"/>
 					</view>
 				</view>
-				<view v-show="index===1">
+				<view v-show="index===1 || index==='1'">
 					<view class="border-bottom">
 						<input type="text" v-model="realname" placeholder="请输入姓名"/>
 					</view>
@@ -64,7 +64,7 @@
 						<input type="text" v-model="bankname" placeholder="请输入所属支行"/>
 					</view>
 				</view>
-				<view v-show="index===2">
+				<view v-show="index===2 || index==='2'">
 					<view class="border-bottom">
 						<input type="text" v-model="realname" placeholder="请输入姓名"/>
 					</view>

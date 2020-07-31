@@ -74,8 +74,8 @@
 			<view class="f3 sm-word">
 				<!-- <text> -->
 					<text>登录即代表同意</text>
-					<text class="f5" @click="openWebView('https://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html?spm=a2145.7268393.0.0.f9aa5d7cvRAlIP','服务协议')">《易舒伴平台用户服务协议》</text>
-					<text class="f5" @click="openWebView('https://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html?spm=a2145.7268393.0.0.f9aa5d7cvRAlIP','隐私政策')">《隐私政策》</text>
+					<text class="f5" @click="openWebView('1','服务协议')">《易舒伴平台用户服务协议》</text>
+					<text class="f5" @click="openWebView('2','隐私政策')">《隐私政策》</text>
 					<text>等，接受免除或者限制责任，诉讼管辖约定等粗体标示条款。</text>
 					<!-- </text> -->
 			</view>
@@ -177,10 +177,9 @@
 				      }
 				    });
 			},
-			openWebView(src,title){
-				console.log(src)
+			openWebView(type,title){
 				uni.navigateTo({
-					url:'/pages/login/agreement?src='+src+'&title='+title
+					url:'/pages/login/agreement?type='+type+'&title='+title
 				})
 			},
 			authorizeLogin(){

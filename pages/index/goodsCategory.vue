@@ -26,8 +26,8 @@
 				<view class="" >
 					<image  :src="category[tabActive].advimg" v-if="category.length>0 && categoryReady" mode="widthFix" class="banner" ></image>
 					<!-- <image v-else :src="category[tabActive].thumb" mode="" class="banner"></image> -->
-					<view class="s1 headline" v-if="active==1 && category.length>0">{{'全部'+category[tabActive].name+'商家'}}</view>
-					<view class="s1 headline" v-if="active==2 && category.length>0">{{'全部'+category[tabActive].name+'用品'}}</view>
+					<view class="s1 headline" v-if="active==1 && category.length>0">{{'全部'+(category[tabActive].name || '')+'商家'}}</view>
+					<view class="s1 headline" v-if="active==2 && category.length>0">{{'全部'+(category[tabActive].name || '')+'用品'}}</view>
 					<!-- 区 -->
 					<view class="right-content" v-if="active==1">
 						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList',tabActive,item.id)">
@@ -65,7 +65,7 @@
 				tapped:'',
 				category:[],
 				active:1,
-				tabActive:'',
+				tabActive:0,
 				sh:'',
 				dataList:[],
 				page:1,

@@ -2,24 +2,24 @@
 	<view style="padding-bottom: 50px;" >
 		<swiper class="preview alterPreview" :autoplay="autoplay" duration="500" interval="3000" v-show='alterShow'
 		 :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
-			<swiper-item v-if="data.video && data.videopic" style='width: 100%;'>
-							<image :src="data.videopic" mode="" class="banner"></image>
+			<swiper-item v-if="data.video && data.videopic" style='width: 100%;' class="banner">
+							<image :src="data.videopic" mode="" ></image>
 						</swiper-item>
-		    <swiper-item v-for="(item, index) in data.thumb_url" :key="index" style='width: 100%;'>
-		    	<image :src="item" mode="" class="banner"></image>
+		    <swiper-item v-for="(item, index) in data.thumb_url" :key="index" style='width: 100%;' class="banner">
+		    	<image :src="item" mode="" ></image>
 		    </swiper-item>
 		   </swiper>
 		<view class="padding top border-bottom" style="padding-bottom: 0;" :class="{resetTop:alterShow}">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
 			<!-- #ifdef MP || H5 -->
-			<swiper class="preview " :autoplay="autoplay" duration="500" interval="3000" 
+			<swiper class="preview " :autoplay="false" duration="500" interval="3000" id="mpSwiper" :style="{height:(mpSwiperHeight*0.75+'px')}"
 			@transition='swiperChange' :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
-				<swiper-item v-if="data.video">
-								<video :src="data.video" class="preview" id="myVideo" :poster='data.videopic'  @play='play' @pause='pause'>
+				<swiper-item v-if="data.video" class="banner">
+								<video :src="data.video"  id="myVideo" :poster='data.videopic'  @play='play' @pause='pause'>
 								</video>
 							</swiper-item>
-			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index">
-			    	<image :src="item" mode="heightFix" class="banner"></image>
+			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index" class="banner">
+			    	<image :src="item" mode="heightFix" ></image>
 			    </swiper-item>
 			   </swiper>
 			<!-- #endif -->
@@ -166,6 +166,7 @@
 		},
 		data () {
 		      return {
+				  mpSwiperHeight:0,
 				  alterShow:false,
 				  subNVue:'',
 				  title:'',
@@ -514,6 +515,17 @@
 							that.getCategory()
 							// #ifdef MP || H5
 							that.videoContext = uni.createVideoContext('myVideo')
+							setTimeout(function(){
+								uni.getSystemInfo({
+								　　success: function(res) { // res - 各种参数
+								　　    let info = uni.createSelectorQuery().select("#mpSwiper");
+								　　　  　info.boundingClientRect(function(data) { //data - 各种参数
+								　　　  　console.log(data)  // 获取元素宽度
+										that.mpSwiperHeight=data.width
+								　　    }).exec()
+								       }
+								});
+							},0)
 							// #endif
 						})
 				  	  // that.total=res.total
@@ -649,7 +661,27 @@
 <style>
 	.preview{
 		width: 100%;
-		height: 550upx;
+		min-height: 200px;
+		/* height: 550upx;
+		height: 0;
+		padding-top: 75%;
+		position: relative; */
+	}
+	.preview .banner{
+		/* left: 0;
+		top: 0;
+		position: absolute;
+		width: 100%;
+		height: 100%; */
+		
+		width: 100%;
+		/* height: 550upx; */
+		height: 100%;
+	}
+	.preview .banner image,
+	.preview .banner video{
+		width: 100%;
+		height: 100%;
 	}
 	.top>view{
 		margin-bottom: 20upx;
@@ -909,11 +941,11 @@
 		margin-bottom: 20upx;
 		font-size: 12px;
 	}
-	.banner{
+	/* .banner{
 		margin: 0 auto;
 		width: 100%;
 		height: 100%;
-	}
+	} */
 	.detail{
 		word-break: break-all;
 	}

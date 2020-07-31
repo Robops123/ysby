@@ -2,10 +2,10 @@
 	<view>
 		<view class="padding" :class="{padding1:active==1 || active==4}">
 			<view class="nav-bar">
-				<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>热门推文</text></view>
-				<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>精选商家</text></view>
-				<view class="nav nav-right" :class="{active:active==3}" @click="toggle(3)"><text>推荐产品</text></view>
-				<view class="nav nav-left" :class="{active:active==4}" @click="toggle(4)"><text>资讯</text></view>
+				<view class="nav nav-left" :class="{active:active==1,noMerchStatus:merchModelStatus!=1}" @click="toggle(1)"><text>热门推文</text></view>
+				<view class="nav nav-right" :class="{active:active==2}" v-show="merchModelStatus==1" @click="toggle(2)"><text>精选商家</text></view>
+				<view class="nav nav-right" :class="{active:active==3,noMerchStatus:merchModelStatus!=1}" @click="toggle(3)"><text>推荐产品</text></view>
+				<view class="nav nav-left" :class="{active:active==4,noMerchStatus:merchModelStatus!=1}" @click="toggle(4)"><text>资讯</text></view>
 			</view>
 			
 			
@@ -50,11 +50,11 @@
 									 mode="" @click="showImgPreview(item.thumb,itemChild)"></image>
 								</view>
 							</view>
-							<view style="overflow: hidden;">
+							<view style="position: relative;padding-top: 80%;height: 0;width: 100%;">
 									<video class="img-1" :src="item.video" v-if="item.video" :id="item.id" :ref="item.id" :data-id="item.id"
-									:initial-time='item.video_seen_time=="" ? 0:item.video_seen_time' :poster='item.videopic'
+									:initial-time='item.video_seen_time=="" ? 0:item.video_seen_time' :poster='item.videopic' 
 									 @loadedmetadata='getVideoInfo($event,index)' @play='recordPrepare($event,index,this)' @pause='recordProgress(item.id,index)' @timeupdate='timeupdate($event,index)'
-									 controls style="position: relative;"></video>
+									 controls></video>
 								</view>
 						</view>
 							
@@ -182,6 +182,7 @@
 	export default{
 		data(){
 			return{
+				merchModelStatus:0,
 				showFab:false,
 				collegeid:'',
 				title:'',
@@ -285,10 +286,14 @@
 		   },
 		   mounted(){
 		   	var that=this
-		   	
 		   	this.reset()
 		   	this.apart()
-			 
+			 // #ifdef MP
+			 this.wdnmd()
+			 // #endif
+			 // #ifdef APP-PLUS
+			 this.merchModelStatus=Number(1)
+			 // #endif
 			uni.$on('logined',function(){
 				var userInfo2=uni.getStorageSync('userInfo')
 				that.logined=true
@@ -339,6 +344,16 @@
 				uni.navigateTo({
 					url:`/pages/index/goodsDetail?id=${id}`
 				})
+			},
+			// 小程序绕开审核
+			wdnmd(){
+				var that=this
+				  var url='&r=api.mo'
+				  this.$apiPost(url).then((res) =>{
+					 that.merchModelStatus=Number(res.data.status)
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
 			},
 			toggle(t){
 				this.active=t
@@ -762,7 +777,11 @@
 			height: 220upx;
 		}
 		video.img-1{
+			left: 0;
+			top: 0;
+			position: absolute;
 			width: 100%;
+			height: 100%;
 		}
 		/* .img-1 image,
 		.img-2 image,
@@ -914,5 +933,8 @@
 			margin-left: 20upx;
 			width: 60upx;
 			height: 60upx;
+		}
+		.noMerchStatus{
+			width: 33% !important;
 		}
 </style>

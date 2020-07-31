@@ -83,6 +83,7 @@
 			},
 			radioChange(e){
 				this.type=e.detail.value
+				console.log(this.type)
 				if(this.type=='rest'){
 					uni.showModal({
 						title:'提示',

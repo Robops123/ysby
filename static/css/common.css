@@ -197,3 +197,13 @@ textarea{
 	font-size: 30upx;
 }
 
+.fixed-fab{
+		position: fixed;
+		bottom: 50px;
+		right: 50px;
+		width: 100px;
+		height: 100px;
+		background: #E1673E;
+		color: #fff;
+		z-index: 9999;
+	}

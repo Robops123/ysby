@@ -163,29 +163,30 @@
 				this.total=0
 				this.dataList=[]
 				this.more=''
-				if(this.active!=4){
-					this.rangeActive=''
-					this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+this.active+'&merchid='+this.id+'&keywords='+this.keywords
-				}else{
-					this.rangeActive= this.rangeActive == 1 ? 2:1
-					if(this.rangeActive==1){
-						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+4+'&merchid='+this.id+'&keywords='+this.keywords
-					}else if(this.rangeActive==2){
-						this.url='&r=api.merchant.home.goods&page='+this.page+'&pagesize='+this.pageSize+'&sort='+5+'&merchid='+this.id+'&keywords='+this.keywords
-					}
-				}
 			},
 			getList(p){
 				var that=this
-				// var params={
-				//   page:p,
-				//   pagesize: this.pageSize
-				// }
+				var params={
+				  page:this.page,
+				  pagesize: this.pageSize,
+				  sort:this.active,
+				  merchid:this.id,
+				  keywords:this.keywords
+				}
+				if(this.active==4){
+					this.rangeActive= this.rangeActive == 1 ? 2:1
+					if(this.rangeActive==1){
+						params.sort=4
+					}else if(this.rangeActive==2){
+						params.sort=5
+					}
+				}
+				var url='&r=api.merchant.home.goods'
 				if(this.page==1){
 					this.$loading()
 				}
 				  // var url='/wangtosale_list'
-				  this.$apiPost(this.url).then((res) =>{
+				  this.$apiPost(url,params).then((res) =>{
 					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
