@@ -26,7 +26,7 @@
 				<view class="" >
 					<image  :src="category[tabActive].advimg" v-if="category.length>0 && categoryReady" mode="widthFix" class="banner" ></image>
 					<!-- <image v-else :src="category[tabActive].thumb" mode="" class="banner"></image> -->
-					<view class="s1 headline" v-if="active==1 && category.length>0">{{'全部'+(category[tabActive].name || '')+'商家'}}</view>
+					<view class="s1 headline" v-if="active==1 && category.length>0">{{'全部'+(category[tabActive].name || '')}}<text v-show="merchModelStatus==1">商家</text></view>
 					<view class="s1 headline" v-if="active==2 && category.length>0">{{'全部'+(category[tabActive].name || '')+'用品'}}</view>
 					<!-- 区 -->
 					<view class="right-content" v-if="active==1">
@@ -58,6 +58,7 @@
 		},
 		data(){
 			return{
+				merchModelStatus:0,
 				type:'',
 				categoryReady:false,
 				url:'&r=api.home.morecate',
@@ -85,6 +86,12 @@
 				   this.type=p.type
 				   
 			   // }
+			   // #ifdef MP-WEIXIN
+			   	this.wdnmd()
+			   // #endif
+			   // #ifdef APP-PLUS
+			   this.merchModelStatus=Number(1)
+			   // #endif
 			   this.getCategory(this.type)
 			   
 		   },
@@ -113,6 +120,16 @@
 				uni.navigateBack({
 					delta:1
 				})
+			},
+			// 小程序绕开审核
+			wdnmd(){
+				var that=this
+				  var url='&r=api.mo'
+				  this.$apiPost(url).then((res) =>{
+					 that.merchModelStatus=Number(res.data.status)
+				  }).catch((err) =>{
+					  this.$msg(err)
+				  })
 			},
 			toggle(t){
 				this.active=t

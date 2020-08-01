@@ -10,7 +10,7 @@
 					<checkbox-group @change="parentChange($event,item,index)" class="r-cb" v-show="operate">
 					    <checkbox value="" :checked="item.checked" style="transform:scale(0.7)"/>
 					</checkbox-group>
-					<view class="" @click="toShop(item.merchid)">
+					<view class="merch-line" @click="toShop(item.merchid)">
 						<icon type="" class="icon-iconfontshop-copy iconfont"></icon>
 						<text class="overall-title">{{item.merchname}}</text>
 						<icon type="" class="icon-arrow-right iconfont "></icon>
@@ -518,5 +518,14 @@
 	.disabled{
 		border-color: #f4f4f4;
 		background-color: #f4f4f4;
+	}
+	.merch-line{
+		display: table;
+		line-height: 26px;
+	}
+	.merch-line text,
+	.merch-line .iconfont{
+		display: table-cell;
+		vertical-align: middle;
 	}
 </style>

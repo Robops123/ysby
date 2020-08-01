@@ -208,6 +208,7 @@
 			},
 			getphonenumber(e){
 				var that=this
+				console.log(e)
 				    // 获取用户信息
 					if(!e.detail.iv || !e.detail.encryptedData){
 						return ;
@@ -246,6 +247,7 @@
 				url=`&r=api.member.account.getPhoneNumber`
 				this.$apiPost(url,p).then((res) =>{
 					that.params.mobile=res.data.purePhoneNumber
+					console.log(res.data)
 					uni.login({
 						 provider: 'weixin',
 						  success: function (loginRes) {
@@ -256,6 +258,7 @@
 							         that.params.type='2'
 									 that.params.iv=info.iv
 									 that.params.encryptedData=info.encryptedData
+									 console.log(that.params)
 							          that.bind(that.params)
 							        }
 							      });
@@ -272,6 +275,7 @@
 				var that=this,
 				url=`&r=api.member.account.loginByoAuth`
 				this.$apiPost(url,p).then((res) =>{
+					console.log(res)
 					uni.hideLoading()
 					uni.setStorageSync('userInfo',res.data)
 					that.$conn.open({

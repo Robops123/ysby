@@ -223,7 +223,7 @@
 					return ;
 				}
 				if(s==4){
-					this.$msg('商家申请审核中，请耐心等待')
+					this.$msg('申请审核中，请耐心等待')
 					return ;
 				}
 				uni.navigateTo({

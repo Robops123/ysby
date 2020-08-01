@@ -18,7 +18,7 @@
 				<view v-if="active==1" style="margin-top: 30upx;">
 					<view class="sp-item3  news"  v-for="(item,index) in dataList" :key='index' >
 						<view class="padding">
-							<view class="sp-item3-top " style="margin-top: 0;padding-top: 0;" @click.stop ="toDetail(item)">
+							<view class="sp-item3-top " style="margin-top: 0;padding-top: 0;" @click.stop ="toDetail(item,index)">
 								<view>
 									<image :src="item.logo" mode="" class="headface"></image>
 								</view>
@@ -26,7 +26,7 @@
 									<view class="cr sp-item3-top-middle ellipsis" style="line-height: 90upx;">{{item.merchname}}</view>
 								</view>
 							</view>
-							<view class="sp-item3-middle" @click="toDetail(item)">
+							<view class="sp-item3-middle" @click="toDetail(item,index)">
 								<view class="title" >{{item.title}}</view>
 								<view class="synopsis">
 									<text>{{item.abstract}}</text>
@@ -59,12 +59,12 @@
 						</view>
 							
 							<view class="luntan-card-bot">
-								<view class="luntan-card-bot-card" @click='showMenu(item.id,item.title)'>
+								<view class="luntan-card-bot-card" @click='showMenu(item.id,item.title,index)'>
 									<!-- <text class="iconfont icon-share2"></text> -->
 									<image src="/static/img/pic/fenxiang.png" mode="" class="operate-pic"></image>
 									<text class="operate-word">转发{{item.repost}}</text>
 								</view>
-								<view class="luntan-card-bot-card" @click="toDetail(item)"> 
+								<view class="luntan-card-bot-card" @click="toDetail(item,index)"> 
 									<!-- <text class="iconfont icon-tubiao-"></text> -->
 									<image src="/static/img/pic/pinglun.png" mode="" class="operate-pic" style="margin-top: 2px;"></image>
 									<text class="operate-word">评论{{item.comment}}</text>
@@ -161,7 +161,7 @@
 				
 		<!-- #ifdef MP -->
 			<share-prompt :show='popshow'  :shareTitle="title" @close='closeSharePrompt' :alterUrl="'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+collegeid"
-			 :miniProgramPath="'/pages/index/articleDetail?id='+collegeid"  :uid='uid' :token='token'></share-prompt>
+			 :miniProgramPath="'/pages/index/articleDetail?id='+collegeid"  :uid='uid' :token='token' @shareSuccess='shareSuccess'></share-prompt>
 		<!-- #endif -->
 	</view>
 </template>
@@ -184,6 +184,7 @@
 			return{
 				merchModelStatus:0,
 				showFab:false,
+				from:'',
 				collegeid:'',
 				title:'',
 				pattern:{
@@ -265,7 +266,7 @@
 			   // },2000)
 		   },
 		   onShareAppMessage() {
-		   	
+		   	this.submitRepost()
 		   	return {
 		   		title: this.title,
 		   		path: '/pages/index/articleDetail?id='+this.collegeid,
@@ -325,7 +326,14 @@
 			 }
 		   },
 		methods:{
-			toDetail(item){
+			toDetail(item,f){
+				this.collegeid=item.id
+				this.title=item.title
+				this.from=f
+				uni.$on('detailShareSuccess',() =>{
+					this.submitRepost()
+					uni.$off('detailShareSuccess')
+				})
 				uni.navigateTo({
 					url:'/pages/index/articleDetail?id='+item.id+'&like='+item.like+'&comment='+item.comment+'&repost='+item.repost
 				})
@@ -524,9 +532,10 @@
 			closeSharePrompt(){
 				 this.popshow=false
 			},
-			showMenu(id,title) {
+			showMenu(id,title,f) {
 				this.collegeid=id
 				this.title=title
+				this.from=f
 			      // #ifdef APP-PLUS
 			      if (!bottomImageMenu) {
 			        bottomImageMenu = new BottomImageMenu(this.menus, (menu, index) => {
@@ -555,6 +564,7 @@
 								content: '已分享',
 								showCancel:false
 							})
+							this.submitRepost()
 						},
 						fail: (e) => {
 							uni.showModal({
@@ -606,6 +616,32 @@
 					scrollTop:0,
 					duration:300
 				})
+			},
+			shareSuccess(){
+				this.submitRepost()
+			},
+			submitRepost(){
+				var params={
+					uid:this.uid,
+					token:this.token,
+					collegeid:this.collegeid
+				},url='&r=api.college.hotarticle.doRepost',that=this
+				this.$apiPost(url,params).then((res) =>{
+					that.refresh()
+					that.$forceUpdate()
+				})
+			},
+			refresh(){
+				var that=this,url='&r=api.college.hotarticle',
+				params={
+					uid:this.uid,
+					page:this.from+1,
+					pagesize:1
+				},that=this
+				  this.$apiPost(url,params).then((res) =>{
+					  that.dataList[that.from].repost=res.data[0].repost
+					 that.$forceUpdate()
+				  })
 			}
 		}
 	}

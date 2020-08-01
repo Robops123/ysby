@@ -11,7 +11,7 @@
 				<view v-show="!located" @click="reLocate">重新获取</view>
 				<view class="search-line">
 					<icon type="search" size="20" class="icon" />
-					<input type="text" v-model="keywords" @confirm='search' placeholder="搜索商家/商品"/>
+					<input type="text" v-model="keywords" @confirm='search' placeholder="搜索"/>
 				</view>
 				<view class="comment" @click="toMessage">
 					<image src="../../static/img/pic/msg.png" mode="" class="" ></image>

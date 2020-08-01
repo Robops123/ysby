@@ -112,5 +112,6 @@
       "desc": "该应用需要获取你的当前位置"
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

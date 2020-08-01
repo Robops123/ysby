@@ -168,10 +168,11 @@
 					type: e.way,
 					success: (e) => {
 						console.log('success', e);
-						uni.showModal({
-							content: '分享成功',
-							showCancel:false
-						})
+						// uni.showModal({
+						// 	content: '分享成功',
+						// 	showCancel:false
+						// })
+						uni.$emit('shareSuccess')
 					},
 					fail: (e) => {
 						console.log('fail', e)

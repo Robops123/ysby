@@ -93,9 +93,10 @@
 			   // #endif
 			   // #ifdef APP-PLUS
 			   this.merchModelStatus=Number(1)
+			   	this.apart()
 			   // #endif
 		   	var that=this
-		   	this.apart()
+		   
 		   	setTimeout(function(){
 		   		that.$getHeight('#sv',(res) =>{
 		   			that.sh=res

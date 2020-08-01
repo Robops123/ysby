@@ -26,10 +26,13 @@
 				<image class="luntan-card-img" src="../../static/img/bg/activity.png" mode=""></image> -->
 				<view class="share" id="share">
 					<text>分享</text>
+					<!-- #ifdef MP -->
 					<button class="share-item share-btn" open-type="share">
 										<image src="../../static/img/pic/other/weixin.png"  style="width: 55upx;" ></image>
 					</button>
+					<!-- #endif -->
 					<!-- #ifdef APP-PLUS -->
+					<image src="../../static/img/pic/other/weixin.png" mode="" @click="share('WXSceneSession',5)"></image>
 					<image src="../../static/img/pic/other/pyq.png" mode="" @click="share('WXSenceTimeline',0)"></image>
 					<!-- #endif -->
 					<!-- <image src="../../static/img/pic/other/QQ.png" mode=""></image> -->
@@ -93,7 +96,7 @@
 		</view>
 		
 		<share-prompt :show='popshow'  :shareTitle="title" @close='closeSharePrompt' :alterUrl="'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+id"
-		 :miniProgramPath="'/pages/index/articleDetail?id='+id"  :uid='uid' :token='token'></share-prompt>
+		 :miniProgramPath="'/pages/index/articleDetail?id='+id"  :uid='uid' :token='token' @shareSuccess='shareSuccess'></share-prompt>
 		
 		<ygc-comment ref="ygcComment" 
 		        :placeholder="'发布评论'" 
@@ -166,9 +169,12 @@
 				that.token=userInfo2.token
 				that.getDetail()
 			})
+			uni.$on('shareSuccess',() =>{
+				this.shareSuccess()
+			})
 		},
 		onShareAppMessage() {
-			
+			uni.$emit('detailShareSuccess')
 			return {
 				title: this.title,
 				path: '/pages/index/articleDetail?id='+this.id,
@@ -177,6 +183,7 @@
 		},
 		onUnload(){
 			uni.$off('logined')
+			uni.$off('shareSuccess')
 		},
 		onPageScroll(e){
 			// this.calcArticleHeight()
@@ -432,10 +439,11 @@
 					scene: type, //WXSceneSession”分享到聊天界面，“WXSenceTimeline”分享到朋友圈，“WXSceneFavorite”分享到微信收藏,
 					type:way,
 					success: (e) => {
-						uni.showModal({
-							content: '已分享',
-							showCancel:false
-						})
+						// uni.showModal({
+						// 	content: '已分享',
+						// 	showCancel:false
+						// })
+						this.shareSuccess()
 					},
 					fail: (e) => {
 						uni.showModal({
@@ -452,7 +460,7 @@
 					case 0:
 						shareOPtions.summary = ' ';
 						shareOPtions.imageUrl =this.shareImg ? this.shareImg : '/static/img/app.jpg'
-						shareOPtions.title = this.title;
+						shareOPtions.title = this.data.title || '文章分享';
 						shareOPtions.href = 'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.id;
 						break;
 					case 1:
@@ -462,7 +470,7 @@
 						break;
 					case 5:
 						shareOPtions.imageUrl = '/static/img/app.jpg'
-						shareOPtions.title = this.title;
+						shareOPtions.title = this.data.title || '文章分享';
 						shareOPtions.miniProgram = {
 							id:'gh_2f5dfaa2fae2',
 							path:'/pages/index/articleDetail?id='+this.id,
@@ -496,6 +504,9 @@
 							  		})
 							  	}
 							  });
+			},
+			shareSuccess(){
+				uni.$emit('detailShareSuccess')
 			},
 		}
 	}

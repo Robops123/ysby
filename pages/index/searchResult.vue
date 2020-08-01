@@ -7,7 +7,7 @@
 				<!-- #endif -->
 				<view class="search-line">
 					<icon type="search" size="20" class="icon" />
-					<input type="text" v-model="keyword" placeholder="寻找附近的商家" @confirm='search'/>
+					<input type="text" v-model="keyword" placeholder="搜索" @confirm='search'/>
 				</view>
 				<!-- <view class="comment">
 					<image src="../../static/img/pic/comment.png" mode="" class="" ></image>
