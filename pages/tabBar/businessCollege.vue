@@ -169,7 +169,7 @@
 <script>
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
-	import uParse from '@/components/gaoyia-parse/parse.vue'
+	// import uParse from '@/components/gaoyia-parse/parse.vue'
 	import uniFab from '@/components/uni-fab/uni-fab.vue';
 	// #ifdef APP-PLUS
 	import BottomImageMenu from '@/components/zh-bottom-image-menu/zh-bottom-image-menu.js'
@@ -238,7 +238,7 @@
 		components:{
 			uniRate,
 			uniLoadMore,
-			uParse,
+			// uParse,
 			uniFab,
 			// topicon,
 			// #ifdef MP

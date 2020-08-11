@@ -77,7 +77,7 @@
 				this.uid=userInfo.uid
 				this.token=userInfo.token
 				this.getInfo()
-				this.getPromoteQrcode()
+				// this.getPromoteQrcode()
 			}
 		},
 		// mounted(){
@@ -113,11 +113,16 @@
 			},
 			showQrcode(){
 				uni.previewImage({
-					current:this.qrcode,
-					urls:[this.qrcode]
+					current:this.qrcode[0],
+					urls:this.qrcode
 				})
 			},
 			getPic(){
+				console.log(this.qrcode)
+				if(this.qrcode){
+					this.showQrcode()
+					return ;
+				}
 				this.$loading()
 				var that=this
 				var params={

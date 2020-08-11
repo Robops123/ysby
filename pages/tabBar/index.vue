@@ -269,7 +269,7 @@
 			msgListener(){
 				var that=this
 				msgStorage.on("newChatMsg", function(renderableMsg, type, curChatMsg, sesskey){
-					// console.log(renderableMsg, type, curChatMsg, sesskey)
+					console.log(renderableMsg, type, curChatMsg, sesskey)
 					// 判断是否属于当前会话
 					let members=uni.getStorageSync('member') || [],
 					existance=false
@@ -337,6 +337,7 @@
 			},
 			// 轮播链接
 			toBannerDetail(item){
+				console.log(item)
 				switch(item.type){
 					case '1':
 					uni.navigateTo({

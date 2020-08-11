@@ -269,10 +269,12 @@
 	}
 	
 	.date{
-		font-size: 48upx;
-		font-weight: bold;
+		font-size: 40upx;
 		border-bottom: 1px solid #f4f4f4;
 		padding: 20upx 0;
 		margin-bottom: 20upx;
+	}
+	.date>view{
+		line-height: 40upx;
 	}
 </style>

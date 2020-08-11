@@ -133,9 +133,15 @@
 		<!-- 邀请注册 -->
 		<s-popup custom-class="demo-popup" position="center" v-model="visible" customClass='advPopup'>
 		  <!-- 内容 -->
-		  <image :src="advImg" mode="widthFix" style="width: 100%;border-radius: 25upx;"></image>
+		  <swiper class="preview" :autoplay="false" :style="{'height':swiperHeight+'px'}" :indicator-dots="true"
+		    indicator-active-color='#ff6d7e' indicator-color='#868686' @change='advChange' :current='current'>
+		      <swiper-item style='width: 100%;' class="banner" v-for='(item,index) in advImg' :key='index'>
+		      	<image :src="item" mode="widthFix" style="width: 100%;border-radius: 25upx;" class="invite-pic" @load='imgLoad'></image>
+		      </swiper-item>
+		     </swiper>
+		  
 		  <view style="margin-top: 20upx;">
-			  <button class="adv-btn" @click="saveImg(advImg)">保存图片</button>
+			  <button class="adv-btn" @click="saveImg()">保存图片</button>
 		  </view>
 		</s-popup>
 		
@@ -148,7 +154,7 @@
 					<input type="text" v-model="invite_code" placeholder="请输入邀请码"/>
 				</view>
 				<view style="margin-top: 20upx;">
-							  <button class="adv-btn adv-btn2" @click="saveInvite()">提交</button>
+					<button class="adv-btn adv-btn2" @click="saveInvite()">提交</button>
 				</view>
 			</view>
 		</s-popup>
@@ -171,7 +177,11 @@
 				  advImg:'',
 				  invite_code:'',
 				  imgBaseUrl:'',
-				  userInfo:{}
+				  userInfo:{},
+				  swiperHeight:'',
+				  imgReady:false,
+				  current:0,
+				  percent:1
 			}
 		},
 		onShow(){
@@ -190,6 +200,7 @@
 			this.wdnmd()
 			// #endif
 			// #ifdef APP-PLUS
+			plus.screen.lockOrientation('portrait-primary');
 			this.merchModelStatus=Number(1)
 			// #endif
 		},
@@ -320,6 +331,15 @@
 				if(!ce){
 					return ;
 				}
+				if(this.advImg){
+					this.current=0
+					this.visible=true
+					// this.$nextTick(() =>{
+					// 	this.getElementHeight('.invite-pic')
+					// })
+					return ;
+				}
+				this.$loading()
 				var that=this
 				var params={
 					uid:this.userInfo.uid,
@@ -330,6 +350,7 @@
 				  this.$apiPost(url,params).then((res) =>{
 					  that.advImg=res.data.img
 					  that.visible=true
+						uni.hideLoading()
 				  })
 			},
 			showInvite(locked){
@@ -343,11 +364,11 @@
 					this.$msg('已绑定邀请人无需重复绑定')
 				}
 			},
-			saveImg(url){
+			saveImg(){
 				var that=this
 				that.$loading()
 				uni.downloadFile({
-						url: url,
+						url: that.advImg[that.current],
 						success: (res) =>{
 							if (res.statusCode === 200){
 								uni.saveImageToPhotosAlbum({
@@ -384,7 +405,30 @@
 						  that.getUserInfo(that.userInfo)
 					  },1000)
 				  })
-			}
+			},
+			getElementHeight(element) {
+			                setTimeout(()=>{
+			                    let query = uni.createSelectorQuery().in(this);
+			                    query.select(element).boundingClientRect();
+			                    query.exec((res) => {
+									console.log(res)
+			                        if (!res) {//如果没获取到，再调一次
+			                            this.getElementHeight();
+			                        }else {
+										// this.imgReady=true
+			                            this.swiperHeight = res[0].width*this.percent;
+			                        }
+			                    })
+			                },200)
+			            },
+						advChange(e){
+							this.current=e.detail.current
+						},
+						imgLoad(e){
+							var w=e.detail.width,h=e.detail.height
+							this.percent=h/w
+							this.getElementHeight('.invite-pic')
+						}
 		}
 	}
 </script>
@@ -549,5 +593,8 @@
 		}
 		.nickname{
 			max-width: 240upx;
+		}
+		.preview{
+			height: initial;
 		}
 </style>

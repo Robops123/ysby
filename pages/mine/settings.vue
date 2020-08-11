@@ -41,6 +41,7 @@
 		},
 		onLoad(p){
 			this.is_oAuth=p.is_oAuth
+			console.log(this.is_oAuth)
 			var userInfo=uni.getStorageSync('userInfo'),that=this
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.logined=true

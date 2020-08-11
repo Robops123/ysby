@@ -95,6 +95,10 @@
 				})
 			},
 			pay(){
+				if(!this.type){
+					this.$msg('请选择充值方式')
+					return ;
+				}
 				let method=this.providerList.filter((item) => {return item.id==this.type}),way
 				if(method.length>0){
 					way=method[0].name

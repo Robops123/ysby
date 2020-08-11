@@ -134,6 +134,8 @@
 					 that.merchModelStatus=Number(res.data.status)
 					 if(that.merchModelStatus!=1){
 							that.toggle(2)
+					}else{
+						that.apart()
 					}
 				  }).catch((err) =>{
 					  this.$msg(err)

@@ -170,7 +170,9 @@
 							name:renderableMsg.yourname
 						})
 						me.transToName(members)
-					}
+					}else{
+							that.transToName(members)
+						}
 				}
 				// let newMember=members.filter((item) => {
 				// 	if(item.name==renderableMsg.info.from){

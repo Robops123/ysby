@@ -53,7 +53,7 @@
 								</view>
 							</view>
 							<view class="btn-box">
-								<button type="default" class="btn btn2" v-show='childItem.status==3' @click.stop="confirmReceive(item.orderno,childItem.goodsid)">确认收货</button>
+								<button type="default" class="btn btn2" v-show='childItem.status==3 || childItem.status==10' @click.stop="confirmReceive(item.orderno,childItem.goodsid)">确认收货</button>
 								<button type="default" class="btn btn1" v-show='childItem.status!=3' @click.stop="getCategory(childItem.goodsid,childItem.goodspic,childItem.goodsprice)">加入购物车</button>
 								<!-- <button type="default" class="btn btn1" v-show='active==5' @click.stop="toComment(item2,item.orderno)">评价</button> -->
 								<button type="default" class="btn btn1" v-show='childItem.status==1' @click.stop="cancelOrder(item.orderno,childItem.goodsid,index)">取消订单</button>

@@ -74,7 +74,7 @@
 			</view>
 		</view>
 		
-		<view class="">
+		<view class="" v-show="merchModelStatus==1">
 			<view class="sp-item3"  v-for="(item,index) in 1" :key='index'>
 				<view class="sp-item3-top">
 					<view>
@@ -116,7 +116,7 @@
 		</view>
 		
 		
-		<uni-goods-nav :fill="true"  :options="options" :buttonGroup="buttonGroup" 
+		<uni-goods-nav :fill="true"  :options="options" :buttonGroup="buttonGroup"
 		 @click="onClick" @buttonClick="buttonClick" class="goods-nav animated slideInUp" />
 		 
 		 <sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='thumb_url["1"] || ""' :defaultPrice='defaultPrice' @closeSku='closesku'
@@ -166,6 +166,7 @@
 		},
 		data () {
 		      return {
+				  merchModelStatus:false,
 				  mpSwiperHeight:0,
 				  alterShow:false,
 				  subNVue:'',
@@ -192,15 +193,13 @@
 				  swiperList:[],
 				  category:[],
 				  total:'',
+				  merchOption:{icon: 'icon-iconfontshop-copy',text: '店铺'},
 				  receivedCategory:false,
 				  needCategory:false,
 				  choosedSpec:'',
 		        options: [{
 		          icon: 'icon-kefu',
 		          text: '客服'
-		        }, {
-		          icon: 'icon-iconfontshop-copy',
-		          text: '店铺'
 		        }, {
 		          icon: 'icon-star',
 		          text: '收藏',
@@ -239,6 +238,13 @@
 				}else{
 					this.logined=false
 				}
+				// #ifdef MP
+				this.wdnmd()
+				// #endif
+				// #ifdef APP-PLUS
+				this.merchModelStatus=Number(1)
+				this.options.splice(1,0,this.merchOption)
+				// #endif
 				this.getDetail()
 				// this.getProvider()
 				uni.$on('logined',function(){
@@ -640,7 +646,20 @@
 				  this.subNVue.show()
 				  this.alterShow=false
 				  // #endif
-			  }
+			  },
+			 // 小程序绕开审核
+			 wdnmd(){
+			 	var that=this
+			 	  var url='&r=api.mo'
+			 	  this.$apiPost(url).then((res) =>{
+			 		 that.merchModelStatus=Number(res.data.status)
+					 if(that.merchModelStatus==1){
+						 that.options.splice(1,0,that.merchOption)
+					 }
+			 	  }).catch((err) =>{
+			 		  this.$msg(err)
+			 	  })
+			 },
 			  // compress(url){
 				 //  uni.compressImage({
 				 //    src: url,

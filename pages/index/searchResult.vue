@@ -18,16 +18,16 @@
 		
 		<view class="main">
 			<view class="nav-bar">
-				<view class="nav nav-left" :class="{active:active==0}" @click="toggle(0)"><text>全部</text></view>
-				<view class="nav nav-right" :class="{active:active==1}" @click="toggle(1)"><text>销量</text></view>
-				<view class="nav nav-left" :class="{active:active==2}" @click="toggle(2)">
+				<view class="nav nav-left" :class="{active:active==0,noMerchStatus:merchModelStatus!=1}" @click="toggle(0)"><text>全部</text></view>
+				<view class="nav nav-right" :class="{active:active==1,noMerchStatus:merchModelStatus!=1}" @click="toggle(1)"><text>销量</text></view>
+				<view class="nav nav-left" :class="{active:active==2,noMerchStatus:merchModelStatus!=1}" @click="toggle(2)">
 					<text>价格</text>
 					<view class="range s3">
 						<text class="icon-arrowup iconfont" :class="{active:rangeActive==1}"></text>
 						<text class="icon-arrowdown-copy iconfont" :class="{active:rangeActive==2}" ></text>
 					</view>
 					</view>
-				<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)"><text>店铺</text></view>
+				<view class="nav nav-right" :class="{active:active==4}" @click="toggle(4)" v-show="merchModelStatus==1"><text>店铺</text></view>
 			</view>
 			<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
 				<view class="padding">
@@ -78,6 +78,7 @@
 		},
 		data(){
 			return{
+				merchModelStatus:0,
 				defaultPrice:0,
 				defaultImg:'',
 				id:'',
@@ -121,6 +122,12 @@
 			   	that.uid=userInfo2.uid
 			   	that.token=userInfo2.token
 			   })
+			   // #ifdef MP
+			   this.wdnmd()
+			   // #endif
+			   // #ifdef APP-PLUS
+			   this.merchModelStatus=Number(1)
+			   // #endif
 			   this.keyword=p.keyword
 			   this.getPosition()
 			   setTimeout(function(){
@@ -278,6 +285,16 @@
 						// that.options[2].info++
 						uni.hideLoading()
 										that.$msg('添加成功')
+				  })
+			},
+			// 小程序绕开审核
+			wdnmd(){
+				var that=this
+				  var url='&r=api.mo'
+				  this.$apiPost(url).then((res) =>{
+					 that.merchModelStatus=Number(res.data.status)
+				  }).catch((err) =>{
+					  this.$msg(err)
 				  })
 			},
 		}
@@ -475,5 +492,8 @@
 	}
 	.collectnum{
 		margin-left: 15upx;
+	}
+	.noMerchStatus{
+		width: 33% !important;
 	}
 </style>

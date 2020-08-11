@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>协议</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+	<style type="text/css">
+		.if{
+			position: absolute;
+			box-sizing: border-box;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+	</style>
+	<body class="padding">
+		<iframe class='if' width="100%" height="100%"></iframe>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var p=getParams()
+			document.querySelector('iframe').src=p['url']
+		}
+		
+		function getParams(){
+			var params=location.search.slice(1).split('&'),obj={}
+			params.map((item) =>{
+				var p=item.split('=')
+				obj[p[0]]=p[1]
+			})
+			return obj;
+		}
+		
+		
+	</script>
+	
+</html>

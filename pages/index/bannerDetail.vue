@@ -1,12 +1,17 @@
 <template>
 	<view >
-		<!-- <web-view :src="url"  :webview-styles="webviewStyles" >
-		</web-view> -->
+		<!-- #ifdef MP-WEIXIN || H5-->
+		<!-- <view class=" manage" @click="toggleOperation">{{operate ? '完成':'管理'}}</view> -->
+		<web-view v-if="url" :src="url"  :webview-styles="webviewStyles" >
+		</web-view>
+		<!-- #endif -->
 	</view>
 </template>
 
 <script>
+	// #ifdef APP-PLUS
 	import BottomImageMenu from '@/components/zh-bottom-image-menu/zh-bottom-image-menu.js'
+	// #endif
 	var bottomImageMenu = null
 	export default{
 		computed: {
@@ -29,10 +34,18 @@
 		      ]
 		    }
 		  },
+		  onShareAppMessage(){
+			return{
+				title: '我的分享',
+				path: '/pages/index/bannerDetail?url='+this.url,
+				imageUrl:this.image ? this.image : '/static/img/app.jpg'
+			}  
+		  },
 		onLoad(p){
-			this.url=p.url
-			 bottomImageMenu = new BottomImageMenu(this.menus)
+			this.url=p
+			console.log(this.url)
 			           // #ifdef APP-PLUS
+					   bottomImageMenu = new BottomImageMenu(this.menus)
 			           var  wv = plus.webview.create("","custom-webview",{
 			                      plusrequire:"none", //禁止远程网页使用plus的API，有些使用mui制作的网页可能会监听plus.key，造成关闭页面混乱，可以通过这种方式禁止
 			                'uni-app': 'none', //不加载uni-app渲染层框架，避免样式冲突
@@ -95,6 +108,7 @@
 						},
 						complete:function(){
 							uni.hideLoading()
+							bottomImageMenu.close()
 							console.log('分享操作结束!')
 						}
 					}

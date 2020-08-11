@@ -22,7 +22,8 @@
 			}
 		},
 		onLoad(p){
-			this.is_oAuth=p.is_oAuth
+			this.is_oAuth=p.data
+			console.log(this.is_oAuth)
 			var userInfo=uni.getStorageSync('userInfo'),that=this
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.mobile=userInfo.mobile
