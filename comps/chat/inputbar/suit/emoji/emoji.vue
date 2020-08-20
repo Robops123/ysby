@@ -135,11 +135,11 @@
 	}
 	
 	.showEmoji {
-		margin-top: 30px;
+		margin-top: -145px;
 		width: 100%;
 		height: 145px;
 		background-color: #dddddd;
-		padding-top: 10px;
+		/* padding-top: 10px; */
 		padding-left: 3%;
 		display: block;
 	}

@@ -12,6 +12,7 @@
 	font-size: 14px;
 	padding: 0 32rpx;
 	display: inline-block;
+	box-sizing: border-box;
 	margin-top: 10rpx;
 	line-height: 48rpx;
 	position:relative;

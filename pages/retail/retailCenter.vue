@@ -1,7 +1,7 @@
 <template>
 	<view class="distribution">
 		<view class="userinfo">
-			<image class="userinfo-img" :src="data.avatar" mode=""></image>
+			<image class="userinfo-img" :src="data.avatar ? data.avatar:'/static/img/app.jpg'" mode=""></image>
 			<view class="userinfo-txt">
 				<view class="userinfo-txt-title">{{data.nickname}}</view>
 				<view class="userinfo-txt-people">推荐人：{{data.invited_name ? data.invited_name:'暂无'}}</view>
@@ -68,7 +68,9 @@
 				uid:'',
 				token:'',
 				data:'',
-				qrcode:''
+				qrcode:[],
+				loadingIndex:0,
+				total:0
 			}
 		},
 		onShow(){
@@ -114,12 +116,13 @@
 			showQrcode(){
 				uni.previewImage({
 					current:this.qrcode[0],
-					urls:this.qrcode
+					urls:this.qrcode,
+					indicator:'number'
 				})
 			},
 			getPic(){
 				console.log(this.qrcode)
-				if(this.qrcode){
+				if(this.qrcode.length>0){
 					this.showQrcode()
 					return ;
 				}
@@ -128,15 +131,40 @@
 				var params={
 					uid:this.uid,
 					token:this.token,
-					type:2
+					type:2,
+					number:1
 				}
 				var url='&r=api.common.share.createPoster'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.qrcode=res.data.img
-					  uni.hideLoading()
-					  that.showQrcode()
+					  that.qrcode=new Array(res.data.total)
+					  that.total=res.data.total
+					  that.loadingIndex++
+					  that.qrcode[0]=res.data.img
+					  that.getNew()
+					  // that.showQrcode()
 				  })
-			}
+			},
+			getNew(){
+				var that=this
+				var params={
+					uid:this.uid,
+					token:this.token,
+					type:2,
+					number:this.loadingIndex+1
+				}
+				var url='&r=api.common.share.createPoster'
+				  this.$apiPost(url,params).then((res) =>{
+					  that.qrcode[that.loadingIndex]=res.data.img
+					  that.$forceUpdate()
+					  that.loadingIndex++
+					  if(that.loadingIndex<that.total){
+						  that.getNew()
+					  }else{
+						   uni.hideLoading()
+						  that.showQrcode()
+					  }
+				  })
+			},
 		}
 	}
 </script>

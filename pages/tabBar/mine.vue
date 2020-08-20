@@ -135,8 +135,8 @@
 		  <!-- 内容 -->
 		  <swiper class="preview" :autoplay="false" :style="{'height':swiperHeight+'px'}" :indicator-dots="true"
 		    indicator-active-color='#ff6d7e' indicator-color='#868686' @change='advChange' :current='current'>
-		      <swiper-item style='width: 100%;' class="banner" v-for='(item,index) in advImg' :key='index'>
-		      	<image :src="item" mode="widthFix" style="width: 100%;border-radius: 25upx;" class="invite-pic" @load='imgLoad'></image>
+		      <swiper-item style='width: 100%;height: 100%;' class="banner" v-for='(item,index) in advImg' :key='index'>
+		      	<image :src="item" mode="widthFix" style="width: 100%;height: 100%;border-radius: 25upx;" class="invite-pic" @load='imgLoad'></image>
 		      </swiper-item>
 		     </swiper>
 		  
@@ -174,14 +174,15 @@
 				logined:false,
 				  visible: false,
 				  visible2:false,
-				  advImg:'',
+				  advImg:[],
 				  invite_code:'',
 				  imgBaseUrl:'',
 				  userInfo:{},
 				  swiperHeight:'',
 				  imgReady:false,
 				  current:0,
-				  percent:1
+				  percent:1.3,
+				  loadingIndex:0
 			}
 		},
 		onShow(){
@@ -193,6 +194,7 @@
 				this.logined=true
 			}else{
 				this.logined=false
+				this.advImg=[]
 			}
 		},
 		onLoad(){
@@ -331,7 +333,7 @@
 				if(!ce){
 					return ;
 				}
-				if(this.advImg){
+				if(this.advImg.length>0){
 					this.current=0
 					this.visible=true
 					// this.$nextTick(() =>{
@@ -344,11 +346,16 @@
 				var params={
 					uid:this.userInfo.uid,
 					token:this.userInfo.token,
-					type:1
+					type:1,
+					number:1
 				}
 				var url='&r=api.common.share.createPoster'
 				  this.$apiPost(url,params).then((res) =>{
-					  that.advImg=res.data.img
+					  console.log(res)
+					  that.advImg=new Array(res.data.total)
+					  this.getElementHeight('.invite-pic')
+					  that.loadingIndex++
+					  that.advImg[0]=res.data.img
 					  that.visible=true
 						uni.hideLoading()
 				  })
@@ -411,22 +418,44 @@
 			                    let query = uni.createSelectorQuery().in(this);
 			                    query.select(element).boundingClientRect();
 			                    query.exec((res) => {
-									console.log(res)
 			                        if (!res) {//如果没获取到，再调一次
 			                            this.getElementHeight();
 			                        }else {
 										// this.imgReady=true
-			                            this.swiperHeight = res[0].width*this.percent;
+										this.swiperHeight = res[0].width*this.percent;
+			                            // this.swiperHeight = res[0].width*this.percent;
 			                        }
 			                    })
 			                },200)
 			            },
 						advChange(e){
 							this.current=e.detail.current
+							if(!this.advImg[this.current]){
+								this.getNew(this.current)
+							}
+							
+						},
+						getNew(f){
+							this.$loading()
+							var that=this
+							var params={
+								uid:this.userInfo.uid,
+								token:this.userInfo.token,
+								type:1,
+								number:f+1
+							}
+							var url='&r=api.common.share.createPoster'
+							  this.$apiPost(url,params).then((res) =>{
+								  that.advImg[f]=res.data.img
+								  that.$forceUpdate()
+								  that.loadingIndex++
+									uni.hideLoading()
+							  })
 						},
 						imgLoad(e){
 							var w=e.detail.width,h=e.detail.height
 							this.percent=h/w
+							console.log(this.percent)
 							this.getElementHeight('.invite-pic')
 						}
 		}
@@ -594,7 +623,7 @@
 		.nickname{
 			max-width: 240upx;
 		}
-		.preview{
+		/* .preview{
 			height: initial;
-		}
+		} */
 </style>

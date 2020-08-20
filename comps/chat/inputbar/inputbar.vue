@@ -83,6 +83,8 @@
 			},
 			
 			cancelEmoji(){
+				console.log('focused')
+				this.$emit('inputFocused')
 				this.$refs.emoji.cancelEmoji();
 			},
 			
@@ -110,6 +112,7 @@
 		bottom: 0;
 		right: 0;
 		z-index: 1;
+		height: 160rpx;
 		background-color: #FFFFFF;
 		transform: translateZ(1000px);
 	}

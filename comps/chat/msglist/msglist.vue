@@ -1,14 +1,15 @@
 <template>
 	<scroll-view
-	style="height: calc(100vh - 160rpx);"
+	style="background-color: #fff;"
 		scroll-y="true"
-		:class="view"
 		class="wrap chat-list"
 		@tap="onTap"
-		@scroll="scrollmore"
+		:scroll-top='scrollTop'
+		:scroll-with-animation='true'
 		@scrolltoupper="getHistoryMsg"
+		:scroll-into-view='toView'
 		>
-		<view class="message" v-for="item in chatMsg" :key="item.mid" :id="item.mid">
+		<view class="message" v-for="(item,index) in chatMsg" :key="index" :id="item.mid">
 			<!-- <view class="time">
 				<text class="time-text">{{ item.time }}</text>
 			</view> -->
@@ -88,6 +89,7 @@
 				toView: "",
 				chatMsg: [],
 				visibility: false,
+				scrollTop:99999
 			}
 		},
 		beforeMount(){
@@ -154,7 +156,9 @@
 			},
 			
 			shortScroll(){
-				this.view = LIST_STATUS.SHORT
+				this.scrollTop+=9999
+				this.$forceUpdate()
+				// this.view = LIST_STATUS.SHORT
 			},
 			
 			onTap(){
@@ -218,11 +222,11 @@
 					this.chatMsg = historyChatMsgs.slice(-10)
 					this.toView = historyChatMsgs[historyChatMsgs.length - 1].mid
 				}
-				uni.pageScrollTo({
-				  	scrollTop: 9999,
-				})
+				// uni.pageScrollTo({
+				//   	scrollTop: 9999,
+				// })
 				uni.setStorageSync("rendered_" + sessionKey, historyChatMsgs);
-			
+				
 				let chatMsg = uni.getStorageSync(sessionKey) || [];
 				chatMsg.map(function(item, index) {
 					curChatMsg.map(function(item2, index2) {
@@ -240,6 +244,9 @@
 				if (isFail) {
 					this.renderFail(sessionKey)
 				}
+				this.$forceUpdate()
+				// this.scrollTop+=9999
+				this.getHeight()
 			},
 			
 			renderFail(sessionKey){
@@ -262,8 +269,17 @@
 			refresh(){
 				
 			},
-			scrollmore(e){
-			}
+			getHeight(){
+				setTimeout(() =>{
+					let query = uni.createSelectorQuery().in(this);
+					query.selectAll(".message").boundingClientRect();
+					query.exec((res) => {
+						var l=res[0].length
+						this.scrollTop+=res[0][l-1].height
+						
+					})
+				},0)
+			},
 		}
 	}
 </script>

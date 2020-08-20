@@ -5564,6 +5564,43 @@ var $pres = null;
 			    }
 
 				var me = this;
+				var tt
+				//心跳检测
+				    var heartCheck = {
+				      timeout: 3000,
+				      timeoutObj: null,
+				      serverTimeoutObj: null,
+				      start: function(){
+				        var self = this;
+				        this.timeoutObj && clearTimeout(this.timeoutObj);
+				        this.serverTimeoutObj && clearTimeout(this.serverTimeoutObj);
+				        this.timeoutObj = setTimeout(function(){
+				          //这里发送一个心跳，后端收到后，返回一个心跳消息，
+				         wx.sendSocketMessage({ data: 'str' });
+				          self.serverTimeoutObj = setTimeout(function() {
+				            // _socketTask.close();
+				            // createWebSocket();
+				          }, self.timeout);
+				
+				        }, this.timeout)
+				      }
+				    }
+					
+					// 重连
+					var lockReconnect = false;//避免重复连接
+					function reconnect() {
+					  if(lockReconnect) {
+					    return;
+					  };
+					  lockReconnect = true;
+					  //没连接上会一直重连，设置延迟避免请求过多
+					  tt && clearTimeout(tt);
+					  tt = setTimeout(function () {
+					    creatSocket();
+					    lockReconnect = false;
+					  }, 4000);
+					}
+					
 				this.socket = {
 					onopen: this._onOpen,
 					onmessage: this._connect_cb_wrapper,
@@ -5596,17 +5633,20 @@ var $pres = null;
 							}
 						});
 						_socketTask = SocketTask;
-
+						
 						_socketTask.onOpen(function (res) {
 							console.log("WebSocket 连接已打开！");
+							// heartCheck.start();
 							isSocketConnnected = true
 							// wx.sendSocketMessage({
-							//     data: "Hello,World:"
+							//     data: "He"
 							// });
 							me.socket.onopen.call(me);
 						});
 						_socketTask.onMessage(function(msg){
+							// console.log(msg)
 							//console.log("onSocketMessage", msg, JSON.stringify(msg));
+							// heartCheck.start();
 							me.socket.onmessage.call(me, msg);
 						});
 						_socketTask.onClose(function(e){
@@ -5616,11 +5656,11 @@ var $pres = null;
 							me.socket.onclose.call(me);
 							// 外部回调，需要设计一个更合适的
 							me._onSocketClose && me._onSocketClose(e);
+							// reconnect();
 							//me._conn._changeConnectStatus(Strophe.Status.DISCONNECTED, e);
 						});
 						_socketTask.onError(function(e){
 							console.log('出错了 出错了')
-							
 						    if (isAndroid) {
 						    	console.log('安卓')
 						       	//这个是安卓操作系统
@@ -5632,7 +5672,7 @@ var $pres = null;
 						    }else{
 						    	me.socket.onclose.call(me);
 						    }
-							
+							// reconnect();
 						})
 
 					}, 1000)
@@ -5954,6 +5994,7 @@ var $pres = null;
 			 * (string) message - The websocket message.
 			 */
 			_onMessage: function (message) {
+				console.log(message)
 				//console.log('_onMessage')
 				// wx.sendSocketMessage({
 				//   data: message

@@ -414,7 +414,10 @@
 				{
 				    "path": "pages/chat/chat",
 				    "style": {
-						"navigationBarTitleText": ""
+						"navigationBarTitleText": "",
+						"app-plus":{
+							 "softinputMode": "adjustResize"
+						}
 				    }
 				},
 				{

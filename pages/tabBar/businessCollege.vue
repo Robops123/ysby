@@ -187,6 +187,7 @@
 				from:'',
 				collegeid:'',
 				title:'',
+				playedVideoId:'',
 				pattern:{
 					color:'#fff',
 					buttonColor:'#ffb6b9'
@@ -319,11 +320,11 @@
 			 }else{
 				 this.showFab=false
 			 }
-			 if(this.videoContext){
-				 if(e.scrollTop>this.playPosition + 225 ){
-					 this.videoContext.pause()
-				 }
-			 }
+			 // if(this.videoContext){
+				//  if(e.scrollTop>this.playPosition + 225 ){
+				// 	 this.videoContext.pause()
+				//  }
+			 // }
 		   },
 		methods:{
 			toDetail(item,f){
@@ -449,9 +450,11 @@
 			recordPrepare(e,index,t){
 				let id=e.currentTarget.dataset.id
 				if(this.videoContext){
-					var tempContext=uni.createVideoContext(id)
-					if(this.videoContext!=tempContext){
+					// var tempContext=uni.createVideoContext(id)
+					// console.log(this.videoContext)
+					if(id!=this.playedVideoId){
 						this.videoContext.pause()
+						this.playedVideoId=id
 								setTimeout(() =>{
 									this.playPosition=e.target.offsetTop
 									 this.videoContext = uni.createVideoContext(id)
@@ -459,6 +462,7 @@
 					}
 				}else{
 					this.playPosition=e.target.offsetTop
+					this.playedVideoId=id
 					this.videoContext = uni.createVideoContext(id)
 				}
 				// if(this.videoContext){

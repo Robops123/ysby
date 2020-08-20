@@ -153,6 +153,8 @@
 		<!-- 规格 -->
 		<sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='defaultImg' :defaultPrice='defaultPrice'
 		:category='category' :total='total' v-if="receivedCategory" :goodsid='id'></sku>
+		
+		<audio></audio>
 	</view>
 </template>
 
@@ -172,6 +174,7 @@
 		},
 		data(){
 			return{
+				mediaContext:'',
 				merchModelStatus:0,
 				nickName:'aa',
 				avatarUrl:'',
@@ -263,13 +266,12 @@
 			this.getActivity()
 			let members=uni.getStorageSync('member') || []
 			this.transToName(members)
-			
 		},
 		methods:{
 			msgListener(){
 				var that=this
 				msgStorage.on("newChatMsg", function(renderableMsg, type, curChatMsg, sesskey){
-					console.log(renderableMsg, type, curChatMsg, sesskey)
+					// console.log(renderableMsg, type, curChatMsg, sesskey)
 					// 判断是否属于当前会话
 					let members=uni.getStorageSync('member') || [],
 					existance=false
@@ -341,7 +343,7 @@
 				switch(item.type){
 					case '1':
 					uni.navigateTo({
-						url:`/pages/index/bannerDetail?url=`+item.link
+						url:`/pages/index/bannerDetail?url=`+encodeURIComponent(item.link)
 					})
 					break ;
 					case '2':
@@ -633,11 +635,17 @@
 				if(num > 99){
 					num='99+'
 				}
-				this.msgNum=num
+				if(num>0){
+					this.msgNum=num
+					const innerAudioContext = uni.createInnerAudioContext();
+					innerAudioContext.src = '/static/media/msgNotice.mp3';
+					innerAudioContext.play()
+				}
 			},
 			noticeChange(e){
 				console.log(e)
-			}
+			},
+			
 		}
 	}
 </script>

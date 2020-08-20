@@ -37,7 +37,7 @@
 				<view>退款金额：￥
 				<input type="number" v-model="form.price" @input='filter'/>
 				</view>
-				<view class="cg s3">最多￥{{ goods.goodsprice + goods.freight}},含发货邮费￥{{goods.freight}}</view>
+				<view class="cg s3">最多￥{{ goods.goodsprice }}</view>
 				<view v-if="form.type==1">
 					<text>退款说明：</text>
 					<input type="text" v-model="form.remark" placeholder="选填"/>
@@ -187,7 +187,7 @@
 				},
 				filter(event) { //过滤input密码类型只输入数字
 						let i = Number(event.target.value)
-						let uphold=this.goods.goodsprice + this.goods.freight
+						let uphold=this.goods.goodsprice
 						// var reg=new RegExp("^[0-9]*$")
 						if(i>uphold) {
 							setTimeout(() => {

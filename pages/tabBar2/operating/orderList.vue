@@ -78,7 +78,7 @@
 						共<text class="cr">{{item.totalgoods}}</text>件商品 实付:<text class="cr">￥{{item.totalprice}}</text>
 					</view>
 					<view class="bottom-border btn-line">
-						<button type="default" class="btn btn-primary" v-show="active==2" @click="confirmDoSend(item.orderno)">确认发货</button>
+						<button type="default" class="btn btn-primary" v-show="active==2" @click="openSend(item.orderno)">确认发货</button>
 						<button type="default" class="btn btn-primary" v-show="active==2" @click="cancelOrder(item.orderno)">取消发货</button>
 						<button type="default" class="btn " @click="showRemark(item.remark)">备注</button>
 						<button type="default" class="btn " @click="toDetail(item.orderno)">查看详情</button>
@@ -100,6 +100,20 @@
 			  <textarea v-model="remark" placeholder="" disabled />
 		  </view>
 		</prompt>
+		
+		<!-- 发货 -->
+		<prompt :visible.sync="promptVisible2"  :useDefault='false' title='确认发货' :needCancelBtn='true'
+		 mainColor="#ff6d7e" @confirm='confirmDoSend'>
+		  <view class="padding send-prompt">
+			  <view class="padding">快递公司</view>
+			  <picker class="picker" @change="bindPickerChange" :value="current" :range="deliveryArray">
+			       <view class="uni-input padding" v-if="current>=0">{{deliveryArray[current]}}</view>
+				   <view class="uni-input padding" v-else style="color: grey;">选择快递公司</view>
+			   </picker>
+			  <view class="padding">快递单号</view>
+			  <input class="padding" type="text" v-model="expressno" placeholder="请输入快递单号"/>
+		  </view>
+		</prompt>
 	</view>
 </template>
 
@@ -115,7 +129,7 @@
 		},
 		data(){
 			return{
-				promptVisible:false,
+				promptVisible:false,promptVisible2:false,
 				uid:'',
 				token:'',
 				active:0,
@@ -130,7 +144,11 @@
 				more:'',
 				orderno:'',
 				keywords:'',
-				remark:''
+				remark:'',
+				current:0,
+				expressno:'',
+				deliveryArray:[],
+				sendOrderNo:''
 			}
 		},
 		computed: {
@@ -147,6 +165,7 @@
 			  	this.token=userInfo.token
 			  }
 			  this.getList(this.page,this.orderno,this.keywords)
+			  this.getDeliverList()
 			   setTimeout(function(){
 			   	that.$getHeight('#sv',(res) =>{
 			   		that.sh=res
@@ -241,24 +260,52 @@
 						// that.options[2].info++
 				  })
 			},
-			confirmDoSend(no){
+			openSend(no){
+				this.sendOrderNo=no
+				this.promptVisible2=true
+			},
+			confirmDoSend(){
 				this.$loading()
 				var that=this
 				var params={
 				  uid:this.uid,
 				  token:this.token,
-				  orderno:no,
+				  orderno:this.sendOrderNo,
+				  expressno:this.expressno,
+				  expressname:this.deliveryArray[this.current]
 				}
 				  var url='&r=api.myshop.orders.doSend'
 				  this.$apiPost(url,params).then((res) =>{
+					  this.promptVisible2=false
+					  this.sendReset()
+					  uni.hideLoading()
 					  that.$msg('发货成功')
-					  	uni.hideLoading()
 						that.search()
 				  })
+				
+			},
+			sendReset(){
+				this.expressno=''
+				this.current=0
 			},
 			showRemark(rm){
 				this.remark=rm || '无备注'
 				this.promptVisible=true
+			},
+			bindPickerChange(e){
+				this.current=e.detail.value
+			},
+			getDeliverList(){
+				var url='&r=api.myshop.orders.getExpressCompany',
+				params={
+					uid:this.uid,
+					token:this.token
+				}
+				  this.$apiPost(url,params).then((res) =>{
+						this.deliveryArray=res.data.map((item) =>{
+							return item.expressname
+						})
+				  })
 			}
 		}
 	}
@@ -431,5 +478,13 @@
 		/* border: 1px dashed #f2f2f2; */
 		padding-left: 20upx;
 		box-sizing: border-box;
+	}
+	
+	.send-prompt{
+		text-align: left;
+		width: 100%;
+	}
+	.send-prompt input{
+		height: initial;
 	}
 </style>

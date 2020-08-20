@@ -155,6 +155,7 @@
 	width: 100%;
 	height: 62rpx;
 	font-size: 14px;
+	box-sizing: border-box;
 	padding: 0 32rpx;
 	display: inline-block;
 	margin-top: 10rpx;

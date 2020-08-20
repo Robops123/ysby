@@ -1,31 +1,31 @@
 <template>
-	<view>
+	<view class="chat-pannel" >
 
-		<view class="main">
-			<chat-suit-audio
-				ref="audio"
-				:username="username"
-				:chatType="chatType"
-				@newAudioMsg="saveSendMsg"></chat-suit-audio>
-		
-			<chat-msglist
-				ref="msglist"
-				:username="username"
-				@msglistTap="normalScroll"></chat-msglist>
-		</view>
-			<chat-inputbar
-				ref="inputbar"
-				:username="username"
-				:chatType="chatType"
-		
-				@newTextMsg="saveSendMsg"
-				@newImageMsg="saveSendMsg"
-				@newLocationMsg="saveSendMsg"
-				@newVideoMsg="saveSendMsg"
-				@tapSendAudio="toggleRecordModal"
-		
-				@inputFocused="shortScroll"
-				@inputBlured="normalScroll"></chat-inputbar>
+			<view class="main" >
+				<!-- <chat-suit-audio
+					ref="audio"
+					:username="username"
+					:chatType="chatType"
+					@newAudioMsg="saveSendMsg"></chat-suit-audio> -->
+			
+				<chat-msglist class="msg-list" 
+					ref="msglist"
+					:username="username"
+					@msglistTap="normalScroll"></chat-msglist>
+			</view>
+				<chat-inputbar class="ipt-bar"
+					ref="inputbar"
+					:username="username"
+					:chatType="chatType"
+			
+					@newTextMsg="saveSendMsg"
+					@newImageMsg="saveSendMsg"
+					@newLocationMsg="saveSendMsg"
+					@newVideoMsg="saveSendMsg"
+					@tapSendAudio="toggleRecordModal"
+			
+					@inputFocused="shortScroll"
+					@inputBlured="normalScroll"></chat-inputbar>
 	</view>
 	
 	
@@ -56,13 +56,15 @@
 		},
 		data() {
 			return {
-				
+				initHeight:'',
+				realHeight:'',
 			}
 		},
 		created() {
 			uni.$on('saveSendMsg', (data)=>{
 				this.saveSendMsg(data);
 			})
+			this.getHeight()
 		},
 		beforeDestroy() {
 			uni.$off('saveSendMsg');
@@ -82,6 +84,9 @@
 			},
 			
 			shortScroll(){
+				
+				// this.getHeight()
+				// this.getRealHeight()
 				this.$refs.msglist.shortScroll();
 			},
 			
@@ -94,13 +99,69 @@
 			getMore(){
 				this.$refs.msglist.getHistoryMsg()
 			},
+			getHeight(){
+				setTimeout(() =>{
+					let query = uni.createSelectorQuery().in(this);
+					query.selectAll(".chat-pannel").boundingClientRect();
+					query.exec((res) => {
+						console.log(res)
+						this.initHeight = res[0][0].height;
+						
+					})
+				},500)
+			},
+			getRealHeight(){
+				setTimeout(() =>{
+					let query = uni.createSelectorQuery().in(this);
+					query.selectAll(".chat-pannel").boundingClientRect();
+					query.exec((res) => {
+						
+						this.realHeight = res[0][0].height;
+						console.log(this.realHeight)
+					})
+				},500)
+			}
 		}
 	}
 </script>
 
 <style>
+	*{
+		box-sizing: border-box;
+	}
+	page{
+		background-color: #fff !important;
+	}
 	.main {
 		width: 100%;
 		height: 100%;
+		background: blue;
+		/* overflow: scroll; */
+	}
+	.chat-pannel{
+		height: calc(100vh - 160rpx);
+		position: relative;
+		/* overflow: scroll; */
+		/* position: absolute; */
+		/* left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0; */
+		/* display: flex;
+		flex-direction: column; */
+	}
+	.ipt-bar{
+		height: 160rpx;
+	}
+	.msg-list{
+		position: relative;
+		height: 100%;
+		overflow: scroll;
+		/* height: 100vh; */
+		/* background: green; */
+		
+		/* flex: 1; */
+		/* height: 100%; */
+		/* height: calc(100% - 160rpx); */
 	}
 </style>

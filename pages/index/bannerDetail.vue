@@ -42,8 +42,7 @@
 			}  
 		  },
 		onLoad(p){
-			this.url=p
-			console.log(this.url)
+			this.url=decodeURIComponent(p.url)
 			           // #ifdef APP-PLUS
 					   bottomImageMenu = new BottomImageMenu(this.menus)
 			           var  wv = plus.webview.create("","custom-webview",{

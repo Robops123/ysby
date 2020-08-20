@@ -5,9 +5,9 @@
 				<text>手机号</text>
 				<text class="f1 fr"><text style="padding-right: 20upx;">{{mobile}}</text></text>
 			</view>
-			<view class="option-item" v-show="is_oAuth=='0'">
+			<view class="option-item"  @click="toPassword">
 				<text>密码</text>
-				<text class="f1 fr"><text class="f2 cr"  style="padding-right: 20upx;" @click="toPassword">修改</text><text class="icon-arrow-right iconfont"></text></text>
+				<text class="f1 fr"><text class="f2 cr"  style="padding-right: 20upx;" >修改</text><text class="icon-arrow-right iconfont"></text></text>
 			</view>
 		</view>
 	</view>

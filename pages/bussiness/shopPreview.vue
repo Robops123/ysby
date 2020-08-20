@@ -38,6 +38,14 @@
 		    	<image :src="item.thumb" mode="" class="banner" @click='toBannerDetail(item)'></image>
 		    </swiper-item>
 		   </swiper>
+		
+		<view class="list2 ">
+			<view class="list-item" v-for="(item,index) in cateList" :key='index' @click="getListAlter(item.id,index)" :class="{active:cateActive===index}">
+				<image :src="item.icon" mode=""></image>
+				<view class="item-name cg s3">{{item.name}}</view>
+			</view>
+		</view>
+		
 		<view class="nav-bar" style="background: #f3f3f3;">
 			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>精选</text></view>
 			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>新品</text></view>
@@ -86,6 +94,7 @@
 				id:'',
 				url:'',
 				active:1,
+				cateActive:'',
 				rangeActive:'',
 				sh:'',
 				dataList:[],
@@ -94,7 +103,8 @@
 				total:0,
 				more:'',
 				basic:'',
-				carouselList:[]
+				carouselList:[],
+				cateList:[]
 			}
 		},
 		computed: {
@@ -125,6 +135,7 @@
 				that.getBasic()
 			})
 			this.getCarousel()
+			this.getCate()
 			this.getList(this.page)
 			setTimeout(function(){
 				that.$getHeight('#sv',(res) =>{
@@ -146,6 +157,7 @@
 				this.getList()
 			},
 			toggle(t){
+				this.cateActive=''
 				this.active=t
 				this.reset()
 				this.getList(this.page)
@@ -228,7 +240,7 @@
 				switch(item.type){
 					case '1':
 					uni.navigateTo({
-						url:`/pages/index/bannerDetail?url=`+item.link
+						url:`/pages/index/bannerDetail?url=`+encodeURIComponent(item.link)
 					})
 					break ;
 					case '2':
@@ -271,6 +283,32 @@
 									that.getBasic()
 							    })
 			},
+			
+			// 
+			getCate(){
+				var that=this,url='&r=api.home.category'
+				  this.$apiPost(url).then((res) =>{
+					  // that.category=res.data
+					  this.cateList=res.data
+				  })
+			},
+			getListAlter(id,f){
+				this.cateActive=f
+				this.active=''
+				this.reset()
+				var that=this,url='&r=api.merchant.home.categoods',
+				params={
+					page:this.page,
+					pagesize: this.pageSize,
+					cateid:id,
+					merchid:this.id,
+				}
+				  this.$apiPost(url,params).then((res) =>{
+					  that.total=res.total
+					  that.dataList=that.dataList.concat(res.data)
+					  that.more=''
+				  })
+			}
 		}
 	}
 </script>
@@ -333,7 +371,7 @@
 	.sp-item3-top{
 		background-color:#fff;
 		padding: 20upx 30upx 0 0;
-		margin: 20upx 0;
+		margin: 20upx 0 0;
 	}
 	.sp-item3-top .headface{
 		width: 90upx;
@@ -451,4 +489,28 @@
 	.collectnum{
 		margin-left: 15upx;
 	}
+	
+	
+	.list2{
+		text-align: justify;
+		/* margin: 0 0 30upx; */
+		padding: 20upx 0 0;
+		box-sizing: border-box;
+		background-color: #fff;
+	}
+	.list2 .list-item{
+		display: inline-block;
+		margin:0 0 26upx 0;
+		width: 25%;
+		text-align: center;
+	}
+	.list2 .list-item image{
+		width: 90upx;
+		height: 90upx;
+		border-radius: 50%;
+	}
+	.list2 .list-item.active .item-name{
+		color: #ff7379;
+	}
+	
 </style>
