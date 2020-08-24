@@ -1,6 +1,6 @@
 <template>
 	<view class="box">
-		<view class="f1">登录</view>
+		<view class="f1">注册</view>
 		<view class="fn"><text>您输入的号码是</text>+86 {{mobile}}</view>
 		
 		<view class="input-line">
@@ -11,7 +11,7 @@
 			<input type="password" v-model="newpwd" placeholder="请再次确认密码"/>
 		</view>
 		<view class="input-line">
-			<input type="text" v-model="invited_code" placeholder="请输入邀请码"/>
+			<input type="text" v-model="invited_code" placeholder="请输入邀请码(选填)"/>
 		</view>
 		<view class="input-line">
 			<input type="text" v-model="verifycode" placeholder="请输入验证码"/>

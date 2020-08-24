@@ -44,7 +44,7 @@
 			
 			<!-- 类型 -->
 			<view class="list ">
-				<view class="list-item" v-for="(item,index) in productList" :key='index' @click="toCategory(item.id)">
+				<view class="list-item" v-for="(item,index) in productList" :key='index' @click="toCategory(item.id,1)">
 					<image :src="item.icon" mode=""></image>
 					<view class="item-name cg s3">{{item.name}}</view>
 				</view>
@@ -52,6 +52,11 @@
 					<image src="../../static/img/pic/index/icon4.png" mode=""></image>
 					<view class="item-name cg s3">更多分类</view>
 				</view>
+				<view class="list-item" v-for="(item,index) in brandList" :key='index' @click="toCategory(item.id,2)">
+					<image :src="item.icon" mode=""></image>
+					<view class="item-name cg s3">{{item.name}}</view>
+				</view>
+				
 				<!-- #ifdef APP-PLUS || H5 -->
 				<view class="list-item"  @click="contact" style="vertical-align: bottom;">
 						<image src="../../static/img/pic/index/icon10.png" mode=""></image>
@@ -201,6 +206,7 @@
 					// {name:'更多分类',type:9,imgUrl:'../../static/img/pic/index/icon4.png'},
 					// {name:'在线客服',type:10,imgUrl:'../../static/img/pic/index/icon10.png'}
 				],
+				brandList:[],
 				hotList:[],
 				noticeList:[],
 				carouselList:[],
@@ -255,7 +261,7 @@
 			// #ifdef APP-PLUS
 			this.merchModelStatus=Number(1)
 			// #endif
-			this.getCate()
+			this.getGoodsCate()
 			this.getHotList()
 			this.getNotice()
 			this.getCarsouselList()
@@ -383,9 +389,9 @@
 					url:`/pages/index/searchResult?keyword=${this.keywords}`
 				})
 			},
-			toCategory(t){
+			toCategory(t,e){
 				uni.navigateTo({
-					url:`/pages/index/goodsCategory?type=${t}`
+					url:`/pages/index/goodsCategory?type=${t}&extra=${e}`
 				})
 			},
 			toDetail(id){
@@ -399,13 +405,18 @@
 				})
 			},
 			// 商品分类列表
-			getCate(){
-				var that=this,url='&r=api.home.category',params={
-				  	   id:''
-				  }
-				  this.$apiPost(url,params).then((res) =>{
+			getGoodsCate(){
+				var that=this,url='&r=api.home.category'
+				  this.$apiPost(url).then((res) =>{
 					  // that.category=res.data
-					  this.productList=res.data
+					  this.productList=res.data.slice(0,4)
+					  this.getBrandCate()
+				  })
+			},
+			getBrandCate(){
+				var that=this,url='&r=api.home.brand'
+				  this.$apiPost(url).then((res) =>{
+					  this.brandList=res.data
 				  })
 			},
 			// 公告

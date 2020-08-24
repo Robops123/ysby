@@ -83,13 +83,20 @@
 		   onLoad(p){
 			   var that=this
 			   // if(p.type!='false'){
-				   this.type=p.type
-				   
+				   // if(p.extra==1){
+					   if(p.extra!='undefined'){
+						   this.active=p.extra
+					   }else{
+						   this.active=1
+					   }
+				   // }else if(p.ex)
+					   this.type=p.type
+				   this.reset()
 			   // }
 			   // #ifdef MP-WEIXIN
 			   	this.wdnmd()
 			   // #endif
-			   // #ifdef APP-PLUS
+			   // #ifdef APP-PLUS || H5
 			   this.merchModelStatus=Number(1)
 			   // #endif
 			   this.getCategory(this.type)

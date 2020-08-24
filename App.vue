@@ -441,13 +441,13 @@
 								            								   setTimeout(() =>{
 								            									   // that.$msg('安装成功，等待重启')
 																				   plus.runtime.restart(); 
-								            								   },200)
+								            								   },500)
 								            		                            
 								            		                       }, function(e) {  
 								            								   uni.hideLoading()
 								            								   setTimeout(() =>{
 								            									   that.$msg('安装失败')
-								            								   },200)
+								            								   },500)
 								            								   console.log(e)
 								            		                       });  
 								            	}

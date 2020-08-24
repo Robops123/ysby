@@ -40,13 +40,18 @@
 		   </swiper>
 		
 		<view class="list2 ">
-			<view class="list-item" v-for="(item,index) in cateList" :key='index' @click="getListAlter(item.id,index)" :class="{active:cateActive===index}">
+			<view class="list-item" v-for="(item,index) in cateList" :key='index' v-show="index<=6 || showMore"
+			@click="getListAlter(item.id,index)" :class="{active:cateActive===index}">
 				<image :src="item.icon" mode=""></image>
 				<view class="item-name cg s3">{{item.name}}</view>
 			</view>
+			<view class="list-item"  @click="showMore=true" v-if="!showMore">
+				<image src="../../static/img/pic/index/icon4.png" mode=""></image>
+				<view class="item-name cg s3">更多分类</view>
+			</view>
 		</view>
 		
-		<view class="nav-bar" style="background: #f3f3f3;">
+		<view class="nav-bar" style="background: #f3f3f3;" v-if="!cateChoosed">
 			<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>精选</text></view>
 			<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>新品</text></view>
 			<view class="nav nav-left" :class="{active:active==3}" @click="toggle(3)"><text>销量</text></view>
@@ -59,7 +64,7 @@
 			</view>
 		</view>
 		
-		<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom'>
+		<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom' style="padding-top: 20upx;">
 			<view class="padding" style="background-color:#f3f3f3;padding-top: 0;">
 				<view class="box" style="margin-top: 0;">
 					<view class="list" v-for="(item,index) in dataList" :key='index' @click="toGoodsDetail(item.id)">
@@ -104,7 +109,9 @@
 				more:'',
 				basic:'',
 				carouselList:[],
-				cateList:[]
+				cateList:[],
+				cateChoosed:false,
+				showMore:true
 			}
 		},
 		computed: {
@@ -286,9 +293,15 @@
 			
 			// 
 			getCate(){
-				var that=this,url='&r=api.home.category'
-				  this.$apiPost(url).then((res) =>{
+				var that=this,url='&r=api.merchant.home.category',
+				params={
+					merchid:this.id
+				}
+				  this.$apiPost(url,params).then((res) =>{
 					  // that.category=res.data
+					  if(res.data.length>8){
+						  this.showMore=false
+					  }
 					  this.cateList=res.data
 				  })
 			},
@@ -307,6 +320,8 @@
 					  that.total=res.total
 					  that.dataList=that.dataList.concat(res.data)
 					  that.more=''
+					  that.cateChoosed=true
+					  that.$forceUpdate()
 				  })
 			}
 		}
@@ -422,7 +437,7 @@
 	}
 	
 	.nav-bar{
-		padding: 25upx 0;
+		padding: 25upx 0 0;
 		text-align: center;
 	}
 	.nav{
@@ -500,7 +515,7 @@
 	}
 	.list2 .list-item{
 		display: inline-block;
-		margin:0 0 26upx 0;
+		margin:0 0 20upx 0;
 		width: 25%;
 		text-align: center;
 	}
