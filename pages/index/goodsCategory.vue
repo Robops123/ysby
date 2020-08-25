@@ -26,13 +26,13 @@
 				<view class="" >
 					<image  :src="category[tabActive].advimg" v-if="category.length>0 && categoryReady" mode="widthFix" class="banner" ></image>
 					<!-- <image v-else :src="category[tabActive].thumb" mode="" class="banner"></image> -->
-					<view class="s1 headline" v-if="active==1 && category.length>0">{{'全部'+(category[tabActive].name || '')}}<text v-show="merchModelStatus==1">商家</text></view>
+					<view class="s1 headline" v-if="active==1 && category.length>0">{{'全部'+(category[tabActive].name || '')}}</view>
 					<view class="s1 headline" v-if="active==2 && category.length>0">{{'全部'+(category[tabActive].name || '')+'用品'}}</view>
 					<!-- 区 -->
 					<view class="right-content" v-if="active==1">
 						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList',tabActive,item.id)">
-							<image :src="item.logo" mode=""></image>
-							<view class="s3 cg ellipsis">{{item.merchname}}</view>
+							<image :src="item.thumb" mode=""></image>
+							<view class="s3 cg ellipsis">{{item.title}}</view>
 						</view>
 					</view>
 					<view class="right-content" v-if="active==2">
@@ -62,7 +62,7 @@
 				type:'',
 				categoryReady:false,
 				url:'&r=api.home.morecate',
-				url2:'&r=api.home.morecate.catemerch',
+				url2:'&r=api.home.morecate.cateOfficialGoods',
 				tapped:'',
 				category:[],
 				active:1,
@@ -114,8 +114,11 @@
 					// cateId=this.category[id1].id
 					// goodsId=id2
 					uni.navigateTo({
-						url:'./goodsList?merchId='+id2+'&cateId='+this.category[id1].id+'&type=1'
+						url:'./goodsDetail?id='+id2
 					})
+					// uni.navigateTo({
+					// 	url:'./goodsList?merchId='+id2+'&cateId='+this.category[id1].id+'&type=1'
+					// })
 				}else{
 					uni.navigateTo({
 						url:'./goodsList?brandId='+this.category[id1].id+'&cateId='+id2+'&type=2'
@@ -148,7 +151,7 @@
 			reset(){
 				if(this.active==1){
 					 this.url='&r=api.home.morecate'
-					 this.url2='&r=api.home.morecate.catemerch'
+					 this.url2='&r=api.home.morecate.cateOfficialGoods'
 				}else{
 					 this.url='&r=api.home.morecate.brand'
 					this.url2='&r=api.home.morecate.brandcates'
@@ -331,6 +334,11 @@
 		height: 100upx;
 		margin-bottom: 30upx;
 		border-radius: 50%;
+	}
+	.right-item view{
+		max-width: 140upx;
+		/* width: 100upx; */
+		margin: 0 auto;
 	}
 	.right-content{
 		text-align: justify;

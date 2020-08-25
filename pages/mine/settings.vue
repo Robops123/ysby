@@ -64,6 +64,8 @@
 				})
 			},
 			quit(){
+				this.$conn.closed = true;
+				this.$im.conn.close();
 				uni.removeStorageSync('userInfo')
 				this.$msg('退出成功')
 				setTimeout(function(){
