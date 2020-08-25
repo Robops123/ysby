@@ -161,9 +161,11 @@
 				  var url='&r=api.member.footprint.remove'
 				  this.$apiPost(url,params).then((res) =>{
 						// that.options[2].info++
-						that.$msg('移除成功')
 						that.dataList.splice(from,1)
 						uni.$emit('deleteRecord')
+						setTimeout(() =>{
+							that.$msg('移除成功')
+						},300)
 				  })
 			},
 			toggleOperation(){

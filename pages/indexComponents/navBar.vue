@@ -23,9 +23,15 @@
 </template>
 
 <script>
+	import uniStatusBar from "@/components/uni-status-bar/uni-status-bar"
+	import uniBadge from "@/components/uni-badge/uni-badge.vue"
 	let msgStorage = require("@/comps/chat/msgstorage");
 	export default{
 		props:['located','city','logined','uid','token'],
+		components:{
+			uniStatusBar,
+			uniBadge
+		},
 		data(){
 			return {
 				keywords:'',
