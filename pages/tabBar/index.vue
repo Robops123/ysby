@@ -17,11 +17,13 @@
 			<image :src="bannerList[0].thumb" v-if="bannerList[0]" mode="widthFix" @click='toBannerDetail(bannerList[0])' class="banner banner2 "></image>
 			
 			<special-part></special-part>
+			
+			<image :src="bannerList[1].thumb" v-if="bannerList[1]" mode="widthFix" @click='toBannerDetail(bannerList[1])' class="banner banner2"></image>
 		</view>
 		
 		
 
-		<image :src="bannerList[1].thumb" v-if="bannerList[1]" mode="widthFix" @click='toBannerDetail(bannerList[1])' class="banner banner2"></image>
+		
 
 		<view class="hot " style="padding-top: 20upx;">
 			<view class="hot-title">
@@ -142,7 +144,7 @@
 				located: true,
 				city: '',
 				hotList: [],
-				bargainList: [],
+				
 				bannerList: [],
 				businessList: [],
 				lng: '',
@@ -151,7 +153,7 @@
 				amapPlugin: null,
 				key: '364f9609be0c585e1d79d1c6f5ca4faf',
 
-				activityData: {}
+				
 			}
 		},
 		// watch:{
@@ -194,11 +196,9 @@
 			this.merchModelStatus = Number(1)
 			// #endif
 			this.getHotList()
-			this.getBargain()
 			this.getBanner()
 			this.getNearbyBusiness()
-
-			this.getActivity()
+			
 
 		},
 		methods: {
@@ -208,17 +208,6 @@
 					url: './discover'
 				})
 			},
-			toDetail(id) {
-				uni.navigateTo({
-					url: `/pages/index/goodsDetail?id=${id}`
-				})
-			},
-			toGoodsList(id, title) {
-				uni.navigateTo({
-					url: `/pages/index/goodsList?id=${id}&title=${title}`
-				})
-			},
-			
 			// 热卖商品
 			getHotList(p) {
 				var that = this
@@ -229,27 +218,7 @@
 					this.$msg(err)
 				})
 			},
-			// 热卖
-			getBargain() {
-				var that = this
-				var url = '&r=api.home.goods.bargain'
-				this.$apiPost(url).then((res) => {
-					that.bargainList = res.data
-				}).catch((err) => {
-					this.$msg(err)
-				})
-			},
-			// 限时活动
-			getActivity() {
-				var that = this
-				var url = '&r=api.home.activity'
-				this.$apiPost(url).then((res) => {
-					that.activityData = res.data[0]
-					// that.bargainList=res.data
-				}).catch((err) => {
-					this.$msg(err)
-				})
-			},
+			
 			// 广告图
 			getBanner() {
 				var that = this
@@ -419,7 +388,7 @@
 	}
 
 	.banner2 {
-		margin: 10upx 0 20upx;
+		/* margin: 10upx 0 20upx; */
 		border-radius: 0 !important;
 	}
 
@@ -430,49 +399,8 @@
 
 	
 
-	.card {
-		padding: 10upx 8upx;
-		margin: 15upx 0;
-	}
-
-	.card1 {
-		background-color: #fff7f5;
-	}
-
-	.card .more .iconfont {
-		margin-left: 10upx;
-		font-size: 28upx;
-		border-radius: 50%;
-		color: #ffb6b9;
-		/* background-color: #; */
-		vertical-align: bottom;
-	}
-
-	.sp-item image {
-		width: 200upx;
-		height: 200upx;
-		border-radius: 10upx;
-	}
-
-	.sp-item {
-		margin: 8upx 0 10upx 2%;
-		display: inline-block;
-		vertical-align: top;
-		width: 31%;
-		/* pad */
-	}
-
-	..sp-item:last-child {
-		margin-right: 0;
-	}
-
-	.sp-item .ellipsis {
-		width: 200upx;
-	}
-
-	.sp-item:last-child {
-		margin-right: 0;
-	}
+	
+	
 
 	.hot {
 		text-align: center;
