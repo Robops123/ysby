@@ -23,7 +23,10 @@
 		},
 		onShow() {
 			console.log('App Show')
-			this.HxInit()
+			var userInfo = uni.getStorageSync('userInfo')
+			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
+				this.HxInit()
+			}
 		},
 		onHide: function() {
 			console.log('App Hide')

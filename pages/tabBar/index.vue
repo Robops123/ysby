@@ -1,24 +1,6 @@
 <template>
-	<view v-cloak>
-		<view class="nav padding" style="padding-bottom: 10upx;">
-			<!-- #ifdef APP-PLUS || H5 -->
-				<uni-status-bar />
-			<!-- #endif -->
-			<view class="nav-content">
-				<image src="../../static/img/pic/index/address.png" mode="" class="" style="width: 0.9rem;height: 1rem;margin: 3px 3px 0 0;"></image>
-				<!-- <text class="iconfont icon-address cr" ></text> -->
-				<view class="cityName ellipsis" v-show="located">{{city ? city:'定位中'}}</view>
-				<view v-show="!located" @click="reLocate">重新获取</view>
-				<view class="search-line">
-					<icon type="search" size="20" class="icon" />
-					<input type="text" v-model="keywords" @confirm='search' placeholder="搜索"/>
-				</view>
-				<view class="comment" @click="toMessage">
-					<image src="../../static/img/pic/msg.png" mode="" class="" ></image>
-					<uni-badge :text="msgNum" type='main' class="badge" size="small" v-show="msgNum>0"></uni-badge>
-				</view>
-			</view>
-		</view>
+	<view >
+		<nav-bar :located='located' :city='city' @relocate='getNearbyBusiness' :logined='logined' :uid='uid' :token='token'></nav-bar>
 		
 		<!-- 列表 -->
 		<view class="padding main">
@@ -38,7 +20,6 @@
 				<view  class='notice-content'>{{item.title}}</view>
 				    </swiper-item>
 				   </swiper>
-				<!-- <view class="s2 cg content ellipsis">中企商会酒店APP将于今年4月全新asdasd上线，敬请期待！</view> -->
 			</view>
 			
 			
@@ -52,7 +33,7 @@
 					<image src="../../static/img/pic/index/icon4.png" mode=""></image>
 					<view class="item-name cg s3">更多分类</view>
 				</view>
-				<view class="list-item" v-for="(item,index) in brandList" :key='index' @click="toCategory(item.id,2)">
+				<view class="list-item" v-for="(item,index) in brandList" :key='index+10' @click="toCategory(item.id,2)">
 					<image :src="item.icon" mode=""></image>
 					<view class="item-name cg s3">{{item.name}}</view>
 				</view>
@@ -159,19 +140,22 @@
 		<sku ref='sku' @completeSpecChoose='completeSpecChoose' :defaultImg='defaultImg' :defaultPrice='defaultPrice'
 		:category='category' :total='total' v-if="receivedCategory" :goodsid='id'></sku>
 		
-		<audio></audio>
+		<!-- <audio></audio> -->
 	</view>
 </template>
 
 <script>
+	// 拆分
+	import navBar from '@/pages/indexComponents/navBar.vue'
+	
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniStatusBar from "@/components/uni-status-bar/uni-status-bar"
 	import amap from '@/common/amap-wx.js';  
 	import sku from '@/components/sku/pages/sku.vue'
 	import uniBadge from "@/components/uni-badge/uni-badge.vue"
-	let msgStorage = require("@/comps/chat/msgstorage");
 	export default{
 		components:{
+			navBar,
 			uniRate,
 			uniStatusBar,
 			sku,
@@ -190,10 +174,10 @@
 				receivedCategory:false,
 				total:0,
 				logined:false,
-				located:true,
 				uid:'',
 				token:'',
-				keywords:'',
+				located:true,
+				city:'',
 				productList:[
 					// {name:'睡眠用品',type:1,imgUrl:'../../static/img/pic/index/icon6.png'},
 					// {name:'出行用品',type:2,imgUrl:'../../static/img/pic/index/icon2.png'},
@@ -215,10 +199,10 @@
 				businessList:[],
 				lng:'',
 				lat:'',
-				city:'',
+				
 				amapPlugin:null,
 				key:'364f9609be0c585e1d79d1c6f5ca4faf',
-				msgNum:'',
+				
 				activityData:{}
 			}
 		},
@@ -235,7 +219,7 @@
 				this.logined=true
 				this.uid=userInfo.uid
 				this.token=userInfo.token
-				this.msgListener()
+				// this.msgListener()
 			}else{
 				this.logined=false
 			}
@@ -250,7 +234,7 @@
 				that.logined=true
 				that.uid=userInfo2.uid
 				that.token=userInfo2.token
-				that.msgListener()
+				// that.msgListener()
 			})
 			// #ifdef MP
 			this.amapPlugin = new amap.AMapWX({  
@@ -268,81 +252,12 @@
 			this.getBargain()
 			this.getBanner()
 			this.getNearbyBusiness()
-			this.calcUnRead()
+			
 			this.getActivity()
-			let members=uni.getStorageSync('member') || []
-			this.transToName(members)
+			
 		},
 		methods:{
-			msgListener(){
-				var that=this
-				msgStorage.on("newChatMsg", function(renderableMsg, type, curChatMsg, sesskey){
-					// console.log(renderableMsg, type, curChatMsg, sesskey)
-					// 判断是否属于当前会话
-					let members=uni.getStorageSync('member') || [],
-					existance=false
-					
-					if(members.length==0){
-						members.push({
-							name:renderableMsg.yourname
-						})
-						// for(var i=0;i<members.length;i++){
-							that.transToName(members)
-						// }
-					}else {
-						for(var i=0;i<members.length;i++){
-							if(members[i].name==renderableMsg.yourname){
-								existance=true
-							}
-						}
-						if(!existance){
-							members.push({
-								name:renderableMsg.yourname
-							})
-							// for(var i=0;i<members.length;i++){
-								that.transToName(members)
-							// }
-						}else{
-							that.transToName(members)
-						}
-					}
-					
-				});
-			},
-			async transToName(members){
-				for(let i=0;i<members.length;i++){
-					if(!members[i].chatTarget){
-				await	this.getNameById(members[i].name).then((res) =>{
-							if(res){
-								members[i].chatTarget=res
-							}else{
-								members[i].chatTarget=''
-							}
-						})
-						// members[i].chatTarget=await this.getNameById(members[i].name)
-						// console.log(name)
-					}
-				}
-				uni.setStorageSync('member',members)
-				this.calcUnRead();
-			},
-			getNameById(id){
-				var that=this,merchname,
-				params={
-					uid:this.uid,
-					token:this.token,
-					hxid:id
-				}
-				  var url='&r=api.member.assist.hxidToMerch'
-				  return new Promise((resolve,reject) =>{
-					  this.$apiPost(url,params).then((res) =>{
-						  resolve(res.data.merchname)
-					  }).catch((err) =>{
-					  	this.$msg(err)
-					  })
-				  })
-				  
-			},
+			
 			// 轮播链接
 			toBannerDetail(item){
 				console.log(item)
@@ -365,14 +280,6 @@
 				}
 				
 			},
-			toMessage(){
-				uni.$on('reduceMsg',(res) =>{
-					this.msgNum-=res
-				})
-				uni.navigateTo({
-					url:`/pages/chat/message`
-				})
-			},
 			contact(){
 				uni.navigateTo({
 					url:`/pages/index/webKf`
@@ -382,11 +289,6 @@
 			toDiscover(){
 				uni.switchTab({
 					url:'./discover'
-				})
-			},
-			search(){
-				uni.navigateTo({
-					url:`/pages/index/searchResult?keyword=${this.keywords}`
 				})
 			},
 			toCategory(t,e){
@@ -490,15 +392,7 @@
 					  this.$msg(err)
 				  })
 			},
-			reLocate(){
-				uni.showModal({
-					title:'提示',
-					content:'重新获取定位?',
-					success:() =>{
-						this.getNearbyBusiness()
-					}
-				})
-			},
+			
 			getNearbyBusiness(){
 				// #ifdef APP-PLUS || H5
 				this.appLocate()
@@ -622,37 +516,7 @@
 										that.$msg('添加成功')
 				  })
 			},
-			calcUnRead(){
-				var member = uni.getStorageSync("member");
-				var myName = uni.getStorageSync("myUsername");
-				var num=0
-				for(let i = 0; i < member.length; i++){
-					let newChatMsgs = uni.getStorageSync(member[i].name + myName) || [];
-					let historyChatMsgs = uni.getStorageSync("rendered_" + member[i].name + myName) || [];
-					let curChatMsgs = historyChatMsgs.concat(newChatMsgs);
-					if(curChatMsgs.length){
-						let lastChatMsg = curChatMsgs[curChatMsgs.length - 1];
-						if(lastChatMsg.info.from!=lastChatMsg.username){
-							num+=newChatMsgs.length
-						}
-						
-						// lastChatMsg.unReadCount = newChatMsgs.length;
-						// if(lastChatMsg.unReadCount > 99) {
-						// 	lastChatMsg.unReadCount = "99+";
-						// }
-						
-					}
-				}
-				if(num > 99){
-					num='99+'
-				}
-				if(num>0){
-					this.msgNum=num
-					const innerAudioContext = uni.createInnerAudioContext();
-					innerAudioContext.src = '/static/media/msgNotice.mp3';
-					innerAudioContext.play()
-				}
-			},
+			
 			noticeChange(e){
 				console.log(e)
 			},
@@ -662,43 +526,7 @@
 </script>
 
 <style>
-	.nav{
-		z-index: 999;
-		background-color: #fff;
-		position: fixed;
-		left: 0;
-		top: 0;
-		width: 100%;
-		box-sizing: border-box;
-		/* #ifdef MP */
-		padding-top: 0 !important;
-		/* #endif */
-		
-	}
-	.nav .nav-content{
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-	}
-	.search-line{
-		/* height: 120upx; */
-		background-color: #f4f4f4;
-		border-radius: 120upx;
-		flex: 1;
-		margin: 0 40upx;
-		padding: 8upx 15upx;
-	}
-	.search-line icon{
-		display: inline-block;
-			vertical-align: middle;
-	}
-	.search-line input{
-		display: inline-block;
-		width: 70%;
-		height: 100%;
-		vertical-align: middle;
-		margin-left: 10upx;
-	}
+	
 	
 	.main{
 		padding-top: 84upx;
@@ -950,13 +778,6 @@
 			font-size: 24upx;
 		}
 		
-		.comment image{
-			position: relative;
-			width: 45upx;
-			height: 40upx;
-			display: inline-block;
-			vertical-align: middle;
-		}
 		
 		.buy image{
 			width: 55upx;
@@ -968,22 +789,7 @@
 			display: inline-block;
 			vertical-align:middle;
 		}
-		.cityName{
-			max-width: 120upx;
-			overflow: hidden;
-		}
 		
-		.comment{
-			position: relative;
-		}
-		.badge{
-			position: absolute;
-			right: -8px;
-			top: -8px;
-		}
-		.collectnum{
-			margin:0 15upx;
-		}
 		.announcement{
 			margin-top: 15upx;
 		}
