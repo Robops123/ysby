@@ -22,9 +22,13 @@
 				   </swiper>
 			</view>
 			
+			<view class="menu-container">
+				<image src="../../static/img/pic/index/left.png" mode="widthFix" style="margin-right: 4%;" @click="toCategory('',2)"></image>
+				<image src="../../static/img/pic/index/right.png" mode="widthFix" @click="toCategory('',1)"></image>
+			</view>
 			
 			<!-- 类型 -->
-			<view class="list ">
+			<!-- <view class="list ">
 				<view class="list-item" v-for="(item,index) in productList" :key='index' @click="toCategory(item.id,1)">
 					<image :src="item.icon" mode=""></image>
 					<view class="item-name cg s3">{{item.name}}</view>
@@ -36,23 +40,23 @@
 				<view class="list-item" v-for="(item,index) in brandList" :key='index+10' @click="toCategory(item.id,2)">
 					<image :src="item.icon" mode=""></image>
 					<view class="item-name cg s3">{{item.name}}</view>
-				</view>
+				</view> -->
 				
 				<!-- #ifdef APP-PLUS || H5 -->
-				<view class="list-item"  @click="contact" style="vertical-align: bottom;">
+				<!-- <view class="list-item"  @click="contact" style="vertical-align: bottom;">
 						<image src="../../static/img/pic/index/icon10.png" mode=""></image>
 					<view class="item-name cg s3">在线客服</view>
-				</view>
+				</view> -->
 				<!-- #endif -->
 				<!-- #ifdef MP -->
-				<view class="list-item"  style="vertical-align: bottom;">
+				<!-- <view class="list-item"  style="vertical-align: bottom;">
 					<button class="userinfo-btn" open-type="contact">
 						<image src="../../static/img/pic/index/icon10.png" mode=""></image>
 					</button>
 					<view class="item-name cg s3">在线客服</view>
-				</view>
+				</view> -->
 				<!-- #endif -->
-			</view>
+			<!-- </view> -->
 			</view>
 			<image :src="bannerList[0].thumb" v-if="bannerList[0]" mode="widthFix" @click='toBannerDetail(bannerList[0])' class="banner banner2 banner-low"></image>
 			<view class="padding main" style="padding-top: 20upx;">
@@ -555,11 +559,11 @@
 	}
 	.banner2{
 		height: 135px;
-		margin-top: 20upx;
+		/* margin-top: 20upx; */
 		border-radius: 0 !important;
 	}
 	.banner3{
-		margin: 10upx 0 20upx;
+		/* margin: 10upx 0 20upx; */
 		height: 135px;
 		border-radius: 0 !important;
 	}
@@ -609,7 +613,7 @@
 	}
 	
 	.card{
-		padding: 10upx 8upx;
+		padding: 10upx 0;
 		margin: 15upx 0;
 	}
 	.card1{
@@ -815,5 +819,12 @@
 			height: 90upx;
 			margin: 0 auto;
 			text-align: center;
+		}
+		
+		.menu-container{
+			margin-top: 20upx;
+		}
+		.menu-container image{
+			width: 48%;
 		}
 </style>
