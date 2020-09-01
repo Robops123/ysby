@@ -23,8 +23,8 @@
 			</view>
 			
 			<view class="menu-container">
-				<image src="../../static/img/pic/index/left.png" mode="widthFix" style="margin-right: 4%;" @click="toCategory('',2)"></image>
-				<image src="../../static/img/pic/index/right.png" mode="widthFix" @click="toCategory('',1)"></image>
+				<image src="../../static/img/pic/index/left.png" mode="widthFix" style="margin-right: 4%;" @click="toCategory('',1)"></image>
+				<image src="../../static/img/pic/index/right.png" mode="widthFix" @click="toCategory('',2)"></image>
 			</view>
 			
 			<!-- 类型 -->

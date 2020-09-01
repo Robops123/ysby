@@ -95,7 +95,7 @@
 			
 		</view>
 		
-		<share-prompt :show='popshow'  :shareTitle="title" @close='closeSharePrompt' :alterUrl="'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+id"
+		<share-prompt :show='popshow'  :shareTitle="title" @close='closeSharePrompt' :alterUrl="'http://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+id"
 		 :miniProgramPath="'/pages/index/articleDetail?id='+id"  :uid='uid' :token='token' @shareSuccess='shareSuccess'></share-prompt>
 		
 		<ygc-comment ref="ygcComment" 
@@ -461,7 +461,7 @@
 						shareOPtions.summary = ' ';
 						shareOPtions.imageUrl =this.shareImg ? this.shareImg : '/static/img/app.jpg'
 						shareOPtions.title = this.data.title || '文章分享';
-						shareOPtions.href = 'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.id;
+						shareOPtions.href = 'http://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.id;
 						break;
 					case 1:
 						shareOPtions.summary = this.shareText;
@@ -474,7 +474,7 @@
 						shareOPtions.miniProgram = {
 							id:'gh_2f5dfaa2fae2',
 							path:'/pages/index/articleDetail?id='+this.id,
-							webUrl:'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.id,
+							webUrl:'http://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.id,
 							type:0
 						};
 						break;

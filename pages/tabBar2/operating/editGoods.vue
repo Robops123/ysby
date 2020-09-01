@@ -74,17 +74,30 @@
 		</view>
 		
 		<view class="activity s2">
+			<view class="label-80 ">商品规格</view>
+			<view class="bottom-border" v-for="(item,index) in catesList" :key='index'>
+				<text class="label-80 cg">{{item.title}}</text>
+				<view>
+					<picker class="picker" @change="bindCatesChange($event,index)" :value="catesValueList[index]" :range="item.item" :range-key="'itemtitle'">
+					     <view class="uni-input " style="display: inline-block;">{{item.item[catesValueList[index]].itemtitle}}</view>
+						 <text class="icon-arrow-right iconfont fr"></text>
+					 </picker>
+				</view>
+			</view>
+		</view>
+		
+		<view class="activity s2">
 			<view class="bottom-border">
 				<text class="label-80 cg">价格</text>
-				<input type="text" v-model="data.marketprice" style="vertical-align: middle;"/>
+				<input type="text" v-model="marketprice" style="vertical-align: middle;"/>
 			</view>
 			<view class="bottom-border">
 				<text class="label-80 cg">库存</text>
-				<input type="text" v-model="data.total" style="vertical-align: middle;"/>
+				<input type="text" v-model="stock" style="vertical-align: middle;"/>
 			</view>
 			<view class="bottom-border">
 				<text class="label-80 cg">商品重量</text>
-				<input type="text" v-model="data.weight" style="vertical-align: middle;"/>
+				<input type="text" v-model="weight" style="vertical-align: middle;"/>
 			</view>
 		</view>
 		
@@ -137,7 +150,13 @@
 				lat:'',
 				lng:'',
 				address:'',
-				pic:[]
+				pic:[],
+				catesList:[],
+				catesValueList:'',
+				goid:'',
+				stock:'',
+				weight:'',
+				marketprice:''
 			}
 		},
 		onLoad(p){
@@ -149,6 +168,7 @@
 				this.token=userInfo.token
 			} 
 			this.getDetail()
+			this.getCates()
 		},
 		methods:{
 			//选择图片
@@ -267,22 +287,56 @@
 						subtitle:this.data.subtitle,
 						unit:this.data.unit,
 						thumb:this.pic.join(','),
-						marketprice:this.data.marketprice,
-						total:this.data.total,
-						weight:this.data.weight,
+						marketprice:this.marketprice,
+						stock:this.stock,
+						weight:this.weight,
 						goodsstatus:this.data.goodsstatus,
 						ishot:this.data.ishot,
 						displayorder:this.data.displayorder,
-						cates:this.data.cates
+						cates:this.data.cates,
+						goid:this.goid
 					}
 					var url='&r=api.myshop.goods.doEdit'
 					  this.$apiPost(url,params).then((res) =>{
 							that.$msg('修改成功')
 							setTimeout(function(){
 								uni.hideLoading()
+								that.getByCates()
 								that.getDetail()
 							},1500)
 					  })
+				},
+				getCates(){
+					var url='&r=api.myshop.goods.sku&goodsid='+this.goodsid+'&uid='+this.uid+'&token='+this.token
+					  this.$apiPost(url).then((res) =>{
+						  this.catesList=res.data
+						  this.catesValueList=new Array(res.data.length).fill(0)
+						  this.getByCates()
+					  })
+				},
+				getByCates(){
+					var url='&r=api.myshop.goods.skustock',
+					params={
+						goodsid:this.goodsid,
+						specitemid:this.catesList.map((item,index) =>{
+							return item.item[this.catesValueList[index]].itemid
+						}).join(','),
+						uid:this.uid,
+						token:this.token
+					}
+					  this.$apiPost(url,params).then((res) =>{
+						  this.marketprice=res.data.marketprice
+						  this.weight=res.data.weight
+						  this.stock=res.data.stock
+						  this.goid=res.data.goid
+						  this.$forceUpdate()
+					  })
+				},
+				bindCatesChange(e,f){
+					this.catesValueList[f]=e.detail.value
+					this.getByCates()
+					this.$forceUpdate()
+					console.log(this.catesValueList)
 				}
 		}
 	}

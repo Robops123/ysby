@@ -342,7 +342,7 @@
 			},
 			getCategory(id,img,price){
 				this.defaultImg=img
-				this.defaultPrice=price.split(' - ')[0]
+				this.defaultPrice=price
 				this.$loading()
 				this.id=id
 							  var that=this

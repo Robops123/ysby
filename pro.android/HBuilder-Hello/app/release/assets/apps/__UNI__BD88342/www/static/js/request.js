@@ -4,7 +4,7 @@ const baseURL = 'http://192.168.1.157/yishuban2/web/merchant.php?i=2c=site&a=ent
 // 参数： url:请求地址  param：请求参数  way：请求方式 res：回调函数http://192.168.1.157/yishuban2/web/merchant.php?i=2c=site&a=entry&m=ewei_shopv2&do=web
 
  /**
-  *  @name 请求http://yuying.qinshaozhuanshu.cn/web/merchant.php?i=2&c=site&a=entry&m=ewei_shopv2&do=web
+  *  @name 请求http://www.wxzdhy.cn/web/merchant.php?i=2&c=site&a=entry&m=ewei_shopv2&do=web
   */
  async function apiPost(url,params){
  	// if(!params)console.warn("没有传入参数params");

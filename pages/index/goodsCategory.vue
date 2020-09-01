@@ -8,7 +8,7 @@
 				<view class="icon-previewleft iconfont" @click="back"></view>
 			<!-- #endif -->
 				<view class="nav-bar">
-					<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>商品专区</text></view>
+					<view class="nav nav-left" :class="{active:active==1}" @click="toggle(1)"><text>官方自营</text></view>
 					<view class="nav nav-right" :class="{active:active==2}" @click="toggle(2)"><text>品牌专区</text></view>
 				</view>
 		</view>
@@ -29,10 +29,20 @@
 					<view class="s1 headline" v-if="active==1 && category.length>0">{{'全部'+(category[tabActive].name || '')}}</view>
 					<view class="s1 headline" v-if="active==2 && category.length>0">{{'全部'+(category[tabActive].name || '')+'用品'}}</view>
 					<!-- 区 -->
-					<view class="right-content" v-if="active==1">
-						<view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList',tabActive,item.id)">
+					<view class="right-content sp2" v-if="active==1">
+						<!-- <view class="right-item" v-for="(item,index) in dataList" :key='index' @click="to('goodsList',tabActive,item.id)">
 							<image :src="item.thumb" mode=""></image>
 							<view class="s3 cg ellipsis">{{item.title}}</view>
+						</view> -->
+						<view class="sp-item2 list" style="margin-top: 0;margin-bottom: 20upx;" v-for="(item,index) in dataList" :key='index' @click="to('goodsList',tabActive,item.id)">
+							<image :src="item.thumb" mode=""></image>
+							<view class=" ellipsis" style="padding-left: 20upx;">{{item.title}}</view>
+							<view class="cr s5 word-bottom" style="padding: 5upx 20upx  20upx ;box-sizing: border-box;">
+								<text><text class="s3">￥</text>{{item.marketprice}}</text>
+								<!-- <view class="buy fr">
+									<image src="../../static/img/pic/cart.png" mode="" @click.stop="getCategory(item.id,item.thumb,item.marketprice)"></image>
+								</view> -->
+							</view>
 						</view>
 					</view>
 					<view class="right-content" v-if="active==2">
@@ -343,6 +353,39 @@
 	.right-content{
 		text-align: justify;
 	}
+	
+	.sp2{
+		text-align: justify;
+		margin: 40upx 0 20upx;
+	}
+	.sp2 .sp-item2{
+		background: #FFF;
+		width: 49%;
+		display: inline-block;
+		/* margin-bottom: 15upx; */
+	}
+	.sp2 .sp-item2:nth-of-type(odd){
+		margin-right: 2%;
+	}
+	.sp2 .sp-item2 view{
+		/* margin-bottom: 20upx; */
+	}
+	.sp2 image{
+		/* margin-bottom: 10upx; */
+		width: 100%;
+		height: 250upx;
+	}
+	
+	.buy image{
+		width: 55upx;
+		height: 55upx;
+		padding: 10upx;
+		margin-top: -15upx;
+	}
+	
+	
+	
+	
 	
 	::-webkit-scrollbar {
 	  width: 0px;

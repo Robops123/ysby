@@ -411,14 +411,12 @@
 			},
 			updateTest(){
 				plus.runtime.getProperty(plus.runtime.appid,(widgetInfo) =>{
-					console.log(widgetInfo)
 					var url='&r=api.update.hot',
 					params={
 						version:widgetInfo.version,
 						name:widgetInfo.name 
 					},that=this
 					this.$apiPost(url,params).then((res) =>{
-						console.log(res)
 						if(res.update=="1" && res.wgtUrl){
 							uni.showModal({
 								title:'提示',
@@ -432,7 +430,6 @@
 								            	res.wgtUrl,
 								            	{filename:'_doc/update/' + widgetInfo.name + '/' + new Date().getTime() + '/'},
 								            	function(result,code){
-													console.log(result,code)
 								            		uni.hideLoading()
 													let filePath = result.filename;
 								            		that.$loading('安装中...')
@@ -440,18 +437,12 @@
 								            		                           force: false  
 								            		                       }, function(e) {  
 								            								   uni.hideLoading()
-								            								   console.log(e)
-								            								   setTimeout(() =>{
 								            									   // that.$msg('安装成功，等待重启')
 																				   plus.runtime.restart(); 
-								            								   },500)
 								            		                            
 								            		                       }, function(e) {  
 								            								   uni.hideLoading()
-								            								   setTimeout(() =>{
 								            									   that.$msg('安装失败')
-								            								   },500)
-								            								   console.log(e)
 								            		                       });  
 								            	}
 								            )

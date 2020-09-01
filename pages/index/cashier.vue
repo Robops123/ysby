@@ -179,7 +179,7 @@
 						// 	code:e.code,
 						// }
 			            uni.request({
-			                url: `https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.order.pay&code=${e.code}&orderno=${that.orderno}&uid=${that.uid}&token=${that.token}&type=2`,
+			                url: `https://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.order.pay&code=${e.code}&orderno=${that.orderno}&uid=${that.uid}&token=${that.token}&type=2`,
 							method:'GET',
 			                success: (res) => {
 			                    console.log("pay request success", res);
@@ -288,8 +288,8 @@
 			    appid = plus.runtime.appid;
 			    // #endif
 			    // let url = 'https://demo.dcloud.net.cn/payment/?payid=' + e + '&appid=' + appid + '&total=' + this.price;
-				// let url='http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.member.order.payOrder'
-				let url='http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.member.order.payOrder'
+				// let url='http://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.member.order.payOrder'
+				let url='http://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=api.member.order.payOrder'
 				let params={
 					uid:this.uid,
 					token:this.token,

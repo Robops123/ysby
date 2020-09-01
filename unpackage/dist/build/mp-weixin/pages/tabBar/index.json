@@ -1,9 +1,10 @@
 {
   "navigationBarTitleText": "易舒伴",
   "usingComponents": {
-    "uni-badge": "/components/uni-badge/uni-badge",
     "uni-rate": "/components/uni-rate/uni-rate",
+    "nav-bar": "/pages/indexComponents/navBar",
     "uni-status-bar": "/components/uni-status-bar/uni-status-bar",
-    "sku": "/components/sku/pages/sku"
+    "sku": "/components/sku/pages/sku",
+    "uni-badge": "/components/uni-badge/uni-badge"
   }
 }

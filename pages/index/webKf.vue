@@ -5,7 +5,7 @@
 		<!-- #endif -->
 		
 		<!-- #ifdef MP -->
-		<web-view :src="'https://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.chat?hx_openid='+hx_openid+'&hx_pwd='+hx_pwd" @message='message' :webview-styles="webviewStyles"></web-view>
+		<web-view :src="'https://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.chat?hx_openid='+hx_openid+'&hx_pwd='+hx_pwd" @message='message' :webview-styles="webviewStyles"></web-view>
 		<!-- #endif -->
 	</view>
 	

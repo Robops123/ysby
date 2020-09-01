@@ -80,7 +80,7 @@
 			
 		</view>
 		
-		<share-prompt :show='popshow'  :shareTitle="title" @close='closeSharePrompt' :alterUrl="'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.news.detail&id='+id"
+		<share-prompt :show='popshow'  :shareTitle="title" @close='closeSharePrompt' :alterUrl="'http://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.news.detail&id='+id"
 		 :miniProgramPath="'/pages/index/informationDetail?id='+id"  :uid='uid' :token='token'></share-prompt>
 		
 		<ygc-comment ref="ygcComment" 
