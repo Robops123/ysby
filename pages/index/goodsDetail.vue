@@ -1,27 +1,27 @@
 <template>
 	<view style="padding-bottom: 50px;" >
-		<swiper class="preview alterPreview" :autoplay="autoplay" duration="500" interval="3000" v-show='alterShow'
+		<swiper class="preview alterPreview" :autoplay="autoplay" duration="500" interval="3000" v-show='alterShow'
 		 :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
 			<swiper-item v-if="data.video && data.videopic" style='width: 100%;' class="banner">
 							<image :src="data.videopic" mode="" ></image>
 						</swiper-item>
-		    <swiper-item v-for="(item, index) in data.thumb_url" :key="index" style='width: 100%;' class="banner">
-		    	<image :src="item" mode="" ></image>
-		    </swiper-item>
-		   </swiper>
+		    <swiper-item v-for="(item, index) in data.thumb_url" :key="index" style='width: 100%;' class="banner">
+		    	<image :src="item" mode="" ></image>
+		    </swiper-item>
+		   </swiper>
 		<view class="padding top border-bottom" style="padding-bottom: 0;" :class="{resetTop:alterShow}">
 			<!-- <image src="../../static/img/bg/activity.png" mode="" class="preview"></image> -->
 			<!-- #ifdef MP || H5 -->
-			<swiper class="preview " :autoplay="false" duration="500" interval="3000" id="mpSwiper" :style="{height:(mpSwiperHeight*0.75+'px')}"
+			<swiper class="preview " :autoplay="false" duration="500" interval="3000" id="mpSwiper" :style="{height:(mpSwiperHeight*0.75+'px')}"
 			@transition='swiperChange' :indicator-dots='true' indicator-active-color='#ff6d7e' indicator-color='#fff'>
 				<swiper-item v-if="data.video" class="banner">
 								<video :src="data.video"  id="myVideo" :poster='data.videopic'  @play='play' @pause='pause'>
 								</video>
 							</swiper-item>
-			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index" class="banner">
-			    	<image :src="item" mode="heightFix" ></image>
-			    </swiper-item>
-			   </swiper>
+			    <swiper-item v-for="(item, index) in data.thumb_url" :key="index" class="banner">
+			    	<image :src="item" mode="heightFix" ></image>
+			    </swiper-item>
+			   </swiper>
 			<!-- #endif -->
 			
 			
@@ -92,7 +92,7 @@
 					<view class="enter-button enter-button2" @click="toShop(data.merchid)">进店</view>
 				</view>
 				<view class="sp-item3-bottom">
-					<view v-for="(goodsItem, goodsIndex) in data.goods" :key="goodsIndex" @click="toGoodsDetail(goodsItem.goodsid,data.merchid)">
+					<view v-for="(goodsItem, goodsIndex) in data.goods" :key="goodsIndex" @click="toGoodsDetail(goodsItem.goodsid,data.merchid)">
 						<image :src="goodsItem.thumb" mode=""></image>
 						<view class="price">￥{{goodsItem.marketprice}}</view>
 					</view>
@@ -126,7 +126,7 @@
 		
 		 
 		 <share-prompt :show='popshow'  :shareTitle="title" :miniProgramPath="'/pages/index/GoodsDetail?id='+id"
-		 :alterUrl="'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.goods.detail&id='+id"
+		 :alterUrl="'http://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.goods.detail&id='+id"
 		  @close='closeSharePrompt' :goodsid="id" :uid='uid' :token='token' @poster='getPoster'></share-prompt>
 		 
 		 

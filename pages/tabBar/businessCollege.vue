@@ -160,7 +160,7 @@
 		        ></uni-fab>		
 				
 		<!-- #ifdef MP -->
-			<share-prompt :show='popshow'  :shareTitle="title" @close='closeSharePrompt' :alterUrl="'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+collegeid"
+			<share-prompt :show='popshow'  :shareTitle="title" @close='closeSharePrompt' :alterUrl="'http://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+collegeid"
 			 :miniProgramPath="'/pages/index/articleDetail?id='+collegeid"  :uid='uid' :token='token' @shareSuccess='shareSuccess'></share-prompt>
 		<!-- #endif -->
 	</view>
@@ -586,7 +586,7 @@
 							shareOPtions.summary = ' ';
 							shareOPtions.imageUrl =this.shareImg ? this.shareImg : '/static/img/app.jpg'
 							shareOPtions.title = this.title;
-							shareOPtions.href = 'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.collegeid;
+							shareOPtions.href = 'http://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.collegeid;
 							break;
 						case 1:
 							shareOPtions.summary = this.shareText;
@@ -599,7 +599,7 @@
 							shareOPtions.miniProgram = {
 								id:'gh_2f5dfaa2fae2',
 								path:'/pages/index/articleDetail?id='+this.collegeid,
-								webUrl:'http://yuying.qinshaozhuanshu.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.collegeid,
+								webUrl:'http://www.wxzdhy.cn/app/index.php?i=2&c=entry&m=zhonghong_zhihui&do=mobile&r=wap.share.article.detail&id='+this.collegeid,
 								type:0
 							};
 							break;
