@@ -1,7 +1,8 @@
 <template>
 	<view class="room_bar">
 		<chat-suit-emoji ref="emoji" @newEmojiStr="emojiAction"></chat-suit-emoji>
-		<chat-suit-main ref="main" :username="username" :chatType="chatType" @inputBlured="inputBlured" @inputFocused="cancelEmoji"></chat-suit-main>
+		<chat-suit-main ref="main" :username="username" :goods.sync='goods'
+		:chatType="chatType" @inputBlured="inputBlured" @inputFocused="cancelEmoji"></chat-suit-main>
 		<chat-suit-image ref="image" :username="username" :chatType="chatType"></chat-suit-image>
 
 		
@@ -48,6 +49,9 @@
 				type: String,
 				value: msgType.chatType.SINGLE_CHAT,
 			},
+			goods:{
+				type:String
+			}
 		},
 		data() {
 			return {

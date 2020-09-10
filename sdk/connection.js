@@ -503,7 +503,7 @@ function _login(options, conn) {
 	}
 
 	function callback(status, msg) {
-		console.log("connection stat change", status, msg);
+		// console.log("connection stat change", status, msg);
 		_loginCallback(status, msg, conn);
 	}
 }
@@ -649,6 +649,7 @@ connection.prototype.listen = function (options) {
 	this.onReconnect = options.onReconnect || _utils.emptyfn;
 	this.onSocketConnected = options.onSocketConnected || _utils.emptyfn;
 	this.onTextMessage = options.onTextMessage || _utils.emptyfn;
+	this.onCustomizeMessage = options.onCustomizeMessage || _utils.emptyfn;
 	this.onEmojiMessage = options.onEmojiMessage || _utils.emptyfn;
 	this.onPictureMessage = options.onPictureMessage || _utils.emptyfn;
 	this.onAudioMessage = options.onAudioMessage || _utils.emptyfn;
@@ -1206,7 +1207,7 @@ connection.prototype.handleMessage = function (msginfo) {
 		try {
 			switch (type) {
 				case "txt":
-					let receiveMsg = msgBody.msg;
+					var receiveMsg = msgBody.msg;
 					let emojibody = _utils.parseTextMessage(receiveMsg, WebIM.Emoji);
 					if (emojibody.isemoji) {
 						let msg = {
@@ -1366,6 +1367,41 @@ connection.prototype.handleMessage = function (msginfo) {
 					msg.errorCode = errorCode;
 					this.onCmdMessage(msg);
 					break;
+					case "customize":
+						var receiveMsg = msgBody.msg;
+						var emojibody2 = _utils.parseTextMessage(receiveMsg, WebIM.Emoji);
+						if (emojibody2.isemoji) {
+							let msg = {
+								id: id,
+								type: chattype,
+								from: from,
+								to: too,
+								delay: parseMsgData.delayTimeStamp,
+								data: emojibody.body,
+								ext: extmsg
+							};
+							!msg.delay && delete msg.delay;
+							msg.error = errorBool;
+							msg.errorText = errorText;
+							msg.errorCode = errorCode;
+							this.onEmojiMessage(msg);
+						} else {
+							let msg = {
+								id: id,
+								type: chattype,
+								from: from,
+								to: too,
+								delay: parseMsgData.delayTimeStamp,
+								data: receiveMsg,
+								ext: extmsg
+							};
+							!msg.delay && delete msg.delay;
+							msg.error = errorBool;
+							msg.errorText = errorText;
+							msg.errorCode = errorCode;
+							this.onCustomizeMessage(msg);
+						}
+						break;
 				default:
 					break;
 			}

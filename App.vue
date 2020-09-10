@@ -22,14 +22,14 @@
 			// #endif
 		},
 		onShow() {
-			console.log('App Show')
+			// console.log('App Show')
 			var userInfo = uni.getStorageSync('userInfo')
 			if(userInfo!='' & userInfo!=null & userInfo!=undefined){
 				this.HxInit()
 			}
 		},
 		onHide: function() {
-			console.log('App Hide')
+			// console.log('App Hide')
 			this.$conn.closed = true;
 			this.$im.conn.close();
 		},
@@ -98,7 +98,7 @@
 				});
 				//离开chatroom
 				disp.on("em.chatroom.leave", function(){
-					console.log('em.chatroom.leave');
+					// console.log('em.chatroom.leave');
 					me.calcUnReadSpot();
 				});
 				disp.on("em.chat.session.remove", function(){
@@ -193,7 +193,6 @@
 							 		}
 							    }
 								this.$options.globalData.saveFriendList.push(message);
-								console.log(JSON.stringify(this.$options.globalData.saveFriendList));
 								disp.fire("em.xmpp.subscribe");
 							}
 							break;
@@ -315,6 +314,15 @@
 							this.ack(message);
 						}
 					},
+					onCustomizeMessage: (message)=>{
+						if(message){
+							if(this.onMessageError(message)){
+								msgStorage.saveReceiveMsg(message, msgType.CUSTOMIZE);
+							}
+							this.calcUnReadSpot(message);
+							this.ack(message);
+						}
+					},
 				
 					onEmojiMessage: (message)=>{
 						if(message){
@@ -349,7 +357,6 @@
 				
 					// 各种异常
 					onError: (error)=>{
-						console.log(error)
 						uni.showToast({
 							title: error.type,
 							icon: 'success',
@@ -390,7 +397,6 @@
 							disp.fire("em.xmpp.error.tokenErr");
 						}
 						if (error.type == 'socket_error') {///sendMsgError
-							console.log('socket_errorsocket_error', error)
 							uni.showToast({
 								title: error.type,
 								duration: 2000

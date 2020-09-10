@@ -30,7 +30,7 @@ msgStorage.saveReceiveMsg = function(receiveMsg, type){
 			},
 		};
 	}
-	else if(type == msgType.TEXT || type == msgType.EMOJI){
+	else if(type == msgType.TEXT || type == msgType.EMOJI || type == msgType.CUSTOMIZE){
 		sendableMsg = {
 			id: receiveMsg.id,
 			type: type,
@@ -104,7 +104,6 @@ msgStorage.saveReceiveMsg = function(receiveMsg, type){
 	this.saveMsg(sendableMsg, type, receiveMsg);
 };
 msgStorage.saveMsg = function(sendableMsg, type, receiveMsg){
-	// console.log(sendableMsg)
 	//console.log('sendableMsgsendableMsg', sendableMsg)
 	let me = this;
 	let myName = wx.getStorageSync("myUsername");
@@ -121,7 +120,6 @@ msgStorage.saveMsg = function(sendableMsg, type, receiveMsg){
 			: sendableMsg.body.from + myName;
 	}
 	let curChatMsg = wx.getStorageSync(sessionKey) || [];
-	// console.log(sendableMsg, type, myName)
 	let renderableMsg = msgPackager(sendableMsg, type, myName);
 	if(type == msgType.AUDIO) {
 		renderableMsg.msg.length = sendableMsg.body.length;

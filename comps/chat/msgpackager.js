@@ -30,11 +30,14 @@ module.exports = function(sendableMsg, type, myName){
 	}else if (type == msgType.FILE){
 		renderableMsg.msg.data = [{data: "[当前不支持此格式消息展示]", type: "txt"}];
 		renderableMsg.msg.type = 'txt';
+	}else if(type == msgType.CUSTOMIZE){
+		renderableMsg.msg.data='商品信息'
+		renderableMsg.msg.goods=sendableMsg.value
 	}
 	return renderableMsg;
 
 	function getMsgData(sendableMsg, type){
-		if(type == msgType.TEXT){
+		if(type == msgType.TEXT ){
 			return WebIM.parseEmoji(sendableMsg.value.replace(/\n/mg, ""));
 		}
 		else if(type == msgType.EMOJI){

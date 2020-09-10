@@ -1,6 +1,5 @@
 <template>
 	<scroll-view
-	style="background-color: #fff;"
 		scroll-y="true"
 		class="wrap chat-list"
 		@tap="onTap"
@@ -52,6 +51,13 @@
 							
 						</view>
 						
+					</view>
+					
+					<!-- 商品消息 -->
+					<view v-else-if="item.msg.type == 'customize'" class="goods-msg" @click="toGoodsDetail(item.msg.goods.id)">
+						<view class="title">{{item.msg.goods.title}}</view>
+						<image  :src='item.msg.goods.pic' class="goods-pic"/>
+						<view class="price">{{item.msg.goods.price}}</view>
 					</view>
 				</view>
 			</view>
@@ -117,9 +123,7 @@
 				let sessionKey = username.groupId
 					? username.groupId + myUsername
 					: username.your + myUsername;
-				console.log(sessionKey)
 				let chatMsg = uni.getStorageSync(sessionKey) || [];
-				console.log(chatMsg)
 				
 				this.renderMsg(null, null, chatMsg, sessionKey);
 				uni.setStorageSync(sessionKey, null);
@@ -213,7 +217,6 @@
 				var historyChatMsgs = uni.getStorageSync("rendered_" + sessionKey) || [];
 				
 				historyChatMsgs = historyChatMsgs.concat(curChatMsg);
-			
 				if(!historyChatMsgs.length) return;
 				if (isnew == 'newMsg') {
 					this.chatMsg = this.chatMsg.concat(curChatMsg)
@@ -275,11 +278,17 @@
 					query.selectAll(".message").boundingClientRect();
 					query.exec((res) => {
 						var l=res[0].length
-						this.scrollTop+=res[0][l-1].height
+						// this.scrollTop+=res[0][l-1].height
+						this.scrollTop+=9999
 						
 					})
 				},0)
 			},
+			toGoodsDetail(id){
+				uni.navigateTo({
+					url:`/pages/index/goodsDetail?id=${id}`
+				})
+			}
 		}
 	}
 </script>
@@ -439,5 +448,19 @@
 	.show{
 		display: block;
 	}
-
+	.title{
+		font-size: 28rpx;
+	}
+ .goods-pic{
+	width: 100%;
+	height: 250rpx;
+	margin: 15rpx 0;
+}
+.price{
+	font-size: 24rpx;
+	color:#E12635 !important;
+}
+.goods-msg{
+	width: 437rpx;
+}
 </style>

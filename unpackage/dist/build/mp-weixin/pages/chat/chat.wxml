@@ -1,1 +1,1 @@
-<view><chat class="vue-ref" vue-id="6e1d75c0-1" username="{{username}}" chatType="singleChat" data-ref="chat" bind:__l="__l"></chat></view>
+<view><chat class="vue-ref" vue-id="6e1d75c0-1" username="{{username}}" chatType="singleChat" goods="{{goods}}" data-ref="chat" data-event-opts="{{[['^updateGoods',[['__set_sync',['$0','goods','$event'],['']]]]]}}" bind:updateGoods="__e" bind:__l="__l"></chat></view>

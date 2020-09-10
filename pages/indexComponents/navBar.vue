@@ -74,7 +74,6 @@
 			msgListener(){
 				var that=this
 				msgStorage.on("newChatMsg", function(renderableMsg, type, curChatMsg, sesskey){
-					console.log(renderableMsg, type, curChatMsg, sesskey)
 					// 判断是否属于当前会话
 					let members=uni.getStorageSync('member') || [],
 					existance=false
@@ -133,7 +132,7 @@
 				  var url='&r=api.member.assist.hxidToMerch'
 				  return new Promise((resolve,reject) =>{
 					  this.$apiPost(url,params).then((res) =>{
-						  resolve(res.data.merchname)
+						  resolve(res.data.nickname)
 					  }).catch((err) =>{
 						  resolve('')
 						  uni.hideToast()

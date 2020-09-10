@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<chat ref="chat" :username="username" chatType="singleChat"></chat>
+		<chat ref="chat" :username="username" chatType="singleChat" :goods.sync='goods'></chat>
 	</view>
 </template>
 
@@ -8,7 +8,7 @@
 	import chat from "@/comps/chat/chat.vue";
 	let disp = require("../../utils/broadcast");
 
-
+	 
 	export default {
 		components: {
 			chat
@@ -18,7 +18,8 @@
 				username: {
 					your: "",
 				},
-				title: ''
+				title: '',
+				goods:''
 			}
 		},
 		onUnload() {
@@ -28,13 +29,13 @@
 
 		},
 		onLoad(options) {
-			console.log(options)
 			this.title = options.title
 			let username = JSON.parse(options.username);
 			this.username = username;
 			uni.setNavigationBarTitle({
 				title: this.title 
 			});
+			this.goods=options.goods
 		},
 		onUnload() {
 			disp.fire("em.chatroom.leave");

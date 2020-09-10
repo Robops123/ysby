@@ -2,7 +2,9 @@
 	<view class="padding">
 		<view class="nav-bar">
 			<view class="nav " :class="{active:active==1}" v-show="merchModelStatus==1" @click="toggle(1)"><text>附近商家</text></view>
-			<view class="nav " :class="{active:active==2,noMerchStatus:merchModelStatus!=1}" @click="toggle(2)"><text>优质产品</text></view>
+			<view class="nav " :class="{active:active==2}" v-show="merchModelStatus==1" @click="toggle(2)"><text>精选商家</text></view>
+			<view class="nav " :class="{active:active==3,noMerchStatus:merchModelStatus!=1}" @click="toggle(3)"><text>推荐产品</text></view>
+			<view class="nav " :class="{active:active==4,noMerchStatus:merchModelStatus!=1}" @click="toggle(4)"><text>优质产品</text></view>
 		</view>
 		
 		<scroll-view scroll-y="true" id="sv" :style="{height:sh+'px'}"  @scrolltolower='toBottom' >
@@ -26,6 +28,31 @@
 						<image :src="childItem.thumb" mode=""></image>
 						<view class="price">￥{{childItem.marketprice}}</view>
 					</view>
+				</view>
+			</view>
+		</view>
+		
+		
+		<view class="" v-if="active==2">
+			<view class="sp-item3"  v-for="(item,index) in dataList" :key='index' >
+				<view class="sp-item3-top">
+					<view>
+						<image :src="item.logo" mode="" class="headface"></image>
+					</view>
+					<view >
+						<view class="sp-item3-top-middle ellipsis">{{item.merchname}}</view>
+						<view>
+							<uni-rate disabled="true" size="12" :value="item.avgstar" style="float: left;margin-top: 24upx;"></uni-rate>
+							<text class="s3 cg collectnum">{{item.collect}}人关注</text>
+						</view>
+					</view>
+					<view class="enter-button" @click="toShop(item.id)">进店</view>
+				</view>
+				<view class="sp-item3-bottom">
+					<view class=""  v-for="(childItem,childIndex) in item.goods" :key='childIndex' @click.stop="toGoodsDetail(childItem.goodsid)">
+						<image :src="childItem.thumb" mode=""></image>
+						<view class="price">￥{{childItem.marketprice}}</view>
+					</view>
 					<!-- <view class="">
 						<image src="../../static/img/bg/activity.png" mode=""></image>
 						<view class="price">$282</view>
@@ -38,8 +65,18 @@
 			</view>
 		</view>
 		
+		<view class="box" v-if="active==3">
+			<view class="list" v-for="(item,index) in dataList" :key='index' @click.stop="toGoodsDetail(item.id)">
+				<image :src="item.thumb" mode=""></image>
+				<view class="word">
+					<view class="s3 ellipsis">{{item.title}}</view>
+					<view class="s1 cr">￥{{item.marketprice}}<text class="s2 cg fr">已售{{item.sales}}件</text></view>
+				</view>
+			</view>
+		</view>
 		
-			<view class="box" v-if="active==2">
+		
+			<view class="box" v-if="active==4">
 				<view class="list" v-for="(item,index) in dataList" :key='index' @click="toDetail(item.id)">
 					<image :src="item.thumb" mode=""></image>
 					<view class="word">
@@ -66,7 +103,7 @@
 				sh:'',
 				dataList:[],
 				page:1,
-				pageSize:5,
+				pageSize:10,
 				total:0,
 				more:'',
 				lat:'',
@@ -114,7 +151,11 @@
 					url:`/pages/index/goodsDetail?id=${id}`
 				})
 			},
-			
+			toGoodsDetail(id){
+				uni.navigateTo({
+					url:`/pages/index/goodsDetail?id=${id}`
+				})
+			},
 			toggle(t){
 				this.active=t
 				this.reset()
@@ -133,7 +174,7 @@
 				  this.$apiPost(url).then((res) =>{
 					 that.merchModelStatus=Number(res.data.status)
 					 if(that.merchModelStatus!=1){
-							that.toggle(2)
+							that.toggle(3)
 					}else{
 						that.apart()
 					}
@@ -160,6 +201,12 @@
 						this.mpLocate(params,url)
 						// #endif
 					}
+				}else if(this.active==2){
+					url='&r=api.college.merchant&page='+this.page+'&pagesize='+this.pageSize
+					that.getList(params,url)
+				}else if(this.active==3){
+					url='&r=api.college.goods&page='+this.page+'&pagesize='+this.pageSize
+					that.getList(params,url)
 				}else{
 					 url='&r=api.discovery.goods'
 					that.getList(params,url)
@@ -272,8 +319,9 @@
 	.nav{
 		color: #afafaf;
 		display: inline-block;
-		width: 50%;
+		width: 25%;
 		box-sizing: border-box;
+		word-break: keep-all;
 	}
 	.nav-left{
 		padding-right: 50upx;
@@ -286,6 +334,7 @@
 	.nav.active text{
 		color: #000000;
 		position: relative;
+		word-break: keep-all;
 	}
 	.nav.active text::before{
 		content: '';
@@ -402,6 +451,6 @@
 			margin-left: 15upx;
 		}
 		.noMerchStatus{
-			width: 100% !important;
+			width: 50% !important;
 		}
 </style>

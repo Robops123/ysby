@@ -2,10 +2,10 @@
 	<view>
 		<view class="padding" :class="{padding1:active==1 || active==4}">
 			<view class="nav-bar">
-				<view class="nav nav-left" :class="{active:active==1,noMerchStatus:merchModelStatus!=1}" @click="toggle(1)"><text>热门推文</text></view>
-				<view class="nav nav-right" :class="{active:active==2}" v-show="merchModelStatus==1" @click="toggle(2)"><text>精选商家</text></view>
-				<view class="nav nav-right" :class="{active:active==3,noMerchStatus:merchModelStatus!=1}" @click="toggle(3)"><text>推荐产品</text></view>
-				<view class="nav nav-left" :class="{active:active==4,noMerchStatus:merchModelStatus!=1}" @click="toggle(4)"><text>资讯</text></view>
+				<view class="nav " :class="{active:active==1,noMerchStatus:merchModelStatus!=1}" @click="toggle(1)"><text>热门推文</text></view>
+				<!-- <view class="nav nav-right" :class="{active:active==2}" v-show="merchModelStatus==1" @click="toggle(2)"><text>精选商家</text></view>
+				<view class="nav nav-right" :class="{active:active==3,noMerchStatus:merchModelStatus!=1}" @click="toggle(3)"><text>推荐产品</text></view> -->
+				<view class="nav " :class="{active:active==4,noMerchStatus:merchModelStatus!=1}" @click="toggle(4)"><text>资讯</text></view>
 			</view>
 			
 			
@@ -384,11 +384,11 @@
 					url='&r=api.college.hotarticle'
 					params.uid=this.uid
 				}else if(this.active==2){
-					url='&r=api.college.merchant&&page='+this.page+'&pagesize='+this.pageSize
+					url='&r=api.college.merchant&page='+this.page+'&pagesize='+this.pageSize
 				}else if(this.active==3){
-					url='&r=api.college.goods&&page='+this.page+'&pagesize='+this.pageSize
+					url='&r=api.college.goods&page='+this.page+'&pagesize='+this.pageSize
 				}else if(this.active==4){
-					url='&r=api.college.news&&page='+this.page+'&pagesize='+this.pageSize
+					url='&r=api.college.news&page='+this.page+'&pagesize='+this.pageSize
 				}
 				// else if(this.active==2){
 				// 	var url='&r=api.discovery.goods'
@@ -661,7 +661,7 @@
 	.nav{
 		color: #afafaf;
 		display: inline-block;
-		width: 25%;
+		width: 50%;
 		box-sizing: border-box;
 	}
 	.nav.active text{

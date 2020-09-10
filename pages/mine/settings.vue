@@ -68,6 +68,8 @@
 				this.$im.conn.close();
 				uni.removeStorageSync('userInfo')
 				this.$msg('退出成功')
+				this.$conn.closed = true;
+				this.$im.conn.close();
 				setTimeout(function(){
 					uni.navigateBack({
 						delta:1

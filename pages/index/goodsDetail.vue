@@ -320,10 +320,17 @@
 			  			var username={
 			  				your:res.data.merch_hx_openid,
 			  				myName:that.hx_openid
-			  			}
+			  			},
+						goods={
+							title:this.data.title,
+							pic:this.data.thumb_url['0'],
+							price:this.data.marketprice,
+							id:this.id
+						}
 						uni.hideLoading()
+						uni.$emit('ddd')
 			  		uni.navigateTo({
-			  			url: `/pages/chat/chat?username=${JSON.stringify(username)}&title=${res.data.merchname}`
+			  			url: `/pages/chat/chat?username=${JSON.stringify(username)}&title=${res.data.merchname}&goods=${JSON.stringify(goods)}`
 			  		})
 			  	})
 			  	

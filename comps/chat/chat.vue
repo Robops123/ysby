@@ -17,7 +17,7 @@
 					ref="inputbar"
 					:username="username"
 					:chatType="chatType"
-			
+					:goods.sync="goods"
 					@newTextMsg="saveSendMsg"
 					@newImageMsg="saveSendMsg"
 					@newLocationMsg="saveSendMsg"
@@ -53,6 +53,9 @@
 				type: String,
 				value: msgType.chatType.SINGLE_CHAT,
 			},
+			goods:{
+				type: String,
+			}
 		},
 		data() {
 			return {
@@ -104,7 +107,6 @@
 					let query = uni.createSelectorQuery().in(this);
 					query.selectAll(".chat-pannel").boundingClientRect();
 					query.exec((res) => {
-						console.log(res)
 						this.initHeight = res[0][0].height;
 						
 					})
@@ -117,7 +119,6 @@
 					query.exec((res) => {
 						
 						this.realHeight = res[0][0].height;
-						console.log(this.realHeight)
 					})
 				},500)
 			}
@@ -135,11 +136,11 @@
 	.main {
 		width: 100%;
 		height: 100%;
-		background: blue;
 		/* overflow: scroll; */
 	}
 	.chat-pannel{
 		height: calc(100vh - 160rpx);
+		background-color: #f8f8f8;
 		position: relative;
 		/* overflow: scroll; */
 		/* position: absolute; */

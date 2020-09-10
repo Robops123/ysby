@@ -37,6 +37,7 @@
 								<text class="list_word" v-if="item.msg.data[0].data">{{item.msg.data[0].data}}</text>
 								<text class="list_word" v-if="item.msg.type == 'img'">[图片]</text>
 								<text class="list_word" v-if="item.msg.type == 'audio'">[语音]</text>
+								<text class="list_word" v-if="item.msg.type == 'customize'">[商品信息]</text>
 							</view>
 						</view>
 						<view class="list_right">
@@ -399,7 +400,7 @@
 		 	  var url='&r=api.member.assist.hxidToMerch'
 		 	  return new Promise((resolve,reject) =>{
 		 		  this.$apiPost(url,params).then((res) =>{
-		 			  resolve(res.data.merchname)
+		 			  resolve(res.data.nickname)
 		 		  }).catch((err) =>{
 		 		  	this.$msg(err)
 		 		  })

@@ -56,6 +56,31 @@ var StropheAll = require("./libs/strophe");
 		};
 		!opt.roomType && delete this.body.roomType;
 	};
+	
+	/*
+	 * text message
+	 */
+	Message.customize = function(id){
+		this.id = id;
+		this.type = "customize";
+		this.body = {};
+	};
+	Message.customize.prototype.set = function(opt){
+		this.value = opt.msg;
+		this.body = {
+			id: this.id,
+			from: opt.from,
+			to: opt.to,
+			msg: this.value,
+			type: this.type,
+			roomType: opt.roomType,
+			chatType: opt.chatType,
+			ext: opt.ext || {},
+			success: opt.success,
+			fail: opt.fail
+		};
+		!opt.roomType && delete this.body.roomType;
+	};
 
 	/*
 	 * cmd message
